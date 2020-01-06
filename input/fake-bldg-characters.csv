@@ -1,0 +1,3 @@
+﻿id,weather,sqft,floors,wwr,wall_construction_name
+fake1,USA_GA_Atlanta-Hartsfield.Jackson.Intl.AP.722190_TMY3.epw,2000,1,0.3,Composite 2x4 Wood Stud R11
+fake2,USA_NM_Albuquerque.Intl.Sunport.723650_TMY3.epw,2000,1,0.3,Composite 2x6 Wood Stud R19

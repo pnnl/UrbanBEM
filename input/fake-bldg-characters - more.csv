@@ -1,0 +1,21 @@
+﻿id,weather,sqft,floors,wwr,wall_construction_name
+fake1,USA_GA_Atlanta-Hartsfield.Jackson.Intl.AP.722190_TMY3.epw,2000,1,0.3,Composite 2x4 Wood Stud R11
+fake2,USA_NM_Albuquerque.Intl.Sunport.723650_TMY3.epw,2000,1,0.3,Composite 2x6 Wood Stud R19
+fake3,USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw,2000,1,0.3,Composite 2-Core Filled Concrete Block Insulated
+fake4,USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw,2000,1,0.3,Composite 2x4 Wood Stud R11
+fake5,USA_HI_Honolulu.Intl.AP.911820_TMY3.epw,2000,2,0.3,Composite 2x6 Wood Stud R19
+fake6,USA_GA_Atlanta-Hartsfield.Jackson.Intl.AP.722190_TMY3.epw,4000,2,0.3,Composite 2-Core Filled Concrete Block Insulated
+fake7,USA_NM_Albuquerque.Intl.Sunport.723650_TMY3.epw,4000,2,0.3,Composite 2x4 Wood Stud R11
+fake8,USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw,4000,2,0.3,Composite 2x6 Wood Stud R19
+fake9,USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw,4000,3,0.3,Composite 2-Core Filled Concrete Block Insulated
+fake10,USA_HI_Honolulu.Intl.AP.911820_TMY3.epw,4000,3,0.3,Composite 2x4 Wood Stud R11
+fake11,USA_GA_Atlanta-Hartsfield.Jackson.Intl.AP.722190_TMY3.epw,8000,3,0.5,Composite 2x6 Wood Stud R19
+fake12,USA_NM_Albuquerque.Intl.Sunport.723650_TMY3.epw,8000,3,0.5,Composite 2-Core Filled Concrete Block Insulated
+fake13,USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw,8000,4,0.5,Composite 2x4 Wood Stud R11
+fake14,USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw,8000,4,0.5,Composite 2x6 Wood Stud R19
+fake15,USA_HI_Honolulu.Intl.AP.911820_TMY3.epw,8000,4,0.5,Composite 2-Core Filled Concrete Block Insulated
+fake16,USA_GA_Atlanta-Hartsfield.Jackson.Intl.AP.722190_TMY3.epw,10000,4,0.5,Composite 2x4 Wood Stud R11
+fake17,USA_NM_Albuquerque.Intl.Sunport.723650_TMY3.epw,10000,5,0.5,Composite 2x6 Wood Stud R19
+fake18,USA_WA_Seattle-Tacoma.Intl.AP.727930_TMY3.epw,10000,5,0.5,Composite 2-Core Filled Concrete Block Insulated
+fake19,USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw,10000,5,0.5,Composite 2x4 Wood Stud R11
+fake20,USA_HI_Honolulu.Intl.AP.911820_TMY3.epw,10000,5,0.5,Composite 2x6 Wood Stud R19

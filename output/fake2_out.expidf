@@ -1,0 +1,1053 @@
+!- Linux Line endings
+
+Version,
+    9.0;                      !- Version Identifier
+
+SimulationControl,
+    No,                       !- Do Zone Sizing Calculation
+    No,                       !- Do System Sizing Calculation
+    No,                       !- Do Plant Sizing Calculation
+    Yes,                      !- Run Simulation for Sizing Periods
+    No;                       !- Run Simulation for Weather File Run Periods
+
+Building,
+    None,                     !- Name
+    0,                        !- North Axis
+    Suburbs,                  !- Terrain
+    0.04,                     !- Loads Convergence Tolerance Value
+    0.4,                      !- Temperature Convergence Tolerance Value
+    FullInteriorAndExterior,    !- Solar Distribution
+    25,                       !- Maximum Number of Warmup Days
+    6;                        !- Minimum Number of Warmup Days
+
+Timestep,
+    4;                        !- Number of Timesteps per Hour
+
+Site:Location,
+    DENVER_STAPLETON_CO_USA_WMO_724690,    !- Name
+    39.77,                    !- Latitude
+    -104.87,                  !- Longitude
+    -7,                       !- Time Zone
+    1611;                     !- Elevation
+
+SizingPeriod:DesignDay,
+    DENVER_STAPLETON Ann Htg 99.6% Condns DB,    !- Name
+    12,                       !- Month
+    21,                       !- Day of Month
+    WinterDesignDay,          !- Day Type
+    -20,                      !- Maximum DryBulb Temperature
+    0,                        !- Daily DryBulb Temperature Range
+    ,                         !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Wetbulb,                  !- Humidity Condition Type
+    -20,                      !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    83411,                    !- Barometric Pressure
+    2.3,                      !- Wind Speed
+    180,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAEClearSky,           !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    ,                         !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    ,                         !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+    0;                        !- Sky Clearness
+
+SizingPeriod:DesignDay,
+    DENVER_STAPLETON Ann Clg .4% Condns DB=>MWB,    !- Name
+    7,                        !- Month
+    21,                       !- Day of Month
+    SummerDesignDay,          !- Day Type
+    34.1,                     !- Maximum DryBulb Temperature
+    15.2,                     !- Daily DryBulb Temperature Range
+    ,                         !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Wetbulb,                  !- Humidity Condition Type
+    15.8,                     !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    83411,                    !- Barometric Pressure
+    4,                        !- Wind Speed
+    120,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAEClearSky,           !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    ,                         !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    ,                         !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+    1;                        !- Sky Clearness
+
+RunPeriod,
+    ,                         !- Name
+    1,                        !- Begin Month
+    1,                        !- Begin Day of Month
+    ,                         !- Begin Year
+    12,                       !- End Month
+    31,                       !- End Day of Month
+    ,                         !- End Year
+    Tuesday,                  !- Day of Week for Start Day
+    Yes,                      !- Use Weather File Holidays and Special Days
+    Yes,                      !- Use Weather File Daylight Saving Period
+    No,                       !- Apply Weekend Holiday Rule
+    Yes,                      !- Use Weather File Rain Indicators
+    Yes;                      !- Use Weather File Snow Indicators
+
+MATERIAL,
+    DefaultMaterial,          !- Name
+    Rough,                    !- Roughness
+    0.1,                      !- Thickness
+    0.1,                      !- Conductivity
+    1000,                     !- Density
+    1000,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2x4 Wood Stud R11 #1,    !- Name
+    Smooth,                   !- Roughness
+    0.019,                    !- Thickness
+    0.186,                    !- Conductivity
+    640,                      !- Density
+    1048,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2x4 Wood Stud R11 #2,    !- Name
+    Smooth,                   !- Roughness
+    0.083,                    !- Thickness
+    0.049,                    !- Conductivity
+    119.63,                   !- Density
+    1048,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2x4 Wood Stud R11 #3,    !- Name
+    Smooth,                   !- Roughness
+    0.025,                    !- Thickness
+    0.124,                    !- Conductivity
+    508.45,                   !- Density
+    1048,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2x6 Wood Stud R19 #1,    !- Name
+    Smooth,                   !- Roughness
+    0.019,                    !- Thickness
+    0.137,                    !- Conductivity
+    640,                      !- Density
+    1006,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2x6 Wood Stud R19 #2,    !- Name
+    Smooth,                   !- Roughness
+    0.133,                    !- Thickness
+    0.047,                    !- Conductivity
+    93.84,                    !- Density
+    1006,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2x6 Wood Stud R19 #3,    !- Name
+    Smooth,                   !- Roughness
+    0.025,                    !- Thickness
+    0.246,                    !- Conductivity
+    492.67,                   !- Density
+    1006,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Insulated Concrete Form Wall With Steel Ties #1,    !- Name
+    VeryRough,                !- Roughness
+    0.089,                    !- Thickness
+    0.079,                    !- Conductivity
+    1110,                     !- Density
+    1048,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Insulated Concrete Form Wall With Steel Ties #2,    !- Name
+    Smooth,                   !- Roughness
+    0.095,                    !- Thickness
+    0.499,                    !- Conductivity
+    1552.01,                  !- Density
+    880,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Insulated Concrete Form Wall With Steel Ties #3,    !- Name
+    Smooth,                   !- Roughness
+    0.089,                    !- Thickness
+    0.134,                    !- Conductivity
+    832.5,                    !- Density
+    1048,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Concrete/Foam/Concrete With Steel Connectors #1,    !- Name
+    Rough,                    !- Roughness
+    0.064,                    !- Thickness
+    1.329,                    !- Conductivity
+    2213.25,                  !- Density
+    964,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Concrete/Foam/Concrete With Steel Connectors #2,    !- Name
+    Smooth,                   !- Roughness
+    0.076,                    !- Thickness
+    0.061,                    !- Conductivity
+    41.53,                    !- Density
+    1173,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Concrete/Foam/Concrete With Steel Connectors #3,    !- Name
+    Rough,                    !- Roughness
+    0.064,                    !- Thickness
+    1.078,                    !- Conductivity
+    2185.44,                  !- Density
+    1173,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Concrete/Foam/Concrete With Plastic Connectors #1,    !- Name
+    Rough,                    !- Roughness
+    0.07,                     !- Thickness
+    1.201,                    !- Conductivity
+    2240,                     !- Density
+    901,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Concrete/Foam/Concrete With Plastic Connectors #2,    !- Name
+    Smooth,                   !- Roughness
+    0.064,                    !- Thickness
+    0.036,                    !- Conductivity
+    43.16,                    !- Density
+    1173,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Concrete/Foam/Concrete With Plastic Connectors #3,    !- Name
+    Rough,                    !- Roughness
+    0.07,                     !- Thickness
+    1.361,                    !- Conductivity
+    2153.49,                  !- Density
+    1048,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2x4 Steel Stud R11 #1,    !- Name
+    Smooth,                   !- Roughness
+    0.013,                    !- Thickness
+    0.72,                     !- Conductivity
+    640,                      !- Density
+    1048,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2x4 Steel Stud R11 #2,    !- Name
+    Smooth,                   !- Roughness
+    0.089,                    !- Thickness
+    0.06,                     !- Conductivity
+    118.223,                  !- Density
+    1048,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2x4 Steel Stud R11 #3,    !- Name
+    Smooth,                   !- Roughness
+    0.025,                    !- Thickness
+    0.452,                    !- Conductivity
+    413.782,                  !- Density
+    1048,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Brick Foam 2x4 Steel Stud R11 #1,    !- Name
+    MediumRough,              !- Roughness
+    0.013,                    !- Thickness
+    0.169,                    !- Conductivity
+    640,                      !- Density
+    1048,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Brick Foam 2x4 Steel Stud R11 #2,    !- Name
+    Smooth,                   !- Roughness
+    0.127,                    !- Thickness
+    0.062,                    !- Conductivity
+    57.26,                    !- Density
+    964,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Brick Foam 2x4 Steel Stud R11 #3,    !- Name
+    Smooth,                   !- Roughness
+    0.083,                    !- Thickness
+    0.638,                    !- Conductivity
+    2026.14,                  !- Density
+    796,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2x6 Steel Stud R19 #1,    !- Name
+    Smooth,                   !- Roughness
+    0.019,                    !- Thickness
+    0.253,                    !- Conductivity
+    560,                      !- Density
+    1006,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2x6 Steel Stud R19 #2,    !- Name
+    Smooth,                   !- Roughness
+    0.133,                    !- Thickness
+    0.073,                    !- Conductivity
+    61.8,                     !- Density
+    1006,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2x6 Steel Stud R19 #3,    !- Name
+    Smooth,                   !- Roughness
+    0.025,                    !- Thickness
+    0.248,                    !- Conductivity
+    486.67,                   !- Density
+    1006,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Foam 2x6 Steel Stud R19 #1,    !- Name
+    VeryRough,                !- Roughness
+    0.019,                    !- Thickness
+    0.149,                    !- Conductivity
+    400,                      !- Density
+    1006,                     !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Foam 2x6 Steel Stud R19 #2,    !- Name
+    Smooth,                   !- Roughness
+    0.127,                    !- Thickness
+    0.051,                    !- Conductivity
+    85.95,                    !- Density
+    964,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Foam 2x6 Steel Stud R19 #3,    !- Name
+    Smooth,                   !- Roughness
+    0.064,                    !- Thickness
+    1.163,                    !- Conductivity
+    790.7,                    !- Density
+    838,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Brick Foam 2x6 Steel Stud R19 #1,    !- Name
+    MediumRough,              !- Roughness
+    0.019,                    !- Thickness
+    0.151,                    !- Conductivity
+    400,                      !- Density
+    964,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Brick Foam 2x6 Steel Stud R19 #2,    !- Name
+    Smooth,                   !- Roughness
+    0.165,                    !- Thickness
+    0.065,                    !- Conductivity
+    73.52,                    !- Density
+    964,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite Brick Foam 2x6 Steel Stud R19 #3,    !- Name
+    Smooth,                   !- Roughness
+    0.089,                    !- Thickness
+    1.318,                    !- Conductivity
+    1911.57,                  !- Density
+    964,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2-Core Filled Concrete Block Uninsulated #1,    !- Name
+    MediumRough,              !- Roughness
+    0.079,                    !- Thickness
+    1.378,                    !- Conductivity
+    1731.45,                  !- Density
+    838,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2-Core Filled Concrete Block Uninsulated #2,    !- Name
+    Smooth,                   !- Roughness
+    0.127,                    !- Thickness
+    1.065,                    !- Conductivity
+    1031.57,                  !- Density
+    419,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2-Core Filled Concrete Block Uninsulated #3,    !- Name
+    MediumRough,              !- Roughness
+    0.089,                    !- Thickness
+    1.437,                    !- Conductivity
+    1647.86,                  !- Density
+    838,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2-Core Filled Concrete Block Insulated #1,    !- Name
+    MediumRough,              !- Roughness
+    0.079,                    !- Thickness
+    0.88,                     !- Conductivity
+    1774.75,                  !- Density
+    838,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2-Core Filled Concrete Block Insulated #2,    !- Name
+    Smooth,                   !- Roughness
+    0.127,                    !- Thickness
+    0.572,                    !- Conductivity
+    346.61,                   !- Density
+    838,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+Material,
+    Composite 2-Core Filled Concrete Block Insulated #3,    !- Name
+    MediumRough,              !- Roughness
+    0.089,                    !- Thickness
+    0.973,                    !- Conductivity
+    1862.66,                  !- Density
+    838,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+WINDOWMATERIAL:SIMPLEGLAZINGSYSTEM,
+    DefaultGlazing,           !- Name
+    2.7,                      !- UFactor
+    0.763,                    !- Solar Heat Gain Coefficient
+    0.8;                      !- Visible Transmittance
+
+CONSTRUCTION,
+    Project Wall,             !- Name
+    DefaultMaterial;          !- Outside Layer
+
+CONSTRUCTION,
+    Project Partition,        !- Name
+    DefaultMaterial;          !- Outside Layer
+
+CONSTRUCTION,
+    Project Floor,            !- Name
+    DefaultMaterial;          !- Outside Layer
+
+CONSTRUCTION,
+    Project Flat Roof,        !- Name
+    DefaultMaterial;          !- Outside Layer
+
+CONSTRUCTION,
+    Project Ceiling,          !- Name
+    DefaultMaterial;          !- Outside Layer
+
+CONSTRUCTION,
+    Project Door,             !- Name
+    DefaultMaterial;          !- Outside Layer
+
+CONSTRUCTION,
+    Project External Window,    !- Name
+    DefaultGlazing;           !- Outside Layer
+
+Construction,
+    Composite 2x4 Wood Stud R11,    !- Name
+    Composite 2x4 Wood Stud R11 #3,    !- Outside Layer
+    Composite 2x4 Wood Stud R11 #2,    !- Layer 2
+    Composite 2x4 Wood Stud R11 #1;    !- Layer 3
+
+Construction,
+    Composite 2x6 Wood Stud R19,    !- Name
+    Composite 2x6 Wood Stud R19 #3,    !- Outside Layer
+    Composite 2x6 Wood Stud R19 #2,    !- Layer 2
+    Composite 2x6 Wood Stud R19 #1;    !- Layer 3
+
+Construction,
+    Composite Insulated Concrete Form Wall With Steel Ties,    !- Name
+    Composite Insulated Concrete Form Wall With Steel Ties #3,    !- Outside Layer
+    Composite Insulated Concrete Form Wall With Steel Ties #2,    !- Layer 2
+    Composite Insulated Concrete Form Wall With Steel Ties #1;    !- Layer 3
+
+Construction,
+    Composite Concrete/Foam/Concrete With Steel Connectors,    !- Name
+    Composite Concrete/Foam/Concrete With Steel Connectors #3,    !- Outside Layer
+    Composite Concrete/Foam/Concrete With Steel Connectors #2,    !- Layer 2
+    Composite Concrete/Foam/Concrete With Steel Connectors #1;    !- Layer 3
+
+Construction,
+    Composite Concrete/Foam/Concrete With Plastic Connectors,    !- Name
+    Composite Concrete/Foam/Concrete With Plastic Connectors #3,    !- Outside Layer
+    Composite Concrete/Foam/Concrete With Plastic Connectors #2,    !- Layer 2
+    Composite Concrete/Foam/Concrete With Plastic Connectors #1;    !- Layer 3
+
+Construction,
+    Composite 2x4 Steel Stud R11,    !- Name
+    Composite 2x4 Steel Stud R11 #3,    !- Outside Layer
+    Composite 2x4 Steel Stud R11 #2,    !- Layer 2
+    Composite 2x4 Steel Stud R11 #1;    !- Layer 3
+
+Construction,
+    Composite Brick Foam 2x4 Steel Stud R11,    !- Name
+    Composite Brick Foam 2x4 Steel Stud R11 #3,    !- Outside Layer
+    Composite Brick Foam 2x4 Steel Stud R11 #2,    !- Layer 2
+    Composite Brick Foam 2x4 Steel Stud R11 #1;    !- Layer 3
+
+Construction,
+    Composite 2x6 Steel Stud R19,    !- Name
+    Composite 2x6 Steel Stud R19 #3,    !- Outside Layer
+    Composite 2x6 Steel Stud R19 #2,    !- Layer 2
+    Composite 2x6 Steel Stud R19 #1;    !- Layer 3
+
+Construction,
+    Composite Foam 2x6 Steel Stud R19,    !- Name
+    Composite Foam 2x6 Steel Stud R19 #3,    !- Outside Layer
+    Composite Foam 2x6 Steel Stud R19 #2,    !- Layer 2
+    Composite Foam 2x6 Steel Stud R19 #1;    !- Layer 3
+
+Construction,
+    Composite Brick Foam 2x6 Steel Stud R19,    !- Name
+    Composite Brick Foam 2x6 Steel Stud R19 #3,    !- Outside Layer
+    Composite Brick Foam 2x6 Steel Stud R19 #2,    !- Layer 2
+    Composite Brick Foam 2x6 Steel Stud R19 #1;    !- Layer 3
+
+Construction,
+    Composite 2-Core Filled Concrete Block Uninsulated,    !- Name
+    Composite 2-Core Filled Concrete Block Uninsulated #3,    !- Outside Layer
+    Composite 2-Core Filled Concrete Block Uninsulated #2,    !- Layer 2
+    Composite 2-Core Filled Concrete Block Uninsulated #1;    !- Layer 3
+
+Construction,
+    Composite 2-Core Filled Concrete Block Insulated,    !- Name
+    Composite 2-Core Filled Concrete Block Insulated #3,    !- Outside Layer
+    Composite 2-Core Filled Concrete Block Insulated #2,    !- Layer 2
+    Composite 2-Core Filled Concrete Block Insulated #1;    !- Layer 3
+
+GlobalGeometryRules,
+    UpperLeftCorner,          !- Starting Vertex Position
+    CounterClockWise,         !- Vertex Entry Direction
+    World;                    !- Coordinate System
+
+ZONE,
+    Block 1 floors block Storey 0,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    1,                        !- Type
+    1,                        !- Multiplier
+    autocalculate,            !- Ceiling Height
+    autocalculate,            !- Volume
+    autocalculate,            !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+BUILDINGSURFACE:DETAILED,
+    Block 1 floors block Storey 0 Wall 0001,    !- Name
+    wall,                     !- Surface Type
+    Composite 2x6 Wood Stud R19,    !- Construction Name
+    Block 1 floors block Storey 0,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    44,                       !- Vertex 1 Xcoordinate
+    0,                        !- Vertex 1 Ycoordinate
+    3,                        !- Vertex 1 Zcoordinate
+    44,                       !- Vertex 2 Xcoordinate
+    0,                        !- Vertex 2 Ycoordinate
+    0,                        !- Vertex 2 Zcoordinate
+    44,                       !- Vertex 3 Xcoordinate
+    44,                       !- Vertex 3 Ycoordinate
+    0,                        !- Vertex 3 Zcoordinate
+    44,                       !- Vertex 4 Xcoordinate
+    44,                       !- Vertex 4 Ycoordinate
+    3;                        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block 1 floors block Storey 0 Wall 0002,    !- Name
+    wall,                     !- Surface Type
+    Composite 2x6 Wood Stud R19,    !- Construction Name
+    Block 1 floors block Storey 0,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    44,                       !- Vertex 1 Xcoordinate
+    44,                       !- Vertex 1 Ycoordinate
+    3,                        !- Vertex 1 Zcoordinate
+    44,                       !- Vertex 2 Xcoordinate
+    44,                       !- Vertex 2 Ycoordinate
+    0,                        !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    44,                       !- Vertex 3 Ycoordinate
+    0,                        !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    44,                       !- Vertex 4 Ycoordinate
+    3;                        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block 1 floors block Storey 0 Wall 0003,    !- Name
+    wall,                     !- Surface Type
+    Composite 2x6 Wood Stud R19,    !- Construction Name
+    Block 1 floors block Storey 0,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    0,                        !- Vertex 1 Xcoordinate
+    44,                       !- Vertex 1 Ycoordinate
+    3,                        !- Vertex 1 Zcoordinate
+    0,                        !- Vertex 2 Xcoordinate
+    44,                       !- Vertex 2 Ycoordinate
+    0,                        !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    0,                        !- Vertex 3 Ycoordinate
+    0,                        !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    0,                        !- Vertex 4 Ycoordinate
+    3;                        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block 1 floors block Storey 0 Wall 0004,    !- Name
+    wall,                     !- Surface Type
+    Composite 2x6 Wood Stud R19,    !- Construction Name
+    Block 1 floors block Storey 0,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    0,                        !- Vertex 1 Xcoordinate
+    0,                        !- Vertex 1 Ycoordinate
+    3,                        !- Vertex 1 Zcoordinate
+    0,                        !- Vertex 2 Xcoordinate
+    0,                        !- Vertex 2 Ycoordinate
+    0,                        !- Vertex 2 Zcoordinate
+    44,                       !- Vertex 3 Xcoordinate
+    0,                        !- Vertex 3 Ycoordinate
+    0,                        !- Vertex 3 Zcoordinate
+    44,                       !- Vertex 4 Xcoordinate
+    0,                        !- Vertex 4 Ycoordinate
+    3;                        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block 1 floors block Storey 0 Floor 0001,    !- Name
+    floor,                    !- Surface Type
+    Project Floor,            !- Construction Name
+    Block 1 floors block Storey 0,    !- Zone Name
+    ground,                   !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    44,                       !- Vertex 1 Xcoordinate
+    44,                       !- Vertex 1 Ycoordinate
+    0,                        !- Vertex 1 Zcoordinate
+    44,                       !- Vertex 2 Xcoordinate
+    0,                        !- Vertex 2 Ycoordinate
+    0,                        !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    0,                        !- Vertex 3 Ycoordinate
+    0,                        !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    44,                       !- Vertex 4 Ycoordinate
+    0;                        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block 1 floors block Storey 0 Roof 0001,    !- Name
+    roof,                     !- Surface Type
+    Project Flat Roof,        !- Construction Name
+    Block 1 floors block Storey 0,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    44,                       !- Vertex 1 Xcoordinate
+    0,                        !- Vertex 1 Ycoordinate
+    3,                        !- Vertex 1 Zcoordinate
+    44,                       !- Vertex 2 Xcoordinate
+    44,                       !- Vertex 2 Ycoordinate
+    3,                        !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    44,                       !- Vertex 3 Ycoordinate
+    3,                        !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    0,                        !- Vertex 4 Ycoordinate
+    3;                        !- Vertex 4 Zcoordinate
+
+FENESTRATIONSURFACE:DETAILED,
+    Block 1 floors block Storey 0 Wall 0001 window,    !- Name
+    Window,                   !- Surface Type
+    Project External Window,    !- Construction Name
+    Block 1 floors block Storey 0 Wall 0001,    !- Building Surface Name
+    ,                         !- Outside Boundary Condition Object
+    autocalculate,            !- View Factor to Ground
+    ,                         !- Frame and Divider Name
+    1.0,                      !- Multiplier
+    autocalculate,            !- Number of Vertices
+    44,                       !- Vertex 1 Xcoordinate
+    0.021999999999998465,     !- Vertex 1 Ycoordinate
+    1.95,                     !- Vertex 1 Zcoordinate
+    44,                       !- Vertex 2 Xcoordinate
+    0.021999999999998465,     !- Vertex 2 Ycoordinate
+    1.05,                     !- Vertex 2 Zcoordinate
+    44,                       !- Vertex 3 Xcoordinate
+    43.978,                   !- Vertex 3 Ycoordinate
+    1.05,                     !- Vertex 3 Zcoordinate
+    44,                       !- Vertex 4 Xcoordinate
+    43.978,                   !- Vertex 4 Ycoordinate
+    1.95;                     !- Vertex 4 Zcoordinate
+
+FENESTRATIONSURFACE:DETAILED,
+    Block 1 floors block Storey 0 Wall 0002 window,    !- Name
+    Window,                   !- Surface Type
+    Project External Window,    !- Construction Name
+    Block 1 floors block Storey 0 Wall 0002,    !- Building Surface Name
+    ,                         !- Outside Boundary Condition Object
+    autocalculate,            !- View Factor to Ground
+    ,                         !- Frame and Divider Name
+    1.0,                      !- Multiplier
+    autocalculate,            !- Number of Vertices
+    43.978,                   !- Vertex 1 Xcoordinate
+    44,                       !- Vertex 1 Ycoordinate
+    1.95,                     !- Vertex 1 Zcoordinate
+    43.978,                   !- Vertex 2 Xcoordinate
+    44,                       !- Vertex 2 Ycoordinate
+    1.05,                     !- Vertex 2 Zcoordinate
+    0.021999999999998465,     !- Vertex 3 Xcoordinate
+    44,                       !- Vertex 3 Ycoordinate
+    1.05,                     !- Vertex 3 Zcoordinate
+    0.021999999999998465,     !- Vertex 4 Xcoordinate
+    44,                       !- Vertex 4 Ycoordinate
+    1.95;                     !- Vertex 4 Zcoordinate
+
+FENESTRATIONSURFACE:DETAILED,
+    Block 1 floors block Storey 0 Wall 0003 window,    !- Name
+    Window,                   !- Surface Type
+    Project External Window,    !- Construction Name
+    Block 1 floors block Storey 0 Wall 0003,    !- Building Surface Name
+    ,                         !- Outside Boundary Condition Object
+    autocalculate,            !- View Factor to Ground
+    ,                         !- Frame and Divider Name
+    1.0,                      !- Multiplier
+    autocalculate,            !- Number of Vertices
+    0,                        !- Vertex 1 Xcoordinate
+    43.978,                   !- Vertex 1 Ycoordinate
+    1.95,                     !- Vertex 1 Zcoordinate
+    0,                        !- Vertex 2 Xcoordinate
+    43.978,                   !- Vertex 2 Ycoordinate
+    1.05,                     !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    0.021999999999998465,     !- Vertex 3 Ycoordinate
+    1.05,                     !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    0.021999999999998465,     !- Vertex 4 Ycoordinate
+    1.95;                     !- Vertex 4 Zcoordinate
+
+FENESTRATIONSURFACE:DETAILED,
+    Block 1 floors block Storey 0 Wall 0004 window,    !- Name
+    Window,                   !- Surface Type
+    Project External Window,    !- Construction Name
+    Block 1 floors block Storey 0 Wall 0004,    !- Building Surface Name
+    ,                         !- Outside Boundary Condition Object
+    autocalculate,            !- View Factor to Ground
+    ,                         !- Frame and Divider Name
+    1.0,                      !- Multiplier
+    autocalculate,            !- Number of Vertices
+    0.021999999999998465,     !- Vertex 1 Xcoordinate
+    0,                        !- Vertex 1 Ycoordinate
+    1.95,                     !- Vertex 1 Zcoordinate
+    0.021999999999998465,     !- Vertex 2 Xcoordinate
+    0,                        !- Vertex 2 Ycoordinate
+    1.05,                     !- Vertex 2 Zcoordinate
+    43.978,                   !- Vertex 3 Xcoordinate
+    0,                        !- Vertex 3 Ycoordinate
+    1.05,                     !- Vertex 3 Zcoordinate
+    43.978,                   !- Vertex 4 Xcoordinate
+    0,                        !- Vertex 4 Ycoordinate
+    1.95;                     !- Vertex 4 Zcoordinate
+! 
+! HVACTEMPLATE:THERMOSTAT,
+!     Zone Stat,                !- Name
+!     ,                         !- Heating Setpoint Schedule Name
+!     20,                       !- Constant Heating Setpoint
+!     ,                         !- Cooling Setpoint Schedule Name
+!     25;                       !- Constant Cooling Setpoint
+! 
+! HVACTEMPLATE:ZONE:IDEALLOADSAIRSYSTEM,
+!     Block 1 floors block Storey 0,    !- Zone Name
+!     Zone Stat,                !- Template Thermostat Name
+!     ,                         !- System Availability Schedule Name
+!     50,                       !- Maximum Heating Supply Air Temperature
+!     13,                       !- Minimum Cooling Supply Air Temperature
+!     0.0156,                   !- Maximum Heating Supply Air Humidity Ratio
+!     0.0077,                   !- Minimum Cooling Supply Air Humidity Ratio
+!     NoLimit,                  !- Heating Limit
+!     ,                         !- Maximum Heating Air Flow Rate
+!     ,                         !- Maximum Sensible Heating Capacity
+!     NoLimit,                  !- Cooling Limit
+!     ,                         !- Maximum Cooling Air Flow Rate
+!     ,                         !- Maximum Total Cooling Capacity
+!     ,                         !- Heating Availability Schedule Name
+!     ,                         !- Cooling Availability Schedule Name
+!     ConstantSensibleHeatRatio,    !- Dehumidification Control Type
+!     0.7,                      !- Cooling Sensible Heat Ratio
+!     60,                       !- Dehumidification Setpoint
+!     None,                     !- Humidification Control Type
+!     30,                       !- Humidification Setpoint
+!     None,                     !- Outdoor Air Method
+!     0.00944,                  !- Outdoor Air Flow Rate per Person
+!     0.0,                      !- Outdoor Air Flow Rate per Zone Floor Area
+!     0,                        !- Outdoor Air Flow Rate per Zone
+!     ,                         !- Design Specification Outdoor Air Object Name
+!     None,                     !- Demand Controlled Ventilation Type
+!     NoEconomizer,             !- Outdoor Air Economizer Type
+!     None,                     !- Heat Recovery Type
+!     0.70,                     !- Sensible Heat Recovery Effectiveness
+!     0.65;                     !- Latent Heat Recovery Effectiveness
+
+Output:VariableDictionary,
+    Regular;                  !- Key Field
+
+Output:Table:SummaryReports,
+    AllSummary;               !- Report 1 Name
+
+OutputControl:Table:Style,
+    HTML;                     !- Column Separator
+
+Output:Variable,
+    *,                        !- Key Value
+    Site Outdoor Air Drybulb Temperature,    !- Variable Name
+    Timestep;                 !- Reporting Frequency
+
+Output:Variable,
+    *,                        !- Key Value
+    Site Outdoor Air Wetbulb Temperature,    !- Variable Name
+    Timestep;                 !- Reporting Frequency
+
+Output:Variable,
+    *,                        !- Key Value
+    Site Outdoor Air Dewpoint Temperature,    !- Variable Name
+    Timestep;                 !- Reporting Frequency
+
+Output:Variable,
+    *,                        !- Key Value
+    Site Solar Azimuth Angle,    !- Variable Name
+    Timestep;                 !- Reporting Frequency
+
+Output:Variable,
+    *,                        !- Key Value
+    Site Solar Altitude Angle,    !- Variable Name
+    Timestep;                 !- Reporting Frequency
+
+Output:Variable,
+    *,                        !- Key Value
+    Site Direct Solar Radiation Rate per Area,    !- Variable Name
+    Timestep;                 !- Reporting Frequency
+
+Output:Variable,
+    *,                        !- Key Value
+    Site Diffuse Solar Radiation Rate per Area,    !- Variable Name
+    Timestep;                 !- Reporting Frequency
+
+OUTPUT:VARIABLE,
+    *,                        !- Key Value
+    Zone Ideal Loads Supply Air Total Heating Energy,    !- Variable Name
+    Hourly;                   !- Reporting Frequency
+
+OUTPUT:VARIABLE,
+    *,                        !- Key Value
+    Zone Ideal Loads Supply Air Total Cooling Energy,    !- Variable Name
+    Hourly;                   !- Reporting Frequency
+! 
+! -------------------------------------------------------------
+! New objects created from ExpandObjects
+! -------------------------------------------------------------
+! 
+
+ScheduleTypeLimits,
+  HVACTemplate Any Number;                                 !- Name
+
+Schedule:Compact,
+  HVACTemplate-Always 20,                                  !- Name
+  HVACTemplate Any Number,                                 !- Schedule Type Limits Name
+  Through: 12/31,                                          !- Field 1
+  For: AllDays,                                            !- Field 2
+  Until: 24:00,                                            !- Field 3
+  20;                                                      !- Field 4
+
+Schedule:Compact,
+  HVACTemplate-Always 25,                                  !- Name
+  HVACTemplate Any Number,                                 !- Schedule Type Limits Name
+  Through: 12/31,                                          !- Field 1
+  For: AllDays,                                            !- Field 2
+  Until: 24:00,                                            !- Field 3
+  25;                                                      !- Field 4
+
+ThermostatSetpoint:DualSetpoint,
+  Zone Stat Dual SP Control,                               !- Name
+  HVACTemplate-Always 20,                                  !- Heating Setpoint Temperature Schedule Name
+  HVACTemplate-Always 25;                                  !- Cooling Setpoint Temperature Schedule Name
+
+Schedule:Compact,
+  HVACTemplate-Always 4,                                   !- Name
+  HVACTemplate Any Number,                                 !- Schedule Type Limits Name
+  Through: 12/31,                                          !- Field 1
+  For: AllDays,                                            !- Field 2
+  Until: 24:00,                                            !- Field 3
+  4;                                                       !- Field 4
+
+ZoneControl:Thermostat,
+  Block 1 floors block Storey 0 Thermostat,                !- Name
+  Block 1 floors block Storey 0,                           !- Zone or ZoneList Name
+  HVACTemplate-Always 4,                                   !- Control Type Schedule Name
+  ThermostatSetpoint:DualSetpoint,                         !- Control Object Type
+  Zone Stat Dual SP Control;                               !- Control Name
+
+ZoneHVAC:EquipmentConnections,
+  Block 1 floors block Storey 0,                           !- Zone Name
+  Block 1 floors block Storey 0 Equipment,                 !- Zone Conditioning Equipment List Name
+  Block 1 floors block Storey 0 Ideal Loads Supply Inlet,  !- Zone Air Inlet Node or NodeList Name
+  ,                                                        !- Zone Air Exhaust Node or NodeList Name
+  Block 1 floors block Storey 0 Zone Air Node,             !- Zone Air Node Name
+  Block 1 floors block Storey 0 Return Outlet;             !- Zone Return Air Node Name
+
+ZoneHVAC:EquipmentList,
+  Block 1 floors block Storey 0 Equipment,                 !- Name
+  SequentialLoad,                                          !- Load Distribution Scheme
+  ZoneHVAC:IdealLoadsAirSystem,                            !- Zone Equipment Object Type
+  Block 1 floors block Storey 0 Ideal Loads Air System,    !- Zone Equipment Name
+  1,                                                       !- Zone Equipment Cooling Sequence
+  1;                                                       !- Zone Equipment Heating or No-Load Sequence
+
+ZoneHVAC:IdealLoadsAirSystem,
+  Block 1 floors block Storey 0 Ideal Loads Air System,    !- Name
+  ,                                                        !- Availability Schedule Name
+  Block 1 floors block Storey 0 Ideal Loads Supply Inlet,  !- Zone Supply Air Node Name
+  ,                                                        !- Zone Exhaust Air Node Name
+  ,                                                        !- System Inlet Air Node Name
+  50,                                                      !- Maximum Heating Supply Air Temperature [C]
+  13,                                                      !- Minimum Cooling Supply Air Temperature [C]
+  0.0156,                                                  !- Maximum Heating Supply Air Humidity Ratio [kg-H20/kg-air]
+  0.0077,                                                  !- Minimum Cooling Supply Air Humidity Ratio [kg-H20/kg-air]
+  NoLimit,                                                 !- Heating Limit
+  ,                                                        !- Maximum Heating Air Flow Rate {m3/s}
+  ,                                                        !- Maximum Sensible Heating Capacity {m3/s}
+  NoLimit,                                                 !- Cooling Limit
+  ,                                                        !- Maximum Cooling Air Flow Rate {m3/s}
+  ,                                                        !- Maximum Total Cooling Capacity {m3/s}
+  ,                                                        !- Heating Availability Schedule Name
+  ,                                                        !- Cooling Availability Schedule Name
+  ConstantSensibleHeatRatio,                               !- Dehumidification Control Type
+  0.7,                                                     !- Cooling Sensible Heat Ratio
+  None,                                                    !- Humidification Control Type
+  ,                                                        !- Design Specification Outdoor Air Object Name
+  ,                                                        !- Outdoor Air Inlet Node Name
+  None,                                                    !- Demand Controlled Ventilation Type
+  NoEconomizer,                                            !- Outdoor Air Economizer Type
+  None,                                                    !- Heat Recovery Type
+  0.70,                                                    !- Sensible Heat Recovery Effectiveness
+  0.65;                                                    !- Latent Heat Recovery Effectiveness
