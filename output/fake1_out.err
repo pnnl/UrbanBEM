@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 9.0.1-bb7ca4f0da, YMD=2020.01.06 13:29,
+Program Version,EnergyPlus, Version 9.0.1-bb7ca4f0da, YMD=2020.01.06 16:31,
    ** Warning ** Weather file location will be used rather than entered (IDF) Location object.
    **   ~~~   ** ..Location object=DENVER_STAPLETON_CO_USA_WMO_724690
    **   ~~~   ** ..Weather File Location=Atlanta-Hartsfield Jackson Intl AP GA USA TMY3 WMO#=722190
@@ -32,4 +32,4 @@ Program Version,EnergyPlus, Version 9.0.1-bb7ca4f0da, YMD=2020.01.06 13:29,
    *************
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
    ************* EnergyPlus Sizing Error Summary. During Sizing: 0 Warning; 0 Severe Errors.
-   ************* EnergyPlus Completed Successfully-- 5 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  0.49sec
+   ************* EnergyPlus Completed Successfully-- 5 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  0.61sec
