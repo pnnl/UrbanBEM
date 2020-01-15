@@ -10,17 +10,18 @@
 
 ### Do we want to have pre-simulated load profiles to answer questions
 
-- This depends on the application.
+- This depends on the application. Most use cases would require us to run simulations and that the main capability we target. 
 
 ### Benefits of the proposed modeling approach
 
 - Comparing with ground up case-specific modelling (i.e. modeling in our prototypes), in this project, we do on the fly zoning and would have more flexibility. Easier to troubleshooting, and do benchmarking
-- Comparing with existing simulation-based benchmarking tool. Our lego modeling approach is more sophisticated and is expected to yield more accurate results.
+- Comparing with existing simulation-based benchmarking tool. Our lego modeling approach is more sophisticated and is expected to yield more accurate results. In FY20, we'll not have have much effort to do benchmarking. We can do two things: 1) to compare  the shape and order of magnitude of aggregated load curve with some existing ones; 2) to compare our results from logo-based prototype models with those from a corrsponding EPSTD prototype models. 
   - This needs to be confirmed.
   - Comparing with Comcheck?
   - Some earlier benchmarking tool would build a simple rectangle space model to simulate the baseline energy usage.
 
-### Potential issues
+
+### Potential issues (not in the FY20 scope)
 
 - Inter-building shading: LBNL's Tianhen Hong developed an EP feature to capture the inter-bldg shading impact. More detailed information is not acquired yet.
 - Inter-building airflow impact: Unknown knowledge
