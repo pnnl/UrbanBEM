@@ -57,3 +57,27 @@ organized in chronological order
        - Modelkit
      - We need to double check the appropriateness of interfacing with Eppy / Modelkit templates. It should be fine though.
 - We are still in the stage of planning, but we are getting things clearer. We may need to organize a meeting with everybody (Jian, Jeremy, Yunyang, Jerry, Yan, Amanda) and collect feedback and thoughts to finalize and detail the plan, and discuss the potential use case / analysis of the large scale simulation results.
+
+## Meeting minutes from meeting w/ Jian, Jeremy, Yunyang, Jerry on 01/30/2020
+
+Texts in `[]` are Jerry's comments while taking the notes.
+
+- gap to fill: evaluate impacts at large scale of buildings instead of individual buildings
+- selling point of nrel comstock: use the original prototypes and scale them to simpler stretched geometry etc.
+- no typical method to analyze the results in existing studies.
+- PNNL internal reviews emphasizes the gap of limited stock data and from different sources / formats. This is not what we want. We don't want to provide data to other people, we want to create end-to-end framework to analyze the results. We want to replace others' method and provide better solution
+- [we will need to have interfaces if we want to collaborate with other people, to use their existing implementations. So it is probably essential to have a detailed and standarlized process ot doing end-to-end urban-sim]
+
+* possible data source: comcheck, rescheck (not a core of our work)
+* Andrew Parker's presentation about comstock: collect data from different sources, e.g. census, in different formats
+
+### BEM modeling strategy
+
+- the overall plan is to convert building characteristics to BEMs
+- the big assumption is: we won't be able to generate the exact shape of the building. We capture the total conditioned area of the bldg and the total exterior area of different surfaces
+- another assumption: we believe the interactions between different thermal zones are negligible.
+- we will create thermal zones that host the external envelope and host the floor areas as the user inputs, but the shape won't be accurate
+- how to model multi-zone vav system having separate zones being tagged. This is not the current focus.
+- why cannot we use comcheck to generate BEM: expandability of our way of doing the model. We can treat as if Comcheck does not exist and claim what we do in this project (the LEGO zoning etc) as the contribution.
+- Yunyang: review of existing urban-scale simulation. Some do not fall in the focuses of our work, we may not need to have a review of the work, and we may not have the resources to do so. Jian has the frontiers of this area in mind and will discuss in our next meeting. I.e. Jian will talk about the existing tools doing urban-sim when we can meet together again.
+- We will hold the implementation work until we figure out the detailed things we are going to do that are different from existing studies.
