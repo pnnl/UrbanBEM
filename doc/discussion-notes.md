@@ -81,3 +81,44 @@ Texts in `[]` are Jerry's comments while taking the notes.
 - why cannot we use comcheck to generate BEM: expandability of our way of doing the model. We can treat as if Comcheck does not exist and claim what we do in this project (the LEGO zoning etc) as the contribution.
 - Yunyang: review of existing urban-scale simulation. Some do not fall in the focuses of our work, we may not need to have a review of the work, and we may not have the resources to do so. Jian has the frontiers of this area in mind and will discuss in our next meeting. I.e. Jian will talk about the existing tools doing urban-sim when we can meet together again.
 - We will hold the implementation work until we figure out the detailed things we are going to do that are different from existing studies.
+
+## 2nd meeting minutes on 01/30/2020
+
+-
+our calibration at bottom levels make it reasonable to study vibrations and interactions
+
+others research, higher resolution means higher variances.
+
+our calibration can calibrate time series
+
+others calibration accumulative data.
+
+## Modularized modeling process diagram
+
+![urbansim-flow](img/URBANSIM-FLOW.jpg)
+
+## March Action Items Planning
+
+### Cumulative hour spending by the end of March
+
+- Jian: 30hr
+- Jeremy: 40hr
+- Yunyang: 100hr
+- Jerry: 100hr (~50 hours left)
+
+### Action items derived from planning slides
+
+#### Model generation development
+
+_Assign following items to people_
+
+| Action item                                                                                  | Outcome                                    | Assignee (tentative) | Task Schedule |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------ | -------------------- | ------------- |
+| Pick a specific bldg character vector and create: idf objects generated after each processor | several idfs                               | Jeremy, Jerry        |               |
+| Detail modeling strategy for Geometry Processor                                              | narrative document / code with explanation | Jian, Jerry          |               |
+| Detail modeling strategy for Load Processor                                                  | narrative document / code with explanation | Jeremy, Jerry        |               |
+| Detail modeling strategy for Schedule Processor                                              | narrative document / code with explanation | Yunyang, Jerry       |               |
+| Detail modeling strategy for HVAC Processor                                                  | narrative document / code with explanation | Jeremy, Yunyang      |               |
+| Code detailed modeling strategies                                                            |                                            | Yunyang, Jerry       |               |
+
+#### Actions for other matters
