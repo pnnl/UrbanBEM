@@ -111,14 +111,14 @@ others calibration accumulative data.
 
 _Assign following items to people_
 
-| Action item (**Bold for immediate tasks**)                                                          | Outcome                                    | Assignee (tentative) | Task Schedule                    | Notes                                              |
-| --------------------------------------------------------------------------------------------------- | ------------------------------------------ | -------------------- | -------------------------------- | -------------------------------------------------- |
-| **1. Pick a specific bldg character vector and create idf objects generated after each processor ** | several idfs                               | Yunyang              | Start with geometry idf by Mar 3 | we will discuss once Yunyang created the idf files |
-| **2. Detail modeling strategy for Geometry Processor **                                             | narrative document / code with explanation | Jian, Jerry          | Start once geometry idf in place | deriving geometry info from cbecs raw data         |
-| ** 3. Detail modeling strategy for Load Processor **                                                | narrative document / code with explanation | Jeremy, Jerry        | After the above task             |
-| 4. Detail modeling strategy for Schedule Processor                                                  | narrative document / code with explanation | Yunyang, Jerry       | After the HVAC processor (5)     |
-| 5. Detail modeling strategy for HVAC Processor                                                      | narrative document / code with explanation | Jeremy, Yunyang      | Start once hvac idf inplace      |
-| 6. Code detailed modeling strategies                                                                | working implementation                     | Yunyang, Jerry       | After all above                  |
+| Action item (**Bold for immediate tasks**)                                                         | Outcome                                    | Assignee (tentative) | Task Schedule                    | Notes                                              |
+| -------------------------------------------------------------------------------------------------- | ------------------------------------------ | -------------------- | -------------------------------- | -------------------------------------------------- |
+| **1. Pick a specific bldg character vector and create idf objects generated after each processor** | several idfs                               | Yunyang              | Start with geometry idf by Mar 3 | we will discuss once Yunyang created the idf files |
+| **2. Detail modeling strategy for Geometry Processor**                                             | narrative document / code with explanation | Jian, Jerry          | Start once geometry idf in place | deriving geometry info from cbecs raw data         |
+| **3. Detail modeling strategy for Load Processor**                                                 | narrative document / code with explanation | Jeremy, Jerry        | After the above task             |
+| 4. Detail modeling strategy for Schedule Processor                                                 | narrative document / code with explanation | Yunyang, Jerry       | After the HVAC processor (5)     |
+| 5. Detail modeling strategy for HVAC Processor                                                     | narrative document / code with explanation | Jeremy, Yunyang      | Start once hvac idf inplace      |
+| 6. Code detailed modeling strategies                                                               | working implementation                     | Yunyang, Jerry       | After all above                  |
 
 #### Actions for other matters
 
