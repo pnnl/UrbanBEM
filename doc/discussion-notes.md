@@ -84,7 +84,6 @@ Texts in `[]` are Jerry's comments while taking the notes.
 
 ## 2nd meeting minutes on 01/30/2020
 
--
 our calibration at bottom levels make it reasonable to study vibrations and interactions
 
 others research, higher resolution means higher variances.
@@ -99,12 +98,12 @@ others calibration accumulative data.
 
 ## March Action Items Planning
 
-### Cumulative hour spending by the end of March
+### March hour spending by the end of March
 
 - Jian: 30hr
 - Jeremy: 40hr
 - Yunyang: 100hr
-- Jerry: 100hr (~50 hours left)
+- Jerry: 100hr
 
 ### Action items derived from planning slides
 
@@ -112,13 +111,19 @@ others calibration accumulative data.
 
 _Assign following items to people_
 
-| Action item                                                                                  | Outcome                                    | Assignee (tentative) | Task Schedule |
-| -------------------------------------------------------------------------------------------- | ------------------------------------------ | -------------------- | ------------- |
-| Pick a specific bldg character vector and create: idf objects generated after each processor | several idfs                               | Jeremy, Jerry        |               |
-| Detail modeling strategy for Geometry Processor                                              | narrative document / code with explanation | Jian, Jerry          |               |
-| Detail modeling strategy for Load Processor                                                  | narrative document / code with explanation | Jeremy, Jerry        |               |
-| Detail modeling strategy for Schedule Processor                                              | narrative document / code with explanation | Yunyang, Jerry       |               |
-| Detail modeling strategy for HVAC Processor                                                  | narrative document / code with explanation | Jeremy, Yunyang      |               |
-| Code detailed modeling strategies                                                            |                                            | Yunyang, Jerry       |               |
+| Action item (**Bold for immediate tasks**)                                                          | Outcome                                    | Assignee (tentative) | Task Schedule                    | Notes                                              |
+| --------------------------------------------------------------------------------------------------- | ------------------------------------------ | -------------------- | -------------------------------- | -------------------------------------------------- |
+| **1. Pick a specific bldg character vector and create idf objects generated after each processor ** | several idfs                               | Yunyang              | Start with geometry idf by Mar 3 | we will discuss once Yunyang created the idf files |
+| **2. Detail modeling strategy for Geometry Processor **                                             | narrative document / code with explanation | Jian, Jerry          | Start once geometry idf in place | deriving geometry info from cbecs raw data         |
+| ** 3. Detail modeling strategy for Load Processor **                                                | narrative document / code with explanation | Jeremy, Jerry        | After the above task             |
+| 4. Detail modeling strategy for Schedule Processor                                                  | narrative document / code with explanation | Yunyang, Jerry       | After the HVAC processor (5)     |
+| 5. Detail modeling strategy for HVAC Processor                                                      | narrative document / code with explanation | Jeremy, Yunyang      | Start once hvac idf inplace      |
+| 6. Code detailed modeling strategies                                                                | working implementation                     | Yunyang, Jerry       | After all above                  |
 
 #### Actions for other matters
+
+- functional coding style. Jeremy is in charge.
+- Discuss the following next question
+  - post processing artifacts specification. Jeremy, Yunyang, Jerry
+  - Framework infrastructure. Jerry.
+    - Need to decide on whether using PIC or AWS once we have more details about what tasks we are dealing with wrt Post-processing data file size / number / operations.
