@@ -1,0 +1,9 @@
+{
+    "orient_list": [
+        "south",
+        "west",
+        "north",
+        "east"
+    ],
+    "geo_spacing": 1.1
+}

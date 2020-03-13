@@ -1,6 +1,7 @@
 import math
 from io import StringIO
-
+import json
+from typing import Dict
 import pandas as pd
 from geomeppy import IDF
 
@@ -39,11 +40,19 @@ def get_core_row_dict(
     row_dict = {}
     row_dict["name"] = f"{bldg_area_type}_core_zone"
     row_dict["type"] = "core"
+    row_dict["side"] = "core"
     row_dict["area"] = conditioned_floor_area - perimeter_area_sum
     row_dict["height"] = height
     row_dict["length"] = math.sqrt(row_dict["area"])
     row_dict["depth"] = row_dict["length"]
     return row_dict
+
+
+def read_json(jsonpath: str) -> Dict:
+    with open(jsonpath) as json_file:
+        json_dict = json.load(json_file)
+    return json_dict
+
 
 def copy_idf_objects(to_idf, from_idf):
     """helper to copy all objects from `from_idf` to `to_idf`
@@ -68,23 +77,74 @@ def copy_idf_objects(to_idf, from_idf):
                 to_idf.copyidfobject(each)
     return to_idf
 
+
 class Geometry:
 
-    orient_list = ["south", "west", "north", "east"]
+    # orient_list = ["south", "west", "north", "east"]
+    # geo_spacing = 1.1
     # side2azimuth = {"south": 180, "west": 270, "north": 0, "east": 90}
+    geometry_settings = read_json("geometry_settings.json")
+    orient_list = geometry_settings["orient_list"]
+    geo_spacing = geometry_settings["geo_spacing"]
 
     def __init__(self, init_thermalzone_df: pd.DataFrame):
-        self.thermalzone_spec_df = init_thermalzone_df
+        self.thermalzone_spec_df = self.set_geo_origins(init_thermalzone_df)
         self.idf = IDF("../resources/idfs/Minimal.idf")
 
-
-        origin_x = 0
-        for i, dfrow in init_thermalzone_df.iterrows():
+        for i, dfrow in self.thermalzone_spec_df.iterrows():
             if dfrow["type"] == "perimeter":
-                self.create_perimeter_zone(dfrow, origin_x)
+                self.create_perimeter_zone(dfrow)
             if dfrow["type"] == "core":
-                self.create_core_zone(dfrow, origin_x)
-            origin_x += dfrow["length"] * 1.5
+                self.create_core_zone(dfrow)
+
+    def set_geo_origins(self, df: pd.DataFrame) -> pd.DataFrame:
+        original_index = df.index
+        df.index = df["side"]
+        df["origin_x"] = None
+        df["origin_y"] = None
+
+        # aux coordinates calculation
+        x_center = (
+            0.5
+            * (
+                max(
+                    df.loc["south", "length"],
+                    df.loc["core", "length"],
+                    df.loc["north", "length"],
+                )
+                + df.loc["west", "depth"]
+                + df.loc["east", "depth"]
+            )
+        ) * self.geo_spacing
+        y_center = (
+            0.5
+            * (
+                max(
+                    df.loc["west", "length"],
+                    df.loc["core", "length"],
+                    df.loc["east", "length"],
+                )
+                + df.loc["south", "depth"]
+                + df.loc["north", "depth"]
+            )
+        ) * self.geo_spacing
+
+        df.loc["south", "origin_x"] = x_center - 0.5 * df.loc["south", "length"]
+        df.loc["south", "origin_y"] = 0
+
+        df.loc["north", "origin_x"] = x_center - 0.5 * df.loc["north", "length"]
+        df.loc["north", "origin_y"] = 2 * y_center - df.loc["north", "depth"]
+
+        df.loc["west", "origin_x"] = 0
+        df.loc["west", "origin_y"] = y_center - 0.5 * df.loc["west", "length"]
+
+        df.loc["east", "origin_x"] = 2 * x_center - df.loc["east", "depth"]
+        df.loc["east", "origin_y"] = y_center - 0.5 * df.loc["east", "length"]
+
+        df.loc["core", "origin_x"] = x_center - 0.5 * df.loc["core", "length"]
+        df.loc["core", "origin_y"] = y_center - 0.5 * df.loc["core", "length"]
+
+        return df
 
     def save_idf(self, path):
         self.idf.set_default_constructions()  # temparaty setting
@@ -209,7 +269,9 @@ class Geometry:
 
         return cls(init_thermalzone_df)
 
-    def create_perimeter_zone(self, dfrow, origin_x):
+    def create_perimeter_zone(self, dfrow):
+        origin_x = dfrow["origin_x"]
+        origin_y = dfrow["origin_y"]
         if dfrow["side"] in ["south", "north"]:
             delta_x = dfrow["length"]
             delta_y = dfrow["depth"]
@@ -218,10 +280,10 @@ class Geometry:
             delta_y = dfrow["length"]
 
         coordinates = [
-            (origin_x + delta_x, 0),
-            (origin_x + delta_x, delta_y),
-            (origin_x, delta_y),
-            (origin_x, 0),
+            (origin_x + delta_x, origin_y),
+            (origin_x + delta_x, origin_y + delta_y),
+            (origin_x, origin_y + delta_y),
+            (origin_x, origin_y),
         ]
 
         local_idf = IDF(StringIO(""))
@@ -234,14 +296,16 @@ class Geometry:
         local_idf.intersect_match()
         local_idf.set_wwr(wwr=dfrow["wwr"], orientation=dfrow["side"])
 
-        self.idf = copy_idf_objects(self.idf,local_idf)
+        self.idf = copy_idf_objects(self.idf, local_idf)
 
-    def create_core_zone(self, dfrow, origin_x):
+    def create_core_zone(self, dfrow):
+        origin_x = dfrow["origin_x"]
+        origin_y = dfrow["origin_y"]
         coordinates = [
-            (origin_x + dfrow["length"], 0),
-            (origin_x + dfrow["length"], dfrow["depth"]),
-            (origin_x, dfrow["depth"]),
-            (origin_x, 0),
+            (origin_x + dfrow["length"], origin_y),
+            (origin_x + dfrow["length"], origin_y + dfrow["depth"]),
+            (origin_x, origin_y + dfrow["depth"]),
+            (origin_x, origin_y),
         ]
 
         local_idf = IDF(StringIO(""))
@@ -255,7 +319,6 @@ class Geometry:
         self.idf = copy_idf_objects(self.idf, local_idf)
 
 
-
 def main():
 
     pd.set_option("max_columns", 10)
@@ -265,7 +328,7 @@ def main():
     )
     print(geoObj1.thermalzone_spec_df)
 
-    geoObj1.save_idf('../devoutput/genObj1.idf')
+    geoObj1.save_idf("../devoutput/genObj1.idf")
 
     spec_dict = {
         "south": {"gross_wall_area": 909, "window_area": 222.2},
@@ -278,9 +341,11 @@ def main():
     geoObj2 = Geometry.from_perimeter_areas("office", 5502.6, 15, spec_dict)
     print(geoObj2.thermalzone_spec_df)
 
-    geoObj2.save_idf('../devoutput/genObj2.idf')
+    geoObj2.save_idf("../devoutput/genObj2.idf")
 
-    print('\nOpen ../devoutput/genObjx.idf in Sketchup to check geometry objects results visually.')
+    print(
+        "\nOpen ../devoutput/genObjx.idf in Sketchup to check geometry objects results visually."
+    )
 
 
 if __name__ == "__main__":
