@@ -1,0 +1,11 @@
+{
+    "building_name": "bldg_0000001",
+    "data_source": "cbecs",
+    "building_area_type": "office",
+    "geometry_spec": {
+        "conditioned_floor_area(ft2)": 5502.6,
+        "gross_wall_area(ft2)": 3026,
+        "wwr": 0.212,
+        "height(ft)": 15
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "building_name": "bldg_0000002",
+    "data_source": "comcheck",
+    "building_area_type": "office",
+    "geometry_spec": {
+        "conditioned_floor_area(ft2)": 5502.6,
+        "height(ft)": 15,
+        "perimeter_spec_dict": {
+            "south": {
+                "gross_wall_area(ft2)": 909,
+                "window_area(ft2)": 222.2
+            },
+            "west": {
+                "gross_wall_area(ft2)": 606,
+                "window_area(ft2)": 120.1
+            },
+            "north": {
+                "gross_wall_area(ft2)": 909,
+                "window_area(ft2)": 180.1
+            },
+            "east": {
+                "gross_wall_area(ft2)": 606,
+                "window_area(ft2)": 120.1
+            }
+        }
+    }
+}
