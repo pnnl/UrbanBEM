@@ -32,7 +32,7 @@ class Loads:
             eqp.Name = "{}_eqp".format(zn_name)
             eqp.Zone_or_ZoneList_Name = zn_idf_name
             eqp.Design_Level_Calculation_Method = "Watts/Area"
-            eqp.Watts_per_Zone_Floor_Area = self.electric_equipment[zn]["epd(W/m2)"]
+            eqp.Watts_per_Zone_Floor_Area = self.electric_equipment[zn]["epd"]
             eqp.Fraction_Latent = self.electric_equipment[zn]["frac_latent"]
             eqp.Fraction_Radiant = self.electric_equipment[zn]["frac_radiant"]
             eqp.Fraction_Lost = self.electric_equipment[zn]["frac_lost"]
@@ -48,7 +48,7 @@ class Loads:
             lgt.Name = "{}_lgt".format(zn_name)
             lgt.Zone_or_ZoneList_Name = zn_idf_name
             lgt.Design_Level_Calculation_Method = "Watts/Area"
-            lgt.Watts_per_Zone_Floor_Area = self.lighting[zn]["lpd(W/m2)"]
+            lgt.Watts_per_Zone_Floor_Area = self.lighting[zn]["lpd"]
             lgt.Fraction_Radiant = self.lighting[zn]["frac_radiant"]
             lgt.Fraction_Visible = self.lighting[zn]["frac_visible"]
         return local_idf
@@ -63,7 +63,7 @@ class Loads:
             inf.Name = "{}_inf".format(zn_name)
             inf.Zone_or_ZoneList_Name = zn_idf_name
             inf.Design_Flow_Rate_Calculation_Method = "Flow/ExteriorArea"
-            inf.Flow_per_Exterior_Surface_Area = self.infiltration[zn]["inf(m3/m2)"]
+            inf.Flow_per_Exterior_Surface_Area = self.infiltration[zn]["inf"]
             # DOE-2 coefficients
             inf.Constant_Term_Coefficient = 0
             inf.Temperature_Term_Coefficient = 0
@@ -81,7 +81,7 @@ class Loads:
             ppl.Name = "{}_ppl".format(zn_name)
             ppl.Zone_or_ZoneList_Name = zn_idf_name
             ppl.Number_of_People_Calculation_Method = "People/Area"
-            ppl.People_per_Zone_Floor_Area = self.people[zn]["people(m-2)"]
+            ppl.People_per_Zone_Floor_Area = self.people[zn]["people"]
             ppl.Fraction_Radiant = self.people[zn]["frac_radiant"]
         return local_idf
 

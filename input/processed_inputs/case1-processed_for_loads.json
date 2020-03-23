@@ -67,31 +67,31 @@
     "internal_loads": {
         "electric_equipment": {
             "0": {
-                "epd(W/m2)": 0.5,
+                "epd": 0.5,
                 "frac_latent": 0.5,
                 "frac_radiant": 0.5,
                 "frac_lost": 0.5
             },
             "1": {
-                "epd(W/m2)": 1,
+                "epd": 1,
                 "frac_latent": 0.5,
                 "frac_radiant": 0.5,
                 "frac_lost": 0.5
             },
             "2": {
-                "epd(W/m2)": 2,
+                "epd": 2,
                 "frac_latent": 0.5,
                 "frac_radiant": 0.5,
                 "frac_lost": 0.5
             },
             "3": {
-                "epd(W/m2)": 3,
+                "epd": 3,
                 "frac_latent": 0.5,
                 "frac_radiant": 0.5,
                 "frac_lost": 0.5
             },
             "4": {
-                "epd(W/m2)": 4,
+                "epd": 4,
                 "frac_latent": 0.5,
                 "frac_radiant": 0.5,
                 "frac_lost": 0.5
@@ -99,67 +99,67 @@
         },
         "lighting": {
             "0": {
-                "lpd(W/m2)": 0.5,
+                "lpd": 0.5,
                 "frac_radiant": 0.5,
                 "frac_visible": 0.5
             },
             "1": {
-                "lpd(W/m2)": 1,
+                "lpd": 1,
                 "frac_radiant": 0.5,
                 "frac_visible": 0.5
             },
             "2": {
-                "lpd(W/m2)": 2,
+                "lpd": 2,
                 "frac_radiant": 0.5,
                 "frac_visible": 0.5
             },
             "3": {
-                "lpd(W/m2)": 3,
+                "lpd": 3,
                 "frac_radiant": 0.5,
                 "frac_visible": 0.5
             },
             "4": {
-                "lpd(W/m2)": 4,
+                "lpd": 4,
                 "frac_radiant": 0.5,
                 "frac_visible": 0.5
             }
         },
         "infiltration": {
             "0": {
-                "inf(m3/m2)": 0.00005
+                "inf)": 0.00005
             },
             "1": {
-                "inf(m3/m2)": 0.0001
+                "inf)": 0.0001
             },
             "2": {
-                "inf(m3/m2)": 0.0002
+                "inf)": 0.0002
             },
             "3": {
-                "inf(m3/m2)": 0.0003
+                "inf)": 0.0003
             },
             "4": {
-                "inf(m3/m2)": 0.0004
+                "inf)": 0.0004
             }
         },
         "people": {
             "0": {
-                "people(m-2)": 0.5,
+                "people": 0.5,
                 "frac_radiant": 0.5
             },
             "1": {
-                "people(m-2)": 1.0,
+                "people": 1.0,
                 "frac_radiant": 0.5
             },
             "2": {
-                "people(m-2)": 2.0,
+                "people": 2.0,
                 "frac_radiant": 0.5
             },
             "3": {
-                "people(m-2)": 3.0,
+                "people": 3.0,
                 "frac_radiant": 0.5
             },
             "4": {
-                "people(m-2)": 4.0,
+                "people": 4.0,
                 "frac_radiant": 0.5
             }
         }
