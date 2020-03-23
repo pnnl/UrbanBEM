@@ -3,7 +3,7 @@
 #%%
 import os
 
-os.chdir(r"C:\\Users\\lero023\\OneDrive - PNNL\\Documents\\Projects\\URBAN-BEM\\repository\\src")
+os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")
 from io import StringIO
 from typing import Dict
 import pandas as pd

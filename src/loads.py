@@ -15,6 +15,7 @@ class Loads:
         self.infiltration = case["internal_loads"]["infiltration"]
         self.people = case["internal_loads"]["people"]
         self.zones = []
+        # Retrieves a triple with the zone id, zone name and zone name in idf
         for i, zn in case["zone_geometry"].items():
             for zn_idf in idf.idfobjects["ZONE"]:
                 zn_idf_name = zn_idf.Name
@@ -22,6 +23,9 @@ class Loads:
                     self.zones.append((i, zn["name"], zn_idf_name))
 
     def set_electric_equipment(self):
+        """
+        Set electric equipment loads
+        """
         local_idf = IDF(StringIO(""))
         for zn, zn_name, zn_idf_name in self.zones:
             eqp = local_idf.newidfobject("ELECTRICEQUIPMENT")
@@ -35,6 +39,9 @@ class Loads:
         return local_idf
 
     def set_lighting(self):
+        """
+        Set lighting loads
+        """
         local_idf = IDF(StringIO(""))
         for zn, zn_name, zn_idf_name in self.zones:
             lgt = local_idf.newidfobject("LIGHTS")
@@ -47,6 +54,9 @@ class Loads:
         return local_idf
 
     def set_infiltration(self):
+        """
+        Set infiltration loads
+        """
         local_idf = IDF(StringIO(""))
         for zn, zn_name, zn_idf_name in self.zones:
             inf = local_idf.newidfobject("ZONEINFILTRATION:DESIGNFLOWRATE")
@@ -54,6 +64,7 @@ class Loads:
             inf.Zone_or_ZoneList_Name = zn_idf_name
             inf.Design_Flow_Rate_Calculation_Method = "Flow/ExteriorArea"
             inf.Flow_per_Exterior_Surface_Area = self.infiltration[zn]["inf(m3/m2)"]
+            # DOE-2 coefficients
             inf.Constant_Term_Coefficient = 0
             inf.Temperature_Term_Coefficient = 0
             inf.Velocity_Term_Coefficient = 0.224
@@ -61,6 +72,9 @@ class Loads:
         return local_idf
 
     def set_people(self):
+        """
+        Set occupants
+        """
         local_idf = IDF(StringIO(""))
         for zn, zn_name, zn_idf_name in self.zones:
             ppl = local_idf.newidfobject("PEOPLE")
@@ -72,6 +86,9 @@ class Loads:
         return local_idf
 
     def set_loads(self, equipment=True, lighting=True, infiltration=True, people=True):
+        """
+        Set all requested loads
+        """
         if equipment:
             self.idf = copy_idf_objects(self.idf, self.set_electric_equipment())
         if lighting:
