@@ -22,7 +22,7 @@ class Loads:
                 if zn["name"] in zn_idf_name:
                     self.zones.append((i, zn["name"], zn_idf_name))
 
-    def set_electric_equipment(self):
+    def set_electric_equipment(self) -> IDF:
         """
         Set electric equipment loads
         """
@@ -38,7 +38,7 @@ class Loads:
             eqp.Fraction_Lost = self.electric_equipment[zn]["frac_lost"]
         return local_idf
 
-    def set_lighting(self):
+    def set_lighting(self) -> IDF:
         """
         Set lighting loads
         """
@@ -53,7 +53,7 @@ class Loads:
             lgt.Fraction_Visible = self.lighting[zn]["frac_visible"]
         return local_idf
 
-    def set_infiltration(self):
+    def set_infiltration(self) -> IDF:
         """
         Set infiltration loads
         """
@@ -71,7 +71,7 @@ class Loads:
             inf.Velocity_Squared_Term_Coefficient = 0
         return local_idf
 
-    def set_people(self):
+    def set_people(self) -> IDF:
         """
         Set occupants
         """
@@ -85,7 +85,7 @@ class Loads:
             ppl.Fraction_Radiant = self.people[zn]["frac_radiant"]
         return local_idf
 
-    def set_loads(self, equipment=True, lighting=True, infiltration=True, people=True):
+    def set_loads(self, equipment=True, lighting=True, infiltration=True, people=True) -> IDF:
         """
         Set all requested loads
         """
