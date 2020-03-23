@@ -1,0 +1,167 @@
+{
+    "building_name": "bldg_0000001",
+    "data_source": "cbecs",
+    "building_area_type": "office",
+    "zone_geometry": {
+        "0": {
+            "area": 87.8514372,
+            "depth": 5.715,
+            "height": 4.572,
+            "length": 15.37208,
+            "name": "office_south_zone",
+            "side": "south",
+            "type": "perimeter",
+            "window_height": 2.1051068875475183,
+            "window_lengh": 7.077837157465323,
+            "wwr": 0.212
+        },
+        "1": {
+            "area": 87.8514372,
+            "depth": 5.715,
+            "height": 4.572,
+            "length": 15.37208,
+            "name": "office_west_zone",
+            "side": "west",
+            "type": "perimeter",
+            "window_height": 2.1051068875475183,
+            "window_lengh": 7.077837157465323,
+            "wwr": 0.212
+        },
+        "2": {
+            "area": 87.8514372,
+            "depth": 5.715,
+            "height": 4.572,
+            "length": 15.37208,
+            "name": "office_north_zone",
+            "side": "north",
+            "type": "perimeter",
+            "window_height": 2.1051068875475183,
+            "window_lengh": 7.077837157465323,
+            "wwr": 0.212
+        },
+        "3": {
+            "area": 87.8514372,
+            "depth": 5.715,
+            "height": 4.572,
+            "length": 15.37208,
+            "name": "office_east_zone",
+            "side": "east",
+            "type": "perimeter",
+            "window_height": 2.1051068875475183,
+            "window_lengh": 7.077837157465323,
+            "wwr": 0.212
+        },
+        "4": {
+            "area": 159.80251910400005,
+            "depth": 12.64130211267811,
+            "height": 4.572,
+            "length": 12.64130211267811,
+            "name": "office_core_zone",
+            "side": "core",
+            "type": "core",
+            "window_height": NaN,
+            "window_lengh": NaN,
+            "wwr": NaN
+        }
+    },
+    "internal_loads": {
+        "electric_equipment": {
+            "0": {
+                "epd(W/m2)": 0.5,
+                "frac_latent": 0.5,
+                "frac_radiant": 0.5,
+                "frac_lost": 0.5
+            },
+            "1": {
+                "epd(W/m2)": 1,
+                "frac_latent": 0.5,
+                "frac_radiant": 0.5,
+                "frac_lost": 0.5
+            },
+            "2": {
+                "epd(W/m2)": 2,
+                "frac_latent": 0.5,
+                "frac_radiant": 0.5,
+                "frac_lost": 0.5
+            },
+            "3": {
+                "epd(W/m2)": 3,
+                "frac_latent": 0.5,
+                "frac_radiant": 0.5,
+                "frac_lost": 0.5
+            },
+            "4": {
+                "epd(W/m2)": 4,
+                "frac_latent": 0.5,
+                "frac_radiant": 0.5,
+                "frac_lost": 0.5
+            }
+        },
+        "lighting": {
+            "0": {
+                "lpd(W/m2)": 0.5,
+                "frac_radiant": 0.5,
+                "frac_visible": 0.5
+            },
+            "1": {
+                "lpd(W/m2)": 1,
+                "frac_radiant": 0.5,
+                "frac_visible": 0.5
+            },
+            "2": {
+                "lpd(W/m2)": 2,
+                "frac_radiant": 0.5,
+                "frac_visible": 0.5
+            },
+            "3": {
+                "lpd(W/m2)": 3,
+                "frac_radiant": 0.5,
+                "frac_visible": 0.5
+            },
+            "4": {
+                "lpd(W/m2)": 4,
+                "frac_radiant": 0.5,
+                "frac_visible": 0.5
+            }
+        },
+        "infiltration": {
+            "0": {
+                "inf(m3/m2)": 0.00005
+            },
+            "1": {
+                "inf(m3/m2)": 0.0001
+            },
+            "2": {
+                "inf(m3/m2)": 0.0002
+            },
+            "3": {
+                "inf(m3/m2)": 0.0003
+            },
+            "4": {
+                "inf(m3/m2)": 0.0004
+            }
+        },
+        "people": {
+            "0": {
+                "people(m-2)": 0.5,
+                "frac_radiant": 0.5
+            },
+            "1": {
+                "people(m-2)": 1.0,
+                "frac_radiant": 0.5
+            },
+            "2": {
+                "people(m-2)": 2.0,
+                "frac_radiant": 0.5
+            },
+            "3": {
+                "people(m-2)": 3.0,
+                "frac_radiant": 0.5
+            },
+            "4": {
+                "people(m-2)": 4.0,
+                "frac_radiant": 0.5
+            }
+        }
+    }
+}

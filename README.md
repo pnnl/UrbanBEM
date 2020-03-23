@@ -9,7 +9,7 @@ WIP
   - Apache-Airflow (The code is tested with Airflow 1.10.7 and its defautl DB of SQLite3)
   - Linux (I had some issues setting up Airflow on Windows. Running Airflow using Docker or WSL on Windows 10 are tested and good)
 
-- Follow the [quick start guide](https://airflow.apache.org/docs/stable/start.html) to start the airflow service. Make sure to ahve environment variable `AIRFLOW_HOME` set up before running the the airflow db (`airflow scheduler`) and webserver(`airflow webserver -p 8080`). The database only needs to be initialized (`airflow initdb`) once, unless there are running errors. Before initializing the database, also make sure that `AIRFLOW_HOME` is set properly.
+- Follow the [quick start guide](https://airflow.apache.org/docs/stable/start.html) to start the airflow service. Make sure to have environment variable `AIRFLOW_HOME` set up before running the the airflow db (`airflow scheduler`) and webserver(`airflow webserver -p 8080`). The database only needs to be initialized (`airflow initdb`) once, unless there are running errors. Before initializing the database, also make sure that `AIRFLOW_HOME` is set properly.
 - If `AIRFLOW_HOME` is empty, then the airflow running folder is default to `~/airflow`.
 
 ## Updates
