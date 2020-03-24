@@ -11,7 +11,9 @@ class Schedule:
     """Convernt standard schedule info from json to IDF object and inject"""
 
     schedule_settings = read_json("schedule_settings.json")
-    daytype_map = {value: key for key, value in schedule_settings["day_of_week_mappings"].items()} # flip kv
+    daytype_map = {
+        value: key for key, value in schedule_settings["day_of_week_mappings"].items()
+    }  # flip kv
 
     def __init__(self, case: Dict, idf: IDF):
         self.idf = idf
@@ -22,18 +24,19 @@ class Schedule:
         for key, val in self.scheduels_dict.items():
             self.idf = copy_idf_objects(self.idf, self.sch_dict2idf(val))
 
-
     def sch_dict2idf(self, schedule_dict: Dict) -> IDF:
         """translate a multi-level dict of schedule to an Schedule:Compact idf object"""
         local_idf = IDF(StringIO(""))
-        sch_kwargs = {"key": "SCHEDULE:COMPACT",
-                      "Name": schedule_dict['name'],
-                      "Schedule_Type_Limits_Name": schedule_dict['type']}
+        sch_kwargs = {
+            "key": "SCHEDULE:COMPACT",
+            "Name": schedule_dict["name"],
+            "Schedule_Type_Limits_Name": schedule_dict["type"],
+        }
         field_num = 0
-        for p_key, period in schedule_dict['periods'].items():
+        for p_key, period in schedule_dict["periods"].items():
             field_num += 1
             sch_kwargs[f"Field_{int(field_num)}"] = f"Through: {period['through']}"
-            for dow, hourly_list in period['day_of_week'].items():
+            for dow, hourly_list in period["day_of_week"].items():
                 tuple_list = self.get_schedule_val_changes(hourly_list)
                 field_num += 1
                 sch_kwargs[f"Field_{int(field_num)}"] = f"For: {self.daytype_map[dow]}"
@@ -47,7 +50,6 @@ class Schedule:
         print(f"add schedule: {schedule_dict['name']}")
 
         return local_idf
-
 
 
     def get_schedule_val_changes(self, hourlyList: List[float]) -> List[tuple]:
