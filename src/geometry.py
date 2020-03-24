@@ -16,6 +16,7 @@ class Geometry:
     geo_spacing = geometry_settings["geo_spacing"]
 
     def __init__(self, case: Dict, idf: IDF):
+        self.case = case
         init_thermalzone_df = pd.DataFrame.from_dict(
             case["zone_geometry"], orient="index"
         )
@@ -27,6 +28,7 @@ class Geometry:
                 self.create_perimeter_zone(dfrow)
             if dfrow["type"] == "core":
                 self.create_core_zone(dfrow)
+        self.create_zone_list()
         self.idf.set_default_constructions()  # temparaty setting
 
     def set_geo_origins(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -128,6 +130,19 @@ class Geometry:
             num_stories=1,
         )
         local_idf.intersect_match()
+        self.idf = copy_idf_objects(self.idf, local_idf)
+
+    def create_zone_list(self):
+        local_idf = IDF(StringIO(""))
+        zonelist_kwargs = {
+            "key": "ZONELIST",
+            "Name": f"zone_list_{self.case['building_area_type'].strip()}",
+        }
+        field_num = 0
+        for zn in self.idf.idfobjects["ZONE"]:
+            field_num += 1
+            zonelist_kwargs[f"Zone_{int(field_num)}_Name"] = zn.Name
+        local_idf.newidfobject(**zonelist_kwargs)
         self.idf = copy_idf_objects(self.idf, local_idf)
 
 

@@ -3,7 +3,8 @@
 #%%
 import os
 
-os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")
+os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src") # for linux
+# os.chdir('C:\\FirstClass\\airflow\\dags\\urban-sim-flow\\src') # for windows
 from io import StringIO
 from typing import Dict
 import pandas as pd
@@ -12,6 +13,7 @@ import json
 from geometry import Geometry
 from loads import Loads
 from preprocessor import Preprocessor
+from schedule import Schedule
 import recipes
 
 IDF.setiddname("../resources/Energy+V9_0_1.idd")
@@ -57,17 +59,10 @@ idf2 = Geometry(proc_case2, idf2)
 idf1.save_idf("../devoutput/geometryadded1.idf")
 idf2.save_idf("../devoutput/geometryadded2.idf")
 
-# %% load processor
-# Read output from previous processor
-idf1 = IDF("../devoutput/geometryadded1.idf")
-with open("../input/processed_inputs/case1-processed_for_loads.json") as f:
-    proc_case1 = json.load(f)
+# %% schedule processor
+with open("../input/processed_inputs/std_schedule_dev.json") as f:
+    idf1_scheduleadded = Schedule(json.load(f), idf1.idf)
+idf1_scheduleadded.save_idf("../devoutput/scheduleadded1.idf")
 
-# Defined loads
-idf1_lds = Loads(proc_case1, idf1)
 
-# Create loads
-idf1 = idf1_lds.set_loads()
-
-# Save loads
-idf1.saveas("../devoutput/loadsadded1.idf")
+# %%
