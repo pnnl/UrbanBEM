@@ -1,0 +1,20 @@
+{
+    "day_of_week_mappings":{
+        "WinterDesignDay": "WinDD",
+        "SummerDesignDay": "SumDD",
+        "Weekdays": "WD",
+        "Saturday": "Sat",
+        "Sunday": "Sun",
+        "Holidays": "Hol",
+        "AllOtherDays": "Others"
+    },
+    "day_of_week_mappings annotation": "Values are the corresponding keywords used in the standard input json to identify day-of-week for schedules, we explicitly implement the day-of-week types listed here."
+}
+
+
+
+
+
+
+
+

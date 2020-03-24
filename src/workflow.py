@@ -3,7 +3,8 @@
 #%%
 import os
 
-os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")
+os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src") # for linux
+# os.chdir('C:\\FirstClass\\airflow\\dags\\urban-sim-flow\\src') # for windows
 from io import StringIO
 from typing import Dict
 import pandas as pd
@@ -11,6 +12,7 @@ from geomeppy import IDF
 import json
 from geometry import Geometry
 from preprocessor import Preprocessor
+from schedule import Schedule
 import recipes
 
 IDF.setiddname("../resources/Energy+V9_0_1.idd")
@@ -55,5 +57,11 @@ idf2 = Geometry(proc_case2, idf2)
 #%% geometry output
 idf1.save_idf("../devoutput/geometryadded1.idf")
 idf2.save_idf("../devoutput/geometryadded2.idf")
+
+# %% schedule processor
+with open("../input/processed_inputs/std_schedule_dev.json") as f:
+    idf1_scheduleadded = Schedule(json.load(f), idf1.idf)
+idf1_scheduleadded.save_idf("../devoutput/scheduleadded1.idf")
+
 
 # %%
