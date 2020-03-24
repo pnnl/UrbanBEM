@@ -226,6 +226,14 @@ ZONE,
     ,                         !- Zone Outside Convection Algorithm
     Yes;                      !- Part of Total Floor Area
 
+ZONELIST,
+    zone_list_office,         !- Name
+    Block office_south_zone Storey 0,    !- Zone 1 Name
+    Block office_west_zone Storey 0,    !- Zone 2 Name
+    Block office_north_zone Storey 0,    !- Zone 3 Name
+    Block office_east_zone Storey 0,    !- Zone 4 Name
+    Block office_core_zone Storey 0;    !- Zone 5 Name
+
 BUILDINGSURFACE:DETAILED,
     Block office_south_zone Storey 0 Wall 0001,    !- Name
     wall,                     !- Surface Type
