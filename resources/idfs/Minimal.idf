@@ -15,10 +15,10 @@
 
   Version,9.0;
 
-  Timestep,4;
+  Timestep,6;
 
   Building,
-    None,                    !- Name
+    test_building,                    !- Name
     0.0000000E+00,           !- North Axis {deg}
     Suburbs,                 !- Terrain
     0.04,                    !- Loads Convergence Tolerance Value
@@ -31,13 +31,6 @@
     UpperLeftCorner,         !- Starting Vertex Position
     CounterClockWise,        !- Vertex Entry Direction
     World;                   !- Coordinate System
-
-  Site:Location,
-    DENVER_STAPLETON_CO_USA_WMO_724690,  !- Name
-    39.77,                   !- Latitude {deg}
-    -104.87,                 !- Longitude {deg}
-    -7.00,                   !- Time Zone {hr}
-    1611.00;                 !- Elevation {m}
 
  ! DENVER_STAPLETON_CO_USA Annual Heating Design Conditions Wind Speed=2.3m/s Wind Dir=180
  ! Coldest Month=December
@@ -111,7 +104,7 @@
     12,                      !- End Month
     31,                      !- End Day of Month
     ,                        !- End Year
-    Tuesday,                 !- Day of Week for Start Day
+    Sunday,                 !- Day of Week for Start Day
     Yes,                     !- Use Weather File Holidays and Special Days
     Yes,                     !- Use Weather File Daylight Saving Period
     No,                      !- Apply Weekend Holiday Rule
@@ -119,11 +112,18 @@
     Yes;                     !- Use Weather File Snow Indicators
 
   SimulationControl,
-    No,                      !- Do Zone Sizing Calculation
-    No,                      !- Do System Sizing Calculation
-    No,                      !- Do Plant Sizing Calculation
-    Yes,                     !- Run Simulation for Sizing Periods
-    No;                      !- Run Simulation for Weather File Run Periods
+    Yes,                      !- Do Zone Sizing Calculation
+    Yes,                      !- Do System Sizing Calculation
+    Yes,                      !- Do Plant Sizing Calculation
+    Yes,                      !- Run Simulation for Sizing Periods
+    Yes;                      !- Run Simulation for Weather File Run Periods
+
+  ScheduleTypeLimits,
+    Any Number,              !- Name
+    ,                        !- Lower Limit Value
+    ,                        !- Upper Limit Value
+    ,                        !- Numeric Type
+    Dimensionless;           !- Unit Type
 
   Output:VariableDictionary,Regular;
 
@@ -142,7 +142,7 @@
   Output:Variable,*,Site Diffuse Solar Radiation Rate per Area,Timestep;
 
   OutputControl:Table:Style,
-    HTML;                    !- Column Separator
+    CommaAndHTML;                    !- Column Separator
 
   Output:Table:SummaryReports,
     AllSummary;              !- Report 1 Name
