@@ -3,7 +3,7 @@
 #%%
 import os
 
-os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src") # for linux
+os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")  # for linux
 # os.chdir('C:\\FirstClass\\airflow\\dags\\urban-sim-flow\\src') # for windows
 from io import StringIO
 from typing import Dict
@@ -66,21 +66,12 @@ idf1_scheduleadded.save_idf("../devoutput/scheduleadded1.idf")
 
 # %% load processor
 # Read output from previous processor
-idf1 = IDF("../devoutput/scheduleadded1.idf")
-with open("../input/processed_inputs/case1-processed_for_loads.json") as f:
-    proc_case1 = json.load(f)
-
-# Defined loads
-idf1_lds = Loads(proc_case1, idf1)
-
-# Create loads
-idf1 = idf1_lds.set_loads()
-
-# Save loads
-idf1.saveas("../devoutput/loadsadded1.idf")
+with open("../input/processed_inputs/std_hvac_dev.json") as f:
+    idf1_lds = Loads(json.load(f), idf1_scheduleadded.idf)
+idf1_lds.save_idf("../devoutput/loadsadded1.idf")
 
 
 # %% hvac processor
 with open("../input/processed_inputs/std_hvac_dev.json") as f:
-    idf1_hvacadded = HVAC(json.load(f), idf1_scheduleadded.idf)
+    idf1_hvacadded = HVAC(json.load(f), idf1_lds.idf)
 idf1_hvacadded.save_idf("../devoutput/hvacadded1.idf")

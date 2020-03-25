@@ -47,7 +47,6 @@ class Schedule:
                     sch_kwargs[f"Field_{int(field_num)}"] = dual[1]
 
         schedule = local_idf.newidfobject(**sch_kwargs)
-        print(f"add schedule: {schedule_dict['name']}")
 
         return local_idf
 

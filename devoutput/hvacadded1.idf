@@ -8,9 +8,7 @@ SimulationControl,
     Yes,                      !- Do System Sizing Calculation
     Yes,                      !- Do Plant Sizing Calculation
     Yes,                      !- Run Simulation for Sizing Periods
-    Yes,                      !- Run Simulation for Weather File Run Periods
-    Yes;                     !- Do HVAC Sizing Simulation for Sizing Periods
-
+    Yes;                      !- Run Simulation for Weather File Run Periods
 
 Building,
     test_building,            !- Name
@@ -1455,6 +1453,68 @@ FENESTRATIONSURFACE:DETAILED,
     29.482288000000004,       !- Vertex 4 Xcoordinate
     22.419497960000005,       !- Vertex 4 Ycoordinate
     2.770632;                 !- Vertex 4 Zcoordinate
+
+PEOPLE,
+    office_ppl,               !- Name
+    zone_list_office,         !- Zone or ZoneList Name
+    bldg_occ_sch,             !- Number of People Schedule Name
+    People/Area,              !- Number of People Calculation Method
+    ,                         !- Number of People
+    0.5,                      !- People per Zone Floor Area
+    ,                         !- Zone Floor Area per Person
+    0.5,                      !- Fraction Radiant
+    autocalculate,            !- Sensible Heat Fraction
+    activity_sch,             !- Activity Level Schedule Name
+    3.82e-08,                 !- Carbon Dioxide Generation Rate
+    No,                       !- Enable ASHRAE 55 Comfort Warnings
+    ZoneAveraged,             !- Mean Radiant Temperature Calculation Type
+    ,                         !- Surface NameAngle Factor List Name
+    ,                         !- Work Efficiency Schedule Name
+    ClothingInsulationSchedule;    !- Clothing Insulation Calculation Method
+
+LIGHTS,
+    office_lgt,               !- Name
+    zone_list_office,         !- Zone or ZoneList Name
+    bldg_light_sch,           !- Schedule Name
+    Watts/Area,               !- Design Level Calculation Method
+    ,                         !- Lighting Level
+    0.5,                      !- Watts per Zone Floor Area
+    ,                         !- Watts per Person
+    0,                        !- Return Air Fraction
+    0.5,                      !- Fraction Radiant
+    0.5,                      !- Fraction Visible
+    1,                        !- Fraction Replaceable
+    General,                  !- EndUse Subcategory
+    No,                       !- Return Air Fraction Calculated from Plenum Temperature
+    0,                        !- Return Air Fraction Function of Plenum Temperature Coefficient 1
+    0;                        !- Return Air Fraction Function of Plenum Temperature Coefficient 2
+
+ELECTRICEQUIPMENT,
+    office_eqp,               !- Name
+    zone_list_office,         !- Zone or ZoneList Name
+    bldg_electric_equipment_sch,    !- Schedule Name
+    Watts/Area,               !- Design Level Calculation Method
+    ,                         !- Design Level
+    0.5,                      !- Watts per Zone Floor Area
+    ,                         !- Watts per Person
+    0.5,                      !- Fraction Latent
+    0.5,                      !- Fraction Radiant
+    0.5,                      !- Fraction Lost
+    General;                  !- EndUse Subcategory
+
+ZONEINFILTRATION:DESIGNFLOWRATE,
+    office_inf,               !- Name
+    zone_list_office,         !- Zone or ZoneList Name
+    bldg_infiltration_sch,    !- Schedule Name
+    Flow/ExteriorArea,        !- Design Flow Rate Calculation Method
+    ,                         !- Design Flow Rate
+    ,                         !- Flow per Zone Floor Area
+    5e-05,                    !- Flow per Exterior Surface Area
+    ,                         !- Air Changes per Hour
+    0,                        !- Constant Term Coefficient
+    0,                        !- Temperature Term Coefficient
+    0.224,                    !- Velocity Term Coefficient
+    0;                        !- Velocity Squared Term Coefficient
 
 HVACTEMPLATE:THERMOSTAT,
     bldg_thermostat,          !- Name

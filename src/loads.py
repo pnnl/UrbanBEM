@@ -12,10 +12,27 @@ class Loads:
         self.idf = idf
         self.building_area_type = case["building_area_type"]
         b_a_t = self.building_area_type
-        self.electric_equipment = case["internal_loads"][b_a_t]["electric_equipment"]
-        self.lighting = case["internal_loads"][b_a_t]["lighting"]
-        self.infiltration = case["internal_loads"][b_a_t]["infiltration"]
-        self.people = case["internal_loads"][b_a_t]["people"]
+        self.electric_equipment = None
+        self.lighting = None
+        self.infiltration = None
+        self.people = None
+        if "electric_equipment" in case["internal_loads"][b_a_t].keys():
+            self.electric_equipment = case["internal_loads"][b_a_t][
+                "electric_equipment"
+            ]
+            eflag = True
+        if "lighting" in case["internal_loads"][b_a_t].keys():
+            self.lighting = case["internal_loads"][b_a_t]["lighting"]
+            lflag = True
+        if "infiltration" in case["internal_loads"][b_a_t].keys():
+            self.infiltration = case["internal_loads"][b_a_t]["infiltration"]
+            iflag = True
+        if "people" in case["internal_loads"][b_a_t].keys():
+            self.people = case["internal_loads"][b_a_t]["people"]
+            pflag = True
+        self.set_loads(
+            equipment=eflag, lighting=lflag, infiltration=iflag, people=pflag
+        )
 
     def set_electric_equipment(self) -> IDF:
         """
@@ -105,3 +122,6 @@ class Loads:
             self.idf = copy_idf_objects(self.idf, self.set_people())
 
         return self.idf
+
+    def save_idf(self, path):
+        self.idf.saveas(path, lineendings="unix")
