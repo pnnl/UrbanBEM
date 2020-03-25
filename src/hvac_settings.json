@@ -1,0 +1,33 @@
+{
+    "hvac_schedule_names": {
+        "heating_setpoint_schedule_name": "bldg_htg_setp_sch",
+        "cooling_setpoint_schedule_name": "bldg_clg_setp_sch",
+        "system_availability_schedule_name": "always_on",
+        "hvac_operation_schedule_name": "bldg_hvac_operation_sch"
+    },
+    "hvac_schedule_names_annotation": "these schedule names are currently coupled in the schedule generator. i.e. schedule names need to be correctly set in the standard json input",
+    "thermostat_defaults": {
+        "name": "bldg_thermostat"
+    },
+    "thermostat_defaults_annotation": "parameter settings used in HVACTEMPLATE:THERMOSTAT",
+    "outdoorair_defaults": {
+        "outdoor_air_name_prefix": "design_oa_",
+        "outdoor_air_method": "Sum",
+        "outdoor_air_flow_per_person": 0.00236,
+        "outdoor_air_flow_per_zone_floor_area": 0.0003
+    },
+    "outdoorair_defaults_annotation": "parameter settings used in DESIGNSPECIFICATION:OUTDOORAIR",
+    "template_unitary_defaults": {
+        "system_name_prefix": "hvac_sys_ahu_",
+        "zone_heating_sizing_factor": 1.2,
+        "zone_cooling_sizing_factor": 1.2,
+        "zone_heating_design_supply_air_temperature": 40,
+        "heating_design_supply_air_temperature": 40,
+        "heat_pump_heating_min_outdoor_temp": -12.2,
+        "heat_pump_heating_max_outdoor_temp": 1.67,
+        "heat_pump_defrost_control": "OnDemand",
+        "economizer_lockout": "LockoutWithHeating",
+        "sizing_option": "Coincident"
+    },
+    "template_unitary_defaults_annotation": "parameter settings used in HVACTEMPLATE:ZONE:UNITARY and HVACTEMPLATE:SYSTEM:UNITARYSYSTEM for each zone"
+}

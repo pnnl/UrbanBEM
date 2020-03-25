@@ -1454,6 +1454,505 @@ FENESTRATIONSURFACE:DETAILED,
     22.419497960000005,       !- Vertex 4 Ycoordinate
     2.770632;                 !- Vertex 4 Zcoordinate
 
+HVACTEMPLATE:THERMOSTAT,
+    bldg_thermostat,          !- Name
+    bldg_htg_setp_sch,        !- Heating Setpoint Schedule Name
+    ,                         !- Constant Heating Setpoint
+    bldg_clg_setp_sch;        !- Cooling Setpoint Schedule Name
+
+HVACTEMPLATE:ZONE:UNITARY,
+    office_south_zone,        !- Zone Name
+    hvac_sys_ahu_office_001,    !- Template Unitary System Name
+    bldg_thermostat,          !- Template Thermostat Name
+    autosize,                 !- Supply Air Maximum Flow Rate
+    1.2,                      !- Zone Heating Sizing Factor
+    1.2,                      !- Zone Cooling Sizing Factor
+    DetailedSpecification,    !- Outdoor Air Method
+    0.00944,                  !- Outdoor Air Flow Rate per Person
+    0,                        !- Outdoor Air Flow Rate per Zone Floor Area
+    0,                        !- Outdoor Air Flow Rate per Zone
+    ,                         !- Supply Plenum Name
+    ,                         !- Return Plenum Name
+    None,                     !- Baseboard Heating Type
+    ,                         !- Baseboard Heating Availability Schedule Name
+    autosize,                 !- Baseboard Heating Capacity
+    SystemSupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
+    12.8,                     !- Zone Cooling Design Supply Air Temperature
+    11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
+    SystemSupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
+    40,                       !- Zone Heating Design Supply Air Temperature
+    30,                       !- Zone Heating Design Supply Air Temperature Difference
+    design_oa_office;         !- Design Specification Outdoor Air Object Name
+
+HVACTEMPLATE:ZONE:UNITARY,
+    office_west_zone,         !- Zone Name
+    hvac_sys_ahu_office_002,    !- Template Unitary System Name
+    bldg_thermostat,          !- Template Thermostat Name
+    autosize,                 !- Supply Air Maximum Flow Rate
+    1.2,                      !- Zone Heating Sizing Factor
+    1.2,                      !- Zone Cooling Sizing Factor
+    DetailedSpecification,    !- Outdoor Air Method
+    0.00944,                  !- Outdoor Air Flow Rate per Person
+    0,                        !- Outdoor Air Flow Rate per Zone Floor Area
+    0,                        !- Outdoor Air Flow Rate per Zone
+    ,                         !- Supply Plenum Name
+    ,                         !- Return Plenum Name
+    None,                     !- Baseboard Heating Type
+    ,                         !- Baseboard Heating Availability Schedule Name
+    autosize,                 !- Baseboard Heating Capacity
+    SystemSupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
+    12.8,                     !- Zone Cooling Design Supply Air Temperature
+    11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
+    SystemSupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
+    40,                       !- Zone Heating Design Supply Air Temperature
+    30,                       !- Zone Heating Design Supply Air Temperature Difference
+    design_oa_office;         !- Design Specification Outdoor Air Object Name
+
+HVACTEMPLATE:ZONE:UNITARY,
+    office_north_zone,        !- Zone Name
+    hvac_sys_ahu_office_003,    !- Template Unitary System Name
+    bldg_thermostat,          !- Template Thermostat Name
+    autosize,                 !- Supply Air Maximum Flow Rate
+    1.2,                      !- Zone Heating Sizing Factor
+    1.2,                      !- Zone Cooling Sizing Factor
+    DetailedSpecification,    !- Outdoor Air Method
+    0.00944,                  !- Outdoor Air Flow Rate per Person
+    0,                        !- Outdoor Air Flow Rate per Zone Floor Area
+    0,                        !- Outdoor Air Flow Rate per Zone
+    ,                         !- Supply Plenum Name
+    ,                         !- Return Plenum Name
+    None,                     !- Baseboard Heating Type
+    ,                         !- Baseboard Heating Availability Schedule Name
+    autosize,                 !- Baseboard Heating Capacity
+    SystemSupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
+    12.8,                     !- Zone Cooling Design Supply Air Temperature
+    11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
+    SystemSupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
+    40,                       !- Zone Heating Design Supply Air Temperature
+    30,                       !- Zone Heating Design Supply Air Temperature Difference
+    design_oa_office;         !- Design Specification Outdoor Air Object Name
+
+HVACTEMPLATE:ZONE:UNITARY,
+    office_east_zone,         !- Zone Name
+    hvac_sys_ahu_office_004,    !- Template Unitary System Name
+    bldg_thermostat,          !- Template Thermostat Name
+    autosize,                 !- Supply Air Maximum Flow Rate
+    1.2,                      !- Zone Heating Sizing Factor
+    1.2,                      !- Zone Cooling Sizing Factor
+    DetailedSpecification,    !- Outdoor Air Method
+    0.00944,                  !- Outdoor Air Flow Rate per Person
+    0,                        !- Outdoor Air Flow Rate per Zone Floor Area
+    0,                        !- Outdoor Air Flow Rate per Zone
+    ,                         !- Supply Plenum Name
+    ,                         !- Return Plenum Name
+    None,                     !- Baseboard Heating Type
+    ,                         !- Baseboard Heating Availability Schedule Name
+    autosize,                 !- Baseboard Heating Capacity
+    SystemSupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
+    12.8,                     !- Zone Cooling Design Supply Air Temperature
+    11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
+    SystemSupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
+    40,                       !- Zone Heating Design Supply Air Temperature
+    30,                       !- Zone Heating Design Supply Air Temperature Difference
+    design_oa_office;         !- Design Specification Outdoor Air Object Name
+
+HVACTEMPLATE:ZONE:UNITARY,
+    office_core_zone,         !- Zone Name
+    hvac_sys_ahu_office_005,    !- Template Unitary System Name
+    bldg_thermostat,          !- Template Thermostat Name
+    autosize,                 !- Supply Air Maximum Flow Rate
+    1.2,                      !- Zone Heating Sizing Factor
+    1.2,                      !- Zone Cooling Sizing Factor
+    DetailedSpecification,    !- Outdoor Air Method
+    0.00944,                  !- Outdoor Air Flow Rate per Person
+    0,                        !- Outdoor Air Flow Rate per Zone Floor Area
+    0,                        !- Outdoor Air Flow Rate per Zone
+    ,                         !- Supply Plenum Name
+    ,                         !- Return Plenum Name
+    None,                     !- Baseboard Heating Type
+    ,                         !- Baseboard Heating Availability Schedule Name
+    autosize,                 !- Baseboard Heating Capacity
+    SystemSupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
+    12.8,                     !- Zone Cooling Design Supply Air Temperature
+    11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
+    SystemSupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
+    40,                       !- Zone Heating Design Supply Air Temperature
+    30,                       !- Zone Heating Design Supply Air Temperature Difference
+    design_oa_office;         !- Design Specification Outdoor Air Object Name
+
+HVACTEMPLATE:SYSTEM:UNITARYSYSTEM,
+    hvac_sys_ahu_office_001,    !- Name
+    always_on,                !- System Availability Schedule Name
+    Load,                     !- Control Type
+    office_south_zone,        !- Control Zone or Thermostat Location Name
+    autosize,                 !- Cooling Supply Air Flow Rate
+    autosize,                 !- Heating Supply Air Flow Rate
+    autosize,                 !- No Load Supply Air Flow Rate
+    bldg_hvac_operation_sch,    !- Supply Fan Operating Mode Schedule Name
+    BlowThrough,              !- Supply Fan Placement
+    0.7,                      !- Supply Fan Total Efficiency
+    600,                      !- Supply Fan Delta Pressure
+    0.9,                      !- Supply Fan Motor Efficiency
+    1,                        !- Supply Fan Motor in Air Stream Fraction
+    SingleSpeedDX,            !- Cooling Coil Type
+    1,                        !- Number of Speeds for Cooling
+    always_on,                !- Cooling Coil Availability Schedule Name
+    12.8,                     !- Cooling Design Supply Air Temperature
+    autosize,                 !- DX Cooling Coil Gross Rated Total Capacity
+    autosize,                 !- DX Cooling Coil Gross Rated Sensible Heat Ratio
+    3,                        !- DX Cooling Coil Gross Rated COP
+    Gas,                      !- Heating Coil Type
+    1,                        !- Number of Speeds or Stages for Heating
+    always_on,                !- Heating Coil Availability Schedule Name
+    40,                       !- Heating Design Supply Air Temperature
+    autosize,                 !- Heating Coil Gross Rated Capacity
+    0.8,                      !- Gas Heating Coil Efficiency
+    0,                        !- Gas Heating Coil Parasitic Electric Load
+    2.75,                     !- Heat Pump Heating Coil Gross Rated COP
+    -12.2,                    !- Heat Pump Heating Minimum Outdoor DryBulb Temperature
+    1.67,                     !- Heat Pump Defrost Maximum Outdoor DryBulb Temperature
+    ReverseCycle,             !- Heat Pump Defrost Strategy
+    OnDemand,                 !- Heat Pump Defrost Control
+    0.058333,                 !- Heat Pump Defrost Time Period Fraction
+    None,                     !- Supplemental Heating or Reheat Coil Type
+    ,                         !- Supplemental Heating or Reheat Coil Availability Schedule Name
+    autosize,                 !- Supplemental Heating or Reheat Coil Capacity
+    21,                       !- Supplemental Heating or Reheat Coil Maximum Outdoor DryBulb Temperature
+    0.8,                      !- Supplemental Gas Heating or Reheat Coil Efficiency
+    0,                        !- Supplemental Gas Heating or Reheat Coil Parasitic Electric Load
+    autosize,                 !- Maximum Outdoor Air Flow Rate
+    autosize,                 !- Minimum Outdoor Air Flow Rate
+    ,                         !- Minimum Outdoor Air Schedule Name
+    NoEconomizer,             !- Economizer Type
+    LockoutWithHeating,       !- Economizer Lockout
+    ,                         !- Economizer Maximum Limit DryBulb Temperature
+    ,                         !- Economizer Maximum Limit Enthalpy
+    ,                         !- Economizer Maximum Limit Dewpoint Temperature
+    ,                         !- Economizer Minimum Limit DryBulb Temperature
+    ,                         !- Supply Plenum Name
+    ,                         !- Return Plenum Name
+    None,                     !- Heat Recovery Type
+    0.7,                      !- Sensible Heat Recovery Effectiveness
+    0.65,                     !- Latent Heat Recovery Effectiveness
+    Plate,                    !- Heat Recovery Heat Exchanger Type
+    None,                     !- Heat Recovery Frost Control Type
+    None,                     !- Dehumidification Control Type
+    60,                       !- Dehumidification Relative Humidity Setpoint
+    ,                         !- Dehumidification Relative Humidity Setpoint Schedule Name
+    None,                     !- Humidifier Type
+    ,                         !- Humidifier Availability Schedule Name
+    1e-06,                    !- Humidifier Rated Capacity
+    autosize,                 !- Humidifier Rated Electric Power
+    ,                         !- Humidifier Control Zone Name
+    30,                       !- Humidifier Relative Humidity Setpoint
+    ,                         !- Humidifier Relative Humidity Setpoint Schedule Name
+    Coincident,               !- Sizing Option
+    No,                       !- Return Fan
+    0.7,                      !- Return Fan Total Efficiency
+    300,                      !- Return Fan Delta Pressure
+    0.9,                      !- Return Fan Motor Efficiency
+    1;                        !- Return Fan Motor in Air Stream Fraction
+
+HVACTEMPLATE:SYSTEM:UNITARYSYSTEM,
+    hvac_sys_ahu_office_002,    !- Name
+    always_on,                !- System Availability Schedule Name
+    Load,                     !- Control Type
+    office_west_zone,         !- Control Zone or Thermostat Location Name
+    autosize,                 !- Cooling Supply Air Flow Rate
+    autosize,                 !- Heating Supply Air Flow Rate
+    autosize,                 !- No Load Supply Air Flow Rate
+    bldg_hvac_operation_sch,    !- Supply Fan Operating Mode Schedule Name
+    BlowThrough,              !- Supply Fan Placement
+    0.7,                      !- Supply Fan Total Efficiency
+    600,                      !- Supply Fan Delta Pressure
+    0.9,                      !- Supply Fan Motor Efficiency
+    1,                        !- Supply Fan Motor in Air Stream Fraction
+    SingleSpeedDX,            !- Cooling Coil Type
+    1,                        !- Number of Speeds for Cooling
+    always_on,                !- Cooling Coil Availability Schedule Name
+    12.8,                     !- Cooling Design Supply Air Temperature
+    autosize,                 !- DX Cooling Coil Gross Rated Total Capacity
+    autosize,                 !- DX Cooling Coil Gross Rated Sensible Heat Ratio
+    3,                        !- DX Cooling Coil Gross Rated COP
+    Gas,                      !- Heating Coil Type
+    1,                        !- Number of Speeds or Stages for Heating
+    always_on,                !- Heating Coil Availability Schedule Name
+    40,                       !- Heating Design Supply Air Temperature
+    autosize,                 !- Heating Coil Gross Rated Capacity
+    0.8,                      !- Gas Heating Coil Efficiency
+    0,                        !- Gas Heating Coil Parasitic Electric Load
+    2.75,                     !- Heat Pump Heating Coil Gross Rated COP
+    -12.2,                    !- Heat Pump Heating Minimum Outdoor DryBulb Temperature
+    1.67,                     !- Heat Pump Defrost Maximum Outdoor DryBulb Temperature
+    ReverseCycle,             !- Heat Pump Defrost Strategy
+    OnDemand,                 !- Heat Pump Defrost Control
+    0.058333,                 !- Heat Pump Defrost Time Period Fraction
+    None,                     !- Supplemental Heating or Reheat Coil Type
+    ,                         !- Supplemental Heating or Reheat Coil Availability Schedule Name
+    autosize,                 !- Supplemental Heating or Reheat Coil Capacity
+    21,                       !- Supplemental Heating or Reheat Coil Maximum Outdoor DryBulb Temperature
+    0.8,                      !- Supplemental Gas Heating or Reheat Coil Efficiency
+    0,                        !- Supplemental Gas Heating or Reheat Coil Parasitic Electric Load
+    autosize,                 !- Maximum Outdoor Air Flow Rate
+    autosize,                 !- Minimum Outdoor Air Flow Rate
+    ,                         !- Minimum Outdoor Air Schedule Name
+    NoEconomizer,             !- Economizer Type
+    LockoutWithHeating,       !- Economizer Lockout
+    ,                         !- Economizer Maximum Limit DryBulb Temperature
+    ,                         !- Economizer Maximum Limit Enthalpy
+    ,                         !- Economizer Maximum Limit Dewpoint Temperature
+    ,                         !- Economizer Minimum Limit DryBulb Temperature
+    ,                         !- Supply Plenum Name
+    ,                         !- Return Plenum Name
+    None,                     !- Heat Recovery Type
+    0.7,                      !- Sensible Heat Recovery Effectiveness
+    0.65,                     !- Latent Heat Recovery Effectiveness
+    Plate,                    !- Heat Recovery Heat Exchanger Type
+    None,                     !- Heat Recovery Frost Control Type
+    None,                     !- Dehumidification Control Type
+    60,                       !- Dehumidification Relative Humidity Setpoint
+    ,                         !- Dehumidification Relative Humidity Setpoint Schedule Name
+    None,                     !- Humidifier Type
+    ,                         !- Humidifier Availability Schedule Name
+    1e-06,                    !- Humidifier Rated Capacity
+    autosize,                 !- Humidifier Rated Electric Power
+    ,                         !- Humidifier Control Zone Name
+    30,                       !- Humidifier Relative Humidity Setpoint
+    ,                         !- Humidifier Relative Humidity Setpoint Schedule Name
+    Coincident,               !- Sizing Option
+    No,                       !- Return Fan
+    0.7,                      !- Return Fan Total Efficiency
+    300,                      !- Return Fan Delta Pressure
+    0.9,                      !- Return Fan Motor Efficiency
+    1;                        !- Return Fan Motor in Air Stream Fraction
+
+HVACTEMPLATE:SYSTEM:UNITARYSYSTEM,
+    hvac_sys_ahu_office_003,    !- Name
+    always_on,                !- System Availability Schedule Name
+    Load,                     !- Control Type
+    office_north_zone,        !- Control Zone or Thermostat Location Name
+    autosize,                 !- Cooling Supply Air Flow Rate
+    autosize,                 !- Heating Supply Air Flow Rate
+    autosize,                 !- No Load Supply Air Flow Rate
+    bldg_hvac_operation_sch,    !- Supply Fan Operating Mode Schedule Name
+    BlowThrough,              !- Supply Fan Placement
+    0.7,                      !- Supply Fan Total Efficiency
+    600,                      !- Supply Fan Delta Pressure
+    0.9,                      !- Supply Fan Motor Efficiency
+    1,                        !- Supply Fan Motor in Air Stream Fraction
+    SingleSpeedDX,            !- Cooling Coil Type
+    1,                        !- Number of Speeds for Cooling
+    always_on,                !- Cooling Coil Availability Schedule Name
+    12.8,                     !- Cooling Design Supply Air Temperature
+    autosize,                 !- DX Cooling Coil Gross Rated Total Capacity
+    autosize,                 !- DX Cooling Coil Gross Rated Sensible Heat Ratio
+    3,                        !- DX Cooling Coil Gross Rated COP
+    Gas,                      !- Heating Coil Type
+    1,                        !- Number of Speeds or Stages for Heating
+    always_on,                !- Heating Coil Availability Schedule Name
+    40,                       !- Heating Design Supply Air Temperature
+    autosize,                 !- Heating Coil Gross Rated Capacity
+    0.8,                      !- Gas Heating Coil Efficiency
+    0,                        !- Gas Heating Coil Parasitic Electric Load
+    2.75,                     !- Heat Pump Heating Coil Gross Rated COP
+    -12.2,                    !- Heat Pump Heating Minimum Outdoor DryBulb Temperature
+    1.67,                     !- Heat Pump Defrost Maximum Outdoor DryBulb Temperature
+    ReverseCycle,             !- Heat Pump Defrost Strategy
+    OnDemand,                 !- Heat Pump Defrost Control
+    0.058333,                 !- Heat Pump Defrost Time Period Fraction
+    None,                     !- Supplemental Heating or Reheat Coil Type
+    ,                         !- Supplemental Heating or Reheat Coil Availability Schedule Name
+    autosize,                 !- Supplemental Heating or Reheat Coil Capacity
+    21,                       !- Supplemental Heating or Reheat Coil Maximum Outdoor DryBulb Temperature
+    0.8,                      !- Supplemental Gas Heating or Reheat Coil Efficiency
+    0,                        !- Supplemental Gas Heating or Reheat Coil Parasitic Electric Load
+    autosize,                 !- Maximum Outdoor Air Flow Rate
+    autosize,                 !- Minimum Outdoor Air Flow Rate
+    ,                         !- Minimum Outdoor Air Schedule Name
+    NoEconomizer,             !- Economizer Type
+    LockoutWithHeating,       !- Economizer Lockout
+    ,                         !- Economizer Maximum Limit DryBulb Temperature
+    ,                         !- Economizer Maximum Limit Enthalpy
+    ,                         !- Economizer Maximum Limit Dewpoint Temperature
+    ,                         !- Economizer Minimum Limit DryBulb Temperature
+    ,                         !- Supply Plenum Name
+    ,                         !- Return Plenum Name
+    None,                     !- Heat Recovery Type
+    0.7,                      !- Sensible Heat Recovery Effectiveness
+    0.65,                     !- Latent Heat Recovery Effectiveness
+    Plate,                    !- Heat Recovery Heat Exchanger Type
+    None,                     !- Heat Recovery Frost Control Type
+    None,                     !- Dehumidification Control Type
+    60,                       !- Dehumidification Relative Humidity Setpoint
+    ,                         !- Dehumidification Relative Humidity Setpoint Schedule Name
+    None,                     !- Humidifier Type
+    ,                         !- Humidifier Availability Schedule Name
+    1e-06,                    !- Humidifier Rated Capacity
+    autosize,                 !- Humidifier Rated Electric Power
+    ,                         !- Humidifier Control Zone Name
+    30,                       !- Humidifier Relative Humidity Setpoint
+    ,                         !- Humidifier Relative Humidity Setpoint Schedule Name
+    Coincident,               !- Sizing Option
+    No,                       !- Return Fan
+    0.7,                      !- Return Fan Total Efficiency
+    300,                      !- Return Fan Delta Pressure
+    0.9,                      !- Return Fan Motor Efficiency
+    1;                        !- Return Fan Motor in Air Stream Fraction
+
+HVACTEMPLATE:SYSTEM:UNITARYSYSTEM,
+    hvac_sys_ahu_office_004,    !- Name
+    always_on,                !- System Availability Schedule Name
+    Load,                     !- Control Type
+    office_east_zone,         !- Control Zone or Thermostat Location Name
+    autosize,                 !- Cooling Supply Air Flow Rate
+    autosize,                 !- Heating Supply Air Flow Rate
+    autosize,                 !- No Load Supply Air Flow Rate
+    bldg_hvac_operation_sch,    !- Supply Fan Operating Mode Schedule Name
+    BlowThrough,              !- Supply Fan Placement
+    0.7,                      !- Supply Fan Total Efficiency
+    600,                      !- Supply Fan Delta Pressure
+    0.9,                      !- Supply Fan Motor Efficiency
+    1,                        !- Supply Fan Motor in Air Stream Fraction
+    SingleSpeedDX,            !- Cooling Coil Type
+    1,                        !- Number of Speeds for Cooling
+    always_on,                !- Cooling Coil Availability Schedule Name
+    12.8,                     !- Cooling Design Supply Air Temperature
+    autosize,                 !- DX Cooling Coil Gross Rated Total Capacity
+    autosize,                 !- DX Cooling Coil Gross Rated Sensible Heat Ratio
+    3,                        !- DX Cooling Coil Gross Rated COP
+    Gas,                      !- Heating Coil Type
+    1,                        !- Number of Speeds or Stages for Heating
+    always_on,                !- Heating Coil Availability Schedule Name
+    40,                       !- Heating Design Supply Air Temperature
+    autosize,                 !- Heating Coil Gross Rated Capacity
+    0.8,                      !- Gas Heating Coil Efficiency
+    0,                        !- Gas Heating Coil Parasitic Electric Load
+    2.75,                     !- Heat Pump Heating Coil Gross Rated COP
+    -12.2,                    !- Heat Pump Heating Minimum Outdoor DryBulb Temperature
+    1.67,                     !- Heat Pump Defrost Maximum Outdoor DryBulb Temperature
+    ReverseCycle,             !- Heat Pump Defrost Strategy
+    OnDemand,                 !- Heat Pump Defrost Control
+    0.058333,                 !- Heat Pump Defrost Time Period Fraction
+    None,                     !- Supplemental Heating or Reheat Coil Type
+    ,                         !- Supplemental Heating or Reheat Coil Availability Schedule Name
+    autosize,                 !- Supplemental Heating or Reheat Coil Capacity
+    21,                       !- Supplemental Heating or Reheat Coil Maximum Outdoor DryBulb Temperature
+    0.8,                      !- Supplemental Gas Heating or Reheat Coil Efficiency
+    0,                        !- Supplemental Gas Heating or Reheat Coil Parasitic Electric Load
+    autosize,                 !- Maximum Outdoor Air Flow Rate
+    autosize,                 !- Minimum Outdoor Air Flow Rate
+    ,                         !- Minimum Outdoor Air Schedule Name
+    NoEconomizer,             !- Economizer Type
+    LockoutWithHeating,       !- Economizer Lockout
+    ,                         !- Economizer Maximum Limit DryBulb Temperature
+    ,                         !- Economizer Maximum Limit Enthalpy
+    ,                         !- Economizer Maximum Limit Dewpoint Temperature
+    ,                         !- Economizer Minimum Limit DryBulb Temperature
+    ,                         !- Supply Plenum Name
+    ,                         !- Return Plenum Name
+    None,                     !- Heat Recovery Type
+    0.7,                      !- Sensible Heat Recovery Effectiveness
+    0.65,                     !- Latent Heat Recovery Effectiveness
+    Plate,                    !- Heat Recovery Heat Exchanger Type
+    None,                     !- Heat Recovery Frost Control Type
+    None,                     !- Dehumidification Control Type
+    60,                       !- Dehumidification Relative Humidity Setpoint
+    ,                         !- Dehumidification Relative Humidity Setpoint Schedule Name
+    None,                     !- Humidifier Type
+    ,                         !- Humidifier Availability Schedule Name
+    1e-06,                    !- Humidifier Rated Capacity
+    autosize,                 !- Humidifier Rated Electric Power
+    ,                         !- Humidifier Control Zone Name
+    30,                       !- Humidifier Relative Humidity Setpoint
+    ,                         !- Humidifier Relative Humidity Setpoint Schedule Name
+    Coincident,               !- Sizing Option
+    No,                       !- Return Fan
+    0.7,                      !- Return Fan Total Efficiency
+    300,                      !- Return Fan Delta Pressure
+    0.9,                      !- Return Fan Motor Efficiency
+    1;                        !- Return Fan Motor in Air Stream Fraction
+
+HVACTEMPLATE:SYSTEM:UNITARYSYSTEM,
+    hvac_sys_ahu_office_005,    !- Name
+    always_on,                !- System Availability Schedule Name
+    Load,                     !- Control Type
+    office_core_zone,         !- Control Zone or Thermostat Location Name
+    autosize,                 !- Cooling Supply Air Flow Rate
+    autosize,                 !- Heating Supply Air Flow Rate
+    autosize,                 !- No Load Supply Air Flow Rate
+    bldg_hvac_operation_sch,    !- Supply Fan Operating Mode Schedule Name
+    BlowThrough,              !- Supply Fan Placement
+    0.7,                      !- Supply Fan Total Efficiency
+    600,                      !- Supply Fan Delta Pressure
+    0.9,                      !- Supply Fan Motor Efficiency
+    1,                        !- Supply Fan Motor in Air Stream Fraction
+    SingleSpeedDX,            !- Cooling Coil Type
+    1,                        !- Number of Speeds for Cooling
+    always_on,                !- Cooling Coil Availability Schedule Name
+    12.8,                     !- Cooling Design Supply Air Temperature
+    autosize,                 !- DX Cooling Coil Gross Rated Total Capacity
+    autosize,                 !- DX Cooling Coil Gross Rated Sensible Heat Ratio
+    3,                        !- DX Cooling Coil Gross Rated COP
+    Gas,                      !- Heating Coil Type
+    1,                        !- Number of Speeds or Stages for Heating
+    always_on,                !- Heating Coil Availability Schedule Name
+    40,                       !- Heating Design Supply Air Temperature
+    autosize,                 !- Heating Coil Gross Rated Capacity
+    0.8,                      !- Gas Heating Coil Efficiency
+    0,                        !- Gas Heating Coil Parasitic Electric Load
+    2.75,                     !- Heat Pump Heating Coil Gross Rated COP
+    -12.2,                    !- Heat Pump Heating Minimum Outdoor DryBulb Temperature
+    1.67,                     !- Heat Pump Defrost Maximum Outdoor DryBulb Temperature
+    ReverseCycle,             !- Heat Pump Defrost Strategy
+    OnDemand,                 !- Heat Pump Defrost Control
+    0.058333,                 !- Heat Pump Defrost Time Period Fraction
+    None,                     !- Supplemental Heating or Reheat Coil Type
+    ,                         !- Supplemental Heating or Reheat Coil Availability Schedule Name
+    autosize,                 !- Supplemental Heating or Reheat Coil Capacity
+    21,                       !- Supplemental Heating or Reheat Coil Maximum Outdoor DryBulb Temperature
+    0.8,                      !- Supplemental Gas Heating or Reheat Coil Efficiency
+    0,                        !- Supplemental Gas Heating or Reheat Coil Parasitic Electric Load
+    autosize,                 !- Maximum Outdoor Air Flow Rate
+    autosize,                 !- Minimum Outdoor Air Flow Rate
+    ,                         !- Minimum Outdoor Air Schedule Name
+    NoEconomizer,             !- Economizer Type
+    LockoutWithHeating,       !- Economizer Lockout
+    ,                         !- Economizer Maximum Limit DryBulb Temperature
+    ,                         !- Economizer Maximum Limit Enthalpy
+    ,                         !- Economizer Maximum Limit Dewpoint Temperature
+    ,                         !- Economizer Minimum Limit DryBulb Temperature
+    ,                         !- Supply Plenum Name
+    ,                         !- Return Plenum Name
+    None,                     !- Heat Recovery Type
+    0.7,                      !- Sensible Heat Recovery Effectiveness
+    0.65,                     !- Latent Heat Recovery Effectiveness
+    Plate,                    !- Heat Recovery Heat Exchanger Type
+    None,                     !- Heat Recovery Frost Control Type
+    None,                     !- Dehumidification Control Type
+    60,                       !- Dehumidification Relative Humidity Setpoint
+    ,                         !- Dehumidification Relative Humidity Setpoint Schedule Name
+    None,                     !- Humidifier Type
+    ,                         !- Humidifier Availability Schedule Name
+    1e-06,                    !- Humidifier Rated Capacity
+    autosize,                 !- Humidifier Rated Electric Power
+    ,                         !- Humidifier Control Zone Name
+    30,                       !- Humidifier Relative Humidity Setpoint
+    ,                         !- Humidifier Relative Humidity Setpoint Schedule Name
+    Coincident,               !- Sizing Option
+    No,                       !- Return Fan
+    0.7,                      !- Return Fan Total Efficiency
+    300,                      !- Return Fan Delta Pressure
+    0.9,                      !- Return Fan Motor Efficiency
+    1;                        !- Return Fan Motor in Air Stream Fraction
+
+DESIGNSPECIFICATION:OUTDOORAIR,
+    design_oa_office,         !- Name
+    Sum,                      !- Outdoor Air Method
+    0.00236,                  !- Outdoor Air Flow per Person
+    0.0003,                   !- Outdoor Air Flow per Zone Floor Area
+    0,                        !- Outdoor Air Flow per Zone
+    0;                        !- Outdoor Air Flow Air Changes per Hour
+
 Output:VariableDictionary,
     Regular;                  !- Key Field
 

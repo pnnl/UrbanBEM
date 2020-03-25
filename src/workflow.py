@@ -13,6 +13,7 @@ import json
 from geometry import Geometry
 from preprocessor import Preprocessor
 from schedule import Schedule
+from hvac import HVAC
 import recipes
 
 IDF.setiddname("../resources/Energy+V9_0_1.idd")
@@ -59,9 +60,12 @@ idf1.save_idf("../devoutput/geometryadded1.idf")
 idf2.save_idf("../devoutput/geometryadded2.idf")
 
 # %% schedule processor
-with open("../input/processed_inputs/std_schedule_dev.json") as f:
+with open("../input/processed_inputs/std_hvac_dev.json") as f:
     idf1_scheduleadded = Schedule(json.load(f), idf1.idf)
 idf1_scheduleadded.save_idf("../devoutput/scheduleadded1.idf")
 
 
-# %%
+# %% hvac processor
+with open("../input/processed_inputs/std_hvac_dev.json") as f:
+    idf1_hvacadded = HVAC(json.load(f), idf1_scheduleadded.idf)
+idf1_hvacadded.save_idf("../devoutput/hvacadded1.idf")
