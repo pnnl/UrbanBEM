@@ -4,14 +4,14 @@ Version,
     9.0;                      !- Version Identifier
 
 SimulationControl,
-    No,                       !- Do Zone Sizing Calculation
-    No,                       !- Do System Sizing Calculation
-    No,                       !- Do Plant Sizing Calculation
+    Yes,                      !- Do Zone Sizing Calculation
+    Yes,                      !- Do System Sizing Calculation
+    Yes,                      !- Do Plant Sizing Calculation
     Yes,                      !- Run Simulation for Sizing Periods
-    No;                       !- Run Simulation for Weather File Run Periods
+    Yes;                      !- Run Simulation for Weather File Run Periods
 
 Building,
-    None,                     !- Name
+    test_building,            !- Name
     0,                        !- North Axis
     Suburbs,                  !- Terrain
     0.04,                     !- Loads Convergence Tolerance Value
@@ -21,14 +21,7 @@ Building,
     6;                        !- Minimum Number of Warmup Days
 
 Timestep,
-    4;                        !- Number of Timesteps per Hour
-
-Site:Location,
-    DENVER_STAPLETON_CO_USA_WMO_724690,    !- Name
-    39.77,                    !- Latitude
-    -104.87,                  !- Longitude
-    -7,                       !- Time Zone
-    1611;                     !- Elevation
+    6;                        !- Number of Timesteps per Hour
 
 SizingPeriod:DesignDay,
     DENVER_STAPLETON Ann Htg 99.6% Condns DB,    !- Name
@@ -94,12 +87,19 @@ RunPeriod,
     12,                       !- End Month
     31,                       !- End Day of Month
     ,                         !- End Year
-    Tuesday,                  !- Day of Week for Start Day
+    Sunday,                   !- Day of Week for Start Day
     Yes,                      !- Use Weather File Holidays and Special Days
     Yes,                      !- Use Weather File Daylight Saving Period
     No,                       !- Apply Weekend Holiday Rule
     Yes,                      !- Use Weather File Rain Indicators
     Yes;                      !- Use Weather File Snow Indicators
+
+ScheduleTypeLimits,
+    Any Number,               !- Name
+    ,                         !- Lower Limit Value
+    ,                         !- Upper Limit Value
+    ,                         !- Numeric Type
+    Dimensionless;            !- Unit Type
 
 SCHEDULE:COMPACT,
     bldg_light_sch,           !- Name
@@ -1461,7 +1461,7 @@ Output:Table:SummaryReports,
     AllSummary;               !- Report 1 Name
 
 OutputControl:Table:Style,
-    HTML;                     !- Column Separator
+    CommaAndHTML;             !- Column Separator
 
 Output:Variable,
     *,                        !- Key Value
