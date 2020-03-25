@@ -6,7 +6,8 @@
         "Saturday": "Sat",
         "Sunday": "Sun",
         "Holidays": "Hol",
-        "AllOtherDays": "Others"
+        "AllOtherDays": "Others",
+        "AllDays": "AllDays"
     },
     "day_of_week_mappings annotation": "Values are the corresponding keywords used in the standard input json to identify day-of-week for schedules, we explicitly implement the day-of-week types listed here."
 }
