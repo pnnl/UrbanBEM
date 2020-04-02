@@ -1,6 +1,5 @@
 {
     "building_name": "bldg_0000001",
-    "data_source": "cbecs",
     "building_area_type": "office",
     "zone_geometry": {
         "0": {
@@ -1653,7 +1652,7 @@
                 "epd": 0.5,
                 "frac_latent": 0.5,
                 "frac_radiant": 0.5,
-                "frac_lost": 0.5,
+                "frac_lost": 0,
                 "schedule": "bldg_electric_equipment_sch"
             },
             "lighting": {

@@ -1365,7 +1365,7 @@ BUILDINGSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block office_south_zone Storey 0 Wall 0004 window,    !- Name
     Window,                   !- Surface Type
-    ,                         !- Construction Name
+    Project External Window,    !- Construction Name
     Block office_south_zone Storey 0 Wall 0004,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
@@ -1388,7 +1388,7 @@ FENESTRATIONSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block office_west_zone Storey 0 Wall 0003 window,    !- Name
     Window,                   !- Surface Type
-    ,                         !- Construction Name
+    Project External Window,    !- Construction Name
     Block office_west_zone Storey 0 Wall 0003,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
@@ -1411,7 +1411,7 @@ FENESTRATIONSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block office_north_zone Storey 0 Wall 0002 window,    !- Name
     Window,                   !- Surface Type
-    ,                         !- Construction Name
+    Project External Window,    !- Construction Name
     Block office_north_zone Storey 0 Wall 0002,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
@@ -1434,7 +1434,7 @@ FENESTRATIONSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block office_east_zone Storey 0 Wall 0001 window,    !- Name
     Window,                   !- Surface Type
-    ,                         !- Construction Name
+    Project External Window,    !- Construction Name
     Block office_east_zone Storey 0 Wall 0001,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
@@ -1523,7 +1523,7 @@ HVACTEMPLATE:THERMOSTAT,
     bldg_clg_setp_sch;        !- Cooling Setpoint Schedule Name
 
 HVACTEMPLATE:ZONE:UNITARY,
-    office_south_zone,        !- Zone Name
+    Block office_south_zone Storey 0,    !- Zone Name
     hvac_sys_ahu_office_001,    !- Template Unitary System Name
     bldg_thermostat,          !- Template Thermostat Name
     autosize,                 !- Supply Air Maximum Flow Rate
@@ -1547,7 +1547,7 @@ HVACTEMPLATE:ZONE:UNITARY,
     design_oa_office;         !- Design Specification Outdoor Air Object Name
 
 HVACTEMPLATE:ZONE:UNITARY,
-    office_west_zone,         !- Zone Name
+    Block office_west_zone Storey 0,    !- Zone Name
     hvac_sys_ahu_office_002,    !- Template Unitary System Name
     bldg_thermostat,          !- Template Thermostat Name
     autosize,                 !- Supply Air Maximum Flow Rate
@@ -1571,7 +1571,7 @@ HVACTEMPLATE:ZONE:UNITARY,
     design_oa_office;         !- Design Specification Outdoor Air Object Name
 
 HVACTEMPLATE:ZONE:UNITARY,
-    office_north_zone,        !- Zone Name
+    Block office_north_zone Storey 0,    !- Zone Name
     hvac_sys_ahu_office_003,    !- Template Unitary System Name
     bldg_thermostat,          !- Template Thermostat Name
     autosize,                 !- Supply Air Maximum Flow Rate
@@ -1595,7 +1595,7 @@ HVACTEMPLATE:ZONE:UNITARY,
     design_oa_office;         !- Design Specification Outdoor Air Object Name
 
 HVACTEMPLATE:ZONE:UNITARY,
-    office_east_zone,         !- Zone Name
+    Block office_east_zone Storey 0,    !- Zone Name
     hvac_sys_ahu_office_004,    !- Template Unitary System Name
     bldg_thermostat,          !- Template Thermostat Name
     autosize,                 !- Supply Air Maximum Flow Rate
@@ -1619,7 +1619,7 @@ HVACTEMPLATE:ZONE:UNITARY,
     design_oa_office;         !- Design Specification Outdoor Air Object Name
 
 HVACTEMPLATE:ZONE:UNITARY,
-    office_core_zone,         !- Zone Name
+    Block office_core_zone Storey 0,    !- Zone Name
     hvac_sys_ahu_office_005,    !- Template Unitary System Name
     bldg_thermostat,          !- Template Thermostat Name
     autosize,                 !- Supply Air Maximum Flow Rate
@@ -1646,7 +1646,7 @@ HVACTEMPLATE:SYSTEM:UNITARYSYSTEM,
     hvac_sys_ahu_office_001,    !- Name
     always_on,                !- System Availability Schedule Name
     Load,                     !- Control Type
-    office_south_zone,        !- Control Zone or Thermostat Location Name
+    Block office_south_zone Storey 0,    !- Control Zone or Thermostat Location Name
     autosize,                 !- Cooling Supply Air Flow Rate
     autosize,                 !- Heating Supply Air Flow Rate
     autosize,                 !- No Load Supply Air Flow Rate
@@ -1719,7 +1719,7 @@ HVACTEMPLATE:SYSTEM:UNITARYSYSTEM,
     hvac_sys_ahu_office_002,    !- Name
     always_on,                !- System Availability Schedule Name
     Load,                     !- Control Type
-    office_west_zone,         !- Control Zone or Thermostat Location Name
+    Block office_west_zone Storey 0,    !- Control Zone or Thermostat Location Name
     autosize,                 !- Cooling Supply Air Flow Rate
     autosize,                 !- Heating Supply Air Flow Rate
     autosize,                 !- No Load Supply Air Flow Rate
@@ -1792,7 +1792,7 @@ HVACTEMPLATE:SYSTEM:UNITARYSYSTEM,
     hvac_sys_ahu_office_003,    !- Name
     always_on,                !- System Availability Schedule Name
     Load,                     !- Control Type
-    office_north_zone,        !- Control Zone or Thermostat Location Name
+    Block office_north_zone Storey 0,    !- Control Zone or Thermostat Location Name
     autosize,                 !- Cooling Supply Air Flow Rate
     autosize,                 !- Heating Supply Air Flow Rate
     autosize,                 !- No Load Supply Air Flow Rate
@@ -1865,7 +1865,7 @@ HVACTEMPLATE:SYSTEM:UNITARYSYSTEM,
     hvac_sys_ahu_office_004,    !- Name
     always_on,                !- System Availability Schedule Name
     Load,                     !- Control Type
-    office_east_zone,         !- Control Zone or Thermostat Location Name
+    Block office_east_zone Storey 0,    !- Control Zone or Thermostat Location Name
     autosize,                 !- Cooling Supply Air Flow Rate
     autosize,                 !- Heating Supply Air Flow Rate
     autosize,                 !- No Load Supply Air Flow Rate
@@ -1938,7 +1938,7 @@ HVACTEMPLATE:SYSTEM:UNITARYSYSTEM,
     hvac_sys_ahu_office_005,    !- Name
     always_on,                !- System Availability Schedule Name
     Load,                     !- Control Type
-    office_core_zone,         !- Control Zone or Thermostat Location Name
+    Block office_core_zone Storey 0,    !- Control Zone or Thermostat Location Name
     autosize,                 !- Cooling Supply Air Flow Rate
     autosize,                 !- Heating Supply Air Flow Rate
     autosize,                 !- No Load Supply Air Flow Rate

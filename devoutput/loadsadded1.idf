@@ -1365,7 +1365,7 @@ BUILDINGSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block office_south_zone Storey 0 Wall 0004 window,    !- Name
     Window,                   !- Surface Type
-    ,                         !- Construction Name
+    Project External Window,    !- Construction Name
     Block office_south_zone Storey 0 Wall 0004,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
@@ -1388,7 +1388,7 @@ FENESTRATIONSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block office_west_zone Storey 0 Wall 0003 window,    !- Name
     Window,                   !- Surface Type
-    ,                         !- Construction Name
+    Project External Window,    !- Construction Name
     Block office_west_zone Storey 0 Wall 0003,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
@@ -1411,7 +1411,7 @@ FENESTRATIONSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block office_north_zone Storey 0 Wall 0002 window,    !- Name
     Window,                   !- Surface Type
-    ,                         !- Construction Name
+    Project External Window,    !- Construction Name
     Block office_north_zone Storey 0 Wall 0002,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
@@ -1434,7 +1434,7 @@ FENESTRATIONSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block office_east_zone Storey 0 Wall 0001 window,    !- Name
     Window,                   !- Surface Type
-    ,                         !- Construction Name
+    Project External Window,    !- Construction Name
     Block office_east_zone Storey 0 Wall 0001,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
