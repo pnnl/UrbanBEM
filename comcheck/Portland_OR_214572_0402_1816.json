@@ -1,0 +1,117 @@
+{
+    "building": {
+        "ID": 214572,
+        "BLDG_USE_TYPE": "WHOLE_BLDG",
+        "CONDITIONING": "HEATING_AND_COOLING",
+        "CONSTRUCTION_TYPE": "NON_RESIDENTIAL",
+        "EFFICIENCY_PACKAGE_TYPE": null,
+        "HEATING_FUEL_TYPE": null,
+        "IS_NONRESIDENTIAL_CONDITIONING": null,
+        "IS_RESIDENTIAL_CONDITIONING": null,
+        "IS_SEMIHEATED_CONDITIONING": null,
+        "PROJECT_TYPE": "NEW_CONSTRUCTION",
+        "SEMIHEATED": 0,
+        "efficiencyPackage2Applies": null,
+        "efficiencyPackage2Type": null,
+        "performanceRating": null
+    },
+    "user_project": null,
+    "location": {
+        "ID": 214508,
+        "BUILDING_ID": 214572,
+        "CITY": "Portland",
+        "COUNTY": null,
+        "STATE": "Oregon",
+        "epwFilename": null
+    },
+    "control": {
+        "ID": 214573,
+        "BUILDING_ID": 214572,
+        "CODE": "CEZ_OR",
+        "COMPLIANCE_MODE": "UA",
+        "ENGINE_VERSION": "10.0.1"
+    },
+    "lighting": {
+        "ID": 214509,
+        "BUILDING_ID": 214572,
+        "EXTERIOR_LIGHTING_ZONE_TYPE": "EXT_ZONE_UNSPECIFIED",
+        "building_area_use": {
+            "0": {
+                "ID": 33957,
+                "AREA_DESCRIPTION": null,
+                "BLDG_USE_KEY": "24282",
+                "CEILING_HEIGHT": 0.0,
+                "FLOOR_AREA": 13584.0,
+                "INTERNAL_LOAD": 1.95,
+                "LIGHTING_ID": 214509,
+                "POWER_DENSITY": 0.91,
+                "WHOLE_BLDG_TYPE": "WHOLE_BUILDING_OFFICE",
+                "constructionType": null
+            },
+            "1": {
+                "ID": 33958,
+                "AREA_DESCRIPTION": null,
+                "BLDG_USE_KEY": "31601",
+                "CEILING_HEIGHT": 0.0,
+                "FLOOR_AREA": 59477.0,
+                "INTERNAL_LOAD": 0.75,
+                "LIGHTING_ID": 214509,
+                "POWER_DENSITY": 0.73,
+                "WHOLE_BLDG_TYPE": "WHOLE_BUILDING_WAREHOUSE",
+                "constructionType": null
+            }
+        },
+        "exterior_use": {
+            "0": {
+                "ID": 317463,
+                "AREA_DESCRIPTION": null,
+                "EXTERIOR_TYPE": "EXTERIOR_INVALID_USE",
+                "IS_TRADABLE": 0,
+                "LIGHTING_ID": 214509,
+                "POWER_DENSITY": 0.0,
+                "QUANTITY_UNITS": null,
+                "USE_QUANTITY": 0.0,
+                "exterior_space": null
+            }
+        }
+    },
+    "project_info": {
+        "ID": 214554,
+        "BUILDING_ID": 214572,
+        "DEVELOPER_ADDRESS": "729 S 330 W",
+        "DEVELOPER_ADDRESS2": null,
+        "DEVELOPER_CITY": "Salt Lake City",
+        "DEVELOPER_COMPANY": "A-C Electric Inc",
+        "DEVELOPER_EMAIL": null,
+        "DEVELOPER_FIRST_NAME": "Angelo",
+        "DEVELOPER_LAST_NAME": "Maratta",
+        "DEVELOPER_PHONE": null,
+        "DEVELOPER_STATE": "UT",
+        "DEVELOPER_ZIP_CODE": null,
+        "NOTES": null,
+        "OWNER_ADDRESS": null,
+        "OWNER_ADDRESS2": null,
+        "OWNER_CITY": null,
+        "OWNER_COMPANY": null,
+        "OWNER_EMAIL": null,
+        "OWNER_FIRST_NAME": null,
+        "OWNER_LAST_NAME": null,
+        "OWNER_PHONE": null,
+        "OWNER_STATE": null,
+        "OWNER_ZIP_CODE": null,
+        "PROJECT_ADDRESS": null,
+        "PROJECT_ADDRESS2": null,
+        "PROJECT_CITY": "Portland",
+        "PROJECT_COMPLETE": null,
+        "PROJECT_LOT_NUMBER": null,
+        "PROJECT_PERMIT_DATE": null,
+        "PROJECT_PERMIT_NUMBER": null,
+        "PROJECT_STATE": "OR",
+        "PROJECT_TAX_MAP": null,
+        "PROJECT_TITLE": "Old Dominion Freight Lines",
+        "PROJECT_ZIP_CODE": null
+    },
+    "swh_systems": null,
+    "envelope": null,
+    "hvac": null
+}

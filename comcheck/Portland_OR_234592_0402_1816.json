@@ -1,0 +1,105 @@
+{
+    "building": {
+        "ID": 234592,
+        "BLDG_USE_TYPE": "WHOLE_BLDG",
+        "CONDITIONING": "HEATING_AND_COOLING",
+        "CONSTRUCTION_TYPE": "NON_RESIDENTIAL",
+        "EFFICIENCY_PACKAGE_TYPE": null,
+        "HEATING_FUEL_TYPE": null,
+        "IS_NONRESIDENTIAL_CONDITIONING": null,
+        "IS_RESIDENTIAL_CONDITIONING": null,
+        "IS_SEMIHEATED_CONDITIONING": null,
+        "PROJECT_TYPE": "NEW_CONSTRUCTION",
+        "SEMIHEATED": 0,
+        "efficiencyPackage2Applies": null,
+        "efficiencyPackage2Type": null,
+        "performanceRating": null
+    },
+    "user_project": null,
+    "location": {
+        "ID": 234527,
+        "BUILDING_ID": 234592,
+        "CITY": "Portland",
+        "COUNTY": null,
+        "STATE": "Oregon",
+        "epwFilename": null
+    },
+    "control": {
+        "ID": 234593,
+        "BUILDING_ID": 234592,
+        "CODE": "CEZ_OR",
+        "COMPLIANCE_MODE": "PRESCRIPTIVE",
+        "ENGINE_VERSION": "11.1.0"
+    },
+    "lighting": {
+        "ID": 234526,
+        "BUILDING_ID": 234592,
+        "EXTERIOR_LIGHTING_ZONE_TYPE": "EXT_ZONE_UNSPECIFIED",
+        "building_area_use": {
+            "0": {
+                "ID": 37449,
+                "AREA_DESCRIPTION": "Lounge",
+                "BLDG_USE_KEY": "95058",
+                "CEILING_HEIGHT": 0.0,
+                "FLOOR_AREA": 1818.0,
+                "INTERNAL_LOAD": 1.95,
+                "LIGHTING_ID": 234526,
+                "POWER_DENSITY": 1.19,
+                "WHOLE_BLDG_TYPE": "WHOLE_BUILDING_DINING_BAR",
+                "constructionType": null
+            }
+        },
+        "exterior_use": {
+            "0": {
+                "ID": 348930,
+                "AREA_DESCRIPTION": null,
+                "EXTERIOR_TYPE": "EXTERIOR_INVALID_USE",
+                "IS_TRADABLE": 0,
+                "LIGHTING_ID": 234526,
+                "POWER_DENSITY": 0.0,
+                "QUANTITY_UNITS": null,
+                "USE_QUANTITY": 0.0,
+                "exterior_space": null
+            }
+        }
+    },
+    "project_info": {
+        "ID": 234573,
+        "BUILDING_ID": 234592,
+        "DEVELOPER_ADDRESS": "7042  NE Hoyt St",
+        "DEVELOPER_ADDRESS2": null,
+        "DEVELOPER_CITY": "Portland",
+        "DEVELOPER_COMPANY": "Koch Architecture LLC",
+        "DEVELOPER_EMAIL": "marcus@kocharchitecture.biz",
+        "DEVELOPER_FIRST_NAME": "Marcus",
+        "DEVELOPER_LAST_NAME": "Koch",
+        "DEVELOPER_PHONE": "503-888-9743",
+        "DEVELOPER_STATE": "OR",
+        "DEVELOPER_ZIP_CODE": "97213",
+        "NOTES": null,
+        "OWNER_ADDRESS": null,
+        "OWNER_ADDRESS2": null,
+        "OWNER_CITY": null,
+        "OWNER_COMPANY": null,
+        "OWNER_EMAIL": null,
+        "OWNER_FIRST_NAME": null,
+        "OWNER_LAST_NAME": null,
+        "OWNER_PHONE": null,
+        "OWNER_STATE": null,
+        "OWNER_ZIP_CODE": null,
+        "PROJECT_ADDRESS": "36 SW 3rd Ave",
+        "PROJECT_ADDRESS2": null,
+        "PROJECT_CITY": "Portland",
+        "PROJECT_COMPLETE": null,
+        "PROJECT_LOT_NUMBER": null,
+        "PROJECT_PERMIT_DATE": null,
+        "PROJECT_PERMIT_NUMBER": "12-181109-co",
+        "PROJECT_STATE": "OR",
+        "PROJECT_TAX_MAP": null,
+        "PROJECT_TITLE": "Via Tribunali",
+        "PROJECT_ZIP_CODE": "97204"
+    },
+    "swh_systems": null,
+    "envelope": null,
+    "hvac": null
+}

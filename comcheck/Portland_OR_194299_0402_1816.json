@@ -1,0 +1,105 @@
+{
+    "building": {
+        "ID": 194299,
+        "BLDG_USE_TYPE": "WHOLE_BLDG",
+        "CONDITIONING": "HEATING_AND_COOLING",
+        "CONSTRUCTION_TYPE": "NON_RESIDENTIAL",
+        "EFFICIENCY_PACKAGE_TYPE": null,
+        "HEATING_FUEL_TYPE": null,
+        "IS_NONRESIDENTIAL_CONDITIONING": null,
+        "IS_RESIDENTIAL_CONDITIONING": null,
+        "IS_SEMIHEATED_CONDITIONING": null,
+        "PROJECT_TYPE": "NEW_CONSTRUCTION",
+        "SEMIHEATED": 0,
+        "efficiencyPackage2Applies": null,
+        "efficiencyPackage2Type": null,
+        "performanceRating": null
+    },
+    "user_project": null,
+    "location": {
+        "ID": 194235,
+        "BUILDING_ID": 194299,
+        "CITY": "Portland",
+        "COUNTY": null,
+        "STATE": "Oregon",
+        "epwFilename": null
+    },
+    "control": {
+        "ID": 194300,
+        "BUILDING_ID": 194299,
+        "CODE": "CEZ_OR",
+        "COMPLIANCE_MODE": "UA",
+        "ENGINE_VERSION": "11.1.0"
+    },
+    "lighting": {
+        "ID": 194239,
+        "BUILDING_ID": 194299,
+        "EXTERIOR_LIGHTING_ZONE_TYPE": "EXT_ZONE_UNSPECIFIED",
+        "building_area_use": {
+            "0": {
+                "ID": 30807,
+                "AREA_DESCRIPTION": "Pet Hospital",
+                "BLDG_USE_KEY": "64350",
+                "CEILING_HEIGHT": 0.0,
+                "FLOOR_AREA": 5401.0,
+                "INTERNAL_LOAD": 1.95,
+                "LIGHTING_ID": 194239,
+                "POWER_DENSITY": 1.08,
+                "WHOLE_BLDG_TYPE": "WHOLE_BUILDING_HOSPITAL",
+                "constructionType": null
+            }
+        },
+        "exterior_use": {
+            "0": {
+                "ID": 285136,
+                "AREA_DESCRIPTION": null,
+                "EXTERIOR_TYPE": "EXTERIOR_INVALID_USE",
+                "IS_TRADABLE": 0,
+                "LIGHTING_ID": 194239,
+                "POWER_DENSITY": 0.0,
+                "QUANTITY_UNITS": null,
+                "USE_QUANTITY": 0.0,
+                "exterior_space": null
+            }
+        }
+    },
+    "project_info": {
+        "ID": 194281,
+        "BUILDING_ID": 194299,
+        "DEVELOPER_ADDRESS": "1900 Wazee Street",
+        "DEVELOPER_ADDRESS2": "#350",
+        "DEVELOPER_CITY": "Denver",
+        "DEVELOPER_COMPANY": "AEDG",
+        "DEVELOPER_EMAIL": null,
+        "DEVELOPER_FIRST_NAME": null,
+        "DEVELOPER_LAST_NAME": null,
+        "DEVELOPER_PHONE": null,
+        "DEVELOPER_STATE": "CO",
+        "DEVELOPER_ZIP_CODE": "80202",
+        "NOTES": null,
+        "OWNER_ADDRESS": null,
+        "OWNER_ADDRESS2": null,
+        "OWNER_CITY": null,
+        "OWNER_COMPANY": null,
+        "OWNER_EMAIL": null,
+        "OWNER_FIRST_NAME": null,
+        "OWNER_LAST_NAME": null,
+        "OWNER_PHONE": null,
+        "OWNER_STATE": null,
+        "OWNER_ZIP_CODE": null,
+        "PROJECT_ADDRESS": "#5017 Uptown",
+        "PROJECT_ADDRESS2": "35 NW 20th Place",
+        "PROJECT_CITY": "Portland",
+        "PROJECT_COMPLETE": null,
+        "PROJECT_LOT_NUMBER": null,
+        "PROJECT_PERMIT_DATE": null,
+        "PROJECT_PERMIT_NUMBER": null,
+        "PROJECT_STATE": "OR",
+        "PROJECT_TAX_MAP": null,
+        "PROJECT_TITLE": "Bandfield Pet Hospital - Uptown",
+        "PROJECT_ZIP_CODE": "97213"
+    },
+    "swh_systems": null,
+    "envelope": null,
+    "hvac": null
+}

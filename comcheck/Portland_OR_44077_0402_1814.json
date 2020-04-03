@@ -1,0 +1,92 @@
+{
+    "building": {
+        "ID": 44077,
+        "BLDG_USE_TYPE": "ACTIVITY",
+        "CONDITIONING": "HEATING_AND_COOLING",
+        "CONSTRUCTION_TYPE": "NON_RESIDENTIAL",
+        "EFFICIENCY_PACKAGE_TYPE": null,
+        "HEATING_FUEL_TYPE": null,
+        "IS_NONRESIDENTIAL_CONDITIONING": null,
+        "IS_RESIDENTIAL_CONDITIONING": null,
+        "IS_SEMIHEATED_CONDITIONING": null,
+        "PROJECT_TYPE": "NEW_CONSTRUCTION",
+        "SEMIHEATED": 0,
+        "efficiencyPackage2Applies": null,
+        "efficiencyPackage2Type": null,
+        "performanceRating": null
+    },
+    "user_project": null,
+    "location": {
+        "ID": 44026,
+        "BUILDING_ID": 44077,
+        "CITY": "Portland",
+        "COUNTY": null,
+        "STATE": "Oregon",
+        "epwFilename": null
+    },
+    "control": {
+        "ID": 44079,
+        "BUILDING_ID": 44077,
+        "CODE": "CEZ_OR",
+        "COMPLIANCE_MODE": "PRESCRIPTIVE",
+        "ENGINE_VERSION": "7.9.2"
+    },
+    "lighting": {
+        "ID": 44026,
+        "BUILDING_ID": 44077,
+        "EXTERIOR_LIGHTING_ZONE_TYPE": "EXT_ZONE_UNSPECIFIED",
+        "building_area_use": null,
+        "exterior_use": {
+            "0": {
+                "ID": 51773,
+                "AREA_DESCRIPTION": null,
+                "EXTERIOR_TYPE": null,
+                "IS_TRADABLE": 0,
+                "LIGHTING_ID": 44026,
+                "POWER_DENSITY": 0.0,
+                "QUANTITY_UNITS": "N/A",
+                "USE_QUANTITY": 0.0,
+                "exterior_space": null
+            }
+        }
+    },
+    "project_info": {
+        "ID": 44074,
+        "BUILDING_ID": 44077,
+        "DEVELOPER_ADDRESS": "320 SW Washington",
+        "DEVELOPER_ADDRESS2": "Suite 200",
+        "DEVELOPER_CITY": "Portland",
+        "DEVELOPER_COMPANY": "Glumac",
+        "DEVELOPER_EMAIL": "bbliatout@glumac.com",
+        "DEVELOPER_FIRST_NAME": "Brien",
+        "DEVELOPER_LAST_NAME": "Bliatout",
+        "DEVELOPER_PHONE": "503-227-5280",
+        "DEVELOPER_STATE": "OR",
+        "DEVELOPER_ZIP_CODE": "97204",
+        "NOTES": null,
+        "OWNER_ADDRESS": "1140 SW 11th Avenue",
+        "OWNER_ADDRESS2": "Suite 400",
+        "OWNER_CITY": "Portland",
+        "OWNER_COMPANY": "Gerding Edlen Development Company, LLC",
+        "OWNER_EMAIL": null,
+        "OWNER_FIRST_NAME": null,
+        "OWNER_LAST_NAME": null,
+        "OWNER_PHONE": "503-299-6000",
+        "OWNER_STATE": "OR",
+        "OWNER_ZIP_CODE": "97205",
+        "PROJECT_ADDRESS": "1417 NW Everett Street",
+        "PROJECT_ADDRESS2": null,
+        "PROJECT_CITY": "Portland",
+        "PROJECT_COMPLETE": null,
+        "PROJECT_LOT_NUMBER": null,
+        "PROJECT_PERMIT_DATE": null,
+        "PROJECT_PERMIT_NUMBER": null,
+        "PROJECT_STATE": "OR",
+        "PROJECT_TAX_MAP": null,
+        "PROJECT_TITLE": "Gerding Edlen Development TI",
+        "PROJECT_ZIP_CODE": "97209"
+    },
+    "swh_systems": null,
+    "envelope": null,
+    "hvac": null
+}

@@ -1,0 +1,93 @@
+{
+    "building": {
+        "ID": 216349,
+        "BLDG_USE_TYPE": "WHOLE_BLDG",
+        "CONDITIONING": "HEATING_AND_COOLING",
+        "CONSTRUCTION_TYPE": "NON_RESIDENTIAL",
+        "EFFICIENCY_PACKAGE_TYPE": null,
+        "HEATING_FUEL_TYPE": null,
+        "IS_NONRESIDENTIAL_CONDITIONING": null,
+        "IS_RESIDENTIAL_CONDITIONING": null,
+        "IS_SEMIHEATED_CONDITIONING": null,
+        "PROJECT_TYPE": "ADDITION",
+        "SEMIHEATED": 0,
+        "efficiencyPackage2Applies": null,
+        "efficiencyPackage2Type": null,
+        "performanceRating": null
+    },
+    "user_project": null,
+    "location": {
+        "ID": 216285,
+        "BUILDING_ID": 216349,
+        "CITY": "Portland",
+        "COUNTY": null,
+        "STATE": "Oregon",
+        "epwFilename": null
+    },
+    "control": {
+        "ID": 216350,
+        "BUILDING_ID": 216349,
+        "CODE": "CEZ_90_1_2001",
+        "COMPLIANCE_MODE": "UA",
+        "ENGINE_VERSION": "11.1.0"
+    },
+    "lighting": {
+        "ID": 216286,
+        "BUILDING_ID": 216349,
+        "EXTERIOR_LIGHTING_ZONE_TYPE": null,
+        "building_area_use": {
+            "0": {
+                "ID": 34277,
+                "AREA_DESCRIPTION": "New Lighting",
+                "BLDG_USE_KEY": "9073",
+                "CEILING_HEIGHT": 0.0,
+                "FLOOR_AREA": 49477.0,
+                "INTERNAL_LOAD": 1.77,
+                "LIGHTING_ID": 216286,
+                "POWER_DENSITY": 1.9,
+                "WHOLE_BLDG_TYPE": "WHOLE_BUILDING_RETAIL",
+                "constructionType": null
+            }
+        },
+        "exterior_use": null
+    },
+    "project_info": {
+        "ID": 216331,
+        "BUILDING_ID": 216349,
+        "DEVELOPER_ADDRESS": "110 West 7th Street",
+        "DEVELOPER_ADDRESS2": null,
+        "DEVELOPER_CITY": "Tulsa",
+        "DEVELOPER_COMPANY": "MPW Engineering, LLC",
+        "DEVELOPER_EMAIL": null,
+        "DEVELOPER_FIRST_NAME": null,
+        "DEVELOPER_LAST_NAME": null,
+        "DEVELOPER_PHONE": "(918) 582-4088",
+        "DEVELOPER_STATE": "OK",
+        "DEVELOPER_ZIP_CODE": "74119",
+        "NOTES": null,
+        "OWNER_ADDRESS": null,
+        "OWNER_ADDRESS2": null,
+        "OWNER_CITY": "Rogers",
+        "OWNER_COMPANY": "pb2",
+        "OWNER_EMAIL": null,
+        "OWNER_FIRST_NAME": null,
+        "OWNER_LAST_NAME": null,
+        "OWNER_PHONE": null,
+        "OWNER_STATE": "AR",
+        "OWNER_ZIP_CODE": "72756",
+        "PROJECT_ADDRESS": "4200 SE 82nd Ave",
+        "PROJECT_ADDRESS2": null,
+        "PROJECT_CITY": "Portland",
+        "PROJECT_COMPLETE": null,
+        "PROJECT_LOT_NUMBER": null,
+        "PROJECT_PERMIT_DATE": null,
+        "PROJECT_PERMIT_NUMBER": null,
+        "PROJECT_STATE": "OR",
+        "PROJECT_TAX_MAP": null,
+        "PROJECT_TITLE": "Wal-Mart SuperCenter #2552",
+        "PROJECT_ZIP_CODE": "97266"
+    },
+    "swh_systems": null,
+    "envelope": null,
+    "hvac": null
+}

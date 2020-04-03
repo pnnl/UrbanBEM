@@ -1,0 +1,163 @@
+{
+    "building": {
+        "ID": 742329,
+        "BLDG_USE_TYPE": "ACTIVITY",
+        "CONDITIONING": "HEATING_AND_COOLING",
+        "CONSTRUCTION_TYPE": null,
+        "EFFICIENCY_PACKAGE_TYPE": null,
+        "HEATING_FUEL_TYPE": null,
+        "IS_NONRESIDENTIAL_CONDITIONING": 1,
+        "IS_RESIDENTIAL_CONDITIONING": 0,
+        "IS_SEMIHEATED_CONDITIONING": 0,
+        "PROJECT_TYPE": "ALTERATION",
+        "SEMIHEATED": null,
+        "efficiencyPackage2Applies": null,
+        "efficiencyPackage2Type": null,
+        "performanceRating": null
+    },
+    "user_project": null,
+    "location": {
+        "ID": 742252,
+        "BUILDING_ID": 742329,
+        "CITY": "Seattle",
+        "COUNTY": null,
+        "STATE": "Washington",
+        "epwFilename": null
+    },
+    "control": {
+        "ID": 742330,
+        "BUILDING_ID": 742329,
+        "CODE": "CEZ_IECC2009",
+        "COMPLIANCE_MODE": "UA",
+        "ENGINE_VERSION": "20.0.0"
+    },
+    "lighting": {
+        "ID": 742217,
+        "BUILDING_ID": 742329,
+        "EXTERIOR_LIGHTING_ZONE_TYPE": "EXT_ZONE_RESIDENTIAL_COMMERCIAL_MIXED",
+        "building_area_use": {
+            "0": {
+                "ID": 252391,
+                "AREA_DESCRIPTION": null,
+                "BLDG_USE_KEY": "640872464",
+                "CEILING_HEIGHT": 0.0,
+                "FLOOR_AREA": 0.0,
+                "INTERNAL_LOAD": 0.0,
+                "LIGHTING_ID": 742217,
+                "POWER_DENSITY": 0.0,
+                "WHOLE_BLDG_TYPE": "WHOLE_BUILDING_INVALID_USE",
+                "constructionType": 6
+            }
+        },
+        "exterior_use": {
+            "0": {
+                "ID": 1166896,
+                "AREA_DESCRIPTION": null,
+                "EXTERIOR_TYPE": "EXTERIOR_INVALID_USE",
+                "IS_TRADABLE": 0,
+                "LIGHTING_ID": 742217,
+                "POWER_DENSITY": 0.0,
+                "QUANTITY_UNITS": null,
+                "USE_QUANTITY": 0.0,
+                "exterior_space": null
+            }
+        }
+    },
+    "project_info": {
+        "ID": 742297,
+        "BUILDING_ID": 742329,
+        "DEVELOPER_ADDRESS": "27 Orchard",
+        "DEVELOPER_ADDRESS2": null,
+        "DEVELOPER_CITY": "Lake Forest",
+        "DEVELOPER_COMPANY": "National Engineering & Consulting",
+        "DEVELOPER_EMAIL": null,
+        "DEVELOPER_FIRST_NAME": "Saeed",
+        "DEVELOPER_LAST_NAME": "Bandi",
+        "DEVELOPER_PHONE": "949 716 9990",
+        "DEVELOPER_STATE": "CA",
+        "DEVELOPER_ZIP_CODE": "92630",
+        "NOTES": null,
+        "OWNER_ADDRESS": "10300 4TH STREET",
+        "OWNER_ADDRESS2": "SUITE 100",
+        "OWNER_CITY": "RANCHO CUCAMONGA",
+        "OWNER_COMPANY": "AMOR ARCHITECTURAL CORPORATION",
+        "OWNER_EMAIL": null,
+        "OWNER_FIRST_NAME": null,
+        "OWNER_LAST_NAME": null,
+        "OWNER_PHONE": "909-259-9971",
+        "OWNER_STATE": "CA",
+        "OWNER_ZIP_CODE": "91730",
+        "PROJECT_ADDRESS": "651 SOUTH ALASKA STREET",
+        "PROJECT_ADDRESS2": null,
+        "PROJECT_CITY": "SEATTLE",
+        "PROJECT_COMPLETE": 1,
+        "PROJECT_LOT_NUMBER": null,
+        "PROJECT_PERMIT_DATE": null,
+        "PROJECT_PERMIT_NUMBER": null,
+        "PROJECT_STATE": "WA",
+        "PROJECT_TAX_MAP": null,
+        "PROJECT_TITLE": "FEDEX SHIP CENTER FY16 USA",
+        "PROJECT_ZIP_CODE": "98108"
+    },
+    "swh_systems": null,
+    "envelope": {
+        "ID": 641703,
+        "AIR_BARRIER_COMPLIANCE_TYPE": null,
+        "ALT_PCT_GLAZING_AREA_REPLACED": 0.0,
+        "ALT_PCT_SKYLIGHT_AREA_REPLACED": 0.0,
+        "APPLY_SKYLIGHT_PCT_ALLOWANCE_FOR_DAYLIGHTING": null,
+        "APPLY_WINDOW_PCT_ALLOWANCE_FOR_DAYLIGHTING": null,
+        "BUILDING_ID": 742329,
+        "POST_ALT_SKYLIGHT_ROOF_PCT": 0.0,
+        "POST_ALT_WINDOW_WALL_PCT": 0.0,
+        "USE_COOL_ROOF_DETAILS": 0,
+        "USE_ORIENT_DETAILS": 0,
+        "USE_VLT_DETAILS": 0,
+        "useCoolRoofPerformanceDetails": null,
+        "floors": null,
+        "ag_walls": null,
+        "bg_walls": null,
+        "doors_envelope": null,
+        "windows_envelope": null,
+        "roofs": null,
+        "skylights": null
+    },
+    "hvac": {
+        "ID": 345278,
+        "BUILDING_ID": 742329,
+        "hvac_plants": null,
+        "hvac_systems": null,
+        "fan_systems": {
+            "0": {
+                "ID": 294199,
+                "COMPLIANCE_MESSAGE": null,
+                "COMPLIES": null,
+                "COMPLY_METHOD": "FAN_SYSTEM_MOTOR_NAMEPLATE_HP",
+                "DESCRIPTION": "FAN SYSTEM 1",
+                "DESCRIPTION2": "Community room",
+                "FAN_SYSTEM_KEY": "2249745",
+                "HAS_PRESSURE_DROP_CREDITS": 0,
+                "HVAC_ID": 345278,
+                "LIST_POSITION": 0,
+                "NUMBER": null,
+                "SERVES_ALLOWANCE_AREA_WITH_FLOW_CONTROL": 0,
+                "fan": {
+                    "0": {
+                        "ID": 367648,
+                        "BRAKE_HP": 0.0,
+                        "DESCRIPTION": "FAN 1",
+                        "FAN_EFFICIENCY": 90.0,
+                        "FAN_SYSTEM_ID": 294199,
+                        "FAN_TYPE": "FAN_TYPE_SUPPLY",
+                        "FAN_VOLUME_TYPE": "FAN_VOLUME_TYPE_CONSTANT",
+                        "LIST_POSITION": 0,
+                        "MAX_NAMEPLATE_HP": null,
+                        "NAMEPLATE_HP": 0.5,
+                        "VOLUME": 1600.0,
+                        "designBrakeHp": null
+                    }
+                }
+            }
+        }
+    }
+}

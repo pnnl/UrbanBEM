@@ -1,0 +1,226 @@
+{
+    "building": {
+        "ID": 141803,
+        "BLDG_USE_TYPE": "WHOLE_BLDG",
+        "CONDITIONING": "HEATING_AND_COOLING",
+        "CONSTRUCTION_TYPE": "NON_RESIDENTIAL",
+        "EFFICIENCY_PACKAGE_TYPE": null,
+        "HEATING_FUEL_TYPE": null,
+        "IS_NONRESIDENTIAL_CONDITIONING": null,
+        "IS_RESIDENTIAL_CONDITIONING": null,
+        "IS_SEMIHEATED_CONDITIONING": null,
+        "PROJECT_TYPE": "NEW_CONSTRUCTION",
+        "SEMIHEATED": 0,
+        "efficiencyPackage2Applies": null,
+        "efficiencyPackage2Type": null,
+        "performanceRating": null
+    },
+    "user_project": null,
+    "location": {
+        "ID": 141739,
+        "BUILDING_ID": 141803,
+        "CITY": "Portland",
+        "COUNTY": null,
+        "STATE": "Oregon",
+        "epwFilename": null
+    },
+    "control": {
+        "ID": 141804,
+        "BUILDING_ID": 141803,
+        "CODE": "CEZ_OR",
+        "COMPLIANCE_MODE": "PRESCRIPTIVE",
+        "ENGINE_VERSION": "10.0.1"
+    },
+    "lighting": {
+        "ID": 141745,
+        "BUILDING_ID": 141803,
+        "EXTERIOR_LIGHTING_ZONE_TYPE": "EXT_ZONE_NEIGHBORHOOD_BUS_DISTRICT",
+        "building_area_use": {
+            "0": {
+                "ID": 22901,
+                "AREA_DESCRIPTION": "LEVEL PARKING",
+                "BLDG_USE_KEY": "14554",
+                "CEILING_HEIGHT": 0.0,
+                "FLOOR_AREA": 3389.0,
+                "INTERNAL_LOAD": 0.75,
+                "LIGHTING_ID": 141745,
+                "POWER_DENSITY": 0.26,
+                "WHOLE_BLDG_TYPE": "WHOLE_BUILDING_PARKING_GARAGE",
+                "constructionType": null
+            },
+            "1": {
+                "ID": 22902,
+                "AREA_DESCRIPTION": "LEVEL PARKING",
+                "BLDG_USE_KEY": "73696",
+                "CEILING_HEIGHT": 0.0,
+                "FLOOR_AREA": 798.0,
+                "INTERNAL_LOAD": 1.25,
+                "LIGHTING_ID": 141745,
+                "POWER_DENSITY": 0.58,
+                "WHOLE_BLDG_TYPE": "WHOLE_BUILDING_MULTIFAMILY",
+                "constructionType": null
+            },
+            "2": {
+                "ID": 22903,
+                "AREA_DESCRIPTION": "LEVEL 1",
+                "BLDG_USE_KEY": "24821",
+                "CEILING_HEIGHT": 0.0,
+                "FLOOR_AREA": 1410.0,
+                "INTERNAL_LOAD": 1.25,
+                "LIGHTING_ID": 141745,
+                "POWER_DENSITY": 0.58,
+                "WHOLE_BLDG_TYPE": "WHOLE_BUILDING_MULTIFAMILY",
+                "constructionType": null
+            },
+            "3": {
+                "ID": 22904,
+                "AREA_DESCRIPTION": "LEVEL 2-5",
+                "BLDG_USE_KEY": "3019",
+                "CEILING_HEIGHT": 0.0,
+                "FLOOR_AREA": 3532.0,
+                "INTERNAL_LOAD": 1.25,
+                "LIGHTING_ID": 141745,
+                "POWER_DENSITY": 0.58,
+                "WHOLE_BLDG_TYPE": "WHOLE_BUILDING_MULTIFAMILY",
+                "constructionType": null
+            }
+        },
+        "exterior_use": {
+            "0": {
+                "ID": 203482,
+                "AREA_DESCRIPTION": null,
+                "EXTERIOR_TYPE": "EXTERIOR_ENTRY_CANOPY",
+                "IS_TRADABLE": 1,
+                "LIGHTING_ID": 141745,
+                "POWER_DENSITY": 0.25,
+                "QUANTITY_UNITS": "ft2",
+                "USE_QUANTITY": 0.0,
+                "exterior_space": {
+                    "0": {
+                        "ID": 119743,
+                        "ALT_EXEMPT_TYPE": null,
+                        "DESCRIPTION": null,
+                        "EXTERIOR_USE_ID": 203482,
+                        "LIST_POSITION": null,
+                        "NUM_FIXTURES_ALTERED_OR_ADDED": null,
+                        "POST_ALT_TOTAL_WATTAGE": null,
+                        "PRE_ALT_NUMBER_FIXTURES": null,
+                        "PRE_ALT_TOTAL_WATTAGE": null,
+                        "fixtures": null
+                    }
+                }
+            },
+            "1": {
+                "ID": 203483,
+                "AREA_DESCRIPTION": null,
+                "EXTERIOR_TYPE": "EXTERIOR_MAIN_ENTRY",
+                "IS_TRADABLE": 1,
+                "LIGHTING_ID": 141745,
+                "POWER_DENSITY": 20.0,
+                "QUANTITY_UNITS": "ft of door width",
+                "USE_QUANTITY": 0.0,
+                "exterior_space": {
+                    "0": {
+                        "ID": 119744,
+                        "ALT_EXEMPT_TYPE": null,
+                        "DESCRIPTION": null,
+                        "EXTERIOR_USE_ID": 203483,
+                        "LIST_POSITION": null,
+                        "NUM_FIXTURES_ALTERED_OR_ADDED": null,
+                        "POST_ALT_TOTAL_WATTAGE": null,
+                        "PRE_ALT_NUMBER_FIXTURES": null,
+                        "PRE_ALT_TOTAL_WATTAGE": null,
+                        "fixtures": null
+                    }
+                }
+            },
+            "2": {
+                "ID": 203484,
+                "AREA_DESCRIPTION": null,
+                "EXTERIOR_TYPE": "EXTERIOR_OTHER_ENTRY",
+                "IS_TRADABLE": 1,
+                "LIGHTING_ID": 141745,
+                "POWER_DENSITY": 20.0,
+                "QUANTITY_UNITS": "ft of door width",
+                "USE_QUANTITY": 0.0,
+                "exterior_space": {
+                    "0": {
+                        "ID": 119745,
+                        "ALT_EXEMPT_TYPE": null,
+                        "DESCRIPTION": null,
+                        "EXTERIOR_USE_ID": 203484,
+                        "LIST_POSITION": null,
+                        "NUM_FIXTURES_ALTERED_OR_ADDED": null,
+                        "POST_ALT_TOTAL_WATTAGE": null,
+                        "PRE_ALT_NUMBER_FIXTURES": null,
+                        "PRE_ALT_TOTAL_WATTAGE": null,
+                        "fixtures": null
+                    }
+                }
+            },
+            "3": {
+                "ID": 203485,
+                "AREA_DESCRIPTION": null,
+                "EXTERIOR_TYPE": "EXTERIOR_ILLUMINATED_LENGTH_WALL",
+                "IS_TRADABLE": 0,
+                "LIGHTING_ID": 141745,
+                "POWER_DENSITY": 2.5,
+                "QUANTITY_UNITS": "ft",
+                "USE_QUANTITY": 0.0,
+                "exterior_space": {
+                    "0": {
+                        "ID": 119746,
+                        "ALT_EXEMPT_TYPE": null,
+                        "DESCRIPTION": null,
+                        "EXTERIOR_USE_ID": 203485,
+                        "LIST_POSITION": null,
+                        "NUM_FIXTURES_ALTERED_OR_ADDED": null,
+                        "POST_ALT_TOTAL_WATTAGE": null,
+                        "PRE_ALT_NUMBER_FIXTURES": null,
+                        "PRE_ALT_TOTAL_WATTAGE": null,
+                        "fixtures": null
+                    }
+                }
+            }
+        }
+    },
+    "project_info": {
+        "ID": 141785,
+        "BUILDING_ID": 141803,
+        "DEVELOPER_ADDRESS": "6915 SW MACADAM AVENUE",
+        "DEVELOPER_ADDRESS2": "SUITE 200",
+        "DEVELOPER_CITY": "PORTLAND",
+        "DEVELOPER_COMPANY": "MKE & ASSOCIATES",
+        "DEVELOPER_EMAIL": null,
+        "DEVELOPER_FIRST_NAME": null,
+        "DEVELOPER_LAST_NAME": null,
+        "DEVELOPER_PHONE": "503.892.1188",
+        "DEVELOPER_STATE": "OR",
+        "DEVELOPER_ZIP_CODE": "97219",
+        "NOTES": null,
+        "OWNER_ADDRESS": null,
+        "OWNER_ADDRESS2": null,
+        "OWNER_CITY": null,
+        "OWNER_COMPANY": null,
+        "OWNER_EMAIL": null,
+        "OWNER_FIRST_NAME": null,
+        "OWNER_LAST_NAME": null,
+        "OWNER_PHONE": null,
+        "OWNER_STATE": null,
+        "OWNER_ZIP_CODE": null,
+        "PROJECT_ADDRESS": "3934 SW CORBETT",
+        "PROJECT_ADDRESS2": null,
+        "PROJECT_CITY": "PORTLAND",
+        "PROJECT_COMPLETE": null,
+        "PROJECT_LOT_NUMBER": null,
+        "PROJECT_PERMIT_DATE": null,
+        "PROJECT_PERMIT_NUMBER": null,
+        "PROJECT_STATE": "OR",
+        "PROJECT_TAX_MAP": null,
+        "PROJECT_TITLE": "CORBETT HEIGHTS",
+        "PROJECT_ZIP_CODE": "97239"
+    },
+    "swh_systems": null,
+    "envelope": null,
+    "hvac": null
+}

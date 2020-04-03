@@ -1,0 +1,92 @@
+{
+    "building": {
+        "ID": 103195,
+        "BLDG_USE_TYPE": "ACTIVITY",
+        "CONDITIONING": "HEATING_AND_COOLING",
+        "CONSTRUCTION_TYPE": "NON_RESIDENTIAL",
+        "EFFICIENCY_PACKAGE_TYPE": null,
+        "HEATING_FUEL_TYPE": null,
+        "IS_NONRESIDENTIAL_CONDITIONING": null,
+        "IS_RESIDENTIAL_CONDITIONING": null,
+        "IS_SEMIHEATED_CONDITIONING": null,
+        "PROJECT_TYPE": "NEW_CONSTRUCTION",
+        "SEMIHEATED": 0,
+        "efficiencyPackage2Applies": null,
+        "efficiencyPackage2Type": null,
+        "performanceRating": null
+    },
+    "user_project": null,
+    "location": {
+        "ID": 103135,
+        "BUILDING_ID": 103195,
+        "CITY": "Portland",
+        "COUNTY": null,
+        "STATE": "Oregon",
+        "epwFilename": null
+    },
+    "control": {
+        "ID": 103196,
+        "BUILDING_ID": 103195,
+        "CODE": "CEZ_OR",
+        "COMPLIANCE_MODE": "PRESCRIPTIVE",
+        "ENGINE_VERSION": "10.0.1"
+    },
+    "lighting": {
+        "ID": 103139,
+        "BUILDING_ID": 103195,
+        "EXTERIOR_LIGHTING_ZONE_TYPE": "EXT_ZONE_UNSPECIFIED",
+        "building_area_use": null,
+        "exterior_use": {
+            "0": {
+                "ID": 142842,
+                "AREA_DESCRIPTION": null,
+                "EXTERIOR_TYPE": "EXTERIOR_INVALID_USE",
+                "IS_TRADABLE": 0,
+                "LIGHTING_ID": 103139,
+                "POWER_DENSITY": 0.0,
+                "QUANTITY_UNITS": null,
+                "USE_QUANTITY": 0.0,
+                "exterior_space": null
+            }
+        }
+    },
+    "project_info": {
+        "ID": 103181,
+        "BUILDING_ID": 103195,
+        "DEVELOPER_ADDRESS": null,
+        "DEVELOPER_ADDRESS2": null,
+        "DEVELOPER_CITY": null,
+        "DEVELOPER_COMPANY": "Walsh Construction",
+        "DEVELOPER_EMAIL": null,
+        "DEVELOPER_FIRST_NAME": null,
+        "DEVELOPER_LAST_NAME": null,
+        "DEVELOPER_PHONE": null,
+        "DEVELOPER_STATE": null,
+        "DEVELOPER_ZIP_CODE": null,
+        "NOTES": "Walsh Construction",
+        "OWNER_ADDRESS": null,
+        "OWNER_ADDRESS2": null,
+        "OWNER_CITY": null,
+        "OWNER_COMPANY": null,
+        "OWNER_EMAIL": null,
+        "OWNER_FIRST_NAME": null,
+        "OWNER_LAST_NAME": null,
+        "OWNER_PHONE": null,
+        "OWNER_STATE": null,
+        "OWNER_ZIP_CODE": null,
+        "PROJECT_ADDRESS": "6th & College Street",
+        "PROJECT_ADDRESS2": null,
+        "PROJECT_CITY": "Portland",
+        "PROJECT_COMPLETE": null,
+        "PROJECT_LOT_NUMBER": null,
+        "PROJECT_PERMIT_DATE": null,
+        "PROJECT_PERMIT_NUMBER": null,
+        "PROJECT_STATE": "OR",
+        "PROJECT_TAX_MAP": null,
+        "PROJECT_TITLE": "Joe's burgers PSU",
+        "PROJECT_ZIP_CODE": "97201"
+    },
+    "swh_systems": null,
+    "envelope": null,
+    "hvac": null
+}

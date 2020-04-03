@@ -1,0 +1,92 @@
+{
+    "building": {
+        "ID": 85772,
+        "BLDG_USE_TYPE": "ACTIVITY",
+        "CONDITIONING": "HEATING_AND_COOLING",
+        "CONSTRUCTION_TYPE": "NON_RESIDENTIAL",
+        "EFFICIENCY_PACKAGE_TYPE": null,
+        "HEATING_FUEL_TYPE": null,
+        "IS_NONRESIDENTIAL_CONDITIONING": null,
+        "IS_RESIDENTIAL_CONDITIONING": null,
+        "IS_SEMIHEATED_CONDITIONING": null,
+        "PROJECT_TYPE": "NEW_CONSTRUCTION",
+        "SEMIHEATED": 0,
+        "efficiencyPackage2Applies": null,
+        "efficiencyPackage2Type": null,
+        "performanceRating": null
+    },
+    "user_project": null,
+    "location": {
+        "ID": 85715,
+        "BUILDING_ID": 85772,
+        "CITY": "Seattle",
+        "COUNTY": null,
+        "STATE": "Washington",
+        "epwFilename": null
+    },
+    "control": {
+        "ID": 85774,
+        "BUILDING_ID": 85772,
+        "CODE": "CEZ_90_1_2007",
+        "COMPLIANCE_MODE": "UA",
+        "ENGINE_VERSION": "8.0.0"
+    },
+    "lighting": {
+        "ID": 85717,
+        "BUILDING_ID": 85772,
+        "EXTERIOR_LIGHTING_ZONE_TYPE": null,
+        "building_area_use": null,
+        "exterior_use": {
+            "0": {
+                "ID": 116050,
+                "AREA_DESCRIPTION": null,
+                "EXTERIOR_TYPE": "EXTERIOR_INVALID_USE",
+                "IS_TRADABLE": 0,
+                "LIGHTING_ID": 85717,
+                "POWER_DENSITY": 0.0,
+                "QUANTITY_UNITS": null,
+                "USE_QUANTITY": 0.0,
+                "exterior_space": null
+            }
+        }
+    },
+    "project_info": {
+        "ID": 85761,
+        "BUILDING_ID": 85772,
+        "DEVELOPER_ADDRESS": "7575 Paragon Rd.",
+        "DEVELOPER_ADDRESS2": null,
+        "DEVELOPER_CITY": "Dayton",
+        "DEVELOPER_COMPANY": "Design Forum Engineering",
+        "DEVELOPER_EMAIL": null,
+        "DEVELOPER_FIRST_NAME": "Tim",
+        "DEVELOPER_LAST_NAME": "Raberding",
+        "DEVELOPER_PHONE": "937-439-4400",
+        "DEVELOPER_STATE": "OH",
+        "DEVELOPER_ZIP_CODE": "45459",
+        "NOTES": null,
+        "OWNER_ADDRESS": "12920 SE 38th St",
+        "OWNER_ADDRESS2": "4th Floor",
+        "OWNER_CITY": "Bellevue",
+        "OWNER_COMPANY": "T-Mobile",
+        "OWNER_EMAIL": null,
+        "OWNER_FIRST_NAME": null,
+        "OWNER_LAST_NAME": null,
+        "OWNER_PHONE": null,
+        "OWNER_STATE": "WA",
+        "OWNER_ZIP_CODE": "98006",
+        "PROJECT_ADDRESS": "431 Broadway E",
+        "PROJECT_ADDRESS2": "Suite F",
+        "PROJECT_CITY": "Seattle",
+        "PROJECT_COMPLETE": null,
+        "PROJECT_LOT_NUMBER": null,
+        "PROJECT_PERMIT_DATE": null,
+        "PROJECT_PERMIT_NUMBER": null,
+        "PROJECT_STATE": "WA",
+        "PROJECT_TAX_MAP": null,
+        "PROJECT_TITLE": "T-Mobile Broadway & Republic",
+        "PROJECT_ZIP_CODE": "98102"
+    },
+    "swh_systems": null,
+    "envelope": null,
+    "hvac": null
+}

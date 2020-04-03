@@ -1,0 +1,105 @@
+{
+    "building": {
+        "ID": 85993,
+        "BLDG_USE_TYPE": "WHOLE_BLDG",
+        "CONDITIONING": "HEATING_AND_COOLING",
+        "CONSTRUCTION_TYPE": "NON_RESIDENTIAL",
+        "EFFICIENCY_PACKAGE_TYPE": null,
+        "HEATING_FUEL_TYPE": null,
+        "IS_NONRESIDENTIAL_CONDITIONING": null,
+        "IS_RESIDENTIAL_CONDITIONING": null,
+        "IS_SEMIHEATED_CONDITIONING": null,
+        "PROJECT_TYPE": "NEW_CONSTRUCTION",
+        "SEMIHEATED": 0,
+        "efficiencyPackage2Applies": null,
+        "efficiencyPackage2Type": null,
+        "performanceRating": null
+    },
+    "user_project": null,
+    "location": {
+        "ID": 85936,
+        "BUILDING_ID": 85993,
+        "CITY": "Seattle",
+        "COUNTY": null,
+        "STATE": "Washington",
+        "epwFilename": null
+    },
+    "control": {
+        "ID": 85995,
+        "BUILDING_ID": 85993,
+        "CODE": "CEZ_90_1_2007",
+        "COMPLIANCE_MODE": "UA",
+        "ENGINE_VERSION": "8.0.0"
+    },
+    "lighting": {
+        "ID": 85938,
+        "BUILDING_ID": 85993,
+        "EXTERIOR_LIGHTING_ZONE_TYPE": null,
+        "building_area_use": {
+            "0": {
+                "ID": 15554,
+                "AREA_DESCRIPTION": null,
+                "BLDG_USE_KEY": "11037",
+                "CEILING_HEIGHT": 0.0,
+                "FLOOR_AREA": 36210.0,
+                "INTERNAL_LOAD": 1.95,
+                "LIGHTING_ID": 85938,
+                "POWER_DENSITY": 1.0,
+                "WHOLE_BLDG_TYPE": "WHOLE_BUILDING_OFFICE",
+                "constructionType": null
+            }
+        },
+        "exterior_use": {
+            "0": {
+                "ID": 116358,
+                "AREA_DESCRIPTION": null,
+                "EXTERIOR_TYPE": "EXTERIOR_INVALID_USE",
+                "IS_TRADABLE": 0,
+                "LIGHTING_ID": 85938,
+                "POWER_DENSITY": 0.0,
+                "QUANTITY_UNITS": null,
+                "USE_QUANTITY": 0.0,
+                "exterior_space": null
+            }
+        }
+    },
+    "project_info": {
+        "ID": 85982,
+        "BUILDING_ID": 85993,
+        "DEVELOPER_ADDRESS": "175 W. Jackson Blvd",
+        "DEVELOPER_ADDRESS2": "Suite 1400",
+        "DEVELOPER_CITY": "Chicago",
+        "DEVELOPER_COMPANY": "Environmental Systems Design, Inc.",
+        "DEVELOPER_EMAIL": "pnarayan@esdglobal.com",
+        "DEVELOPER_FIRST_NAME": "Pritish",
+        "DEVELOPER_LAST_NAME": "Narayan",
+        "DEVELOPER_PHONE": "312-762-1561",
+        "DEVELOPER_STATE": "IL",
+        "DEVELOPER_ZIP_CODE": "60604",
+        "NOTES": null,
+        "OWNER_ADDRESS": null,
+        "OWNER_ADDRESS2": null,
+        "OWNER_CITY": null,
+        "OWNER_COMPANY": null,
+        "OWNER_EMAIL": null,
+        "OWNER_FIRST_NAME": null,
+        "OWNER_LAST_NAME": null,
+        "OWNER_PHONE": null,
+        "OWNER_STATE": null,
+        "OWNER_ZIP_CODE": null,
+        "PROJECT_ADDRESS": "1918 8th Ave",
+        "PROJECT_ADDRESS2": null,
+        "PROJECT_CITY": "Seattle",
+        "PROJECT_COMPLETE": null,
+        "PROJECT_LOT_NUMBER": null,
+        "PROJECT_PERMIT_DATE": null,
+        "PROJECT_PERMIT_NUMBER": null,
+        "PROJECT_STATE": "WA",
+        "PROJECT_TAX_MAP": null,
+        "PROJECT_TITLE": "KPMG Seattle",
+        "PROJECT_ZIP_CODE": "98101"
+    },
+    "swh_systems": null,
+    "envelope": null,
+    "hvac": null
+}

@@ -1,0 +1,92 @@
+{
+    "building": {
+        "ID": 212476,
+        "BLDG_USE_TYPE": "ACTIVITY",
+        "CONDITIONING": "HEATING_AND_COOLING",
+        "CONSTRUCTION_TYPE": "NON_RESIDENTIAL",
+        "EFFICIENCY_PACKAGE_TYPE": null,
+        "HEATING_FUEL_TYPE": null,
+        "IS_NONRESIDENTIAL_CONDITIONING": null,
+        "IS_RESIDENTIAL_CONDITIONING": null,
+        "IS_SEMIHEATED_CONDITIONING": null,
+        "PROJECT_TYPE": "NEW_CONSTRUCTION",
+        "SEMIHEATED": 0,
+        "efficiencyPackage2Applies": null,
+        "efficiencyPackage2Type": null,
+        "performanceRating": null
+    },
+    "user_project": null,
+    "location": {
+        "ID": 212412,
+        "BUILDING_ID": 212476,
+        "CITY": "Portland",
+        "COUNTY": null,
+        "STATE": "Oregon",
+        "epwFilename": null
+    },
+    "control": {
+        "ID": 212477,
+        "BUILDING_ID": 212476,
+        "CODE": "CEZ_OR",
+        "COMPLIANCE_MODE": "UA",
+        "ENGINE_VERSION": "11.1.0"
+    },
+    "lighting": {
+        "ID": 212413,
+        "BUILDING_ID": 212476,
+        "EXTERIOR_LIGHTING_ZONE_TYPE": "EXT_ZONE_UNSPECIFIED",
+        "building_area_use": null,
+        "exterior_use": {
+            "0": {
+                "ID": 314176,
+                "AREA_DESCRIPTION": null,
+                "EXTERIOR_TYPE": "EXTERIOR_INVALID_USE",
+                "IS_TRADABLE": 0,
+                "LIGHTING_ID": 212413,
+                "POWER_DENSITY": 0.0,
+                "QUANTITY_UNITS": null,
+                "USE_QUANTITY": 0.0,
+                "exterior_space": null
+            }
+        }
+    },
+    "project_info": {
+        "ID": 212458,
+        "BUILDING_ID": 212476,
+        "DEVELOPER_ADDRESS": "8345 Lenexa Dr",
+        "DEVELOPER_ADDRESS2": "Suite 300",
+        "DEVELOPER_CITY": "Lenexa",
+        "DEVELOPER_COMPANY": "HENDERSON ENGINEERS INC",
+        "DEVELOPER_EMAIL": "dean.chandler@hei-eng.com",
+        "DEVELOPER_FIRST_NAME": "Dean",
+        "DEVELOPER_LAST_NAME": "Chandler",
+        "DEVELOPER_PHONE": "913.742.5000",
+        "DEVELOPER_STATE": "KS",
+        "DEVELOPER_ZIP_CODE": "66214",
+        "NOTES": null,
+        "OWNER_ADDRESS": null,
+        "OWNER_ADDRESS2": null,
+        "OWNER_CITY": null,
+        "OWNER_COMPANY": null,
+        "OWNER_EMAIL": null,
+        "OWNER_FIRST_NAME": "Helzberg Diamonds",
+        "OWNER_LAST_NAME": null,
+        "OWNER_PHONE": null,
+        "OWNER_STATE": null,
+        "OWNER_ZIP_CODE": null,
+        "PROJECT_ADDRESS": "Washington Square Mall",
+        "PROJECT_ADDRESS2": "SW Washington Square Road, space #56 & 57",
+        "PROJECT_CITY": "Portland",
+        "PROJECT_COMPLETE": null,
+        "PROJECT_LOT_NUMBER": null,
+        "PROJECT_PERMIT_DATE": null,
+        "PROJECT_PERMIT_NUMBER": null,
+        "PROJECT_STATE": "OR",
+        "PROJECT_TAX_MAP": null,
+        "PROJECT_TITLE": "HELZBERG DIAMONDS",
+        "PROJECT_ZIP_CODE": "97223"
+    },
+    "swh_systems": null,
+    "envelope": null,
+    "hvac": null
+}

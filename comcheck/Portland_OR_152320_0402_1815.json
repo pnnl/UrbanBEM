@@ -1,0 +1,105 @@
+{
+    "building": {
+        "ID": 152320,
+        "BLDG_USE_TYPE": "WHOLE_BLDG",
+        "CONDITIONING": "HEATING_AND_COOLING",
+        "CONSTRUCTION_TYPE": "NON_RESIDENTIAL",
+        "EFFICIENCY_PACKAGE_TYPE": null,
+        "HEATING_FUEL_TYPE": null,
+        "IS_NONRESIDENTIAL_CONDITIONING": null,
+        "IS_RESIDENTIAL_CONDITIONING": null,
+        "IS_SEMIHEATED_CONDITIONING": null,
+        "PROJECT_TYPE": "NEW_CONSTRUCTION",
+        "SEMIHEATED": 0,
+        "efficiencyPackage2Applies": null,
+        "efficiencyPackage2Type": null,
+        "performanceRating": null
+    },
+    "user_project": null,
+    "location": {
+        "ID": 152256,
+        "BUILDING_ID": 152320,
+        "CITY": "Portland",
+        "COUNTY": null,
+        "STATE": "Oregon",
+        "epwFilename": null
+    },
+    "control": {
+        "ID": 152321,
+        "BUILDING_ID": 152320,
+        "CODE": "CEZ_OR",
+        "COMPLIANCE_MODE": "PRESCRIPTIVE",
+        "ENGINE_VERSION": "8.0.0"
+    },
+    "lighting": {
+        "ID": 152262,
+        "BUILDING_ID": 152320,
+        "EXTERIOR_LIGHTING_ZONE_TYPE": "EXT_ZONE_UNSPECIFIED",
+        "building_area_use": {
+            "0": {
+                "ID": 24455,
+                "AREA_DESCRIPTION": null,
+                "BLDG_USE_KEY": "91571",
+                "CEILING_HEIGHT": 0.0,
+                "FLOOR_AREA": 1899.0,
+                "INTERNAL_LOAD": 1.95,
+                "LIGHTING_ID": 152262,
+                "POWER_DENSITY": 0.91,
+                "WHOLE_BLDG_TYPE": "WHOLE_BUILDING_OFFICE",
+                "constructionType": null
+            }
+        },
+        "exterior_use": {
+            "0": {
+                "ID": 219997,
+                "AREA_DESCRIPTION": null,
+                "EXTERIOR_TYPE": "EXTERIOR_INVALID_USE",
+                "IS_TRADABLE": 0,
+                "LIGHTING_ID": 152262,
+                "POWER_DENSITY": 0.0,
+                "QUANTITY_UNITS": null,
+                "USE_QUANTITY": 0.0,
+                "exterior_space": null
+            }
+        }
+    },
+    "project_info": {
+        "ID": 152302,
+        "BUILDING_ID": 152320,
+        "DEVELOPER_ADDRESS": "1111 E Burnside, Suite 307",
+        "DEVELOPER_ADDRESS2": null,
+        "DEVELOPER_CITY": "Portland",
+        "DEVELOPER_COMPANY": "Erez Russo Architect, PC",
+        "DEVELOPER_EMAIL": null,
+        "DEVELOPER_FIRST_NAME": "Erez",
+        "DEVELOPER_LAST_NAME": "Russo",
+        "DEVELOPER_PHONE": null,
+        "DEVELOPER_STATE": "OR",
+        "DEVELOPER_ZIP_CODE": "97214",
+        "NOTES": null,
+        "OWNER_ADDRESS": "3321 SE 20th Avenue",
+        "OWNER_ADDRESS2": null,
+        "OWNER_CITY": "Portland",
+        "OWNER_COMPANY": "C&E Systems",
+        "OWNER_EMAIL": null,
+        "OWNER_FIRST_NAME": "Kristen",
+        "OWNER_LAST_NAME": "Leonard",
+        "OWNER_PHONE": null,
+        "OWNER_STATE": "OR",
+        "OWNER_ZIP_CODE": "97202",
+        "PROJECT_ADDRESS": "3321 SE 20th Avenue",
+        "PROJECT_ADDRESS2": null,
+        "PROJECT_CITY": "Portland",
+        "PROJECT_COMPLETE": null,
+        "PROJECT_LOT_NUMBER": null,
+        "PROJECT_PERMIT_DATE": null,
+        "PROJECT_PERMIT_NUMBER": null,
+        "PROJECT_STATE": "OR",
+        "PROJECT_TAX_MAP": null,
+        "PROJECT_TITLE": "C&E Systems Building Renovation",
+        "PROJECT_ZIP_CODE": "97202"
+    },
+    "swh_systems": null,
+    "envelope": null,
+    "hvac": null
+}
