@@ -1,4 +1,7 @@
-"""Illustrate process, dev use only"""
+"""Illustrate process, dev use only
+
+modified to accomodate single idf file, aiming at being called in a streamline.
+"""
 
 #%%
 import os
@@ -21,43 +24,34 @@ IDF.setiddname("../resources/Energy+V9_0_1.idd")
 
 
 #%% load minimal idf
-idf1 = IDF("../resources/idfs/Minimal.idf")
-idf2 = IDF("../resources/idfs/Minimal.idf")
+idf = IDF("../resources/idfs/Minimal.idf")
+casename = 'cbecs4'
+case_path = f"../input/std_json_raw/{casename}.json"
 
 #%% convert units
 
-with open("../input/raw_inputs/case1.json") as f:
-    case1 = json.load(f)
+with open(case_path) as f:
+    case = json.load(f)
 
-with open("../input/raw_inputs/case2.json") as f:
-    case2 = json.load(f)
+case_conv, case_conv_clean = recipes.convert_dict_unit(case)
 
-case1_conv = recipes.convert_dict_unit(case1)
-case2_conv = recipes.convert_dict_unit(case2)
+with open(f"../input/std_json_conv/{casename}_conv.json", "w") as f:
+    f.write(json.dumps(case_conv, indent=4))
+with open(f"../input/std_json_conv_clean/{casename}_conv.json", "w") as f:
+    f.write(json.dumps(case_conv_clean, indent=4))
 
-with open("../input/processed_inputs/case1.json", "w") as f:
-    f.write(json.dumps(case1_conv, indent=4))
-
-with open("../input/processed_inputs/case2.json", "w") as f:
-    f.write(json.dumps(case2_conv, indent=4))
 
 #%% preprocessors
-proc_case1 = Preprocessor(case1_conv).case_proc
-with open("../input/processed_inputs/case1-processed.json", "w") as f:
-    f.write(json.dumps(proc_case1, indent=4))
-
-proc_case2 = Preprocessor(case1_conv).case_proc
-with open("../input/processed_inputs/case2-processed.json", "w") as f:
-    f.write(json.dumps(proc_case2, indent=4))
+proc_case = Preprocessor(case_conv_clean).case_proc
+with open(f"../input/processed_inputs/{casename}_processed.json", "w") as f:
+    f.write(json.dumps(proc_case, indent=4))
 
 #%% geometry processor
 
-idf1 = Geometry(proc_case1, idf1)
-idf2 = Geometry(proc_case2, idf2)
+idf = Geometry(proc_case, idf)
 
 #%% geometry output
-idf1.save_idf("../devoutput/geometryadded1.idf")
-idf2.save_idf("../devoutput/geometryadded2.idf")
+idf.save_idf("../devoutput/geometry_added.idf")
 
 # %% schedule processor
 with open("../input/processed_inputs/std_hvac_dev.json") as f:

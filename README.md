@@ -19,7 +19,9 @@ WIP
 - Add multi-storey functionality
 ## Updates
 
-- 01/02/2020: working framework with airflow and csv-based fake building characteristics
+- 04/20/2020:
+  - Add standard input loading
+  - modify unit conversion to include post-conversion units and addtitional conversions
 
 ## Dependencies
 
