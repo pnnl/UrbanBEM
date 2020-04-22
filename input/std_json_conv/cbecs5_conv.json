@@ -4,7 +4,7 @@
     "year_built": 1972,
     "ashrae_climate_zone": "2B",
     "epw_file": "USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw",
-    "conditioned_floor_area(m2)": 2787.0912000000003,
+    "gross_conditioned_area(m2)": 2787.0912000000003,
     "number_of_floor": 2,
     "floor_to_ceil_height(m)": 4.2672,
     "south_gross_wall_area(m2)": 318.59106097472545,

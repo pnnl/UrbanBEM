@@ -8,9 +8,7 @@ import os
 
 os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")  # for linux
 # os.chdir('C:\\FirstClass\\airflow\\dags\\urban-sim-flow\\src') # for windows
-from io import StringIO
-from typing import Dict
-import pandas as pd
+
 from geomeppy import IDF
 import json
 from geometry import Geometry
@@ -25,7 +23,7 @@ IDF.setiddname("../resources/Energy+V9_0_1.idd")
 
 #%% load minimal idf
 idf = IDF("../resources/idfs/Minimal.idf")
-casename = 'cbecs4'
+casename = "cbecs5"
 case_path = f"../input/std_json_raw/{casename}.json"
 
 #%% convert units
@@ -47,22 +45,16 @@ with open(f"../input/processed_inputs/{casename}_processed.json", "w") as f:
     f.write(json.dumps(proc_case, indent=4))
 
 #%% geometry processor
-
-idf = Geometry(proc_case, idf)
-
-#%% geometry output
-idf.save_idf("../devoutput/geometry_added.idf")
+geometryadded_obj = Geometry(proc_case, idf)
+geometryadded_obj.save_idf("../devoutput/geometry_added.idf")
 
 # %% schedule processor
-with open("../input/processed_inputs/std_hvac_dev.json") as f:
-    idf1_scheduleadded = Schedule(json.load(f), idf1.idf)
-idf1_scheduleadded.save_idf("../devoutput/scheduleadded1.idf")
+scheduleadded_obj = Schedule(proc_case, geometryadded_obj.idf)
+scheduleadded_obj.save_idf("../devoutput/schedule_added.idf")
 
 # %% load processor
-# Read output from previous processor
-with open("../input/processed_inputs/std_hvac_dev.json") as f:
-    idf1_lds = Loads(json.load(f), idf1_scheduleadded.idf)
-idf1_lds.save_idf("../devoutput/loadsadded1.idf")
+loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)
+loadadded_obj.save_idf("../devoutput/loads_added.idf")
 
 
 # %% hvac processor

@@ -1,0 +1,27 @@
+  {
+        "Office": {
+            "electric_equipment": {
+                "epd": 0.5,
+                "frac_latent": 0.5,
+                "frac_radiant": 0.5,
+                "frac_lost": 0,
+                "schedule": "bldg_electric_equipment_sch"
+            },
+            "lighting": {
+                "lpd": 0.5,
+                "frac_radiant": 0.5,
+                "frac_visible": 0.5,
+                "schedule": "bldg_light_sch"
+            },
+            "infiltration": {
+                "inf": 0.00005,
+                "schedule": "bldg_infiltration_sch"
+            },
+            "people": {
+                "people": 0.5,
+                "frac_radiant": 0.5,
+                "people_schedule": "bldg_occ_sch",
+                "people_activity_schedule": "activity_sch"
+            }
+        }
+    }

@@ -8,47 +8,6 @@ geometry_settings = read_json("geometry_settings.json")
 orient_list = geometry_settings["orient_list"]
 
 
-# def populate_cbecs_zones(case: Dict) -> Dict:
-#     building_area_type = case["building_area_type"]
-#     conditioned_floor_area = case["geometry_spec"]["conditioned_floor_area"]
-#     gross_wall_area = case["geometry_spec"]["gross_wall_area"]
-#     wwr = case["geometry_spec"]["wwr"]
-#     height = case["geometry_spec"]["height"]
-#
-#     floor2wall_ratio = conditioned_floor_area / gross_wall_area
-#     gross_wall_area_perimeter = 0.25 * gross_wall_area
-#     window_area_perimeter = gross_wall_area * wwr * 0.25
-#
-#     init_thermalzone_df = pd.DataFrame()
-#
-#     # add perimeter thermal zones spec
-#     for side in orient_list:
-#         init_thermalzone_df = init_thermalzone_df.append(
-#             get_perimeter_row_dict(
-#                 building_area_type,
-#                 side,
-#                 gross_wall_area_perimeter,
-#                 floor2wall_ratio,
-#                 height,
-#                 window_area_perimeter,
-#             ),
-#             ignore_index=True,
-#         )
-#
-#     # add core zone spec if needed
-#     if floor2wall_ratio > 1.25:
-#         perimeter_area_sum = init_thermalzone_df["area"].sum()
-#         init_thermalzone_df = init_thermalzone_df.append(
-#             get_core_row_dict(
-#                 building_area_type, conditioned_floor_area, perimeter_area_sum, height
-#             ),
-#             ignore_index=True,
-#         )
-#
-#     init_thermalzone_dict = init_thermalzone_df.to_dict(orient="index")
-#     return init_thermalzone_dict
-
-
 def populate_std_zones(case: Dict) -> Dict:
     """populate standard input zone geometry information
 
@@ -105,70 +64,17 @@ def populate_std_zones(case: Dict) -> Dict:
         perimeter_area_sum = init_thermalzone_df["area"].sum()
         init_thermalzone_df = init_thermalzone_df.append(
             get_core_row_dict(
-                building_area_type, conditioned_floor_area, perimeter_area_sum, height, num_floors
+                building_area_type,
+                conditioned_floor_area,
+                perimeter_area_sum,
+                height,
+                num_floors,
             ),
             ignore_index=True,
         )
 
     init_thermalzone_dict = init_thermalzone_df.to_dict(orient="index")
     return init_thermalzone_dict
-
-
-# def populate_comcheck_zones(case: Dict) -> Dict:
-#     building_area_type = case["building_area_type"]
-#     conditioned_floor_area = case["geometry_spec"]["conditioned_floor_area"]
-#     height = case["geometry_spec"]["height"]
-#     perimeter_spec_dict = case["geometry_spec"]["perimeter_spec_dict"]
-#
-#     # validate perimeter spec dict argument
-#     for k, v in perimeter_spec_dict.items():
-#         if k not in orient_list:
-#             print(
-#                 'ERROR: perimeter spec dict key values need to be among ["south", "west", "north", "east"]'
-#             )
-#             return None
-#         if isinstance(v, dict):
-#             for vk, vv in v.items():
-#                 if vk not in ["gross_wall_area", "window_area"]:
-#                     print(
-#                         'ERROR: perimeter spec for each orientation dict needs keys ["gross_wall_area", "window_area"]'
-#                     )
-#         else:
-#             print("ERROR: perimeter spec for each orientation needs to be a dict")
-#
-#     perimeter_spec_df = pd.DataFrame(perimeter_spec_dict).transpose()
-#     gross_wall_area = perimeter_spec_df["gross_wall_area"].sum()
-#     floor2wall_ratio = conditioned_floor_area / gross_wall_area
-#
-#     init_thermalzone_df = pd.DataFrame()
-#
-#     # add perimeter thermal zones spec
-#     for side in orient_list:
-#         spec_dict = perimeter_spec_dict[side]
-#         init_thermalzone_df = init_thermalzone_df.append(
-#             get_perimeter_row_dict(
-#                 building_area_type,
-#                 side,
-#                 spec_dict["gross_wall_area"],
-#                 floor2wall_ratio,
-#                 height,
-#                 spec_dict["window_area"],
-#             ),
-#             ignore_index=True,
-#         )
-#
-#     # add core zone spec if needed
-#     if floor2wall_ratio > 1.25:
-#         perimeter_area_sum = init_thermalzone_df["area"].sum()
-#         init_thermalzone_df = init_thermalzone_df.append(
-#             get_core_row_dict(
-#                 building_area_type, conditioned_floor_area, perimeter_area_sum, height
-#             ),
-#             ignore_index=True,
-#         )
-#
-#     init_thermalzone_dict = init_thermalzone_df.to_dict(orient="index")
-#     return init_thermalzone_dict
 
 
 def get_perimeter_row_dict(
@@ -212,3 +118,57 @@ def get_core_row_dict(
     row_dict["depth"] = row_dict["length"]
     row_dict["num_floors"] = num_floors
     return row_dict
+
+
+def populate_std_schedules(case: Dict) -> Dict:
+    """ populate hourly schedules based on standard input information
+
+    Args:
+        case: case dictionary. Properties used in this function are:
+            - "weekly_occupied_hours"
+            - "number_days_open_workday"
+            - "number_days_open_weekend"
+
+    Returns:
+        hourly schedules dictionary
+
+    """
+    # TODO: @Yunyang, please replace the contents of this function with the schedule derivation logic
+    #  schedules_sample contains exact structure we need as the output of the schedule logic you are coding.
+    import json
+
+    with open("processed_schedule_sample.json") as f:
+        schedules_sample = json.load(f)
+    return schedules_sample
+
+
+def populate_std_loads(case: Dict) -> Dict:
+    """ populate detailed internal load profiles for use in the processor
+
+    Args:
+        case: case dictionary. Properties used in this function are:
+            - "people_density"
+            - "lpd"
+            - "plug_load_density"
+            - "Infiltration_rate"
+
+    Returns:
+        ready to use loads dictionary for processor
+
+    """
+
+    # TODO: @Jeremy / @Jerry, replace the contents of this function with the loads derivation logic
+    # loads_sample contains exact structure we need as the output
+
+    """
+    TODO: @Jeremy, we may want to modify the input structure to the loads processor: 
+       1) are we going to model only one building area type? if so, we shall delete the type property
+       2) several parameter values cannot be obtained from the standard inputs, we shall put them in a separate 
+            config file, e.g. loads_settings.json and read it directly from the loads processor.
+        I am fully open to your suggestions.
+    """
+    import json
+
+    with open("processed_loads_sample.json") as f:
+        loads_sample = json.load(f)
+    return loads_sample

@@ -47,6 +47,7 @@ def convert_dict_unit(imp: Dict) -> (Dict, Dict):
         "people/1000ft2": 1 / 1000 / (0.3048 * 0.3048),
         "W/ft2": 1 / (0.3048 * 0.3048),
         "cfm/ft2": 5.08e-3,
+        "hr/wk": 1,
         # "delta_f": 5.0 / 9.0,
         # "cfm": 1.0 / 2118.88,
         # "gal": 1.0 / 264.1721,
@@ -69,6 +70,7 @@ def convert_dict_unit(imp: Dict) -> (Dict, Dict):
         "people/1000ft2": "person/m2",
         "W/ft2": "W/m2",
         "cfm/ft2": "m3/s-m2",
+        "hr/wk": "hr/wk"
         # "delta_f": "delta_c",
         # "cfm": "m3/s",
         # "gal": "",
