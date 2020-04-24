@@ -13,50 +13,156 @@ class Constructions:
     INS_R_THRESH = 0.001
 
     def __init__(self, case: Dict, idf: IDF):
+        self.idf = idf
         self.case = case
         with open("../resources/construction_meta.json") as f:
             self.cons_meta = json.load(f)
 
         self.mat_dict = {}
-        self.matnomass_dict = {}
-        self.cons_list = []
-        self.combinations = pd.DataFrame(
-            columns=["applied_surface", "cons_name", "mat_name", "mat_type"]
-        )
+        self.cons_dict = {}
 
-        self.identify_constructions()
-        self.set_basic_constructions()
-        self.set_ext_wall_constructions()
-        self.set_roof_constructions()
-        self.set_groundfloor_constructions()
-        self.set_fenestration_constructions()
+        self.constructions = self.case["constructions"]
+        for surface, contents in self.constructions.items():
+            if surface in ["int_wall", "int_floor", "int_ceiling", "ext_wall", "roof"]:
+                if "u_factor" in contents:
+                    self.set_a_typical_construction(
+                        surface, contents["type"], contents["u_factor"]
+                    )
+                else:
+                    self.set_a_typical_construction(surface, contents["type"])
 
-    def identify_constructions(self):
-        pass
+        self.add_typical_materials()
+        self.add_typical_constructions()
 
-    def dfrow_from_meta(self, surface, type):
+    def save_idf(self, path):
+        self.idf.saveas(path, lineendings="unix")
+
+    def set_a_typical_construction(self, surface, type, u_factor=None):
+        """set construction for one of the following
+            "int_wall", "int_floor", "int_ceiling", "ext_wall", "roof"
         """
 
-        Args:
-            surface: e.g. "ext_wall"
-            type: e.g. "Wood_Framed"
-            calculate_insulation: e.g. True
-
-        Returns: None
-
-        """
-
-        row = {}
+        # inject construction and materials to dict
+        construction_name = f"{surface.lower().strip()}_{type.lower().strip()}"
         original_mat_list = self.cons_meta["construction"][surface][type]
-        row["applied_surface"] = surface
-        row["cons_name"] = f"{surface.lower().strip()}_{type.lower().strip()}"
+        if u_factor is None:
+            adj_mat_list = original_mat_list
+        else:
+            adj_mat_list = self.get_adj_r_matlist(original_mat_list, u_factor)
 
-        # for mat in mat_list:
-        #     if not self.mat_dict.has_key(mat):
-        #         if self.cons_meta['material'].has_key(mat):
-        #             self.mat_dict[mat] = self.cons_meta['material'][mat]
-        #         if self.cons_meta['material_nomass'].has_key(mat):
-        #             self.matnomass_dict[mat] = self.cons_meta['material_nomass'][mat]
+        # add construction to const dict
+        if not (construction_name in self.cons_dict):
+            self.cons_dict[construction_name] = adj_mat_list
+
+        # add corresponding materials to mat dict
+        for mat in adj_mat_list:
+            if mat in self.mat_dict:
+                continue
+            else:
+                if "_ins_layer_R" in mat:
+                    r_float = float(
+                        mat.split("_R_")[-1]
+                    )  # read r float from the adj mat name
+                    mat_prefix = str(
+                        mat.split("_R_")[0]
+                    )  # read original mat name from the adj mat name
+
+                    self.mat_dict[mat] = self.cons_meta["material"][
+                        mat_prefix
+                    ]  # add original properties first
+                    self.mat_dict[mat][
+                        "Thermal_Resistance"
+                    ] = r_float  # then modify R value
+                else:
+                    self.mat_dict[mat] = self.cons_meta["material"][mat]
+
+        # add construction reference to surface objects (cons / mat idf objs will be added later altogether)
+        # need to deal with different surfface separately
+        if surface == "int_wall":
+            walls = self.idfobjs_filters(
+                "BUILDINGSURFACE:DETAILED", dict(Surface_Type="wall")
+            )
+            self.batch_modify_idf_objs(walls, dict(Construction_Name=construction_name))
+        if surface == "int_floor":
+            floors = self.idfobjs_filters(
+                "BUILDINGSURFACE:DETAILED", dict(Surface_Type="floor")
+            )
+            self.batch_modify_idf_objs(
+                floors, dict(Construction_Name=construction_name)
+            )
+        if surface == "int_ceiling":
+            ceilings = self.idfobjs_filters(
+                "BUILDINGSURFACE:DETAILED", dict(Surface_Type="ceiling")
+            )
+            self.batch_modify_idf_objs(
+                ceilings, dict(Construction_Name=construction_name)
+            )
+        if surface == "ext_wall":
+            windows = self.idfobjs_filters(
+                "FENESTRATIONSURFACE:DETAILED", dict(Surface_Type="window")
+            )
+            ext_wall_combined_list = [obj["Building_Surface_Name"] for obj in windows]
+            ext_wall_unique_list = list(set(ext_wall_combined_list))
+            ext_walls = []
+            walls = self.idfobjs_filters(
+                "BUILDINGSURFACE:DETAILED", dict(Surface_Type="wall")
+            )
+            for wall in walls:
+                if wall["Name"] in ext_wall_unique_list:
+                    ext_walls.append(wall)
+            self.batch_modify_idf_objs(
+                ext_walls, dict(Construction_Name=construction_name)
+            )
+        if surface == "roof":
+            roofs = self.idfobjs_filters(
+                "BUILDINGSURFACE:DETAILED", dict(Surface_Type="roof")
+            )
+            self.batch_modify_idf_objs(roofs, dict(Construction_Name=construction_name))
+
+    def add_typical_materials(self):
+        for mat_name, mat_props in self.mat_dict.items():
+            obj_type = mat_props.pop("obj_type").lower().strip()
+            if obj_type == "default":
+                mat_props["key"] = "MATERIAL"
+            elif obj_type == "nomass":
+                mat_props["key"] = "MATERIAL:NOMASS"
+            else:
+                print("material obj type is not valid!")
+
+            mat_props['Name'] = mat_name
+            self.idf.newidfobject(**mat_props)
+
+    def add_typical_constructions(self):
+        for const_name, mat_list in self.cons_dict.items():
+            const_props = {"key": "CONSTRUCTION",
+                          "Name":const_name}
+            layer_id = 1
+            for mat in mat_list:
+                if layer_id == 1:
+                    const_props["Outside_Layer"] = mat
+                else:
+                    const_props[f"Layer_{int(layer_id)}"] = mat
+            layer_id += 1
+            self.idf.newidfobject(**const_props)
+
+    def idfobjs_filters(self, obj_type, property_dict: Dict):
+        original_objs = self.idf.idfobjects[obj_type.upper()]
+        filtered_objs = []
+        for property, value in property_dict.items():
+            for obj in original_objs:
+                if obj[property].lower() == value.lower():
+                    filtered_objs.append(obj)
+            original_objs = filtered_objs
+        return filtered_objs
+
+    def batch_modify_idf_objs(self, objs, property_dict: Dict):
+        for property, value in property_dict.items():
+            for obj in objs:
+                obj[
+                    property
+                ] = (
+                    value
+                )  # property assignment are inplace to idf. TODO: to be safe, check it!
 
     def get_adj_r_matlist(self, mat_list: List, user_u_value: float) -> List:
         """mat_list adjusted with computed r value
@@ -132,17 +238,19 @@ class Constructions:
 
         return mat_list
 
-    def set_basic_constructions(self):
-        pass
 
-    def set_ext_wall_constructions(self):
-        pass
+def main():
+    import os
 
-    def set_roof_constructions(self):
-        pass
+    os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")  # for linux
+    idf = IDF("../devoutput/geometry_added.idf")
+    casename = "cbecs5"
+    with open(f"../input/processed_inputs/{casename}_processed.json") as f:
+        proc_case = json.load(f)
 
-    def set_groundfloor_constructions(self):
-        pass
+    const_obj = Constructions(proc_case, idf)
+    const_obj.save_idf("../devoutput/const_test.idf")
 
-    def set_fenestration_constructions(self):
-        pass
+
+if __name__ == "__main__":
+    main()
