@@ -11,24 +11,21 @@ class Loads:
     def __init__(self, case: Dict, idf: IDF):
         self.idf = idf
         self.building_area_type = case["building_area_type"]
-        b_a_t = self.building_area_type
         self.electric_equipment = None
         self.lighting = None
         self.infiltration = None
         self.people = None
-        if "electric_equipment" in case["internal_loads"][b_a_t].keys():
-            self.electric_equipment = case["internal_loads"][b_a_t][
-                "electric_equipment"
-            ]
+        if "electric_equipment" in case["internal_loads"].keys():
+            self.electric_equipment = case["internal_loads"]["electric_equipment"]
             eflag = True
-        if "lighting" in case["internal_loads"][b_a_t].keys():
-            self.lighting = case["internal_loads"][b_a_t]["lighting"]
+        if "lighting" in case["internal_loads"].keys():
+            self.lighting = case["internal_loads"]["lighting"]
             lflag = True
-        if "infiltration" in case["internal_loads"][b_a_t].keys():
-            self.infiltration = case["internal_loads"][b_a_t]["infiltration"]
+        if "infiltration" in case["internal_loads"].keys():
+            self.infiltration = case["internal_loads"]["infiltration"]
             iflag = True
-        if "people" in case["internal_loads"][b_a_t].keys():
-            self.people = case["internal_loads"][b_a_t]["people"]
+        if "people" in case["internal_loads"].keys():
+            self.people = case["internal_loads"]["people"]
             pflag = True
         self.set_loads(
             equipment=eflag, lighting=lflag, infiltration=iflag, people=pflag
@@ -99,11 +96,11 @@ class Loads:
         ppl.Zone_or_ZoneList_Name = "zone_list_{}".format(
             self.building_area_type.strip()
         )
-        ppl.Number_of_People_Schedule_Name = self.people["people_schedule"]
+        ppl.Number_of_People_Schedule_Name = self.people["schedule"]
         ppl.Number_of_People_Calculation_Method = "People/Area"
         ppl.People_per_Zone_Floor_Area = self.people["people"]
         ppl.Fraction_Radiant = self.people["frac_radiant"]
-        ppl.Activity_Level_Schedule_Name = self.people["people_activity_schedule"]
+        ppl.Activity_Level_Schedule_Name = self.people["activity_schedule"]
         return local_idf
 
     def set_loads(
