@@ -5,12 +5,6 @@
     "ashrae_climate_zone": "2B",
     "epw_file": "USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw",
     "gross_conditioned_area": 2787.0912000000003,
-    "wall_type": "Mass",
-    "wall_u_factor": 3.9136383594971975,
-    "roof_type": "IEAD",
-    "roof_u_factor": 5.562003435665856,
-    "window_U_factor": 7.7042293645835676,
-    "window_shgc": 0.34597001472225286,
     "heating_system_type": "HotWater",
     "cooling_system_type": "ChilledWater",
     "ventilation_rate": 0.584189814053779,
@@ -81,6 +75,29 @@
             "window_height": NaN,
             "window_lengh": NaN,
             "wwr": NaN
+        }
+    },
+    "constructions": {
+        "int_wall": {
+            "type": "Default"
+        },
+        "int_floor": {
+            "type": "Default"
+        },
+        "int_ceiling": {
+            "type": "Default"
+        },
+        "ext_wall": {
+            "type": "Mass",
+            "u_factor": 3.9136383594971975
+        },
+        "roof": {
+            "type": "IEAD",
+            "u_factor": 5.562003435665856
+        },
+        "window": {
+            "u_factor": 7.7042293645835676,
+            "shgc": 0.34597001472225286
         }
     },
     "schedules": {

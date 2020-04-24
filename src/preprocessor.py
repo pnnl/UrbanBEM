@@ -14,12 +14,6 @@ class Preprocessor:
             "ashrae_climate_zone",
             "epw_file",
             "gross_conditioned_area",
-            "wall_type",
-            "wall_u_factor",
-            "roof_type",
-            "roof_u_factor",
-            "window_U_factor",
-            "window_shgc",
             "heating_system_type",
             "cooling_system_type",
             "ventilation_rate",
@@ -29,11 +23,15 @@ class Preprocessor:
         self.keep_is()
 
         self.geometry_procedures()
+        self.construction_procedures()
         self.schedule_procedures()
         self.loads_procedures()
 
     def geometry_procedures(self):  # general preprocess organizer
         self.populate_zone_geometry()
+
+    def construction_procedures(self):
+        self.populate_constructions()
 
     def schedule_procedures(self):
         self.populate_hourly_schedules()
@@ -59,3 +57,6 @@ class Preprocessor:
 
     def populate_loads(self):
         self.case_proc["internal_loads"] = adaptors.populate_std_loads(self.case)
+
+    def populate_constructions(self):
+        self.case_proc["constructions"] = adaptors.populate_std_constructions(self.case)

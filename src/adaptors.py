@@ -172,3 +172,29 @@ def populate_std_loads(case: Dict) -> Dict:
     with open("processed_loads_sample.json") as f:
         loads_sample = json.load(f)
     return loads_sample
+
+
+def populate_std_constructions(case: Dict) -> Dict:
+    """ populate detailed construction profiles for user in the processor
+    Args:
+        case: case dictionary. Properties used in this function are:
+            - "wall_type"
+            - "wall_u_factor"
+            - "roof_type"
+            - "roof_u_factor"
+            - "window_U_factor"
+            - "window_shgc"
+    Returns:
+        ready to use construction profile for processor
+    """
+
+    constructions = {
+        "int_wall": {"type": "Default"},
+        "int_floor": {"type": "Default"},
+        "int_ceiling": {"type": "Default"},
+        "ext_wall": {"type": case["wall_type"], "u_factor": case["wall_u_factor"]},
+        "roof": {"type": case["roof_type"], "u_factor": case["roof_u_factor"]},
+        "window": {"u_factor": case["window_U_factor"], "shgc": case["window_shgc"]},
+    }
+
+    return constructions
