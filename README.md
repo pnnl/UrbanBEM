@@ -19,8 +19,14 @@ WIP
 - Add multi-storey functionality
 ## Updates
 
-- 01/02/2020: working framework with airflow and csv-based fake building characteristics
-
+- 04/20/2020:
+  - Add standard input loading
+  - modify unit conversion to include post-conversion units and addtitional conversions
+- 04/21/2020:
+  - Add multi-storey capacity
+  - Add schedule generator interface.
+  - Add loads generator interface.
+  
 ## Dependencies
 
 The following python pakcages need to be installed for using the framework

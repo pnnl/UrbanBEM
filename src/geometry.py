@@ -104,11 +104,15 @@ class Geometry:
         local_idf.add_block(
             name=dfrow["name"],
             coordinates=coordinates,
-            height=dfrow["height"],
-            num_stories=1,
+            height=dfrow["height"] * int(dfrow["num_floors"]),
+            num_stories=int(dfrow["num_floors"]),
         )
         local_idf.intersect_match()
-        local_idf.set_wwr(wwr=dfrow["wwr"], orientation=dfrow["side"], construction="Project External Window") # TODO: remove default window construction
+        local_idf.set_wwr(
+            wwr=dfrow["wwr"],
+            orientation=dfrow["side"],
+            construction="Project External Window",
+        )  # TODO: remove default window construction
 
         self.idf = copy_idf_objects(self.idf, local_idf)
 
@@ -126,8 +130,8 @@ class Geometry:
         local_idf.add_block(
             name=dfrow["name"],
             coordinates=coordinates,
-            height=dfrow["height"],
-            num_stories=1,
+            height=dfrow["height"] * int(dfrow["num_floors"]),
+            num_stories=int(dfrow["num_floors"]),
         )
         local_idf.intersect_match()
         self.idf = copy_idf_objects(self.idf, local_idf)
