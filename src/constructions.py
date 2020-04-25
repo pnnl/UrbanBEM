@@ -129,20 +129,19 @@ class Constructions:
             else:
                 print("material obj type is not valid!")
 
-            mat_props['Name'] = mat_name
+            mat_props["Name"] = mat_name
             self.idf.newidfobject(**mat_props)
 
     def add_typical_constructions(self):
         for const_name, mat_list in self.cons_dict.items():
-            const_props = {"key": "CONSTRUCTION",
-                          "Name":const_name}
+            const_props = {"key": "CONSTRUCTION", "Name": const_name}
             layer_id = 1
             for mat in mat_list:
                 if layer_id == 1:
                     const_props["Outside_Layer"] = mat
                 else:
                     const_props[f"Layer_{int(layer_id)}"] = mat
-            layer_id += 1
+                layer_id += 1
             self.idf.newidfobject(**const_props)
 
     def idfobjs_filters(self, obj_type, property_dict: Dict):
@@ -205,6 +204,7 @@ class Constructions:
                     print(
                         "Cannot get R value from non-insulation material, something is Wrong!"
                     )
+            i += 1
 
         # TODO: currently, if there is no insulation layer, then we don't check for R value
         #  this might need to be changed
@@ -213,11 +213,11 @@ class Constructions:
 
         # add air film resistance
         if "wall" in ins_mat_name:
-            ext_air_r = 0.17
-            int_air_r = 0.68
+            ext_air_r = 0.17 * 0.17611
+            int_air_r = 0.68 * 0.17611
         elif "roof" in ins_mat_name:
-            ext_air_r = 0.17
-            int_air_r = 0.61
+            ext_air_r = 0.17 * 0.17611
+            int_air_r = 0.61 * 0.17611
         else:
             print(
                 "Cannot recognize insulation material name (no valid surface wihin), something is Wrong!"
@@ -247,6 +247,10 @@ def main():
     casename = "cbecs5"
     with open(f"../input/processed_inputs/{casename}_processed.json") as f:
         proc_case = json.load(f)
+
+    # manually change proc_case ext wall and roof u value to trigger / test branch of adjusting insulation layer r value
+    proc_case["constructions"]["ext_wall"]["u_factor"] = 3
+    proc_case["constructions"]["roof"]["u_factor"] = 4
 
     const_obj = Constructions(proc_case, idf)
     const_obj.save_idf("../devoutput/const_test.idf")

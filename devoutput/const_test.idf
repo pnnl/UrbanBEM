@@ -124,23 +124,34 @@ MATERIAL,
     0.5;                      !- Visible Absorptance
 
 MATERIAL,
-    g01_16mm_gypsum_board,    !- Name
-    MediumSmooth,             !- Roughness
-    0.0159,                   !- Thickness
-    0.16,                     !- Conductivity
-    800,                      !- Density
-    1090,                     !- Specific Heat
-    0.9,                      !- Thermal Absorptance
-    0.7,                      !- Solar Absorptance
-    0.7;                      !- Visible Absorptance
-
-MATERIAL,
     100mm_normalweight_concrete_floor,    !- Name
     MediumRough,              !- Roughness
     0.1016,                   !- Thickness
     2.31,                     !- Conductivity
     2322,                     !- Density
     832,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+MATERIAL,
+    200mm_normalweight_concrete_wall,    !- Name
+    MediumRough,              !- Roughness
+    0.2032,                   !- Thickness
+    2.31,                     !- Conductivity
+    2322,                     !- Density
+    832,                      !- Specific Heat
+    0.9,                      !- Thermal Absorptance
+    0.7,                      !- Solar Absorptance
+    0.7;                      !- Visible Absorptance
+
+MATERIAL,
+    f13_builtup_roofing,      !- Name
+    Rough,                    !- Roughness
+    0.0095,                   !- Thickness
+    0.16,                     !- Conductivity
+    1120,                     !- Density
+    1460,                     !- Specific Heat
     0.9,                      !- Thermal Absorptance
     0.7,                      !- Solar Absorptance
     0.7;                      !- Visible Absorptance
@@ -165,17 +176,17 @@ MATERIAL:NOMASS,
     0.8;                      !- Visible Absorptance
 
 MATERIAL:NOMASS,
-    wall_ins_layer,           !- Name
+    wall_ins_layer_R_0.0163,    !- Name
     VeryRough,                !- Roughness
-    2,                        !- Thermal Resistance
+    0.0163,                   !- Thermal Resistance
     0.9,                      !- Thermal Absorptance
     0.7,                      !- Solar Absorptance
     0.8;                      !- Visible Absorptance
 
 MATERIAL:NOMASS,
-    roof_ins_layer,           !- Name
+    roof_ins_layer_R_0.0532,    !- Name
     VeryRough,                !- Roughness
-    2,                        !- Thermal Resistance
+    0.0532,                   !- Thermal Resistance
     0.9,                      !- Thermal Absorptance
     0.7,                      !- Solar Absorptance
     0.8;                      !- Visible Absorptance
@@ -216,23 +227,30 @@ CONSTRUCTION,
 
 CONSTRUCTION,
     int_wall_default,         !- Name
-    g01_16mm_gypsum_board;    !- Outside Layer
+    g01_13mm_gypsum_board,    !- Outside Layer
+    g01_13mm_gypsum_board;    !- Layer 2
 
 CONSTRUCTION,
     int_floor_default,        !- Name
-    cp02_carpet_pad;          !- Outside Layer
+    100mm_normalweight_concrete_floor,    !- Outside Layer
+    cp02_carpet_pad;          !- Layer 2
 
 CONSTRUCTION,
     int_ceiling_default,      !- Name
-    100mm_normalweight_concrete_floor;    !- Outside Layer
+    cp02_carpet_pad,          !- Outside Layer
+    100mm_normalweight_concrete_floor;    !- Layer 2
 
 CONSTRUCTION,
     ext_wall_mass,            !- Name
-    g01_13mm_gypsum_board;    !- Outside Layer
+    200mm_normalweight_concrete_wall,    !- Outside Layer
+    wall_ins_layer_R_0.0163,    !- Layer 2
+    g01_13mm_gypsum_board;    !- Layer 3
 
 CONSTRUCTION,
     roof_iead,                !- Name
-    f08_metal_surface;        !- Outside Layer
+    f13_builtup_roofing,      !- Outside Layer
+    roof_ins_layer_R_0.0532,    !- Layer 2
+    f08_metal_surface;        !- Layer 3
 
 GlobalGeometryRules,
     UpperLeftCorner,          !- Starting Vertex Position

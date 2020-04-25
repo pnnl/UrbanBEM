@@ -42,7 +42,7 @@
         "int_wall": {
             "Default": [
                 "g01_13mm_gypsum_board",
-                "g01_16mm_gypsum_board"
+                "g01_13mm_gypsum_board"
             ]
         },
         "int_floor": {
