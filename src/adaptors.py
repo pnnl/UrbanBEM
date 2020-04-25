@@ -142,6 +142,29 @@ def populate_std_schedules(case: Dict) -> Dict:
     return schedules_sample
 
 
+def get_loads_fractions(fraction, load, bldg_a_t, loads_settings) -> Dict:
+    """ lookup load fraction associated with building area type
+    
+    Args:
+        fraction: list of fraction to retrieve
+        load: load type
+        bldg_a_t: building area type
+        load_settings: dictionary containg the load fraction lookup values
+    
+    Returns:
+        Dictionary of load fractions
+    """
+    fractions = {}
+    for frac in fraction:
+        # Lookup fraction associated with building area type
+        if bldg_a_t in loads_settings[load][frac]:
+            fractions[frac] = loads_settings[load][frac][bldg_a_t]
+        # Lookup default fraction
+        else:
+            fractions[frac] = loads_settings[load][frac]["Any"]
+    return fractions
+
+
 def populate_std_loads(case: Dict) -> Dict:
     """ populate detailed internal load profiles for use in the processor
 
@@ -156,19 +179,48 @@ def populate_std_loads(case: Dict) -> Dict:
         ready to use loads dictionary for processor
 
     """
-
-    # TODO: @Jeremy / @Jerry, replace the contents of this function with the loads derivation logic
-    # loads_sample contains exact structure we need as the output
-
-    """
-    TODO: @Jeremy, we may want to modify the input structure to the loads processor: 
-       1) are we going to model only one building area type? if so, we shall delete the type property
-       2) several parameter values cannot be obtained from the standard inputs, we shall put them in a separate 
-            config file, e.g. loads_settings.json and read it directly from the loads processor.
-        I am fully open to your suggestions.
-    """
-    import json
-
-    with open("processed_loads_sample.json") as f:
-        loads_sample = json.load(f)
-    return loads_sample
+    loads_dict = {}
+    loads_settings = read_json("loads_settings.json")
+    if "plug_load_density" in case.keys():
+        fractions = get_loads_fractions(
+            ["frac_latent", "frac_radiant", "frac_lost"],
+            "electric_equipment",
+            case["building_area_type"],
+            loads_settings,
+        )
+        loads_dict["electric_equipment"] = {
+            "epd": case["plug_load_density"],
+            "schedule": "bldg_electric_equipment_sch",
+            "frac_latent": fractions["frac_latent"],
+            "frac_radiant": fractions["frac_radiant"],
+            "frac_lost": fractions["frac_lost"],
+        }
+    if "lpd" in case.keys():
+        fractions = get_loads_fractions(
+            ["frac_radiant", "frac_visible"],
+            "lighting",
+            case["building_area_type"],
+            loads_settings,
+        )
+        loads_dict["lighting"] = {
+            "lpd": case["lpd"],
+            "schedule": "bldg_light_sch",
+            "frac_radiant": fractions["frac_radiant"],
+            "frac_visible": fractions["frac_visible"],
+        }
+    if "Infiltration_rate" in case.keys():
+        loads_dict["infiltration"] = {
+            "inf": case["Infiltration_rate"],
+            "schedule": "bldg_infiltration_sch",
+        }
+    if "people_density" in case.keys():
+        fractions = get_loads_fractions(
+            ["frac_radiant"], "people", case["building_area_type"], loads_settings
+        )
+        loads_dict["people"] = {
+            "people": case["people_density"],
+            "schedule": "bldg_occ_sch",
+            "activity_schedule": "activity_sch",
+            "frac_radiant": fractions["frac_radiant"],
+        }
+    return loads_dict
