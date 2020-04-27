@@ -7,7 +7,7 @@ class Preprocessor:
     def __init__(self, case: Dict):
         self.case = case  # input case dict after unit version
         self.case_proc = {}  # output case dict placeholder
-        self.keepkeys = [  # TODO: gradually reduce this list when building up the preprocessors
+        self.keepkeys = [  # gradually reduce this list when building up the preprocessors
             "building_name",
             "building_area_type",
             "year_built",

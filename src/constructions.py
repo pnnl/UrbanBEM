@@ -314,7 +314,7 @@ class Constructions:
         else:
             ins_r = (
                 1 / user_u_value - nonins_sum_r
-            )  # TODO: @Jeremy, double confirm the formula
+            )
             new_ins_mat_name = (
                 f"{ins_mat_name}_R_{ins_r:.4f}"
             )  # build R rounding directly into material name f string

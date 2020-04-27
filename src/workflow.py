@@ -51,7 +51,7 @@ geometryadded_obj.save_idf("../devoutput/geometry_added.idf")
 
 #%% construction processor
 constructionadded_obj = Constructions(proc_case, idf)
-constructionadded_obj.save_idf("../devoutput/construction_aded.idf")
+constructionadded_obj.save_idf("../devoutput/construction_added.idf")
 
 # %% schedule processor
 scheduleadded_obj = Schedule(proc_case, constructionadded_obj.idf)

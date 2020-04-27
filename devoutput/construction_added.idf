@@ -116,17 +116,6 @@ ScheduleTypeLimits,
     Dimensionless;            !- Unit Type
 
 MATERIAL,
-    DefaultMaterial,          !- Name
-    Rough,                    !- Roughness
-    0.1,                      !- Thickness
-    0.1,                      !- Conductivity
-    1000,                     !- Density
-    1000,                     !- Specific Heat
-    0.9,                      !- Thermal Absorptance
-    0.7,                      !- Solar Absorptance
-    0.7;                      !- Visible Absorptance
-
-MATERIAL,
     g01_13mm_gypsum_board,    !- Name
     Smooth,                   !- Roughness
     0.0127,                   !- Thickness
@@ -190,43 +179,9 @@ MATERIAL:NOMASS,
     0.8;                      !- Visible Absorptance
 
 WINDOWMATERIAL:SIMPLEGLAZINGSYSTEM,
-    DefaultGlazing,           !- Name
-    2.7,                      !- UFactor
-    0.763,                    !- Solar Heat Gain Coefficient
-    0.8;                      !- Visible Transmittance
-
-WINDOWMATERIAL:SIMPLEGLAZINGSYSTEM,
     glazing_u_25.2763_shgc_0.3460,    !- Name
     25.27633666877274,        !- UFactor
     0.34597001472225286;      !- Solar Heat Gain Coefficient
-
-CONSTRUCTION,
-    Project Wall,             !- Name
-    DefaultMaterial;          !- Outside Layer
-
-CONSTRUCTION,
-    Project Partition,        !- Name
-    DefaultMaterial;          !- Outside Layer
-
-CONSTRUCTION,
-    Project Floor,            !- Name
-    DefaultMaterial;          !- Outside Layer
-
-CONSTRUCTION,
-    Project Flat Roof,        !- Name
-    DefaultMaterial;          !- Outside Layer
-
-CONSTRUCTION,
-    Project Ceiling,          !- Name
-    DefaultMaterial;          !- Outside Layer
-
-CONSTRUCTION,
-    Project Door,             !- Name
-    DefaultMaterial;          !- Outside Layer
-
-CONSTRUCTION,
-    Project External Window,    !- Name
-    DefaultGlazing;           !- Outside Layer
 
 CONSTRUCTION,
     int_wall_default,         !- Name

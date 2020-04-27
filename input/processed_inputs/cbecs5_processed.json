@@ -1701,15 +1701,15 @@
         "electric_equipment": {
             "epd": 10.050984751563336,
             "schedule": "bldg_electric_equipment_sch",
-            "frac_latent": 0.3,
-            "frac_radiant": 0.3,
+            "frac_latent": 0.0,
+            "frac_radiant": 0.5,
             "frac_lost": 0.0
         },
         "lighting": {
             "lpd": 13.723296341561662,
             "schedule": "bldg_light_sch",
-            "frac_radiant": 0.3,
-            "frac_visible": 0.3
+            "frac_radiant": 0.7,
+            "frac_visible": 0.2
         },
         "infiltration": {
             "inf": 0.004051664302049585,
@@ -1719,7 +1719,7 @@
             "people": 0.006817143263916157,
             "schedule": "bldg_occ_sch",
             "activity_schedule": "activity_sch",
-            "frac_radiant": 0.5
+            "frac_radiant": 0.3
         }
     }
 }
