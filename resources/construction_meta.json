@@ -58,10 +58,8 @@
             ]
         }
     },
-    "construction_fcfactor": {
-        "FFactor": 1.3,
-        "Area": 50,
-        "PerimeterExposed": 50
+    "construction_ffactorgroundfloor": {
+        "FFactor": 1.3
     },
     "material": {
         "f13_builtup_roofing": {

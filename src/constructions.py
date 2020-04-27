@@ -34,8 +34,96 @@ class Constructions:
         self.add_typical_materials()
         self.add_typical_constructions()
 
+        self.set_window_allin1(
+            self.constructions["window"]["u_factor"],
+            self.constructions["window"]["shgc"],
+        )
+
+        self.set_ground_floors()
+        self.add_ground_temp_profile()
+
     def save_idf(self, path):
         self.idf.saveas(path, lineendings="unix")
+
+    def set_ground_floors(self):
+        """The perimeter surface would use the F-factor method and the core zone be modeled as having a outside boundary
+            condition being adiabatic.
+        On top of the of the Construction objects we need to add a Site:GroundTemperature:FCfactorMethod object.
+        The temperature inputs in the object have to be the average monthly outdoor air temperature delayed by 3 months.
+        This can easily be done by parsing the .stat file corresponding the .epw file used for the simulation.
+        """
+
+        # for each zone in case, find corresponding ground floors and add Ffactor contruction
+        for zone_id, zone in self.case["zone_geometry"].items():
+            if zone["type"] == "core":
+                ground_cons_name = f"{zone['name']}_core_bottom_floor_ffactor"
+                perimeter_exposed = 0
+                outside_boundary_condition = "Adiabatic"
+            else:
+                ground_cons_name = f"{zone['name']}_perimeter_bottom_floor_ffactor"
+                perimeter_exposed = zone["length"]
+                outside_boundary_condition = "GroundFCfactorMethod"
+
+            # add construction
+            self.idf.newidfobject(
+                "Construction:FfactorGroundFloor".upper(),
+                Name=ground_cons_name,
+                FFactor=self.cons_meta["construction_ffactorgroundfloor"]["FFactor"],
+                Area=zone["area"],
+                PerimeterExposed=perimeter_exposed,
+            )
+
+            # find matching surfacen and modify reference
+            surfaces = self.idf.idfobjects["BuildingSurface:Detailed".upper()]
+            foundSurface = False
+            for surface in surfaces:
+                if (
+                    ("Storey 0".lower() in surface["Name"].lower())
+                    and (zone["name"].lower() in surface["Name"].lower())
+                    and (surface["Surface_Type"].lower().strip() == "floor")
+                ):
+                    surface["Construction_Name"] = ground_cons_name
+                    surface["Outside_Boundary_Condition"] = outside_boundary_condition
+                    foundSurface = True
+
+            if not foundSurface:
+                print(f"No ground floor found for {zone['name']}. Something is wrong!")
+
+    def add_ground_temp_profile(self):
+        ground_temp_list = self.constructions["ground_temp_profile_jan2dec"]
+        # sanity check
+        if len(ground_temp_list) != 12:
+            print(
+                f"Ground temperature length is {len(ground_temp_list)} instead of 12. Wrong!"
+            )
+            return
+        site_obj = self.idf.newidfobject("SITE:GROUNDTEMPERATURE:FCFACTORMETHOD")
+        i = 0
+        for field in site_obj["objls"][1:]:  # iterature over jan to dec
+            site_obj[field] = ground_temp_list[i]
+            i += 1
+
+    def set_window_allin1(self, u_factor, shgc):
+
+        winmat_name = f"glazing_u_{u_factor:.4f}_shgc_{shgc:.4f}"
+        wincons_name = f"window_u_{u_factor:.4f}_shgc_{shgc:.4f}"
+
+        # add window material
+        self.idf.newidfobject(
+            "WindowMaterial:SimpleGlazingSystem".upper(),
+            Name=winmat_name,
+            UFactor=u_factor,
+            Solar_Heat_Gain_Coefficient=shgc,
+        )
+
+        # add window construction
+        self.idf.newidfobject(
+            "Construction".upper(), Name=wincons_name, Outside_Layer=winmat_name
+        )
+
+        # refer to window construction
+        windows = self.idf.idfobjects["FENESTRATIONSURFACE:DETAILED"]
+        self.batch_modify_idf_objs(windows, dict(Construction_Name=wincons_name))
 
     def set_a_typical_construction(self, surface, type, u_factor=None):
         """set construction for one of the following
@@ -157,11 +245,7 @@ class Constructions:
     def batch_modify_idf_objs(self, objs, property_dict: Dict):
         for property, value in property_dict.items():
             for obj in objs:
-                obj[
-                    property
-                ] = (
-                    value
-                )  # property assignment are inplace to idf. TODO: to be safe, check it!
+                obj[property] = value
 
     def get_adj_r_matlist(self, mat_list: List, user_u_value: float) -> List:
         """mat_list adjusted with computed r value

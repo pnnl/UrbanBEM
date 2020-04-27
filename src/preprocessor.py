@@ -32,6 +32,7 @@ class Preprocessor:
 
     def construction_procedures(self):
         self.populate_constructions()
+        self.groundtemp_profile()
 
     def schedule_procedures(self):
         self.populate_hourly_schedules()
@@ -60,3 +61,6 @@ class Preprocessor:
 
     def populate_constructions(self):
         self.case_proc["constructions"] = adaptors.populate_std_constructions(self.case)
+
+    def groundtemp_profile(self):
+        self.case_proc['constructions']['ground_temp_profile_jan2dec'] = adaptors.populate_std_ground_temp_jan2dec(self.case)

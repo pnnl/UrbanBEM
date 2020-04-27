@@ -12,6 +12,7 @@ os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")  # for linux
 from geomeppy import IDF
 import json
 from geometry import Geometry
+from constructions import Constructions
 from loads import Loads
 from preprocessor import Preprocessor
 from schedule import Schedule
@@ -48,8 +49,12 @@ with open(f"../input/processed_inputs/{casename}_processed.json", "w") as f:
 geometryadded_obj = Geometry(proc_case, idf)
 geometryadded_obj.save_idf("../devoutput/geometry_added.idf")
 
+#%% construction processor
+constructionadded_obj = Constructions(proc_case, idf)
+constructionadded_obj.save_idf("../devoutput/construction_aded.idf")
+
 # %% schedule processor
-scheduleadded_obj = Schedule(proc_case, geometryadded_obj.idf)
+scheduleadded_obj = Schedule(proc_case, constructionadded_obj.idf)
 scheduleadded_obj.save_idf("../devoutput/schedule_added.idf")
 
 # %% load processor

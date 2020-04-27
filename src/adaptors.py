@@ -1,6 +1,6 @@
 """ Data transformers and wrappers"""
 import math
-from typing import Dict
+from typing import Dict, List
 from recipes import read_json
 import pandas as pd
 
@@ -198,3 +198,31 @@ def populate_std_constructions(case: Dict) -> Dict:
     }
 
     return constructions
+
+
+def populate_std_ground_temp_jan2dec(case: Dict) -> List:
+    """
+
+    Args:
+        case: case dictionary. Properties used in this function are:
+            - "epw_file": e.g. "USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw"
+
+    Returns:
+        List of ground temperature profile, from January to December, len=12
+
+    """
+    sample_return = [ # TODO: implement profile extraction logic. @Jeremy / @Jerry
+        20.9,
+        15.4,
+        11.9,
+        14.8,
+        12.7,
+        15.4,
+        23.3,
+        26.3,
+        31.2,
+        30.4,
+        29.8,
+        27.8,
+    ]
+    return sample_return

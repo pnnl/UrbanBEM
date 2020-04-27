@@ -94,6 +94,20 @@ RunPeriod,
     Yes,                      !- Use Weather File Rain Indicators
     Yes;                      !- Use Weather File Snow Indicators
 
+SITE:GROUNDTEMPERATURE:FCFACTORMETHOD,
+    20.9,                     !- January Ground Temperature
+    15.4,                     !- February Ground Temperature
+    11.9,                     !- March Ground Temperature
+    14.8,                     !- April Ground Temperature
+    12.7,                     !- May Ground Temperature
+    15.4,                     !- June Ground Temperature
+    23.3,                     !- July Ground Temperature
+    26.3,                     !- August Ground Temperature
+    31.2,                     !- September Ground Temperature
+    30.4,                     !- October Ground Temperature
+    29.8,                     !- November Ground Temperature
+    27.8;                     !- December Ground Temperature
+
 ScheduleTypeLimits,
     Any Number,               !- Name
     ,                         !- Lower Limit Value
@@ -197,6 +211,11 @@ WINDOWMATERIAL:SIMPLEGLAZINGSYSTEM,
     0.763,                    !- Solar Heat Gain Coefficient
     0.8;                      !- Visible Transmittance
 
+WINDOWMATERIAL:SIMPLEGLAZINGSYSTEM,
+    glazing_u_25.2763_shgc_0.3460,    !- Name
+    25.27633666877274,        !- UFactor
+    0.34597001472225286;      !- Solar Heat Gain Coefficient
+
 CONSTRUCTION,
     Project Wall,             !- Name
     DefaultMaterial;          !- Outside Layer
@@ -251,6 +270,40 @@ CONSTRUCTION,
     f13_builtup_roofing,      !- Outside Layer
     roof_ins_layer_R_0.0532,    !- Layer 2
     f08_metal_surface;        !- Layer 3
+
+CONSTRUCTION,
+    window_u_25.2763_shgc_0.3460,    !- Name
+    glazing_u_25.2763_shgc_0.3460;    !- Outside Layer
+
+CONSTRUCTION:FFACTORGROUNDFLOOR,
+    Office_south_zone_perimeter_bottom_floor_ffactor,    !- Name
+    1.3,                      !- FFactor
+    199.1194131092034,        !- Area
+    37.330223680015635;       !- PerimeterExposed
+
+CONSTRUCTION:FFACTORGROUNDFLOOR,
+    Office_west_zone_perimeter_bottom_floor_ffactor,    !- Name
+    1.3,                      !- FFactor
+    199.1194131092034,        !- Area
+    37.330223680015635;       !- PerimeterExposed
+
+CONSTRUCTION:FFACTORGROUNDFLOOR,
+    Office_north_zone_perimeter_bottom_floor_ffactor,    !- Name
+    1.3,                      !- FFactor
+    199.1194131092034,        !- Area
+    37.330223680015635;       !- PerimeterExposed
+
+CONSTRUCTION:FFACTORGROUNDFLOOR,
+    Office_east_zone_perimeter_bottom_floor_ffactor,    !- Name
+    1.3,                      !- FFactor
+    199.1194131092034,        !- Area
+    37.330223680015635;       !- PerimeterExposed
+
+CONSTRUCTION:FFACTORGROUNDFLOOR,
+    Office_core_zone_core_bottom_floor_ffactor,    !- Name
+    1.3,                      !- FFactor
+    597.0679475631865,        !- Area
+    0;                        !- PerimeterExposed
 
 GlobalGeometryRules,
     UpperLeftCorner,          !- Starting Vertex Position
@@ -519,9 +572,9 @@ BUILDINGSURFACE:DETAILED,
 BUILDINGSURFACE:DETAILED,
     Block Office_south_zone Storey 0 Floor 0001,    !- Name
     floor,                    !- Surface Type
-    int_floor_default,        !- Construction Name
+    Office_south_zone_perimeter_bottom_floor_ffactor,    !- Construction Name
     Block Office_south_zone Storey 0,    !- Zone Name
-    ground,                   !- Outside Boundary Condition
+    GroundFCfactorMethod,     !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
@@ -807,9 +860,9 @@ BUILDINGSURFACE:DETAILED,
 BUILDINGSURFACE:DETAILED,
     Block Office_west_zone Storey 0 Floor 0001,    !- Name
     floor,                    !- Surface Type
-    int_floor_default,        !- Construction Name
+    Office_west_zone_perimeter_bottom_floor_ffactor,    !- Construction Name
     Block Office_west_zone Storey 0,    !- Zone Name
-    ground,                   !- Outside Boundary Condition
+    GroundFCfactorMethod,     !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
@@ -1095,9 +1148,9 @@ BUILDINGSURFACE:DETAILED,
 BUILDINGSURFACE:DETAILED,
     Block Office_north_zone Storey 0 Floor 0001,    !- Name
     floor,                    !- Surface Type
-    int_floor_default,        !- Construction Name
+    Office_north_zone_perimeter_bottom_floor_ffactor,    !- Construction Name
     Block Office_north_zone Storey 0,    !- Zone Name
-    ground,                   !- Outside Boundary Condition
+    GroundFCfactorMethod,     !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
@@ -1383,9 +1436,9 @@ BUILDINGSURFACE:DETAILED,
 BUILDINGSURFACE:DETAILED,
     Block Office_east_zone Storey 0 Floor 0001,    !- Name
     floor,                    !- Surface Type
-    int_floor_default,        !- Construction Name
+    Office_east_zone_perimeter_bottom_floor_ffactor,    !- Construction Name
     Block Office_east_zone Storey 0,    !- Zone Name
-    ground,                   !- Outside Boundary Condition
+    GroundFCfactorMethod,     !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
@@ -1671,9 +1724,9 @@ BUILDINGSURFACE:DETAILED,
 BUILDINGSURFACE:DETAILED,
     Block Office_core_zone Storey 0 Floor 0001,    !- Name
     floor,                    !- Surface Type
-    int_floor_default,        !- Construction Name
+    Office_core_zone_core_bottom_floor_ffactor,    !- Construction Name
     Block Office_core_zone Storey 0,    !- Zone Name
-    ground,                   !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
     NoSun,                    !- Sun Exposure
     NoWind,                   !- Wind Exposure
@@ -1863,7 +1916,7 @@ BUILDINGSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block Office_south_zone Storey 0 Wall 0004 window,    !- Name
     Window,                   !- Surface Type
-    Project External Window,    !- Construction Name
+    window_u_25.2763_shgc_0.3460,    !- Construction Name
     Block Office_south_zone Storey 0 Wall 0004,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
@@ -1886,7 +1939,7 @@ FENESTRATIONSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block Office_south_zone Storey 1 Wall 0004 window,    !- Name
     Window,                   !- Surface Type
-    Project External Window,    !- Construction Name
+    window_u_25.2763_shgc_0.3460,    !- Construction Name
     Block Office_south_zone Storey 1 Wall 0004,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
@@ -1909,7 +1962,7 @@ FENESTRATIONSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block Office_west_zone Storey 0 Wall 0003 window,    !- Name
     Window,                   !- Surface Type
-    Project External Window,    !- Construction Name
+    window_u_25.2763_shgc_0.3460,    !- Construction Name
     Block Office_west_zone Storey 0 Wall 0003,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
@@ -1932,7 +1985,7 @@ FENESTRATIONSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block Office_west_zone Storey 1 Wall 0003 window,    !- Name
     Window,                   !- Surface Type
-    Project External Window,    !- Construction Name
+    window_u_25.2763_shgc_0.3460,    !- Construction Name
     Block Office_west_zone Storey 1 Wall 0003,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
@@ -1955,7 +2008,7 @@ FENESTRATIONSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block Office_north_zone Storey 0 Wall 0002 window,    !- Name
     Window,                   !- Surface Type
-    Project External Window,    !- Construction Name
+    window_u_25.2763_shgc_0.3460,    !- Construction Name
     Block Office_north_zone Storey 0 Wall 0002,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
@@ -1978,7 +2031,7 @@ FENESTRATIONSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block Office_north_zone Storey 1 Wall 0002 window,    !- Name
     Window,                   !- Surface Type
-    Project External Window,    !- Construction Name
+    window_u_25.2763_shgc_0.3460,    !- Construction Name
     Block Office_north_zone Storey 1 Wall 0002,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
@@ -2001,7 +2054,7 @@ FENESTRATIONSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block Office_east_zone Storey 0 Wall 0001 window,    !- Name
     Window,                   !- Surface Type
-    Project External Window,    !- Construction Name
+    window_u_25.2763_shgc_0.3460,    !- Construction Name
     Block Office_east_zone Storey 0 Wall 0001,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
@@ -2024,7 +2077,7 @@ FENESTRATIONSURFACE:DETAILED,
 FENESTRATIONSURFACE:DETAILED,
     Block Office_east_zone Storey 1 Wall 0001 window,    !- Name
     Window,                   !- Surface Type
-    Project External Window,    !- Construction Name
+    window_u_25.2763_shgc_0.3460,    !- Construction Name
     Block Office_east_zone Storey 1 Wall 0001,    !- Building Surface Name
     ,                         !- Outside Boundary Condition Object
     autocalculate,            !- View Factor to Ground
