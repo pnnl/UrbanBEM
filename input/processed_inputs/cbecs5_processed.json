@@ -1698,30 +1698,28 @@
         }
     },
     "internal_loads": {
-        "Office": {
-            "electric_equipment": {
-                "epd": 0.5,
-                "frac_latent": 0.5,
-                "frac_radiant": 0.5,
-                "frac_lost": 0,
-                "schedule": "bldg_electric_equipment_sch"
-            },
-            "lighting": {
-                "lpd": 0.5,
-                "frac_radiant": 0.5,
-                "frac_visible": 0.5,
-                "schedule": "bldg_light_sch"
-            },
-            "infiltration": {
-                "inf": 5e-05,
-                "schedule": "bldg_infiltration_sch"
-            },
-            "people": {
-                "people": 0.5,
-                "frac_radiant": 0.5,
-                "people_schedule": "bldg_occ_sch",
-                "people_activity_schedule": "activity_sch"
-            }
+        "electric_equipment": {
+            "epd": 10.050984751563336,
+            "schedule": "bldg_electric_equipment_sch",
+            "frac_latent": 0.3,
+            "frac_radiant": 0.3,
+            "frac_lost": 0.0
+        },
+        "lighting": {
+            "lpd": 13.723296341561662,
+            "schedule": "bldg_light_sch",
+            "frac_radiant": 0.3,
+            "frac_visible": 0.3
+        },
+        "infiltration": {
+            "inf": 0.004051664302049585,
+            "schedule": "bldg_infiltration_sch"
+        },
+        "people": {
+            "people": 0.006817143263916157,
+            "schedule": "bldg_occ_sch",
+            "activity_schedule": "activity_sch",
+            "frac_radiant": 0.5
         }
     }
 }

@@ -1,0 +1,29 @@
+{
+    "electric_equipment": {
+        "frac_latent": {
+            "Any": 0.0
+        },
+        "frac_radiant": {
+            "Any": 0.5
+        },
+        "frac_lost": {
+            "Any": 0.0
+        }
+    },
+    "lighting": {
+        "frac_radiant": {
+            "Any": 0.7,
+            "School/university": 0.37,
+            "Warehouse": 0.37
+        },
+        "frac_visible": {
+            "Any": 0.2,
+            "Warehouse": 0.18
+        }
+    },
+    "people": {
+        "frac_radiant": {
+            "Any": 0.3
+        }
+    }
+}
