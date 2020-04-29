@@ -11,6 +11,8 @@
                 "roof_ins_layer"
             ],
             "Attic_and_Other": [
+                "f12_asphalt_shingles",
+                "g02_16mm_plywood",
                 "roof_ins_layer",
                 "g01_16mm_gypsum_board"
             ]
@@ -149,6 +151,24 @@
             "Thermal_Absorptance": 0.9,
             "Solar_Absorptance": 0.7,
             "Visible_Absorptance": 0.8
+        },
+        "f12_asphalt_shingles": {
+            "obj_type": "default",
+            "Roughness": "VeryRough",
+            "Thickness": 0.0032,
+            "Conductivity": 0.04,
+            "Density": 1120,
+            "Specific_Heat": 1260,
+            "Thermal_Absorptance": 0.9,
+            "Solar_Absorptance": 0.7
+        },
+        "g02_16mm_plywood": {
+            "obj_type": "default",
+            "Roughness": "Smooth",
+            "Thickness": 0.0159,
+            "Conductivity": 0.12,
+            "Density": 544,
+            "Specific_Heat": 1210
         }
     }
 }
