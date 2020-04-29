@@ -29,7 +29,6 @@ class Geometry:
             if dfrow["type"] == "core":
                 self.create_core_zone(dfrow)
         self.create_zone_list()
-        self.idf.set_default_constructions()  # TODO: remove default constructions
 
     def set_geo_origins(self, df: pd.DataFrame) -> pd.DataFrame:
         original_index = df.index
@@ -110,9 +109,7 @@ class Geometry:
         local_idf.intersect_match()
         local_idf.set_wwr(
             wwr=dfrow["wwr"],
-            orientation=dfrow["side"],
-            construction="Project External Window",
-        )  # TODO: remove default window construction
+            orientation=dfrow["side"])
 
         self.idf = copy_idf_objects(self.idf, local_idf)
 

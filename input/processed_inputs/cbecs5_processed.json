@@ -5,12 +5,6 @@
     "ashrae_climate_zone": "2B",
     "epw_file": "USA_AZ_Tucson-Davis-Monthan.AFB.722745_TMY3.epw",
     "gross_conditioned_area": 2787.0912000000003,
-    "wall_type": "Mass",
-    "wall_u_factor": 3.9136383594971975,
-    "roof_type": "IEAD",
-    "roof_u_factor": 5.562003435665856,
-    "window_U_factor": 7.7042293645835676,
-    "window_shgc": 0.34597001472225286,
     "heating_system_type": "HotWater",
     "cooling_system_type": "ChilledWater",
     "ventilation_rate": 0.584189814053779,
@@ -82,6 +76,43 @@
             "window_lengh": NaN,
             "wwr": NaN
         }
+    },
+    "constructions": {
+        "int_wall": {
+            "type": "Default"
+        },
+        "int_floor": {
+            "type": "Default"
+        },
+        "int_ceiling": {
+            "type": "Default"
+        },
+        "ext_wall": {
+            "type": "Mass",
+            "u_factor": 12.840017618014103
+        },
+        "roof": {
+            "type": "IEAD",
+            "u_factor": 18.248038154087318
+        },
+        "window": {
+            "u_factor": 25.27633666877274,
+            "shgc": 0.34597001472225286
+        },
+        "ground_temp_profile_jan2dec": [
+            20.9,
+            15.4,
+            11.9,
+            14.8,
+            12.7,
+            15.4,
+            23.3,
+            26.3,
+            31.2,
+            30.4,
+            29.8,
+            27.8
+        ]
     },
     "schedules": {
         "0": {
@@ -1670,15 +1701,15 @@
         "electric_equipment": {
             "epd": 10.050984751563336,
             "schedule": "bldg_electric_equipment_sch",
-            "frac_latent": 0.3,
-            "frac_radiant": 0.3,
+            "frac_latent": 0.0,
+            "frac_radiant": 0.5,
             "frac_lost": 0.0
         },
         "lighting": {
             "lpd": 13.723296341561662,
             "schedule": "bldg_light_sch",
-            "frac_radiant": 0.3,
-            "frac_visible": 0.3
+            "frac_radiant": 0.7,
+            "frac_visible": 0.2
         },
         "infiltration": {
             "inf": 0.004051664302049585,
@@ -1688,7 +1719,7 @@
             "people": 0.006817143263916157,
             "schedule": "bldg_occ_sch",
             "activity_schedule": "activity_sch",
-            "frac_radiant": 0.5
+            "frac_radiant": 0.3
         }
     }
 }

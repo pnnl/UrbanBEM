@@ -23,9 +23,7 @@ print(
 )
 
 #%%
-defined_mat_list = set(construction_meta["material"].keys()).union(
-    set(construction_meta["material_nomass"].keys())
-)
+defined_mat_list = set(construction_meta["material"].keys())
 
 unmatched_mat_set = unique_mat_set.symmetric_difference(defined_mat_list)
 
