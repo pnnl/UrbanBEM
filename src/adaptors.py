@@ -3,6 +3,7 @@ import math
 from typing import Dict, List
 from recipes import read_json
 import pandas as pd
+import schedule_preparation as sp
 
 geometry_settings = read_json("geometry_settings.json")
 orient_list = geometry_settings["orient_list"]
@@ -133,14 +134,45 @@ def populate_std_schedules(case: Dict) -> Dict:
         hourly schedules dictionary
 
     """
-    # TODO: @Yunyang, please replace the contents of this function with the schedule derivation logic
-    #  schedules_sample contains exact structure we need as the output of the schedule logic you are coding.
-    import json
-
-    with open("processed_schedule_sample.json") as f:
-        schedules_sample = json.load(f)
-    return schedules_sample
-
+    bldg_occ_sch_dict = sp.bldg_occ_sch(case)
+    bldg_electric_equipment_sch_dict = sp.bldg_electric_equipment_sch(case)
+    bldg_light_sch_dict = sp.bldg_light_sch(case)
+    bldg_hvac_operation_sch_dict = sp.bldg_hvac_operation_sch(case)
+    bldg_clg_setp_sch_dict = sp.bldg_clg_setp_sch(case)
+    bldg_htg_setp_sch_dict = sp.bldg_htg_setp_sch(case)
+    bldg_infiltration_sch_dict = sp.bldg_infiltration_sch(case)
+    activity_sch_dict = sp.activity_sch()
+    always_on_dict = sp.always_on()
+    
+    sch_list = [bldg_occ_sch_dict,
+                bldg_electric_equipment_sch_dict,
+                bldg_light_sch_dict,
+                bldg_hvac_operation_sch_dict,
+                bldg_clg_setp_sch_dict,
+                bldg_htg_setp_sch_dict,
+                bldg_infiltration_sch_dict,
+                activity_sch_dict,
+                always_on_dict]
+    
+    bldg_sch_dict = {}
+    for ind,x in enumerate(["bldg_occ_sch",
+                            "bldg_electric_equipment_sch",
+                            "bldg_light_sch",
+                            "bldg_hvac_operation_sch",
+                            "bldg_clg_setp_sch",
+                            "bldg_htg_setp_sch",
+                            "bldg_infiltration_sch",
+                            "activity_sch",
+                            "always_on"]):
+        bldg_sch_dict[str(ind)] = {}
+        bldg_sch_dict[str(ind)]["name"] = x
+        bldg_sch_dict[str(ind)]["type"] = "Any Number"
+        bldg_sch_dict[str(ind)]["periods"] = {}
+        bldg_sch_dict[str(ind)]["periods"]["0"] = {}
+        bldg_sch_dict[str(ind)]["periods"]["0"]["through"] = "12/31"
+        bldg_sch_dict[str(ind)]["periods"]["0"]["day_of_week"] = sch_list[ind]
+    
+    return bldg_sch_dict
 
 def get_loads_fractions(fraction, load, bldg_a_t, loads_settings) -> Dict:
     """ lookup load fraction associated with building area type
