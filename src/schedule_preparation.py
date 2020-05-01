@@ -6,10 +6,10 @@ def bldg_business_hour(case: Dict) -> Dict:
     f = open("./schedule_database.json")
     schedule_database = json.load(f)
     
-    center_operation_hour_wd = int(schedule_database[case["building_type"]]["Center Operation Hour (WD)"])
-    center_operation_hour_others = int(schedule_database[case["building_type"]]["Center Operation Hour (Others)"])
-    ratio_wd_all = float(schedule_database[case["building_type"]]["Ratio of WD/All"])
-    consider_lunch_time = schedule_database[case["building_type"]]["consider_lunch_time"]
+    center_operation_hour_wd = int(schedule_database[case["building_area_type"]]["Center Operation Hour (WD)"])
+    center_operation_hour_others = int(schedule_database[case["building_area_type"]]["Center Operation Hour (Others)"])
+    ratio_wd_all = float(schedule_database[case["building_area_type"]]["Ratio of WD/All"])
+    consider_lunch_time = schedule_database[case["building_area_type"]]["consider_lunch_time"]
     
     weekly_occupied_hours = case["weekly_occupied_hours"]
     number_days_open_workday = case["number_days_open_workday"]
@@ -59,19 +59,23 @@ def bldg_business_hour(case: Dict) -> Dict:
             WD.append(0)
 
     Sat_Sun = []
-    if start_hour_Sat_Sun >= end_hour_Sat_Sun:
-        for i in range(end_hour_Sat_Sun):
-            Sat_Sun.append(1)
-        for i in range(end_hour_Sat_Sun,start_hour_Sat_Sun):
-            Sat_Sun.append(0)
-        for i in range(start_hour_Sat_Sun,24):
-            Sat_Sun.append(1)
+    if Sat_Sun_hour > 0:
+        if start_hour_Sat_Sun >= end_hour_Sat_Sun:
+            for i in range(end_hour_Sat_Sun):
+                Sat_Sun.append(1)
+            for i in range(end_hour_Sat_Sun,start_hour_Sat_Sun):
+                Sat_Sun.append(0)
+            for i in range(start_hour_Sat_Sun,24):
+                Sat_Sun.append(1)
+        else:
+            for i in range(start_hour_Sat_Sun):
+               Sat_Sun.append(0)
+            for i in range(start_hour_Sat_Sun,end_hour_Sat_Sun):
+                Sat_Sun.append(1)
+            for i in range(end_hour_Sat_Sun,24):
+                Sat_Sun.append(0)
     else:
-        for i in range(start_hour_Sat_Sun):
-           Sat_Sun.append(0)
-        for i in range(start_hour_Sat_Sun,end_hour_Sat_Sun):
-            Sat_Sun.append(1)
-        for i in range(end_hour_Sat_Sun,24):
+        for i in range(24):
             Sat_Sun.append(0)
 
     bldg_business_hour_dict = {}
