@@ -159,7 +159,7 @@ SCHEDULE:COMPACT,
     Through: 12/31,           !- Field 1
     For: WinterDesignDay,     !- Field 2
     Until: 24:00,             !- Field 3
-    0.1,                      !- Field 4
+    0,                        !- Field 4
     For: SummerDesignDay,     !- Field 5
     Until: 24:00,             !- Field 6
     1,                        !- Field 7

@@ -120,10 +120,11 @@ def bldg_electric_equipment_sch(case: Dict) -> Dict:
     bldg_electric_equipment_sch_dict["WinDD"] = [0] * 24
     bldg_electric_equipment_sch_dict["SumDD"] = [1] * 24
     for key in bldg_occ_sch_dict:
-        hourly_sch = []
-        for i in range(24):
-            hourly_sch.append(0.1 + bldg_occ_sch_dict[key][i] * 0.9)
-        bldg_electric_equipment_sch_dict[key] = hourly_sch
+        if key != "WinDD" and key != "SumDD":
+            hourly_sch = []
+            for i in range(24):
+                hourly_sch.append(0.1 + bldg_occ_sch_dict[key][i] * 0.9)
+            bldg_electric_equipment_sch_dict[key] = hourly_sch
     
     return bldg_electric_equipment_sch_dict
 
