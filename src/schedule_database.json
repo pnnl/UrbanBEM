@@ -1,0 +1,226 @@
+{
+    "Automotive facility": {
+        "building_type": "Automotive facility",
+        "Center Operation Hour (WD)": "13",
+        "Center Operation Hour (Others)": "10",
+        "Ratio of WD/All": "0.95",
+        "consider_lunch_time": "Yes"
+    },
+    "Convention center": {
+        "building_type": "Convention center",
+        "Center Operation Hour (WD)": "15",
+        "Center Operation Hour (Others)": "17",
+        "Ratio of WD/All": "0.71",
+        "consider_lunch_time": "No"
+    },
+    "Courthouse": {
+        "building_type": "Courthouse",
+        "Center Operation Hour (WD)": "13",
+        "Center Operation Hour (Others)": "10",
+        "Ratio of WD/All": "0.95",
+        "consider_lunch_time": "Yes"
+    },
+    "Dining: Bar lounge/leisure": {
+        "building_type": "Dining: Bar lounge/leisure",
+        "Center Operation Hour (WD)": "17",
+        "Center Operation Hour (Others)": "17",
+        "Ratio of WD/All": "0.74",
+        "consider_lunch_time": "No"
+    },
+    "Dining: Cafeteria/fast food": {
+        "building_type": "Dining: Cafeteria/fast food",
+        "Center Operation Hour (WD)": "17",
+        "Center Operation Hour (Others)": "17",
+        "Ratio of WD/All": "0.74",
+        "consider_lunch_time": "No"
+    },
+    "Dining: Family": {
+        "building_type": "Dining: Family",
+        "Center Operation Hour (WD)": "17",
+        "Center Operation Hour (Others)": "17",
+        "Ratio of WD/All": "0.74",
+        "consider_lunch_time": "No"
+    },
+    "Dormitory": {
+        "building_type": "Dormitory",
+        "Center Operation Hour (WD)": "2",
+        "Center Operation Hour (Others)": "2",
+        "Ratio of WD/All": "0.71",
+        "consider_lunch_time": "No"
+    },
+    "Exercise center": {
+        "building_type": "Exercise center",
+        "Center Operation Hour (WD)": "15",
+        "Center Operation Hour (Others)": "17",
+        "Ratio of WD/All": "0.71",
+        "consider_lunch_time": "No"
+    },
+    "Fire station": {
+        "building_type": "Fire station",
+        "Center Operation Hour (WD)": "14",
+        "Center Operation Hour (Others)": "13",
+        "Ratio of WD/All": "0.75",
+        "consider_lunch_time": "No"
+    },
+    "Gymnasium": {
+        "building_type": "Gymnasium",
+        "Center Operation Hour (WD)": "15",
+        "Center Operation Hour (Others)": "15",
+        "Ratio of WD/All": "0.95",
+        "consider_lunch_time": "No"
+    },
+    "Health-care clinic": {
+        "building_type": "Health-care clinic",
+        "Center Operation Hour (WD)": "14",
+        "Center Operation Hour (Others)": "13",
+        "Ratio of WD/All": "0.75",
+        "consider_lunch_time": "No"
+    },
+    "Hospital": {
+        "building_type": "Hospital",
+        "Center Operation Hour (WD)": "14",
+        "Center Operation Hour (Others)": "13",
+        "Ratio of WD/All": "0.75",
+        "consider_lunch_time": "No"
+    },
+    "Hotel/Motel": {
+        "building_type": "Hotel/Motel",
+        "Center Operation Hour (WD)": "2",
+        "Center Operation Hour (Others)": "2",
+        "Ratio of WD/All": "0.72",
+        "consider_lunch_time": "No"
+    },
+    "Library": {
+        "building_type": "Library",
+        "Center Operation Hour (WD)": "14",
+        "Center Operation Hour (Others)": "14",
+        "Ratio of WD/All": "0.78",
+        "consider_lunch_time": "No"
+    },
+    "Manufacturing facility": {
+        "building_type": "Manufacturing facility",
+        "Center Operation Hour (WD)": "13",
+        "Center Operation Hour (Others)": "10",
+        "Ratio of WD/All": "0.95",
+        "consider_lunch_time": "Yes"
+    },
+    "Motion picture theater": {
+        "building_type": "Motion picture theater",
+        "Center Operation Hour (WD)": "15",
+        "Center Operation Hour (Others)": "17",
+        "Ratio of WD/All": "0.71",
+        "consider_lunch_time": "No"
+    },
+    "Multifamily": {
+        "building_type": "Multifamily",
+        "Center Operation Hour (WD)": "2",
+        "Center Operation Hour (Others)": "2",
+        "Ratio of WD/All": "0.71",
+        "consider_lunch_time": "No"
+    },
+    "Museum": {
+        "building_type": "Museum",
+        "Center Operation Hour (WD)": "14",
+        "Center Operation Hour (Others)": "14",
+        "Ratio of WD/All": "0.78",
+        "consider_lunch_time": "No"
+    },
+    "Office": {
+        "building_type": "Office",
+        "Center Operation Hour (WD)": "13",
+        "Center Operation Hour (Others)": "10",
+        "Ratio of WD/All": "0.95",
+        "consider_lunch_time": "Yes"
+    },
+    "Parking garage": {
+        "building_type": "Parking garage",
+        "Center Operation Hour (WD)": "13",
+        "Center Operation Hour (Others)": "13",
+        "Ratio of WD/All": "0.71",
+        "consider_lunch_time": "No"
+    },
+    "Penitentiary": {
+        "building_type": "Penitentiary",
+        "Center Operation Hour (WD)": "2",
+        "Center Operation Hour (Others)": "2",
+        "Ratio of WD/All": "0.72",
+        "consider_lunch_time": "No"
+    },
+    "Performing arts theater": {
+        "building_type": "Performing arts theater",
+        "Center Operation Hour (WD)": "15",
+        "Center Operation Hour (Others)": "17",
+        "Ratio of WD/All": "0.71",
+        "consider_lunch_time": "No"
+    },
+    "Police station": {
+        "building_type": "Police station",
+        "Center Operation Hour (WD)": "14",
+        "Center Operation Hour (Others)": "13",
+        "Ratio of WD/All": "0.75",
+        "consider_lunch_time": "No"
+    },
+    "Post office": {
+        "building_type": "Post office",
+        "Center Operation Hour (WD)": "13",
+        "Center Operation Hour (Others)": "10",
+        "Ratio of WD/All": "0.95",
+        "consider_lunch_time": "Yes"
+    },
+    "Religious building": {
+        "building_type": "Religious building",
+        "Center Operation Hour (WD)": "15",
+        "Center Operation Hour (Others)": "17",
+        "Ratio of WD/All": "0.71",
+        "consider_lunch_time": "No"
+    },
+    "Retail": {
+        "building_type": "Retail",
+        "Center Operation Hour (WD)": "14",
+        "Center Operation Hour (Others)": "14",
+        "Ratio of WD/All": "0.78",
+        "consider_lunch_time": "No"
+    },
+    "School/university": {
+        "building_type": "School/university",
+        "Center Operation Hour (WD)": "13",
+        "Center Operation Hour (Others)": "10",
+        "Ratio of WD/All": "0.95",
+        "consider_lunch_time": "No"
+    },
+    "Sports arena": {
+        "building_type": "Sports arena",
+        "Center Operation Hour (WD)": "15",
+        "Center Operation Hour (Others)": "17",
+        "Ratio of WD/All": "0.71",
+        "consider_lunch_time": "No"
+    },
+    "Town hall": {
+        "building_type": "Town hall",
+        "Center Operation Hour (WD)": "13",
+        "Center Operation Hour (Others)": "10",
+        "Ratio of WD/All": "0.95",
+        "consider_lunch_time": "Yes"
+    },
+    "Transportation": {
+        "building_type": "Transportation",
+        "Center Operation Hour (WD)": "14",
+        "Center Operation Hour (Others)": "13",
+        "Ratio of WD/All": "0.75",
+        "consider_lunch_time": "No"
+    },
+    "Warehouse": {
+        "building_type": "Warehouse",
+        "Center Operation Hour (WD)": "13",
+        "Center Operation Hour (Others)": "13",
+        "Ratio of WD/All": "0.71",
+        "consider_lunch_time": "No"
+    },
+    "Workshop": {
+        "building_type": "Workshop",
+        "Center Operation Hour (WD)": "13",
+        "Center Operation Hour (Others)": "10",
+        "Ratio of WD/All": "0.95",
+        "consider_lunch_time": "Yes"
+    }
+}

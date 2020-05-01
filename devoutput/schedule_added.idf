@@ -116,56 +116,6 @@ ScheduleTypeLimits,
     Dimensionless;            !- Unit Type
 
 SCHEDULE:COMPACT,
-    bldg_light_sch,           !- Name
-    Any Number,               !- Schedule Type Limits Name
-    Through: 12/31,           !- Field 1
-    For: WinterDesignDay,     !- Field 2
-    Until: 24:00,             !- Field 3
-    0,                        !- Field 4
-    For: SummerDesignDay,     !- Field 5
-    Until: 24:00,             !- Field 6
-    1,                        !- Field 7
-    For: Weekdays,            !- Field 8
-    Until: 5:00,              !- Field 9
-    0.05,                     !- Field 10
-    Until: 7:00,              !- Field 11
-    0.1,                      !- Field 12
-    Until: 8:00,              !- Field 13
-    0.3,                      !- Field 14
-    Until: 17:00,             !- Field 15
-    0.9,                      !- Field 16
-    Until: 18:00,             !- Field 17
-    0.5,                      !- Field 18
-    Until: 20:00,             !- Field 19
-    0.3,                      !- Field 20
-    Until: 22:00,             !- Field 21
-    0.2,                      !- Field 22
-    Until: 23:00,             !- Field 23
-    0.1,                      !- Field 24
-    Until: 24:00,             !- Field 25
-    0.05,                     !- Field 26
-    For: Saturday,            !- Field 27
-    Until: 6:00,              !- Field 28
-    0.05,                     !- Field 29
-    Until: 8:00,              !- Field 30
-    0.1,                      !- Field 31
-    Until: 12:00,             !- Field 32
-    0.3,                      !- Field 33
-    Until: 17:00,             !- Field 34
-    0.15,                     !- Field 35
-    Until: 24:00,             !- Field 36
-    0.05,                     !- Field 37
-    For: Sunday,              !- Field 38
-    Until: 24:00,             !- Field 39
-    0.05,                     !- Field 40
-    For: Holidays,            !- Field 41
-    Until: 24:00,             !- Field 42
-    0.05,                     !- Field 43
-    For: AllOtherDays,        !- Field 44
-    Until: 24:00,             !- Field 45
-    0.05;                     !- Field 46
-
-SCHEDULE:COMPACT,
     bldg_occ_sch,             !- Name
     Any Number,               !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
@@ -176,44 +126,104 @@ SCHEDULE:COMPACT,
     Until: 24:00,             !- Field 6
     1,                        !- Field 7
     For: Weekdays,            !- Field 8
-    Until: 5:00,              !- Field 9
-    0.05,                     !- Field 10
-    Until: 7:00,              !- Field 11
-    0.1,                      !- Field 12
-    Until: 8:00,              !- Field 13
-    0.3,                      !- Field 14
-    Until: 17:00,             !- Field 15
-    0.9,                      !- Field 16
-    Until: 18:00,             !- Field 17
-    0.5,                      !- Field 18
-    Until: 20:00,             !- Field 19
-    0.3,                      !- Field 20
-    Until: 22:00,             !- Field 21
-    0.2,                      !- Field 22
-    Until: 23:00,             !- Field 23
-    0.1,                      !- Field 24
-    Until: 24:00,             !- Field 25
-    0.05,                     !- Field 26
-    For: Saturday,            !- Field 27
-    Until: 6:00,              !- Field 28
-    0.05,                     !- Field 29
-    Until: 8:00,              !- Field 30
+    Until: 9:00,              !- Field 9
+    0,                        !- Field 10
+    Until: 10:00,             !- Field 11
+    0.2,                      !- Field 12
+    Until: 12:00,             !- Field 13
+    0.95,                     !- Field 14
+    Until: 13:00,             !- Field 15
+    0.5,                      !- Field 16
+    Until: 16:00,             !- Field 17
+    0.95,                     !- Field 18
+    Until: 17:00,             !- Field 19
+    0.2,                      !- Field 20
+    Until: 24:00,             !- Field 21
+    0,                        !- Field 22
+    For: Saturday,            !- Field 23
+    Until: 24:00,             !- Field 24
+    0,                        !- Field 25
+    For: Sunday,              !- Field 26
+    Until: 24:00,             !- Field 27
+    0,                        !- Field 28
+    For: Holidays,            !- Field 29
+    Until: 24:00,             !- Field 30
+    0,                        !- Field 31
+    For: AllOtherDays,        !- Field 32
+    Until: 24:00,             !- Field 33
+    0;                        !- Field 34
+
+SCHEDULE:COMPACT,
+    bldg_electric_equipment_sch,    !- Name
+    Any Number,               !- Schedule Type Limits Name
+    Through: 12/31,           !- Field 1
+    For: WinterDesignDay,     !- Field 2
+    Until: 24:00,             !- Field 3
+    0.1,                      !- Field 4
+    For: SummerDesignDay,     !- Field 5
+    Until: 24:00,             !- Field 6
+    1,                        !- Field 7
+    For: Weekdays,            !- Field 8
+    Until: 9:00,              !- Field 9
+    0.1,                      !- Field 10
+    Until: 10:00,             !- Field 11
+    0.28,                     !- Field 12
+    Until: 12:00,             !- Field 13
+    0.955,                    !- Field 14
+    Until: 13:00,             !- Field 15
+    0.55,                     !- Field 16
+    Until: 16:00,             !- Field 17
+    0.955,                    !- Field 18
+    Until: 17:00,             !- Field 19
+    0.28,                     !- Field 20
+    Until: 24:00,             !- Field 21
+    0.1,                      !- Field 22
+    For: Saturday,            !- Field 23
+    Until: 24:00,             !- Field 24
+    0.1,                      !- Field 25
+    For: Sunday,              !- Field 26
+    Until: 24:00,             !- Field 27
+    0.1,                      !- Field 28
+    For: Holidays,            !- Field 29
+    Until: 24:00,             !- Field 30
     0.1,                      !- Field 31
-    Until: 12:00,             !- Field 32
-    0.3,                      !- Field 33
-    Until: 17:00,             !- Field 34
-    0.15,                     !- Field 35
-    Until: 24:00,             !- Field 36
-    0.05,                     !- Field 37
-    For: Sunday,              !- Field 38
-    Until: 24:00,             !- Field 39
-    0.05,                     !- Field 40
-    For: Holidays,            !- Field 41
-    Until: 24:00,             !- Field 42
-    0.05,                     !- Field 43
-    For: AllOtherDays,        !- Field 44
-    Until: 24:00,             !- Field 45
-    0.05;                     !- Field 46
+    For: AllOtherDays,        !- Field 32
+    Until: 24:00,             !- Field 33
+    0.1;                      !- Field 34
+
+SCHEDULE:COMPACT,
+    bldg_light_sch,           !- Name
+    Any Number,               !- Schedule Type Limits Name
+    Through: 12/31,           !- Field 1
+    For: WinterDesignDay,     !- Field 2
+    Until: 24:00,             !- Field 3
+    0,                        !- Field 4
+    For: SummerDesignDay,     !- Field 5
+    Until: 24:00,             !- Field 6
+    1,                        !- Field 7
+    For: Weekdays,            !- Field 8
+    Until: 9:00,              !- Field 9
+    0.05,                     !- Field 10
+    Until: 10:00,             !- Field 11
+    0.3,                      !- Field 12
+    Until: 16:00,             !- Field 13
+    0.9,                      !- Field 14
+    Until: 17:00,             !- Field 15
+    0.3,                      !- Field 16
+    Until: 24:00,             !- Field 17
+    0.05,                     !- Field 18
+    For: Saturday,            !- Field 19
+    Until: 24:00,             !- Field 20
+    0.05,                     !- Field 21
+    For: Sunday,              !- Field 22
+    Until: 24:00,             !- Field 23
+    0.05,                     !- Field 24
+    For: Holidays,            !- Field 25
+    Until: 24:00,             !- Field 26
+    0.05,                     !- Field 27
+    For: AllOtherDays,        !- Field 28
+    Until: 24:00,             !- Field 29
+    0.05;                     !- Field 30
 
 SCHEDULE:COMPACT,
     bldg_hvac_operation_sch,    !- Name
@@ -224,96 +234,26 @@ SCHEDULE:COMPACT,
     0,                        !- Field 4
     For: SummerDesignDay,     !- Field 5
     Until: 24:00,             !- Field 6
-    1,                        !- Field 7
+    0,                        !- Field 7
     For: Weekdays,            !- Field 8
-    Until: 5:00,              !- Field 9
-    0.05,                     !- Field 10
-    Until: 7:00,              !- Field 11
-    0.1,                      !- Field 12
-    Until: 8:00,              !- Field 13
-    0.3,                      !- Field 14
-    Until: 17:00,             !- Field 15
-    0.9,                      !- Field 16
-    Until: 18:00,             !- Field 17
-    0.5,                      !- Field 18
-    Until: 20:00,             !- Field 19
-    0.3,                      !- Field 20
-    Until: 22:00,             !- Field 21
-    0.2,                      !- Field 22
-    Until: 23:00,             !- Field 23
-    0.1,                      !- Field 24
+    Until: 9:00,              !- Field 9
+    0,                        !- Field 10
+    Until: 16:00,             !- Field 11
+    1,                        !- Field 12
+    Until: 24:00,             !- Field 13
+    0,                        !- Field 14
+    For: Saturday,            !- Field 15
+    Until: 24:00,             !- Field 16
+    0,                        !- Field 17
+    For: Sunday,              !- Field 18
+    Until: 24:00,             !- Field 19
+    0,                        !- Field 20
+    For: Holidays,            !- Field 21
+    Until: 24:00,             !- Field 22
+    0,                        !- Field 23
+    For: AllOtherDays,        !- Field 24
     Until: 24:00,             !- Field 25
-    0.05,                     !- Field 26
-    For: Saturday,            !- Field 27
-    Until: 6:00,              !- Field 28
-    0.05,                     !- Field 29
-    Until: 8:00,              !- Field 30
-    0.1,                      !- Field 31
-    Until: 12:00,             !- Field 32
-    0.3,                      !- Field 33
-    Until: 17:00,             !- Field 34
-    0.15,                     !- Field 35
-    Until: 24:00,             !- Field 36
-    0.05,                     !- Field 37
-    For: Sunday,              !- Field 38
-    Until: 24:00,             !- Field 39
-    0.05,                     !- Field 40
-    For: Holidays,            !- Field 41
-    Until: 24:00,             !- Field 42
-    0.05,                     !- Field 43
-    For: AllOtherDays,        !- Field 44
-    Until: 24:00,             !- Field 45
-    0.05;                     !- Field 46
-
-SCHEDULE:COMPACT,
-    bldg_htg_setp_sch,        !- Name
-    Any Number,               !- Schedule Type Limits Name
-    Through: 12/31,           !- Field 1
-    For: WinterDesignDay,     !- Field 2
-    Until: 24:00,             !- Field 3
-    0,                        !- Field 4
-    For: SummerDesignDay,     !- Field 5
-    Until: 24:00,             !- Field 6
-    1,                        !- Field 7
-    For: Weekdays,            !- Field 8
-    Until: 5:00,              !- Field 9
-    0.05,                     !- Field 10
-    Until: 7:00,              !- Field 11
-    0.1,                      !- Field 12
-    Until: 8:00,              !- Field 13
-    0.3,                      !- Field 14
-    Until: 17:00,             !- Field 15
-    0.9,                      !- Field 16
-    Until: 18:00,             !- Field 17
-    0.5,                      !- Field 18
-    Until: 20:00,             !- Field 19
-    0.3,                      !- Field 20
-    Until: 22:00,             !- Field 21
-    0.2,                      !- Field 22
-    Until: 23:00,             !- Field 23
-    0.1,                      !- Field 24
-    Until: 24:00,             !- Field 25
-    0.05,                     !- Field 26
-    For: Saturday,            !- Field 27
-    Until: 6:00,              !- Field 28
-    0.05,                     !- Field 29
-    Until: 8:00,              !- Field 30
-    0.1,                      !- Field 31
-    Until: 12:00,             !- Field 32
-    0.3,                      !- Field 33
-    Until: 17:00,             !- Field 34
-    0.15,                     !- Field 35
-    Until: 24:00,             !- Field 36
-    0.05,                     !- Field 37
-    For: Sunday,              !- Field 38
-    Until: 24:00,             !- Field 39
-    0.05,                     !- Field 40
-    For: Holidays,            !- Field 41
-    Until: 24:00,             !- Field 42
-    0.05,                     !- Field 43
-    For: AllOtherDays,        !- Field 44
-    Until: 24:00,             !- Field 45
-    0.05;                     !- Field 46
+    0;                        !- Field 26
 
 SCHEDULE:COMPACT,
     bldg_clg_setp_sch,        !- Name
@@ -321,99 +261,59 @@ SCHEDULE:COMPACT,
     Through: 12/31,           !- Field 1
     For: WinterDesignDay,     !- Field 2
     Until: 24:00,             !- Field 3
-    0,                        !- Field 4
+    15.6,                     !- Field 4
     For: SummerDesignDay,     !- Field 5
     Until: 24:00,             !- Field 6
-    1,                        !- Field 7
+    15.6,                     !- Field 7
     For: Weekdays,            !- Field 8
-    Until: 5:00,              !- Field 9
-    0.05,                     !- Field 10
-    Until: 7:00,              !- Field 11
-    0.1,                      !- Field 12
-    Until: 8:00,              !- Field 13
-    0.3,                      !- Field 14
-    Until: 17:00,             !- Field 15
-    0.9,                      !- Field 16
-    Until: 18:00,             !- Field 17
-    0.5,                      !- Field 18
-    Until: 20:00,             !- Field 19
-    0.3,                      !- Field 20
-    Until: 22:00,             !- Field 21
-    0.2,                      !- Field 22
-    Until: 23:00,             !- Field 23
-    0.1,                      !- Field 24
+    Until: 9:00,              !- Field 9
+    15.6,                     !- Field 10
+    Until: 16:00,             !- Field 11
+    21,                       !- Field 12
+    Until: 24:00,             !- Field 13
+    15.6,                     !- Field 14
+    For: Saturday,            !- Field 15
+    Until: 24:00,             !- Field 16
+    15.6,                     !- Field 17
+    For: Sunday,              !- Field 18
+    Until: 24:00,             !- Field 19
+    15.6,                     !- Field 20
+    For: Holidays,            !- Field 21
+    Until: 24:00,             !- Field 22
+    15.6,                     !- Field 23
+    For: AllOtherDays,        !- Field 24
     Until: 24:00,             !- Field 25
-    0.05,                     !- Field 26
-    For: Saturday,            !- Field 27
-    Until: 6:00,              !- Field 28
-    0.05,                     !- Field 29
-    Until: 8:00,              !- Field 30
-    0.1,                      !- Field 31
-    Until: 12:00,             !- Field 32
-    0.3,                      !- Field 33
-    Until: 17:00,             !- Field 34
-    0.15,                     !- Field 35
-    Until: 24:00,             !- Field 36
-    0.05,                     !- Field 37
-    For: Sunday,              !- Field 38
-    Until: 24:00,             !- Field 39
-    0.05,                     !- Field 40
-    For: Holidays,            !- Field 41
-    Until: 24:00,             !- Field 42
-    0.05,                     !- Field 43
-    For: AllOtherDays,        !- Field 44
-    Until: 24:00,             !- Field 45
-    0.05;                     !- Field 46
+    15.6;                     !- Field 26
 
 SCHEDULE:COMPACT,
-    bldg_electric_equipment_sch,    !- Name
+    bldg_htg_setp_sch,        !- Name
     Any Number,               !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
     For: WinterDesignDay,     !- Field 2
     Until: 24:00,             !- Field 3
-    0,                        !- Field 4
+    26.7,                     !- Field 4
     For: SummerDesignDay,     !- Field 5
     Until: 24:00,             !- Field 6
-    1,                        !- Field 7
+    26.7,                     !- Field 7
     For: Weekdays,            !- Field 8
-    Until: 5:00,              !- Field 9
-    0.05,                     !- Field 10
-    Until: 7:00,              !- Field 11
-    0.1,                      !- Field 12
-    Until: 8:00,              !- Field 13
-    0.3,                      !- Field 14
-    Until: 17:00,             !- Field 15
-    0.9,                      !- Field 16
-    Until: 18:00,             !- Field 17
-    0.5,                      !- Field 18
-    Until: 20:00,             !- Field 19
-    0.3,                      !- Field 20
-    Until: 22:00,             !- Field 21
-    0.2,                      !- Field 22
-    Until: 23:00,             !- Field 23
-    0.1,                      !- Field 24
+    Until: 9:00,              !- Field 9
+    26.7,                     !- Field 10
+    Until: 16:00,             !- Field 11
+    24,                       !- Field 12
+    Until: 24:00,             !- Field 13
+    26.7,                     !- Field 14
+    For: Saturday,            !- Field 15
+    Until: 24:00,             !- Field 16
+    26.7,                     !- Field 17
+    For: Sunday,              !- Field 18
+    Until: 24:00,             !- Field 19
+    26.7,                     !- Field 20
+    For: Holidays,            !- Field 21
+    Until: 24:00,             !- Field 22
+    26.7,                     !- Field 23
+    For: AllOtherDays,        !- Field 24
     Until: 24:00,             !- Field 25
-    0.05,                     !- Field 26
-    For: Saturday,            !- Field 27
-    Until: 6:00,              !- Field 28
-    0.05,                     !- Field 29
-    Until: 8:00,              !- Field 30
-    0.1,                      !- Field 31
-    Until: 12:00,             !- Field 32
-    0.3,                      !- Field 33
-    Until: 17:00,             !- Field 34
-    0.15,                     !- Field 35
-    Until: 24:00,             !- Field 36
-    0.05,                     !- Field 37
-    For: Sunday,              !- Field 38
-    Until: 24:00,             !- Field 39
-    0.05,                     !- Field 40
-    For: Holidays,            !- Field 41
-    Until: 24:00,             !- Field 42
-    0.05,                     !- Field 43
-    For: AllOtherDays,        !- Field 44
-    Until: 24:00,             !- Field 45
-    0.05;                     !- Field 46
+    26.7;                     !- Field 26
 
 SCHEDULE:COMPACT,
     bldg_infiltration_sch,    !- Name
@@ -421,49 +321,29 @@ SCHEDULE:COMPACT,
     Through: 12/31,           !- Field 1
     For: WinterDesignDay,     !- Field 2
     Until: 24:00,             !- Field 3
-    0,                        !- Field 4
+    0.25,                     !- Field 4
     For: SummerDesignDay,     !- Field 5
     Until: 24:00,             !- Field 6
-    1,                        !- Field 7
+    0.25,                     !- Field 7
     For: Weekdays,            !- Field 8
-    Until: 5:00,              !- Field 9
-    0.05,                     !- Field 10
-    Until: 7:00,              !- Field 11
-    0.1,                      !- Field 12
-    Until: 8:00,              !- Field 13
-    0.3,                      !- Field 14
-    Until: 17:00,             !- Field 15
-    0.9,                      !- Field 16
-    Until: 18:00,             !- Field 17
-    0.5,                      !- Field 18
-    Until: 20:00,             !- Field 19
-    0.3,                      !- Field 20
-    Until: 22:00,             !- Field 21
-    0.2,                      !- Field 22
-    Until: 23:00,             !- Field 23
-    0.1,                      !- Field 24
+    Until: 9:00,              !- Field 9
+    0.25,                     !- Field 10
+    Until: 16:00,             !- Field 11
+    1,                        !- Field 12
+    Until: 24:00,             !- Field 13
+    0.25,                     !- Field 14
+    For: Saturday,            !- Field 15
+    Until: 24:00,             !- Field 16
+    0.25,                     !- Field 17
+    For: Sunday,              !- Field 18
+    Until: 24:00,             !- Field 19
+    0.25,                     !- Field 20
+    For: Holidays,            !- Field 21
+    Until: 24:00,             !- Field 22
+    0.25,                     !- Field 23
+    For: AllOtherDays,        !- Field 24
     Until: 24:00,             !- Field 25
-    0.05,                     !- Field 26
-    For: Saturday,            !- Field 27
-    Until: 6:00,              !- Field 28
-    0.05,                     !- Field 29
-    Until: 8:00,              !- Field 30
-    0.1,                      !- Field 31
-    Until: 12:00,             !- Field 32
-    0.3,                      !- Field 33
-    Until: 17:00,             !- Field 34
-    0.15,                     !- Field 35
-    Until: 24:00,             !- Field 36
-    0.05,                     !- Field 37
-    For: Sunday,              !- Field 38
-    Until: 24:00,             !- Field 39
-    0.05,                     !- Field 40
-    For: Holidays,            !- Field 41
-    Until: 24:00,             !- Field 42
-    0.05,                     !- Field 43
-    For: AllOtherDays,        !- Field 44
-    Until: 24:00,             !- Field 45
-    0.05;                     !- Field 46
+    0.25;                     !- Field 26
 
 SCHEDULE:COMPACT,
     activity_sch,             !- Name
@@ -471,57 +351,51 @@ SCHEDULE:COMPACT,
     Through: 12/31,           !- Field 1
     For: WinterDesignDay,     !- Field 2
     Until: 24:00,             !- Field 3
-    0,                        !- Field 4
+    120,                      !- Field 4
     For: SummerDesignDay,     !- Field 5
     Until: 24:00,             !- Field 6
-    1,                        !- Field 7
+    120,                      !- Field 7
     For: Weekdays,            !- Field 8
-    Until: 5:00,              !- Field 9
-    0.05,                     !- Field 10
-    Until: 7:00,              !- Field 11
-    0.1,                      !- Field 12
-    Until: 8:00,              !- Field 13
-    0.3,                      !- Field 14
-    Until: 17:00,             !- Field 15
-    0.9,                      !- Field 16
-    Until: 18:00,             !- Field 17
-    0.5,                      !- Field 18
-    Until: 20:00,             !- Field 19
-    0.3,                      !- Field 20
-    Until: 22:00,             !- Field 21
-    0.2,                      !- Field 22
-    Until: 23:00,             !- Field 23
-    0.1,                      !- Field 24
-    Until: 24:00,             !- Field 25
-    0.05,                     !- Field 26
-    For: Saturday,            !- Field 27
-    Until: 6:00,              !- Field 28
-    0.05,                     !- Field 29
-    Until: 8:00,              !- Field 30
-    0.1,                      !- Field 31
-    Until: 12:00,             !- Field 32
-    0.3,                      !- Field 33
-    Until: 17:00,             !- Field 34
-    0.15,                     !- Field 35
-    Until: 24:00,             !- Field 36
-    0.05,                     !- Field 37
-    For: Sunday,              !- Field 38
-    Until: 24:00,             !- Field 39
-    0.05,                     !- Field 40
-    For: Holidays,            !- Field 41
-    Until: 24:00,             !- Field 42
-    0.05,                     !- Field 43
-    For: AllOtherDays,        !- Field 44
-    Until: 24:00,             !- Field 45
-    0.05;                     !- Field 46
+    Until: 24:00,             !- Field 9
+    120,                      !- Field 10
+    For: Saturday,            !- Field 11
+    Until: 24:00,             !- Field 12
+    120,                      !- Field 13
+    For: Sunday,              !- Field 14
+    Until: 24:00,             !- Field 15
+    120,                      !- Field 16
+    For: Holidays,            !- Field 17
+    Until: 24:00,             !- Field 18
+    120,                      !- Field 19
+    For: AllOtherDays,        !- Field 20
+    Until: 24:00,             !- Field 21
+    120;                      !- Field 22
 
 SCHEDULE:COMPACT,
     always_on,                !- Name
     Any Number,               !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
-    For: AllDays,             !- Field 2
+    For: WinterDesignDay,     !- Field 2
     Until: 24:00,             !- Field 3
-    1;                        !- Field 4
+    1,                        !- Field 4
+    For: SummerDesignDay,     !- Field 5
+    Until: 24:00,             !- Field 6
+    1,                        !- Field 7
+    For: Weekdays,            !- Field 8
+    Until: 24:00,             !- Field 9
+    1,                        !- Field 10
+    For: Saturday,            !- Field 11
+    Until: 24:00,             !- Field 12
+    1,                        !- Field 13
+    For: Sunday,              !- Field 14
+    Until: 24:00,             !- Field 15
+    1,                        !- Field 16
+    For: Holidays,            !- Field 17
+    Until: 24:00,             !- Field 18
+    1,                        !- Field 19
+    For: AllOtherDays,        !- Field 20
+    Until: 24:00,             !- Field 21
+    1;                        !- Field 22
 
 MATERIAL,
     g01_13mm_gypsum_board,    !- Name
