@@ -107,9 +107,7 @@ class Geometry:
             num_stories=int(dfrow["num_floors"]),
         )
         local_idf.intersect_match()
-        local_idf.set_wwr(
-            wwr=dfrow["wwr"],
-            orientation=dfrow["side"])
+        local_idf.set_wwr(wwr=dfrow["wwr"], orientation=dfrow["side"])
 
         self.idf = copy_idf_objects(self.idf, local_idf)
 

@@ -31,7 +31,9 @@ class HVAC:
 
         self.zone_list = []
         for key, val in self.case["zone_geometry"].items():
-            self.zone_list.append({"zone_id": int(key), "zone_name": f"Block {val['name']} Storey 0"}) # TODO: temporarily set per geomeppy naming convention
+            self.zone_list.append(
+                {"zone_id": int(key), "zone_name": f"Block {val['name']} Storey 0"}
+            )  # TODO: temporarily set per geomeppy naming convention
 
         self.idf = copy_idf_objects(self.idf, self.add_thermostat())
         for zone in self.zone_list:
