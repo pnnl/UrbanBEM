@@ -1,11 +1,15 @@
 # urban-sim-flow
+
 # Urban Simulation Framework
 
 WIP
 
 ## Usage
 
+(Airflow adoption on the new implementation is on hold.)
+
 - Running the code requires the following environments:
+
   - Python 3.5+ (The code is tested with 3.7.5)
   - Apache-Airflow (The code is tested with Airflow 1.10.7 and its defautl DB of SQLite3)
   - Linux (I had some issues setting up Airflow on Windows. Running Airflow using Docker or WSL on Windows 10 are tested and good)
@@ -14,12 +18,25 @@ WIP
 - If `AIRFLOW_HOME` is empty, then the airflow running folder is default to `~/airflow`.
 
 ## To-do list (short term)
-- Accomodate standard data schema
-- Add construction mapping in geometry processor
-- Specify schedule interface
-- Add multi-storey functionality
+
+- [ ] Redo HVAC processor with OpenStandard calls.
+- [ ] confirm the appropriateness of the u values in CBECS and the construciton layer rules, most values lead to no insulation constructions
+- [ ] Adjust geometry processor to accomodate no core zone buildings (test with cbecs3)
+- [ ] Extract and compute ground temperature profile from the stat file
+- [ ] Construct misc. objects and weather / location related objects
+- [x] Accomodate standard data schema
+- [x] Add construction mapping in geometry processor
+- [x] Specify schedule interface
+- [x] Add multi-storey functionality
+
 ## Updates
 
+- 05/03/2020:
+  - Schedule preprocessor in place.
+- 04/29/2020:
+  - Construction processor and preprocessor in place.
+- 04/25/2020:
+  - Loads preprocessor in place.
 - 04/20/2020:
   - Add standard input loading
   - modify unit conversion to include post-conversion units and addtitional conversions
@@ -27,7 +44,7 @@ WIP
   - Add multi-storey capacity
   - Add schedule generator interface.
   - Add loads generator interface.
-  
+
 ## Dependencies
 
 The following python pakcages need to be installed for using the framework
