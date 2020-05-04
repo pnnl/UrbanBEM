@@ -24,7 +24,7 @@ IDF.setiddname("../resources/Energy+V9_0_1.idd")
 
 #%% load minimal idf
 idf = IDF("../resources/idfs/Minimal.idf")
-casename = "cbecs1"
+casename = "cbecs4"
 case_path = f"../input/std_json_raw/{casename}.json"
 
 #%% convert units

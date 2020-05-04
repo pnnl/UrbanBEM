@@ -284,11 +284,11 @@ def populate_std_constructions(case: Dict) -> Dict:
         "int_floor": {"type": "Default"},
         "int_ceiling": {"type": "Default"},
         "ext_wall": {
-            "type": case["wall_type"].strip().replace(" ", "_"),
+            "type": case["wall_type"].strip().replace(" ", "_").replace("-", "_"),
             "u_factor": case["wall_u_factor"],
         },
         "roof": {
-            "type": case["roof_type"].strip().replace(" ", "_"),
+            "type": case["roof_type"].strip().replace(" ", "_").replace("-", "_"),
             "u_factor": case["roof_u_factor"],
         },
         "window": {"u_factor": case["window_U_factor"], "shgc": case["window_shgc"]},
