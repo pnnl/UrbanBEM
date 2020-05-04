@@ -143,27 +143,33 @@ def populate_std_schedules(case: Dict) -> Dict:
     bldg_infiltration_sch_dict = sp.bldg_infiltration_sch(case)
     activity_sch_dict = sp.activity_sch()
     always_on_dict = sp.always_on()
-    
-    sch_list = [bldg_occ_sch_dict,
-                bldg_electric_equipment_sch_dict,
-                bldg_light_sch_dict,
-                bldg_hvac_operation_sch_dict,
-                bldg_clg_setp_sch_dict,
-                bldg_htg_setp_sch_dict,
-                bldg_infiltration_sch_dict,
-                activity_sch_dict,
-                always_on_dict]
-    
+
+    sch_list = [
+        bldg_occ_sch_dict,
+        bldg_electric_equipment_sch_dict,
+        bldg_light_sch_dict,
+        bldg_hvac_operation_sch_dict,
+        bldg_clg_setp_sch_dict,
+        bldg_htg_setp_sch_dict,
+        bldg_infiltration_sch_dict,
+        activity_sch_dict,
+        always_on_dict,
+    ]
+
     bldg_sch_dict = {}
-    for ind,x in enumerate(["bldg_occ_sch",
-                            "bldg_electric_equipment_sch",
-                            "bldg_light_sch",
-                            "bldg_hvac_operation_sch",
-                            "bldg_clg_setp_sch",
-                            "bldg_htg_setp_sch",
-                            "bldg_infiltration_sch",
-                            "activity_sch",
-                            "always_on"]):
+    for ind, x in enumerate(
+        [
+            "bldg_occ_sch",
+            "bldg_electric_equipment_sch",
+            "bldg_light_sch",
+            "bldg_hvac_operation_sch",
+            "bldg_clg_setp_sch",
+            "bldg_htg_setp_sch",
+            "bldg_infiltration_sch",
+            "activity_sch",
+            "always_on",
+        ]
+    ):
         bldg_sch_dict[str(ind)] = {}
         bldg_sch_dict[str(ind)]["name"] = x
         bldg_sch_dict[str(ind)]["type"] = "Any Number"
@@ -171,8 +177,9 @@ def populate_std_schedules(case: Dict) -> Dict:
         bldg_sch_dict[str(ind)]["periods"]["0"] = {}
         bldg_sch_dict[str(ind)]["periods"]["0"]["through"] = "12/31"
         bldg_sch_dict[str(ind)]["periods"]["0"]["day_of_week"] = sch_list[ind]
-    
+
     return bldg_sch_dict
+
 
 def get_loads_fractions(fraction, load, bldg_a_t, loads_settings) -> Dict:
     """ lookup load fraction associated with building area type
@@ -257,6 +264,7 @@ def populate_std_loads(case: Dict) -> Dict:
         }
     return loads_dict
 
+
 def populate_std_constructions(case: Dict) -> Dict:
     """ populate detailed construction profiles for user in the processor
     Args:
@@ -275,8 +283,14 @@ def populate_std_constructions(case: Dict) -> Dict:
         "int_wall": {"type": "Default"},
         "int_floor": {"type": "Default"},
         "int_ceiling": {"type": "Default"},
-        "ext_wall": {"type": case["wall_type"].strip().replace(' ', '_'), "u_factor": case["wall_u_factor"]},
-        "roof": {"type": case["roof_type"].strip().replace(' ', '_'), "u_factor": case["roof_u_factor"]},
+        "ext_wall": {
+            "type": case["wall_type"].strip().replace(" ", "_").replace("-", "_"),
+            "u_factor": case["wall_u_factor"],
+        },
+        "roof": {
+            "type": case["roof_type"].strip().replace(" ", "_").replace("-", "_"),
+            "u_factor": case["roof_u_factor"],
+        },
         "window": {"u_factor": case["window_U_factor"], "shgc": case["window_shgc"]},
     }
 
@@ -294,7 +308,7 @@ def populate_std_ground_temp_jan2dec(case: Dict) -> List:
         List of ground temperature profile, from January to December, len=12
 
     """
-    sample_return = [ # TODO: implement profile extraction logic. @Jeremy / @Jerry
+    sample_return = [  # TODO: implement profile extraction logic. @Jeremy / @Jerry
         20.9,
         15.4,
         11.9,

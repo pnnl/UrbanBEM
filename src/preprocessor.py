@@ -63,4 +63,6 @@ class Preprocessor:
         self.case_proc["constructions"] = adaptors.populate_std_constructions(self.case)
 
     def groundtemp_profile(self):
-        self.case_proc['constructions']['ground_temp_profile_jan2dec'] = adaptors.populate_std_ground_temp_jan2dec(self.case)
+        self.case_proc["constructions"][
+            "ground_temp_profile_jan2dec"
+        ] = adaptors.populate_std_ground_temp_jan2dec(self.case)

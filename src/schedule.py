@@ -50,7 +50,6 @@ class Schedule:
 
         return local_idf
 
-
     def get_schedule_val_changes(self, hourlyList: List[float]) -> List[tuple]:
         """check a 24 hour schedule value and return list of tuple (changing hour, changed value)
 

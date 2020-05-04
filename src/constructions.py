@@ -312,9 +312,7 @@ class Constructions:
         if user_u_value > 1 / (nonins_sum_r + self.INS_R_THRESH):
             mat_list.pop(ins_mat_i)
         else:
-            ins_r = (
-                1 / user_u_value - nonins_sum_r
-            )
+            ins_r = 1 / user_u_value - nonins_sum_r
             new_ins_mat_name = (
                 f"{ins_mat_name}_R_{ins_r:.4f}"
             )  # build R rounding directly into material name f string

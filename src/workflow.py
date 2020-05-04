@@ -24,7 +24,7 @@ IDF.setiddname("../resources/Energy+V9_0_1.idd")
 
 #%% load minimal idf
 idf = IDF("../resources/idfs/Minimal.idf")
-casename = "cbecs1"
+casename = "cbecs4"
 case_path = f"../input/std_json_raw/{casename}.json"
 
 #%% convert units
@@ -60,7 +60,6 @@ scheduleadded_obj.save_idf("../devoutput/schedule_added.idf")
 # %% load processor
 loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)
 loadadded_obj.save_idf("../devoutput/loads_added.idf")
-
 
 # %% hvac processor
 with open("../input/processed_inputs/std_hvac_dev.json") as f:
