@@ -31,8 +31,15 @@ class Geometry:
         self.create_zone_list()
 
     def set_geo_origins(self, df: pd.DataFrame) -> pd.DataFrame:
-        original_index = df.index
         df.index = df["side"]
+
+        has_core = 'core' in df.index
+
+        if has_core:
+            core_length = df.loc["core", "length"]
+        else:
+            core_length = 0
+
         df["origin_x"] = None
         df["origin_y"] = None
 
@@ -42,7 +49,7 @@ class Geometry:
             * (
                 max(
                     df.loc["south", "length"],
-                    df.loc["core", "length"],
+                    core_length,
                     df.loc["north", "length"],
                 )
                 + df.loc["west", "depth"]
@@ -54,7 +61,7 @@ class Geometry:
             * (
                 max(
                     df.loc["west", "length"],
-                    df.loc["core", "length"],
+                    core_length,
                     df.loc["east", "length"],
                 )
                 + df.loc["south", "depth"]
@@ -74,8 +81,9 @@ class Geometry:
         df.loc["east", "origin_x"] = 2 * x_center - df.loc["east", "depth"]
         df.loc["east", "origin_y"] = y_center - 0.5 * df.loc["east", "length"]
 
-        df.loc["core", "origin_x"] = x_center - 0.5 * df.loc["core", "length"]
-        df.loc["core", "origin_y"] = y_center - 0.5 * df.loc["core", "length"]
+        if has_core:
+            df.loc["core", "origin_x"] = x_center - 0.5 * core_length
+            df.loc["core", "origin_y"] = y_center - 0.5 * core_length
 
         return df
 

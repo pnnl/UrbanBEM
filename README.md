@@ -21,9 +21,9 @@ WIP
 
 - [ ] Redo HVAC processor with OpenStandard calls.
 - [ ] confirm the appropriateness of the u values in CBECS and the construciton layer rules, most values lead to no insulation constructions
-- [ ] Adjust geometry processor to accomodate no core zone buildings (test with cbecs3)
 - [ ] Extract and compute ground temperature profile from the stat file
 - [ ] Construct misc. objects and weather / location related objects
+- [x] Adjust geometry processor to accomodate no core zone buildings (test with cbecs3)
 - [x] Accomodate standard data schema
 - [x] Add construction mapping in geometry processor
 - [x] Specify schedule interface
@@ -31,6 +31,8 @@ WIP
 
 ## Updates
 
+- 05/04/2020:
+  - modify geometry processor to accomodate no core zone cases. Tested with CBECS 2 (w/ core) & 3 (w/o core).
 - 05/03/2020:
   - Schedule preprocessor in place.
 - 04/29/2020:
