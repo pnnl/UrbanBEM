@@ -66,3 +66,6 @@ class Preprocessor:
         self.case_proc["constructions"][
             "ground_temp_profile_jan2dec"
         ] = adaptors.populate_std_ground_temp_jan2dec(self.case)
+
+    def populate_hvac(self):
+        self.case_proc['hvac'] = adaptors.populate_std_hvac_for_osstd(self.case)

@@ -1,0 +1,2431 @@
+
+Version,
+  9.0;                                    !- Version Identifier
+
+Timestep,
+  6;                                      !- Number of Timesteps per Hour
+
+LifeCycleCost:Parameters,
+  Life Cycle Cost Parameters,             !- Name
+  EndOfYear,                              !- Discounting Convention
+  ConstantDollar,                         !- Inflation Approach
+  0.03,                                   !- Real Discount Rate
+  ,                                       !- Nominal Discount Rate
+  ,                                       !- Inflation
+  ,                                       !- Base Date Month
+  2011,                                   !- Base Date Year
+  ,                                       !- Service Date Month
+  2011,                                   !- Service Date Year
+  25,                                     !- Length of Study Period in Years
+  ,                                       !- Tax rate
+  None;                                   !- Depreciation Method
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Electricity,       !- LCC Price Escalation Name
+  Electricity,                            !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.9838,                                 !- Year Escalation 1
+  0.9730,                                 !- Year Escalation 2
+  0.9632,                                 !- Year Escalation 3
+  0.9611,                                 !- Year Escalation 4
+  0.9571,                                 !- Year Escalation 5
+  0.9553,                                 !- Year Escalation 6
+  0.9539,                                 !- Year Escalation 7
+  0.9521,                                 !- Year Escalation 8
+  0.9546,                                 !- Year Escalation 9
+  0.9550,                                 !- Year Escalation 10
+  0.9553,                                 !- Year Escalation 11
+  0.9564,                                 !- Year Escalation 12
+  0.9575,                                 !- Year Escalation 13
+  0.9596,                                 !- Year Escalation 14
+  0.9618,                                 !- Year Escalation 15
+  0.9614,                                 !- Year Escalation 16
+  0.9618,                                 !- Year Escalation 17
+  0.9618,                                 !- Year Escalation 18
+  0.9593,                                 !- Year Escalation 19
+  0.9589,                                 !- Year Escalation 20
+  0.9607,                                 !- Year Escalation 21
+  0.9625,                                 !- Year Escalation 22
+  0.9650,                                 !- Year Escalation 23
+  0.9708,                                 !- Year Escalation 24
+  0.9751,                                 !- Year Escalation 25
+  0.9762,                                 !- Year Escalation 26
+  0.9766,                                 !- Year Escalation 27
+  0.9766,                                 !- Year Escalation 28
+  0.9769,                                 !- Year Escalation 29
+  0.9773;                                 !- Year Escalation 30
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Distillate Oil,    !- LCC Price Escalation Name
+  FuelOil#1,                              !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.9714,                                 !- Year Escalation 1
+  0.9730,                                 !- Year Escalation 2
+  0.9942,                                 !- Year Escalation 3
+  1.0164,                                 !- Year Escalation 4
+  1.0541,                                 !- Year Escalation 5
+  1.0928,                                 !- Year Escalation 6
+  1.1267,                                 !- Year Escalation 7
+  1.1580,                                 !- Year Escalation 8
+  1.1792,                                 !- Year Escalation 9
+  1.1967,                                 !- Year Escalation 10
+  1.2200,                                 !- Year Escalation 11
+  1.2333,                                 !- Year Escalation 12
+  1.2566,                                 !- Year Escalation 13
+  1.2709,                                 !- Year Escalation 14
+  1.2826,                                 !- Year Escalation 15
+  1.2985,                                 !- Year Escalation 16
+  1.3102,                                 !- Year Escalation 17
+  1.3250,                                 !- Year Escalation 18
+  1.3261,                                 !- Year Escalation 19
+  1.3282,                                 !- Year Escalation 20
+  1.3324,                                 !- Year Escalation 21
+  1.3356,                                 !- Year Escalation 22
+  1.3431,                                 !- Year Escalation 23
+  1.3510,                                 !- Year Escalation 24
+  1.3568,                                 !- Year Escalation 25
+  1.3606,                                 !- Year Escalation 26
+  1.3637,                                 !- Year Escalation 27
+  1.3674,                                 !- Year Escalation 28
+  1.3706,                                 !- Year Escalation 29
+  1.3743;                                 !- Year Escalation 30
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Residual Oil,      !- LCC Price Escalation Name
+  FuelOil#2,                              !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.8469,                                 !- Year Escalation 1
+  0.8257,                                 !- Year Escalation 2
+  0.8681,                                 !- Year Escalation 3
+  0.8988,                                 !- Year Escalation 4
+  0.9289,                                 !- Year Escalation 5
+  0.9604,                                 !- Year Escalation 6
+  0.9897,                                 !- Year Escalation 7
+  1.0075,                                 !- Year Escalation 8
+  1.0314,                                 !- Year Escalation 9
+  1.0554,                                 !- Year Escalation 10
+  1.0861,                                 !- Year Escalation 11
+  1.1278,                                 !- Year Escalation 12
+  1.1497,                                 !- Year Escalation 13
+  1.1620,                                 !- Year Escalation 14
+  1.1743,                                 !- Year Escalation 15
+  1.1852,                                 !- Year Escalation 16
+  1.1948,                                 !- Year Escalation 17
+  1.2037,                                 !- Year Escalation 18
+  1.2071,                                 !- Year Escalation 19
+  1.2119,                                 !- Year Escalation 20
+  1.2139,                                 !- Year Escalation 21
+  1.2194,                                 !- Year Escalation 22
+  1.2276,                                 !- Year Escalation 23
+  1.2365,                                 !- Year Escalation 24
+  1.2420,                                 !- Year Escalation 25
+  1.2461,                                 !- Year Escalation 26
+  1.2509,                                 !- Year Escalation 27
+  1.2550,                                 !- Year Escalation 28
+  1.2591,                                 !- Year Escalation 29
+  1.2638;                                 !- Year Escalation 30
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Natural gas,       !- LCC Price Escalation Name
+  NaturalGas,                             !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.9823,                                 !- Year Escalation 1
+  0.9557,                                 !- Year Escalation 2
+  0.9279,                                 !- Year Escalation 3
+  0.9257,                                 !- Year Escalation 4
+  0.9346,                                 !- Year Escalation 5
+  0.9412,                                 !- Year Escalation 6
+  0.9512,                                 !- Year Escalation 7
+  0.9645,                                 !- Year Escalation 8
+  0.9856,                                 !- Year Escalation 9
+  1.0067,                                 !- Year Escalation 10
+  1.0222,                                 !- Year Escalation 11
+  1.0410,                                 !- Year Escalation 12
+  1.0610,                                 !- Year Escalation 13
+  1.0787,                                 !- Year Escalation 14
+  1.0942,                                 !- Year Escalation 15
+  1.1098,                                 !- Year Escalation 16
+  1.1220,                                 !- Year Escalation 17
+  1.1308,                                 !- Year Escalation 18
+  1.1386,                                 !- Year Escalation 19
+  1.1486,                                 !- Year Escalation 20
+  1.1619,                                 !- Year Escalation 21
+  1.1763,                                 !- Year Escalation 22
+  1.1918,                                 !- Year Escalation 23
+  1.2118,                                 !- Year Escalation 24
+  1.2284,                                 !- Year Escalation 25
+  1.2439,                                 !- Year Escalation 26
+  1.2605,                                 !- Year Escalation 27
+  1.2772,                                 !- Year Escalation 28
+  1.2938,                                 !- Year Escalation 29
+  1.3115;                                 !- Year Escalation 30
+
+LifeCycleCost:UsePriceEscalation,
+  U.S. Avg  Commercial-Coal,              !- LCC Price Escalation Name
+  Coal,                                   !- Resource
+  2011,                                   !- Escalation Start Year
+  January,                                !- Escalation Start Month
+  0.9970,                                 !- Year Escalation 1
+  1.0089,                                 !- Year Escalation 2
+  1.0089,                                 !- Year Escalation 3
+  0.9941,                                 !- Year Escalation 4
+  0.9941,                                 !- Year Escalation 5
+  1.0000,                                 !- Year Escalation 6
+  1.0030,                                 !- Year Escalation 7
+  1.0059,                                 !- Year Escalation 8
+  1.0089,                                 !- Year Escalation 9
+  1.0119,                                 !- Year Escalation 10
+  1.0148,                                 !- Year Escalation 11
+  1.0178,                                 !- Year Escalation 12
+  1.0208,                                 !- Year Escalation 13
+  1.0267,                                 !- Year Escalation 14
+  1.0297,                                 !- Year Escalation 15
+  1.0356,                                 !- Year Escalation 16
+  1.0415,                                 !- Year Escalation 17
+  1.0534,                                 !- Year Escalation 18
+  1.0564,                                 !- Year Escalation 19
+  1.0593,                                 !- Year Escalation 20
+  1.0653,                                 !- Year Escalation 21
+  1.0712,                                 !- Year Escalation 22
+  1.0742,                                 !- Year Escalation 23
+  1.0801,                                 !- Year Escalation 24
+  1.0831,                                 !- Year Escalation 25
+  1.0831,                                 !- Year Escalation 26
+  1.0861,                                 !- Year Escalation 27
+  1.0890,                                 !- Year Escalation 28
+  1.0920,                                 !- Year Escalation 29
+  1.0950;                                 !- Year Escalation 30
+
+Building,
+  Building 1,                             !- Name
+  ,                                       !- North Axis {deg}
+  ,                                       !- Terrain
+  ,                                       !- Loads Convergence Tolerance Value
+  ,                                       !- Temperature Convergence Tolerance Value {deltaC}
+  ,                                       !- Solar Distribution
+  ,                                       !- Maximum Number of Warmup Days
+  ;                                       !- Minimum Number of Warmup Days
+
+Zone,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone, !- Name
+  0,                                      !- Direction of Relative North {deg}
+  0,                                      !- X Origin {m}
+  0,                                      !- Y Origin {m}
+  0,                                      !- Z Origin {m}
+  ,                                       !- Type
+  1,                                      !- Multiplier
+  ,                                       !- Ceiling Height {m}
+  ,                                       !- Volume {m3}
+  ,                                       !- Floor Area {m2}
+  ,                                       !- Zone Inside Convection Algorithm
+  ,                                       !- Zone Outside Convection Algorithm
+  Yes;                                    !- Part of Total Floor Area
+
+ZoneHVAC:EquipmentConnections,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone, !- Zone Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Equipment List, !- Zone Conditioning Equipment List Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Inlet Node List, !- Zone Air Inlet Node or NodeList Name
+  ,                                       !- Zone Air Exhaust Node or NodeList Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Zone Air Node, !- Zone Air Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Return Node List; !- Zone Return Air Node or NodeList Name
+
+NodeList,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Inlet Node List, !- Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node; !- Node Name 1
+
+NodeList,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Return Node List, !- Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Return Air Node; !- Node Name 1
+
+AirTerminal:SingleDuct:ConstantVolume:NoReheat,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Diffuser, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Diffuser Inlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node, !- Air Outlet Node Name
+  AutoSize;                               !- Maximum Air Flow Rate {m3/s}
+
+ZoneHVAC:AirDistributionUnit,
+  ADU Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Diffuser, !- Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node, !- Air Distribution Unit Outlet Node Name
+  AirTerminal:SingleDuct:ConstantVolume:NoReheat, !- Air Terminal Object Type
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Diffuser; !- Air Terminal Name
+
+ZoneHVAC:EquipmentList,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Equipment List, !- Name
+  SequentialLoad,                         !- Load Distribution Scheme
+  ZoneHVAC:AirDistributionUnit,           !- Zone Equipment Object Type 1
+  ADU Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Diffuser, !- Zone Equipment Name 1
+  1,                                      !- Zone Equipment Cooling Sequence 1
+  1;                                      !- Zone Equipment Heating or No-Load Sequence 1
+
+Zone,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone, !- Name
+  0,                                      !- Direction of Relative North {deg}
+  0,                                      !- X Origin {m}
+  0,                                      !- Y Origin {m}
+  0,                                      !- Z Origin {m}
+  ,                                       !- Type
+  1,                                      !- Multiplier
+  ,                                       !- Ceiling Height {m}
+  ,                                       !- Volume {m3}
+  ,                                       !- Floor Area {m2}
+  ,                                       !- Zone Inside Convection Algorithm
+  ,                                       !- Zone Outside Convection Algorithm
+  Yes;                                    !- Part of Total Floor Area
+
+ZoneHVAC:EquipmentConnections,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone, !- Zone Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Equipment List, !- Zone Conditioning Equipment List Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Inlet Node List, !- Zone Air Inlet Node or NodeList Name
+  ,                                       !- Zone Air Exhaust Node or NodeList Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Zone Air Node, !- Zone Air Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Return Node List; !- Zone Return Air Node or NodeList Name
+
+NodeList,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Inlet Node List, !- Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node; !- Node Name 1
+
+NodeList,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Return Node List, !- Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Return Air Node; !- Node Name 1
+
+AirTerminal:SingleDuct:ConstantVolume:NoReheat,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Diffuser, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Diffuser Inlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node, !- Air Outlet Node Name
+  AutoSize;                               !- Maximum Air Flow Rate {m3/s}
+
+ZoneHVAC:AirDistributionUnit,
+  ADU Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Diffuser, !- Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node, !- Air Distribution Unit Outlet Node Name
+  AirTerminal:SingleDuct:ConstantVolume:NoReheat, !- Air Terminal Object Type
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Diffuser; !- Air Terminal Name
+
+ZoneHVAC:EquipmentList,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Equipment List, !- Name
+  SequentialLoad,                         !- Load Distribution Scheme
+  ZoneHVAC:AirDistributionUnit,           !- Zone Equipment Object Type 1
+  ADU Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Diffuser, !- Zone Equipment Name 1
+  1,                                      !- Zone Equipment Cooling Sequence 1
+  1;                                      !- Zone Equipment Heating or No-Load Sequence 1
+
+Zone,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone, !- Name
+  0,                                      !- Direction of Relative North {deg}
+  0,                                      !- X Origin {m}
+  0,                                      !- Y Origin {m}
+  0,                                      !- Z Origin {m}
+  ,                                       !- Type
+  1,                                      !- Multiplier
+  ,                                       !- Ceiling Height {m}
+  ,                                       !- Volume {m3}
+  ,                                       !- Floor Area {m2}
+  ,                                       !- Zone Inside Convection Algorithm
+  ,                                       !- Zone Outside Convection Algorithm
+  Yes;                                    !- Part of Total Floor Area
+
+ZoneHVAC:EquipmentConnections,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone, !- Zone Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Equipment List, !- Zone Conditioning Equipment List Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Inlet Node List, !- Zone Air Inlet Node or NodeList Name
+  ,                                       !- Zone Air Exhaust Node or NodeList Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Zone Air Node, !- Zone Air Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Return Node List; !- Zone Return Air Node or NodeList Name
+
+NodeList,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Inlet Node List, !- Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node; !- Node Name 1
+
+NodeList,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Return Node List, !- Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Return Air Node; !- Node Name 1
+
+AirTerminal:SingleDuct:ConstantVolume:NoReheat,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Diffuser, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Diffuser Inlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node, !- Air Outlet Node Name
+  AutoSize;                               !- Maximum Air Flow Rate {m3/s}
+
+ZoneHVAC:AirDistributionUnit,
+  ADU Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Diffuser, !- Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node, !- Air Distribution Unit Outlet Node Name
+  AirTerminal:SingleDuct:ConstantVolume:NoReheat, !- Air Terminal Object Type
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Diffuser; !- Air Terminal Name
+
+ZoneHVAC:EquipmentList,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Equipment List, !- Name
+  SequentialLoad,                         !- Load Distribution Scheme
+  ZoneHVAC:AirDistributionUnit,           !- Zone Equipment Object Type 1
+  ADU Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Diffuser, !- Zone Equipment Name 1
+  1,                                      !- Zone Equipment Cooling Sequence 1
+  1;                                      !- Zone Equipment Heating or No-Load Sequence 1
+
+Zone,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone, !- Name
+  0,                                      !- Direction of Relative North {deg}
+  0,                                      !- X Origin {m}
+  0,                                      !- Y Origin {m}
+  0,                                      !- Z Origin {m}
+  ,                                       !- Type
+  1,                                      !- Multiplier
+  ,                                       !- Ceiling Height {m}
+  ,                                       !- Volume {m3}
+  ,                                       !- Floor Area {m2}
+  ,                                       !- Zone Inside Convection Algorithm
+  ,                                       !- Zone Outside Convection Algorithm
+  Yes;                                    !- Part of Total Floor Area
+
+ZoneHVAC:EquipmentConnections,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone, !- Zone Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Equipment List, !- Zone Conditioning Equipment List Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Inlet Node List, !- Zone Air Inlet Node or NodeList Name
+  ,                                       !- Zone Air Exhaust Node or NodeList Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Zone Air Node, !- Zone Air Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Return Node List; !- Zone Return Air Node or NodeList Name
+
+NodeList,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Inlet Node List, !- Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node; !- Node Name 1
+
+NodeList,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Return Node List, !- Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Return Air Node; !- Node Name 1
+
+AirTerminal:SingleDuct:ConstantVolume:NoReheat,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Diffuser, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Diffuser Inlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node, !- Air Outlet Node Name
+  AutoSize;                               !- Maximum Air Flow Rate {m3/s}
+
+ZoneHVAC:AirDistributionUnit,
+  ADU Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Diffuser, !- Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node, !- Air Distribution Unit Outlet Node Name
+  AirTerminal:SingleDuct:ConstantVolume:NoReheat, !- Air Terminal Object Type
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Diffuser; !- Air Terminal Name
+
+ZoneHVAC:EquipmentList,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Equipment List, !- Name
+  SequentialLoad,                         !- Load Distribution Scheme
+  ZoneHVAC:AirDistributionUnit,           !- Zone Equipment Object Type 1
+  ADU Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Diffuser, !- Zone Equipment Name 1
+  1,                                      !- Zone Equipment Cooling Sequence 1
+  1;                                      !- Zone Equipment Heating or No-Load Sequence 1
+
+SimulationControl,
+  No,                                     !- Do Zone Sizing Calculation
+  No,                                     !- Do System Sizing Calculation
+  No,                                     !- Do Plant Sizing Calculation
+  Yes,                                    !- Run Simulation for Sizing Periods
+  Yes;                                    !- Run Simulation for Weather File Run Periods
+
+Sizing:Parameters,
+  1.25,                                   !- Heating Sizing Factor
+  1.15;                                   !- Cooling Sizing Factor
+
+RunPeriod,
+  Run Period 1,                           !- Name
+  1,                                      !- Begin Month
+  1,                                      !- Begin Day of Month
+  2009,                                   !- Begin Year
+  12,                                     !- End Month
+  31,                                     !- End Day of Month
+  2009,                                   !- End Year
+  Thursday,                               !- Day of Week for Start Day
+  No,                                     !- Use Weather File Holidays and Special Days
+  No,                                     !- Use Weather File Daylight Saving Period
+  No,                                     !- Apply Weekend Holiday Rule
+  Yes,                                    !- Use Weather File Rain Indicators
+  Yes;                                    !- Use Weather File Snow Indicators
+
+GlobalGeometryRules,
+  UpperLeftCorner,                        !- Starting Vertex Position
+  Counterclockwise,                       !- Vertex Entry Direction
+  Relative,                               !- Coordinate System
+  Relative,                               !- Daylighting Reference Point Coordinate System
+  Relative;                               !- Rectangular Surface Coordinate System
+
+ScheduleTypeLimits,
+  OnOff,                                  !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  1,                                      !- Upper Limit Value {BasedOnField A3}
+  Discrete,                               !- Numeric Type
+  availability;                           !- Unit Type
+
+ScheduleTypeLimits,
+  Temperature,                            !- Name
+  0,                                      !- Lower Limit Value {BasedOnField A3}
+  100,                                    !- Upper Limit Value {BasedOnField A3}
+  Continuous,                             !- Numeric Type
+  temperature;                            !- Unit Type
+
+Schedule:Constant,
+  Always On Discrete,                     !- Name
+  OnOff,                                  !- Schedule Type Limits Name
+  1;                                      !- Hourly Value
+
+Schedule:Day:Interval,
+  Hot Water Loop Temp - 180F Default,     !- Name
+  Temperature,                            !- Schedule Type Limits Name
+  No,                                     !- Interpolate to Timestep
+  24:00,                                  !- Time 1 {hh:mm}
+  82.2222222222223;                       !- Value Until Time 1
+
+Schedule:Week:Daily,
+  Hot Water Loop Temp - 180F Week Rule - Jan1-Dec31, !- Name
+  Hot Water Loop Temp - 180F Default,     !- Sunday Schedule:Day Name
+  Hot Water Loop Temp - 180F Default,     !- Monday Schedule:Day Name
+  Hot Water Loop Temp - 180F Default,     !- Tuesday Schedule:Day Name
+  Hot Water Loop Temp - 180F Default,     !- Wednesday Schedule:Day Name
+  Hot Water Loop Temp - 180F Default,     !- Thursday Schedule:Day Name
+  Hot Water Loop Temp - 180F Default,     !- Friday Schedule:Day Name
+  Hot Water Loop Temp - 180F Default,     !- Saturday Schedule:Day Name
+  Hot Water Loop Temp - 180F Default,     !- Holiday Schedule:Day Name
+  Hot Water Loop Temp - 180F Default,     !- SummerDesignDay Schedule:Day Name
+  Hot Water Loop Temp - 180F Default,     !- WinterDesignDay Schedule:Day Name
+  Hot Water Loop Temp - 180F Default,     !- CustomDay1 Schedule:Day Name
+  Hot Water Loop Temp - 180F Default;     !- CustomDay2 Schedule:Day Name
+
+Schedule:Year,
+  Hot Water Loop Temp - 180F,             !- Name
+  Temperature,                            !- Schedule Type Limits Name
+  Hot Water Loop Temp - 180F Week Rule - Jan1-Dec31, !- Schedule:Week Name 1
+  1,                                      !- Start Month 1
+  1,                                      !- Start Day 1
+  12,                                     !- End Month 1
+  31;                                     !- End Day 1
+
+Schedule:Constant,
+  Always Off Discrete,                    !- Name
+  ,                                       !- Schedule Type Limits Name
+  0;                                      !- Hourly Value
+
+Schedule:Constant,
+  Always On Continuous,                   !- Name
+  ,                                       !- Schedule Type Limits Name
+  1;                                      !- Hourly Value
+
+OutdoorAir:Node,
+  Model Outdoor Air Node;                 !- Name
+
+AirLoopHVAC,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC, !- Name
+  ,                                       !- Controller List Name
+  Air Loop HVAC 1 AvailabilityManagerAssignmentList, !- Availability Manager List Name
+  AutoSize,                               !- Design Supply Air Flow Rate {m3/s}
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Branches, !- Branch List Name
+  ,                                       !- Connector List Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node, !- Supply Side Inlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Demand Outlet Node, !- Demand Side Outlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Nodes, !- Demand Side Inlet Node Names
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Nodes; !- Supply Side Outlet Node Names
+
+NodeList,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Nodes, !- Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Node Name 1
+
+NodeList,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Nodes, !- Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node; !- Node Name 1
+
+Sizing:System,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC, !- AirLoop Name
+  Sensible,                               !- Type of Load to Size On
+  Autosize,                               !- Design Outdoor Air Flow Rate {m3/s}
+  1,                                      !- Central Heating Maximum System Air Flow Ratio
+  7.22222222222229,                       !- Preheat Design Temperature {C}
+  0.008,                                  !- Preheat Design Humidity Ratio {kgWater/kgDryAir}
+  12.7777777777778,                       !- Precool Design Temperature {C}
+  0.008,                                  !- Precool Design Humidity Ratio {kgWater/kgDryAir}
+  12.7777777777778,                       !- Central Cooling Design Supply Air Temperature {C}
+  50.0000000000001,                       !- Central Heating Design Supply Air Temperature {C}
+  Coincident,                             !- Type of Zone Sum to Use
+  No,                                     !- 100% Outdoor Air in Cooling
+  No,                                     !- 100% Outdoor Air in Heating
+  0.0085,                                 !- Central Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.008,                                  !- Central Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  DesignDay,                              !- Cooling Supply Air Flow Rate Method
+  0,                                      !- Cooling Supply Air Flow Rate {m3/s}
+  0.0099676501,                           !- Cooling Supply Air Flow Rate Per Floor Area {m3/s-m2}
+  1,                                      !- Cooling Fraction of Autosized Cooling Supply Air Flow Rate
+  3.9475456e-05,                          !- Cooling Supply Air Flow Rate Per Unit Cooling Capacity {m3/s-W}
+  DesignDay,                              !- Heating Supply Air Flow Rate Method
+  0,                                      !- Heating Supply Air Flow Rate {m3/s}
+  0.0099676501,                           !- Heating Supply Air Flow Rate Per Floor Area {m3/s-m2}
+  1,                                      !- Heating Fraction of Autosized Heating Supply Air Flow Rate
+  1,                                      !- Heating Fraction of Autosized Cooling Supply Air Flow Rate
+  3.1588213e-05,                          !- Heating Supply Air Flow Rate Per Unit Heating Capacity {m3/s-W}
+  ZoneSum,                                !- System Outdoor Air Method
+  1,                                      !- Zone Maximum Outdoor Air Fraction {dimensionless}
+  CoolingDesignCapacity,                  !- Cooling Design Capacity Method
+  Autosize,                               !- Cooling Design Capacity {W}
+  234.7,                                  !- Cooling Design Capacity Per Floor Area {W/m2}
+  1,                                      !- Fraction of Autosized Cooling Design Capacity
+  HeatingDesignCapacity,                  !- Heating Design Capacity Method
+  Autosize,                               !- Heating Design Capacity {W}
+  157,                                    !- Heating Design Capacity Per Floor Area {W/m2}
+  1,                                      !- Fraction of Autosized Heating Design Capacity
+  OnOff;                                  !- Central Cooling Capacity Control Method
+
+AvailabilityManagerAssignmentList,
+  Air Loop HVAC 1 AvailabilityManagerAssignmentList, !- Name
+  AvailabilityManager:NightCycle,         !- Availability Manager Object Type 1
+  Availability Manager Night Cycle 1;     !- Availability Manager Name 1
+
+AvailabilityManager:NightCycle,
+  Availability Manager Night Cycle 1,     !- Name
+  Always On Discrete,                     !- Applicability Schedule Name
+  Always On Discrete,                     !- Fan Schedule Name
+  CycleOnAny,                             !- Control Type
+  1,                                      !- Thermostat Tolerance {deltaC}
+  FixedRunTime,                           !- Cycling Run Time Control Type
+  1800;                                   !- Cycling Run Time {s}
+
+BranchList,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Branches, !- Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Main Branch; !- Branch Name 1
+
+Branch,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Main Branch, !- Name
+  ,                                       !- Pressure Drop Curve Name
+  AirLoopHVAC:OutdoorAirSystem,           !- Component Object Type 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System, !- Component Name 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node, !- Component Inlet Node Name 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Component Outlet Node Name 1
+  CoilSystem:Cooling:DX,                  !- Component Object Type 2
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil CoilSystem, !- Component Name 2
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Component Inlet Node Name 2
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Component Outlet Node Name 2
+  Coil:Heating:Fuel,                      !- Component Object Type 3
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil, !- Component Name 3
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Component Inlet Node Name 3
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Component Outlet Node Name 3
+  Coil:Heating:Electric,                  !- Component Object Type 4
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil, !- Component Name 4
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Component Inlet Node Name 4
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Component Outlet Node Name 4
+  Fan:ConstantVolume,                     !- Component Object Type 5
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Fan, !- Component Name 5
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Component Inlet Node Name 5
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Component Outlet Node Name 5
+
+AirLoopHVAC:OutdoorAirSystem,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System, !- Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System Controller List, !- Controller List Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System Equipment List, !- Outdoor Air Equipment List Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager List; !- Availability Manager List Name
+
+AirLoopHVAC:ControllerList,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System Controller List, !- Name
+  Controller:OutdoorAir,                  !- Controller Object Type 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System Controller; !- Controller Name 1
+
+Controller:OutdoorAir,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System Controller, !- Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Relief Air Node, !- Relief Air Outlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node, !- Return Air Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Mixed Air Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Outdoor Air Node, !- Actuator Node Name
+  Autosize,                               !- Minimum Outdoor Air Flow Rate {m3/s}
+  Autosize,                               !- Maximum Outdoor Air Flow Rate {m3/s}
+  NoEconomizer,                           !- Economizer Control Type
+  ModulateFlow,                           !- Economizer Control Action Type
+  28,                                     !- Economizer Maximum Limit Dry-Bulb Temperature {C}
+  64000,                                  !- Economizer Maximum Limit Enthalpy {J/kg}
+  ,                                       !- Economizer Maximum Limit Dewpoint Temperature {C}
+  ,                                       !- Electronic Enthalpy Limit Curve Name
+  ,                                       !- Economizer Minimum Limit Dry-Bulb Temperature {C}
+  NoLockout,                              !- Lockout Type
+  FixedMinimum,                           !- Minimum Limit Type
+  Always On Discrete,                     !- Minimum Outdoor Air Schedule Name
+  ,                                       !- Minimum Fraction of Outdoor Air Schedule Name
+  ,                                       !- Maximum Fraction of Outdoor Air Schedule Name
+  Controller Mechanical Ventilation 1,    !- Mechanical Ventilation Controller Name
+  ,                                       !- Time of Day Economizer Control Schedule Name
+  No,                                     !- High Humidity Control
+  ,                                       !- Humidistat Control Zone Name
+  ,                                       !- High Humidity Outdoor Air Flow Ratio
+  Yes,                                    !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
+  BypassWhenWithinEconomizerLimits;       !- Heat Recovery Bypass Control Type
+
+Controller:MechanicalVentilation,
+  Controller Mechanical Ventilation 1,    !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  No,                                     !- Demand Controlled Ventilation
+  ZoneSum,                                !- System Outdoor Air Method
+  ;                                       !- Zone Maximum Outdoor Air Fraction {dimensionless}
+
+AvailabilityManagerAssignmentList,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager List, !- Name
+  AvailabilityManager:Scheduled,          !- Availability Manager Object Type 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager; !- Availability Manager Name 1
+
+AvailabilityManager:Scheduled,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager, !- Name
+  Always On Discrete;                     !- Schedule Name
+
+OutdoorAir:NodeList,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Outdoor Air Node; !- Node or NodeList Name 1
+
+AirLoopHVAC:OutdoorAirSystem:EquipmentList,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System Equipment List, !- Name
+  OutdoorAir:Mixer,                       !- Component Object Type 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System Outdoor Air Mixer; !- Component Name 1
+
+OutdoorAir:Mixer,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System Outdoor Air Mixer, !- Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Mixed Air Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Outdoor Air Node, !- Outdoor Air Stream Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Relief Air Node, !- Relief Air Stream Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node; !- Return Air Stream Node Name
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node; !- Setpoint Node or NodeList Name
+
+CoilSystem:Cooling:DX,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil CoilSystem, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- DX Cooling Coil System Inlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- DX Cooling Coil System Outlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- DX Cooling Coil System Sensor Node Name
+  Coil:Cooling:DX:SingleSpeed,            !- Cooling Coil Object Type
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil; !- Cooling Coil Name
+
+Curve:Biquadratic,
+  Curve Biquadratic 3,                    !- Name
+  0.9712123,                              !- Coefficient1 Constant
+  -0.015275502,                           !- Coefficient2 x
+  0.0014434524,                           !- Coefficient3 x**2
+  -0.00039321,                            !- Coefficient4 y
+  -6.8364e-06,                            !- Coefficient5 y**2
+  -0.0002905956,                          !- Coefficient6 x*y
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100,                                    !- Maximum Value of x {BasedOnField A2}
+  -100,                                   !- Minimum Value of y {BasedOnField A3}
+  100;                                    !- Maximum Value of y {BasedOnField A3}
+
+Curve:Quadratic,
+  Curve Quadratic 4,                      !- Name
+  1,                                      !- Coefficient1 Constant
+  0,                                      !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Biquadratic,
+  Curve Biquadratic 4,                    !- Name
+  0.28687133,                             !- Coefficient1 Constant
+  0.023902164,                            !- Coefficient2 x
+  -0.000810648,                           !- Coefficient3 x**2
+  0.013458546,                            !- Coefficient4 y
+  0.0003389364,                           !- Coefficient5 y**2
+  -0.0004870044,                          !- Coefficient6 x*y
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100,                                    !- Maximum Value of x {BasedOnField A2}
+  -100,                                   !- Minimum Value of y {BasedOnField A3}
+  100;                                    !- Maximum Value of y {BasedOnField A3}
+
+Curve:Quadratic,
+  Curve Quadratic 5,                      !- Name
+  1,                                      !- Coefficient1 Constant
+  0,                                      !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 6,                      !- Name
+  0.90949556,                             !- Coefficient1 Constant
+  0.09864773,                             !- Coefficient2 x
+  -0.00819488,                            !- Coefficient3 x**2
+  0,                                      !- Minimum Value of x {BasedOnField A2}
+  1,                                      !- Maximum Value of x {BasedOnField A2}
+  0.7,                                    !- Minimum Curve Output {BasedOnField A3}
+  1;                                      !- Maximum Curve Output {BasedOnField A3}
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node; !- Setpoint Node or NodeList Name
+
+Coil:Cooling:DX:SingleSpeed,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  Autosize,                               !- Gross Rated Total Cooling Capacity {W}
+  Autosize,                               !- Gross Rated Sensible Heat Ratio
+  3,                                      !- Gross Rated Cooling COP {W/W}
+  Autosize,                               !- Rated Air Flow Rate {m3/s}
+  773.3,                                  !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Air Outlet Node Name
+  Curve Biquadratic 3,                    !- Total Cooling Capacity Function of Temperature Curve Name
+  Curve Quadratic 4,                      !- Total Cooling Capacity Function of Flow Fraction Curve Name
+  Curve Biquadratic 4,                    !- Energy Input Ratio Function of Temperature Curve Name
+  Curve Quadratic 5,                      !- Energy Input Ratio Function of Flow Fraction Curve Name
+  Curve Quadratic 6,                      !- Part Load Fraction Correlation Curve Name
+  ,                                       !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+  ,                                       !- Nominal Time for Condensate Removal to Begin {s}
+  ,                                       !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity {dimensionless}
+  ,                                       !- Maximum Cycling Rate {cycles/hr}
+  ,                                       !- Latent Capacity Time Constant {s}
+  ,                                       !- Condenser Air Inlet Node Name
+  AirCooled,                              !- Condenser Type
+  0,                                      !- Evaporative Condenser Effectiveness {dimensionless}
+  Autosize,                               !- Evaporative Condenser Air Flow Rate {m3/s}
+  Autosize,                               !- Evaporative Condenser Pump Rated Power Consumption {W}
+  0,                                      !- Crankcase Heater Capacity {W}
+  0,                                      !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+  ,                                       !- Supply Water Storage Tank Name
+  ,                                       !- Condensate Collection Water Storage Tank Name
+  0,                                      !- Basin Heater Capacity {W/K}
+  10;                                     !- Basin Heater Setpoint Temperature {C}
+
+Coil:Heating:Fuel,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  NaturalGas,                             !- Fuel Type
+  0.8,                                    !- Burner Efficiency
+  AutoSize,                               !- Nominal Capacity {W}
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Air Outlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Temperature Setpoint Node Name
+  0,                                      !- Parasitic Electric Load {W}
+  ,                                       !- Part Load Fraction Correlation Curve Name
+  0;                                      !- Parasitic Fuel Load {W}
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node; !- Setpoint Node or NodeList Name
+
+Coil:Heating:Electric,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  1,                                      !- Efficiency
+  Autosize,                               !- Nominal Capacity {W}
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Air Outlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node; !- Temperature Setpoint Node Name
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node; !- Setpoint Node or NodeList Name
+
+Fan:ConstantVolume,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Fan, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  0.54,                                   !- Fan Total Efficiency
+  622.722275,                             !- Pressure Rise {Pa}
+  AutoSize,                               !- Maximum Flow Rate {m3/s}
+  0.9,                                    !- Motor Efficiency
+  1,                                      !- Motor In Airstream Fraction
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Air Outlet Node Name
+
+SetpointManager:SingleZone:Reheat,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Setpoint Manager SZ Reheat, !- Name
+  Temperature,                            !- Control Variable
+  12.7777777777778,                       !- Minimum Supply Air Temperature {C}
+  50.0000000000001,                       !- Maximum Supply Air Temperature {C}
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone, !- Control Zone Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Zone Air Node, !- Zone Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node, !- Zone Inlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Setpoint Node or NodeList Name
+
+AirLoopHVAC:SupplyPath,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node Supply Path, !- Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node, !- Supply Air Path Inlet Node Name
+  AirLoopHVAC:ZoneSplitter,               !- Component Object Type 1
+  Air Loop HVAC Zone Splitter 1;          !- Component Name 1
+
+AirLoopHVAC:ZoneSplitter,
+  Air Loop HVAC Zone Splitter 1,          !- Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node, !- Inlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Diffuser Inlet Air Node; !- Outlet Node Name 1
+
+AirLoopHVAC:ReturnPath,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Return Path, !- Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Demand Outlet Node, !- Return Air Path Outlet Node Name
+  AirLoopHVAC:ZoneMixer,                  !- Component Object Type 1
+  Air Loop HVAC Zone Mixer 1;             !- Component Name 1
+
+AirLoopHVAC:ZoneMixer,
+  Air Loop HVAC Zone Mixer 1,             !- Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC Demand Outlet Node, !- Outlet Node Name
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Return Air Node; !- Inlet Node Name 1
+
+AirLoopHVAC,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC, !- Name
+  ,                                       !- Controller List Name
+  Air Loop HVAC 1 AvailabilityManagerAssignmentList 1, !- Availability Manager List Name
+  AutoSize,                               !- Design Supply Air Flow Rate {m3/s}
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Branches, !- Branch List Name
+  ,                                       !- Connector List Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node, !- Supply Side Inlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Demand Outlet Node, !- Demand Side Outlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Nodes, !- Demand Side Inlet Node Names
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Nodes; !- Supply Side Outlet Node Names
+
+NodeList,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Nodes, !- Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Node Name 1
+
+NodeList,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Nodes, !- Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node; !- Node Name 1
+
+Sizing:System,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC, !- AirLoop Name
+  Sensible,                               !- Type of Load to Size On
+  Autosize,                               !- Design Outdoor Air Flow Rate {m3/s}
+  1,                                      !- Central Heating Maximum System Air Flow Ratio
+  7.22222222222229,                       !- Preheat Design Temperature {C}
+  0.008,                                  !- Preheat Design Humidity Ratio {kgWater/kgDryAir}
+  12.7777777777778,                       !- Precool Design Temperature {C}
+  0.008,                                  !- Precool Design Humidity Ratio {kgWater/kgDryAir}
+  12.7777777777778,                       !- Central Cooling Design Supply Air Temperature {C}
+  50.0000000000001,                       !- Central Heating Design Supply Air Temperature {C}
+  Coincident,                             !- Type of Zone Sum to Use
+  No,                                     !- 100% Outdoor Air in Cooling
+  No,                                     !- 100% Outdoor Air in Heating
+  0.0085,                                 !- Central Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.008,                                  !- Central Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  DesignDay,                              !- Cooling Supply Air Flow Rate Method
+  0,                                      !- Cooling Supply Air Flow Rate {m3/s}
+  0.0099676501,                           !- Cooling Supply Air Flow Rate Per Floor Area {m3/s-m2}
+  1,                                      !- Cooling Fraction of Autosized Cooling Supply Air Flow Rate
+  3.9475456e-05,                          !- Cooling Supply Air Flow Rate Per Unit Cooling Capacity {m3/s-W}
+  DesignDay,                              !- Heating Supply Air Flow Rate Method
+  0,                                      !- Heating Supply Air Flow Rate {m3/s}
+  0.0099676501,                           !- Heating Supply Air Flow Rate Per Floor Area {m3/s-m2}
+  1,                                      !- Heating Fraction of Autosized Heating Supply Air Flow Rate
+  1,                                      !- Heating Fraction of Autosized Cooling Supply Air Flow Rate
+  3.1588213e-05,                          !- Heating Supply Air Flow Rate Per Unit Heating Capacity {m3/s-W}
+  ZoneSum,                                !- System Outdoor Air Method
+  1,                                      !- Zone Maximum Outdoor Air Fraction {dimensionless}
+  CoolingDesignCapacity,                  !- Cooling Design Capacity Method
+  Autosize,                               !- Cooling Design Capacity {W}
+  234.7,                                  !- Cooling Design Capacity Per Floor Area {W/m2}
+  1,                                      !- Fraction of Autosized Cooling Design Capacity
+  HeatingDesignCapacity,                  !- Heating Design Capacity Method
+  Autosize,                               !- Heating Design Capacity {W}
+  157,                                    !- Heating Design Capacity Per Floor Area {W/m2}
+  1,                                      !- Fraction of Autosized Heating Design Capacity
+  OnOff;                                  !- Central Cooling Capacity Control Method
+
+AvailabilityManagerAssignmentList,
+  Air Loop HVAC 1 AvailabilityManagerAssignmentList 1, !- Name
+  AvailabilityManager:NightCycle,         !- Availability Manager Object Type 1
+  Availability Manager Night Cycle 2;     !- Availability Manager Name 1
+
+AvailabilityManager:NightCycle,
+  Availability Manager Night Cycle 2,     !- Name
+  Always On Discrete,                     !- Applicability Schedule Name
+  Always On Discrete,                     !- Fan Schedule Name
+  CycleOnAny,                             !- Control Type
+  1,                                      !- Thermostat Tolerance {deltaC}
+  FixedRunTime,                           !- Cycling Run Time Control Type
+  1800;                                   !- Cycling Run Time {s}
+
+BranchList,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Branches, !- Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Main Branch; !- Branch Name 1
+
+Branch,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Main Branch, !- Name
+  ,                                       !- Pressure Drop Curve Name
+  AirLoopHVAC:OutdoorAirSystem,           !- Component Object Type 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System, !- Component Name 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node, !- Component Inlet Node Name 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Component Outlet Node Name 1
+  CoilSystem:Cooling:DX,                  !- Component Object Type 2
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil CoilSystem, !- Component Name 2
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Component Inlet Node Name 2
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Component Outlet Node Name 2
+  Coil:Heating:Fuel,                      !- Component Object Type 3
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil, !- Component Name 3
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Component Inlet Node Name 3
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Component Outlet Node Name 3
+  Coil:Heating:Electric,                  !- Component Object Type 4
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil, !- Component Name 4
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Component Inlet Node Name 4
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Component Outlet Node Name 4
+  Fan:ConstantVolume,                     !- Component Object Type 5
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Fan, !- Component Name 5
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Component Inlet Node Name 5
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Component Outlet Node Name 5
+
+AirLoopHVAC:OutdoorAirSystem,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System, !- Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System Controller List, !- Controller List Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System Equipment List, !- Outdoor Air Equipment List Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager List; !- Availability Manager List Name
+
+AirLoopHVAC:ControllerList,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System Controller List, !- Name
+  Controller:OutdoorAir,                  !- Controller Object Type 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System Controller; !- Controller Name 1
+
+Controller:OutdoorAir,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System Controller, !- Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Relief Air Node, !- Relief Air Outlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node, !- Return Air Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Mixed Air Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Outdoor Air Node, !- Actuator Node Name
+  Autosize,                               !- Minimum Outdoor Air Flow Rate {m3/s}
+  Autosize,                               !- Maximum Outdoor Air Flow Rate {m3/s}
+  NoEconomizer,                           !- Economizer Control Type
+  ModulateFlow,                           !- Economizer Control Action Type
+  28,                                     !- Economizer Maximum Limit Dry-Bulb Temperature {C}
+  64000,                                  !- Economizer Maximum Limit Enthalpy {J/kg}
+  ,                                       !- Economizer Maximum Limit Dewpoint Temperature {C}
+  ,                                       !- Electronic Enthalpy Limit Curve Name
+  ,                                       !- Economizer Minimum Limit Dry-Bulb Temperature {C}
+  NoLockout,                              !- Lockout Type
+  FixedMinimum,                           !- Minimum Limit Type
+  Always On Discrete,                     !- Minimum Outdoor Air Schedule Name
+  ,                                       !- Minimum Fraction of Outdoor Air Schedule Name
+  ,                                       !- Maximum Fraction of Outdoor Air Schedule Name
+  Controller Mechanical Ventilation 2,    !- Mechanical Ventilation Controller Name
+  ,                                       !- Time of Day Economizer Control Schedule Name
+  No,                                     !- High Humidity Control
+  ,                                       !- Humidistat Control Zone Name
+  ,                                       !- High Humidity Outdoor Air Flow Ratio
+  Yes,                                    !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
+  BypassWhenWithinEconomizerLimits;       !- Heat Recovery Bypass Control Type
+
+Controller:MechanicalVentilation,
+  Controller Mechanical Ventilation 2,    !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  No,                                     !- Demand Controlled Ventilation
+  ZoneSum,                                !- System Outdoor Air Method
+  ;                                       !- Zone Maximum Outdoor Air Fraction {dimensionless}
+
+AvailabilityManagerAssignmentList,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager List, !- Name
+  AvailabilityManager:Scheduled,          !- Availability Manager Object Type 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager; !- Availability Manager Name 1
+
+AvailabilityManager:Scheduled,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager, !- Name
+  Always On Discrete;                     !- Schedule Name
+
+OutdoorAir:NodeList,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Outdoor Air Node; !- Node or NodeList Name 1
+
+AirLoopHVAC:OutdoorAirSystem:EquipmentList,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System Equipment List, !- Name
+  OutdoorAir:Mixer,                       !- Component Object Type 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System Outdoor Air Mixer; !- Component Name 1
+
+OutdoorAir:Mixer,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System Outdoor Air Mixer, !- Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Mixed Air Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Outdoor Air Node, !- Outdoor Air Stream Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Relief Air Node, !- Relief Air Stream Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node; !- Return Air Stream Node Name
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node; !- Setpoint Node or NodeList Name
+
+CoilSystem:Cooling:DX,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil CoilSystem, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- DX Cooling Coil System Inlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- DX Cooling Coil System Outlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- DX Cooling Coil System Sensor Node Name
+  Coil:Cooling:DX:SingleSpeed,            !- Cooling Coil Object Type
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil; !- Cooling Coil Name
+
+Curve:Biquadratic,
+  Curve Biquadratic 7,                    !- Name
+  0.9712123,                              !- Coefficient1 Constant
+  -0.015275502,                           !- Coefficient2 x
+  0.0014434524,                           !- Coefficient3 x**2
+  -0.00039321,                            !- Coefficient4 y
+  -6.8364e-06,                            !- Coefficient5 y**2
+  -0.0002905956,                          !- Coefficient6 x*y
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100,                                    !- Maximum Value of x {BasedOnField A2}
+  -100,                                   !- Minimum Value of y {BasedOnField A3}
+  100;                                    !- Maximum Value of y {BasedOnField A3}
+
+Curve:Quadratic,
+  Curve Quadratic 10,                     !- Name
+  1,                                      !- Coefficient1 Constant
+  0,                                      !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Biquadratic,
+  Curve Biquadratic 8,                    !- Name
+  0.28687133,                             !- Coefficient1 Constant
+  0.023902164,                            !- Coefficient2 x
+  -0.000810648,                           !- Coefficient3 x**2
+  0.013458546,                            !- Coefficient4 y
+  0.0003389364,                           !- Coefficient5 y**2
+  -0.0004870044,                          !- Coefficient6 x*y
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100,                                    !- Maximum Value of x {BasedOnField A2}
+  -100,                                   !- Minimum Value of y {BasedOnField A3}
+  100;                                    !- Maximum Value of y {BasedOnField A3}
+
+Curve:Quadratic,
+  Curve Quadratic 11,                     !- Name
+  1,                                      !- Coefficient1 Constant
+  0,                                      !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 12,                     !- Name
+  0.90949556,                             !- Coefficient1 Constant
+  0.09864773,                             !- Coefficient2 x
+  -0.00819488,                            !- Coefficient3 x**2
+  0,                                      !- Minimum Value of x {BasedOnField A2}
+  1,                                      !- Maximum Value of x {BasedOnField A2}
+  0.7,                                    !- Minimum Curve Output {BasedOnField A3}
+  1;                                      !- Maximum Curve Output {BasedOnField A3}
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node; !- Setpoint Node or NodeList Name
+
+Coil:Cooling:DX:SingleSpeed,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  Autosize,                               !- Gross Rated Total Cooling Capacity {W}
+  Autosize,                               !- Gross Rated Sensible Heat Ratio
+  3,                                      !- Gross Rated Cooling COP {W/W}
+  Autosize,                               !- Rated Air Flow Rate {m3/s}
+  773.3,                                  !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Air Outlet Node Name
+  Curve Biquadratic 7,                    !- Total Cooling Capacity Function of Temperature Curve Name
+  Curve Quadratic 10,                     !- Total Cooling Capacity Function of Flow Fraction Curve Name
+  Curve Biquadratic 8,                    !- Energy Input Ratio Function of Temperature Curve Name
+  Curve Quadratic 11,                     !- Energy Input Ratio Function of Flow Fraction Curve Name
+  Curve Quadratic 12,                     !- Part Load Fraction Correlation Curve Name
+  ,                                       !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+  ,                                       !- Nominal Time for Condensate Removal to Begin {s}
+  ,                                       !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity {dimensionless}
+  ,                                       !- Maximum Cycling Rate {cycles/hr}
+  ,                                       !- Latent Capacity Time Constant {s}
+  ,                                       !- Condenser Air Inlet Node Name
+  AirCooled,                              !- Condenser Type
+  0,                                      !- Evaporative Condenser Effectiveness {dimensionless}
+  Autosize,                               !- Evaporative Condenser Air Flow Rate {m3/s}
+  Autosize,                               !- Evaporative Condenser Pump Rated Power Consumption {W}
+  0,                                      !- Crankcase Heater Capacity {W}
+  0,                                      !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+  ,                                       !- Supply Water Storage Tank Name
+  ,                                       !- Condensate Collection Water Storage Tank Name
+  0,                                      !- Basin Heater Capacity {W/K}
+  10;                                     !- Basin Heater Setpoint Temperature {C}
+
+Coil:Heating:Fuel,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  NaturalGas,                             !- Fuel Type
+  0.8,                                    !- Burner Efficiency
+  AutoSize,                               !- Nominal Capacity {W}
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Air Outlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Temperature Setpoint Node Name
+  0,                                      !- Parasitic Electric Load {W}
+  ,                                       !- Part Load Fraction Correlation Curve Name
+  0;                                      !- Parasitic Fuel Load {W}
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node; !- Setpoint Node or NodeList Name
+
+Coil:Heating:Electric,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  1,                                      !- Efficiency
+  Autosize,                               !- Nominal Capacity {W}
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Air Outlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node; !- Temperature Setpoint Node Name
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node; !- Setpoint Node or NodeList Name
+
+Fan:ConstantVolume,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Fan, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  0.54,                                   !- Fan Total Efficiency
+  622.722275,                             !- Pressure Rise {Pa}
+  AutoSize,                               !- Maximum Flow Rate {m3/s}
+  0.9,                                    !- Motor Efficiency
+  1,                                      !- Motor In Airstream Fraction
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Air Outlet Node Name
+
+SetpointManager:SingleZone:Reheat,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Setpoint Manager SZ Reheat, !- Name
+  Temperature,                            !- Control Variable
+  12.7777777777778,                       !- Minimum Supply Air Temperature {C}
+  50.0000000000001,                       !- Maximum Supply Air Temperature {C}
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone, !- Control Zone Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Zone Air Node, !- Zone Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node, !- Zone Inlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Setpoint Node or NodeList Name
+
+AirLoopHVAC:SupplyPath,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node Supply Path, !- Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node, !- Supply Air Path Inlet Node Name
+  AirLoopHVAC:ZoneSplitter,               !- Component Object Type 1
+  Air Loop HVAC Zone Splitter 2;          !- Component Name 1
+
+AirLoopHVAC:ZoneSplitter,
+  Air Loop HVAC Zone Splitter 2,          !- Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node, !- Inlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Diffuser Inlet Air Node; !- Outlet Node Name 1
+
+AirLoopHVAC:ReturnPath,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Return Path, !- Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Demand Outlet Node, !- Return Air Path Outlet Node Name
+  AirLoopHVAC:ZoneMixer,                  !- Component Object Type 1
+  Air Loop HVAC Zone Mixer 2;             !- Component Name 1
+
+AirLoopHVAC:ZoneMixer,
+  Air Loop HVAC Zone Mixer 2,             !- Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Demand Outlet Node, !- Outlet Node Name
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Return Air Node; !- Inlet Node Name 1
+
+AirLoopHVAC,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC, !- Name
+  ,                                       !- Controller List Name
+  Air Loop HVAC 1 AvailabilityManagerAssignmentList 3, !- Availability Manager List Name
+  AutoSize,                               !- Design Supply Air Flow Rate {m3/s}
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Branches, !- Branch List Name
+  ,                                       !- Connector List Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node, !- Supply Side Inlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Demand Outlet Node, !- Demand Side Outlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Nodes, !- Demand Side Inlet Node Names
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Nodes; !- Supply Side Outlet Node Names
+
+NodeList,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Nodes, !- Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Node Name 1
+
+NodeList,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Nodes, !- Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node; !- Node Name 1
+
+Sizing:System,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC, !- AirLoop Name
+  Sensible,                               !- Type of Load to Size On
+  Autosize,                               !- Design Outdoor Air Flow Rate {m3/s}
+  1,                                      !- Central Heating Maximum System Air Flow Ratio
+  7.22222222222229,                       !- Preheat Design Temperature {C}
+  0.008,                                  !- Preheat Design Humidity Ratio {kgWater/kgDryAir}
+  12.7777777777778,                       !- Precool Design Temperature {C}
+  0.008,                                  !- Precool Design Humidity Ratio {kgWater/kgDryAir}
+  12.7777777777778,                       !- Central Cooling Design Supply Air Temperature {C}
+  50.0000000000001,                       !- Central Heating Design Supply Air Temperature {C}
+  Coincident,                             !- Type of Zone Sum to Use
+  No,                                     !- 100% Outdoor Air in Cooling
+  No,                                     !- 100% Outdoor Air in Heating
+  0.0085,                                 !- Central Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.008,                                  !- Central Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  DesignDay,                              !- Cooling Supply Air Flow Rate Method
+  0,                                      !- Cooling Supply Air Flow Rate {m3/s}
+  0.0099676501,                           !- Cooling Supply Air Flow Rate Per Floor Area {m3/s-m2}
+  1,                                      !- Cooling Fraction of Autosized Cooling Supply Air Flow Rate
+  3.9475456e-05,                          !- Cooling Supply Air Flow Rate Per Unit Cooling Capacity {m3/s-W}
+  DesignDay,                              !- Heating Supply Air Flow Rate Method
+  0,                                      !- Heating Supply Air Flow Rate {m3/s}
+  0.0099676501,                           !- Heating Supply Air Flow Rate Per Floor Area {m3/s-m2}
+  1,                                      !- Heating Fraction of Autosized Heating Supply Air Flow Rate
+  1,                                      !- Heating Fraction of Autosized Cooling Supply Air Flow Rate
+  3.1588213e-05,                          !- Heating Supply Air Flow Rate Per Unit Heating Capacity {m3/s-W}
+  ZoneSum,                                !- System Outdoor Air Method
+  1,                                      !- Zone Maximum Outdoor Air Fraction {dimensionless}
+  CoolingDesignCapacity,                  !- Cooling Design Capacity Method
+  Autosize,                               !- Cooling Design Capacity {W}
+  234.7,                                  !- Cooling Design Capacity Per Floor Area {W/m2}
+  1,                                      !- Fraction of Autosized Cooling Design Capacity
+  HeatingDesignCapacity,                  !- Heating Design Capacity Method
+  Autosize,                               !- Heating Design Capacity {W}
+  157,                                    !- Heating Design Capacity Per Floor Area {W/m2}
+  1,                                      !- Fraction of Autosized Heating Design Capacity
+  OnOff;                                  !- Central Cooling Capacity Control Method
+
+AvailabilityManagerAssignmentList,
+  Air Loop HVAC 1 AvailabilityManagerAssignmentList 3, !- Name
+  AvailabilityManager:NightCycle,         !- Availability Manager Object Type 1
+  Availability Manager Night Cycle 4;     !- Availability Manager Name 1
+
+AvailabilityManager:NightCycle,
+  Availability Manager Night Cycle 4,     !- Name
+  Always On Discrete,                     !- Applicability Schedule Name
+  Always On Discrete,                     !- Fan Schedule Name
+  CycleOnAny,                             !- Control Type
+  1,                                      !- Thermostat Tolerance {deltaC}
+  FixedRunTime,                           !- Cycling Run Time Control Type
+  1800;                                   !- Cycling Run Time {s}
+
+BranchList,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Branches, !- Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Main Branch; !- Branch Name 1
+
+Branch,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Main Branch, !- Name
+  ,                                       !- Pressure Drop Curve Name
+  AirLoopHVAC:OutdoorAirSystem,           !- Component Object Type 1
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System, !- Component Name 1
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node, !- Component Inlet Node Name 1
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Component Outlet Node Name 1
+  CoilSystem:Cooling:DX,                  !- Component Object Type 2
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil CoilSystem, !- Component Name 2
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Component Inlet Node Name 2
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Component Outlet Node Name 2
+  Coil:Heating:Fuel,                      !- Component Object Type 3
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil, !- Component Name 3
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Component Inlet Node Name 3
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Component Outlet Node Name 3
+  Coil:Heating:Electric,                  !- Component Object Type 4
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil, !- Component Name 4
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Component Inlet Node Name 4
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Component Outlet Node Name 4
+  Fan:ConstantVolume,                     !- Component Object Type 5
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Fan, !- Component Name 5
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Component Inlet Node Name 5
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Component Outlet Node Name 5
+
+AirLoopHVAC:OutdoorAirSystem,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System, !- Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System Controller List, !- Controller List Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System Equipment List, !- Outdoor Air Equipment List Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager List; !- Availability Manager List Name
+
+AirLoopHVAC:ControllerList,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System Controller List, !- Name
+  Controller:OutdoorAir,                  !- Controller Object Type 1
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System Controller; !- Controller Name 1
+
+Controller:OutdoorAir,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System Controller, !- Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Relief Air Node, !- Relief Air Outlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node, !- Return Air Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Mixed Air Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Outdoor Air Node, !- Actuator Node Name
+  Autosize,                               !- Minimum Outdoor Air Flow Rate {m3/s}
+  Autosize,                               !- Maximum Outdoor Air Flow Rate {m3/s}
+  NoEconomizer,                           !- Economizer Control Type
+  ModulateFlow,                           !- Economizer Control Action Type
+  28,                                     !- Economizer Maximum Limit Dry-Bulb Temperature {C}
+  64000,                                  !- Economizer Maximum Limit Enthalpy {J/kg}
+  ,                                       !- Economizer Maximum Limit Dewpoint Temperature {C}
+  ,                                       !- Electronic Enthalpy Limit Curve Name
+  ,                                       !- Economizer Minimum Limit Dry-Bulb Temperature {C}
+  NoLockout,                              !- Lockout Type
+  FixedMinimum,                           !- Minimum Limit Type
+  Always On Discrete,                     !- Minimum Outdoor Air Schedule Name
+  ,                                       !- Minimum Fraction of Outdoor Air Schedule Name
+  ,                                       !- Maximum Fraction of Outdoor Air Schedule Name
+  Controller Mechanical Ventilation 4,    !- Mechanical Ventilation Controller Name
+  ,                                       !- Time of Day Economizer Control Schedule Name
+  No,                                     !- High Humidity Control
+  ,                                       !- Humidistat Control Zone Name
+  ,                                       !- High Humidity Outdoor Air Flow Ratio
+  Yes,                                    !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
+  BypassWhenWithinEconomizerLimits;       !- Heat Recovery Bypass Control Type
+
+Controller:MechanicalVentilation,
+  Controller Mechanical Ventilation 4,    !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  No,                                     !- Demand Controlled Ventilation
+  ZoneSum,                                !- System Outdoor Air Method
+  ;                                       !- Zone Maximum Outdoor Air Fraction {dimensionless}
+
+AvailabilityManagerAssignmentList,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager List, !- Name
+  AvailabilityManager:Scheduled,          !- Availability Manager Object Type 1
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager; !- Availability Manager Name 1
+
+AvailabilityManager:Scheduled,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager, !- Name
+  Always On Discrete;                     !- Schedule Name
+
+OutdoorAir:NodeList,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Outdoor Air Node; !- Node or NodeList Name 1
+
+AirLoopHVAC:OutdoorAirSystem:EquipmentList,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System Equipment List, !- Name
+  OutdoorAir:Mixer,                       !- Component Object Type 1
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System Outdoor Air Mixer; !- Component Name 1
+
+OutdoorAir:Mixer,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System Outdoor Air Mixer, !- Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Mixed Air Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Outdoor Air Node, !- Outdoor Air Stream Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Relief Air Node, !- Relief Air Stream Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node; !- Return Air Stream Node Name
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node; !- Setpoint Node or NodeList Name
+
+CoilSystem:Cooling:DX,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil CoilSystem, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- DX Cooling Coil System Inlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- DX Cooling Coil System Outlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- DX Cooling Coil System Sensor Node Name
+  Coil:Cooling:DX:SingleSpeed,            !- Cooling Coil Object Type
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil; !- Cooling Coil Name
+
+Curve:Biquadratic,
+  Curve Biquadratic 15,                   !- Name
+  0.9712123,                              !- Coefficient1 Constant
+  -0.015275502,                           !- Coefficient2 x
+  0.0014434524,                           !- Coefficient3 x**2
+  -0.00039321,                            !- Coefficient4 y
+  -6.8364e-06,                            !- Coefficient5 y**2
+  -0.0002905956,                          !- Coefficient6 x*y
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100,                                    !- Maximum Value of x {BasedOnField A2}
+  -100,                                   !- Minimum Value of y {BasedOnField A3}
+  100;                                    !- Maximum Value of y {BasedOnField A3}
+
+Curve:Quadratic,
+  Curve Quadratic 22,                     !- Name
+  1,                                      !- Coefficient1 Constant
+  0,                                      !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Biquadratic,
+  Curve Biquadratic 16,                   !- Name
+  0.28687133,                             !- Coefficient1 Constant
+  0.023902164,                            !- Coefficient2 x
+  -0.000810648,                           !- Coefficient3 x**2
+  0.013458546,                            !- Coefficient4 y
+  0.0003389364,                           !- Coefficient5 y**2
+  -0.0004870044,                          !- Coefficient6 x*y
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100,                                    !- Maximum Value of x {BasedOnField A2}
+  -100,                                   !- Minimum Value of y {BasedOnField A3}
+  100;                                    !- Maximum Value of y {BasedOnField A3}
+
+Curve:Quadratic,
+  Curve Quadratic 23,                     !- Name
+  1,                                      !- Coefficient1 Constant
+  0,                                      !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 24,                     !- Name
+  0.90949556,                             !- Coefficient1 Constant
+  0.09864773,                             !- Coefficient2 x
+  -0.00819488,                            !- Coefficient3 x**2
+  0,                                      !- Minimum Value of x {BasedOnField A2}
+  1,                                      !- Maximum Value of x {BasedOnField A2}
+  0.7,                                    !- Minimum Curve Output {BasedOnField A3}
+  1;                                      !- Maximum Curve Output {BasedOnField A3}
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node; !- Setpoint Node or NodeList Name
+
+Coil:Cooling:DX:SingleSpeed,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  Autosize,                               !- Gross Rated Total Cooling Capacity {W}
+  Autosize,                               !- Gross Rated Sensible Heat Ratio
+  3,                                      !- Gross Rated Cooling COP {W/W}
+  Autosize,                               !- Rated Air Flow Rate {m3/s}
+  773.3,                                  !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Air Outlet Node Name
+  Curve Biquadratic 15,                   !- Total Cooling Capacity Function of Temperature Curve Name
+  Curve Quadratic 22,                     !- Total Cooling Capacity Function of Flow Fraction Curve Name
+  Curve Biquadratic 16,                   !- Energy Input Ratio Function of Temperature Curve Name
+  Curve Quadratic 23,                     !- Energy Input Ratio Function of Flow Fraction Curve Name
+  Curve Quadratic 24,                     !- Part Load Fraction Correlation Curve Name
+  ,                                       !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+  ,                                       !- Nominal Time for Condensate Removal to Begin {s}
+  ,                                       !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity {dimensionless}
+  ,                                       !- Maximum Cycling Rate {cycles/hr}
+  ,                                       !- Latent Capacity Time Constant {s}
+  ,                                       !- Condenser Air Inlet Node Name
+  AirCooled,                              !- Condenser Type
+  0,                                      !- Evaporative Condenser Effectiveness {dimensionless}
+  Autosize,                               !- Evaporative Condenser Air Flow Rate {m3/s}
+  Autosize,                               !- Evaporative Condenser Pump Rated Power Consumption {W}
+  0,                                      !- Crankcase Heater Capacity {W}
+  0,                                      !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+  ,                                       !- Supply Water Storage Tank Name
+  ,                                       !- Condensate Collection Water Storage Tank Name
+  0,                                      !- Basin Heater Capacity {W/K}
+  10;                                     !- Basin Heater Setpoint Temperature {C}
+
+Coil:Heating:Fuel,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  NaturalGas,                             !- Fuel Type
+  0.8,                                    !- Burner Efficiency
+  AutoSize,                               !- Nominal Capacity {W}
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Air Outlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Temperature Setpoint Node Name
+  0,                                      !- Parasitic Electric Load {W}
+  ,                                       !- Part Load Fraction Correlation Curve Name
+  0;                                      !- Parasitic Fuel Load {W}
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node; !- Setpoint Node or NodeList Name
+
+Coil:Heating:Electric,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  1,                                      !- Efficiency
+  Autosize,                               !- Nominal Capacity {W}
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Air Outlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node; !- Temperature Setpoint Node Name
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node; !- Setpoint Node or NodeList Name
+
+Fan:ConstantVolume,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Fan, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  0.54,                                   !- Fan Total Efficiency
+  622.722275,                             !- Pressure Rise {Pa}
+  AutoSize,                               !- Maximum Flow Rate {m3/s}
+  0.9,                                    !- Motor Efficiency
+  1,                                      !- Motor In Airstream Fraction
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Air Outlet Node Name
+
+SetpointManager:SingleZone:Reheat,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Setpoint Manager SZ Reheat, !- Name
+  Temperature,                            !- Control Variable
+  12.7777777777778,                       !- Minimum Supply Air Temperature {C}
+  50.0000000000001,                       !- Maximum Supply Air Temperature {C}
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone, !- Control Zone Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Zone Air Node, !- Zone Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node, !- Zone Inlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Setpoint Node or NodeList Name
+
+AirLoopHVAC:SupplyPath,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node Supply Path, !- Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node, !- Supply Air Path Inlet Node Name
+  AirLoopHVAC:ZoneSplitter,               !- Component Object Type 1
+  Air Loop HVAC Zone Splitter 4;          !- Component Name 1
+
+AirLoopHVAC:ZoneSplitter,
+  Air Loop HVAC Zone Splitter 4,          !- Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node, !- Inlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Diffuser Inlet Air Node; !- Outlet Node Name 1
+
+AirLoopHVAC:ReturnPath,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Return Path, !- Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Demand Outlet Node, !- Return Air Path Outlet Node Name
+  AirLoopHVAC:ZoneMixer,                  !- Component Object Type 1
+  Air Loop HVAC Zone Mixer 4;             !- Component Name 1
+
+AirLoopHVAC:ZoneMixer,
+  Air Loop HVAC Zone Mixer 4,             !- Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC Demand Outlet Node, !- Outlet Node Name
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Return Air Node; !- Inlet Node Name 1
+
+AirLoopHVAC,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC, !- Name
+  ,                                       !- Controller List Name
+  Air Loop HVAC 1 AvailabilityManagerAssignmentList 2, !- Availability Manager List Name
+  AutoSize,                               !- Design Supply Air Flow Rate {m3/s}
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Branches, !- Branch List Name
+  ,                                       !- Connector List Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node, !- Supply Side Inlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Demand Outlet Node, !- Demand Side Outlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Nodes, !- Demand Side Inlet Node Names
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Nodes; !- Supply Side Outlet Node Names
+
+NodeList,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Nodes, !- Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Node Name 1
+
+NodeList,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Nodes, !- Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node; !- Node Name 1
+
+Sizing:System,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC, !- AirLoop Name
+  Sensible,                               !- Type of Load to Size On
+  Autosize,                               !- Design Outdoor Air Flow Rate {m3/s}
+  1,                                      !- Central Heating Maximum System Air Flow Ratio
+  7.22222222222229,                       !- Preheat Design Temperature {C}
+  0.008,                                  !- Preheat Design Humidity Ratio {kgWater/kgDryAir}
+  12.7777777777778,                       !- Precool Design Temperature {C}
+  0.008,                                  !- Precool Design Humidity Ratio {kgWater/kgDryAir}
+  12.7777777777778,                       !- Central Cooling Design Supply Air Temperature {C}
+  50.0000000000001,                       !- Central Heating Design Supply Air Temperature {C}
+  Coincident,                             !- Type of Zone Sum to Use
+  No,                                     !- 100% Outdoor Air in Cooling
+  No,                                     !- 100% Outdoor Air in Heating
+  0.0085,                                 !- Central Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.008,                                  !- Central Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  DesignDay,                              !- Cooling Supply Air Flow Rate Method
+  0,                                      !- Cooling Supply Air Flow Rate {m3/s}
+  0.0099676501,                           !- Cooling Supply Air Flow Rate Per Floor Area {m3/s-m2}
+  1,                                      !- Cooling Fraction of Autosized Cooling Supply Air Flow Rate
+  3.9475456e-05,                          !- Cooling Supply Air Flow Rate Per Unit Cooling Capacity {m3/s-W}
+  DesignDay,                              !- Heating Supply Air Flow Rate Method
+  0,                                      !- Heating Supply Air Flow Rate {m3/s}
+  0.0099676501,                           !- Heating Supply Air Flow Rate Per Floor Area {m3/s-m2}
+  1,                                      !- Heating Fraction of Autosized Heating Supply Air Flow Rate
+  1,                                      !- Heating Fraction of Autosized Cooling Supply Air Flow Rate
+  3.1588213e-05,                          !- Heating Supply Air Flow Rate Per Unit Heating Capacity {m3/s-W}
+  ZoneSum,                                !- System Outdoor Air Method
+  1,                                      !- Zone Maximum Outdoor Air Fraction {dimensionless}
+  CoolingDesignCapacity,                  !- Cooling Design Capacity Method
+  Autosize,                               !- Cooling Design Capacity {W}
+  234.7,                                  !- Cooling Design Capacity Per Floor Area {W/m2}
+  1,                                      !- Fraction of Autosized Cooling Design Capacity
+  HeatingDesignCapacity,                  !- Heating Design Capacity Method
+  Autosize,                               !- Heating Design Capacity {W}
+  157,                                    !- Heating Design Capacity Per Floor Area {W/m2}
+  1,                                      !- Fraction of Autosized Heating Design Capacity
+  OnOff;                                  !- Central Cooling Capacity Control Method
+
+AvailabilityManagerAssignmentList,
+  Air Loop HVAC 1 AvailabilityManagerAssignmentList 2, !- Name
+  AvailabilityManager:NightCycle,         !- Availability Manager Object Type 1
+  Availability Manager Night Cycle 3;     !- Availability Manager Name 1
+
+AvailabilityManager:NightCycle,
+  Availability Manager Night Cycle 3,     !- Name
+  Always On Discrete,                     !- Applicability Schedule Name
+  Always On Discrete,                     !- Fan Schedule Name
+  CycleOnAny,                             !- Control Type
+  1,                                      !- Thermostat Tolerance {deltaC}
+  FixedRunTime,                           !- Cycling Run Time Control Type
+  1800;                                   !- Cycling Run Time {s}
+
+BranchList,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Branches, !- Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Main Branch; !- Branch Name 1
+
+Branch,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Main Branch, !- Name
+  ,                                       !- Pressure Drop Curve Name
+  AirLoopHVAC:OutdoorAirSystem,           !- Component Object Type 1
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System, !- Component Name 1
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node, !- Component Inlet Node Name 1
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Component Outlet Node Name 1
+  CoilSystem:Cooling:DX,                  !- Component Object Type 2
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil CoilSystem, !- Component Name 2
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Component Inlet Node Name 2
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Component Outlet Node Name 2
+  Coil:Heating:Fuel,                      !- Component Object Type 3
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil, !- Component Name 3
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Component Inlet Node Name 3
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Component Outlet Node Name 3
+  Coil:Heating:Electric,                  !- Component Object Type 4
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil, !- Component Name 4
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Component Inlet Node Name 4
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Component Outlet Node Name 4
+  Fan:ConstantVolume,                     !- Component Object Type 5
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Fan, !- Component Name 5
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Component Inlet Node Name 5
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Component Outlet Node Name 5
+
+AirLoopHVAC:OutdoorAirSystem,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System, !- Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System Controller List, !- Controller List Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System Equipment List, !- Outdoor Air Equipment List Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager List; !- Availability Manager List Name
+
+AirLoopHVAC:ControllerList,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System Controller List, !- Name
+  Controller:OutdoorAir,                  !- Controller Object Type 1
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System Controller; !- Controller Name 1
+
+Controller:OutdoorAir,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System Controller, !- Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Relief Air Node, !- Relief Air Outlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node, !- Return Air Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Mixed Air Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Outdoor Air Node, !- Actuator Node Name
+  Autosize,                               !- Minimum Outdoor Air Flow Rate {m3/s}
+  Autosize,                               !- Maximum Outdoor Air Flow Rate {m3/s}
+  NoEconomizer,                           !- Economizer Control Type
+  ModulateFlow,                           !- Economizer Control Action Type
+  28,                                     !- Economizer Maximum Limit Dry-Bulb Temperature {C}
+  64000,                                  !- Economizer Maximum Limit Enthalpy {J/kg}
+  ,                                       !- Economizer Maximum Limit Dewpoint Temperature {C}
+  ,                                       !- Electronic Enthalpy Limit Curve Name
+  ,                                       !- Economizer Minimum Limit Dry-Bulb Temperature {C}
+  NoLockout,                              !- Lockout Type
+  FixedMinimum,                           !- Minimum Limit Type
+  Always On Discrete,                     !- Minimum Outdoor Air Schedule Name
+  ,                                       !- Minimum Fraction of Outdoor Air Schedule Name
+  ,                                       !- Maximum Fraction of Outdoor Air Schedule Name
+  Controller Mechanical Ventilation 3,    !- Mechanical Ventilation Controller Name
+  ,                                       !- Time of Day Economizer Control Schedule Name
+  No,                                     !- High Humidity Control
+  ,                                       !- Humidistat Control Zone Name
+  ,                                       !- High Humidity Outdoor Air Flow Ratio
+  Yes,                                    !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
+  BypassWhenWithinEconomizerLimits;       !- Heat Recovery Bypass Control Type
+
+Controller:MechanicalVentilation,
+  Controller Mechanical Ventilation 3,    !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  No,                                     !- Demand Controlled Ventilation
+  ZoneSum,                                !- System Outdoor Air Method
+  ;                                       !- Zone Maximum Outdoor Air Fraction {dimensionless}
+
+AvailabilityManagerAssignmentList,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager List, !- Name
+  AvailabilityManager:Scheduled,          !- Availability Manager Object Type 1
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager; !- Availability Manager Name 1
+
+AvailabilityManager:Scheduled,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager, !- Name
+  Always On Discrete;                     !- Schedule Name
+
+OutdoorAir:NodeList,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Outdoor Air Node; !- Node or NodeList Name 1
+
+AirLoopHVAC:OutdoorAirSystem:EquipmentList,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System Equipment List, !- Name
+  OutdoorAir:Mixer,                       !- Component Object Type 1
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System Outdoor Air Mixer; !- Component Name 1
+
+OutdoorAir:Mixer,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System Outdoor Air Mixer, !- Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Mixed Air Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Outdoor Air Node, !- Outdoor Air Stream Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Relief Air Node, !- Relief Air Stream Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Inlet Node; !- Return Air Stream Node Name
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node; !- Setpoint Node or NodeList Name
+
+CoilSystem:Cooling:DX,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil CoilSystem, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- DX Cooling Coil System Inlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- DX Cooling Coil System Outlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- DX Cooling Coil System Sensor Node Name
+  Coil:Cooling:DX:SingleSpeed,            !- Cooling Coil Object Type
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil; !- Cooling Coil Name
+
+Curve:Biquadratic,
+  Curve Biquadratic 11,                   !- Name
+  0.9712123,                              !- Coefficient1 Constant
+  -0.015275502,                           !- Coefficient2 x
+  0.0014434524,                           !- Coefficient3 x**2
+  -0.00039321,                            !- Coefficient4 y
+  -6.8364e-06,                            !- Coefficient5 y**2
+  -0.0002905956,                          !- Coefficient6 x*y
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100,                                    !- Maximum Value of x {BasedOnField A2}
+  -100,                                   !- Minimum Value of y {BasedOnField A3}
+  100;                                    !- Maximum Value of y {BasedOnField A3}
+
+Curve:Quadratic,
+  Curve Quadratic 16,                     !- Name
+  1,                                      !- Coefficient1 Constant
+  0,                                      !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Biquadratic,
+  Curve Biquadratic 12,                   !- Name
+  0.28687133,                             !- Coefficient1 Constant
+  0.023902164,                            !- Coefficient2 x
+  -0.000810648,                           !- Coefficient3 x**2
+  0.013458546,                            !- Coefficient4 y
+  0.0003389364,                           !- Coefficient5 y**2
+  -0.0004870044,                          !- Coefficient6 x*y
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100,                                    !- Maximum Value of x {BasedOnField A2}
+  -100,                                   !- Minimum Value of y {BasedOnField A3}
+  100;                                    !- Maximum Value of y {BasedOnField A3}
+
+Curve:Quadratic,
+  Curve Quadratic 17,                     !- Name
+  1,                                      !- Coefficient1 Constant
+  0,                                      !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  -100,                                   !- Minimum Value of x {BasedOnField A2}
+  100;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 18,                     !- Name
+  0.90949556,                             !- Coefficient1 Constant
+  0.09864773,                             !- Coefficient2 x
+  -0.00819488,                            !- Coefficient3 x**2
+  0,                                      !- Minimum Value of x {BasedOnField A2}
+  1,                                      !- Maximum Value of x {BasedOnField A2}
+  0.7,                                    !- Minimum Curve Output {BasedOnField A3}
+  1;                                      !- Maximum Curve Output {BasedOnField A3}
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node; !- Setpoint Node or NodeList Name
+
+Coil:Cooling:DX:SingleSpeed,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  Autosize,                               !- Gross Rated Total Cooling Capacity {W}
+  Autosize,                               !- Gross Rated Sensible Heat Ratio
+  3,                                      !- Gross Rated Cooling COP {W/W}
+  Autosize,                               !- Rated Air Flow Rate {m3/s}
+  773.3,                                  !- Rated Evaporator Fan Power Per Volume Flow Rate {W/(m3/s)}
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Mixed Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Air Outlet Node Name
+  Curve Biquadratic 11,                   !- Total Cooling Capacity Function of Temperature Curve Name
+  Curve Quadratic 16,                     !- Total Cooling Capacity Function of Flow Fraction Curve Name
+  Curve Biquadratic 12,                   !- Energy Input Ratio Function of Temperature Curve Name
+  Curve Quadratic 17,                     !- Energy Input Ratio Function of Flow Fraction Curve Name
+  Curve Quadratic 18,                     !- Part Load Fraction Correlation Curve Name
+  ,                                       !- Minimum Outdoor Dry-Bulb Temperature for Compressor Operation {C}
+  ,                                       !- Nominal Time for Condensate Removal to Begin {s}
+  ,                                       !- Ratio of Initial Moisture Evaporation Rate and Steady State Latent Capacity {dimensionless}
+  ,                                       !- Maximum Cycling Rate {cycles/hr}
+  ,                                       !- Latent Capacity Time Constant {s}
+  ,                                       !- Condenser Air Inlet Node Name
+  AirCooled,                              !- Condenser Type
+  0,                                      !- Evaporative Condenser Effectiveness {dimensionless}
+  Autosize,                               !- Evaporative Condenser Air Flow Rate {m3/s}
+  Autosize,                               !- Evaporative Condenser Pump Rated Power Consumption {W}
+  0,                                      !- Crankcase Heater Capacity {W}
+  0,                                      !- Maximum Outdoor Dry-Bulb Temperature for Crankcase Heater Operation {C}
+  ,                                       !- Supply Water Storage Tank Name
+  ,                                       !- Condensate Collection Water Storage Tank Name
+  0,                                      !- Basin Heater Capacity {W/K}
+  10;                                     !- Basin Heater Setpoint Temperature {C}
+
+Coil:Heating:Fuel,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  NaturalGas,                             !- Fuel Type
+  0.8,                                    !- Burner Efficiency
+  AutoSize,                               !- Nominal Capacity {W}
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC 1spd DX AC Clg Coil Outlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Air Outlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Temperature Setpoint Node Name
+  0,                                      !- Parasitic Electric Load {W}
+  ,                                       !- Part Load Fraction Correlation Curve Name
+  0;                                      !- Parasitic Fuel Load {W}
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node; !- Setpoint Node or NodeList Name
+
+Coil:Heating:Electric,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  1,                                      !- Efficiency
+  Autosize,                               !- Nominal Capacity {W}
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Gas Htg Coil Outlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Air Outlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node; !- Temperature Setpoint Node Name
+
+SetpointManager:MixedAir,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node OS Default SPM, !- Name
+  Temperature,                            !- Control Variable
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Reference Setpoint Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Fan Inlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node, !- Fan Outlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node; !- Setpoint Node or NodeList Name
+
+Fan:ConstantVolume,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Fan, !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  0.54,                                   !- Fan Total Efficiency
+  622.722275,                             !- Pressure Rise {Pa}
+  AutoSize,                               !- Maximum Flow Rate {m3/s}
+  0.9,                                    !- Motor Efficiency
+  1,                                      !- Motor In Airstream Fraction
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Electric Backup Htg Coil Outlet Air Node, !- Air Inlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Air Outlet Node Name
+
+SetpointManager:SingleZone:Reheat,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Setpoint Manager SZ Reheat, !- Name
+  Temperature,                            !- Control Variable
+  12.7777777777778,                       !- Minimum Supply Air Temperature {C}
+  50.0000000000001,                       !- Maximum Supply Air Temperature {C}
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone, !- Control Zone Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Zone Air Node, !- Zone Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Diffuser Outlet Air Node, !- Zone Inlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Supply Outlet Node; !- Setpoint Node or NodeList Name
+
+AirLoopHVAC:SupplyPath,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node Supply Path, !- Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node, !- Supply Air Path Inlet Node Name
+  AirLoopHVAC:ZoneSplitter,               !- Component Object Type 1
+  Air Loop HVAC Zone Splitter 3;          !- Component Name 1
+
+AirLoopHVAC:ZoneSplitter,
+  Air Loop HVAC Zone Splitter 3,          !- Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Demand Inlet Node, !- Inlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Diffuser Inlet Air Node; !- Outlet Node Name 1
+
+AirLoopHVAC:ReturnPath,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Return Path, !- Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Demand Outlet Node, !- Return Air Path Outlet Node Name
+  AirLoopHVAC:ZoneMixer,                  !- Component Object Type 1
+  Air Loop HVAC Zone Mixer 3;             !- Component Name 1
+
+AirLoopHVAC:ZoneMixer,
+  Air Loop HVAC Zone Mixer 3,             !- Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC Demand Outlet Node, !- Outlet Node Name
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Return Air Node; !- Inlet Node Name 1
+
+PlantLoop,
+  Hot Water Loop,                         !- Name
+  Water,                                  !- Fluid Type
+  ,                                       !- User Defined Fluid Type
+  Hot Water Loop Operation Schemes,       !- Plant Equipment Operation Scheme Name
+  Hot Water Loop Supply Outlet Node,      !- Loop Temperature Setpoint Node Name
+  100,                                    !- Maximum Loop Temperature {C}
+  10,                                     !- Minimum Loop Temperature {C}
+  Autosize,                               !- Maximum Loop Flow Rate {m3/s}
+  0,                                      !- Minimum Loop Flow Rate {m3/s}
+  Autocalculate,                          !- Plant Loop Volume {m3}
+  Hot Water Loop Supply Inlet Node,       !- Plant Side Inlet Node Name
+  Hot Water Loop Supply Outlet Node,      !- Plant Side Outlet Node Name
+  Hot Water Loop Supply Branches,         !- Plant Side Branch List Name
+  Hot Water Loop Supply Connector List,   !- Plant Side Connector List Name
+  Hot Water Loop Demand Inlet Node,       !- Demand Side Inlet Node Name
+  Hot Water Loop Demand Outlet Node,      !- Demand Side Outlet Node Name
+  Hot Water Loop Demand Branches,         !- Demand Side Branch List Name
+  Hot Water Loop Demand Connector List,   !- Demand Side Connector List Name
+  Optimal,                                !- Load Distribution Scheme
+  ,                                       !- Availability Manager List Name
+  SingleSetpoint,                         !- Plant Loop Demand Calculation Scheme
+  ;                                       !- Common Pipe Simulation
+
+Sizing:Plant,
+  Hot Water Loop,                         !- Plant or Condenser Loop Name
+  Heating,                                !- Loop Type
+  82.2222222222223,                       !- Design Loop Exit Temperature {C}
+  11.1111111111111,                       !- Loop Design Temperature Difference {deltaC}
+  NonCoincident,                          !- Sizing Option
+  1,                                      !- Zone Timesteps in Averaging Window
+  None;                                   !- Coincident Sizing Factor Mode
+
+BranchList,
+  Hot Water Loop Supply Branches,         !- Name
+  Hot Water Loop Supply Inlet Branch,     !- Branch Name 1
+  Hot Water Loop Supply Branch 1,         !- Branch Name 2
+  Hot Water Loop Supply Branch 2,         !- Branch Name 3
+  Hot Water Loop Supply Outlet Branch;    !- Branch Name 4
+
+ConnectorList,
+  Hot Water Loop Supply Connector List,   !- Name
+  Connector:Splitter,                     !- Connector Object Type 1
+  Hot Water Loop Supply Splitter,         !- Connector Name 1
+  Connector:Mixer,                        !- Connector Object Type 2
+  Hot Water Loop Supply Mixer;            !- Connector Name 2
+
+Connector:Splitter,
+  Hot Water Loop Supply Splitter,         !- Name
+  Hot Water Loop Supply Inlet Branch,     !- Inlet Branch Name
+  Hot Water Loop Supply Branch 1,         !- Outlet Branch Name 1
+  Hot Water Loop Supply Branch 2;         !- Outlet Branch Name 2
+
+Connector:Mixer,
+  Hot Water Loop Supply Mixer,            !- Name
+  Hot Water Loop Supply Outlet Branch,    !- Outlet Branch Name
+  Hot Water Loop Supply Branch 1,         !- Inlet Branch Name 1
+  Hot Water Loop Supply Branch 2;         !- Inlet Branch Name 2
+
+Branch,
+  Hot Water Loop Supply Inlet Branch,     !- Name
+  ,                                       !- Pressure Drop Curve Name
+  Pump:VariableSpeed,                     !- Component Object Type 1
+  Hot Water Loop Pump,                    !- Component Name 1
+  Hot Water Loop Supply Inlet Node,       !- Component Inlet Node Name 1
+  Hot Water Loop Pump Outlet Water Node;  !- Component Outlet Node Name 1
+
+Pump:VariableSpeed,
+  Hot Water Loop Pump,                    !- Name
+  Hot Water Loop Supply Inlet Node,       !- Inlet Node Name
+  Hot Water Loop Pump Outlet Water Node,  !- Outlet Node Name
+  Autosize,                               !- Design Maximum Flow Rate {m3/s}
+  179344.0152,                            !- Design Pump Head {Pa}
+  Autosize,                               !- Design Power Consumption {W}
+  0.9,                                    !- Motor Efficiency
+  0,                                      !- Fraction of Motor Inefficiencies to Fluid Stream
+  0,                                      !- Coefficient 1 of the Part Load Performance Curve
+  1,                                      !- Coefficient 2 of the Part Load Performance Curve
+  0,                                      !- Coefficient 3 of the Part Load Performance Curve
+  0,                                      !- Coefficient 4 of the Part Load Performance Curve
+  0,                                      !- Design Minimum Flow Rate {m3/s}
+  Intermittent,                           !- Pump Control Type
+  ,                                       !- Pump Flow Rate Schedule Name
+  ,                                       !- Pump Curve Name
+  ,                                       !- Impeller Diameter {m}
+  ,                                       !- VFD Control Type
+  ,                                       !- Pump rpm Schedule Name
+  ,                                       !- Minimum Pressure Schedule {Pa}
+  ,                                       !- Maximum Pressure Schedule {Pa}
+  ,                                       !- Minimum RPM Schedule {Rotations Per Minute}
+  ,                                       !- Maximum RPM Schedule {Rotations Per Minute}
+  ,                                       !- Zone Name
+  0.5,                                    !- Skin Loss Radiative Fraction
+  PowerPerFlowPerPressure,                !- Design Power Sizing Method
+  348701.1,                               !- Design Electric Power per Unit Flow Rate {W/(m3/s)}
+  1.282051282,                            !- Design Shaft Power per Unit Flow Rate per Unit Head
+  0;                                      !- Design Minimum Flow Rate Fraction
+
+Branch,
+  Hot Water Loop Supply Branch 1,         !- Name
+  ,                                       !- Pressure Drop Curve Name
+  Boiler:HotWater,                        !- Component Object Type 1
+  Boiler,                                 !- Component Name 1
+  Boiler Inlet Water Node,                !- Component Inlet Node Name 1
+  Boiler Outlet Water Node;               !- Component Outlet Node Name 1
+
+Boiler:HotWater,
+  Boiler,                                 !- Name
+  NaturalGas,                             !- Fuel Type
+  Autosize,                               !- Nominal Capacity {W}
+  0.78,                                   !- Nominal Thermal Efficiency
+  LeavingBoiler,                          !- Efficiency Curve Temperature Evaluation Variable
+  ,                                       !- Normalized Boiler Efficiency Curve Name
+  Autosize,                               !- Design Water Flow Rate {m3/s}
+  0,                                      !- Minimum Part Load Ratio
+  1.2,                                    !- Maximum Part Load Ratio
+  1,                                      !- Optimum Part Load Ratio
+  Boiler Inlet Water Node,                !- Boiler Water Inlet Node Name
+  Boiler Outlet Water Node,               !- Boiler Water Outlet Node Name
+  95.0000000000001,                       !- Water Outlet Upper Temperature Limit {C}
+  LeavingSetpointModulated,               !- Boiler Flow Mode
+  0,                                      !- Parasitic Electric Load {W}
+  1,                                      !- Sizing Factor
+  General;                                !- End-Use Subcategory
+
+Branch,
+  Hot Water Loop Supply Branch 2,         !- Name
+  ,                                       !- Pressure Drop Curve Name
+  Pipe:Adiabatic,                         !- Component Object Type 1
+  Hot Water Loop Supply Equipment Bypass, !- Component Name 1
+  Hot Water Loop Supply Equipment Bypass Inlet Water Node, !- Component Inlet Node Name 1
+  Hot Water Loop Supply Equipment Bypass Outlet Water Node; !- Component Outlet Node Name 1
+
+Pipe:Adiabatic,
+  Hot Water Loop Supply Equipment Bypass, !- Name
+  Hot Water Loop Supply Equipment Bypass Inlet Water Node, !- Inlet Node Name
+  Hot Water Loop Supply Equipment Bypass Outlet Water Node; !- Outlet Node Name
+
+Branch,
+  Hot Water Loop Supply Outlet Branch,    !- Name
+  ,                                       !- Pressure Drop Curve Name
+  Pipe:Adiabatic,                         !- Component Object Type 1
+  Hot Water Loop Supply Outlet,           !- Component Name 1
+  Hot Water Loop Supply Outlet Inlet Water Node, !- Component Inlet Node Name 1
+  Hot Water Loop Supply Outlet Node;      !- Component Outlet Node Name 1
+
+Pipe:Adiabatic,
+  Hot Water Loop Supply Outlet,           !- Name
+  Hot Water Loop Supply Outlet Inlet Water Node, !- Inlet Node Name
+  Hot Water Loop Supply Outlet Node;      !- Outlet Node Name
+
+SetpointManager:Scheduled,
+  Hot Water Loop Setpoint Manager,        !- Name
+  Temperature,                            !- Control Variable
+  Hot Water Loop Temp - 180F,             !- Schedule Name
+  Hot Water Loop Supply Outlet Node;      !- Setpoint Node or NodeList Name
+
+BranchList,
+  Hot Water Loop Demand Branches,         !- Name
+  Hot Water Loop Demand Inlet Branch,     !- Branch Name 1
+  Hot Water Loop Demand Branch 1,         !- Branch Name 2
+  Hot Water Loop Demand Bypass Branch,    !- Branch Name 3
+  Hot Water Loop Demand Outlet Branch;    !- Branch Name 4
+
+ConnectorList,
+  Hot Water Loop Demand Connector List,   !- Name
+  Connector:Splitter,                     !- Connector Object Type 1
+  Hot Water Loop Demand Splitter,         !- Connector Name 1
+  Connector:Mixer,                        !- Connector Object Type 2
+  Hot Water Loop Demand Mixer;            !- Connector Name 2
+
+Connector:Splitter,
+  Hot Water Loop Demand Splitter,         !- Name
+  Hot Water Loop Demand Inlet Branch,     !- Inlet Branch Name
+  Hot Water Loop Demand Branch 1,         !- Outlet Branch Name 1
+  Hot Water Loop Demand Bypass Branch;    !- Outlet Branch Name 2
+
+Connector:Mixer,
+  Hot Water Loop Demand Mixer,            !- Name
+  Hot Water Loop Demand Outlet Branch,    !- Outlet Branch Name
+  Hot Water Loop Demand Branch 1,         !- Inlet Branch Name 1
+  Hot Water Loop Demand Bypass Branch;    !- Inlet Branch Name 2
+
+Branch,
+  Hot Water Loop Demand Inlet Branch,     !- Name
+  ,                                       !- Pressure Drop Curve Name
+  Pipe:Adiabatic,                         !- Component Object Type 1
+  Hot Water Loop Demand Inlet,            !- Component Name 1
+  Hot Water Loop Demand Inlet Node,       !- Component Inlet Node Name 1
+  Hot Water Loop Demand Inlet Outlet Water Node; !- Component Outlet Node Name 1
+
+Pipe:Adiabatic,
+  Hot Water Loop Demand Inlet,            !- Name
+  Hot Water Loop Demand Inlet Node,       !- Inlet Node Name
+  Hot Water Loop Demand Inlet Outlet Water Node; !- Outlet Node Name
+
+Branch,
+  Hot Water Loop Demand Branch 1,         !- Name
+  ,                                       !- Pressure Drop Curve Name
+  Pipe:Adiabatic,                         !- Component Object Type 1
+  Hot Water Loop Coil Bypass,             !- Component Name 1
+  Hot Water Loop Coil Bypass Inlet Water Node, !- Component Inlet Node Name 1
+  Hot Water Loop Coil Bypass Outlet Water Node; !- Component Outlet Node Name 1
+
+Pipe:Adiabatic,
+  Hot Water Loop Coil Bypass,             !- Name
+  Hot Water Loop Coil Bypass Inlet Water Node, !- Inlet Node Name
+  Hot Water Loop Coil Bypass Outlet Water Node; !- Outlet Node Name
+
+Branch,
+  Hot Water Loop Demand Bypass Branch,    !- Name
+  ,                                       !- Pressure Drop Curve Name
+  Pipe:Adiabatic,                         !- Component Object Type 1
+  Hot Water Loop Demand Bypass Pipe,      !- Component Name 1
+  Hot Water Loop Demand Bypass Pipe Inlet Node, !- Component Inlet Node Name 1
+  Hot Water Loop Demand Bypass Pipe Outlet Node; !- Component Outlet Node Name 1
+
+Pipe:Adiabatic,
+  Hot Water Loop Demand Bypass Pipe,      !- Name
+  Hot Water Loop Demand Bypass Pipe Inlet Node, !- Inlet Node Name
+  Hot Water Loop Demand Bypass Pipe Outlet Node; !- Outlet Node Name
+
+Branch,
+  Hot Water Loop Demand Outlet Branch,    !- Name
+  ,                                       !- Pressure Drop Curve Name
+  Pipe:Adiabatic,                         !- Component Object Type 1
+  Hot Water Loop Demand Outlet,           !- Component Name 1
+  Hot Water Loop Demand Outlet Inlet Water Node, !- Component Inlet Node Name 1
+  Hot Water Loop Demand Outlet Node;      !- Component Outlet Node Name 1
+
+Pipe:Adiabatic,
+  Hot Water Loop Demand Outlet,           !- Name
+  Hot Water Loop Demand Outlet Inlet Water Node, !- Inlet Node Name
+  Hot Water Loop Demand Outlet Node;      !- Outlet Node Name
+
+PlantEquipmentOperationSchemes,
+  Hot Water Loop Operation Schemes,       !- Name
+  PlantEquipmentOperation:HeatingLoad,    !- Control Scheme Object Type 1
+  Hot Water Loop Heating Operation Scheme, !- Control Scheme Name 1
+  Always On Discrete;                     !- Control Scheme Schedule Name 1
+
+PlantEquipmentOperation:HeatingLoad,
+  Hot Water Loop Heating Operation Scheme, !- Name
+  0,                                      !- Load Range Lower Limit 1 {W}
+  1000000000,                             !- Load Range Upper Limit 1 {W}
+  Hot Water Loop Heating Equipment List;  !- Range Equipment List Name 1
+
+PlantEquipmentList,
+  Hot Water Loop Heating Equipment List,  !- Name
+  Boiler:HotWater,                        !- Equipment Object Type 1
+  Boiler;                                 !- Equipment Name 1
+
+Curve:Biquadratic,
+  Curve Biquadratic 1,                    !- Name
+  0.942587793,                            !- Coefficient1 Constant
+  0.009543347,                            !- Coefficient2 x
+  0.00068377,                             !- Coefficient3 x**2
+  -0.011042676,                           !- Coefficient4 y
+  5.249e-06,                              !- Coefficient5 y**2
+  -9.72e-06,                              !- Coefficient6 x*y
+  17,                                     !- Minimum Value of x {BasedOnField A2}
+  22,                                     !- Maximum Value of x {BasedOnField A2}
+  13,                                     !- Minimum Value of y {BasedOnField A3}
+  46;                                     !- Maximum Value of y {BasedOnField A3}
+
+Curve:Biquadratic,
+  Curve Biquadratic 10,                   !- Name
+  0.342414409,                            !- Coefficient1 Constant
+  0.034885008,                            !- Coefficient2 x
+  -0.0006237,                             !- Coefficient3 x**2
+  0.004977216,                            !- Coefficient4 y
+  0.000437951,                            !- Coefficient5 y**2
+  -0.000728028,                           !- Coefficient6 x*y
+  17,                                     !- Minimum Value of x {BasedOnField A2}
+  22,                                     !- Maximum Value of x {BasedOnField A2}
+  13,                                     !- Minimum Value of y {BasedOnField A3}
+  46;                                     !- Maximum Value of y {BasedOnField A3}
+
+Curve:Biquadratic,
+  Curve Biquadratic 13,                   !- Name
+  0.942587793,                            !- Coefficient1 Constant
+  0.009543347,                            !- Coefficient2 x
+  0.00068377,                             !- Coefficient3 x**2
+  -0.011042676,                           !- Coefficient4 y
+  5.249e-06,                              !- Coefficient5 y**2
+  -9.72e-06,                              !- Coefficient6 x*y
+  17,                                     !- Minimum Value of x {BasedOnField A2}
+  22,                                     !- Maximum Value of x {BasedOnField A2}
+  13,                                     !- Minimum Value of y {BasedOnField A3}
+  46;                                     !- Maximum Value of y {BasedOnField A3}
+
+Curve:Biquadratic,
+  Curve Biquadratic 14,                   !- Name
+  0.342414409,                            !- Coefficient1 Constant
+  0.034885008,                            !- Coefficient2 x
+  -0.0006237,                             !- Coefficient3 x**2
+  0.004977216,                            !- Coefficient4 y
+  0.000437951,                            !- Coefficient5 y**2
+  -0.000728028,                           !- Coefficient6 x*y
+  17,                                     !- Minimum Value of x {BasedOnField A2}
+  22,                                     !- Maximum Value of x {BasedOnField A2}
+  13,                                     !- Minimum Value of y {BasedOnField A3}
+  46;                                     !- Maximum Value of y {BasedOnField A3}
+
+Curve:Biquadratic,
+  Curve Biquadratic 2,                    !- Name
+  0.342414409,                            !- Coefficient1 Constant
+  0.034885008,                            !- Coefficient2 x
+  -0.0006237,                             !- Coefficient3 x**2
+  0.004977216,                            !- Coefficient4 y
+  0.000437951,                            !- Coefficient5 y**2
+  -0.000728028,                           !- Coefficient6 x*y
+  17,                                     !- Minimum Value of x {BasedOnField A2}
+  22,                                     !- Maximum Value of x {BasedOnField A2}
+  13,                                     !- Minimum Value of y {BasedOnField A3}
+  46;                                     !- Maximum Value of y {BasedOnField A3}
+
+Curve:Biquadratic,
+  Curve Biquadratic 5,                    !- Name
+  0.942587793,                            !- Coefficient1 Constant
+  0.009543347,                            !- Coefficient2 x
+  0.00068377,                             !- Coefficient3 x**2
+  -0.011042676,                           !- Coefficient4 y
+  5.249e-06,                              !- Coefficient5 y**2
+  -9.72e-06,                              !- Coefficient6 x*y
+  17,                                     !- Minimum Value of x {BasedOnField A2}
+  22,                                     !- Maximum Value of x {BasedOnField A2}
+  13,                                     !- Minimum Value of y {BasedOnField A3}
+  46;                                     !- Maximum Value of y {BasedOnField A3}
+
+Curve:Biquadratic,
+  Curve Biquadratic 6,                    !- Name
+  0.342414409,                            !- Coefficient1 Constant
+  0.034885008,                            !- Coefficient2 x
+  -0.0006237,                             !- Coefficient3 x**2
+  0.004977216,                            !- Coefficient4 y
+  0.000437951,                            !- Coefficient5 y**2
+  -0.000728028,                           !- Coefficient6 x*y
+  17,                                     !- Minimum Value of x {BasedOnField A2}
+  22,                                     !- Maximum Value of x {BasedOnField A2}
+  13,                                     !- Minimum Value of y {BasedOnField A3}
+  46;                                     !- Maximum Value of y {BasedOnField A3}
+
+Curve:Biquadratic,
+  Curve Biquadratic 9,                    !- Name
+  0.942587793,                            !- Coefficient1 Constant
+  0.009543347,                            !- Coefficient2 x
+  0.00068377,                             !- Coefficient3 x**2
+  -0.011042676,                           !- Coefficient4 y
+  5.249e-06,                              !- Coefficient5 y**2
+  -9.72e-06,                              !- Coefficient6 x*y
+  17,                                     !- Minimum Value of x {BasedOnField A2}
+  22,                                     !- Maximum Value of x {BasedOnField A2}
+  13,                                     !- Minimum Value of y {BasedOnField A3}
+  46;                                     !- Maximum Value of y {BasedOnField A3}
+
+Curve:Quadratic,
+  Curve Quadratic 1,                      !- Name
+  0.8,                                    !- Coefficient1 Constant
+  0.2,                                    !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  0.5,                                    !- Minimum Value of x {BasedOnField A2}
+  1.5;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 13,                     !- Name
+  0.8,                                    !- Coefficient1 Constant
+  0.2,                                    !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  0.5,                                    !- Minimum Value of x {BasedOnField A2}
+  1.5;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 14,                     !- Name
+  1.1552,                                 !- Coefficient1 Constant
+  -0.1808,                                !- Coefficient2 x
+  0.0256,                                 !- Coefficient3 x**2
+  0.5,                                    !- Minimum Value of x {BasedOnField A2}
+  1.5;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 15,                     !- Name
+  0.85,                                   !- Coefficient1 Constant
+  0.15,                                   !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  0,                                      !- Minimum Value of x {BasedOnField A2}
+  1;                                      !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 19,                     !- Name
+  0.8,                                    !- Coefficient1 Constant
+  0.2,                                    !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  0.5,                                    !- Minimum Value of x {BasedOnField A2}
+  1.5;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 2,                      !- Name
+  1.1552,                                 !- Coefficient1 Constant
+  -0.1808,                                !- Coefficient2 x
+  0.0256,                                 !- Coefficient3 x**2
+  0.5,                                    !- Minimum Value of x {BasedOnField A2}
+  1.5;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 20,                     !- Name
+  1.1552,                                 !- Coefficient1 Constant
+  -0.1808,                                !- Coefficient2 x
+  0.0256,                                 !- Coefficient3 x**2
+  0.5,                                    !- Minimum Value of x {BasedOnField A2}
+  1.5;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 21,                     !- Name
+  0.85,                                   !- Coefficient1 Constant
+  0.15,                                   !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  0,                                      !- Minimum Value of x {BasedOnField A2}
+  1;                                      !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 3,                      !- Name
+  0.85,                                   !- Coefficient1 Constant
+  0.15,                                   !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  0,                                      !- Minimum Value of x {BasedOnField A2}
+  1;                                      !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 7,                      !- Name
+  0.8,                                    !- Coefficient1 Constant
+  0.2,                                    !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  0.5,                                    !- Minimum Value of x {BasedOnField A2}
+  1.5;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 8,                      !- Name
+  1.1552,                                 !- Coefficient1 Constant
+  -0.1808,                                !- Coefficient2 x
+  0.0256,                                 !- Coefficient3 x**2
+  0.5,                                    !- Minimum Value of x {BasedOnField A2}
+  1.5;                                    !- Maximum Value of x {BasedOnField A2}
+
+Curve:Quadratic,
+  Curve Quadratic 9,                      !- Name
+  0.85,                                   !- Coefficient1 Constant
+  0.15,                                   !- Coefficient2 x
+  0,                                      !- Coefficient3 x**2
+  0,                                      !- Minimum Value of x {BasedOnField A2}
+  1;                                      !- Maximum Value of x {BasedOnField A2}
+
+OutputControl:Table:Style,
+  HTML;                                   !- Column Separator
+
+Output:Table:SummaryReports,
+  AllSummary;                             !- Report Name 1
+
+Output:VariableDictionary,
+  IDF,                                    !- Key Field
+  Unsorted;                               !- Sort Option
+
+Output:SQLite,
+  SimpleAndTabular;                       !- Option Type
+
+LifeCycleCost:NonrecurringCost,
+  Default Cost,                           !- Name
+  Construction,                           !- Category
+  0,                                      !- Cost
+  ServicePeriod;                          !- Start of Costs
+
