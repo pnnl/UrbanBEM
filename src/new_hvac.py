@@ -10,13 +10,6 @@ os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")  # for linux
 
 from geomeppy import IDF
 import json
-from geometry import Geometry
-from constructions import Constructions
-from loads import Loads
-from preprocessor import Preprocessor
-from schedule import Schedule
-from hvac import HVAC
-import recipes
 
 IDF.setiddname("../resources/Energy+V9_0_1.idd")
 
@@ -37,7 +30,7 @@ def get_containing_object_types(idf: IDF) -> List:
 #%%
 
 
-def get_object_by_types(idf: IDF, types: List, ignore_error=True):
+def get_object_by_types(idf: IDF, types: List, ignore_error=True) -> List:
     all_objs = []
     for type in types:
         objs = idf.idfobjects[type.upper().strip()]
@@ -46,6 +39,19 @@ def get_object_by_types(idf: IDF, types: List, ignore_error=True):
             continue
         all_objs.extend(list(objs))
     return all_objs
+
+
+def get_object_not_in_types(idf: IDF, types: List) -> List:
+    exc_objs = []
+    all_types = get_containing_object_types(idf)
+    for type in all_types:
+        if type not in types:
+            objs = idf.idfobjects[type.upper().strip()]
+            if len(objs) == 0:
+                print("Somthing is wrong!")
+                continue
+            exc_objs.extend(list(objs))
+    return exc_objs
 
 
 #%% load idf
@@ -72,10 +78,15 @@ zones_translated_objtypes = get_containing_object_types(zones_translated)
 zones_hvacadded_objtypes = get_containing_object_types(zones_hvacadded)
 
 #%%
-with open("../resources/osstd_hvac_objtypes_meta.json") as f:
-    hvac_meta = json.load(f)
+# with open("../resources/osstd_hvac_objtypes_meta.json") as f:
+#     hvac_meta = json.load(f)
 
-objs = get_object_by_types(zones_hvacadded, hvac_meta["PSZ:AC"], ignore_error=False)
+# objs = get_object_by_types(zones_hvacadded, hvac_meta["PSZ:AC"], ignore_error=False)
+
+with open("../resources/exc_osstd_hvac_objtypes_meta.json") as f:
+    exc_hvac_meta = json.load(f)
+
+objs = get_object_not_in_types(zones_hvacadded, exc_hvac_meta["PSZ:AC"])
 
 #%% take out 'thermal zone' in names/refs
 for obj in tqdm(objs):
@@ -84,6 +95,12 @@ for obj in tqdm(objs):
             obj[field] = obj[field].replace(" Thermal Zone", "")
 
 
+#%% output hvac objs for dev
+hvac_pure = IDF(StringIO(""))
+for obj in tqdm(objs):
+    hvac_pure.copyidfobject(obj)
+hvac_pure.saveas("../hvac_dev/hvac_pure.idf")
+
 #%%
 for obj in tqdm(objs):
     original_idf.copyidfobject(obj)
@@ -91,3 +108,11 @@ for obj in tqdm(objs):
 
 #%%
 original_idf.saveas("../hvac_dev/hvacadded.idf")
+
+#%% have a peek on the excluded objects
+# exc_objs = get_object_not_in_types(zones_hvacadded, hvac_meta["PSZ:AC"])
+exc_objs = get_object_by_types(zones_hvacadded, exc_hvac_meta["PSZ:AC"])
+exc_idf = IDF(StringIO(""))
+for obj in tqdm(exc_objs):
+    exc_idf.copyidfobject(obj)
+exc_idf.saveas("../hvac_dev/exc_objs.idf")
