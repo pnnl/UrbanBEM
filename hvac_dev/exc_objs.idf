@@ -4,24 +4,80 @@ Version,
     9.0;                      !- Version Identifier
 
 SimulationControl,
-    No,                       !- Do Zone Sizing Calculation
-    No,                       !- Do System Sizing Calculation
-    No,                       !- Do Plant Sizing Calculation
+    Yes,                      !- Do Zone Sizing Calculation
+    Yes,                      !- Do System Sizing Calculation
+    Yes,                      !- Do Plant Sizing Calculation
     Yes,                      !- Run Simulation for Sizing Periods
     Yes;                      !- Run Simulation for Weather File Run Periods
 
 Building,
-    Building 1,               !- Name
-    ,                         !- North Axis
+    test_building,            !- Name
+    0,                        !- North Axis
     ,                         !- Terrain
-    ,                         !- Loads Convergence Tolerance Value
-    ,                         !- Temperature Convergence Tolerance Value
-    ,                         !- Solar Distribution
-    ,                         !- Maximum Number of Warmup Days
-    ;                         !- Minimum Number of Warmup Days
+    0.04,                     !- Loads Convergence Tolerance Value
+    0.4,                      !- Temperature Convergence Tolerance Value
+    FullInteriorAndExterior,    !- Solar Distribution
+    25,                       !- Maximum Number of Warmup Days
+    6;                        !- Minimum Number of Warmup Days
 
 Timestep,
     6;                        !- Number of Timesteps per Hour
+
+SizingPeriod:DesignDay,
+    DENVER_STAPLETON Ann Clg .4% Condns DB=>MWB,    !- Name
+    7,                        !- Month
+    21,                       !- Day of Month
+    SummerDesignDay,          !- Day Type
+    34.1,                     !- Maximum DryBulb Temperature
+    15.2,                     !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Wetbulb,                  !- Humidity Condition Type
+    15.8,                     !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    83411,                    !- Barometric Pressure
+    4,                        !- Wind Speed
+    120,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAEClearSky,           !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    ,                         !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    ,                         !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+    1;                        !- Sky Clearness
+
+SizingPeriod:DesignDay,
+    DENVER_STAPLETON Ann Htg 99.6% Condns DB,    !- Name
+    12,                       !- Month
+    21,                       !- Day of Month
+    WinterDesignDay,          !- Day Type
+    -20,                      !- Maximum DryBulb Temperature
+    0,                        !- Daily DryBulb Temperature Range
+    DefaultMultipliers,       !- DryBulb Temperature Range Modifier Type
+    ,                         !- DryBulb Temperature Range Modifier Day Schedule Name
+    Wetbulb,                  !- Humidity Condition Type
+    -20,                      !- Wetbulb or DewPoint at Maximum DryBulb
+    ,                         !- Humidity Condition Day Schedule Name
+    ,                         !- Humidity Ratio at Maximum DryBulb
+    ,                         !- Enthalpy at Maximum DryBulb
+    ,                         !- Daily WetBulb Temperature Range
+    83411,                    !- Barometric Pressure
+    2.3,                      !- Wind Speed
+    180,                      !- Wind Direction
+    No,                       !- Rain Indicator
+    No,                       !- Snow Indicator
+    No,                       !- Daylight Saving Time Indicator
+    ASHRAEClearSky,           !- Solar Model Indicator
+    ,                         !- Beam Solar Day Schedule Name
+    ,                         !- Diffuse Solar Day Schedule Name
+    ,                         !- ASHRAE Clear Sky Optical Depth for Beam Irradiance taub
+    ,                         !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance taud
+    0;                        !- Sky Clearness
 
 RunPeriod,
     Run Period 1,             !- Name
@@ -37,21 +93,6 @@ RunPeriod,
     No,                       !- Apply Weekend Holiday Rule
     Yes,                      !- Use Weather File Rain Indicators
     Yes;                      !- Use Weather File Snow Indicators
-
-Schedule:Constant,
-    Always On Discrete,       !- Name
-    OnOff,                    !- Schedule Type Limits Name
-    1;                        !- Hourly Value
-
-Schedule:Constant,
-    Always Off Discrete,      !- Name
-    ,                         !- Schedule Type Limits Name
-    0;                        !- Hourly Value
-
-Schedule:Constant,
-    Always On Continuous,     !- Name
-    ,                         !- Schedule Type Limits Name
-    1;                        !- Hourly Value
 
 GlobalGeometryRules,
     UpperLeftCorner,          !- Starting Vertex Position

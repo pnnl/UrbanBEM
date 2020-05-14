@@ -201,14 +201,14 @@ LifeCycleCost:UsePriceEscalation,
   1.0950;                                 !- Year Escalation 30
 
 Building,
-  Building 1,                             !- Name
-  ,                                       !- North Axis {deg}
+  test_building,                          !- Name
+  0,                                      !- North Axis {deg}
   ,                                       !- Terrain
-  ,                                       !- Loads Convergence Tolerance Value
-  ,                                       !- Temperature Convergence Tolerance Value {deltaC}
-  ,                                       !- Solar Distribution
-  ,                                       !- Maximum Number of Warmup Days
-  ;                                       !- Minimum Number of Warmup Days
+  0.04,                                   !- Loads Convergence Tolerance Value
+  0.4,                                    !- Temperature Convergence Tolerance Value {deltaC}
+  FullInteriorAndExterior,                !- Solar Distribution
+  25,                                     !- Maximum Number of Warmup Days
+  6;                                      !- Minimum Number of Warmup Days
 
 Zone,
   Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone, !- Name
@@ -262,6 +262,52 @@ ZoneHVAC:EquipmentList,
   1,                                      !- Zone Equipment Cooling Sequence 1
   1;                                      !- Zone Equipment Heating or No-Load Sequence 1
 
+Sizing:Zone,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone, !- Zone or ZoneList Name
+  SupplyAirTemperature,                   !- Zone Cooling Design Supply Air Temperature Input Method
+  12.7777777777778,                       !- Zone Cooling Design Supply Air Temperature {C}
+  11.11,                                  !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
+  SupplyAirTemperature,                   !- Zone Heating Design Supply Air Temperature Input Method
+  50.0000000000001,                       !- Zone Heating Design Supply Air Temperature {C}
+  11.11,                                  !- Zone Heating Design Supply Air Temperature Difference {deltaC}
+  0.0085,                                 !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.008,                                  !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Design Specification Outdoor Air Object Name
+  ,                                       !- Zone Heating Sizing Factor
+  ,                                       !- Zone Cooling Sizing Factor
+  DesignDay,                              !- Cooling Design Air Flow Method
+  0,                                      !- Cooling Design Air Flow Rate {m3/s}
+  0.000762,                               !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  0,                                      !- Cooling Minimum Air Flow {m3/s}
+  0,                                      !- Cooling Minimum Air Flow Fraction
+  DesignDay,                              !- Heating Design Air Flow Method
+  0,                                      !- Heating Design Air Flow Rate {m3/s}
+  0.002032,                               !- Heating Maximum Air Flow per Zone Floor Area {m3/s-m2}
+  0.1415762,                              !- Heating Maximum Air Flow {m3/s}
+  0.3,                                    !- Heating Maximum Air Flow Fraction
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Design Spec Zone Air Dist, !- Design Specification Zone Air Distribution Object Name
+  No;                                     !- Account for Dedicated Outdoor Air System
+
+DesignSpecification:ZoneAirDistribution,
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Design Spec Zone Air Dist, !- Name
+  1,                                      !- Zone Air Distribution Effectiveness in Cooling Mode {dimensionless}
+  1;                                      !- Zone Air Distribution Effectiveness in Heating Mode {dimensionless}
+
+Schedule:Constant,
+  Always On Discrete,                     !- Name
+  OnOff,                                  !- Schedule Type Limits Name
+  1;                                      !- Hourly Value
+
+Controller:MechanicalVentilation,
+  Controller Mechanical Ventilation 1,    !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  No,                                     !- Demand Controlled Ventilation
+  ZoneSum,                                !- System Outdoor Air Method
+  ,                                       !- Zone Maximum Outdoor Air Fraction {dimensionless}
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone, !- Zone Name 1
+  ,                                       !- Design Specification Outdoor Air Object Name 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Design Spec Zone Air Dist; !- Design Specification Zone Air Distribution Object Name 1
+
 Zone,
   Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone, !- Name
   0,                                      !- Direction of Relative North {deg}
@@ -313,6 +359,47 @@ ZoneHVAC:EquipmentList,
   ADU Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC Diffuser, !- Zone Equipment Name 1
   1,                                      !- Zone Equipment Cooling Sequence 1
   1;                                      !- Zone Equipment Heating or No-Load Sequence 1
+
+Sizing:Zone,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone, !- Zone or ZoneList Name
+  SupplyAirTemperature,                   !- Zone Cooling Design Supply Air Temperature Input Method
+  12.7777777777778,                       !- Zone Cooling Design Supply Air Temperature {C}
+  11.11,                                  !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
+  SupplyAirTemperature,                   !- Zone Heating Design Supply Air Temperature Input Method
+  50.0000000000001,                       !- Zone Heating Design Supply Air Temperature {C}
+  11.11,                                  !- Zone Heating Design Supply Air Temperature Difference {deltaC}
+  0.0085,                                 !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.008,                                  !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Design Specification Outdoor Air Object Name
+  ,                                       !- Zone Heating Sizing Factor
+  ,                                       !- Zone Cooling Sizing Factor
+  DesignDay,                              !- Cooling Design Air Flow Method
+  0,                                      !- Cooling Design Air Flow Rate {m3/s}
+  0.000762,                               !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  0,                                      !- Cooling Minimum Air Flow {m3/s}
+  0,                                      !- Cooling Minimum Air Flow Fraction
+  DesignDay,                              !- Heating Design Air Flow Method
+  0,                                      !- Heating Design Air Flow Rate {m3/s}
+  0.002032,                               !- Heating Maximum Air Flow per Zone Floor Area {m3/s-m2}
+  0.1415762,                              !- Heating Maximum Air Flow {m3/s}
+  0.3,                                    !- Heating Maximum Air Flow Fraction
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Design Spec Zone Air Dist, !- Design Specification Zone Air Distribution Object Name
+  No;                                     !- Account for Dedicated Outdoor Air System
+
+DesignSpecification:ZoneAirDistribution,
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Design Spec Zone Air Dist, !- Name
+  1,                                      !- Zone Air Distribution Effectiveness in Cooling Mode {dimensionless}
+  1;                                      !- Zone Air Distribution Effectiveness in Heating Mode {dimensionless}
+
+Controller:MechanicalVentilation,
+  Controller Mechanical Ventilation 2,    !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  No,                                     !- Demand Controlled Ventilation
+  ZoneSum,                                !- System Outdoor Air Method
+  ,                                       !- Zone Maximum Outdoor Air Fraction {dimensionless}
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone, !- Zone Name 1
+  ,                                       !- Design Specification Outdoor Air Object Name 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Design Spec Zone Air Dist; !- Design Specification Zone Air Distribution Object Name 1
 
 Zone,
   Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone, !- Name
@@ -366,6 +453,47 @@ ZoneHVAC:EquipmentList,
   1,                                      !- Zone Equipment Cooling Sequence 1
   1;                                      !- Zone Equipment Heating or No-Load Sequence 1
 
+Sizing:Zone,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone, !- Zone or ZoneList Name
+  SupplyAirTemperature,                   !- Zone Cooling Design Supply Air Temperature Input Method
+  12.7777777777778,                       !- Zone Cooling Design Supply Air Temperature {C}
+  11.11,                                  !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
+  SupplyAirTemperature,                   !- Zone Heating Design Supply Air Temperature Input Method
+  50.0000000000001,                       !- Zone Heating Design Supply Air Temperature {C}
+  11.11,                                  !- Zone Heating Design Supply Air Temperature Difference {deltaC}
+  0.0085,                                 !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.008,                                  !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Design Specification Outdoor Air Object Name
+  ,                                       !- Zone Heating Sizing Factor
+  ,                                       !- Zone Cooling Sizing Factor
+  DesignDay,                              !- Cooling Design Air Flow Method
+  0,                                      !- Cooling Design Air Flow Rate {m3/s}
+  0.000762,                               !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  0,                                      !- Cooling Minimum Air Flow {m3/s}
+  0,                                      !- Cooling Minimum Air Flow Fraction
+  DesignDay,                              !- Heating Design Air Flow Method
+  0,                                      !- Heating Design Air Flow Rate {m3/s}
+  0.002032,                               !- Heating Maximum Air Flow per Zone Floor Area {m3/s-m2}
+  0.1415762,                              !- Heating Maximum Air Flow {m3/s}
+  0.3,                                    !- Heating Maximum Air Flow Fraction
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Design Spec Zone Air Dist, !- Design Specification Zone Air Distribution Object Name
+  No;                                     !- Account for Dedicated Outdoor Air System
+
+DesignSpecification:ZoneAirDistribution,
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Design Spec Zone Air Dist, !- Name
+  1,                                      !- Zone Air Distribution Effectiveness in Cooling Mode {dimensionless}
+  1;                                      !- Zone Air Distribution Effectiveness in Heating Mode {dimensionless}
+
+Controller:MechanicalVentilation,
+  Controller Mechanical Ventilation 4,    !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  No,                                     !- Demand Controlled Ventilation
+  ZoneSum,                                !- System Outdoor Air Method
+  ,                                       !- Zone Maximum Outdoor Air Fraction {dimensionless}
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone, !- Zone Name 1
+  ,                                       !- Design Specification Outdoor Air Object Name 1
+  Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Design Spec Zone Air Dist; !- Design Specification Zone Air Distribution Object Name 1
+
 Zone,
   Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone, !- Name
   0,                                      !- Direction of Relative North {deg}
@@ -418,10 +546,51 @@ ZoneHVAC:EquipmentList,
   1,                                      !- Zone Equipment Cooling Sequence 1
   1;                                      !- Zone Equipment Heating or No-Load Sequence 1
 
+Sizing:Zone,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone, !- Zone or ZoneList Name
+  SupplyAirTemperature,                   !- Zone Cooling Design Supply Air Temperature Input Method
+  12.7777777777778,                       !- Zone Cooling Design Supply Air Temperature {C}
+  11.11,                                  !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
+  SupplyAirTemperature,                   !- Zone Heating Design Supply Air Temperature Input Method
+  50.0000000000001,                       !- Zone Heating Design Supply Air Temperature {C}
+  11.11,                                  !- Zone Heating Design Supply Air Temperature Difference {deltaC}
+  0.0085,                                 !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  0.008,                                  !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
+  ,                                       !- Design Specification Outdoor Air Object Name
+  ,                                       !- Zone Heating Sizing Factor
+  ,                                       !- Zone Cooling Sizing Factor
+  DesignDay,                              !- Cooling Design Air Flow Method
+  0,                                      !- Cooling Design Air Flow Rate {m3/s}
+  0.000762,                               !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  0,                                      !- Cooling Minimum Air Flow {m3/s}
+  0,                                      !- Cooling Minimum Air Flow Fraction
+  DesignDay,                              !- Heating Design Air Flow Method
+  0,                                      !- Heating Design Air Flow Rate {m3/s}
+  0.002032,                               !- Heating Maximum Air Flow per Zone Floor Area {m3/s-m2}
+  0.1415762,                              !- Heating Maximum Air Flow {m3/s}
+  0.3,                                    !- Heating Maximum Air Flow Fraction
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Design Spec Zone Air Dist, !- Design Specification Zone Air Distribution Object Name
+  No;                                     !- Account for Dedicated Outdoor Air System
+
+DesignSpecification:ZoneAirDistribution,
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Design Spec Zone Air Dist, !- Name
+  1,                                      !- Zone Air Distribution Effectiveness in Cooling Mode {dimensionless}
+  1;                                      !- Zone Air Distribution Effectiveness in Heating Mode {dimensionless}
+
+Controller:MechanicalVentilation,
+  Controller Mechanical Ventilation 3,    !- Name
+  Always On Discrete,                     !- Availability Schedule Name
+  No,                                     !- Demand Controlled Ventilation
+  ZoneSum,                                !- System Outdoor Air Method
+  ,                                       !- Zone Maximum Outdoor Air Fraction {dimensionless}
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone, !- Zone Name 1
+  ,                                       !- Design Specification Outdoor Air Object Name 1
+  Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Design Spec Zone Air Dist; !- Design Specification Zone Air Distribution Object Name 1
+
 SimulationControl,
-  No,                                     !- Do Zone Sizing Calculation
-  No,                                     !- Do System Sizing Calculation
-  No,                                     !- Do Plant Sizing Calculation
+  Yes,                                    !- Do Zone Sizing Calculation
+  Yes,                                    !- Do System Sizing Calculation
+  Yes,                                    !- Do Plant Sizing Calculation
   Yes,                                    !- Run Simulation for Sizing Periods
   Yes;                                    !- Run Simulation for Weather File Run Periods
 
@@ -464,11 +633,6 @@ ScheduleTypeLimits,
   100,                                    !- Upper Limit Value {BasedOnField A3}
   Continuous,                             !- Numeric Type
   temperature;                            !- Unit Type
-
-Schedule:Constant,
-  Always On Discrete,                     !- Name
-  OnOff,                                  !- Schedule Type Limits Name
-  1;                                      !- Hourly Value
 
 Schedule:Day:Interval,
   Hot Water Loop Temp - 180F Default,     !- Name
@@ -653,13 +817,6 @@ Controller:OutdoorAir,
   ,                                       !- High Humidity Outdoor Air Flow Ratio
   Yes,                                    !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
   BypassWhenWithinEconomizerLimits;       !- Heat Recovery Bypass Control Type
-
-Controller:MechanicalVentilation,
-  Controller Mechanical Ventilation 1,    !- Name
-  Always On Discrete,                     !- Availability Schedule Name
-  No,                                     !- Demand Controlled Ventilation
-  ZoneSum,                                !- System Outdoor Air Method
-  ;                                       !- Zone Maximum Outdoor Air Fraction {dimensionless}
 
 AvailabilityManagerAssignmentList,
   Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager List, !- Name
@@ -1015,13 +1172,6 @@ Controller:OutdoorAir,
   Yes,                                    !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
   BypassWhenWithinEconomizerLimits;       !- Heat Recovery Bypass Control Type
 
-Controller:MechanicalVentilation,
-  Controller Mechanical Ventilation 2,    !- Name
-  Always On Discrete,                     !- Availability Schedule Name
-  No,                                     !- Demand Controlled Ventilation
-  ZoneSum,                                !- System Outdoor Air Method
-  ;                                       !- Zone Maximum Outdoor Air Fraction {dimensionless}
-
 AvailabilityManagerAssignmentList,
   Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager List, !- Name
   AvailabilityManager:Scheduled,          !- Availability Manager Object Type 1
@@ -1376,13 +1526,6 @@ Controller:OutdoorAir,
   Yes,                                    !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
   BypassWhenWithinEconomizerLimits;       !- Heat Recovery Bypass Control Type
 
-Controller:MechanicalVentilation,
-  Controller Mechanical Ventilation 4,    !- Name
-  Always On Discrete,                     !- Availability Schedule Name
-  No,                                     !- Demand Controlled Ventilation
-  ZoneSum,                                !- System Outdoor Air Method
-  ;                                       !- Zone Maximum Outdoor Air Fraction {dimensionless}
-
 AvailabilityManagerAssignmentList,
   Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager List, !- Name
   AvailabilityManager:Scheduled,          !- Availability Manager Object Type 1
@@ -1736,13 +1879,6 @@ Controller:OutdoorAir,
   ,                                       !- High Humidity Outdoor Air Flow Ratio
   Yes,                                    !- Control High Indoor Humidity Based on Outdoor Humidity Ratio
   BypassWhenWithinEconomizerLimits;       !- Heat Recovery Bypass Control Type
-
-Controller:MechanicalVentilation,
-  Controller Mechanical Ventilation 3,    !- Name
-  Always On Discrete,                     !- Availability Schedule Name
-  No,                                     !- Demand Controlled Ventilation
-  ZoneSum,                                !- System Outdoor Air Method
-  ;                                       !- Zone Maximum Outdoor Air Fraction {dimensionless}
 
 AvailabilityManagerAssignmentList,
   Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone PSZ-AC OA System Availability Manager List, !- Name
@@ -2209,6 +2345,62 @@ PlantEquipmentList,
   Hot Water Loop Heating Equipment List,  !- Name
   Boiler:HotWater,                        !- Equipment Object Type 1
   Boiler;                                 !- Equipment Name 1
+
+SizingPeriod:DesignDay,
+  DENVER_STAPLETON Ann Clg .4% Condns DB=>MWB, !- Name
+  7,                                      !- Month
+  21,                                     !- Day of Month
+  SummerDesignDay,                        !- Day Type
+  34.1,                                   !- Maximum Dry-Bulb Temperature {C}
+  15.2,                                   !- Daily Dry-Bulb Temperature Range {deltaC}
+  DefaultMultipliers,                     !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  Wetbulb,                                !- Humidity Condition Type
+  15.8,                                   !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Condition Day Schedule Name
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Daily Wet-Bulb Temperature Range {deltaC}
+  83411,                                  !- Barometric Pressure {Pa}
+  4,                                      !- Wind Speed {m/s}
+  120,                                    !- Wind Direction {deg}
+  No,                                     !- Rain Indicator
+  No,                                     !- Snow Indicator
+  No,                                     !- Daylight Saving Time Indicator
+  ASHRAEClearSky,                         !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  ,                                       !- ASHRAE Clear Sky Optical Depth for Beam Irradiance (taub) {dimensionless}
+  ,                                       !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud) {dimensionless}
+  1;                                      !- Sky Clearness
+
+SizingPeriod:DesignDay,
+  DENVER_STAPLETON Ann Htg 99.6% Condns DB, !- Name
+  12,                                     !- Month
+  21,                                     !- Day of Month
+  WinterDesignDay,                        !- Day Type
+  -20,                                    !- Maximum Dry-Bulb Temperature {C}
+  0,                                      !- Daily Dry-Bulb Temperature Range {deltaC}
+  DefaultMultipliers,                     !- Dry-Bulb Temperature Range Modifier Type
+  ,                                       !- Dry-Bulb Temperature Range Modifier Day Schedule Name
+  Wetbulb,                                !- Humidity Condition Type
+  -20,                                    !- Wetbulb or DewPoint at Maximum Dry-Bulb {C}
+  ,                                       !- Humidity Condition Day Schedule Name
+  ,                                       !- Humidity Ratio at Maximum Dry-Bulb {kgWater/kgDryAir}
+  ,                                       !- Enthalpy at Maximum Dry-Bulb {J/kg}
+  ,                                       !- Daily Wet-Bulb Temperature Range {deltaC}
+  83411,                                  !- Barometric Pressure {Pa}
+  2.3,                                    !- Wind Speed {m/s}
+  180,                                    !- Wind Direction {deg}
+  No,                                     !- Rain Indicator
+  No,                                     !- Snow Indicator
+  No,                                     !- Daylight Saving Time Indicator
+  ASHRAEClearSky,                         !- Solar Model Indicator
+  ,                                       !- Beam Solar Day Schedule Name
+  ,                                       !- Diffuse Solar Day Schedule Name
+  ,                                       !- ASHRAE Clear Sky Optical Depth for Beam Irradiance (taub) {dimensionless}
+  ,                                       !- ASHRAE Clear Sky Optical Depth for Diffuse Irradiance (taud) {dimensionless}
+  0;                                      !- Sky Clearness
 
 Curve:Biquadratic,
   Curve Biquadratic 1,                    !- Name

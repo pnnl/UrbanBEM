@@ -5,7 +5,6 @@
         "BUILDING",
         "TIMESTEP",
         "RUNPERIOD",
-        "SCHEDULE:CONSTANT",
         "GLOBALGEOMETRYRULES",
         "ZONE",
         "SIZING:PARAMETERS",

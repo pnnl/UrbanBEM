@@ -1,4 +1,4 @@
-!- Unix Line endings 
+!- Unix Line endings
 
 Version,
     9.0;                      !- Version Identifier
@@ -473,7 +473,7 @@ MATERIAL:NOMASS,
 
 WINDOWMATERIAL:SIMPLEGLAZINGSYSTEM,
     glazing_u_18.6547_shgc_0.3189,    !- Name
-    18.654713762249568,       !- UFactor
+    3,       !- UFactor
     0.31885576882307076;      !- Solar Heat Gain Coefficient
 
 CONSTRUCTION,

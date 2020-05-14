@@ -1,7 +1,8 @@
 #%%
-import os
+import os, subprocess
 from io import StringIO
 from typing import List
+
 
 from tqdm import tqdm
 
@@ -55,18 +56,45 @@ def get_object_not_in_types(idf: IDF, types: List) -> List:
 
 
 #%% load idf
-original_idf = IDF("../devoutput/loads_added.idf")
+original_idf = IDF("../hvac_dev/loads_added.idf")
 casename = "cbecs1"
 case_path = f"../input/processed_inputs/{casename}.json"
 with open(case_path) as f:
     proc_case = json.load(f)
 
-#%% get zones
-zones = original_idf.idfobjects["ZONE"]
+#%% get needed objs (also add them to the excluded objects list)
+
+with open("../resources/exc_osstd_hvac_objtypes_meta.json") as f:
+    exc_hvac_meta = json.load(f)
+exc_obj_types = exc_hvac_meta["PSZ:AC"]
+
 zones_idf = IDF(StringIO(""))
-for obj in zones:
+zones_idf_obj_types = [
+    "Zone",
+    "SizingPeriod:DesignDay",
+    "Building",
+    "GlobalGeometryRules",
+]
+zones_idf_obj_types = [one.upper() for one in zones_idf_obj_types]
+
+objs = []
+for obj_type in zones_idf_obj_types:
+    objs.extend(list(original_idf.idfobjects[obj_type]))
+    if obj_type not in exc_obj_types:
+        exc_obj_types.append(obj_type)
+
+for obj in objs:
     zones_idf.copyidfobject(obj)
 zones_idf.saveas("../hvac_dev/zones.idf")
+
+#%% run osstd method from ruby
+ruby_run = ["ruby", "generate_hvac.rb"]
+
+run_proc = subprocess.run(ruby_run, capture_output=True)
+print("\nSTDOUT:")
+print(run_proc.stdout.decode("utf-8"))
+print("\nSTDERR")
+print(run_proc.stderr.decode("utf-8"))
 
 #%% read os output idfs
 zones_translated = IDF("../hvac_dev/zones_translated.idf")
@@ -78,15 +106,8 @@ zones_translated_objtypes = get_containing_object_types(zones_translated)
 zones_hvacadded_objtypes = get_containing_object_types(zones_hvacadded)
 
 #%%
-# with open("../resources/osstd_hvac_objtypes_meta.json") as f:
-#     hvac_meta = json.load(f)
 
-# objs = get_object_by_types(zones_hvacadded, hvac_meta["PSZ:AC"], ignore_error=False)
-
-with open("../resources/exc_osstd_hvac_objtypes_meta.json") as f:
-    exc_hvac_meta = json.load(f)
-
-objs = get_object_not_in_types(zones_hvacadded, exc_hvac_meta["PSZ:AC"])
+objs = get_object_not_in_types(zones_hvacadded, exc_obj_types)
 
 #%% take out 'thermal zone' in names/refs
 for obj in tqdm(objs):
@@ -102,16 +123,85 @@ for obj in tqdm(objs):
 hvac_pure.saveas("../hvac_dev/hvac_pure.idf")
 
 #%%
+# TODO: reload original idf to make sure it is clean (no need for non-dev)
+original_idf = IDF("../devoutput/loads_added.idf")
 for obj in tqdm(objs):
     original_idf.copyidfobject(obj)
 
+#%% add thermostat
+zonelist_name = original_idf.idfobjects["ZONELIST"][0].Name
+
+zonecontrol_thermostat_dict = {
+    "key": "ZoneControl:Thermostat".upper(),
+    "Name": f"{zonelist_name} Thermostat",
+    "Zone_or_ZoneList_Name": zonelist_name,
+    "Control_Type_Schedule_Name": f"{zonelist_name} Thermostat Thermostat Schedule",
+    "Control_1_Object_Type": "ThermostatSetpoint:DualSetpoint",
+    "Control_1_Name": f"{zonelist_name} Thermostat Thermostat DualSP",
+}
+original_idf.newidfobject(**zonecontrol_thermostat_dict)
+
+thermostatsetpoint_dualsetpoint_dict = {
+    "key": "ThermostatSetpoint:DualSetpoint".upper(),
+    "Name": f"{zonelist_name} Thermostat Thermostat DualSP",
+    "Heating_Setpoint_Temperature_Schedule_Name": f"{zonelist_name} Htg Thermostat Schedule",
+    "Cooling_Setpoint_Temperature_Schedule_Name": f"{zonelist_name} Clg Thermostat Schedule",
+}
+original_idf.newidfobject(**thermostatsetpoint_dualsetpoint_dict)
+
+thermostat_schedules_dict_list = [
+    {
+        "key": "Schedule:Compact".upper(),
+        "Name": f"{zonelist_name} Thermostat Thermostat Schedule",
+        "Field_1": "Through: 12/31",
+        "Field_2": "For: AllDays",
+        "Field_3": "Until: 24:00",
+        "Field_4": 4,
+    },
+    {
+        "key": "Schedule:Compact".upper(),
+        "Name": f"{zonelist_name} Htg Thermostat Schedule",
+        "Field_1": "Through: 12/31",
+        "Field_2": "For: AllDays",
+        "Field_3": "Until: 24:00",
+        "Field_4": 18,
+    },
+    {
+        "key": "Schedule:Compact".upper(),
+        "Name": f"{zonelist_name} Clg Thermostat Schedule",
+        "Field_1": "Through: 12/31",
+        "Field_2": "For: AllDays",
+        "Field_3": "Until: 24:00",
+        "Field_4": 26,
+    },
+]
+for one_dict in thermostat_schedules_dict_list:
+    original_idf.newidfobject(**one_dict)
+
+oa_dict = {
+    "key": "DESIGNSPECIFICATION:OUTDOORAIR",
+    "Name": "design_oa",
+    "Outdoor_Air_Method": "Sum",
+    "Outdoor_Air_Flow_per_Person": 0.00236,
+    "Outdoor_Air_Flow_per_Zone_Floor_Area": 0.0003,
+}
+
+original_idf.newidfobject(**oa_dict)
+
+for sizingzone in original_idf.idfobjects["SIZING:ZONE"]:
+    sizingzone["Design_Specification_Outdoor_Air_Object_Name"] = "design_oa"
+
+
+#%%
+# TODO: fix shgc random number caused fatal fault (if > 7) (temporary)
+original_idf.idfobjects["WINDOWMATERIAL:SIMPLEGLAZINGSYSTEM"][0]["UFactor"] = 3
 
 #%%
 original_idf.saveas("../hvac_dev/hvacadded.idf")
 
 #%% have a peek on the excluded objects
 # exc_objs = get_object_not_in_types(zones_hvacadded, hvac_meta["PSZ:AC"])
-exc_objs = get_object_by_types(zones_hvacadded, exc_hvac_meta["PSZ:AC"])
+exc_objs = get_object_by_types(zones_hvacadded, exc_obj_types)
 exc_idf = IDF(StringIO(""))
 for obj in tqdm(exc_objs):
     exc_idf.copyidfobject(obj)
