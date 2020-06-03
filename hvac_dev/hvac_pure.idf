@@ -7,44 +7,6 @@ ScheduleTypeLimits,
     Discrete,                 !- Numeric Type
     availability;             !- Unit Type
 
-ScheduleTypeLimits,
-    Temperature,              !- Name
-    0,                        !- Lower Limit Value
-    100,                      !- Upper Limit Value
-    Continuous,               !- Numeric Type
-    temperature;              !- Unit Type
-
-Schedule:Day:Interval,
-    Hot Water Loop Temp - 180F Default,    !- Name
-    Temperature,              !- Schedule Type Limits Name
-    No,                       !- Interpolate to Timestep
-    24:00,                    !- Time 1
-    82.2222222222223;         !- Value Until Time 1
-
-Schedule:Week:Daily,
-    Hot Water Loop Temp - 180F Week Rule - Jan1-Dec31,    !- Name
-    Hot Water Loop Temp - 180F Default,    !- Sunday ScheduleDay Name
-    Hot Water Loop Temp - 180F Default,    !- Monday ScheduleDay Name
-    Hot Water Loop Temp - 180F Default,    !- Tuesday ScheduleDay Name
-    Hot Water Loop Temp - 180F Default,    !- Wednesday ScheduleDay Name
-    Hot Water Loop Temp - 180F Default,    !- Thursday ScheduleDay Name
-    Hot Water Loop Temp - 180F Default,    !- Friday ScheduleDay Name
-    Hot Water Loop Temp - 180F Default,    !- Saturday ScheduleDay Name
-    Hot Water Loop Temp - 180F Default,    !- Holiday ScheduleDay Name
-    Hot Water Loop Temp - 180F Default,    !- SummerDesignDay ScheduleDay Name
-    Hot Water Loop Temp - 180F Default,    !- WinterDesignDay ScheduleDay Name
-    Hot Water Loop Temp - 180F Default,    !- CustomDay1 ScheduleDay Name
-    Hot Water Loop Temp - 180F Default;    !- CustomDay2 ScheduleDay Name
-
-Schedule:Year,
-    Hot Water Loop Temp - 180F,    !- Name
-    Temperature,              !- Schedule Type Limits Name
-    Hot Water Loop Temp - 180F Week Rule - Jan1-Dec31,    !- ScheduleWeek Name 1
-    1,                        !- Start Month 1
-    1,                        !- Start Day 1
-    12,                       !- End Month 1
-    31;                       !- End Day 1
-
 Schedule:Constant,
     Always On Discrete,       !- Name
     OnOff,                    !- Schedule Type Limits Name
@@ -339,15 +301,6 @@ Sizing:System,
     157,                      !- Heating Design Capacity Per Floor Area
     1,                        !- Fraction of Autosized Heating Design Capacity
     OnOff;                    !- Central Cooling Capacity Control Method
-
-Sizing:Plant,
-    Hot Water Loop,           !- Plant or Condenser Loop Name
-    Heating,                  !- Loop Type
-    82.2222222222223,         !- Design Loop Exit Temperature
-    11.1111111111111,         !- Loop Design Temperature Difference
-    NonCoincident,            !- Sizing Option
-    1,                        !- Zone Timesteps in Averaging Window
-    None;                     !- Coincident Sizing Factor Mode
 
 AirTerminal:SingleDuct:ConstantVolume:NoReheat,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Diffuser,    !- Name
@@ -1237,70 +1190,6 @@ Branch,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 5 Inlet Node Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Component 5 Outlet Node Name
 
-Branch,
-    Hot Water Loop Supply Inlet Branch,    !- Name
-    ,                         !- Pressure Drop Curve Name
-    Pump:VariableSpeed,       !- Component 1 Object Type
-    Hot Water Loop Pump,      !- Component 1 Name
-    Hot Water Loop Supply Inlet Node,    !- Component 1 Inlet Node Name
-    Hot Water Loop Pump Outlet Water Node;    !- Component 1 Outlet Node Name
-
-Branch,
-    Hot Water Loop Supply Branch 1,    !- Name
-    ,                         !- Pressure Drop Curve Name
-    Boiler:HotWater,          !- Component 1 Object Type
-    Boiler,                   !- Component 1 Name
-    Boiler Inlet Water Node,    !- Component 1 Inlet Node Name
-    Boiler Outlet Water Node;    !- Component 1 Outlet Node Name
-
-Branch,
-    Hot Water Loop Supply Branch 2,    !- Name
-    ,                         !- Pressure Drop Curve Name
-    Pipe:Adiabatic,           !- Component 1 Object Type
-    Hot Water Loop Supply Equipment Bypass,    !- Component 1 Name
-    Hot Water Loop Supply Equipment Bypass Inlet Water Node,    !- Component 1 Inlet Node Name
-    Hot Water Loop Supply Equipment Bypass Outlet Water Node;    !- Component 1 Outlet Node Name
-
-Branch,
-    Hot Water Loop Supply Outlet Branch,    !- Name
-    ,                         !- Pressure Drop Curve Name
-    Pipe:Adiabatic,           !- Component 1 Object Type
-    Hot Water Loop Supply Outlet,    !- Component 1 Name
-    Hot Water Loop Supply Outlet Inlet Water Node,    !- Component 1 Inlet Node Name
-    Hot Water Loop Supply Outlet Node;    !- Component 1 Outlet Node Name
-
-Branch,
-    Hot Water Loop Demand Inlet Branch,    !- Name
-    ,                         !- Pressure Drop Curve Name
-    Pipe:Adiabatic,           !- Component 1 Object Type
-    Hot Water Loop Demand Inlet,    !- Component 1 Name
-    Hot Water Loop Demand Inlet Node,    !- Component 1 Inlet Node Name
-    Hot Water Loop Demand Inlet Outlet Water Node;    !- Component 1 Outlet Node Name
-
-Branch,
-    Hot Water Loop Demand Branch 1,    !- Name
-    ,                         !- Pressure Drop Curve Name
-    Pipe:Adiabatic,           !- Component 1 Object Type
-    Hot Water Loop Coil Bypass,    !- Component 1 Name
-    Hot Water Loop Coil Bypass Inlet Water Node,    !- Component 1 Inlet Node Name
-    Hot Water Loop Coil Bypass Outlet Water Node;    !- Component 1 Outlet Node Name
-
-Branch,
-    Hot Water Loop Demand Bypass Branch,    !- Name
-    ,                         !- Pressure Drop Curve Name
-    Pipe:Adiabatic,           !- Component 1 Object Type
-    Hot Water Loop Demand Bypass Pipe,    !- Component 1 Name
-    Hot Water Loop Demand Bypass Pipe Inlet Node,    !- Component 1 Inlet Node Name
-    Hot Water Loop Demand Bypass Pipe Outlet Node;    !- Component 1 Outlet Node Name
-
-Branch,
-    Hot Water Loop Demand Outlet Branch,    !- Name
-    ,                         !- Pressure Drop Curve Name
-    Pipe:Adiabatic,           !- Component 1 Object Type
-    Hot Water Loop Demand Outlet,    !- Component 1 Name
-    Hot Water Loop Demand Outlet Inlet Water Node,    !- Component 1 Inlet Node Name
-    Hot Water Loop Demand Outlet Node;    !- Component 1 Outlet Node Name
-
 BranchList,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Branches,    !- Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Main Branch;    !- Branch 1 Name
@@ -1316,58 +1205,6 @@ BranchList,
 BranchList,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Branches,    !- Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Main Branch;    !- Branch 1 Name
-
-BranchList,
-    Hot Water Loop Supply Branches,    !- Name
-    Hot Water Loop Supply Inlet Branch,    !- Branch 1 Name
-    Hot Water Loop Supply Branch 1,    !- Branch 2 Name
-    Hot Water Loop Supply Branch 2,    !- Branch 3 Name
-    Hot Water Loop Supply Outlet Branch;    !- Branch 4 Name
-
-BranchList,
-    Hot Water Loop Demand Branches,    !- Name
-    Hot Water Loop Demand Inlet Branch,    !- Branch 1 Name
-    Hot Water Loop Demand Branch 1,    !- Branch 2 Name
-    Hot Water Loop Demand Bypass Branch,    !- Branch 3 Name
-    Hot Water Loop Demand Outlet Branch;    !- Branch 4 Name
-
-Connector:Splitter,
-    Hot Water Loop Supply Splitter,    !- Name
-    Hot Water Loop Supply Inlet Branch,    !- Inlet Branch Name
-    Hot Water Loop Supply Branch 1,    !- Outlet Branch 1 Name
-    Hot Water Loop Supply Branch 2;    !- Outlet Branch 2 Name
-
-Connector:Splitter,
-    Hot Water Loop Demand Splitter,    !- Name
-    Hot Water Loop Demand Inlet Branch,    !- Inlet Branch Name
-    Hot Water Loop Demand Branch 1,    !- Outlet Branch 1 Name
-    Hot Water Loop Demand Bypass Branch;    !- Outlet Branch 2 Name
-
-Connector:Mixer,
-    Hot Water Loop Supply Mixer,    !- Name
-    Hot Water Loop Supply Outlet Branch,    !- Outlet Branch Name
-    Hot Water Loop Supply Branch 1,    !- Inlet Branch 1 Name
-    Hot Water Loop Supply Branch 2;    !- Inlet Branch 2 Name
-
-Connector:Mixer,
-    Hot Water Loop Demand Mixer,    !- Name
-    Hot Water Loop Demand Outlet Branch,    !- Outlet Branch Name
-    Hot Water Loop Demand Branch 1,    !- Inlet Branch 1 Name
-    Hot Water Loop Demand Bypass Branch;    !- Inlet Branch 2 Name
-
-ConnectorList,
-    Hot Water Loop Supply Connector List,    !- Name
-    Connector:Splitter,       !- Connector 1 Object Type
-    Hot Water Loop Supply Splitter,    !- Connector 1 Name
-    Connector:Mixer,          !- Connector 2 Object Type
-    Hot Water Loop Supply Mixer;    !- Connector 2 Name
-
-ConnectorList,
-    Hot Water Loop Demand Connector List,    !- Name
-    Connector:Splitter,       !- Connector 1 Object Type
-    Hot Water Loop Demand Splitter,    !- Connector 1 Name
-    Connector:Mixer,          !- Connector 2 Object Type
-    Hot Water Loop Demand Mixer;    !- Connector 2 Name
 
 NodeList,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 Inlet Node List,    !- Name
@@ -1447,127 +1284,6 @@ OutdoorAir:NodeList,
 
 OutdoorAir:NodeList,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Outdoor Air Node;    !- Node or NodeList Name 1
-
-Pipe:Adiabatic,
-    Hot Water Loop Supply Equipment Bypass,    !- Name
-    Hot Water Loop Supply Equipment Bypass Inlet Water Node,    !- Inlet Node Name
-    Hot Water Loop Supply Equipment Bypass Outlet Water Node;    !- Outlet Node Name
-
-Pipe:Adiabatic,
-    Hot Water Loop Supply Outlet,    !- Name
-    Hot Water Loop Supply Outlet Inlet Water Node,    !- Inlet Node Name
-    Hot Water Loop Supply Outlet Node;    !- Outlet Node Name
-
-Pipe:Adiabatic,
-    Hot Water Loop Demand Inlet,    !- Name
-    Hot Water Loop Demand Inlet Node,    !- Inlet Node Name
-    Hot Water Loop Demand Inlet Outlet Water Node;    !- Outlet Node Name
-
-Pipe:Adiabatic,
-    Hot Water Loop Coil Bypass,    !- Name
-    Hot Water Loop Coil Bypass Inlet Water Node,    !- Inlet Node Name
-    Hot Water Loop Coil Bypass Outlet Water Node;    !- Outlet Node Name
-
-Pipe:Adiabatic,
-    Hot Water Loop Demand Bypass Pipe,    !- Name
-    Hot Water Loop Demand Bypass Pipe Inlet Node,    !- Inlet Node Name
-    Hot Water Loop Demand Bypass Pipe Outlet Node;    !- Outlet Node Name
-
-Pipe:Adiabatic,
-    Hot Water Loop Demand Outlet,    !- Name
-    Hot Water Loop Demand Outlet Inlet Water Node,    !- Inlet Node Name
-    Hot Water Loop Demand Outlet Node;    !- Outlet Node Name
-
-Pump:VariableSpeed,
-    Hot Water Loop Pump,      !- Name
-    Hot Water Loop Supply Inlet Node,    !- Inlet Node Name
-    Hot Water Loop Pump Outlet Water Node,    !- Outlet Node Name
-    Autosize,                 !- Design Maximum Flow Rate
-    179344.0152,              !- Design Pump Head
-    Autosize,                 !- Design Power Consumption
-    0.9,                      !- Motor Efficiency
-    0,                        !- Fraction of Motor Inefficiencies to Fluid Stream
-    0,                        !- Coefficient 1 of the Part Load Performance Curve
-    1,                        !- Coefficient 2 of the Part Load Performance Curve
-    0,                        !- Coefficient 3 of the Part Load Performance Curve
-    0,                        !- Coefficient 4 of the Part Load Performance Curve
-    0,                        !- Design Minimum Flow Rate
-    Intermittent,             !- Pump Control Type
-    ,                         !- Pump Flow Rate Schedule Name
-    ,                         !- Pump Curve Name
-    ,                         !- Impeller Diameter
-    ,                         !- VFD Control Type
-    ,                         !- Pump rpm Schedule Name
-    ,                         !- Minimum Pressure Schedule
-    ,                         !- Maximum Pressure Schedule
-    ,                         !- Minimum RPM Schedule
-    ,                         !- Maximum RPM Schedule
-    ,                         !- Zone Name
-    0.5,                      !- Skin Loss Radiative Fraction
-    PowerPerFlowPerPressure,    !- Design Power Sizing Method
-    348701.1,                 !- Design Electric Power per Unit Flow Rate
-    1.282051282,              !- Design Shaft Power per Unit Flow Rate per Unit Head
-    0;                        !- Design Minimum Flow Rate Fraction
-
-Boiler:HotWater,
-    Boiler,                   !- Name
-    NaturalGas,               !- Fuel Type
-    Autosize,                 !- Nominal Capacity
-    0.78,                     !- Nominal Thermal Efficiency
-    LeavingBoiler,            !- Efficiency Curve Temperature Evaluation Variable
-    ,                         !- Normalized Boiler Efficiency Curve Name
-    Autosize,                 !- Design Water Flow Rate
-    0,                        !- Minimum Part Load Ratio
-    1.2,                      !- Maximum Part Load Ratio
-    1,                        !- Optimum Part Load Ratio
-    Boiler Inlet Water Node,    !- Boiler Water Inlet Node Name
-    Boiler Outlet Water Node,    !- Boiler Water Outlet Node Name
-    95.0000000000001,         !- Water Outlet Upper Temperature Limit
-    LeavingSetpointModulated,    !- Boiler Flow Mode
-    0,                        !- Parasitic Electric Load
-    1,                        !- Sizing Factor
-    General;                  !- EndUse Subcategory
-
-PlantLoop,
-    Hot Water Loop,           !- Name
-    Water,                    !- Fluid Type
-    ,                         !- User Defined Fluid Type
-    Hot Water Loop Operation Schemes,    !- Plant Equipment Operation Scheme Name
-    Hot Water Loop Supply Outlet Node,    !- Loop Temperature Setpoint Node Name
-    100,                      !- Maximum Loop Temperature
-    10,                       !- Minimum Loop Temperature
-    Autosize,                 !- Maximum Loop Flow Rate
-    0,                        !- Minimum Loop Flow Rate
-    Autocalculate,            !- Plant Loop Volume
-    Hot Water Loop Supply Inlet Node,    !- Plant Side Inlet Node Name
-    Hot Water Loop Supply Outlet Node,    !- Plant Side Outlet Node Name
-    Hot Water Loop Supply Branches,    !- Plant Side Branch List Name
-    Hot Water Loop Supply Connector List,    !- Plant Side Connector List Name
-    Hot Water Loop Demand Inlet Node,    !- Demand Side Inlet Node Name
-    Hot Water Loop Demand Outlet Node,    !- Demand Side Outlet Node Name
-    Hot Water Loop Demand Branches,    !- Demand Side Branch List Name
-    Hot Water Loop Demand Connector List,    !- Demand Side Connector List Name
-    Optimal,                  !- Load Distribution Scheme
-    ,                         !- Availability Manager List Name
-    SingleSetpoint,           !- Plant Loop Demand Calculation Scheme
-    ;                         !- Common Pipe Simulation
-
-PlantEquipmentList,
-    Hot Water Loop Heating Equipment List,    !- Name
-    Boiler:HotWater,          !- Equipment 1 Object Type
-    Boiler;                   !- Equipment 1 Name
-
-PlantEquipmentOperation:HeatingLoad,
-    Hot Water Loop Heating Operation Scheme,    !- Name
-    0,                        !- Load Range 1 Lower Limit
-    1000000000,               !- Load Range 1 Upper Limit
-    Hot Water Loop Heating Equipment List;    !- Range 1 Equipment List Name
-
-PlantEquipmentOperationSchemes,
-    Hot Water Loop Operation Schemes,    !- Name
-    PlantEquipmentOperation:HeatingLoad,    !- Control Scheme 1 Object Type
-    Hot Water Loop Heating Operation Scheme,    !- Control Scheme 1 Name
-    Always On Discrete;       !- Control Scheme 1 Schedule Name
 
 AvailabilityManager:Scheduled,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System Availability Manager,    !- Name
@@ -1660,12 +1376,6 @@ AvailabilityManagerAssignmentList,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Availability Manager List,    !- Name
     AvailabilityManager:Scheduled,    !- Availability Manager 1 Object Type
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Availability Manager;    !- Availability Manager 1 Name
-
-SetpointManager:Scheduled,
-    Hot Water Loop Setpoint Manager,    !- Name
-    Temperature,              !- Control Variable
-    Hot Water Loop Temp - 180F,    !- Schedule Name
-    Hot Water Loop Supply Outlet Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:SingleZone:Reheat,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 Setpoint Manager SZ Reheat,    !- Name
