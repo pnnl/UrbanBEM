@@ -1,0 +1,1 @@
+This folder is used to store intermediate i/o files about hvac processor for interacting with OSSTD
