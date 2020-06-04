@@ -98,7 +98,7 @@ print(run_proc.stderr.decode("utf-8"))
 
 #%% read os output idfs
 zones_translated = IDF("../hvac_dev/zones_translated.idf")
-zones_hvacadded = IDF("../hvac_dev/zones_hvacadded.idf")
+zones_hvacadded = IDF("../hvac_intermediate/osstd_hvacadded.idf")
 
 #%%
 zones_idf_objtypes = get_containing_object_types(zones_idf)
