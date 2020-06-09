@@ -1864,5 +1864,11 @@
             "activity_schedule": "activity_sch",
             "frac_radiant": 0.3
         }
+    },
+    "hvac": {
+        "hvac_type": "PSZ:AC",
+        "main_heat_fuel": "NaturalGas",
+        "zone_heat_fuel": null,
+        "cool_fuel": null
     }
 }

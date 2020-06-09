@@ -1,0 +1,70 @@
+{
+    "PSZ:AC": [
+        {
+            "Class": "AirTerminal:SingleDuct:ConstantVolume:NoReheat",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Fan:ConstantVolume",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "bldg_hvac_operation_sch"
+        },
+        {
+            "Class": "Coil:Cooling:DX:SingleSpeed",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Heating:Electric",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Heating:Fuel",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "CoilSystem:Cooling:DX",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Controller:OutdoorAir",
+            "Field": "Minimum Outdoor Air Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Controller:MechanicalVentilation",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:Scheduled",
+            "Field": "Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:NightCycle",
+            "Field": "Applicability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:NightCycle",
+            "Field": "Fan Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        }
+    ]
+}

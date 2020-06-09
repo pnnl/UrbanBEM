@@ -323,3 +323,36 @@ def populate_std_ground_temp_jan2dec(case: Dict) -> List:
         27.8,
     ]
     return sample_return
+
+
+def populate_std_hvac_for_osstd(case: Dict) -> Dict:
+    """ populate detailed dictionary for openstudio standard function call (bare minimum is the *s below)
+        def model_add_hvac_system(model,
+        *                    system_type,
+        *                    main_heat_fuel,
+        *                    zone_heat_fuel,
+        *                    cool_fuel,
+                            zones,
+                            hot_water_loop_type: 'HighTemperature',
+                            chilled_water_loop_cooling_type: 'WaterCooled',
+                            heat_pump_loop_cooling_type: 'EvaporativeFluidCooler',
+                            air_loop_heating_type: 'Water',
+                            air_loop_cooling_type: 'Water',
+                            zone_equipment_ventilation: true,
+                            fan_coil_capacity_control_method: 'CyclingFan')
+
+    Args:
+        case:
+
+    Returns:
+
+    """
+
+    hvac = {
+        "hvac_type": "PSZ:AC",
+        "main_heat_fuel": "NaturalGas",
+        "zone_heat_fuel": None,
+        "cool_fuel": None,
+    }
+
+    return hvac

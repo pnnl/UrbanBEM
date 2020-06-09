@@ -1,3 +1,4 @@
+import os, subprocess, sys
 from io import StringIO
 from typing import Dict, List
 from eppy import modeleditor
@@ -8,130 +9,224 @@ IDF.setiddname("../resources/Energy+V9_0_1.idd")
 
 
 class HVAC:
-    """Add HVAC unitary system to zones"""
+    """ v1: Add HVAC unitary system to zones
+        v2: Use OpenStudio ruby call to add package single zone air conditioner (more system types to come)
+    """
 
     hvac_settings = read_json("hvac_settings.json")
+    hvac_dev_folder_name = hvac_settings["hvac_intermediate_folder_name"]
 
     def __init__(self, case: Dict, idf: IDF):
         self.idf = idf
         self.case = case
+        self.hvac_type = self.case["hvac"]["hvac_type"]
+        self.pure_hvac_objs = None
+        self.exc_obj_types = None
+        self.replacing_schedules_refs = None
 
-        # several parameters to be used in different helpers below
-        self.economizer_type = (
-            "FixedDryBulb" if case["hvac"]["economizer"] else "NoEconomizer"
+        # run modeling strategy
+        self.generate_osstd_input_idf()
+        self.run_osstd_rubycall()
+        self.clean_up_save_add_osstd_output()
+        self.add_misc_hvac_objs()
+        self.modify_schedule_refs()
+
+    def generate_osstd_input_idf(self):
+        exc_hvac_meta = read_json(
+            self.hvac_settings["excluded_osstd_hvac_obj_types_file_path"]
         )
-        self.heat_recovery_type = (
-            "Sensible" if case["hvac"]["heat_recovery"] else "None"
+        self.exc_obj_types = [ot.upper().strip() for ot in exc_hvac_meta[self.hvac_type]]
+
+        zones_idf = IDF(StringIO(""))
+        zones_idf_obj_types = [ot.upper().strip() for ot in self.hvac_settings["idf_obj_types_for_osstd_use"]]
+
+        objs = []
+        for obj_type in zones_idf_obj_types:
+            objs.extend(list(self.idf.idfobjects[obj_type]))
+            if obj_type not in self.exc_obj_types:
+                self.exc_obj_types.append(
+                    obj_type
+                )  # add osstd input idf obj types to excluded list if not there already
+
+        for obj in objs:
+            zones_idf.copyidfobject(obj)
+        zones_idf.saveas(f"../{self.hvac_dev_folder_name}/zones.idf")
+
+    def run_osstd_rubycall(self):
+        ruby_run = ["ruby", "generate_hvac.rb"]
+        run_proc = subprocess.run(ruby_run, capture_output=True)
+        print("\nSTDOUT:")
+        print(run_proc.stdout.decode("utf-8"))
+        print("\nSTDERR")
+        print(run_proc.stderr.decode("utf-8"))
+        osstd_hvacadded = IDF(f"../{self.hvac_dev_folder_name}/zones_hvacadded.idf")
+        print(self.exc_obj_types)
+        self.pure_hvac_objs = self.get_object_not_in_types(
+            osstd_hvacadded, self.exc_obj_types
         )
-        self.oa_name = f"{self.hvac_settings['outdoorair_defaults']['outdoor_air_name_prefix']}{self.case['building_area_type']}"
-        self.thermostat_name = self.hvac_settings["thermostat_defaults"]["name"]
-        self.system_name_prefix = f"{self.hvac_settings['template_unitary_defaults']['system_name_prefix']}{self.case['building_area_type']}_"
+        self.exc_objs = self.get_object_by_types(osstd_hvacadded, self.exc_obj_types)
 
-        # run strategy
+    def clean_up_save_add_osstd_output(self):
+        for obj in self.pure_hvac_objs:
+            for field in obj.__dict__["objls"]:
+                if " Thermal Zone" in str(obj[field]):
+                    obj[field] = obj[field].replace(
+                        " Thermal Zone", ""
+                    )  # take out 'thermal zone' in names/refs
 
-        self.zone_list = []
-        for key, val in self.case["zone_geometry"].items():
-            self.zone_list.append(
-                {"zone_id": int(key), "zone_name": f"Block {val['name']} Storey 0"}
-            )  # TODO: temporarily set per geomeppy naming convention
+        hvac_pure = IDF(StringIO(""))
+        for obj in self.pure_hvac_objs:
+            hvac_pure.copyidfobject(obj)
+        hvac_pure.saveas(f"../{self.hvac_dev_folder_name}/hvac_pure.idf")
 
-        self.idf = copy_idf_objects(self.idf, self.add_thermostat())
-        for zone in self.zone_list:
-            self.idf = copy_idf_objects(self.idf, self.add_zone_hvac(zone))
-        self.idf = copy_idf_objects(self.idf, self.add_oa())
+        exc_objs_idf = IDF(StringIO(""))
+        for obj in self.exc_objs:
+            exc_objs_idf.copyidfobject(obj)
+        exc_objs_idf.saveas(f"../{self.hvac_dev_folder_name}/exc_objs.idf")
 
-    def add_zone_hvac(self, zone_dict: Dict) -> IDF:
-        local_idf = IDF(StringIO(""))
-        availability_sch_name = self.hvac_settings["hvac_schedule_names"][
-            "system_availability_schedule_name"
+        self.idf = copy_idf_objects(self.idf, hvac_pure)
+
+    def add_misc_hvac_objs(self):
+        # add thermostat
+        zonelist_name = self.idf.idfobjects["ZONELIST"][0].Name
+        zonecontrol_thermostat_dict = {
+            "key": "ZoneControl:Thermostat".upper(),
+            "Name": f"{zonelist_name} Thermostat",
+            "Zone_or_ZoneList_Name": zonelist_name,
+            "Control_Type_Schedule_Name": f"{zonelist_name} Thermostat Schedule",
+            "Control_1_Object_Type": "ThermostatSetpoint:DualSetpoint",
+            "Control_1_Name": f"{zonelist_name} Thermostat DualSP",
+        }
+        self.idf.newidfobject(**zonecontrol_thermostat_dict)
+
+        thermostatsetpoint_dualsetpoint_dict = {
+            "key": "ThermostatSetpoint:DualSetpoint".upper(),
+            "Name": f"{zonelist_name} Thermostat DualSP",
+            "Heating_Setpoint_Temperature_Schedule_Name": f"{zonelist_name} Htg Thermostat Schedule",
+            "Cooling_Setpoint_Temperature_Schedule_Name": f"{zonelist_name} Clg Thermostat Schedule",
+        }
+        self.idf.newidfobject(**thermostatsetpoint_dualsetpoint_dict)
+
+        # add thermostat schedule
+        thermostat_schedules_dict_list = [
+            {
+                "key": "Schedule:Compact".upper(),
+                "Name": f"{zonelist_name} Thermostat Schedule",
+                "Field_1": "Through: 12/31",
+                "Field_2": "For: AllDays",
+                "Field_3": "Until: 24:00",
+                "Field_4": 4,
+            },
+            {
+                "key": "Schedule:Compact".upper(),
+                "Name": f"{zonelist_name} Htg Thermostat Schedule",
+                "Field_1": "Through: 12/31",
+                "Field_2": "For: AllDays",
+                "Field_3": "Until: 24:00",
+                "Field_4": 18,
+            },
+            {
+                "key": "Schedule:Compact".upper(),
+                "Name": f"{zonelist_name} Clg Thermostat Schedule",
+                "Field_1": "Through: 12/31",
+                "Field_2": "For: AllDays",
+                "Field_3": "Until: 24:00",
+                "Field_4": 26,
+            },
         ]
-        hvaczone_kwargs = {
-            "key": "HVACTEMPLATE:ZONE:UNITARY",
-            "Zone_Name": zone_dict["zone_name"],
-            "Template_Unitary_System_Name": f"{self.system_name_prefix}{str(zone_dict['zone_id'] + 1).zfill(3)}",
-            "Template_Thermostat_Name": self.thermostat_name,
-            "Zone_Heating_Sizing_Factor": self.hvac_settings[
-                "template_unitary_defaults"
-            ]["zone_heating_sizing_factor"],
-            "Zone_Cooling_Sizing_Factor": self.hvac_settings[
-                "template_unitary_defaults"
-            ]["zone_cooling_sizing_factor"],
-            "Outdoor_Air_Method": "DetailedSpecification",  # hard code because no other choices in the current code
-            "Zone_Heating_Design_Supply_Air_Temperature": self.hvac_settings[
-                "template_unitary_defaults"
-            ]["zone_heating_design_supply_air_temperature"],
-            "Design_Specification_Outdoor_Air_Object_Name": self.oa_name,
+        for one_dict in thermostat_schedules_dict_list:
+            self.idf.newidfobject(**one_dict)
+
+        # add oa design specification
+        oa_dict = {
+            "key": "DESIGNSPECIFICATION:OUTDOORAIR",
+            "Name": "design_oa",
+            "Outdoor_Air_Method": "Sum",
+            "Outdoor_Air_Flow_per_Person": 0.00236,
+            "Outdoor_Air_Flow_per_Zone_Floor_Area": 0.0003,
         }
 
-        local_idf.newidfobject(**hvaczone_kwargs)
+        self.idf.newidfobject(**oa_dict)
 
-        hvacsystem_kwargs = {
-            "key": "HVACTEMPLATE:SYSTEM:UNITARYSYSTEM",
-            "Name": f"{self.system_name_prefix}{str(zone_dict['zone_id'] + 1).zfill(3)}",
-            "System_Availability_Schedule_Name": availability_sch_name,
-            "Control_Zone_or_Thermostat_Location_Name": zone_dict["zone_name"],
-            "Supply_Fan_Operating_Mode_Schedule_Name": self.hvac_settings[
-                "hvac_schedule_names"
-            ]["hvac_operation_schedule_name"],
-            "Cooling_Coil_Type": self.case["hvac"]["cooling_coil_type"],
-            "Cooling_Coil_Availability_Schedule_Name": availability_sch_name,
-            "Heating_Coil_Type": self.case["hvac"]["heating_coil_type"],
-            "Heating_Coil_Availability_Schedule_Name": availability_sch_name,
-            "Heating_Design_Supply_Air_Temperature": self.hvac_settings[
-                "template_unitary_defaults"
-            ]["heating_design_supply_air_temperature"],
-            "Heat_Pump_Heating_Minimum_Outdoor_DryBulb_Temperature": self.hvac_settings[
-                "template_unitary_defaults"
-            ]["heat_pump_heating_min_outdoor_temp"],
-            "Heat_Pump_Defrost_Maximum_Outdoor_DryBulb_Temperature": self.hvac_settings[
-                "template_unitary_defaults"
-            ]["heat_pump_heating_max_outdoor_temp"],
-            "Heat_Pump_Defrost_Control": self.hvac_settings[
-                "template_unitary_defaults"
-            ]["heat_pump_defrost_control"],
-            "Economizer_Type": self.economizer_type,
-            "Economizer_Lockout": self.hvac_settings["template_unitary_defaults"][
-                "economizer_lockout"
-            ],
-            "Heat_Recovery_Type": self.heat_recovery_type,
-            "Sizing_Option": self.hvac_settings["template_unitary_defaults"][
-                "sizing_option"
-            ],
-        }
+        for sizingzone in self.idf.idfobjects["SIZING:ZONE"]:
+            sizingzone["Design_Specification_Outdoor_Air_Object_Name"] = "design_oa"
 
-        local_idf.newidfobject(**hvacsystem_kwargs)
-        return local_idf
+        # TODO: modify schedule
 
-    def add_oa(self) -> IDF:
-        local_idf = IDF(StringIO(""))
-        local_idf.newidfobject(
-            "DESIGNSPECIFICATION:OUTDOORAIR",
-            Name=self.oa_name,
-            Outdoor_Air_Method=self.hvac_settings["outdoorair_defaults"][
-                "outdoor_air_method"
-            ],
-            Outdoor_Air_Flow_per_Person=self.hvac_settings["outdoorair_defaults"][
-                "outdoor_air_flow_per_person"
-            ],
-            Outdoor_Air_Flow_per_Zone_Floor_Area=self.hvac_settings[
-                "outdoorair_defaults"
-            ]["outdoor_air_flow_per_zone_floor_area"],
+    def modify_schedule_refs(self):
+        replace_osstd_schedules = read_json(
+            self.hvac_settings["replace_osstd_hvac_schedules_refs_file_path"]
         )
-        return local_idf
+        self.replacing_schedules_refs = replace_osstd_schedules[self.hvac_type]
+        for ref in self.replacing_schedules_refs:
+            if ref['Obj_name'].strip() == "*":
+                objs = self.idf.idfobjects[ref['Class'].upper().strip()]
+            else:
+                objs = []
+                objs_pre = self.idf.idfobjects[ref['Class'].upper().strip()]
+                for obj in objs_pre:
+                    if obj['Name'].lower().strip() == ref['Obj_name'].lower().strip():
+                        objs.append(obj)
+                if len(objs) != 1:
+                    print(f"ERROR: schedule ref for {ref} is not unique, please Check!")
+                    
+            field_name = ref['Field'].replace(" ", "_").strip()
+            field_value = ref['Sch_name']
+            self.batch_modify_idf_objs(objs, {field_name: field_value})
 
-    def add_thermostat(self) -> IDF:
-        local_idf = IDF(StringIO(""))
-        local_idf.newidfobject(
-            "HVACTEMPLATE:THERMOSTAT",
-            Name=self.thermostat_name,
-            Heating_Setpoint_Schedule_Name=self.hvac_settings["hvac_schedule_names"][
-                "heating_setpoint_schedule_name"
-            ],
-            Cooling_Setpoint_Schedule_Name=self.hvac_settings["hvac_schedule_names"][
-                "cooling_setpoint_schedule_name"
-            ],
-        )
-        return local_idf
+    def batch_modify_idf_objs(self, objs, property_dict: Dict):
+        for property, value in property_dict.items():
+            for obj in objs:
+                obj[property] = value            
+
+
+    def get_containing_object_types(self, idf: IDF) -> List:
+        results = []
+        totalnum = 0
+        for key, val in idf.idfobjects.items():
+            if len(val) > 0:
+                results.append(key)
+                print(f"{key}: {len(val)}")
+                totalnum += len(val)
+        print(f"Total number of objects: {totalnum}")
+        print("\n **** \n")
+        return results
+
+    def get_object_by_types(self, idf: IDF, types: List, ignore_error=True) -> List:
+        types = [type.upper().strip() for type in types]
+        all_objs = []
+        for type in types:
+            objs = idf.idfobjects[type.upper().strip()]
+            if len(objs) == 0 and (not ignore_error):
+                print(f"ERROR: {type} does not exist in the idf")
+                continue
+            all_objs.extend(list(objs))
+        return all_objs
+
+    def get_object_not_in_types(self, idf: IDF, types: List) -> List:
+        types = [type.upper().strip() for type in types]
+        exc_objs = []
+        all_types = self.get_containing_object_types(idf)
+        for type in all_types:
+            if type not in types:
+                objs = idf.idfobjects[type.upper().strip()]
+                if len(objs) == 0:
+                    print("Somthing is wrong!")
+                    continue
+                exc_objs.extend(list(objs))
+        return exc_objs
 
     def save_idf(self, path):
         self.idf.saveas(path, lineendings="unix")
+
+
+def main():
+
+    testidf = IDF("../hvac_dev/loads_added.idf")
+    test_proc_case = {"hvac": {"hvac_type": "PSZ:AC"}}
+
+    hvacadded_obj = HVAC(test_proc_case, testidf)
+    hvacadded_obj.save_idf("../hvac_dev/hvacadded.idf")
+
+if __name__ == "__main__":
+    main()
