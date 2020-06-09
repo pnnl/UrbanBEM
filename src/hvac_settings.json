@@ -6,5 +6,6 @@
         "GlobalGeometryRules"
     ],
     "excluded_osstd_hvac_obj_types_file_path": "../resources/exc_osstd_hvac_objtypes_meta.json",
+    "replace_osstd_hvac_schedules_refs_file_path": "../resources/replace_osstd_hvac_schedules_refs.json",
     "hvac_intermediate_folder_name": "hvac_dev"
 }

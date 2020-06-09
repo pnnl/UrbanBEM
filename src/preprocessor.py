@@ -26,6 +26,7 @@ class Preprocessor:
         self.construction_procedures()
         self.schedule_procedures()
         self.loads_procedures()
+        self.hvac_procedures()
 
     def geometry_procedures(self):  # general preprocess organizer
         self.populate_zone_geometry()
@@ -40,17 +41,14 @@ class Preprocessor:
     def loads_procedures(self):
         self.populate_loads()
 
+    def hvac_procedures(self):
+        self.populate_hvac()
+
     def keep_is(self):  # case properties to be moved to final case directly
         for key in self.keepkeys:
             self.case_proc[key] = self.case[key]
 
     def populate_zone_geometry(self):
-        # if self.case["data_source"] == "cbecs":
-        #     self.case_proc["zone_geometry"] = adaptors.populate_cbecs_zones(self.case)
-        # if self.case["data_source"] == "comcheck":
-        #     self.case_proc["zone_geometry"] = adaptors.populate_comcheck_zones(
-        #         self.case
-        #     )
         self.case_proc["zone_geometry"] = adaptors.populate_std_zones(self.case)
 
     def populate_hourly_schedules(self):
@@ -68,4 +66,4 @@ class Preprocessor:
         ] = adaptors.populate_std_ground_temp_jan2dec(self.case)
 
     def populate_hvac(self):
-        self.case_proc['hvac'] = adaptors.populate_std_hvac_for_osstd(self.case)
+        self.case_proc["hvac"] = adaptors.populate_std_hvac_for_osstd(self.case)

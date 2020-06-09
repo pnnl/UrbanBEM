@@ -397,7 +397,7 @@ SCHEDULE:COMPACT,
     1;                        !- Field 22
 
 SCHEDULE:COMPACT,
-    zone_list_Dining: Cafeteria/fast food Thermostat Thermostat Schedule,    !- Name
+    zone_list_Dining: Cafeteria/fast food Thermostat Schedule,    !- Name
     ,                         !- Schedule Type Limits Name
     Through: 12/31,           !- Field 1
     For: AllDays,             !- Field 2
@@ -419,21 +419,6 @@ SCHEDULE:COMPACT,
     For: AllDays,             !- Field 2
     Until: 24:00,             !- Field 3
     26;                       !- Field 4
-
-Schedule:Constant,
-    Always On Discrete,       !- Name
-    OnOff,                    !- Schedule Type Limits Name
-    1;                        !- Hourly Value
-
-Schedule:Constant,
-    Always Off Discrete,      !- Name
-    ,                         !- Schedule Type Limits Name
-    0;                        !- Hourly Value
-
-Schedule:Constant,
-    Always On Continuous,     !- Name
-    ,                         !- Schedule Type Limits Name
-    1;                        !- Hourly Value
 
 MATERIAL,
     g01_13mm_gypsum_board,    !- Name
@@ -1671,9 +1656,9 @@ Sizing:System,
 ZONECONTROL:THERMOSTAT,
     zone_list_Dining: Cafeteria/fast food Thermostat,    !- Name
     zone_list_Dining: Cafeteria/fast food,    !- Zone or ZoneList Name
-    zone_list_Dining: Cafeteria/fast food Thermostat Thermostat Schedule,    !- Control Type Schedule Name
+    zone_list_Dining: Cafeteria/fast food Thermostat Schedule,    !- Control Type Schedule Name
     ThermostatSetpoint:DualSetpoint,    !- Control 1 Object Type
-    zone_list_Dining: Cafeteria/fast food Thermostat Thermostat DualSP,    !- Control 1 Name
+    zone_list_Dining: Cafeteria/fast food Thermostat DualSP,    !- Control 1 Name
     ,                         !- Control 2 Object Type
     ,                         !- Control 2 Name
     ,                         !- Control 3 Object Type
@@ -1683,34 +1668,34 @@ ZONECONTROL:THERMOSTAT,
     0;                        !- Temperature Difference Between Cutout And Setpoint
 
 THERMOSTATSETPOINT:DUALSETPOINT,
-    zone_list_Dining: Cafeteria/fast food Thermostat Thermostat DualSP,    !- Name
+    zone_list_Dining: Cafeteria/fast food Thermostat DualSP,    !- Name
     zone_list_Dining: Cafeteria/fast food Htg Thermostat Schedule,    !- Heating Setpoint Temperature Schedule Name
     zone_list_Dining: Cafeteria/fast food Clg Thermostat Schedule;    !- Cooling Setpoint Temperature Schedule Name
 
 AirTerminal:SingleDuct:ConstantVolume:NoReheat,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Diffuser,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Diffuser Inlet Air Node,    !- Air Inlet Node Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Outlet Node Name
     AutoSize;                 !- Maximum Air Flow Rate
 
 AirTerminal:SingleDuct:ConstantVolume:NoReheat,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Diffuser,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Diffuser Inlet Air Node,    !- Air Inlet Node Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Outlet Node Name
     AutoSize;                 !- Maximum Air Flow Rate
 
 AirTerminal:SingleDuct:ConstantVolume:NoReheat,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Diffuser,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Diffuser Inlet Air Node,    !- Air Inlet Node Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Outlet Node Name
     AutoSize;                 !- Maximum Air Flow Rate
 
 AirTerminal:SingleDuct:ConstantVolume:NoReheat,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Diffuser,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Diffuser Inlet Air Node,    !- Air Inlet Node Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Outlet Node Name
     AutoSize;                 !- Maximum Air Flow Rate
@@ -1805,7 +1790,7 @@ ZoneHVAC:EquipmentConnections,
 
 Fan:ConstantVolume,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Fan,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    bldg_hvac_operation_sch,    !- Availability Schedule Name
     0.54,                     !- Fan Total Efficiency
     622.722275,               !- Pressure Rise
     AutoSize,                 !- Maximum Flow Rate
@@ -1816,7 +1801,7 @@ Fan:ConstantVolume,
 
 Fan:ConstantVolume,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Fan,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    bldg_hvac_operation_sch,    !- Availability Schedule Name
     0.54,                     !- Fan Total Efficiency
     622.722275,               !- Pressure Rise
     AutoSize,                 !- Maximum Flow Rate
@@ -1827,7 +1812,7 @@ Fan:ConstantVolume,
 
 Fan:ConstantVolume,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Fan,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    bldg_hvac_operation_sch,    !- Availability Schedule Name
     0.54,                     !- Fan Total Efficiency
     622.722275,               !- Pressure Rise
     AutoSize,                 !- Maximum Flow Rate
@@ -1838,7 +1823,7 @@ Fan:ConstantVolume,
 
 Fan:ConstantVolume,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Fan,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    bldg_hvac_operation_sch,    !- Availability Schedule Name
     0.54,                     !- Fan Total Efficiency
     622.722275,               !- Pressure Rise
     AutoSize,                 !- Maximum Flow Rate
@@ -1849,7 +1834,7 @@ Fan:ConstantVolume,
 
 Coil:Cooling:DX:SingleSpeed,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- Gross Rated Total Cooling Capacity
     Autosize,                 !- Gross Rated Sensible Heat Ratio
     3,                        !- Gross Rated Cooling COP
@@ -1881,7 +1866,7 @@ Coil:Cooling:DX:SingleSpeed,
 
 Coil:Cooling:DX:SingleSpeed,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- Gross Rated Total Cooling Capacity
     Autosize,                 !- Gross Rated Sensible Heat Ratio
     3,                        !- Gross Rated Cooling COP
@@ -1913,7 +1898,7 @@ Coil:Cooling:DX:SingleSpeed,
 
 Coil:Cooling:DX:SingleSpeed,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- Gross Rated Total Cooling Capacity
     Autosize,                 !- Gross Rated Sensible Heat Ratio
     3,                        !- Gross Rated Cooling COP
@@ -1945,7 +1930,7 @@ Coil:Cooling:DX:SingleSpeed,
 
 Coil:Cooling:DX:SingleSpeed,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- Gross Rated Total Cooling Capacity
     Autosize,                 !- Gross Rated Sensible Heat Ratio
     3,                        !- Gross Rated Cooling COP
@@ -1977,7 +1962,7 @@ Coil:Cooling:DX:SingleSpeed,
 
 Coil:Heating:Electric,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     1,                        !- Efficiency
     Autosize,                 !- Nominal Capacity
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Inlet Node Name
@@ -1986,7 +1971,7 @@ Coil:Heating:Electric,
 
 Coil:Heating:Electric,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     1,                        !- Efficiency
     Autosize,                 !- Nominal Capacity
     Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Inlet Node Name
@@ -1995,7 +1980,7 @@ Coil:Heating:Electric,
 
 Coil:Heating:Electric,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     1,                        !- Efficiency
     Autosize,                 !- Nominal Capacity
     Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Inlet Node Name
@@ -2004,7 +1989,7 @@ Coil:Heating:Electric,
 
 Coil:Heating:Electric,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     1,                        !- Efficiency
     Autosize,                 !- Nominal Capacity
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Inlet Node Name
@@ -2013,7 +1998,7 @@ Coil:Heating:Electric,
 
 Coil:Heating:Fuel,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     NaturalGas,               !- Fuel Type
     0.8,                      !- Burner Efficiency
     AutoSize,                 !- Nominal Capacity
@@ -2026,7 +2011,7 @@ Coil:Heating:Fuel,
 
 Coil:Heating:Fuel,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     NaturalGas,               !- Fuel Type
     0.8,                      !- Burner Efficiency
     AutoSize,                 !- Nominal Capacity
@@ -2039,7 +2024,7 @@ Coil:Heating:Fuel,
 
 Coil:Heating:Fuel,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     NaturalGas,               !- Fuel Type
     0.8,                      !- Burner Efficiency
     AutoSize,                 !- Nominal Capacity
@@ -2052,7 +2037,7 @@ Coil:Heating:Fuel,
 
 Coil:Heating:Fuel,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     NaturalGas,               !- Fuel Type
     0.8,                      !- Burner Efficiency
     AutoSize,                 !- Nominal Capacity
@@ -2065,7 +2050,7 @@ Coil:Heating:Fuel,
 
 CoilSystem:Cooling:DX,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
@@ -2074,7 +2059,7 @@ CoilSystem:Cooling:DX,
 
 CoilSystem:Cooling:DX,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
@@ -2083,7 +2068,7 @@ CoilSystem:Cooling:DX,
 
 CoilSystem:Cooling:DX,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
@@ -2092,7 +2077,7 @@ CoilSystem:Cooling:DX,
 
 CoilSystem:Cooling:DX,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
@@ -2116,7 +2101,7 @@ Controller:OutdoorAir,
     ,                         !- Economizer Minimum Limit DryBulb Temperature
     NoLockout,                !- Lockout Type
     FixedMinimum,             !- Minimum Limit Type
-    Always On Discrete,       !- Minimum Outdoor Air Schedule Name
+    always_on,                !- Minimum Outdoor Air Schedule Name
     ,                         !- Minimum Fraction of Outdoor Air Schedule Name
     ,                         !- Maximum Fraction of Outdoor Air Schedule Name
     Controller Mechanical Ventilation 1,    !- Mechanical Ventilation Controller Name
@@ -2144,7 +2129,7 @@ Controller:OutdoorAir,
     ,                         !- Economizer Minimum Limit DryBulb Temperature
     NoLockout,                !- Lockout Type
     FixedMinimum,             !- Minimum Limit Type
-    Always On Discrete,       !- Minimum Outdoor Air Schedule Name
+    always_on,                !- Minimum Outdoor Air Schedule Name
     ,                         !- Minimum Fraction of Outdoor Air Schedule Name
     ,                         !- Maximum Fraction of Outdoor Air Schedule Name
     Controller Mechanical Ventilation 2,    !- Mechanical Ventilation Controller Name
@@ -2172,7 +2157,7 @@ Controller:OutdoorAir,
     ,                         !- Economizer Minimum Limit DryBulb Temperature
     NoLockout,                !- Lockout Type
     FixedMinimum,             !- Minimum Limit Type
-    Always On Discrete,       !- Minimum Outdoor Air Schedule Name
+    always_on,                !- Minimum Outdoor Air Schedule Name
     ,                         !- Minimum Fraction of Outdoor Air Schedule Name
     ,                         !- Maximum Fraction of Outdoor Air Schedule Name
     Controller Mechanical Ventilation 4,    !- Mechanical Ventilation Controller Name
@@ -2200,7 +2185,7 @@ Controller:OutdoorAir,
     ,                         !- Economizer Minimum Limit DryBulb Temperature
     NoLockout,                !- Lockout Type
     FixedMinimum,             !- Minimum Limit Type
-    Always On Discrete,       !- Minimum Outdoor Air Schedule Name
+    always_on,                !- Minimum Outdoor Air Schedule Name
     ,                         !- Minimum Fraction of Outdoor Air Schedule Name
     ,                         !- Maximum Fraction of Outdoor Air Schedule Name
     Controller Mechanical Ventilation 3,    !- Mechanical Ventilation Controller Name
@@ -2213,7 +2198,7 @@ Controller:OutdoorAir,
 
 Controller:MechanicalVentilation,
     Controller Mechanical Ventilation 1,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     No,                       !- Demand Controlled Ventilation
     ZoneSum,                  !- System Outdoor Air Method
     ,                         !- Zone Maximum Outdoor Air Fraction
@@ -2223,7 +2208,7 @@ Controller:MechanicalVentilation,
 
 Controller:MechanicalVentilation,
     Controller Mechanical Ventilation 2,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     No,                       !- Demand Controlled Ventilation
     ZoneSum,                  !- System Outdoor Air Method
     ,                         !- Zone Maximum Outdoor Air Fraction
@@ -2233,7 +2218,7 @@ Controller:MechanicalVentilation,
 
 Controller:MechanicalVentilation,
     Controller Mechanical Ventilation 4,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     No,                       !- Demand Controlled Ventilation
     ZoneSum,                  !- System Outdoor Air Method
     ,                         !- Zone Maximum Outdoor Air Fraction
@@ -2243,7 +2228,7 @@ Controller:MechanicalVentilation,
 
 Controller:MechanicalVentilation,
     Controller Mechanical Ventilation 3,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     No,                       !- Demand Controlled Ventilation
     ZoneSum,                  !- System Outdoor Air Method
     ,                         !- Zone Maximum Outdoor Air Fraction
@@ -2672,24 +2657,24 @@ OutdoorAir:NodeList,
 
 AvailabilityManager:Scheduled,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System Availability Manager,    !- Name
-    Always On Discrete;       !- Schedule Name
+    always_on;                !- Schedule Name
 
 AvailabilityManager:Scheduled,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System Availability Manager,    !- Name
-    Always On Discrete;       !- Schedule Name
+    always_on;                !- Schedule Name
 
 AvailabilityManager:Scheduled,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System Availability Manager,    !- Name
-    Always On Discrete;       !- Schedule Name
+    always_on;                !- Schedule Name
 
 AvailabilityManager:Scheduled,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Availability Manager,    !- Name
-    Always On Discrete;       !- Schedule Name
+    always_on;                !- Schedule Name
 
 AvailabilityManager:NightCycle,
     Availability Manager Night Cycle 1,    !- Name
-    Always On Discrete,       !- Applicability Schedule Name
-    Always On Discrete,       !- Fan Schedule Name
+    always_on,                !- Applicability Schedule Name
+    always_on,                !- Fan Schedule Name
     CycleOnAny,               !- Control Type
     1,                        !- Thermostat Tolerance
     FixedRunTime,             !- Cycling Run Time Control Type
@@ -2697,8 +2682,8 @@ AvailabilityManager:NightCycle,
 
 AvailabilityManager:NightCycle,
     Availability Manager Night Cycle 2,    !- Name
-    Always On Discrete,       !- Applicability Schedule Name
-    Always On Discrete,       !- Fan Schedule Name
+    always_on,                !- Applicability Schedule Name
+    always_on,                !- Fan Schedule Name
     CycleOnAny,               !- Control Type
     1,                        !- Thermostat Tolerance
     FixedRunTime,             !- Cycling Run Time Control Type
@@ -2706,8 +2691,8 @@ AvailabilityManager:NightCycle,
 
 AvailabilityManager:NightCycle,
     Availability Manager Night Cycle 4,    !- Name
-    Always On Discrete,       !- Applicability Schedule Name
-    Always On Discrete,       !- Fan Schedule Name
+    always_on,                !- Applicability Schedule Name
+    always_on,                !- Fan Schedule Name
     CycleOnAny,               !- Control Type
     1,                        !- Thermostat Tolerance
     FixedRunTime,             !- Cycling Run Time Control Type
@@ -2715,8 +2700,8 @@ AvailabilityManager:NightCycle,
 
 AvailabilityManager:NightCycle,
     Availability Manager Night Cycle 3,    !- Name
-    Always On Discrete,       !- Applicability Schedule Name
-    Always On Discrete,       !- Fan Schedule Name
+    always_on,                !- Applicability Schedule Name
+    always_on,                !- Fan Schedule Name
     CycleOnAny,               !- Control Type
     1,                        !- Thermostat Tolerance
     FixedRunTime,             !- Cycling Run Time Control Type

@@ -349,7 +349,7 @@ def populate_std_hvac_for_osstd(case: Dict) -> Dict:
     """
 
     hvac = {
-        "system_type": "PSZ-AC",
+        "hvac_type": "PSZ:AC",
         "main_heat_fuel": "NaturalGas",
         "zone_heat_fuel": None,
         "cool_fuel": None,

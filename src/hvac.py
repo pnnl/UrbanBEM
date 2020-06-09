@@ -22,12 +22,14 @@ class HVAC:
         self.hvac_type = self.case["hvac"]["hvac_type"]
         self.pure_hvac_objs = None
         self.exc_obj_types = None
+        self.replacing_schedules_refs = None
 
         # run modeling strategy
         self.generate_osstd_input_idf()
         self.run_osstd_rubycall()
         self.clean_up_save_add_osstd_output()
         self.add_misc_hvac_objs()
+        self.modify_schedule_refs()
 
     def generate_osstd_input_idf(self):
         exc_hvac_meta = read_json(
@@ -91,15 +93,15 @@ class HVAC:
             "key": "ZoneControl:Thermostat".upper(),
             "Name": f"{zonelist_name} Thermostat",
             "Zone_or_ZoneList_Name": zonelist_name,
-            "Control_Type_Schedule_Name": f"{zonelist_name} Thermostat Thermostat Schedule",
+            "Control_Type_Schedule_Name": f"{zonelist_name} Thermostat Schedule",
             "Control_1_Object_Type": "ThermostatSetpoint:DualSetpoint",
-            "Control_1_Name": f"{zonelist_name} Thermostat Thermostat DualSP",
+            "Control_1_Name": f"{zonelist_name} Thermostat DualSP",
         }
         self.idf.newidfobject(**zonecontrol_thermostat_dict)
 
         thermostatsetpoint_dualsetpoint_dict = {
             "key": "ThermostatSetpoint:DualSetpoint".upper(),
-            "Name": f"{zonelist_name} Thermostat Thermostat DualSP",
+            "Name": f"{zonelist_name} Thermostat DualSP",
             "Heating_Setpoint_Temperature_Schedule_Name": f"{zonelist_name} Htg Thermostat Schedule",
             "Cooling_Setpoint_Temperature_Schedule_Name": f"{zonelist_name} Clg Thermostat Schedule",
         }
@@ -109,7 +111,7 @@ class HVAC:
         thermostat_schedules_dict_list = [
             {
                 "key": "Schedule:Compact".upper(),
-                "Name": f"{zonelist_name} Thermostat Thermostat Schedule",
+                "Name": f"{zonelist_name} Thermostat Schedule",
                 "Field_1": "Through: 12/31",
                 "Field_2": "For: AllDays",
                 "Field_3": "Until: 24:00",
@@ -150,6 +152,33 @@ class HVAC:
             sizingzone["Design_Specification_Outdoor_Air_Object_Name"] = "design_oa"
 
         # TODO: modify schedule
+
+    def modify_schedule_refs(self):
+        replace_osstd_schedules = read_json(
+            self.hvac_settings["replace_osstd_hvac_schedules_refs_file_path"]
+        )
+        self.replacing_schedules_refs = replace_osstd_schedules[self.hvac_type]
+        for ref in self.replacing_schedules_refs:
+            if ref['Obj_name'].strip() == "*":
+                objs = self.idf.idfobjects[ref['Class'].upper().strip()]
+            else:
+                objs = []
+                objs_pre = self.idf.idfobjects[ref['Class'].upper().strip()]
+                for obj in objs_pre:
+                    if obj['Name'].lower().strip() == ref['Obj_name'].lower().strip():
+                        objs.append(obj)
+                if len(objs) != 1:
+                    print(f"ERROR: schedule ref for {ref} is not unique, please Check!")
+                    
+            field_name = ref['Field'].replace(" ", "_").strip()
+            field_value = ref['Sch_name']
+            self.batch_modify_idf_objs(objs, {field_name: field_value})
+
+    def batch_modify_idf_objs(self, objs, property_dict: Dict):
+        for property, value in property_dict.items():
+            for obj in objs:
+                obj[property] = value            
+
 
     def get_containing_object_types(self, idf: IDF) -> List:
         results = []

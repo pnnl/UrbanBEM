@@ -62,6 +62,8 @@ loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)
 loadadded_obj.save_idf("../devoutput/loads_added.idf")
 
 # %% hvac processor
-with open("../input/processed_inputs/std_hvac_dev.json") as f:
-    idf1_hvacadded = HVAC(json.load(f), idf1_lds.idf)
-idf1_hvacadded.save_idf("../devoutput/hvacadded1.idf")
+hvacadded_obj = HVAC(proc_case, loadadded_obj.idf)
+hvacadded_obj.save_idf("../devoutput/hvac_added.idf")
+# with open("../input/processed_inputs/std_hvac_dev.json") as f:
+#     idf1_hvacadded = HVAC(json.load(f), idf1_lds.idf)
+# idf1_hvacadded.save_idf("../devoutput/hvacadded1.idf")
