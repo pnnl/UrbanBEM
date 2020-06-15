@@ -21,14 +21,15 @@ import recipes
 
 IDF.setiddname("../resources/Energy+V9_0_1.idd")
 
+#%% case name
+casename = "cbecs3"
+
 
 #%% load minimal idf
 idf = IDF("../resources/idfs/Minimal.idf")
-casename = "cbecs3"
 case_path = f"../input/std_json_raw/{casename}.json"
 
 #%% convert units
-
 with open(case_path) as f:
     case = json.load(f)
 
@@ -64,6 +65,3 @@ loadadded_obj.save_idf("../devoutput/loads_added.idf")
 # %% hvac processor
 hvacadded_obj = HVAC(proc_case, loadadded_obj.idf)
 hvacadded_obj.save_idf("../devoutput/hvac_added.idf")
-# with open("../input/processed_inputs/std_hvac_dev.json") as f:
-#     idf1_hvacadded = HVAC(json.load(f), idf1_lds.idf)
-# idf1_hvacadded.save_idf("../devoutput/hvacadded1.idf")

@@ -7,7 +7,7 @@ import os
 os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")
 
 #%%
-data = pd.read_excel("../input/cbecs-standardized.xlsx")
+data = pd.read_excel("../input/cbecs-standardized-200604.xlsx")
 
 #%%
 std_cols = data.columns.values.tolist()
@@ -22,9 +22,6 @@ for index, row in tqdm(data.iterrows(), total=data.shape[0]):
     with open(fname, "w") as f:
         f.write(json.dumps(case, indent=4))
         print(f"{fname} saved")
-    if i > 3:
-        break  # TODO: delete this after dev
+    # if i > 3:
+    #     break  # TODO: delete this after dev
     i += 1
-
-
-# %%
