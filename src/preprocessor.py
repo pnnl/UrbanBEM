@@ -16,7 +16,8 @@ class Preprocessor:
             "gross_conditioned_area",
             "heating_system_type",
             "cooling_system_type",
-            "ventilation_rate",
+            "ventilation_rate_per_person",
+            "ventilation_rate_per_area",
             "economizer_used",
             "heat_recovery_used",
         ]
