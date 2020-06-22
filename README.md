@@ -4,6 +4,34 @@
 
 WIP
 
+## `src` folder structure
+
+| file name                      | Usage                                                                             |
+| ------------------------------ | --------------------------------------------------------------------------------- |
+| adaptors.py                    | adaptors for converting cbecs data to processor input                             |
+| construction_meta_validator.py | validate construction meta json file (`../resources/construction_meta.json`)      |
+| constructions.py               | construction processor                                                            |
+| generate_hvac.rb               | ruby osstd hvac generation call file                                              |
+| geometry.py                    | geometry processor                                                                |
+| geometry_settings.json         | geometry processor config file                                                    |
+| hvac.py                        | hvac processor                                                                    |
+| hvac_settings.json             | hvac processor config file                                                        |
+| loads.py                       | loads processor                                                                   |
+| loads_settings.json            | loads processor config file                                                       |
+| new_hvac.py                    | temperary hvac testing file for new hvac systems, not used in production workflow |
+| preprocessor.py                | proprocessor used for organizing adaptors                                         |
+| processed_loads_sample.json    | temporary file to show loads input format                                         |
+| processed_schedule_sample.json | temporary file to show schedule input format                                      |
+| rbcalls                        | temporary folder for ruby calls testing                                           |
+| recipes.py                     | utility functions imported and used in other places                               |
+| reference-2020-04-30.bib       | accidentally added ? lol ;D                                                       |
+| schedule.py                    | schedule processor                                                                |
+| schedule_database.json         | used by schedule processor, probably should be put in resources folder            |
+| schedule_preparation.py        | used by schedule processor                                                        |
+| schedule_settings.json         | schedule processor config file                                                    |
+| standard_excel_processor.py    | generate raw input json files from excel spreadsheet                              |
+| workflow.py                    | python cells to execute the whole workflow                                        |
+
 ## Usage
 
 (Airflow adoption on the new implementation is on hold.)
