@@ -104,8 +104,8 @@ zones_translated = IDF("../hvac_dev/zones_translated.idf")
 zones_hvacadded = IDF("../hvac_dev/zones_hvacadded.idf")
 
 #%%
-zones_idf_objtypes = get_containing_object_types(zones_idf)
-zones_translated_objtypes = get_containing_object_types(zones_translated)
+# zones_idf_objtypes = get_containing_object_types(zones_idf)
+# zones_translated_objtypes = get_containing_object_types(zones_translated)
 zones_hvacadded_objtypes = get_containing_object_types(zones_hvacadded)
 
 ### Part of code to test new systems END

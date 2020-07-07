@@ -20,16 +20,15 @@ osm = trans.translateWorkspace(idf)
 
 # TODO: For dev purpose. Need refactor for production
 
-# PSZ:AC 
+# PSZ, Gas, SingleSpeedDX
 # standard.model_add_hvac_system(osm, "PSZ-AC", "NaturalGas", nil, nil, osm.getThermalZones, air_loop_heating_type: "Gas")
 
-# PSZ:HP
-# standard.model_add_hvac_system(osm, "PSZ-HP", nil, nil, nil, osm.getThermalZones)
+# VAV, HotWater, ChilledWater
+standard.model_add_hvac_system(osm, "VAV Reheat", "NaturalGas", "NaturalGas", nil, osm.getThermalZones, hot_water_loop_type: "HighTemperature", chilled_water_loop_cooling_type: "AirCooled", air_loop_cooling_type: "Water")
 
-# Multi-zone VAV with elec reheat
-standard.model_add_hvac_system(osm, "VAV Reheat", "NaturalGas", "Electricity", nil, osm.getThermalZones)
+# PSZ, Electric, SingleSpeedDX
+# standard.model_add_hvac_system(osm, "PSZ-AC", "Electricity", "Electricity", nil, osm.getThermalZones, air_loop_heating_type: nil)
 
-# PSZ:
 trans = OpenStudio::EnergyPlus::ForwardTranslator.new
 idf = trans.translateModel(osm)
 idf.save("../hvac_dev/zones_hvacadded.idf", true)

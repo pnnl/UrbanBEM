@@ -1,19 +1,8 @@
 # Object type deltas for OSSTD hvac call
 
-## PSZ-AC
+## Original objects counts
 
-### Ruby call
-
-```ruby
-standard.model_add_hvac_system(osm, "PSZ-AC", "NaturalGas", nil, nil, osm.getThermalZones, air_loop_heating_type: "Gas")
-```
-
-### Objects comaprison 
-
-Ordered as
-1. osstd input
-2. osstd direct translate
-3. osstd output after hvac call
+### OSSTD input
 
 ```
 BUILDING: 1
@@ -21,9 +10,11 @@ SIZINGPERIOD:DESIGNDAY: 2
 GLOBALGEOMETRYRULES: 1
 ZONE: 4
 Total number of objects: 8
+```
 
- **** 
+### OSSTD direct translate
 
+```
 VERSION: 1
 SIMULATIONCONTROL: 1
 BUILDING: 1
@@ -42,9 +33,20 @@ OUTPUT:TABLE:SUMMARYREPORTS: 1
 OUTPUTCONTROL:TABLE:STYLE: 1
 OUTPUT:SQLITE: 1
 Total number of objects: 26
+```
 
- **** 
+## PSZ, Gas, SingleSpeedDX
 
+### Ruby call
+
+```ruby
+# PSZ, Gas, SingleSpeedDX
+standard.model_add_hvac_system(osm, "PSZ-AC", "NaturalGas", nil, nil, osm.getThermalZones, air_loop_heating_type: "Gas")
+```
+
+### Objects after the call
+
+```
 VERSION: 1
 SIMULATIONCONTROL: 1
 BUILDING: 1
@@ -101,51 +103,18 @@ OUTPUT:SQLITE: 1
 Total number of objects: 225
 ```
 
-## PSZ-HP
+## PSZ, Electric, SingleSpeedDX
 
 ### Ruby call
+
 ```ruby
-standard.model_add_hvac_system(osm, "PSZ-HP", nil, nil, nil, osm.getThermalZones)
+# PSZ, Electric, SingleSpeedDX
+standard.model_add_hvac_system(osm, "PSZ-AC", "Electricity", "Electricity", nil, osm.getThermalZones, air_loop_heating_type: nil)
 ```
 
-### Objects comaprison 
-
-Ordered as
-1. osstd input
-2. osstd direct translate
-3. osstd output after hvac call
+### Objects after the call
 
 ```
-
-BUILDING: 1
-SIZINGPERIOD:DESIGNDAY: 2
-GLOBALGEOMETRYRULES: 1
-ZONE: 4
-Total number of objects: 8
-
- **** 
-
-VERSION: 1
-SIMULATIONCONTROL: 1
-BUILDING: 1
-TIMESTEP: 1
-RUNPERIOD: 1
-SCHEDULE:CONSTANT: 3
-GLOBALGEOMETRYRULES: 1
-ZONE: 4
-SIZING:PARAMETERS: 1
-OUTDOORAIR:NODE: 1
-LIFECYCLECOST:PARAMETERS: 1
-LIFECYCLECOST:NONRECURRINGCOST: 1
-LIFECYCLECOST:USEPRICEESCALATION: 5
-OUTPUT:VARIABLEDICTIONARY: 1
-OUTPUT:TABLE:SUMMARYREPORTS: 1
-OUTPUTCONTROL:TABLE:STYLE: 1
-OUTPUT:SQLITE: 1
-Total number of objects: 26
-
- **** 
-
 VERSION: 1
 SIMULATIONCONTROL: 1
 BUILDING: 1
@@ -166,10 +135,8 @@ ZONEHVAC:EQUIPMENTLIST: 4
 ZONEHVAC:EQUIPMENTCONNECTIONS: 4
 FAN:CONSTANTVOLUME: 4
 COIL:COOLING:DX:SINGLESPEED: 4
-COIL:HEATING:ELECTRIC: 4
-COIL:HEATING:DX:SINGLESPEED: 4
+COIL:HEATING:ELECTRIC: 8
 COILSYSTEM:COOLING:DX: 4
-COILSYSTEM:HEATING:DX: 4
 CONTROLLER:OUTDOORAIR: 4
 CONTROLLER:MECHANICALVENTILATION: 4
 AIRLOOPHVAC:CONTROLLERLIST: 4
@@ -191,9 +158,8 @@ AVAILABILITYMANAGER:NIGHTCYCLE: 4
 AVAILABILITYMANAGERASSIGNMENTLIST: 8
 SETPOINTMANAGER:SINGLEZONE:REHEAT: 4
 SETPOINTMANAGER:MIXEDAIR: 16
-CURVE:QUADRATIC: 40
-CURVE:CUBIC: 24
-CURVE:BIQUADRATIC: 24
+CURVE:QUADRATIC: 24
+CURVE:BIQUADRATIC: 16
 LIFECYCLECOST:PARAMETERS: 1
 LIFECYCLECOST:NONRECURRINGCOST: 1
 LIFECYCLECOST:USEPRICEESCALATION: 5
@@ -201,49 +167,21 @@ OUTPUT:VARIABLEDICTIONARY: 1
 OUTPUT:TABLE:SUMMARYREPORTS: 1
 OUTPUTCONTROL:TABLE:STYLE: 1
 OUTPUT:SQLITE: 1
-Total number of objects: 277
+Total number of objects: 225
 ```
 
-## multi-zone VAV with elec reheat
+## VAV, HotWater, ChilledWater
 
 ### Ruby call
+
 ```ruby
-standard.model_add_hvac_system(osm, "VAV Reheat", "NaturalGas", "Electricity", nil, osm.getThermalZones)
+# VAV, HotWater, ChilledWater
+standard.model_add_hvac_system(osm, "VAV Reheat", "NaturalGas", "NaturalGas", nil, osm.getThermalZones, hot_water_loop_type: "HighTemperature", chilled_water_loop_cooling_type: "AirCooled", air_loop_cooling_type: "Water")
 ```
 
-### Objects comaprison 
+### Objects after the call
 
 ```
-
-BUILDING: 1
-SIZINGPERIOD:DESIGNDAY: 2
-GLOBALGEOMETRYRULES: 1
-ZONE: 4
-Total number of objects: 8
-
- **** 
-
-VERSION: 1
-SIMULATIONCONTROL: 1
-BUILDING: 1
-TIMESTEP: 1
-RUNPERIOD: 1
-SCHEDULE:CONSTANT: 3
-GLOBALGEOMETRYRULES: 1
-ZONE: 4
-SIZING:PARAMETERS: 1
-OUTDOORAIR:NODE: 1
-LIFECYCLECOST:PARAMETERS: 1
-LIFECYCLECOST:NONRECURRINGCOST: 1
-LIFECYCLECOST:USEPRICEESCALATION: 5
-OUTPUT:VARIABLEDICTIONARY: 1
-OUTPUT:TABLE:SUMMARYREPORTS: 1
-OUTPUTCONTROL:TABLE:STYLE: 1
-OUTPUT:SQLITE: 1
-Total number of objects: 26
-
- **** 
-
 VERSION: 1
 SIMULATIONCONTROL: 1
 BUILDING: 1
@@ -312,6 +250,4 @@ OUTPUT:TABLE:SUMMARYREPORTS: 1
 OUTPUTCONTROL:TABLE:STYLE: 1
 OUTPUT:SQLITE: 1
 Total number of objects: 145
-
- **** 
- ```
+```
