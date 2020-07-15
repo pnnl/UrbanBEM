@@ -8,27 +8,27 @@ ScheduleTypeLimits,
     availability;             !- Unit Type
 
 DesignSpecification:ZoneAirDistribution,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Design Spec Zone Air Dist,    !- Name
+    Block Workshop_east_zone Storey 0 Design Spec Zone Air Dist,    !- Name
     1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
     1;                        !- Zone Air Distribution Effectiveness in Heating Mode
 
 DesignSpecification:ZoneAirDistribution,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Design Spec Zone Air Dist,    !- Name
+    Block Workshop_north_zone Storey 0 Design Spec Zone Air Dist,    !- Name
     1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
     1;                        !- Zone Air Distribution Effectiveness in Heating Mode
 
 DesignSpecification:ZoneAirDistribution,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Design Spec Zone Air Dist,    !- Name
+    Block Workshop_south_zone Storey 0 Design Spec Zone Air Dist,    !- Name
     1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
     1;                        !- Zone Air Distribution Effectiveness in Heating Mode
 
 DesignSpecification:ZoneAirDistribution,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Design Spec Zone Air Dist,    !- Name
+    Block Workshop_west_zone Storey 0 Design Spec Zone Air Dist,    !- Name
     1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
     1;                        !- Zone Air Distribution Effectiveness in Heating Mode
 
 Sizing:Zone,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Zone or ZoneList Name
+    Block Workshop_east_zone Storey 0,    !- Zone or ZoneList Name
     SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
     12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
     11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
@@ -50,11 +50,11 @@ Sizing:Zone,
     0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
     0.1415762,                !- Heating Maximum Air Flow
     0.3,                      !- Heating Maximum Air Flow Fraction
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    Block Workshop_east_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:Zone,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone or ZoneList Name
+    Block Workshop_north_zone Storey 0,    !- Zone or ZoneList Name
     SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
     12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
     11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
@@ -76,11 +76,11 @@ Sizing:Zone,
     0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
     0.1415762,                !- Heating Maximum Air Flow
     0.3,                      !- Heating Maximum Air Flow Fraction
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    Block Workshop_north_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:Zone,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone or ZoneList Name
+    Block Workshop_south_zone Storey 0,    !- Zone or ZoneList Name
     SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
     12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
     11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
@@ -102,11 +102,11 @@ Sizing:Zone,
     0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
     0.1415762,                !- Heating Maximum Air Flow
     0.3,                      !- Heating Maximum Air Flow Fraction
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    Block Workshop_south_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:Zone,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone or ZoneList Name
+    Block Workshop_west_zone Storey 0,    !- Zone or ZoneList Name
     SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
     12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
     11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
@@ -128,11 +128,11 @@ Sizing:Zone,
     0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
     0.1415762,                !- Heating Maximum Air Flow
     0.3,                      !- Heating Maximum Air Flow Fraction
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    Block Workshop_west_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:System,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC,    !- AirLoop Name
+    Block Workshop_east_zone Storey 0 PSZ-AC,    !- AirLoop Name
     Sensible,                 !- Type of Load to Size On
     Autosize,                 !- Design Outdoor Air Flow Rate
     1,                        !- Central Heating Maximum System Air Flow Ratio
@@ -171,7 +171,7 @@ Sizing:System,
     OnOff;                    !- Central Cooling Capacity Control Method
 
 Sizing:System,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC,    !- AirLoop Name
+    Block Workshop_north_zone Storey 0 PSZ-AC,    !- AirLoop Name
     Sensible,                 !- Type of Load to Size On
     Autosize,                 !- Design Outdoor Air Flow Rate
     1,                        !- Central Heating Maximum System Air Flow Ratio
@@ -210,7 +210,7 @@ Sizing:System,
     OnOff;                    !- Central Cooling Capacity Control Method
 
 Sizing:System,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC,    !- AirLoop Name
+    Block Workshop_south_zone Storey 0 PSZ-AC,    !- AirLoop Name
     Sensible,                 !- Type of Load to Size On
     Autosize,                 !- Design Outdoor Air Flow Rate
     1,                        !- Central Heating Maximum System Air Flow Ratio
@@ -249,7 +249,7 @@ Sizing:System,
     OnOff;                    !- Central Cooling Capacity Control Method
 
 Sizing:System,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC,    !- AirLoop Name
+    Block Workshop_west_zone Storey 0 PSZ-AC,    !- AirLoop Name
     Sensible,                 !- Type of Load to Size On
     Autosize,                 !- Design Outdoor Air Flow Rate
     1,                        !- Central Heating Maximum System Air Flow Ratio
@@ -288,175 +288,175 @@ Sizing:System,
     OnOff;                    !- Central Cooling Capacity Control Method
 
 AirTerminal:SingleDuct:ConstantVolume:NoReheat,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Diffuser,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Diffuser,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Diffuser Inlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Diffuser Inlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Outlet Node Name
     AutoSize;                 !- Maximum Air Flow Rate
 
 AirTerminal:SingleDuct:ConstantVolume:NoReheat,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Diffuser,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Diffuser,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Diffuser Inlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Diffuser Inlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Outlet Node Name
     AutoSize;                 !- Maximum Air Flow Rate
 
 AirTerminal:SingleDuct:ConstantVolume:NoReheat,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Diffuser,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Diffuser,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Diffuser Inlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Diffuser Inlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Outlet Node Name
     AutoSize;                 !- Maximum Air Flow Rate
 
 AirTerminal:SingleDuct:ConstantVolume:NoReheat,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Diffuser,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Diffuser,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Diffuser Inlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Diffuser Inlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Outlet Node Name
     AutoSize;                 !- Maximum Air Flow Rate
 
 ZoneHVAC:AirDistributionUnit,
-    ADU Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Diffuser,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    ADU Block Workshop_east_zone Storey 0 PSZ-AC Diffuser,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
     AirTerminal:SingleDuct:ConstantVolume:NoReheat,    !- Air Terminal Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Diffuser;    !- Air Terminal Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Diffuser;    !- Air Terminal Name
 
 ZoneHVAC:AirDistributionUnit,
-    ADU Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Diffuser,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    ADU Block Workshop_north_zone Storey 0 PSZ-AC Diffuser,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
     AirTerminal:SingleDuct:ConstantVolume:NoReheat,    !- Air Terminal Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Diffuser;    !- Air Terminal Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Diffuser;    !- Air Terminal Name
 
 ZoneHVAC:AirDistributionUnit,
-    ADU Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Diffuser,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    ADU Block Workshop_south_zone Storey 0 PSZ-AC Diffuser,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
     AirTerminal:SingleDuct:ConstantVolume:NoReheat,    !- Air Terminal Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Diffuser;    !- Air Terminal Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Diffuser;    !- Air Terminal Name
 
 ZoneHVAC:AirDistributionUnit,
-    ADU Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Diffuser,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    ADU Block Workshop_west_zone Storey 0 PSZ-AC Diffuser,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
     AirTerminal:SingleDuct:ConstantVolume:NoReheat,    !- Air Terminal Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Diffuser;    !- Air Terminal Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Diffuser;    !- Air Terminal Name
 
 ZoneHVAC:EquipmentList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Equipment List,    !- Name
+    Block Workshop_east_zone Storey 0 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
-    ADU Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Diffuser,    !- Zone Equipment 1 Name
+    ADU Block Workshop_east_zone Storey 0 PSZ-AC Diffuser,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
     1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
 
 ZoneHVAC:EquipmentList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Equipment List,    !- Name
+    Block Workshop_north_zone Storey 0 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
-    ADU Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Diffuser,    !- Zone Equipment 1 Name
+    ADU Block Workshop_north_zone Storey 0 PSZ-AC Diffuser,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
     1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
 
 ZoneHVAC:EquipmentList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Equipment List,    !- Name
+    Block Workshop_south_zone Storey 0 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
-    ADU Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Diffuser,    !- Zone Equipment 1 Name
+    ADU Block Workshop_south_zone Storey 0 PSZ-AC Diffuser,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
     1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
 
 ZoneHVAC:EquipmentList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Equipment List,    !- Name
+    Block Workshop_west_zone Storey 0 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
-    ADU Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Diffuser,    !- Zone Equipment 1 Name
+    ADU Block Workshop_west_zone Storey 0 PSZ-AC Diffuser,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
     1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
 
 ZoneHVAC:EquipmentConnections,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Zone Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    Block Workshop_east_zone Storey 0,    !- Zone Name
+    Block Workshop_east_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block Workshop_east_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
     ,                         !- Zone Air Exhaust Node or NodeList Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
+    Block Workshop_east_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
+    Block Workshop_east_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 ZoneHVAC:EquipmentConnections,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    Block Workshop_north_zone Storey 0,    !- Zone Name
+    Block Workshop_north_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block Workshop_north_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
     ,                         !- Zone Air Exhaust Node or NodeList Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
+    Block Workshop_north_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
+    Block Workshop_north_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 ZoneHVAC:EquipmentConnections,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    Block Workshop_south_zone Storey 0,    !- Zone Name
+    Block Workshop_south_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block Workshop_south_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
     ,                         !- Zone Air Exhaust Node or NodeList Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
+    Block Workshop_south_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
+    Block Workshop_south_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 ZoneHVAC:EquipmentConnections,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    Block Workshop_west_zone Storey 0,    !- Zone Name
+    Block Workshop_west_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block Workshop_west_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
     ,                         !- Zone Air Exhaust Node or NodeList Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
+    Block Workshop_west_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
+    Block Workshop_west_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 Fan:ConstantVolume,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Fan,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Fan,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     0.54,                     !- Fan Total Efficiency
     622.722275,               !- Pressure Rise
     AutoSize,                 !- Maximum Flow Rate
     0.9,                      !- Motor Efficiency
     1,                        !- Motor In Airstream Fraction
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Air Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Air Outlet Node Name
 
 Fan:ConstantVolume,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Fan,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Fan,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     0.54,                     !- Fan Total Efficiency
     622.722275,               !- Pressure Rise
     AutoSize,                 !- Maximum Flow Rate
     0.9,                      !- Motor Efficiency
     1,                        !- Motor In Airstream Fraction
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Air Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Air Outlet Node Name
 
 Fan:ConstantVolume,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Fan,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Fan,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     0.54,                     !- Fan Total Efficiency
     622.722275,               !- Pressure Rise
     AutoSize,                 !- Maximum Flow Rate
     0.9,                      !- Motor Efficiency
     1,                        !- Motor In Airstream Fraction
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Air Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Air Outlet Node Name
 
 Fan:ConstantVolume,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Fan,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Fan,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     0.54,                     !- Fan Total Efficiency
     622.722275,               !- Pressure Rise
     AutoSize,                 !- Maximum Flow Rate
     0.9,                      !- Motor Efficiency
     1,                        !- Motor In Airstream Fraction
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Air Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Air Outlet Node Name
 
 Coil:Cooling:DX:SingleSpeed,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- Gross Rated Total Cooling Capacity
     Autosize,                 !- Gross Rated Sensible Heat Ratio
     3,                        !- Gross Rated Cooling COP
     Autosize,                 !- Rated Air Flow Rate
     773.3,                    !- Rated Evaporator Fan Power Per Volume Flow Rate
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Mixed Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Mixed Air Node,    !- Air Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Outlet Node Name
     Curve Biquadratic 3,      !- Total Cooling Capacity Function of Temperature Curve Name
     Curve Quadratic 4,        !- Total Cooling Capacity Function of Flow Fraction Curve Name
     Curve Biquadratic 4,      !- Energy Input Ratio Function of Temperature Curve Name
@@ -480,15 +480,15 @@ Coil:Cooling:DX:SingleSpeed,
     10;                       !- Basin Heater Setpoint Temperature
 
 Coil:Cooling:DX:SingleSpeed,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- Gross Rated Total Cooling Capacity
     Autosize,                 !- Gross Rated Sensible Heat Ratio
     3,                        !- Gross Rated Cooling COP
     Autosize,                 !- Rated Air Flow Rate
     773.3,                    !- Rated Evaporator Fan Power Per Volume Flow Rate
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Mixed Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Mixed Air Node,    !- Air Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Outlet Node Name
     Curve Biquadratic 7,      !- Total Cooling Capacity Function of Temperature Curve Name
     Curve Quadratic 10,       !- Total Cooling Capacity Function of Flow Fraction Curve Name
     Curve Biquadratic 8,      !- Energy Input Ratio Function of Temperature Curve Name
@@ -512,15 +512,15 @@ Coil:Cooling:DX:SingleSpeed,
     10;                       !- Basin Heater Setpoint Temperature
 
 Coil:Cooling:DX:SingleSpeed,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- Gross Rated Total Cooling Capacity
     Autosize,                 !- Gross Rated Sensible Heat Ratio
     3,                        !- Gross Rated Cooling COP
     Autosize,                 !- Rated Air Flow Rate
     773.3,                    !- Rated Evaporator Fan Power Per Volume Flow Rate
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Mixed Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Mixed Air Node,    !- Air Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Outlet Node Name
     Curve Biquadratic 15,     !- Total Cooling Capacity Function of Temperature Curve Name
     Curve Quadratic 22,       !- Total Cooling Capacity Function of Flow Fraction Curve Name
     Curve Biquadratic 16,     !- Energy Input Ratio Function of Temperature Curve Name
@@ -544,15 +544,15 @@ Coil:Cooling:DX:SingleSpeed,
     10;                       !- Basin Heater Setpoint Temperature
 
 Coil:Cooling:DX:SingleSpeed,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- Gross Rated Total Cooling Capacity
     Autosize,                 !- Gross Rated Sensible Heat Ratio
     3,                        !- Gross Rated Cooling COP
     Autosize,                 !- Rated Air Flow Rate
     773.3,                    !- Rated Evaporator Fan Power Per Volume Flow Rate
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Mixed Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Mixed Air Node,    !- Air Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Outlet Node Name
     Curve Biquadratic 11,     !- Total Cooling Capacity Function of Temperature Curve Name
     Curve Quadratic 16,       !- Total Cooling Capacity Function of Flow Fraction Curve Name
     Curve Biquadratic 12,     !- Energy Input Ratio Function of Temperature Curve Name
@@ -576,135 +576,135 @@ Coil:Cooling:DX:SingleSpeed,
     10;                       !- Basin Heater Setpoint Temperature
 
 Coil:Heating:Electric,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     1,                        !- Efficiency
     Autosize,                 !- Nominal Capacity
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Temperature Setpoint Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Temperature Setpoint Node Name
 
 Coil:Heating:Electric,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     1,                        !- Efficiency
     Autosize,                 !- Nominal Capacity
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Temperature Setpoint Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Temperature Setpoint Node Name
 
 Coil:Heating:Electric,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     1,                        !- Efficiency
     Autosize,                 !- Nominal Capacity
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Temperature Setpoint Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Temperature Setpoint Node Name
 
 Coil:Heating:Electric,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     1,                        !- Efficiency
     Autosize,                 !- Nominal Capacity
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Temperature Setpoint Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Temperature Setpoint Node Name
 
 Coil:Heating:Fuel,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     NaturalGas,               !- Fuel Type
     0.8,                      !- Burner Efficiency
     AutoSize,                 !- Nominal Capacity
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Temperature Setpoint Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Temperature Setpoint Node Name
     0,                        !- Parasitic Electric Load
     ,                         !- Part Load Fraction Correlation Curve Name
     0;                        !- Parasitic Fuel Load
 
 Coil:Heating:Fuel,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     NaturalGas,               !- Fuel Type
     0.8,                      !- Burner Efficiency
     AutoSize,                 !- Nominal Capacity
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Temperature Setpoint Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Temperature Setpoint Node Name
     0,                        !- Parasitic Electric Load
     ,                         !- Part Load Fraction Correlation Curve Name
     0;                        !- Parasitic Fuel Load
 
 Coil:Heating:Fuel,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     NaturalGas,               !- Fuel Type
     0.8,                      !- Burner Efficiency
     AutoSize,                 !- Nominal Capacity
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Temperature Setpoint Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Temperature Setpoint Node Name
     0,                        !- Parasitic Electric Load
     ,                         !- Part Load Fraction Correlation Curve Name
     0;                        !- Parasitic Fuel Load
 
 Coil:Heating:Fuel,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     NaturalGas,               !- Fuel Type
     0.8,                      !- Burner Efficiency
     AutoSize,                 !- Nominal Capacity
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Temperature Setpoint Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Air Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Air Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Temperature Setpoint Node Name
     0,                        !- Parasitic Electric Load
     ,                         !- Part Load Fraction Correlation Curve Name
     0;                        !- Parasitic Fuel Load
 
 CoilSystem:Cooling:DX,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
     Coil:Cooling:DX:SingleSpeed,    !- Cooling Coil Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil;    !- Cooling Coil Name
+    Block Workshop_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil;    !- Cooling Coil Name
 
 CoilSystem:Cooling:DX,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
     Coil:Cooling:DX:SingleSpeed,    !- Cooling Coil Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil;    !- Cooling Coil Name
+    Block Workshop_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil;    !- Cooling Coil Name
 
 CoilSystem:Cooling:DX,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
     Coil:Cooling:DX:SingleSpeed,    !- Cooling Coil Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil;    !- Cooling Coil Name
+    Block Workshop_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil;    !- Cooling Coil Name
 
 CoilSystem:Cooling:DX,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
     Coil:Cooling:DX:SingleSpeed,    !- Cooling Coil Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil;    !- Cooling Coil Name
+    Block Workshop_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil;    !- Cooling Coil Name
 
 Controller:OutdoorAir,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System Controller,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Return Air Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Actuator Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC OA System Controller,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Return Air Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Actuator Node Name
     Autosize,                 !- Minimum Outdoor Air Flow Rate
     Autosize,                 !- Maximum Outdoor Air Flow Rate
     NoEconomizer,             !- Economizer Control Type
@@ -728,11 +728,11 @@ Controller:OutdoorAir,
     BypassWhenWithinEconomizerLimits;    !- Heat Recovery Bypass Control Type
 
 Controller:OutdoorAir,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System Controller,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Return Air Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Actuator Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC OA System Controller,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Return Air Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Actuator Node Name
     Autosize,                 !- Minimum Outdoor Air Flow Rate
     Autosize,                 !- Maximum Outdoor Air Flow Rate
     NoEconomizer,             !- Economizer Control Type
@@ -756,11 +756,11 @@ Controller:OutdoorAir,
     BypassWhenWithinEconomizerLimits;    !- Heat Recovery Bypass Control Type
 
 Controller:OutdoorAir,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System Controller,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Return Air Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Actuator Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC OA System Controller,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Return Air Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Actuator Node Name
     Autosize,                 !- Minimum Outdoor Air Flow Rate
     Autosize,                 !- Maximum Outdoor Air Flow Rate
     NoEconomizer,             !- Economizer Control Type
@@ -784,11 +784,11 @@ Controller:OutdoorAir,
     BypassWhenWithinEconomizerLimits;    !- Heat Recovery Bypass Control Type
 
 Controller:OutdoorAir,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Controller,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Return Air Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Actuator Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC OA System Controller,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Return Air Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Actuator Node Name
     Autosize,                 !- Minimum Outdoor Air Flow Rate
     Autosize,                 !- Maximum Outdoor Air Flow Rate
     NoEconomizer,             !- Economizer Control Type
@@ -817,9 +817,9 @@ Controller:MechanicalVentilation,
     No,                       !- Demand Controlled Ventilation
     ZoneSum,                  !- System Outdoor Air Method
     ,                         !- Zone Maximum Outdoor Air Fraction
-    Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Zone 1 Name
+    Block Workshop_east_zone Storey 0,    !- Zone 1 Name
     ,                         !- Design Specification Outdoor Air Object Name 1
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 1
+    Block Workshop_east_zone Storey 0 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 1
 
 Controller:MechanicalVentilation,
     Controller Mechanical Ventilation 2,    !- Name
@@ -827,9 +827,9 @@ Controller:MechanicalVentilation,
     No,                       !- Demand Controlled Ventilation
     ZoneSum,                  !- System Outdoor Air Method
     ,                         !- Zone Maximum Outdoor Air Fraction
-    Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone 1 Name
+    Block Workshop_north_zone Storey 0,    !- Zone 1 Name
     ,                         !- Design Specification Outdoor Air Object Name 1
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 1
+    Block Workshop_north_zone Storey 0 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 1
 
 Controller:MechanicalVentilation,
     Controller Mechanical Ventilation 4,    !- Name
@@ -837,9 +837,9 @@ Controller:MechanicalVentilation,
     No,                       !- Demand Controlled Ventilation
     ZoneSum,                  !- System Outdoor Air Method
     ,                         !- Zone Maximum Outdoor Air Fraction
-    Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone 1 Name
+    Block Workshop_south_zone Storey 0,    !- Zone 1 Name
     ,                         !- Design Specification Outdoor Air Object Name 1
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 1
+    Block Workshop_south_zone Storey 0 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 1
 
 Controller:MechanicalVentilation,
     Controller Mechanical Ventilation 3,    !- Name
@@ -847,443 +847,443 @@ Controller:MechanicalVentilation,
     No,                       !- Demand Controlled Ventilation
     ZoneSum,                  !- System Outdoor Air Method
     ,                         !- Zone Maximum Outdoor Air Fraction
-    Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone 1 Name
+    Block Workshop_west_zone Storey 0,    !- Zone 1 Name
     ,                         !- Design Specification Outdoor Air Object Name 1
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 1
+    Block Workshop_west_zone Storey 0 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 1
 
 AirLoopHVAC:ControllerList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System Controller List,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC OA System Controller List,    !- Name
     Controller:OutdoorAir,    !- Controller 1 Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System Controller;    !- Controller 1 Name
+    Block Workshop_east_zone Storey 0 PSZ-AC OA System Controller;    !- Controller 1 Name
 
 AirLoopHVAC:ControllerList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System Controller List,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC OA System Controller List,    !- Name
     Controller:OutdoorAir,    !- Controller 1 Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System Controller;    !- Controller 1 Name
+    Block Workshop_north_zone Storey 0 PSZ-AC OA System Controller;    !- Controller 1 Name
 
 AirLoopHVAC:ControllerList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System Controller List,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC OA System Controller List,    !- Name
     Controller:OutdoorAir,    !- Controller 1 Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System Controller;    !- Controller 1 Name
+    Block Workshop_south_zone Storey 0 PSZ-AC OA System Controller;    !- Controller 1 Name
 
 AirLoopHVAC:ControllerList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Controller List,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC OA System Controller List,    !- Name
     Controller:OutdoorAir,    !- Controller 1 Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Controller;    !- Controller 1 Name
+    Block Workshop_west_zone Storey 0 PSZ-AC OA System Controller;    !- Controller 1 Name
 
 AirLoopHVAC,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC,    !- Name
     ,                         !- Controller List Name
     Air Loop HVAC 1 AvailabilityManagerAssignmentList,    !- Availability Manager List Name
     AutoSize,                 !- Design Supply Air Flow Rate
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Branches,    !- Branch List Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Branches,    !- Branch List Name
     ,                         !- Connector List Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Supply Side Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Demand Side Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Demand Side Inlet Node Names
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Outlet Nodes;    !- Supply Side Outlet Node Names
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Supply Side Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Demand Side Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Demand Side Inlet Node Names
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Outlet Nodes;    !- Supply Side Outlet Node Names
 
 AirLoopHVAC,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC,    !- Name
     ,                         !- Controller List Name
     Air Loop HVAC 1 AvailabilityManagerAssignmentList 1,    !- Availability Manager List Name
     AutoSize,                 !- Design Supply Air Flow Rate
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Branches,    !- Branch List Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Branches,    !- Branch List Name
     ,                         !- Connector List Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Supply Side Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Demand Side Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Demand Side Inlet Node Names
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Outlet Nodes;    !- Supply Side Outlet Node Names
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Supply Side Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Demand Side Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Demand Side Inlet Node Names
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Outlet Nodes;    !- Supply Side Outlet Node Names
 
 AirLoopHVAC,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC,    !- Name
     ,                         !- Controller List Name
     Air Loop HVAC 1 AvailabilityManagerAssignmentList 3,    !- Availability Manager List Name
     AutoSize,                 !- Design Supply Air Flow Rate
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Branches,    !- Branch List Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Branches,    !- Branch List Name
     ,                         !- Connector List Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Supply Side Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Demand Side Outlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Demand Side Inlet Node Names
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Outlet Nodes;    !- Supply Side Outlet Node Names
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Supply Side Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Demand Side Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Demand Side Inlet Node Names
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Outlet Nodes;    !- Supply Side Outlet Node Names
 
 AirLoopHVAC,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC,    !- Name
     ,                         !- Controller List Name
     Air Loop HVAC 1 AvailabilityManagerAssignmentList 2,    !- Availability Manager List Name
     AutoSize,                 !- Design Supply Air Flow Rate
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Branches,    !- Branch List Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Branches,    !- Branch List Name
     ,                         !- Connector List Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Supply Side Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Demand Side Outlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Demand Side Inlet Node Names
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Nodes;    !- Supply Side Outlet Node Names
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Supply Side Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Demand Side Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Demand Side Inlet Node Names
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Outlet Nodes;    !- Supply Side Outlet Node Names
 
 AirLoopHVAC:OutdoorAirSystem:EquipmentList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System Equipment List,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC OA System Equipment List,    !- Name
     OutdoorAir:Mixer,         !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer;    !- Component 1 Name
+    Block Workshop_east_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer;    !- Component 1 Name
 
 AirLoopHVAC:OutdoorAirSystem:EquipmentList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System Equipment List,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC OA System Equipment List,    !- Name
     OutdoorAir:Mixer,         !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer;    !- Component 1 Name
+    Block Workshop_north_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer;    !- Component 1 Name
 
 AirLoopHVAC:OutdoorAirSystem:EquipmentList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System Equipment List,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC OA System Equipment List,    !- Name
     OutdoorAir:Mixer,         !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer;    !- Component 1 Name
+    Block Workshop_south_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer;    !- Component 1 Name
 
 AirLoopHVAC:OutdoorAirSystem:EquipmentList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Equipment List,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC OA System Equipment List,    !- Name
     OutdoorAir:Mixer,         !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer;    !- Component 1 Name
+    Block Workshop_west_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer;    !- Component 1 Name
 
 AirLoopHVAC:OutdoorAirSystem,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System Controller List,    !- Controller List Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System Equipment List,    !- Outdoor Air Equipment List Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System Availability Manager List;    !- Availability Manager List Name
+    Block Workshop_east_zone Storey 0 PSZ-AC OA System,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC OA System Controller List,    !- Controller List Name
+    Block Workshop_east_zone Storey 0 PSZ-AC OA System Equipment List,    !- Outdoor Air Equipment List Name
+    Block Workshop_east_zone Storey 0 PSZ-AC OA System Availability Manager List;    !- Availability Manager List Name
 
 AirLoopHVAC:OutdoorAirSystem,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System Controller List,    !- Controller List Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System Equipment List,    !- Outdoor Air Equipment List Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System Availability Manager List;    !- Availability Manager List Name
+    Block Workshop_north_zone Storey 0 PSZ-AC OA System,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC OA System Controller List,    !- Controller List Name
+    Block Workshop_north_zone Storey 0 PSZ-AC OA System Equipment List,    !- Outdoor Air Equipment List Name
+    Block Workshop_north_zone Storey 0 PSZ-AC OA System Availability Manager List;    !- Availability Manager List Name
 
 AirLoopHVAC:OutdoorAirSystem,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System Controller List,    !- Controller List Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System Equipment List,    !- Outdoor Air Equipment List Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System Availability Manager List;    !- Availability Manager List Name
+    Block Workshop_south_zone Storey 0 PSZ-AC OA System,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC OA System Controller List,    !- Controller List Name
+    Block Workshop_south_zone Storey 0 PSZ-AC OA System Equipment List,    !- Outdoor Air Equipment List Name
+    Block Workshop_south_zone Storey 0 PSZ-AC OA System Availability Manager List;    !- Availability Manager List Name
 
 AirLoopHVAC:OutdoorAirSystem,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Controller List,    !- Controller List Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Equipment List,    !- Outdoor Air Equipment List Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Availability Manager List;    !- Availability Manager List Name
+    Block Workshop_west_zone Storey 0 PSZ-AC OA System,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC OA System Controller List,    !- Controller List Name
+    Block Workshop_west_zone Storey 0 PSZ-AC OA System Equipment List,    !- Outdoor Air Equipment List Name
+    Block Workshop_west_zone Storey 0 PSZ-AC OA System Availability Manager List;    !- Availability Manager List Name
 
 OutdoorAir:Mixer,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Outdoor Air Stream Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Stream Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Inlet Node;    !- Return Air Stream Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Outdoor Air Stream Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Stream Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Inlet Node;    !- Return Air Stream Node Name
 
 OutdoorAir:Mixer,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Outdoor Air Stream Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Stream Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Inlet Node;    !- Return Air Stream Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Outdoor Air Stream Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Stream Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Inlet Node;    !- Return Air Stream Node Name
 
 OutdoorAir:Mixer,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Outdoor Air Stream Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Stream Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Inlet Node;    !- Return Air Stream Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Outdoor Air Stream Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Stream Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Inlet Node;    !- Return Air Stream Node Name
 
 OutdoorAir:Mixer,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Outdoor Air Stream Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Stream Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Inlet Node;    !- Return Air Stream Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC OA System Outdoor Air Mixer,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Mixed Air Node,    !- Mixed Air Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Outdoor Air Node,    !- Outdoor Air Stream Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Relief Air Node,    !- Relief Air Stream Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Inlet Node;    !- Return Air Stream Node Name
 
 AirLoopHVAC:ZoneSplitter,
     Air Loop HVAC Zone Splitter 1,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Diffuser Inlet Air Node;    !- Outlet 1 Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Diffuser Inlet Air Node;    !- Outlet 1 Node Name
 
 AirLoopHVAC:ZoneSplitter,
     Air Loop HVAC Zone Splitter 2,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Diffuser Inlet Air Node;    !- Outlet 1 Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Diffuser Inlet Air Node;    !- Outlet 1 Node Name
 
 AirLoopHVAC:ZoneSplitter,
     Air Loop HVAC Zone Splitter 4,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Diffuser Inlet Air Node;    !- Outlet 1 Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Diffuser Inlet Air Node;    !- Outlet 1 Node Name
 
 AirLoopHVAC:ZoneSplitter,
     Air Loop HVAC Zone Splitter 3,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Diffuser Inlet Air Node;    !- Outlet 1 Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Diffuser Inlet Air Node;    !- Outlet 1 Node Name
 
 AirLoopHVAC:SupplyPath,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Demand Inlet Node Supply Path,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Supply Air Path Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Block Workshop_east_zone Storey 0 PSZ-AC Demand Inlet Node Supply Path,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Supply Air Path Inlet Node Name
     AirLoopHVAC:ZoneSplitter,    !- Component 1 Object Type
     Air Loop HVAC Zone Splitter 1;    !- Component 1 Name
 
 AirLoopHVAC:SupplyPath,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Demand Inlet Node Supply Path,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Supply Air Path Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Block Workshop_north_zone Storey 0 PSZ-AC Demand Inlet Node Supply Path,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Supply Air Path Inlet Node Name
     AirLoopHVAC:ZoneSplitter,    !- Component 1 Object Type
     Air Loop HVAC Zone Splitter 2;    !- Component 1 Name
 
 AirLoopHVAC:SupplyPath,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Demand Inlet Node Supply Path,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Supply Air Path Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Block Workshop_south_zone Storey 0 PSZ-AC Demand Inlet Node Supply Path,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Supply Air Path Inlet Node Name
     AirLoopHVAC:ZoneSplitter,    !- Component 1 Object Type
     Air Loop HVAC Zone Splitter 4;    !- Component 1 Name
 
 AirLoopHVAC:SupplyPath,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Demand Inlet Node Supply Path,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Supply Air Path Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Block Workshop_west_zone Storey 0 PSZ-AC Demand Inlet Node Supply Path,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Demand Inlet Node,    !- Supply Air Path Inlet Node Name
     AirLoopHVAC:ZoneSplitter,    !- Component 1 Object Type
     Air Loop HVAC Zone Splitter 3;    !- Component 1 Name
 
 AirLoopHVAC:ZoneMixer,
     Air Loop HVAC Zone Mixer 1,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Return Air Node;    !- Inlet 1 Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Outlet Node Name
+    Block Workshop_east_zone Storey 0 Return Air Node;    !- Inlet 1 Node Name
 
 AirLoopHVAC:ZoneMixer,
     Air Loop HVAC Zone Mixer 2,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Air Node;    !- Inlet 1 Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Outlet Node Name
+    Block Workshop_north_zone Storey 0 Return Air Node;    !- Inlet 1 Node Name
 
 AirLoopHVAC:ZoneMixer,
     Air Loop HVAC Zone Mixer 4,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Outlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Return Air Node;    !- Inlet 1 Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Outlet Node Name
+    Block Workshop_south_zone Storey 0 Return Air Node;    !- Inlet 1 Node Name
 
 AirLoopHVAC:ZoneMixer,
     Air Loop HVAC Zone Mixer 3,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Outlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Return Air Node;    !- Inlet 1 Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Outlet Node Name
+    Block Workshop_west_zone Storey 0 Return Air Node;    !- Inlet 1 Node Name
 
 AirLoopHVAC:ReturnPath,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Return Path,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Return Air Path Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Return Path,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Return Air Path Outlet Node Name
     AirLoopHVAC:ZoneMixer,    !- Component 1 Object Type
     Air Loop HVAC Zone Mixer 1;    !- Component 1 Name
 
 AirLoopHVAC:ReturnPath,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Return Path,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Return Air Path Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Return Path,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Return Air Path Outlet Node Name
     AirLoopHVAC:ZoneMixer,    !- Component 1 Object Type
     Air Loop HVAC Zone Mixer 2;    !- Component 1 Name
 
 AirLoopHVAC:ReturnPath,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Return Path,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Return Air Path Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Return Path,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Return Air Path Outlet Node Name
     AirLoopHVAC:ZoneMixer,    !- Component 1 Object Type
     Air Loop HVAC Zone Mixer 4;    !- Component 1 Name
 
 AirLoopHVAC:ReturnPath,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Return Path,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Return Air Path Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Return Path,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Demand Outlet Node,    !- Return Air Path Outlet Node Name
     AirLoopHVAC:ZoneMixer,    !- Component 1 Object Type
     Air Loop HVAC Zone Mixer 3;    !- Component 1 Name
 
 Branch,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Main Branch,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Main Branch,    !- Name
     ,                         !- Pressure Drop Curve Name
     AirLoopHVAC:OutdoorAirSystem,    !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 1 Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC OA System,    !- Component 1 Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Component 1 Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 1 Outlet Node Name
     CoilSystem:Cooling:DX,    !- Component 2 Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Component 2 Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 2 Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 2 Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Component 2 Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 2 Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 2 Outlet Node Name
     Coil:Heating:Fuel,        !- Component 3 Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Component 3 Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 3 Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 3 Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Component 3 Name
+    Block Workshop_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 3 Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 3 Outlet Node Name
     Coil:Heating:Electric,    !- Component 4 Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Component 4 Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 4 Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 4 Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Component 4 Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 4 Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 4 Outlet Node Name
     Fan:ConstantVolume,       !- Component 5 Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Fan,    !- Component 5 Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 5 Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Component 5 Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Fan,    !- Component 5 Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 5 Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Component 5 Outlet Node Name
 
 Branch,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Main Branch,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Main Branch,    !- Name
     ,                         !- Pressure Drop Curve Name
     AirLoopHVAC:OutdoorAirSystem,    !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 1 Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC OA System,    !- Component 1 Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Component 1 Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 1 Outlet Node Name
     CoilSystem:Cooling:DX,    !- Component 2 Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Component 2 Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 2 Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 2 Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Component 2 Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 2 Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 2 Outlet Node Name
     Coil:Heating:Fuel,        !- Component 3 Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Component 3 Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 3 Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 3 Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Component 3 Name
+    Block Workshop_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 3 Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 3 Outlet Node Name
     Coil:Heating:Electric,    !- Component 4 Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Component 4 Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 4 Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 4 Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Component 4 Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 4 Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 4 Outlet Node Name
     Fan:ConstantVolume,       !- Component 5 Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Fan,    !- Component 5 Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 5 Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Component 5 Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Fan,    !- Component 5 Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 5 Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Component 5 Outlet Node Name
 
 Branch,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Main Branch,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Main Branch,    !- Name
     ,                         !- Pressure Drop Curve Name
     AirLoopHVAC:OutdoorAirSystem,    !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 1 Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC OA System,    !- Component 1 Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Component 1 Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 1 Outlet Node Name
     CoilSystem:Cooling:DX,    !- Component 2 Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Component 2 Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 2 Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 2 Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Component 2 Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 2 Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 2 Outlet Node Name
     Coil:Heating:Fuel,        !- Component 3 Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Component 3 Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 3 Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 3 Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Component 3 Name
+    Block Workshop_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 3 Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 3 Outlet Node Name
     Coil:Heating:Electric,    !- Component 4 Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Component 4 Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 4 Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 4 Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Component 4 Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 4 Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 4 Outlet Node Name
     Fan:ConstantVolume,       !- Component 5 Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Fan,    !- Component 5 Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 5 Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Component 5 Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Fan,    !- Component 5 Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 5 Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Component 5 Outlet Node Name
 
 Branch,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Main Branch,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Main Branch,    !- Name
     ,                         !- Pressure Drop Curve Name
     AirLoopHVAC:OutdoorAirSystem,    !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 1 Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC OA System,    !- Component 1 Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Inlet Node,    !- Component 1 Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 1 Outlet Node Name
     CoilSystem:Cooling:DX,    !- Component 2 Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Component 2 Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 2 Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 2 Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil CoilSystem,    !- Component 2 Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Mixed Air Node,    !- Component 2 Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 2 Outlet Node Name
     Coil:Heating:Fuel,        !- Component 3 Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Component 3 Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 3 Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 3 Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Gas Htg Coil,    !- Component 3 Name
+    Block Workshop_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node,    !- Component 3 Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 3 Outlet Node Name
     Coil:Heating:Electric,    !- Component 4 Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Component 4 Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 4 Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 4 Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil,    !- Component 4 Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node,    !- Component 4 Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 4 Outlet Node Name
     Fan:ConstantVolume,       !- Component 5 Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Fan,    !- Component 5 Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 5 Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Component 5 Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Fan,    !- Component 5 Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Component 5 Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Component 5 Outlet Node Name
 
 BranchList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Branches,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Main Branch;    !- Branch 1 Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Branches,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Main Branch;    !- Branch 1 Name
 
 BranchList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Branches,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Main Branch;    !- Branch 1 Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Branches,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Main Branch;    !- Branch 1 Name
 
 BranchList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Branches,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Main Branch;    !- Branch 1 Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Branches,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Main Branch;    !- Branch 1 Name
 
 BranchList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Branches,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Main Branch;    !- Branch 1 Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Branches,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Main Branch;    !- Branch 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Inlet Node List,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Diffuser Outlet Air Node;    !- Node 1 Name
+    Block Workshop_east_zone Storey 0 Inlet Node List,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Diffuser Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Return Node List,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Return Air Node;    !- Node 1 Name
+    Block Workshop_east_zone Storey 0 Return Node List,    !- Name
+    Block Workshop_east_zone Storey 0 Return Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Inlet Node List,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Diffuser Outlet Air Node;    !- Node 1 Name
+    Block Workshop_north_zone Storey 0 Inlet Node List,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Diffuser Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Node List,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Air Node;    !- Node 1 Name
+    Block Workshop_north_zone Storey 0 Return Node List,    !- Name
+    Block Workshop_north_zone Storey 0 Return Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Inlet Node List,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Diffuser Outlet Air Node;    !- Node 1 Name
+    Block Workshop_south_zone Storey 0 Inlet Node List,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Diffuser Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Return Node List,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Return Air Node;    !- Node 1 Name
+    Block Workshop_south_zone Storey 0 Return Node List,    !- Name
+    Block Workshop_south_zone Storey 0 Return Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Inlet Node List,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Diffuser Outlet Air Node;    !- Node 1 Name
+    Block Workshop_west_zone Storey 0 Inlet Node List,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Diffuser Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Return Node List,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Return Air Node;    !- Node 1 Name
+    Block Workshop_west_zone Storey 0 Return Node List,    !- Name
+    Block Workshop_west_zone Storey 0 Return Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Outlet Nodes,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Node 1 Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Outlet Nodes,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Demand Inlet Node;    !- Node 1 Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Demand Inlet Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Outlet Nodes,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Node 1 Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Outlet Nodes,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Demand Inlet Node;    !- Node 1 Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Demand Inlet Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Outlet Nodes,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Node 1 Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Outlet Nodes,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Demand Inlet Node;    !- Node 1 Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Demand Inlet Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Nodes,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Node 1 Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Outlet Nodes,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Demand Inlet Node;    !- Node 1 Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Demand Inlet Nodes,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Demand Inlet Node;    !- Node 1 Name
 
 OutdoorAir:Node,
     Model Outdoor Air Node;    !- Name
 
 OutdoorAir:NodeList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Outdoor Air Node;    !- Node or NodeList Name 1
+    Block Workshop_east_zone Storey 0 PSZ-AC Outdoor Air Node;    !- Node or NodeList Name 1
 
 OutdoorAir:NodeList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Outdoor Air Node;    !- Node or NodeList Name 1
+    Block Workshop_north_zone Storey 0 PSZ-AC Outdoor Air Node;    !- Node or NodeList Name 1
 
 OutdoorAir:NodeList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Outdoor Air Node;    !- Node or NodeList Name 1
+    Block Workshop_south_zone Storey 0 PSZ-AC Outdoor Air Node;    !- Node or NodeList Name 1
 
 OutdoorAir:NodeList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Outdoor Air Node;    !- Node or NodeList Name 1
+    Block Workshop_west_zone Storey 0 PSZ-AC Outdoor Air Node;    !- Node or NodeList Name 1
 
 AvailabilityManager:Scheduled,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System Availability Manager,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC OA System Availability Manager,    !- Name
     Always On Discrete;       !- Schedule Name
 
 AvailabilityManager:Scheduled,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System Availability Manager,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC OA System Availability Manager,    !- Name
     Always On Discrete;       !- Schedule Name
 
 AvailabilityManager:Scheduled,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System Availability Manager,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC OA System Availability Manager,    !- Name
     Always On Discrete;       !- Schedule Name
 
 AvailabilityManager:Scheduled,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Availability Manager,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC OA System Availability Manager,    !- Name
     Always On Discrete;       !- Schedule Name
 
 AvailabilityManager:NightCycle,
@@ -1328,9 +1328,9 @@ AvailabilityManagerAssignmentList,
     Availability Manager Night Cycle 1;    !- Availability Manager 1 Name
 
 AvailabilityManagerAssignmentList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System Availability Manager List,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC OA System Availability Manager List,    !- Name
     AvailabilityManager:Scheduled,    !- Availability Manager 1 Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC OA System Availability Manager;    !- Availability Manager 1 Name
+    Block Workshop_east_zone Storey 0 PSZ-AC OA System Availability Manager;    !- Availability Manager 1 Name
 
 AvailabilityManagerAssignmentList,
     Air Loop HVAC 1 AvailabilityManagerAssignmentList 1,    !- Name
@@ -1338,9 +1338,9 @@ AvailabilityManagerAssignmentList,
     Availability Manager Night Cycle 2;    !- Availability Manager 1 Name
 
 AvailabilityManagerAssignmentList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System Availability Manager List,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC OA System Availability Manager List,    !- Name
     AvailabilityManager:Scheduled,    !- Availability Manager 1 Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC OA System Availability Manager;    !- Availability Manager 1 Name
+    Block Workshop_north_zone Storey 0 PSZ-AC OA System Availability Manager;    !- Availability Manager 1 Name
 
 AvailabilityManagerAssignmentList,
     Air Loop HVAC 1 AvailabilityManagerAssignmentList 3,    !- Name
@@ -1348,9 +1348,9 @@ AvailabilityManagerAssignmentList,
     Availability Manager Night Cycle 4;    !- Availability Manager 1 Name
 
 AvailabilityManagerAssignmentList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System Availability Manager List,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC OA System Availability Manager List,    !- Name
     AvailabilityManager:Scheduled,    !- Availability Manager 1 Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC OA System Availability Manager;    !- Availability Manager 1 Name
+    Block Workshop_south_zone Storey 0 PSZ-AC OA System Availability Manager;    !- Availability Manager 1 Name
 
 AvailabilityManagerAssignmentList,
     Air Loop HVAC 1 AvailabilityManagerAssignmentList 2,    !- Name
@@ -1358,177 +1358,177 @@ AvailabilityManagerAssignmentList,
     Availability Manager Night Cycle 3;    !- Availability Manager 1 Name
 
 AvailabilityManagerAssignmentList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Availability Manager List,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC OA System Availability Manager List,    !- Name
     AvailabilityManager:Scheduled,    !- Availability Manager 1 Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC OA System Availability Manager;    !- Availability Manager 1 Name
+    Block Workshop_west_zone Storey 0 PSZ-AC OA System Availability Manager;    !- Availability Manager 1 Name
 
 SetpointManager:SingleZone:Reheat,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Setpoint Manager SZ Reheat,    !- Name
+    Block Workshop_east_zone Storey 0 Setpoint Manager SZ Reheat,    !- Name
     Temperature,              !- Control Variable
     12.7777777777778,         !- Minimum Supply Air Temperature
     50.0000000000001,         !- Maximum Supply Air Temperature
-    Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Control Zone Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Zone Air Node,    !- Zone Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Zone Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_east_zone Storey 0,    !- Control Zone Name
+    Block Workshop_east_zone Storey 0 Zone Air Node,    !- Zone Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Zone Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:SingleZone:Reheat,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Setpoint Manager SZ Reheat,    !- Name
+    Block Workshop_north_zone Storey 0 Setpoint Manager SZ Reheat,    !- Name
     Temperature,              !- Control Variable
     12.7777777777778,         !- Minimum Supply Air Temperature
     50.0000000000001,         !- Maximum Supply Air Temperature
-    Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Control Zone Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Zone Air Node,    !- Zone Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Zone Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_north_zone Storey 0,    !- Control Zone Name
+    Block Workshop_north_zone Storey 0 Zone Air Node,    !- Zone Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Zone Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:SingleZone:Reheat,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Setpoint Manager SZ Reheat,    !- Name
+    Block Workshop_south_zone Storey 0 Setpoint Manager SZ Reheat,    !- Name
     Temperature,              !- Control Variable
     12.7777777777778,         !- Minimum Supply Air Temperature
     50.0000000000001,         !- Maximum Supply Air Temperature
-    Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Control Zone Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Zone Air Node,    !- Zone Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Zone Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_south_zone Storey 0,    !- Control Zone Name
+    Block Workshop_south_zone Storey 0 Zone Air Node,    !- Zone Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Zone Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:SingleZone:Reheat,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Setpoint Manager SZ Reheat,    !- Name
+    Block Workshop_west_zone Storey 0 Setpoint Manager SZ Reheat,    !- Name
     Temperature,              !- Control Variable
     12.7777777777778,         !- Minimum Supply Air Temperature
     50.0000000000001,         !- Maximum Supply Air Temperature
-    Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Control Zone Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Zone Air Node,    !- Zone Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Zone Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_west_zone Storey 0,    !- Control Zone Name
+    Block Workshop_west_zone Storey 0 Zone Air Node,    !- Zone Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Diffuser Outlet Air Node,    !- Zone Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Outlet Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Mixed Air Node OS Default SPM,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Mixed Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Mixed Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Mixed Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node OS Default SPM,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node OS Default SPM,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node OS Default SPM,    !- Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_east_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Mixed Air Node OS Default SPM,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Mixed Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Mixed Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Mixed Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node OS Default SPM,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node OS Default SPM,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node OS Default SPM,    !- Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_north_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Mixed Air Node OS Default SPM,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Mixed Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Mixed Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Mixed Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node OS Default SPM,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node OS Default SPM,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node OS Default SPM,    !- Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_south_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Mixed Air Node OS Default SPM,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Mixed Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Mixed Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Mixed Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node OS Default SPM,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC 1spd DX AC Clg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node OS Default SPM,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Gas Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node OS Default SPM,    !- Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Reference Setpoint Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Supply Outlet Node,    !- Fan Outlet Node Name
+    Block Workshop_west_zone Storey 0 PSZ-AC Electric Backup Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 Curve:Quadratic,
     Curve Quadratic 4,        !- Name

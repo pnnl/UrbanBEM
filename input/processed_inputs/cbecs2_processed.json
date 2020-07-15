@@ -7,7 +7,8 @@
     "gross_conditioned_area": 10590.94656,
     "heating_system_type": "Gas",
     "cooling_system_type": "SingleSpeedDX",
-    "ventilation_rate": 0.4391057295895192,
+    "ventilation_rate_per_person": 0.0035396058294948273,
+    "ventilation_rate_per_area": 0.0006096,
     "economizer_used": "Yes",
     "heat_recovery_used": "No",
     "zone_geometry": {
@@ -89,15 +90,15 @@
         },
         "ext_wall": {
             "type": "Mass",
-            "u_factor": 10.753883036551235
+            "u_factor": 2.9385011025000005
         },
         "roof": {
             "type": "IEAD",
-            "u_factor": 19.141641223667232
+            "u_factor": 0.43722625099999995
         },
         "window": {
-            "u_factor": 0.9768385460612039,
-            "shgc": 0.9225222322508512
+            "u_factor": 5.50791511,
+            "shgc": 0.3325
         },
         "ground_temp_profile_jan2dec": [
             20.9,
@@ -1862,13 +1863,13 @@
             "frac_lost": 0.0
         },
         "lighting": {
-            "lpd": 8.311181190349613,
+            "lpd": 35.52090437514208,
             "schedule": "bldg_light_sch",
             "frac_radiant": 0.7,
             "frac_visible": 0.2
         },
         "infiltration": {
-            "inf": 0.0015639571949697389,
+            "inf": 0.00381,
             "schedule": "bldg_infiltration_sch"
         },
         "people": {
@@ -1877,5 +1878,11 @@
             "activity_schedule": "activity_sch",
             "frac_radiant": 0.3
         }
+    },
+    "hvac": {
+        "hvac_type": "PSZ:AC",
+        "main_heat_fuel": "NaturalGas",
+        "zone_heat_fuel": null,
+        "cool_fuel": null
     }
 }

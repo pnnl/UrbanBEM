@@ -50,16 +50,16 @@ class HVAC:
 
         for obj in objs:
             zones_idf.copyidfobject(obj)
-        zones_idf.saveas(f"../{self.hvac_dev_folder_name}/zones.idf")
+        zones_idf.saveas(f"../{self.hvac_dev_folder_name}/zones_{self.case['building_name']}.idf")
 
     def run_osstd_rubycall(self):
-        ruby_run = ["ruby", "generate_hvac.rb"]
+        ruby_run = ["ruby", "generate_hvac.rb", self.case['building_name']]
         run_proc = subprocess.run(ruby_run, capture_output=True)
         print("\nSTDOUT:")
         print(run_proc.stdout.decode("utf-8"))
         print("\nSTDERR")
         print(run_proc.stderr.decode("utf-8"))
-        osstd_hvacadded = IDF(f"../{self.hvac_dev_folder_name}/zones_hvacadded.idf")
+        osstd_hvacadded = IDF(f"../{self.hvac_dev_folder_name}/zones_hvacadded_{self.case['building_name']}.idf")
         print(self.exc_obj_types)
         self.pure_hvac_objs = self.get_object_not_in_types(
             osstd_hvacadded, self.exc_obj_types

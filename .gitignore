@@ -8,3 +8,11 @@ hvac_dev_comparison/
 
 input/std_json_raw/*.json
 !input/std_json_raw/cbecs[1-9].json
+input/std_json_conv/*.json
+input/std_json_conv_clean/*.json
+input/processed_inputs/*.json
+hvac_dev/*cbecs*.idf
+ep_input
+ep_output
+
+src/openstudio_python.sif
