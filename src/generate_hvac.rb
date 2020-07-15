@@ -18,16 +18,18 @@ osm = trans.translateWorkspace(idf)
 #     zone_equipment_ventilation: true,
 #     fan_coil_capacity_control_method: 'CyclingFan')
 
-# TODO: For dev purpose. Need refactor for production
+hvac_system_type = ARGV[0]
 
-# PSZ, Gas, SingleSpeedDX
-# standard.model_add_hvac_system(osm, "PSZ-AC", "NaturalGas", nil, nil, osm.getThermalZones, air_loop_heating_type: "Gas")
-
-# VAV, HotWater, ChilledWater
-standard.model_add_hvac_system(osm, "VAV Reheat", "NaturalGas", "NaturalGas", nil, osm.getThermalZones, hot_water_loop_type: "HighTemperature", chilled_water_loop_cooling_type: "AirCooled", air_loop_cooling_type: "Water")
-
-# PSZ, Electric, SingleSpeedDX
-# standard.model_add_hvac_system(osm, "PSZ-AC", "Electricity", "Electricity", nil, osm.getThermalZones, air_loop_heating_type: nil)
+case hvac_system_type
+when "PSZ_Gas_SingleSpeedDX"
+  standard.model_add_hvac_system(osm, "PSZ-AC", "NaturalGas", nil, nil, osm.getThermalZones, hot_water_loop_type: nil, chilled_water_loop_cooling_type: nil, heat_pump_loop_cooling_type: nil, air_loop_heating_type: "Gas", air_loop_cooling_type: nil)
+when "PSZ_Electric_SingleSpeedDX"
+  standard.model_add_hvac_system(osm, "PSZ-AC", "Electricity", "Electricity", nil, osm.getThermalZones, hot_water_loop_type: nil, chilled_water_loop_cooling_type: nil, heat_pump_loop_cooling_type: nil, air_loop_heating_type: nil, air_loop_cooling_type: nil)
+when "VAV_HotWater_ChilledWater"
+  standard.model_add_hvac_system(osm, "VAV Reheat", "NaturalGas", "NaturalGas", nil, osm.getThermalZones, hot_water_loop_type: "HighTemperature", chilled_water_loop_cooling_type: "AirCooled", heat_pump_loop_cooling_type: nil, air_loop_heating_type: nil, air_loop_cooling_type: "Water")
+else
+  puts "HVAC system not in the list, ABORT"
+end
 
 trans = OpenStudio::EnergyPlus::ForwardTranslator.new
 idf = trans.translateModel(osm)

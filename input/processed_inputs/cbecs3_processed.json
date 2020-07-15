@@ -1867,9 +1867,6 @@
         }
     },
     "hvac": {
-        "hvac_type": "PSZ:AC",
-        "main_heat_fuel": "NaturalGas",
-        "zone_heat_fuel": null,
-        "cool_fuel": null
+        "hvac_type": "PSZ_Gas_SingleSpeedDX"
     }
 }
