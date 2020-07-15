@@ -7,5 +7,10 @@
     ],
     "excluded_osstd_hvac_obj_types_file_path": "../resources/exc_osstd_hvac_objtypes_meta.json",
     "replace_osstd_hvac_schedules_refs_file_path": "../resources/replace_osstd_hvac_schedules_refs.json",
-    "hvac_intermediate_folder_name": "hvac_dev"
+    "hvac_intermediate_folder_name": "hvac_dev",
+    "considered_hvac_types": [
+        "PSZ_Gas_SingleSpeedDX",
+        "PSZ_Electric_SingleSpeedDX",
+        "VAV_HotWater_ChilledWater"
+    ]
 }
