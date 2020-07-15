@@ -28,6 +28,7 @@
     "weekly_occupied_hours(hr/wk)": 72,
     "number_days_open_workday": 5,
     "number_days_open_weekend": 2,
+    "hvac_system_type": "PSZ, Gas, SingleSpeedDX",
     "heating_system_type": "Gas",
     "cooling_system_type": "SingleSpeedDX",
     "ventilation_rate_per_person(m3/s-person)": 0.0035396058294948273,

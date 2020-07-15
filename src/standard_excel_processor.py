@@ -7,7 +7,7 @@ import os
 #os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")
 
 #%%
-data = pd.read_excel("../input/cbecs-standardized-200604.xlsx")
+data = pd.read_excel("../input/cbecs-standardized-200715.xlsx")
 
 #%%
 std_cols = data.columns.values.tolist()

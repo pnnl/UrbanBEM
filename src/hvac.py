@@ -15,6 +15,7 @@ class HVAC:
 
     hvac_settings = read_json("hvac_settings.json")
     hvac_dev_folder_name = hvac_settings["hvac_intermediate_folder_name"]
+    considered_hvac_types = hvac_settings["considered_hvac_types"]
 
     def __init__(self, case: Dict, idf: IDF):
         self.idf = idf
@@ -23,6 +24,10 @@ class HVAC:
         self.pure_hvac_objs = None
         self.exc_obj_types = None
         self.replacing_schedules_refs = None
+
+        if self.hvac_type not in self.considered_hvac_types:
+            print("No HVAC system is added by the HVAC processor")
+            return
 
         # run modeling strategy
         self.generate_osstd_input_idf()
@@ -53,7 +58,7 @@ class HVAC:
         zones_idf.saveas(f"../{self.hvac_dev_folder_name}/zones_{self.case['building_name']}.idf")
 
     def run_osstd_rubycall(self):
-        ruby_run = ["ruby", "generate_hvac.rb", self.case['building_name']]
+        ruby_run = ["ruby", "generate_hvac.rb", self.case['building_name'], self.hvac_type]
         run_proc = subprocess.run(ruby_run, capture_output=True)
         print("\nSTDOUT:")
         print(run_proc.stdout.decode("utf-8"))
@@ -223,7 +228,7 @@ class HVAC:
 def main():
 
     testidf = IDF("../hvac_dev/loads_added.idf")
-    test_proc_case = {"hvac": {"hvac_type": "PSZ:AC"}}
+    test_proc_case = {"hvac": {"hvac_type": "PSZ_Gas_SingleSpeedDX"}}
 
     hvacadded_obj = HVAC(test_proc_case, testidf)
     hvacadded_obj.save_idf("../hvac_dev/hvacadded.idf")

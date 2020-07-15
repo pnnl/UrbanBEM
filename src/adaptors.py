@@ -342,17 +342,18 @@ def populate_std_hvac_for_osstd(case: Dict) -> Dict:
                             fan_coil_capacity_control_method: 'CyclingFan')
 
     Args:
-        case:
+        case: case dictionary. Properties used in this function are:
+            - "hvac_system_type": e.g. "PSZ, Gas, SingleSpeedDX"
 
     Returns:
 
     """
 
     hvac = {
-        "hvac_type": "PSZ:AC",
-        "main_heat_fuel": "NaturalGas",
-        "zone_heat_fuel": None,
-        "cool_fuel": None,
+        "hvac_type": case["hvac_system_type"]
+        .strip()
+        .replace(",", "_")
+        .replace(" ", ""),
     }
 
     return hvac

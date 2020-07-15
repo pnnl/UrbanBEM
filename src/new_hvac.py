@@ -57,8 +57,8 @@ def get_object_not_in_types(idf: IDF, types: List) -> List:
 
 #%% load idf
 original_idf = IDF("../hvac_dev/loads_added.idf")
-casename = "cbecs1"
-case_path = f"../input/processed_inputs/{casename}.json"
+casename = "cbecs3"
+case_path = f"../input/processed_inputs/{casename}_processed.json"
 with open(case_path) as f:
     proc_case = json.load(f)
 
@@ -66,7 +66,7 @@ with open(case_path) as f:
 
 with open("../resources/exc_osstd_hvac_objtypes_meta.json") as f:
     exc_hvac_meta = json.load(f)
-exc_obj_types = exc_hvac_meta["PSZ:AC"]
+exc_obj_types = exc_hvac_meta["PSZ:HP"]
 
 zones_idf = IDF(StringIO(""))
 zones_idf_obj_types = [
@@ -88,6 +88,9 @@ for obj in objs:
 zones_idf.saveas("../hvac_dev/zones.idf")
 
 #%% run osstd method from ruby
+
+### Part of code to test new systems BEGIN
+
 ruby_run = ["ruby", "generate_hvac.rb"]
 
 run_proc = subprocess.run(ruby_run, capture_output=True)
@@ -98,12 +101,14 @@ print(run_proc.stderr.decode("utf-8"))
 
 #%% read os output idfs
 zones_translated = IDF("../hvac_dev/zones_translated.idf")
-zones_hvacadded = IDF("../hvac_intermediate/osstd_hvacadded.idf")
+zones_hvacadded = IDF("../hvac_dev/zones_hvacadded.idf")
 
 #%%
-zones_idf_objtypes = get_containing_object_types(zones_idf)
-zones_translated_objtypes = get_containing_object_types(zones_translated)
+# zones_idf_objtypes = get_containing_object_types(zones_idf)
+# zones_translated_objtypes = get_containing_object_types(zones_translated)
 zones_hvacadded_objtypes = get_containing_object_types(zones_hvacadded)
+
+### Part of code to test new systems END
 
 #%%
 

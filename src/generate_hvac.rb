@@ -1,13 +1,10 @@
 require "openstudio"
 require "openstudio-standards"
 standard = Standard.build("90.1-2013")
-casename = ARGV.pop()
+casename = ARGV[0]
 idf = OpenStudio::Workspace.load("../hvac_dev/zones_#{casename}.idf").get
 trans = OpenStudio::EnergyPlus::ReverseTranslator.new
 osm = trans.translateWorkspace(idf)
-<<<<<<< Updated upstream
-standard.model_add_hvac_system(osm, "PSZ-AC", "NaturalGas", nil, nil, osm.getThermalZones, air_loop_heating_type: "Gas")
-=======
 # model_add_hvac_system(model,
 #     system_type,
 #     main_heat_fuel,
@@ -22,19 +19,19 @@ standard.model_add_hvac_system(osm, "PSZ-AC", "NaturalGas", nil, nil, osm.getThe
 #     zone_equipment_ventilation: true,
 #     fan_coil_capacity_control_method: 'CyclingFan')
 
-# TODO: For dev purpose. Need refactor for production
+hvac_system_type = ARGV[1]
 
-# PSZ:AC 
-standard.model_add_hvac_system(osm, "PSZ-AC", "NaturalGas", nil, nil, osm.getThermalZones, air_loop_heating_type: "Gas")
+case hvac_system_type
+when "PSZ_Gas_SingleSpeedDX"
+  standard.model_add_hvac_system(osm, "PSZ-AC", "NaturalGas", nil, nil, osm.getThermalZones, hot_water_loop_type: nil, chilled_water_loop_cooling_type: nil, heat_pump_loop_cooling_type: nil, air_loop_heating_type: "Gas", air_loop_cooling_type: nil)
+when "PSZ_Electric_SingleSpeedDX"
+  standard.model_add_hvac_system(osm, "PSZ-AC", "Electricity", "Electricity", nil, osm.getThermalZones, hot_water_loop_type: nil, chilled_water_loop_cooling_type: nil, heat_pump_loop_cooling_type: nil, air_loop_heating_type: nil, air_loop_cooling_type: nil)
+when "VAV_HotWater_ChilledWater"
+  standard.model_add_hvac_system(osm, "VAV Reheat", "NaturalGas", "NaturalGas", nil, osm.getThermalZones, hot_water_loop_type: "HighTemperature", chilled_water_loop_cooling_type: "AirCooled", heat_pump_loop_cooling_type: nil, air_loop_heating_type: nil, air_loop_cooling_type: "Water")
+else
+  puts "HVAC system not in the list, ABORT"
+end
 
-# PSZ:HP
-# standard.model_add_hvac_system(osm, "PSZ-HP", nil, nil, nil, osm.getThermalZones)
-
-# Multi-zone VAV with elec reheat
-# standard.model_add_hvac_system(osm, "VAV Reheat", "NaturalGas", "Electricity", nil, osm.getThermalZones)
-
-# PSZ:
->>>>>>> Stashed changes
 trans = OpenStudio::EnergyPlus::ForwardTranslator.new
 idf = trans.translateModel(osm)
 idf.save("../hvac_dev/zones_hvacadded_#{casename}.idf", true)
