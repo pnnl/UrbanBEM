@@ -1,0 +1,133 @@
+{
+    "delete_all_variables": true,
+    "reporting_meters": [
+        {
+            "Key_Name": "Electricity:Facility",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Gas:Facility",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "InteriorLights:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "ExteriorLights:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "InteriorEquipment:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "ExteriorEquipment:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Fans:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Pumps:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Heating:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Cooling:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "HeatRejection:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Humidifier:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "HeatRecovery:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "DHW:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Cogeneration:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Refrigeration:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "WaterSystems:Electricity",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "InteriorLights:Gas",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "ExteriorLights:Gas",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "InteriorEquipment:Gas",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "ExteriorEquipment:Gas",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Fans:Gas",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Pumps:Gas",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Heating:Gas",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Cooling:Gas",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "HeatRejection:Gas",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Humidifier:Gas",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "HeatRecovery:Gas",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "DHW:Gas",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Cogeneration:Gas",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "Refrigeration:Gas",
+            "Reporting_Frequency": "Hourly"
+        },
+        {
+            "Key_Name": "WaterSystems:Gas",
+            "Reporting_Frequency": "Hourly"
+        }
+    ]
+}
