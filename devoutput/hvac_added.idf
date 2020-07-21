@@ -95,18 +95,18 @@ RunPeriod,
     Yes;                      !- Use Weather File Snow Indicators
 
 SITE:GROUNDTEMPERATURE:FCFACTORMETHOD,
-    20.9,                     !- January Ground Temperature
-    15.4,                     !- February Ground Temperature
-    11.9,                     !- March Ground Temperature
-    14.8,                     !- April Ground Temperature
-    12.7,                     !- May Ground Temperature
-    15.4,                     !- June Ground Temperature
-    23.3,                     !- July Ground Temperature
-    26.3,                     !- August Ground Temperature
-    31.2,                     !- September Ground Temperature
-    30.4,                     !- October Ground Temperature
-    29.8,                     !- November Ground Temperature
-    27.8;                     !- December Ground Temperature
+    9.7,                      !- January Ground Temperature
+    6,                        !- February Ground Temperature
+    -2.2,                     !- March Ground Temperature
+    -3.4,                     !- April Ground Temperature
+    -4.2,                     !- May Ground Temperature
+    2.7,                      !- June Ground Temperature
+    7.5,                      !- July Ground Temperature
+    13.7,                     !- August Ground Temperature
+    18.6,                     !- September Ground Temperature
+    22,                       !- October Ground Temperature
+    20.7,                     !- November Ground Temperature
+    16.5;                     !- December Ground Temperature
 
 ScheduleTypeLimits,
     Any Number,               !- Name
