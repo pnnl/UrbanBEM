@@ -17,6 +17,7 @@ from loads import Loads
 from preprocessor import Preprocessor
 from schedule import Schedule
 from hvac import HVAC
+from outputs import Outputs
 import recipes
 
 IDF.setiddname("../resources/Energy+V9_0_1.idd")
@@ -65,3 +66,9 @@ loadadded_obj.save_idf("../devoutput/loads_added.idf")
 # %% hvac processor
 hvacadded_obj = HVAC(proc_case, loadadded_obj.idf)
 hvacadded_obj.save_idf("../devoutput/hvac_added.idf")
+
+# %% output processor
+outputadded_obj = Outputs(proc_case, hvacadded_obj.idf)
+outputadded_obj.save_idf("../devoutput/outputsadded.idf")
+
+# %%
