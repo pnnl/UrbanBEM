@@ -620,26 +620,26 @@ CONSTRUCTION,
 CONSTRUCTION:FFACTORGROUNDFLOOR,
     Dining: Cafeteria/fast food_south_zone_perimeter_bottom_floor_ffactor,    !- Name
     1.3,                      !- FFactor
-    71.1465133801917,         !- Area
-    18.875956638221016;       !- PerimeterExposed
+    71.14651337431904,        !- Area
+    18.8759566346;            !- PerimeterExposed
 
 CONSTRUCTION:FFACTORGROUNDFLOOR,
     Dining: Cafeteria/fast food_west_zone_perimeter_bottom_floor_ffactor,    !- Name
     1.3,                      !- FFactor
-    47.304862619808304,       !- Area
-    12.550503083923546;       !- PerimeterExposed
+    47.304862625680975,       !- Area
+    12.55050308411;           !- PerimeterExposed
 
 CONSTRUCTION:FFACTORGROUNDFLOOR,
     Dining: Cafeteria/fast food_north_zone_perimeter_bottom_floor_ffactor,    !- Name
     1.3,                      !- FFactor
-    71.1465133801917,         !- Area
-    18.875956638221016;       !- PerimeterExposed
+    71.14651337431904,        !- Area
+    18.8759566346;            !- PerimeterExposed
 
 CONSTRUCTION:FFACTORGROUNDFLOOR,
     Dining: Cafeteria/fast food_east_zone_perimeter_bottom_floor_ffactor,    !- Name
     1.3,                      !- FFactor
-    47.304862619808304,       !- Area
-    12.550503083923546;       !- PerimeterExposed
+    47.304862625680975,       !- Area
+    12.55050308411;           !- PerimeterExposed
 
 GlobalGeometryRules,
     UpperLeftCorner,          !- Starting Vertex Position
@@ -648,6 +648,21 @@ GlobalGeometryRules,
 
 ZONE,
     Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    1,                        !- Type
+    1,                        !- Multiplier
+    autocalculate,            !- Ceiling Height
+    autocalculate,            !- Volume
+    autocalculate,            !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+ZONE,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -677,7 +692,37 @@ ZONE,
     Yes;                      !- Part of Total Floor Area
 
 ZONE,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    1,                        !- Type
+    1,                        !- Multiplier
+    autocalculate,            !- Ceiling Height
+    autocalculate,            !- Volume
+    autocalculate,            !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+ZONE,
     Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    1,                        !- Type
+    1,                        !- Multiplier
+    autocalculate,            !- Ceiling Height
+    autocalculate,            !- Volume
+    autocalculate,            !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+ZONE,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -706,12 +751,31 @@ ZONE,
     ,                         !- Zone Outside Convection Algorithm
     Yes;                      !- Part of Total Floor Area
 
+ZONE,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    1,                        !- Type
+    1,                        !- Multiplier
+    autocalculate,            !- Ceiling Height
+    autocalculate,            !- Volume
+    autocalculate,            !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
 ZONELIST,
     zone_list_Dining: Cafeteria/fast food,    !- Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone 1 Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone 2 Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone 3 Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0;    !- Zone 4 Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone 2 Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone 3 Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone 4 Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone 5 Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone 6 Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Zone 7 Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1;    !- Zone 8 Name
 
 BUILDINGSURFACE:DETAILED,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 Wall 0001,    !- Name
@@ -724,17 +788,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
+    23.96583120441154,        !- Vertex 1 Xcoordinate
     0,                        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
     0,                        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    23.965831207760488,       !- Vertex 3 Xcoordinate
-    3.7691606705712895,       !- Vertex 3 Ycoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
+    3.769160670983217,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    23.965831207760488,       !- Vertex 4 Xcoordinate
-    3.7691606705712895,       !- Vertex 4 Ycoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
+    3.769160670983217,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -748,17 +812,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
-    3.7691606705712895,       !- Vertex 1 Ycoordinate
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    3.769160670983217,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
-    3.7691606705712895,       !- Vertex 2 Ycoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    3.769160670983217,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
-    3.7691606705712895,       !- Vertex 3 Ycoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    3.769160670983217,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
-    3.7691606705712895,       !- Vertex 4 Ycoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    3.769160670983217,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -772,16 +836,16 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    5.08987456953947,         !- Vertex 1 Xcoordinate
-    3.7691606705712895,       !- Vertex 1 Ycoordinate
+    5.089874569811538,        !- Vertex 1 Xcoordinate
+    3.769160670983217,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    5.08987456953947,         !- Vertex 2 Xcoordinate
-    3.7691606705712895,       !- Vertex 2 Ycoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
+    3.769160670983217,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
     0,                        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
     0,                        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
@@ -796,16 +860,16 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    5.08987456953947,         !- Vertex 1 Xcoordinate
+    5.089874569811538,        !- Vertex 1 Xcoordinate
     0,                        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    5.08987456953947,         !- Vertex 2 Xcoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
     0,                        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    23.965831207760488,       !- Vertex 3 Xcoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
     0,                        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    23.965831207760488,       !- Vertex 4 Xcoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
     0,                        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
@@ -820,23 +884,143 @@ BUILDINGSURFACE:DETAILED,
     NoWind,                   !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
-    3.7691606705712895,       !- Vertex 1 Ycoordinate
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    3.769160670983217,        !- Vertex 1 Ycoordinate
     0,                        !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
     0,                        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
     0,                        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
-    3.7691606705712895,       !- Vertex 4 Ycoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    3.769160670983217,        !- Vertex 4 Ycoordinate
     0;                        !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Roof 0001,    !- Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Wall 0001,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    0,                        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    0,                        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
+    3.769160670983217,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
+    3.769160670983217,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Wall 0002,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    3.769160670983217,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    3.769160670983217,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    3.769160670983217,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    3.769160670983217,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Wall 0003,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    5.089874569811538,        !- Vertex 1 Xcoordinate
+    3.769160670983217,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
+    3.769160670983217,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    0,                        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    0,                        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Wall 0004,    !- Name
+    wall,                     !- Surface Type
+    ext_wall_wood_framed,     !- Construction Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    5.089874569811538,        !- Vertex 1 Xcoordinate
+    0,                        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
+    0,                        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
+    0,                        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
+    0,                        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Roof 0001,    !- Name
     roof,                     !- Surface Type
     roof_attic_and_other,     !- Construction Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    0,                        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    3.769160670983217,        !- Vertex 2 Ycoordinate
+    7.315200000000001,        !- Vertex 2 Zcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    3.769160670983217,        !- Vertex 3 Ycoordinate
+    7.315200000000001,        !- Vertex 3 Zcoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    0,                        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_south_zone Storey 0 Ceiling 0001_1,    !- Name
+    ceiling,                  !- Surface Type
+    int_ceiling_default,      !- Construction Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone Name
     outdoors,                 !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
@@ -844,17 +1028,41 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
+    23.96583120431751,        !- Vertex 1 Xcoordinate
     0,                        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
-    3.7691606705712895,       !- Vertex 2 Ycoordinate
+    23.96583120431751,        !- Vertex 2 Xcoordinate
+    3.7691606706939638,       !- Vertex 2 Ycoordinate
     3.6576000000000004,       !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
-    3.7691606705712895,       !- Vertex 3 Ycoordinate
+    5.0898745697923005,       !- Vertex 3 Xcoordinate
+    3.7691606706939638,       !- Vertex 3 Ycoordinate
     3.6576000000000004,       !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
+    5.0898745697923005,       !- Vertex 4 Xcoordinate
     0,                        !- Vertex 4 Ycoordinate
+    3.6576000000000004;       !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Floor 0001_1,    !- Name
+    floor,                    !- Surface Type
+    int_floor_default,        !- Construction Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    NoSun,                    !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120431751,        !- Vertex 1 Xcoordinate
+    3.7691606706939638,       !- Vertex 1 Ycoordinate
+    3.6576000000000004,       !- Vertex 1 Zcoordinate
+    23.96583120431751,        !- Vertex 2 Xcoordinate
+    0,                        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    5.0898745697923005,       !- Vertex 3 Xcoordinate
+    0,                        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    5.0898745697923005,       !- Vertex 4 Xcoordinate
+    3.7691606706939638,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -868,17 +1076,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    3.769160670571289,        !- Vertex 1 Xcoordinate
-    4.773601891824597,        !- Vertex 1 Ycoordinate
+    3.7691606709832164,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    3.769160670571289,        !- Vertex 2 Xcoordinate
-    4.773601891824597,        !- Vertex 2 Ycoordinate
+    3.7691606709832164,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    3.769160670571289,        !- Vertex 3 Xcoordinate
-    17.324104975748142,       !- Vertex 3 Ycoordinate
+    3.7691606709832164,       !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    3.769160670571289,        !- Vertex 4 Xcoordinate
-    17.324104975748142,       !- Vertex 4 Ycoordinate
+    3.7691606709832164,       !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -892,17 +1100,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    3.769160670571289,        !- Vertex 1 Xcoordinate
-    17.324104975748142,       !- Vertex 1 Ycoordinate
+    3.7691606709832164,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    3.769160670571289,        !- Vertex 2 Xcoordinate
-    17.324104975748142,       !- Vertex 2 Ycoordinate
+    3.7691606709832164,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
     0,                        !- Vertex 3 Xcoordinate
-    17.324104975748142,       !- Vertex 3 Ycoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
     0,                        !- Vertex 4 Xcoordinate
-    17.324104975748142,       !- Vertex 4 Ycoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -917,16 +1125,16 @@ BUILDINGSURFACE:DETAILED,
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     0,                        !- Vertex 1 Xcoordinate
-    17.324104975748142,       !- Vertex 1 Ycoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
     0,                        !- Vertex 2 Xcoordinate
-    17.324104975748142,       !- Vertex 2 Ycoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
     0,                        !- Vertex 3 Xcoordinate
-    4.773601891824597,        !- Vertex 3 Ycoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
     0,                        !- Vertex 4 Xcoordinate
-    4.773601891824597,        !- Vertex 4 Ycoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -941,16 +1149,16 @@ BUILDINGSURFACE:DETAILED,
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     0,                        !- Vertex 1 Xcoordinate
-    4.773601891824597,        !- Vertex 1 Ycoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
     0,                        !- Vertex 2 Xcoordinate
-    4.773601891824597,        !- Vertex 2 Ycoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    3.769160670571289,        !- Vertex 3 Xcoordinate
-    4.773601891824597,        !- Vertex 3 Ycoordinate
+    3.7691606709832164,       !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    3.769160670571289,        !- Vertex 4 Xcoordinate
-    4.773601891824597,        !- Vertex 4 Ycoordinate
+    3.7691606709832164,       !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -964,23 +1172,143 @@ BUILDINGSURFACE:DETAILED,
     NoWind,                   !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    3.769160670571289,        !- Vertex 1 Xcoordinate
-    17.324104975748142,       !- Vertex 1 Ycoordinate
+    3.7691606709832164,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
     0,                        !- Vertex 1 Zcoordinate
-    3.769160670571289,        !- Vertex 2 Xcoordinate
-    4.773601891824597,        !- Vertex 2 Ycoordinate
+    3.7691606709832164,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
     0,                        !- Vertex 3 Xcoordinate
-    4.773601891824597,        !- Vertex 3 Ycoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
     0,                        !- Vertex 4 Xcoordinate
-    17.324104975748142,       !- Vertex 4 Ycoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
     0;                        !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Roof 0001,    !- Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Wall 0001,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    3.7691606709832164,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    3.7691606709832164,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    3.7691606709832164,       !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    3.7691606709832164,       !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Wall 0002,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    3.7691606709832164,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    3.7691606709832164,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Wall 0003,    !- Name
+    wall,                     !- Surface Type
+    ext_wall_wood_framed,     !- Construction Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    0,                        !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    0,                        !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Wall 0004,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    0,                        !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    0,                        !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    3.7691606709832164,       !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    3.7691606709832164,       !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Roof 0001,    !- Name
     roof,                     !- Surface Type
     roof_attic_and_other,     !- Construction Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    3.7691606709832164,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    3.7691606709832164,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
+    7.315200000000001,        !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
+    7.315200000000001,        !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_west_zone Storey 0 Ceiling 0001_1,    !- Name
+    ceiling,                  !- Surface Type
+    int_ceiling_default,      !- Construction Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone Name
     outdoors,                 !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
@@ -988,17 +1316,41 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    3.769160670571289,        !- Vertex 1 Xcoordinate
-    4.773601891824597,        !- Vertex 1 Ycoordinate
+    3.7691606706939638,       !- Vertex 1 Xcoordinate
+    4.773601891938597,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    3.769160670571289,        !- Vertex 2 Xcoordinate
-    17.324104975748142,       !- Vertex 2 Ycoordinate
+    3.7691606706939638,       !- Vertex 2 Xcoordinate
+    17.324104976374656,       !- Vertex 2 Ycoordinate
     3.6576000000000004,       !- Vertex 2 Zcoordinate
     0,                        !- Vertex 3 Xcoordinate
-    17.324104975748142,       !- Vertex 3 Ycoordinate
+    17.324104976374656,       !- Vertex 3 Ycoordinate
     3.6576000000000004,       !- Vertex 3 Zcoordinate
     0,                        !- Vertex 4 Xcoordinate
-    4.773601891824597,        !- Vertex 4 Ycoordinate
+    4.773601891938597,        !- Vertex 4 Ycoordinate
+    3.6576000000000004;       !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Floor 0001_1,    !- Name
+    floor,                    !- Surface Type
+    int_floor_default,        !- Construction Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    NoSun,                    !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    3.7691606706939638,       !- Vertex 1 Xcoordinate
+    17.324104976374656,       !- Vertex 1 Ycoordinate
+    3.6576000000000004,       !- Vertex 1 Zcoordinate
+    3.7691606706939638,       !- Vertex 2 Xcoordinate
+    4.773601891938597,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    4.773601891938597,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    17.324104976374656,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1012,17 +1364,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
-    18.32854619700145,        !- Vertex 1 Ycoordinate
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    18.328546197700867,       !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
-    18.32854619700145,        !- Vertex 2 Ycoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    18.328546197700867,       !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    23.965831207760488,       !- Vertex 3 Xcoordinate
-    22.09770686757274,        !- Vertex 3 Ycoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
+    22.097706868684085,       !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    23.965831207760488,       !- Vertex 4 Xcoordinate
-    22.09770686757274,        !- Vertex 4 Ycoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
+    22.097706868684085,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1036,17 +1388,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
-    22.09770686757274,        !- Vertex 1 Ycoordinate
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    22.097706868684085,       !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
-    22.09770686757274,        !- Vertex 2 Ycoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    22.097706868684085,       !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
-    22.09770686757274,        !- Vertex 3 Ycoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    22.097706868684085,       !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
-    22.09770686757274,        !- Vertex 4 Ycoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    22.097706868684085,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1060,17 +1412,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    5.08987456953947,         !- Vertex 1 Xcoordinate
-    22.09770686757274,        !- Vertex 1 Ycoordinate
+    5.089874569811538,        !- Vertex 1 Xcoordinate
+    22.097706868684085,       !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    5.08987456953947,         !- Vertex 2 Xcoordinate
-    22.09770686757274,        !- Vertex 2 Ycoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
+    22.097706868684085,       !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
-    18.32854619700145,        !- Vertex 3 Ycoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    18.328546197700867,       !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
-    18.32854619700145,        !- Vertex 4 Ycoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    18.328546197700867,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1084,17 +1436,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    5.08987456953947,         !- Vertex 1 Xcoordinate
-    18.32854619700145,        !- Vertex 1 Ycoordinate
+    5.089874569811538,        !- Vertex 1 Xcoordinate
+    18.328546197700867,       !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    5.08987456953947,         !- Vertex 2 Xcoordinate
-    18.32854619700145,        !- Vertex 2 Ycoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
+    18.328546197700867,       !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    23.965831207760488,       !- Vertex 3 Xcoordinate
-    18.32854619700145,        !- Vertex 3 Ycoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
+    18.328546197700867,       !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    23.965831207760488,       !- Vertex 4 Xcoordinate
-    18.32854619700145,        !- Vertex 4 Ycoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
+    18.328546197700867,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1108,23 +1460,143 @@ BUILDINGSURFACE:DETAILED,
     NoWind,                   !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
-    22.09770686757274,        !- Vertex 1 Ycoordinate
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    22.097706868684085,       !- Vertex 1 Ycoordinate
     0,                        !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
-    18.32854619700145,        !- Vertex 2 Ycoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    18.328546197700867,       !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
-    18.32854619700145,        !- Vertex 3 Ycoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    18.328546197700867,       !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
-    22.09770686757274,        !- Vertex 4 Ycoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    22.097706868684085,       !- Vertex 4 Ycoordinate
     0;                        !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Roof 0001,    !- Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Wall 0001,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    18.328546197700867,       !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    18.328546197700867,       !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
+    22.097706868684085,       !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
+    22.097706868684085,       !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Wall 0002,    !- Name
+    wall,                     !- Surface Type
+    ext_wall_wood_framed,     !- Construction Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    22.097706868684085,       !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    22.097706868684085,       !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    22.097706868684085,       !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    22.097706868684085,       !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Wall 0003,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    5.089874569811538,        !- Vertex 1 Xcoordinate
+    22.097706868684085,       !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
+    22.097706868684085,       !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    18.328546197700867,       !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    18.328546197700867,       !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Wall 0004,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    5.089874569811538,        !- Vertex 1 Xcoordinate
+    18.328546197700867,       !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
+    18.328546197700867,       !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
+    18.328546197700867,       !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
+    18.328546197700867,       !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Roof 0001,    !- Name
     roof,                     !- Surface Type
     roof_attic_and_other,     !- Construction Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    18.328546197700867,       !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    22.097706868684085,       !- Vertex 2 Ycoordinate
+    7.315200000000001,        !- Vertex 2 Zcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    22.097706868684085,       !- Vertex 3 Ycoordinate
+    7.315200000000001,        !- Vertex 3 Zcoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    18.328546197700867,       !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_north_zone Storey 0 Ceiling 0001_1,    !- Name
+    ceiling,                  !- Surface Type
+    int_ceiling_default,      !- Construction Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone Name
     outdoors,                 !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
@@ -1132,17 +1604,41 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
-    18.32854619700145,        !- Vertex 1 Ycoordinate
+    23.96583120431751,        !- Vertex 1 Xcoordinate
+    18.32854619761929,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
-    22.09770686757274,        !- Vertex 2 Ycoordinate
+    23.96583120431751,        !- Vertex 2 Xcoordinate
+    22.097706868313253,       !- Vertex 2 Ycoordinate
     3.6576000000000004,       !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
-    22.09770686757274,        !- Vertex 3 Ycoordinate
+    5.0898745697923005,       !- Vertex 3 Xcoordinate
+    22.097706868313253,       !- Vertex 3 Ycoordinate
     3.6576000000000004,       !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
-    18.32854619700145,        !- Vertex 4 Ycoordinate
+    5.0898745697923005,       !- Vertex 4 Xcoordinate
+    18.32854619761929,        !- Vertex 4 Ycoordinate
+    3.6576000000000004;       !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Floor 0001_1,    !- Name
+    floor,                    !- Surface Type
+    int_floor_default,        !- Construction Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    NoSun,                    !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120431751,        !- Vertex 1 Xcoordinate
+    22.097706868313253,       !- Vertex 1 Ycoordinate
+    3.6576000000000004,       !- Vertex 1 Zcoordinate
+    23.96583120431751,        !- Vertex 2 Xcoordinate
+    18.32854619761929,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    5.0898745697923005,       !- Vertex 3 Xcoordinate
+    18.32854619761929,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    5.0898745697923005,       !- Vertex 4 Xcoordinate
+    22.097706868313253,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1156,17 +1652,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    29.055705777299956,       !- Vertex 1 Xcoordinate
-    4.773601891824597,        !- Vertex 1 Ycoordinate
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    29.055705777299956,       !- Vertex 2 Xcoordinate
-    4.773601891824597,        !- Vertex 2 Ycoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    29.055705777299956,       !- Vertex 3 Xcoordinate
-    17.324104975748142,       !- Vertex 3 Ycoordinate
+    29.055705774223078,       !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    29.055705777299956,       !- Vertex 4 Xcoordinate
-    17.324104975748142,       !- Vertex 4 Ycoordinate
+    29.055705774223078,       !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1180,17 +1676,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    29.055705777299956,       !- Vertex 1 Xcoordinate
-    17.324104975748142,       !- Vertex 1 Ycoordinate
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    29.055705777299956,       !- Vertex 2 Xcoordinate
-    17.324104975748142,       !- Vertex 2 Ycoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    25.286545106728667,       !- Vertex 3 Xcoordinate
-    17.324104975748142,       !- Vertex 3 Ycoordinate
+    25.286545103239863,       !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    25.286545106728667,       !- Vertex 4 Xcoordinate
-    17.324104975748142,       !- Vertex 4 Ycoordinate
+    25.286545103239863,       !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1204,17 +1700,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    25.286545106728667,       !- Vertex 1 Xcoordinate
-    17.324104975748142,       !- Vertex 1 Ycoordinate
+    25.286545103239863,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    25.286545106728667,       !- Vertex 2 Xcoordinate
-    17.324104975748142,       !- Vertex 2 Ycoordinate
+    25.286545103239863,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    25.286545106728667,       !- Vertex 3 Xcoordinate
-    4.773601891824597,        !- Vertex 3 Ycoordinate
+    25.286545103239863,       !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    25.286545106728667,       !- Vertex 4 Xcoordinate
-    4.773601891824597,        !- Vertex 4 Ycoordinate
+    25.286545103239863,       !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1228,17 +1724,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    25.286545106728667,       !- Vertex 1 Xcoordinate
-    4.773601891824597,        !- Vertex 1 Ycoordinate
+    25.286545103239863,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    25.286545106728667,       !- Vertex 2 Xcoordinate
-    4.773601891824597,        !- Vertex 2 Ycoordinate
+    25.286545103239863,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    29.055705777299956,       !- Vertex 3 Xcoordinate
-    4.773601891824597,        !- Vertex 3 Ycoordinate
+    29.055705774223078,       !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    29.055705777299956,       !- Vertex 4 Xcoordinate
-    4.773601891824597,        !- Vertex 4 Ycoordinate
+    29.055705774223078,       !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1252,23 +1748,143 @@ BUILDINGSURFACE:DETAILED,
     NoWind,                   !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    29.055705777299956,       !- Vertex 1 Xcoordinate
-    17.324104975748142,       !- Vertex 1 Ycoordinate
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
     0,                        !- Vertex 1 Zcoordinate
-    29.055705777299956,       !- Vertex 2 Xcoordinate
-    4.773601891824597,        !- Vertex 2 Ycoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    25.286545106728667,       !- Vertex 3 Xcoordinate
-    4.773601891824597,        !- Vertex 3 Ycoordinate
+    25.286545103239863,       !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    25.286545106728667,       !- Vertex 4 Xcoordinate
-    17.324104975748142,       !- Vertex 4 Ycoordinate
+    25.286545103239863,       !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
     0;                        !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Roof 0001,    !- Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Wall 0001,    !- Name
+    wall,                     !- Surface Type
+    ext_wall_wood_framed,     !- Construction Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    29.055705774223078,       !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    29.055705774223078,       !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Wall 0002,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    25.286545103239863,       !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    25.286545103239863,       !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Wall 0003,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    25.286545103239863,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    25.286545103239863,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    25.286545103239863,       !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    25.286545103239863,       !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Wall 0004,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    25.286545103239863,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    25.286545103239863,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    29.055705774223078,       !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    29.055705774223078,       !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Roof 0001,    !- Name
     roof,                     !- Surface Type
     roof_attic_and_other,     !- Construction Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
+    7.315200000000001,        !- Vertex 2 Zcoordinate
+    25.286545103239863,       !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
+    7.315200000000001,        !- Vertex 3 Zcoordinate
+    25.286545103239863,       !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_east_zone Storey 0 Ceiling 0001_1,    !- Name
+    ceiling,                  !- Surface Type
+    int_ceiling_default,      !- Construction Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Zone Name
     outdoors,                 !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
@@ -1276,17 +1892,41 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    29.055705777299956,       !- Vertex 1 Xcoordinate
-    4.773601891824597,        !- Vertex 1 Ycoordinate
+    29.05570577410981,        !- Vertex 1 Xcoordinate
+    4.773601891938597,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    29.055705777299956,       !- Vertex 2 Xcoordinate
-    17.324104975748142,       !- Vertex 2 Ycoordinate
+    29.05570577410981,        !- Vertex 2 Xcoordinate
+    17.324104976374656,       !- Vertex 2 Ycoordinate
     3.6576000000000004,       !- Vertex 2 Zcoordinate
-    25.286545106728667,       !- Vertex 3 Xcoordinate
-    17.324104975748142,       !- Vertex 3 Ycoordinate
+    25.286545102950186,       !- Vertex 3 Xcoordinate
+    17.324104976374656,       !- Vertex 3 Ycoordinate
     3.6576000000000004,       !- Vertex 3 Zcoordinate
-    25.286545106728667,       !- Vertex 4 Xcoordinate
-    4.773601891824597,        !- Vertex 4 Ycoordinate
+    25.286545102950186,       !- Vertex 4 Xcoordinate
+    4.773601891938597,        !- Vertex 4 Ycoordinate
+    3.6576000000000004;       !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Floor 0001_1,    !- Name
+    floor,                    !- Surface Type
+    int_floor_default,        !- Construction Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    NoSun,                    !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    29.05570577410981,        !- Vertex 1 Xcoordinate
+    17.324104976374656,       !- Vertex 1 Ycoordinate
+    3.6576000000000004,       !- Vertex 1 Zcoordinate
+    29.05570577410981,        !- Vertex 2 Xcoordinate
+    4.773601891938597,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    25.286545102950186,       !- Vertex 3 Xcoordinate
+    4.773601891938597,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    25.286545102950186,       !- Vertex 4 Xcoordinate
+    17.324104976374656,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 FENESTRATIONSURFACE:DETAILED,
@@ -1299,18 +1939,41 @@ FENESTRATIONSURFACE:DETAILED,
     ,                         !- Frame and Divider Name
     1.0,                      !- Multiplier
     autocalculate,            !- Number of Vertices
-    5.099312547858581,        !- Vertex 1 Xcoordinate
+    5.099312548128838,        !- Vertex 1 Xcoordinate
     0,                        !- Vertex 1 Ycoordinate
-    2.523744,                 !- Vertex 1 Zcoordinate
-    5.099312547858581,        !- Vertex 2 Xcoordinate
+    2.523744000073827,        !- Vertex 1 Zcoordinate
+    5.099312548128838,        !- Vertex 2 Xcoordinate
     0,                        !- Vertex 2 Ycoordinate
-    1.1338560000000002,       !- Vertex 2 Zcoordinate
-    23.956393229441375,       !- Vertex 3 Xcoordinate
+    1.1338559999261735,       !- Vertex 2 Zcoordinate
+    23.956393226094242,       !- Vertex 3 Xcoordinate
     0,                        !- Vertex 3 Ycoordinate
-    1.1338560000000002,       !- Vertex 3 Zcoordinate
-    23.956393229441375,       !- Vertex 4 Xcoordinate
+    1.1338559999261735,       !- Vertex 3 Zcoordinate
+    23.956393226094242,       !- Vertex 4 Xcoordinate
     0,                        !- Vertex 4 Ycoordinate
-    2.523744;                 !- Vertex 4 Zcoordinate
+    2.523744000073827;        !- Vertex 4 Zcoordinate
+
+FENESTRATIONSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Wall 0004 window,    !- Name
+    Window,                   !- Surface Type
+    window_u_3.5205_shgc_0.4100,    !- Construction Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Wall 0004,    !- Building Surface Name
+    ,                         !- Outside Boundary Condition Object
+    autocalculate,            !- View Factor to Ground
+    ,                         !- Frame and Divider Name
+    1.0,                      !- Multiplier
+    autocalculate,            !- Number of Vertices
+    5.099312548128838,        !- Vertex 1 Xcoordinate
+    0,                        !- Vertex 1 Ycoordinate
+    6.181344000073827,        !- Vertex 1 Zcoordinate
+    5.099312548128838,        !- Vertex 2 Xcoordinate
+    0,                        !- Vertex 2 Ycoordinate
+    4.791455999926174,        !- Vertex 2 Zcoordinate
+    23.956393226094242,       !- Vertex 3 Xcoordinate
+    0,                        !- Vertex 3 Ycoordinate
+    4.791455999926174,        !- Vertex 3 Zcoordinate
+    23.956393226094242,       !- Vertex 4 Xcoordinate
+    0,                        !- Vertex 4 Ycoordinate
+    6.181344000073827;        !- Vertex 4 Zcoordinate
 
 FENESTRATIONSURFACE:DETAILED,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Wall 0003 window,    !- Name
@@ -1323,17 +1986,40 @@ FENESTRATIONSURFACE:DETAILED,
     1.0,                      !- Multiplier
     autocalculate,            !- Number of Vertices
     0,                        !- Vertex 1 Xcoordinate
-    17.31782972420618,        !- Vertex 1 Ycoordinate
-    2.523744,                 !- Vertex 1 Zcoordinate
+    17.317829724854988,       !- Vertex 1 Ycoordinate
+    2.5237439999370803,       !- Vertex 1 Zcoordinate
     0,                        !- Vertex 2 Xcoordinate
-    17.31782972420618,        !- Vertex 2 Ycoordinate
-    1.1338560000000002,       !- Vertex 2 Zcoordinate
+    17.317829724854988,       !- Vertex 2 Ycoordinate
+    1.13385600006292,         !- Vertex 2 Zcoordinate
     0,                        !- Vertex 3 Xcoordinate
-    4.779877143366559,        !- Vertex 3 Ycoordinate
-    1.1338560000000002,       !- Vertex 3 Zcoordinate
+    4.779877143829096,        !- Vertex 3 Ycoordinate
+    1.13385600006292,         !- Vertex 3 Zcoordinate
     0,                        !- Vertex 4 Xcoordinate
-    4.779877143366559,        !- Vertex 4 Ycoordinate
-    2.523744;                 !- Vertex 4 Zcoordinate
+    4.779877143829096,        !- Vertex 4 Ycoordinate
+    2.5237439999370803;       !- Vertex 4 Zcoordinate
+
+FENESTRATIONSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Wall 0003 window,    !- Name
+    Window,                   !- Surface Type
+    window_u_3.5205_shgc_0.4100,    !- Construction Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Wall 0003,    !- Building Surface Name
+    ,                         !- Outside Boundary Condition Object
+    autocalculate,            !- View Factor to Ground
+    ,                         !- Frame and Divider Name
+    1.0,                      !- Multiplier
+    autocalculate,            !- Number of Vertices
+    0,                        !- Vertex 1 Xcoordinate
+    17.317829724854988,       !- Vertex 1 Ycoordinate
+    6.181343999937081,        !- Vertex 1 Zcoordinate
+    0,                        !- Vertex 2 Xcoordinate
+    17.317829724854988,       !- Vertex 2 Ycoordinate
+    4.7914560000629205,       !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    4.779877143829096,        !- Vertex 3 Ycoordinate
+    4.7914560000629205,       !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    4.779877143829096,        !- Vertex 4 Ycoordinate
+    6.181343999937081;        !- Vertex 4 Zcoordinate
 
 FENESTRATIONSURFACE:DETAILED,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Wall 0002 window,    !- Name
@@ -1345,18 +2031,41 @@ FENESTRATIONSURFACE:DETAILED,
     ,                         !- Frame and Divider Name
     1.0,                      !- Multiplier
     autocalculate,            !- Number of Vertices
-    23.956393229441375,       !- Vertex 1 Xcoordinate
-    22.09770686757274,        !- Vertex 1 Ycoordinate
-    2.523744,                 !- Vertex 1 Zcoordinate
-    23.956393229441375,       !- Vertex 2 Xcoordinate
-    22.09770686757274,        !- Vertex 2 Ycoordinate
-    1.1338560000000002,       !- Vertex 2 Zcoordinate
-    5.099312547858581,        !- Vertex 3 Xcoordinate
-    22.09770686757274,        !- Vertex 3 Ycoordinate
-    1.1338560000000002,       !- Vertex 3 Zcoordinate
-    5.099312547858581,        !- Vertex 4 Xcoordinate
-    22.09770686757274,        !- Vertex 4 Ycoordinate
-    2.523744;                 !- Vertex 4 Zcoordinate
+    23.956393226094242,       !- Vertex 1 Xcoordinate
+    22.097706868684085,       !- Vertex 1 Ycoordinate
+    2.523744000073827,        !- Vertex 1 Zcoordinate
+    23.956393226094242,       !- Vertex 2 Xcoordinate
+    22.097706868684085,       !- Vertex 2 Ycoordinate
+    1.1338559999261735,       !- Vertex 2 Zcoordinate
+    5.099312548128838,        !- Vertex 3 Xcoordinate
+    22.097706868684085,       !- Vertex 3 Ycoordinate
+    1.1338559999261735,       !- Vertex 3 Zcoordinate
+    5.099312548128838,        !- Vertex 4 Xcoordinate
+    22.097706868684085,       !- Vertex 4 Ycoordinate
+    2.523744000073827;        !- Vertex 4 Zcoordinate
+
+FENESTRATIONSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Wall 0002 window,    !- Name
+    Window,                   !- Surface Type
+    window_u_3.5205_shgc_0.4100,    !- Construction Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Wall 0002,    !- Building Surface Name
+    ,                         !- Outside Boundary Condition Object
+    autocalculate,            !- View Factor to Ground
+    ,                         !- Frame and Divider Name
+    1.0,                      !- Multiplier
+    autocalculate,            !- Number of Vertices
+    23.956393226094242,       !- Vertex 1 Xcoordinate
+    22.097706868684085,       !- Vertex 1 Ycoordinate
+    6.181344000073827,        !- Vertex 1 Zcoordinate
+    23.956393226094242,       !- Vertex 2 Xcoordinate
+    22.097706868684085,       !- Vertex 2 Ycoordinate
+    4.791455999926174,        !- Vertex 2 Zcoordinate
+    5.099312548128838,        !- Vertex 3 Xcoordinate
+    22.097706868684085,       !- Vertex 3 Ycoordinate
+    4.791455999926174,        !- Vertex 3 Zcoordinate
+    5.099312548128838,        !- Vertex 4 Xcoordinate
+    22.097706868684085,       !- Vertex 4 Ycoordinate
+    6.181344000073827;        !- Vertex 4 Zcoordinate
 
 FENESTRATIONSURFACE:DETAILED,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 Wall 0001 window,    !- Name
@@ -1368,18 +2077,41 @@ FENESTRATIONSURFACE:DETAILED,
     ,                         !- Frame and Divider Name
     1.0,                      !- Multiplier
     autocalculate,            !- Number of Vertices
-    29.055705777299956,       !- Vertex 1 Xcoordinate
-    4.779877143366559,        !- Vertex 1 Ycoordinate
-    2.523744,                 !- Vertex 1 Zcoordinate
-    29.055705777299956,       !- Vertex 2 Xcoordinate
-    4.779877143366559,        !- Vertex 2 Ycoordinate
-    1.1338560000000002,       !- Vertex 2 Zcoordinate
-    29.055705777299956,       !- Vertex 3 Xcoordinate
-    17.31782972420618,        !- Vertex 3 Ycoordinate
-    1.1338560000000002,       !- Vertex 3 Zcoordinate
-    29.055705777299956,       !- Vertex 4 Xcoordinate
-    17.31782972420618,        !- Vertex 4 Ycoordinate
-    2.523744;                 !- Vertex 4 Zcoordinate
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    4.779877143829096,        !- Vertex 1 Ycoordinate
+    2.5237439999370803,       !- Vertex 1 Zcoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    4.779877143829096,        !- Vertex 2 Ycoordinate
+    1.13385600006292,         !- Vertex 2 Zcoordinate
+    29.055705774223078,       !- Vertex 3 Xcoordinate
+    17.317829724854988,       !- Vertex 3 Ycoordinate
+    1.13385600006292,         !- Vertex 3 Zcoordinate
+    29.055705774223078,       !- Vertex 4 Xcoordinate
+    17.317829724854988,       !- Vertex 4 Ycoordinate
+    2.5237439999370803;       !- Vertex 4 Zcoordinate
+
+FENESTRATIONSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Wall 0001 window,    !- Name
+    Window,                   !- Surface Type
+    window_u_3.5205_shgc_0.4100,    !- Construction Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Wall 0001,    !- Building Surface Name
+    ,                         !- Outside Boundary Condition Object
+    autocalculate,            !- View Factor to Ground
+    ,                         !- Frame and Divider Name
+    1.0,                      !- Multiplier
+    autocalculate,            !- Number of Vertices
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    4.779877143829096,        !- Vertex 1 Ycoordinate
+    6.181343999937081,        !- Vertex 1 Zcoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    4.779877143829096,        !- Vertex 2 Ycoordinate
+    4.7914560000629205,       !- Vertex 2 Zcoordinate
+    29.055705774223078,       !- Vertex 3 Xcoordinate
+    17.317829724854988,       !- Vertex 3 Ycoordinate
+    4.7914560000629205,       !- Vertex 3 Zcoordinate
+    29.055705774223078,       !- Vertex 4 Xcoordinate
+    17.317829724854988,       !- Vertex 4 Ycoordinate
+    6.181343999937081;        !- Vertex 4 Zcoordinate
 
 PEOPLE,
     Dining: Cafeteria/fast food_ppl,    !- Name
@@ -1457,7 +2189,17 @@ DesignSpecification:ZoneAirDistribution,
     1;                        !- Zone Air Distribution Effectiveness in Heating Mode
 
 DesignSpecification:ZoneAirDistribution,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Design Spec Zone Air Dist,    !- Name
+    1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
+    1;                        !- Zone Air Distribution Effectiveness in Heating Mode
+
+DesignSpecification:ZoneAirDistribution,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Design Spec Zone Air Dist,    !- Name
+    1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
+    1;                        !- Zone Air Distribution Effectiveness in Heating Mode
+
+DesignSpecification:ZoneAirDistribution,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Design Spec Zone Air Dist,    !- Name
     1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
     1;                        !- Zone Air Distribution Effectiveness in Heating Mode
 
@@ -1467,7 +2209,17 @@ DesignSpecification:ZoneAirDistribution,
     1;                        !- Zone Air Distribution Effectiveness in Heating Mode
 
 DesignSpecification:ZoneAirDistribution,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Design Spec Zone Air Dist,    !- Name
+    1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
+    1;                        !- Zone Air Distribution Effectiveness in Heating Mode
+
+DesignSpecification:ZoneAirDistribution,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Design Spec Zone Air Dist,    !- Name
+    1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
+    1;                        !- Zone Air Distribution Effectiveness in Heating Mode
+
+DesignSpecification:ZoneAirDistribution,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Design Spec Zone Air Dist,    !- Name
     1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
     1;                        !- Zone Air Distribution Effectiveness in Heating Mode
 
@@ -1498,6 +2250,32 @@ Sizing:Zone,
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:Zone,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone or ZoneList Name
+    SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
+    12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
+    11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
+    SupplyAirTemperature,     !- Zone Heating Design Supply Air Temperature Input Method
+    40.0000000000001,         !- Zone Heating Design Supply Air Temperature
+    11.11,                    !- Zone Heating Design Supply Air Temperature Difference
+    0.0085,                   !- Zone Cooling Design Supply Air Humidity Ratio
+    0.008,                    !- Zone Heating Design Supply Air Humidity Ratio
+    design_oa,                !- Design Specification Outdoor Air Object Name
+    ,                         !- Zone Heating Sizing Factor
+    ,                         !- Zone Cooling Sizing Factor
+    DesignDayWithLimit,       !- Cooling Design Air Flow Method
+    0,                        !- Cooling Design Air Flow Rate
+    0.000762,                 !- Cooling Minimum Air Flow per Zone Floor Area
+    0,                        !- Cooling Minimum Air Flow
+    0,                        !- Cooling Minimum Air Flow Fraction
+    DesignDay,                !- Heating Design Air Flow Method
+    0,                        !- Heating Design Air Flow Rate
+    0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
+    0.1415762,                !- Heating Maximum Air Flow
+    0.3,                      !- Heating Maximum Air Flow Fraction
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    No;                       !- Account for Dedicated Outdoor Air System
+
+Sizing:Zone,
     Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone or ZoneList Name
     SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
     12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
@@ -1521,6 +2299,32 @@ Sizing:Zone,
     0.1415762,                !- Heating Maximum Air Flow
     0.3,                      !- Heating Maximum Air Flow Fraction
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    No;                       !- Account for Dedicated Outdoor Air System
+
+Sizing:Zone,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone or ZoneList Name
+    SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
+    12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
+    11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
+    SupplyAirTemperature,     !- Zone Heating Design Supply Air Temperature Input Method
+    40.0000000000001,         !- Zone Heating Design Supply Air Temperature
+    11.11,                    !- Zone Heating Design Supply Air Temperature Difference
+    0.0085,                   !- Zone Cooling Design Supply Air Humidity Ratio
+    0.008,                    !- Zone Heating Design Supply Air Humidity Ratio
+    design_oa,                !- Design Specification Outdoor Air Object Name
+    ,                         !- Zone Heating Sizing Factor
+    ,                         !- Zone Cooling Sizing Factor
+    DesignDayWithLimit,       !- Cooling Design Air Flow Method
+    0,                        !- Cooling Design Air Flow Rate
+    0.000762,                 !- Cooling Minimum Air Flow per Zone Floor Area
+    0,                        !- Cooling Minimum Air Flow
+    0,                        !- Cooling Minimum Air Flow Fraction
+    DesignDay,                !- Heating Design Air Flow Method
+    0,                        !- Heating Design Air Flow Rate
+    0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
+    0.1415762,                !- Heating Maximum Air Flow
+    0.3,                      !- Heating Maximum Air Flow Fraction
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:Zone,
@@ -1550,6 +2354,32 @@ Sizing:Zone,
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:Zone,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone or ZoneList Name
+    SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
+    12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
+    11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
+    SupplyAirTemperature,     !- Zone Heating Design Supply Air Temperature Input Method
+    40.0000000000001,         !- Zone Heating Design Supply Air Temperature
+    11.11,                    !- Zone Heating Design Supply Air Temperature Difference
+    0.0085,                   !- Zone Cooling Design Supply Air Humidity Ratio
+    0.008,                    !- Zone Heating Design Supply Air Humidity Ratio
+    design_oa,                !- Design Specification Outdoor Air Object Name
+    ,                         !- Zone Heating Sizing Factor
+    ,                         !- Zone Cooling Sizing Factor
+    DesignDayWithLimit,       !- Cooling Design Air Flow Method
+    0,                        !- Cooling Design Air Flow Rate
+    0.000762,                 !- Cooling Minimum Air Flow per Zone Floor Area
+    0,                        !- Cooling Minimum Air Flow
+    0,                        !- Cooling Minimum Air Flow Fraction
+    DesignDay,                !- Heating Design Air Flow Method
+    0,                        !- Heating Design Air Flow Rate
+    0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
+    0.1415762,                !- Heating Maximum Air Flow
+    0.3,                      !- Heating Maximum Air Flow Fraction
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    No;                       !- Account for Dedicated Outdoor Air System
+
+Sizing:Zone,
     Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone or ZoneList Name
     SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
     12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
@@ -1575,8 +2405,34 @@ Sizing:Zone,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
     No;                       !- Account for Dedicated Outdoor Air System
 
+Sizing:Zone,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone or ZoneList Name
+    SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
+    12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
+    11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
+    SupplyAirTemperature,     !- Zone Heating Design Supply Air Temperature Input Method
+    40.0000000000001,         !- Zone Heating Design Supply Air Temperature
+    11.11,                    !- Zone Heating Design Supply Air Temperature Difference
+    0.0085,                   !- Zone Cooling Design Supply Air Humidity Ratio
+    0.008,                    !- Zone Heating Design Supply Air Humidity Ratio
+    design_oa,                !- Design Specification Outdoor Air Object Name
+    ,                         !- Zone Heating Sizing Factor
+    ,                         !- Zone Cooling Sizing Factor
+    DesignDayWithLimit,       !- Cooling Design Air Flow Method
+    0,                        !- Cooling Design Air Flow Rate
+    0.000762,                 !- Cooling Minimum Air Flow per Zone Floor Area
+    0,                        !- Cooling Minimum Air Flow
+    0,                        !- Cooling Minimum Air Flow Fraction
+    DesignDay,                !- Heating Design Air Flow Method
+    0,                        !- Heating Design Air Flow Rate
+    0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
+    0.1415762,                !- Heating Maximum Air Flow
+    0.3,                      !- Heating Maximum Air Flow Fraction
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    No;                       !- Account for Dedicated Outdoor Air System
+
 Sizing:System,
-    4 Zone VAV,               !- AirLoop Name
+    8 Zone VAV,               !- AirLoop Name
     Sensible,                 !- Type of Load to Size On
     Autosize,                 !- Design Outdoor Air Flow Rate
     0.3,                      !- Central Heating Maximum System Air Flow Ratio
@@ -1664,6 +2520,27 @@ AirTerminal:SingleDuct:VAV:Reheat,
     40.0000000000001;         !- Maximum Reheat Air Temperature
 
 AirTerminal:SingleDuct:VAV:Reheat,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal,    !- Name
+    Always On Discrete,       !- Availability Schedule Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
+    Autosize,                 !- Maximum Air Flow Rate
+    Constant,                 !- Zone Minimum Air Flow Input Method
+    0.2,                      !- Constant Minimum Air Flow Fraction
+    0,                        !- Fixed Minimum Air Flow Rate
+    ,                         !- Minimum Air Flow Fraction Schedule Name
+    Coil:Heating:Water,       !- Reheat Coil Object Type
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil,    !- Reheat Coil Name
+    Autosize,                 !- Maximum Hot Water or Steam Flow Rate
+    0,                        !- Minimum Hot Water or Steam Flow Rate
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    0.001,                    !- Convergence Tolerance
+    ReverseWithLimits,        !- Damper Heating Action
+    Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
+    0.5,                      !- Maximum Flow Fraction During Reheat
+    40.0000000000001;         !- Maximum Reheat Air Temperature
+
+AirTerminal:SingleDuct:VAV:Reheat,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
@@ -1678,6 +2555,27 @@ AirTerminal:SingleDuct:VAV:Reheat,
     Autosize,                 !- Maximum Hot Water or Steam Flow Rate
     0,                        !- Minimum Hot Water or Steam Flow Rate
     Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    0.001,                    !- Convergence Tolerance
+    ReverseWithLimits,        !- Damper Heating Action
+    Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
+    0.5,                      !- Maximum Flow Fraction During Reheat
+    40.0000000000001;         !- Maximum Reheat Air Temperature
+
+AirTerminal:SingleDuct:VAV:Reheat,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal,    !- Name
+    Always On Discrete,       !- Availability Schedule Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
+    Autosize,                 !- Maximum Air Flow Rate
+    Constant,                 !- Zone Minimum Air Flow Input Method
+    0.2,                      !- Constant Minimum Air Flow Fraction
+    0,                        !- Fixed Minimum Air Flow Rate
+    ,                         !- Minimum Air Flow Fraction Schedule Name
+    Coil:Heating:Water,       !- Reheat Coil Object Type
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil,    !- Reheat Coil Name
+    Autosize,                 !- Maximum Hot Water or Steam Flow Rate
+    0,                        !- Minimum Hot Water or Steam Flow Rate
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     0.001,                    !- Convergence Tolerance
     ReverseWithLimits,        !- Damper Heating Action
     Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
@@ -1706,6 +2604,27 @@ AirTerminal:SingleDuct:VAV:Reheat,
     40.0000000000001;         !- Maximum Reheat Air Temperature
 
 AirTerminal:SingleDuct:VAV:Reheat,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal,    !- Name
+    Always On Discrete,       !- Availability Schedule Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
+    Autosize,                 !- Maximum Air Flow Rate
+    Constant,                 !- Zone Minimum Air Flow Input Method
+    0.2,                      !- Constant Minimum Air Flow Fraction
+    0,                        !- Fixed Minimum Air Flow Rate
+    ,                         !- Minimum Air Flow Fraction Schedule Name
+    Coil:Heating:Water,       !- Reheat Coil Object Type
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil,    !- Reheat Coil Name
+    Autosize,                 !- Maximum Hot Water or Steam Flow Rate
+    0,                        !- Minimum Hot Water or Steam Flow Rate
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    0.001,                    !- Convergence Tolerance
+    ReverseWithLimits,        !- Damper Heating Action
+    Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
+    0.5,                      !- Maximum Flow Fraction During Reheat
+    40.0000000000001;         !- Maximum Reheat Air Temperature
+
+AirTerminal:SingleDuct:VAV:Reheat,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
@@ -1726,11 +2645,38 @@ AirTerminal:SingleDuct:VAV:Reheat,
     0.5,                      !- Maximum Flow Fraction During Reheat
     40.0000000000001;         !- Maximum Reheat Air Temperature
 
+AirTerminal:SingleDuct:VAV:Reheat,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal,    !- Name
+    Always On Discrete,       !- Availability Schedule Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
+    Autosize,                 !- Maximum Air Flow Rate
+    Constant,                 !- Zone Minimum Air Flow Input Method
+    0.2,                      !- Constant Minimum Air Flow Fraction
+    0,                        !- Fixed Minimum Air Flow Rate
+    ,                         !- Minimum Air Flow Fraction Schedule Name
+    Coil:Heating:Water,       !- Reheat Coil Object Type
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil,    !- Reheat Coil Name
+    Autosize,                 !- Maximum Hot Water or Steam Flow Rate
+    0,                        !- Minimum Hot Water or Steam Flow Rate
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    0.001,                    !- Convergence Tolerance
+    ReverseWithLimits,        !- Damper Heating Action
+    Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
+    0.5,                      !- Maximum Flow Fraction During Reheat
+    40.0000000000001;         !- Maximum Reheat Air Temperature
+
 ZoneHVAC:AirDistributionUnit,
     ADU Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal,    !- Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
     AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
     Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal;    !- Air Terminal Name
+
+ZoneHVAC:AirDistributionUnit,
+    ADU Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal,    !- Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal;    !- Air Terminal Name
 
 ZoneHVAC:AirDistributionUnit,
     ADU Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal,    !- Name
@@ -1739,10 +2685,22 @@ ZoneHVAC:AirDistributionUnit,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal;    !- Air Terminal Name
 
 ZoneHVAC:AirDistributionUnit,
+    ADU Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal,    !- Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal;    !- Air Terminal Name
+
+ZoneHVAC:AirDistributionUnit,
     ADU Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal,    !- Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
     AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
     Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal;    !- Air Terminal Name
+
+ZoneHVAC:AirDistributionUnit,
+    ADU Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal,    !- Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal;    !- Air Terminal Name
 
 ZoneHVAC:AirDistributionUnit,
     ADU Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal,    !- Name
@@ -1750,11 +2708,25 @@ ZoneHVAC:AirDistributionUnit,
     AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
     Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal;    !- Air Terminal Name
 
+ZoneHVAC:AirDistributionUnit,
+    ADU Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal,    !- Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal;    !- Air Terminal Name
+
 ZoneHVAC:EquipmentList,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
     ADU Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal,    !- Zone Equipment 1 Name
+    1,                        !- Zone Equipment 1 Cooling Sequence
+    1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
+
+ZoneHVAC:EquipmentList,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Equipment List,    !- Name
+    SequentialLoad,           !- Load Distribution Scheme
+    ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
+    ADU Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
     1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
 
@@ -1767,6 +2739,14 @@ ZoneHVAC:EquipmentList,
     1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
 
 ZoneHVAC:EquipmentList,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Equipment List,    !- Name
+    SequentialLoad,           !- Load Distribution Scheme
+    ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
+    ADU Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal,    !- Zone Equipment 1 Name
+    1,                        !- Zone Equipment 1 Cooling Sequence
+    1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
+
+ZoneHVAC:EquipmentList,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
@@ -1775,10 +2755,26 @@ ZoneHVAC:EquipmentList,
     1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
 
 ZoneHVAC:EquipmentList,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Equipment List,    !- Name
+    SequentialLoad,           !- Load Distribution Scheme
+    ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
+    ADU Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal,    !- Zone Equipment 1 Name
+    1,                        !- Zone Equipment 1 Cooling Sequence
+    1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
+
+ZoneHVAC:EquipmentList,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
     ADU Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal,    !- Zone Equipment 1 Name
+    1,                        !- Zone Equipment 1 Cooling Sequence
+    1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
+
+ZoneHVAC:EquipmentList,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Equipment List,    !- Name
+    SequentialLoad,           !- Load Distribution Scheme
+    ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
+    ADU Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
     1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
 
@@ -1791,12 +2787,28 @@ ZoneHVAC:EquipmentConnections,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 ZoneHVAC:EquipmentConnections,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    ,                         !- Zone Air Exhaust Node or NodeList Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Zone Air Node,    !- Zone Air Node Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Return Node List;    !- Zone Return Air Node or NodeList Name
+
+ZoneHVAC:EquipmentConnections,
     Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
     ,                         !- Zone Air Exhaust Node or NodeList Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
+
+ZoneHVAC:EquipmentConnections,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    ,                         !- Zone Air Exhaust Node or NodeList Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Zone Air Node,    !- Zone Air Node Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 ZoneHVAC:EquipmentConnections,
     Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone Name
@@ -1807,6 +2819,14 @@ ZoneHVAC:EquipmentConnections,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 ZoneHVAC:EquipmentConnections,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    ,                         !- Zone Air Exhaust Node or NodeList Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Zone Air Node,    !- Zone Air Node Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Return Node List;    !- Zone Return Air Node or NodeList Name
+
+ZoneHVAC:EquipmentConnections,
     Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
@@ -1814,8 +2834,16 @@ ZoneHVAC:EquipmentConnections,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
 
+ZoneHVAC:EquipmentConnections,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    ,                         !- Zone Air Exhaust Node or NodeList Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Zone Air Node,    !- Zone Air Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Return Node List;    !- Zone Return Air Node or NodeList Name
+
 Fan:VariableVolume,
-    4 Zone VAV Fan,           !- Name
+    8 Zone VAV Fan,           !- Name
     Always On Discrete,       !- Availability Schedule Name
     0.62,                     !- Fan Total Efficiency
     996.35564,                !- Pressure Rise
@@ -1830,19 +2858,19 @@ Fan:VariableVolume,
     -0.07292612,              !- Fan Power Coefficient 3
     0.943739823,              !- Fan Power Coefficient 4
     0,                        !- Fan Power Coefficient 5
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Air Inlet Node Name
-    4 Zone VAV Supply Outlet Node;    !- Air Outlet Node Name
+    8 Zone VAV Main Htg Coil Outlet Air Node,    !- Air Inlet Node Name
+    8 Zone VAV Supply Outlet Node;    !- Air Outlet Node Name
 
 Coil:Cooling:DX:TwoSpeed,
-    4 Zone VAV 2spd DX Clg Coil,    !- Name
+    8 Zone VAV 2spd DX Clg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- High Speed Gross Rated Total Cooling Capacity
     Autosize,                 !- High Speed Rated Sensible Heat Ratio
     3,                        !- High Speed Gross Rated Cooling COP
     Autosize,                 !- High Speed Rated Air Flow Rate
     ,                         !- Unit Internal Static Air Pressure
-    4 Zone VAV Mixed Air Node,    !- Air Inlet Node Name
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Air Outlet Node Name
+    8 Zone VAV Mixed Air Node,    !- Air Inlet Node Name
+    8 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Air Outlet Node Name
     Curve Biquadratic 1,      !- Total Cooling Capacity Function of Temperature Curve Name
     Curve Quadratic 1,        !- Total Cooling Capacity Function of Flow Fraction Curve Name
     Curve Biquadratic 2,      !- Energy Input Ratio Function of Temperature Curve Name
@@ -1886,6 +2914,23 @@ Coil:Heating:Water,
     0.5;                      !- Rated Ratio for Air and Water Convection
 
 Coil:Heating:Water,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil,    !- Name
+    Always On Discrete,       !- Availability Schedule Name
+    Autosize,                 !- UFactor Times Area Value
+    Autosize,                 !- Maximum Water Flow Rate
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
+    Autosize,                 !- Rated Capacity
+    82.2222222222223,         !- Rated Inlet Water Temperature
+    12.7777777777778,         !- Rated Inlet Air Temperature
+    71.1111111111112,         !- Rated Outlet Water Temperature
+    40.0000000000001,         !- Rated Outlet Air Temperature
+    0.5;                      !- Rated Ratio for Air and Water Convection
+
+Coil:Heating:Water,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
@@ -1894,6 +2939,23 @@ Coil:Heating:Water,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
+    Autosize,                 !- Rated Capacity
+    82.2222222222223,         !- Rated Inlet Water Temperature
+    12.7777777777778,         !- Rated Inlet Air Temperature
+    71.1111111111112,         !- Rated Outlet Water Temperature
+    40.0000000000001,         !- Rated Outlet Air Temperature
+    0.5;                      !- Rated Ratio for Air and Water Convection
+
+Coil:Heating:Water,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil,    !- Name
+    Always On Discrete,       !- Availability Schedule Name
+    Autosize,                 !- UFactor Times Area Value
+    Autosize,                 !- Maximum Water Flow Rate
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
     Autosize,                 !- Rated Capacity
     82.2222222222223,         !- Rated Inlet Water Temperature
@@ -1920,6 +2982,23 @@ Coil:Heating:Water,
     0.5;                      !- Rated Ratio for Air and Water Convection
 
 Coil:Heating:Water,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil,    !- Name
+    Always On Discrete,       !- Availability Schedule Name
+    Autosize,                 !- UFactor Times Area Value
+    Autosize,                 !- Maximum Water Flow Rate
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
+    Autosize,                 !- Rated Capacity
+    82.2222222222223,         !- Rated Inlet Water Temperature
+    12.7777777777778,         !- Rated Inlet Air Temperature
+    71.1111111111112,         !- Rated Outlet Water Temperature
+    40.0000000000001,         !- Rated Outlet Air Temperature
+    0.5;                      !- Rated Ratio for Air and Water Convection
+
+Coil:Heating:Water,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
@@ -1937,14 +3016,31 @@ Coil:Heating:Water,
     0.5;                      !- Rated Ratio for Air and Water Convection
 
 Coil:Heating:Water,
-    4 Zone VAV Main Htg Coil,    !- Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
-    4 Zone VAV Main Htg Coil Inlet Water Node,    !- Water Inlet Node Name
-    4 Zone VAV Main Htg Coil Outlet Water Node,    !- Water Outlet Node Name
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Air Inlet Node Name
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Air Outlet Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
+    Autosize,                 !- Rated Capacity
+    82.2222222222223,         !- Rated Inlet Water Temperature
+    12.7777777777778,         !- Rated Inlet Air Temperature
+    71.1111111111112,         !- Rated Outlet Water Temperature
+    40.0000000000001,         !- Rated Outlet Air Temperature
+    0.5;                      !- Rated Ratio for Air and Water Convection
+
+Coil:Heating:Water,
+    8 Zone VAV Main Htg Coil,    !- Name
+    Always On Discrete,       !- Availability Schedule Name
+    Autosize,                 !- UFactor Times Area Value
+    Autosize,                 !- Maximum Water Flow Rate
+    8 Zone VAV Main Htg Coil Inlet Water Node,    !- Water Inlet Node Name
+    8 Zone VAV Main Htg Coil Outlet Water Node,    !- Water Outlet Node Name
+    8 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Air Inlet Node Name
+    8 Zone VAV Main Htg Coil Outlet Air Node,    !- Air Outlet Node Name
     UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
     Autosize,                 !- Rated Capacity
     82.2222222222223,         !- Rated Inlet Water Temperature
@@ -1954,31 +3050,31 @@ Coil:Heating:Water,
     0.5;                      !- Rated Ratio for Air and Water Convection
 
 CoilSystem:Cooling:DX,
-    4 Zone VAV 2spd DX Clg Coil CoilSystem,    !- Name
+    8 Zone VAV 2spd DX Clg Coil CoilSystem,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    4 Zone VAV Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
+    8 Zone VAV Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
+    8 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
+    8 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
     Coil:Cooling:DX:TwoSpeed,    !- Cooling Coil Object Type
-    4 Zone VAV 2spd DX Clg Coil;    !- Cooling Coil Name
+    8 Zone VAV 2spd DX Clg Coil;    !- Cooling Coil Name
 
 Controller:WaterCoil,
-    4 Zone VAV Main Htg Coil Controller,    !- Name
+    8 Zone VAV Main Htg Coil Controller,    !- Name
     Temperature,              !- Control Variable
     Normal,                   !- Action
     Flow,                     !- Actuator Variable
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Sensor Node Name
-    4 Zone VAV Main Htg Coil Inlet Water Node,    !- Actuator Node Name
+    8 Zone VAV Main Htg Coil Outlet Air Node,    !- Sensor Node Name
+    8 Zone VAV Main Htg Coil Inlet Water Node,    !- Actuator Node Name
     0.1,                      !- Controller Convergence Tolerance
     Autosize,                 !- Maximum Actuated Flow
     0;                        !- Minimum Actuated Flow
 
 Controller:OutdoorAir,
-    4 Zone VAV OA Controller,    !- Name
-    4 Zone VAV Relief Air Node,    !- Relief Air Outlet Node Name
-    4 Zone VAV Supply Inlet Node,    !- Return Air Node Name
-    4 Zone VAV Mixed Air Node,    !- Mixed Air Node Name
-    4 Zone VAV Outdoor Air Node,    !- Actuator Node Name
+    8 Zone VAV OA Controller,    !- Name
+    8 Zone VAV Relief Air Node,    !- Relief Air Outlet Node Name
+    8 Zone VAV Supply Inlet Node,    !- Return Air Node Name
+    8 Zone VAV Mixed Air Node,    !- Mixed Air Node Name
+    8 Zone VAV Outdoor Air Node,    !- Actuator Node Name
     Autosize,                 !- Minimum Outdoor Air Flow Rate
     Autosize,                 !- Maximum Outdoor Air Flow Rate
     NoEconomizer,             !- Economizer Control Type
@@ -1993,7 +3089,7 @@ Controller:OutdoorAir,
     ,                         !- Minimum Outdoor Air Schedule Name
     ,                         !- Minimum Fraction of Outdoor Air Schedule Name
     ,                         !- Maximum Fraction of Outdoor Air Schedule Name
-    4 Zone VAV Vent Controller,    !- Mechanical Ventilation Controller Name
+    8 Zone VAV Vent Controller,    !- Mechanical Ventilation Controller Name
     ,                         !- Time of Day Economizer Control Schedule Name
     No,                       !- High Humidity Control
     ,                         !- Humidistat Control Zone Name
@@ -2002,7 +3098,7 @@ Controller:OutdoorAir,
     BypassWhenWithinEconomizerLimits;    !- Heat Recovery Bypass Control Type
 
 Controller:MechanicalVentilation,
-    4 Zone VAV Vent Controller,    !- Name
+    8 Zone VAV Vent Controller,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     No,                       !- Demand Controlled Ventilation
     VentilationRateProcedure,    !- System Outdoor Air Method
@@ -2010,103 +3106,123 @@ Controller:MechanicalVentilation,
     Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Zone 1 Name
     ,                         !- Design Specification Outdoor Air Object Name 1
     Block Dining: Cafeteria/fast food_east_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 1
-    Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone 2 Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone 2 Name
     ,                         !- Design Specification Outdoor Air Object Name 2
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 2
-    Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone 3 Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 2
+    Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone 3 Name
     ,                         !- Design Specification Outdoor Air Object Name 3
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 3
-    Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone 4 Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 3
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone 4 Name
     ,                         !- Design Specification Outdoor Air Object Name 4
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 4
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 4
+    Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone 5 Name
+    ,                         !- Design Specification Outdoor Air Object Name 5
+    Block Dining: Cafeteria/fast food_south_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 5
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone 6 Name
+    ,                         !- Design Specification Outdoor Air Object Name 6
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 6
+    Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone 7 Name
+    ,                         !- Design Specification Outdoor Air Object Name 7
+    Block Dining: Cafeteria/fast food_west_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 7
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone 8 Name
+    ,                         !- Design Specification Outdoor Air Object Name 8
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 8
 
 AirLoopHVAC:ControllerList,
-    4 Zone VAV Controllers,    !- Name
+    8 Zone VAV Controllers,    !- Name
     Controller:WaterCoil,     !- Controller 1 Object Type
-    4 Zone VAV Main Htg Coil Controller;    !- Controller 1 Name
+    8 Zone VAV Main Htg Coil Controller;    !- Controller 1 Name
 
 AirLoopHVAC:ControllerList,
-    4 Zone VAV OA System Controller List,    !- Name
+    8 Zone VAV OA System Controller List,    !- Name
     Controller:OutdoorAir,    !- Controller 1 Object Type
-    4 Zone VAV OA Controller;    !- Controller 1 Name
+    8 Zone VAV OA Controller;    !- Controller 1 Name
 
 AirLoopHVAC,
-    4 Zone VAV,               !- Name
-    4 Zone VAV Controllers,    !- Controller List Name
+    8 Zone VAV,               !- Name
+    8 Zone VAV Controllers,    !- Controller List Name
     Air Loop HVAC 1 AvailabilityManagerAssignmentList,    !- Availability Manager List Name
     AutoSize,                 !- Design Supply Air Flow Rate
-    4 Zone VAV Supply Branches,    !- Branch List Name
+    8 Zone VAV Supply Branches,    !- Branch List Name
     ,                         !- Connector List Name
-    4 Zone VAV Supply Inlet Node,    !- Supply Side Inlet Node Name
-    4 Zone VAV Demand Outlet Node,    !- Demand Side Outlet Node Name
-    4 Zone VAV Demand Inlet Nodes,    !- Demand Side Inlet Node Names
-    4 Zone VAV Supply Outlet Nodes;    !- Supply Side Outlet Node Names
+    8 Zone VAV Supply Inlet Node,    !- Supply Side Inlet Node Name
+    8 Zone VAV Demand Outlet Node,    !- Demand Side Outlet Node Name
+    8 Zone VAV Demand Inlet Nodes,    !- Demand Side Inlet Node Names
+    8 Zone VAV Supply Outlet Nodes;    !- Supply Side Outlet Node Names
 
 AirLoopHVAC:OutdoorAirSystem:EquipmentList,
-    4 Zone VAV OA System Equipment List,    !- Name
+    8 Zone VAV OA System Equipment List,    !- Name
     OutdoorAir:Mixer,         !- Component 1 Object Type
-    4 Zone VAV OA System Outdoor Air Mixer;    !- Component 1 Name
+    8 Zone VAV OA System Outdoor Air Mixer;    !- Component 1 Name
 
 AirLoopHVAC:OutdoorAirSystem,
-    4 Zone VAV OA System,     !- Name
-    4 Zone VAV OA System Controller List,    !- Controller List Name
-    4 Zone VAV OA System Equipment List,    !- Outdoor Air Equipment List Name
-    4 Zone VAV OA System Availability Manager List;    !- Availability Manager List Name
+    8 Zone VAV OA System,     !- Name
+    8 Zone VAV OA System Controller List,    !- Controller List Name
+    8 Zone VAV OA System Equipment List,    !- Outdoor Air Equipment List Name
+    8 Zone VAV OA System Availability Manager List;    !- Availability Manager List Name
 
 OutdoorAir:Mixer,
-    4 Zone VAV OA System Outdoor Air Mixer,    !- Name
-    4 Zone VAV Mixed Air Node,    !- Mixed Air Node Name
-    4 Zone VAV Outdoor Air Node,    !- Outdoor Air Stream Node Name
-    4 Zone VAV Relief Air Node,    !- Relief Air Stream Node Name
-    4 Zone VAV Supply Inlet Node;    !- Return Air Stream Node Name
+    8 Zone VAV OA System Outdoor Air Mixer,    !- Name
+    8 Zone VAV Mixed Air Node,    !- Mixed Air Node Name
+    8 Zone VAV Outdoor Air Node,    !- Outdoor Air Stream Node Name
+    8 Zone VAV Relief Air Node,    !- Relief Air Stream Node Name
+    8 Zone VAV Supply Inlet Node;    !- Return Air Stream Node Name
 
 AirLoopHVAC:ZoneSplitter,
     Air Loop HVAC Zone Splitter 1,    !- Name
-    4 Zone VAV Demand Inlet Node,    !- Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 1 Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 2 Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 3 Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal Inlet Air Node;    !- Outlet 4 Node Name
+    8 Zone VAV Demand Inlet Node,    !- Inlet Node Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 1 Node Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 2 Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 3 Node Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 4 Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 5 Node Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 6 Node Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 7 Node Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal Inlet Air Node;    !- Outlet 8 Node Name
 
 AirLoopHVAC:SupplyPath,
-    4 Zone VAV 4 Zone VAV Demand Inlet Node Supply Path,    !- Name
-    4 Zone VAV Demand Inlet Node,    !- Supply Air Path Inlet Node Name
+    8 Zone VAV 8 Zone VAV Demand Inlet Node Supply Path,    !- Name
+    8 Zone VAV Demand Inlet Node,    !- Supply Air Path Inlet Node Name
     AirLoopHVAC:ZoneSplitter,    !- Component 1 Object Type
     Air Loop HVAC Zone Splitter 1;    !- Component 1 Name
 
 AirLoopHVAC:ZoneMixer,
     Air Loop HVAC Zone Mixer 1,    !- Name
-    4 Zone VAV Demand Outlet Node,    !- Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Return Air Node,    !- Inlet 1 Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Return Air Node,    !- Inlet 2 Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Air Node,    !- Inlet 3 Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Return Air Node;    !- Inlet 4 Node Name
+    8 Zone VAV Demand Outlet Node,    !- Outlet Node Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Air Node,    !- Inlet 1 Node Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 0 Return Air Node,    !- Inlet 2 Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Return Air Node,    !- Inlet 3 Node Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Return Air Node,    !- Inlet 4 Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 0 Return Air Node,    !- Inlet 5 Node Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Return Air Node,    !- Inlet 6 Node Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Return Air Node,    !- Inlet 7 Node Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 0 Return Air Node;    !- Inlet 8 Node Name
 
 AirLoopHVAC:ReturnPath,
-    4 Zone VAV Return Path,    !- Name
-    4 Zone VAV Demand Outlet Node,    !- Return Air Path Outlet Node Name
+    8 Zone VAV Return Path,    !- Name
+    8 Zone VAV Demand Outlet Node,    !- Return Air Path Outlet Node Name
     AirLoopHVAC:ZoneMixer,    !- Component 1 Object Type
     Air Loop HVAC Zone Mixer 1;    !- Component 1 Name
 
 Branch,
-    4 Zone VAV Main Branch,    !- Name
+    8 Zone VAV Main Branch,    !- Name
     ,                         !- Pressure Drop Curve Name
     AirLoopHVAC:OutdoorAirSystem,    !- Component 1 Object Type
-    4 Zone VAV OA System,     !- Component 1 Name
-    4 Zone VAV Supply Inlet Node,    !- Component 1 Inlet Node Name
-    4 Zone VAV Mixed Air Node,    !- Component 1 Outlet Node Name
+    8 Zone VAV OA System,     !- Component 1 Name
+    8 Zone VAV Supply Inlet Node,    !- Component 1 Inlet Node Name
+    8 Zone VAV Mixed Air Node,    !- Component 1 Outlet Node Name
     CoilSystem:Cooling:DX,    !- Component 2 Object Type
-    4 Zone VAV 2spd DX Clg Coil CoilSystem,    !- Component 2 Name
-    4 Zone VAV Mixed Air Node,    !- Component 2 Inlet Node Name
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Component 2 Outlet Node Name
+    8 Zone VAV 2spd DX Clg Coil CoilSystem,    !- Component 2 Name
+    8 Zone VAV Mixed Air Node,    !- Component 2 Inlet Node Name
+    8 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Component 2 Outlet Node Name
     Coil:Heating:Water,       !- Component 3 Object Type
-    4 Zone VAV Main Htg Coil,    !- Component 3 Name
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Component 3 Inlet Node Name
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Component 3 Outlet Node Name
+    8 Zone VAV Main Htg Coil,    !- Component 3 Name
+    8 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Component 3 Inlet Node Name
+    8 Zone VAV Main Htg Coil Outlet Air Node,    !- Component 3 Outlet Node Name
     Fan:VariableVolume,       !- Component 4 Object Type
-    4 Zone VAV Fan,           !- Component 4 Name
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Component 4 Inlet Node Name
-    4 Zone VAV Supply Outlet Node;    !- Component 4 Outlet Node Name
+    8 Zone VAV Fan,           !- Component 4 Name
+    8 Zone VAV Main Htg Coil Outlet Air Node,    !- Component 4 Inlet Node Name
+    8 Zone VAV Supply Outlet Node;    !- Component 4 Outlet Node Name
 
 Branch,
     Hot Water Loop Supply Inlet Branch,    !- Name
@@ -2160,28 +3276,12 @@ Branch,
     Hot Water Loop Demand Branch 2,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
-    4 Zone VAV Main Htg Coil,    !- Component 1 Name
-    4 Zone VAV Main Htg Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    4 Zone VAV Main Htg Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+    8 Zone VAV Main Htg Coil,    !- Component 1 Name
+    8 Zone VAV Main Htg Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    8 Zone VAV Main Htg Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
     Hot Water Loop Demand Branch 3,    !- Name
-    ,                         !- Pressure Drop Curve Name
-    Coil:Heating:Water,       !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
-
-Branch,
-    Hot Water Loop Demand Branch 4,    !- Name
-    ,                         !- Pressure Drop Curve Name
-    Coil:Heating:Water,       !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
-
-Branch,
-    Hot Water Loop Demand Branch 5,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil,    !- Component 1 Name
@@ -2189,7 +3289,55 @@ Branch,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
+    Hot Water Loop Demand Branch 4,    !- Name
+    ,                         !- Pressure Drop Curve Name
+    Coil:Heating:Water,       !- Component 1 Object Type
+    Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil,    !- Component 1 Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+
+Branch,
+    Hot Water Loop Demand Branch 5,    !- Name
+    ,                         !- Pressure Drop Curve Name
+    Coil:Heating:Water,       !- Component 1 Object Type
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil,    !- Component 1 Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+
+Branch,
     Hot Water Loop Demand Branch 6,    !- Name
+    ,                         !- Pressure Drop Curve Name
+    Coil:Heating:Water,       !- Component 1 Object Type
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil,    !- Component 1 Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+
+Branch,
+    Hot Water Loop Demand Branch 7,    !- Name
+    ,                         !- Pressure Drop Curve Name
+    Coil:Heating:Water,       !- Component 1 Object Type
+    Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil,    !- Component 1 Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+
+Branch,
+    Hot Water Loop Demand Branch 8,    !- Name
+    ,                         !- Pressure Drop Curve Name
+    Coil:Heating:Water,       !- Component 1 Object Type
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil,    !- Component 1 Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+
+Branch,
+    Hot Water Loop Demand Branch 9,    !- Name
+    ,                         !- Pressure Drop Curve Name
+    Coil:Heating:Water,       !- Component 1 Object Type
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil,    !- Component 1 Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+
+Branch,
+    Hot Water Loop Demand Branch 10,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
     Block Dining: Cafeteria/fast food_south_zone Storey 0 Reheat Coil,    !- Component 1 Name
@@ -2213,8 +3361,8 @@ Branch,
     Hot Water Loop Demand Outlet Node;    !- Component 1 Outlet Node Name
 
 BranchList,
-    4 Zone VAV Supply Branches,    !- Name
-    4 Zone VAV Main Branch;    !- Branch 1 Name
+    8 Zone VAV Supply Branches,    !- Name
+    8 Zone VAV Main Branch;    !- Branch 1 Name
 
 BranchList,
     Hot Water Loop Supply Branches,    !- Name
@@ -2232,8 +3380,12 @@ BranchList,
     Hot Water Loop Demand Branch 4,    !- Branch 5 Name
     Hot Water Loop Demand Branch 5,    !- Branch 6 Name
     Hot Water Loop Demand Branch 6,    !- Branch 7 Name
-    Hot Water Loop Demand Bypass Branch,    !- Branch 8 Name
-    Hot Water Loop Demand Outlet Branch;    !- Branch 9 Name
+    Hot Water Loop Demand Branch 7,    !- Branch 8 Name
+    Hot Water Loop Demand Branch 8,    !- Branch 9 Name
+    Hot Water Loop Demand Branch 9,    !- Branch 10 Name
+    Hot Water Loop Demand Branch 10,    !- Branch 11 Name
+    Hot Water Loop Demand Bypass Branch,    !- Branch 12 Name
+    Hot Water Loop Demand Outlet Branch;    !- Branch 13 Name
 
 Connector:Splitter,
     Hot Water Loop Supply Splitter,    !- Name
@@ -2250,7 +3402,11 @@ Connector:Splitter,
     Hot Water Loop Demand Branch 4,    !- Outlet Branch 4 Name
     Hot Water Loop Demand Branch 5,    !- Outlet Branch 5 Name
     Hot Water Loop Demand Branch 6,    !- Outlet Branch 6 Name
-    Hot Water Loop Demand Bypass Branch;    !- Outlet Branch 7 Name
+    Hot Water Loop Demand Branch 7,    !- Outlet Branch 7 Name
+    Hot Water Loop Demand Branch 8,    !- Outlet Branch 8 Name
+    Hot Water Loop Demand Branch 9,    !- Outlet Branch 9 Name
+    Hot Water Loop Demand Branch 10,    !- Outlet Branch 10 Name
+    Hot Water Loop Demand Bypass Branch;    !- Outlet Branch 11 Name
 
 Connector:Mixer,
     Hot Water Loop Supply Mixer,    !- Name
@@ -2267,7 +3423,11 @@ Connector:Mixer,
     Hot Water Loop Demand Branch 4,    !- Inlet Branch 4 Name
     Hot Water Loop Demand Branch 5,    !- Inlet Branch 5 Name
     Hot Water Loop Demand Branch 6,    !- Inlet Branch 6 Name
-    Hot Water Loop Demand Bypass Branch;    !- Inlet Branch 7 Name
+    Hot Water Loop Demand Branch 7,    !- Inlet Branch 7 Name
+    Hot Water Loop Demand Branch 8,    !- Inlet Branch 8 Name
+    Hot Water Loop Demand Branch 9,    !- Inlet Branch 9 Name
+    Hot Water Loop Demand Branch 10,    !- Inlet Branch 10 Name
+    Hot Water Loop Demand Bypass Branch;    !- Inlet Branch 11 Name
 
 ConnectorList,
     Hot Water Loop Supply Connector List,    !- Name
@@ -2292,12 +3452,28 @@ NodeList,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 Return Air Node;    !- Node 1 Name
 
 NodeList,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Inlet Node List,    !- Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Outlet Air Node;    !- Node 1 Name
+
+NodeList,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Return Node List,    !- Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Return Air Node;    !- Node 1 Name
+
+NodeList,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Inlet Node List,    !- Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Outlet Air Node;    !- Node 1 Name
 
 NodeList,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Node List,    !- Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Air Node;    !- Node 1 Name
+
+NodeList,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Inlet Node List,    !- Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Outlet Air Node;    !- Node 1 Name
+
+NodeList,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Return Node List,    !- Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Return Air Node;    !- Node 1 Name
 
 NodeList,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 Inlet Node List,    !- Name
@@ -2308,6 +3484,14 @@ NodeList,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 Return Air Node;    !- Node 1 Name
 
 NodeList,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Inlet Node List,    !- Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Outlet Air Node;    !- Node 1 Name
+
+NodeList,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Return Node List,    !- Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Return Air Node;    !- Node 1 Name
+
+NodeList,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Inlet Node List,    !- Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Outlet Air Node;    !- Node 1 Name
 
@@ -2316,18 +3500,26 @@ NodeList,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Return Air Node;    !- Node 1 Name
 
 NodeList,
-    4 Zone VAV Supply Outlet Nodes,    !- Name
-    4 Zone VAV Supply Outlet Node;    !- Node 1 Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Inlet Node List,    !- Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    4 Zone VAV Demand Inlet Nodes,    !- Name
-    4 Zone VAV Demand Inlet Node;    !- Node 1 Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Return Node List,    !- Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Return Air Node;    !- Node 1 Name
+
+NodeList,
+    8 Zone VAV Supply Outlet Nodes,    !- Name
+    8 Zone VAV Supply Outlet Node;    !- Node 1 Name
+
+NodeList,
+    8 Zone VAV Demand Inlet Nodes,    !- Name
+    8 Zone VAV Demand Inlet Node;    !- Node 1 Name
 
 OutdoorAir:Node,
     Model Outdoor Air Node;    !- Name
 
 OutdoorAir:NodeList,
-    4 Zone VAV Outdoor Air Node;    !- Node or NodeList Name 1
+    8 Zone VAV Outdoor Air Node;    !- Node or NodeList Name 1
 
 Pipe:Adiabatic,
     Hot Water Loop Supply Equipment Bypass,    !- Name
@@ -2451,7 +3643,7 @@ PlantEquipmentOperationSchemes,
     Always On Discrete;       !- Control Scheme 1 Schedule Name
 
 AvailabilityManager:Scheduled,
-    4 Zone VAV OA System Availability Manager,    !- Name
+    8 Zone VAV OA System Availability Manager,    !- Name
     Always On Discrete;       !- Schedule Name
 
 AvailabilityManager:NightCycle,
@@ -2469,15 +3661,15 @@ AvailabilityManagerAssignmentList,
     Availability Manager Night Cycle 1;    !- Availability Manager 1 Name
 
 AvailabilityManagerAssignmentList,
-    4 Zone VAV OA System Availability Manager List,    !- Name
+    8 Zone VAV OA System Availability Manager List,    !- Name
     AvailabilityManager:Scheduled,    !- Availability Manager 1 Object Type
-    4 Zone VAV OA System Availability Manager;    !- Availability Manager 1 Name
+    8 Zone VAV OA System Availability Manager;    !- Availability Manager 1 Name
 
 SetpointManager:Scheduled,
-    4 Zone VAV Supply Air Setpoint Manager,    !- Name
+    8 Zone VAV Supply Air Setpoint Manager,    !- Name
     Temperature,              !- Control Variable
     Supply Air Temp - 55.0F,    !- Schedule Name
-    4 Zone VAV Supply Outlet Node;    !- Setpoint Node or NodeList Name
+    8 Zone VAV Supply Outlet Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:Scheduled,
     Hot Water Loop Setpoint Manager,    !- Name
@@ -2486,28 +3678,28 @@ SetpointManager:Scheduled,
     Hot Water Loop Supply Outlet Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    4 Zone VAV Mixed Air Node OS Default SPM,    !- Name
+    8 Zone VAV Mixed Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    4 Zone VAV Supply Outlet Node,    !- Reference Setpoint Node Name
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    4 Zone VAV Supply Outlet Node,    !- Fan Outlet Node Name
-    4 Zone VAV Mixed Air Node;    !- Setpoint Node or NodeList Name
+    8 Zone VAV Supply Outlet Node,    !- Reference Setpoint Node Name
+    8 Zone VAV Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    8 Zone VAV Supply Outlet Node,    !- Fan Outlet Node Name
+    8 Zone VAV Mixed Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node OS Default SPM,    !- Name
+    8 Zone VAV 2spd DX Clg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    4 Zone VAV Supply Outlet Node,    !- Reference Setpoint Node Name
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    4 Zone VAV Supply Outlet Node,    !- Fan Outlet Node Name
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    8 Zone VAV Supply Outlet Node,    !- Reference Setpoint Node Name
+    8 Zone VAV Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    8 Zone VAV Supply Outlet Node,    !- Fan Outlet Node Name
+    8 Zone VAV 2spd DX Clg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    4 Zone VAV Main Htg Coil Outlet Air Node OS Default SPM,    !- Name
+    8 Zone VAV Main Htg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    4 Zone VAV Supply Outlet Node,    !- Reference Setpoint Node Name
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    4 Zone VAV Supply Outlet Node,    !- Fan Outlet Node Name
-    4 Zone VAV Main Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    8 Zone VAV Supply Outlet Node,    !- Reference Setpoint Node Name
+    8 Zone VAV Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    8 Zone VAV Supply Outlet Node,    !- Fan Outlet Node Name
+    8 Zone VAV Main Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 Curve:Quadratic,
     Curve Quadratic 1,        !- Name
