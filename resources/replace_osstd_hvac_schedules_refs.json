@@ -203,5 +203,72 @@
             "Sch_name": "always_on"
         }
     ],
-    "VAV_HotWater_ChilledWater": []
+    "VAV_HotWater_ChilledWater": [
+        {
+            "Class": "AirTerminal:SingleDuct:VAV:Reheat",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Fan:VariableVolume",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Cooling:DX:TwoSpeed",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Heating:Water",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "CoilSystem:Cooling:DX",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Controller:MechanicalVentilation",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "PlantEquipmentOperationSchemes",
+            "Field": "Control Scheme 1 Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:Scheduled",
+            "Field": "Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:NightCycle",
+            "Field": "Applicability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:NightCycle",
+            "Field": "Fan Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Controller:OutdoorAir",
+            "Field": "Minimum Outdoor Air Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        }
+    ]
 }

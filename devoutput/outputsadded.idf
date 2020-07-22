@@ -2570,7 +2570,7 @@ THERMOSTATSETPOINT:DUALSETPOINT,
 
 AirTerminal:SingleDuct:VAV:Reheat,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
@@ -2591,7 +2591,7 @@ AirTerminal:SingleDuct:VAV:Reheat,
 
 AirTerminal:SingleDuct:VAV:Reheat,
     Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
     Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
@@ -2612,7 +2612,7 @@ AirTerminal:SingleDuct:VAV:Reheat,
 
 AirTerminal:SingleDuct:VAV:Reheat,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
@@ -2633,7 +2633,7 @@ AirTerminal:SingleDuct:VAV:Reheat,
 
 AirTerminal:SingleDuct:VAV:Reheat,
     Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
     Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
@@ -2654,7 +2654,7 @@ AirTerminal:SingleDuct:VAV:Reheat,
 
 AirTerminal:SingleDuct:VAV:Reheat,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
@@ -2675,7 +2675,7 @@ AirTerminal:SingleDuct:VAV:Reheat,
 
 AirTerminal:SingleDuct:VAV:Reheat,
     Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
     Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
@@ -2696,7 +2696,7 @@ AirTerminal:SingleDuct:VAV:Reheat,
 
 AirTerminal:SingleDuct:VAV:Reheat,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
@@ -2717,7 +2717,7 @@ AirTerminal:SingleDuct:VAV:Reheat,
 
 AirTerminal:SingleDuct:VAV:Reheat,
     Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
     Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
@@ -2914,7 +2914,7 @@ ZoneHVAC:EquipmentConnections,
 
 Fan:VariableVolume,
     4 Zone VAV Fan,           !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     0.62,                     !- Fan Total Efficiency
     996.35564,                !- Pressure Rise
     AutoSize,                 !- Maximum Flow Rate
@@ -2933,7 +2933,7 @@ Fan:VariableVolume,
 
 Fan:VariableVolume,
     4 Zone VAV 1 Fan,         !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     0.62,                     !- Fan Total Efficiency
     996.35564,                !- Pressure Rise
     AutoSize,                 !- Maximum Flow Rate
@@ -2952,7 +2952,7 @@ Fan:VariableVolume,
 
 Coil:Cooling:DX:TwoSpeed,
     4 Zone VAV 2spd DX Clg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- High Speed Gross Rated Total Cooling Capacity
     Autosize,                 !- High Speed Rated Sensible Heat Ratio
     3,                        !- High Speed Gross Rated Cooling COP
@@ -2987,7 +2987,7 @@ Coil:Cooling:DX:TwoSpeed,
 
 Coil:Cooling:DX:TwoSpeed,
     4 Zone VAV 1 2spd DX Clg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- High Speed Gross Rated Total Cooling Capacity
     Autosize,                 !- High Speed Rated Sensible Heat Ratio
     3,                        !- High Speed Gross Rated Cooling COP
@@ -3022,7 +3022,7 @@ Coil:Cooling:DX:TwoSpeed,
 
 Coil:Heating:Water,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
     Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
@@ -3039,7 +3039,7 @@ Coil:Heating:Water,
 
 Coil:Heating:Water,
     Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
     Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
@@ -3056,7 +3056,7 @@ Coil:Heating:Water,
 
 Coil:Heating:Water,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
@@ -3073,7 +3073,7 @@ Coil:Heating:Water,
 
 Coil:Heating:Water,
     Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
     Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
@@ -3090,7 +3090,7 @@ Coil:Heating:Water,
 
 Coil:Heating:Water,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 Reheat Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
     Block Dining: Cafeteria/fast food_south_zone Storey 0 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
@@ -3107,7 +3107,7 @@ Coil:Heating:Water,
 
 Coil:Heating:Water,
     Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
     Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
@@ -3124,7 +3124,7 @@ Coil:Heating:Water,
 
 Coil:Heating:Water,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
@@ -3141,7 +3141,7 @@ Coil:Heating:Water,
 
 Coil:Heating:Water,
     Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
     Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
@@ -3158,7 +3158,7 @@ Coil:Heating:Water,
 
 Coil:Heating:Water,
     4 Zone VAV Main Htg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
     4 Zone VAV Main Htg Coil Inlet Water Node,    !- Water Inlet Node Name
@@ -3175,7 +3175,7 @@ Coil:Heating:Water,
 
 Coil:Heating:Water,
     4 Zone VAV 1 Main Htg Coil,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
     4 Zone VAV 1 Main Htg Coil Inlet Water Node,    !- Water Inlet Node Name
@@ -3192,7 +3192,7 @@ Coil:Heating:Water,
 
 CoilSystem:Cooling:DX,
     4 Zone VAV 2spd DX Clg Coil CoilSystem,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     4 Zone VAV Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
     4 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
     4 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
@@ -3201,7 +3201,7 @@ CoilSystem:Cooling:DX,
 
 CoilSystem:Cooling:DX,
     4 Zone VAV 1 2spd DX Clg Coil CoilSystem,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     4 Zone VAV 1 Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
     4 Zone VAV 1 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
     4 Zone VAV 1 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
@@ -3247,7 +3247,7 @@ Controller:OutdoorAir,
     ,                         !- Economizer Minimum Limit DryBulb Temperature
     NoLockout,                !- Lockout Type
     FixedMinimum,             !- Minimum Limit Type
-    ,                         !- Minimum Outdoor Air Schedule Name
+    always_on,                !- Minimum Outdoor Air Schedule Name
     ,                         !- Minimum Fraction of Outdoor Air Schedule Name
     ,                         !- Maximum Fraction of Outdoor Air Schedule Name
     4 Zone VAV Vent Controller,    !- Mechanical Ventilation Controller Name
@@ -3275,7 +3275,7 @@ Controller:OutdoorAir,
     ,                         !- Economizer Minimum Limit DryBulb Temperature
     NoLockout,                !- Lockout Type
     FixedMinimum,             !- Minimum Limit Type
-    ,                         !- Minimum Outdoor Air Schedule Name
+    always_on,                !- Minimum Outdoor Air Schedule Name
     ,                         !- Minimum Fraction of Outdoor Air Schedule Name
     ,                         !- Maximum Fraction of Outdoor Air Schedule Name
     4 Zone VAV 1 Vent Controller,    !- Mechanical Ventilation Controller Name
@@ -3288,7 +3288,7 @@ Controller:OutdoorAir,
 
 Controller:MechanicalVentilation,
     4 Zone VAV Vent Controller,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     No,                       !- Demand Controlled Ventilation
     VentilationRateProcedure,    !- System Outdoor Air Method
     ,                         !- Zone Maximum Outdoor Air Fraction
@@ -3307,7 +3307,7 @@ Controller:MechanicalVentilation,
 
 Controller:MechanicalVentilation,
     4 Zone VAV 1 Vent Controller,    !- Name
-    Always On Discrete,       !- Availability Schedule Name
+    always_on,                !- Availability Schedule Name
     No,                       !- Demand Controlled Ventilation
     VentilationRateProcedure,    !- System Outdoor Air Method
     ,                         !- Zone Maximum Outdoor Air Fraction
@@ -3407,9 +3407,9 @@ OutdoorAir:Mixer,
 AirLoopHVAC:ZoneSplitter,
     Air Loop HVAC Zone Splitter 1,    !- Name
     4 Zone VAV Demand Inlet Node,    !- Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 1 Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 2 Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 3 Node Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 1 Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 2 Node Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 3 Node Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal Inlet Air Node;    !- Outlet 4 Node Name
 
 AirLoopHVAC:ZoneSplitter,
@@ -3435,9 +3435,9 @@ AirLoopHVAC:SupplyPath,
 AirLoopHVAC:ZoneMixer,
     Air Loop HVAC Zone Mixer 1,    !- Name
     4 Zone VAV Demand Outlet Node,    !- Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Air Node,    !- Inlet 1 Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Return Air Node,    !- Inlet 2 Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Return Air Node,    !- Inlet 3 Node Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 0 Return Air Node,    !- Inlet 1 Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 0 Return Air Node,    !- Inlet 2 Node Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Air Node,    !- Inlet 3 Node Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0 Return Air Node;    !- Inlet 4 Node Name
 
 AirLoopHVAC:ZoneMixer,
@@ -3560,25 +3560,25 @@ Branch,
     Hot Water Loop Demand Branch 3,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
-
-Branch,
-    Hot Water Loop Demand Branch 4,    !- Name
-    ,                         !- Pressure Drop Curve Name
-    Coil:Heating:Water,       !- Component 1 Object Type
     Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil,    !- Component 1 Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
-    Hot Water Loop Demand Branch 5,    !- Name
+    Hot Water Loop Demand Branch 4,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil,    !- Component 1 Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+
+Branch,
+    Hot Water Loop Demand Branch 5,    !- Name
+    ,                         !- Pressure Drop Curve Name
+    Coil:Heating:Water,       !- Component 1 Object Type
+    Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil,    !- Component 1 Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
     Hot Water Loop Demand Branch 6,    !- Name
@@ -3942,20 +3942,20 @@ PlantEquipmentOperationSchemes,
     Hot Water Loop Operation Schemes,    !- Name
     PlantEquipmentOperation:HeatingLoad,    !- Control Scheme 1 Object Type
     Hot Water Loop Heating Operation Scheme,    !- Control Scheme 1 Name
-    Always On Discrete;       !- Control Scheme 1 Schedule Name
+    always_on;                !- Control Scheme 1 Schedule Name
 
 AvailabilityManager:Scheduled,
     4 Zone VAV OA System Availability Manager,    !- Name
-    Always On Discrete;       !- Schedule Name
+    always_on;                !- Schedule Name
 
 AvailabilityManager:Scheduled,
     4 Zone VAV 1 OA System Availability Manager,    !- Name
-    Always On Discrete;       !- Schedule Name
+    always_on;                !- Schedule Name
 
 AvailabilityManager:NightCycle,
     Availability Manager Night Cycle 1,    !- Name
-    Always On Discrete,       !- Applicability Schedule Name
-    Always On Discrete,       !- Fan Schedule Name
+    always_on,                !- Applicability Schedule Name
+    always_on,                !- Fan Schedule Name
     CycleOnAny,               !- Control Type
     1,                        !- Thermostat Tolerance
     FixedRunTime,             !- Cycling Run Time Control Type
@@ -3963,8 +3963,8 @@ AvailabilityManager:NightCycle,
 
 AvailabilityManager:NightCycle,
     Availability Manager Night Cycle 2,    !- Name
-    Always On Discrete,       !- Applicability Schedule Name
-    Always On Discrete,       !- Fan Schedule Name
+    always_on,                !- Applicability Schedule Name
+    always_on,                !- Fan Schedule Name
     CycleOnAny,               !- Control Type
     1,                        !- Thermostat Tolerance
     FixedRunTime,             !- Cycling Run Time Control Type
