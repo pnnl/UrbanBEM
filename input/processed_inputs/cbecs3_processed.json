@@ -4,7 +4,7 @@
     "year_built": 1958,
     "ashrae_climate_zone": "5A",
     "epw_file": "USA_NY_Buffalo.Niagara.Intl.AP.725280_TMY3.epw",
-    "gross_conditioned_area": 236.90275200000002,
+    "gross_conditioned_area": 473.80550400000004,
     "heating_system_type": "None",
     "cooling_system_type": "None",
     "ventilation_rate_per_person": 0.0035396058294948273,
@@ -13,56 +13,56 @@
     "heat_recovery_used": "No",
     "zone_geometry": {
         "0": {
-            "area": 71.1465133801917,
-            "depth": 3.7691606705712895,
+            "area": 71.14651337431904,
+            "depth": 3.769160670983217,
             "height": 3.6576000000000004,
-            "length": 18.875956638221016,
+            "length": 18.8759566346,
             "name": "Dining: Cafeteria/fast food_south_zone",
-            "num_floors": 1.0,
+            "num_floors": 2.0,
             "side": "south",
             "type": "perimeter",
-            "window_height": 2.254696065725933,
-            "window_lengh": 11.635921142008483,
-            "wwr": 0.38
+            "window_height": 2.2546960658456956,
+            "window_lengh": 11.635921140394402,
+            "wwr": 0.3800000000403688
         },
         "1": {
-            "area": 47.304862619808304,
-            "depth": 3.769160670571289,
+            "area": 47.304862625680975,
+            "depth": 3.7691606709832164,
             "height": 3.6576000000000004,
-            "length": 12.550503083923546,
+            "length": 12.55050308411,
             "name": "Dining: Cafeteria/fast food_west_zone",
-            "num_floors": 1.0,
+            "num_floors": 2.0,
             "side": "west",
             "type": "perimeter",
-            "window_height": 2.2546960657259327,
-            "window_lengh": 7.736649695484364,
-            "wwr": 0.38
+            "window_height": 2.2546960656238637,
+            "window_lengh": 7.7366496952490635,
+            "wwr": 0.37999999996559497
         },
         "2": {
-            "area": 71.1465133801917,
-            "depth": 3.7691606705712895,
+            "area": 71.14651337431904,
+            "depth": 3.769160670983217,
             "height": 3.6576000000000004,
-            "length": 18.875956638221016,
+            "length": 18.8759566346,
             "name": "Dining: Cafeteria/fast food_north_zone",
-            "num_floors": 1.0,
+            "num_floors": 2.0,
             "side": "north",
             "type": "perimeter",
-            "window_height": 2.254696065725933,
-            "window_lengh": 11.635921142008483,
-            "wwr": 0.38
+            "window_height": 2.2546960658456956,
+            "window_lengh": 11.635921140394402,
+            "wwr": 0.3800000000403688
         },
         "3": {
-            "area": 47.304862619808304,
-            "depth": 3.769160670571289,
+            "area": 47.304862625680975,
+            "depth": 3.7691606709832164,
             "height": 3.6576000000000004,
-            "length": 12.550503083923546,
+            "length": 12.55050308411,
             "name": "Dining: Cafeteria/fast food_east_zone",
-            "num_floors": 1.0,
+            "num_floors": 2.0,
             "side": "east",
             "type": "perimeter",
-            "window_height": 2.2546960657259327,
-            "window_lengh": 7.736649695484364,
-            "wwr": 0.38
+            "window_height": 2.2546960656238637,
+            "window_lengh": 7.7366496952490635,
+            "wwr": 0.37999999996559497
         }
     },
     "constructions": {
@@ -1867,6 +1867,6 @@
         }
     },
     "hvac": {
-        "hvac_type": "PSZ_Gas_SingleSpeedDX"
+        "hvac_type": "VAV_HotWater_ChilledWater"
     }
 }

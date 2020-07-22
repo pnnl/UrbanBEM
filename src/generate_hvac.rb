@@ -26,7 +26,20 @@ when "PSZ_Gas_SingleSpeedDX"
 when "PSZ_Electric_SingleSpeedDX"
   standard.model_add_hvac_system(osm, "PSZ-AC", "Electricity", "Electricity", nil, osm.getThermalZones, hot_water_loop_type: nil, chilled_water_loop_cooling_type: nil, heat_pump_loop_cooling_type: nil, air_loop_heating_type: nil, air_loop_cooling_type: nil)
 when "VAV_HotWater_ChilledWater"
-  standard.model_add_hvac_system(osm, "VAV Reheat", "NaturalGas", "NaturalGas", nil, osm.getThermalZones, hot_water_loop_type: "HighTemperature", chilled_water_loop_cooling_type: "AirCooled", heat_pump_loop_cooling_type: nil, air_loop_heating_type: nil, air_loop_cooling_type: "Water")
+  names = Array.new()
+  floors = Array.new()
+  osm.getThermalZones.each do |zone|
+    zonename = zone.name
+    names.push(zonename.to_s.strip)
+    floors.push('Storey ' + zonename.to_s.strip.split(' ')[-3])
+  end
+  uniquefloors = floors.uniq
+  all_zones = osm.getThermalZones
+  uniquefloors.sort.each do |floor|
+    floorzones = all_zones.select {|z| z.name.to_s.include? floor}
+    puts "Adding vav for #{floor}"
+    standard.model_add_hvac_system(osm, "VAV Reheat", "NaturalGas", "NaturalGas", nil, floorzones, hot_water_loop_type: "HighTemperature", chilled_water_loop_cooling_type: "AirCooled", heat_pump_loop_cooling_type: nil, air_loop_heating_type: nil, air_loop_cooling_type: "Water")
+  end
 else
   puts "HVAC system not in the list, ABORT"
 end

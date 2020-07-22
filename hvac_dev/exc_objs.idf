@@ -6,7 +6,7 @@ Version,
 SimulationControl,
     Yes,                      !- Do Zone Sizing Calculation
     Yes,                      !- Do System Sizing Calculation
-    No,                       !- Do Plant Sizing Calculation
+    Yes,                      !- Do Plant Sizing Calculation
     Yes,                      !- Run Simulation for Sizing Periods
     Yes;                      !- Run Simulation for Weather File Run Periods
 
@@ -132,7 +132,37 @@ Zone,
     Yes;                      !- Part of Total Floor Area
 
 Zone,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Thermal Zone,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    ,                         !- Type
+    1,                        !- Multiplier
+    ,                         !- Ceiling Height
+    ,                         !- Volume
+    ,                         !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+Zone,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    ,                         !- Type
+    1,                        !- Multiplier
+    ,                         !- Ceiling Height
+    ,                         !- Volume
+    ,                         !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+Zone,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -162,7 +192,37 @@ Zone,
     Yes;                      !- Part of Total Floor Area
 
 Zone,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Thermal Zone,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    ,                         !- Type
+    1,                        !- Multiplier
+    ,                         !- Ceiling Height
+    ,                         !- Volume
+    ,                         !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+Zone,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    ,                         !- Type
+    1,                        !- Multiplier
+    ,                         !- Ceiling Height
+    ,                         !- Volume
+    ,                         !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+Zone,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin

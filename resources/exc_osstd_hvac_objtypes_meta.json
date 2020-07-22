@@ -71,5 +71,22 @@
         "OUTPUTCONTROL:TABLE:STYLE",
         "OUTPUT:SQLITE"
     ],
-    "VAV_HotWater_ChilledWater": []
+    "VAV_HotWater_ChilledWater": [
+        "VERSION",
+        "SIMULATIONCONTROL",
+        "BUILDING",
+        "TIMESTEP",
+        "RUNPERIOD",
+        "SCHEDULE:CONSTANT",
+        "GLOBALGEOMETRYRULES",
+        "ZONE",
+        "SIZING:PARAMETERS",
+        "LIFECYCLECOST:PARAMETERS",
+        "LIFECYCLECOST:NONRECURRINGCOST",
+        "LIFECYCLECOST:USEPRICEESCALATION",
+        "OUTPUT:VARIABLEDICTIONARY",
+        "OUTPUT:TABLE:SUMMARYREPORTS",
+        "OUTPUTCONTROL:TABLE:STYLE",
+        "OUTPUT:SQLITE"
+    ]
 }
