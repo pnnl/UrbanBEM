@@ -11,4 +11,4 @@
 
 module load singularity/3.2.0
 
-make test
+srun1 -A urbanbem singularity exec -B .. openstudio_python.sif python json2idf.py cbecs1054

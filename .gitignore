@@ -15,4 +15,3 @@ hvac_dev/*cbecs*.idf
 ep_input
 ep_output
 
-src/openstudio_python.sif

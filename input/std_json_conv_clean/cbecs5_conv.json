@@ -28,6 +28,7 @@
     "weekly_occupied_hours": 65,
     "number_days_open_workday": 5,
     "number_days_open_weekend": 2,
+    "hvac_system_type": "Fan Coils, HotWater, ChilledWater",
     "heating_system_type": "HotWater",
     "cooling_system_type": "ChilledWater",
     "ventilation_rate_per_person": 0.0023597372196632184,

@@ -28,6 +28,7 @@
     "weekly_occupied_hours(hr/wk)": 16,
     "number_days_open_workday": 3,
     "number_days_open_weekend": 0,
+    "hvac_system_type": "PT, Electric, SingleSpeedDX",
     "heating_system_type": "Electric",
     "cooling_system_type": "SingleSpeedDX",
     "ventilation_rate_per_person(m3/s-person)": 0.004719474439326437,

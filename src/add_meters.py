@@ -1,5 +1,5 @@
-import sys
 from eppy.modeleditor import IDF
+import os
 
 # To be appended to the IDF
 meters = '''Output:Meter,Electricity:Facility,Hourly;
@@ -37,24 +37,27 @@ meters = '''Output:Meter,Electricity:Facility,Hourly;
             Output:Meter,WaterSystems:Gas,Hourly;
 '''
 
-# Read casename from command line input
-casename = sys.argv.pop()
-
-# The path to the IDF
-idfPath = f'../ep_input/input/{casename}.idf'
-
-# Append Output:Meter objects to the IDF
-with open(idfPath, 'a') as file:
-    file.write(meters)
-
 # Set the IDD
 IDF.setiddname('../resources/Energy+V9_0_1.idd')
 
-# Read the IDF
-idf = IDF(idfPath)
+for filename in os.listdir('../ep_input/input'):
 
-# Remove Output:Variable objects
-idf.idfobjects['OUTPUT:VARIABLE'].clear()
+      # The path to the IDF
+      idfPath = f'../ep_input/input/{filename}'
 
-# Save the IDF
-idf.save()
+      # Read the IDF
+      idf = IDF(idfPath)
+
+      # Append Output:Meter objects to the IDF if they are not already included
+      with open(idfPath, 'a') as file:
+            if 'OUTPUT:METER' not in idf.idfobjects:
+                  file.write(meters)
+
+      # Read the IDF
+      idf = IDF(idfPath)
+
+      # Remove Output:Variable objects
+      idf.idfobjects['OUTPUT:VARIABLE'].clear()
+
+      # Save the IDF
+      idf.save()

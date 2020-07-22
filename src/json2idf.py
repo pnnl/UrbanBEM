@@ -8,6 +8,7 @@ from loads import Loads
 from preprocessor import Preprocessor
 from schedule import Schedule
 from hvac import HVAC
+from outputs import Outputs
 import recipes
 import sys
 from traceback import print_exc
@@ -32,37 +33,49 @@ try:
 	with open(case_path) as f:
 	    case = json.load(f)
 
-	case_conv, case_conv_clean = recipes.convert_dict_unit(case)
+	if case['hvac_system_type'] == 'PSZ, Gas, SingleSpeedDX':
 
-	with open(f"../input/std_json_conv/{casename}_conv.json", "w") as f:
-	    f.write(json.dumps(case_conv, indent=4))
-	with open(f"../input/std_json_conv_clean/{casename}_conv.json", "w") as f:
-	    f.write(json.dumps(case_conv_clean, indent=4))
+		case_conv, case_conv_clean = recipes.convert_dict_unit(case)
 
-	#%% preprocessors
-	proc_case = Preprocessor(case_conv_clean).case_proc
-	with open(f"../input/processed_inputs/{casename}_processed.json", "w") as f:
-	    f.write(json.dumps(proc_case, indent=4))
+		with open(f"../input/std_json_conv/{casename}_conv.json", "w") as f:
+		    f.write(json.dumps(case_conv, indent=4))
+		with open(f"../input/std_json_conv_clean/{casename}_conv.json", "w") as f:
+		    f.write(json.dumps(case_conv_clean, indent=4))
 
-	#%% geometry processor
-	geometryadded_obj = Geometry(proc_case, idf)
+		#%% preprocessors
+		proc_case = Preprocessor(case_conv_clean).case_proc
+		with open(f"../input/processed_inputs/{casename}_processed.json", "w") as f:
+		    f.write(json.dumps(proc_case, indent=4))
 
-	#%% construction processor
-	constructionadded_obj = Constructions(proc_case, geometryadded_obj.idf)
+		#%% geometry processor
+		geometryadded_obj = Geometry(proc_case, idf)
 
-	# %% schedule processor
-	scheduleadded_obj = Schedule(proc_case, constructionadded_obj.idf)
+		#%% construction processor
+		constructionadded_obj = Constructions(proc_case, geometryadded_obj.idf)
 
-	# %% load processor
-	loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)
+		# %% schedule processor
+		scheduleadded_obj = Schedule(proc_case, constructionadded_obj.idf)
 
-	# %% hvac processor
-	hvacadded_obj = HVAC(proc_case, loadadded_obj.idf)
+		# %% load processor
+		loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)
 
-	# Save idf
-	hvacadded_obj.save_idf(f"../ep_input/input/{casename}.idf")
+		# %% hvac processor
+		hvacadded_obj = HVAC(proc_case, loadadded_obj.idf)
+
+		# %% outputs processor
+		outputsadded_obj = Outputs(proc_case, hvacadded_obj.idf)
+
+		# Save idf
+		outputsadded_obj.save_idf(f"../ep_input/input/{casename}.idf")
+
+	else:
+
+		print("HVAC system type not currenlty supported")
 
 #If execution throws an exception, print message to error file but do not stop execution
 except:
 
 	print_exc()
+
+sys.stdout.close()
+sys.stderr.close()
