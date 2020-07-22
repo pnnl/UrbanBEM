@@ -1867,6 +1867,6 @@
         }
     },
     "hvac": {
-        "hvac_type": "PSZ_Gas_SingleSpeedDX"
+        "hvac_type": "VAV_HotWater_ChilledWater"
     }
 }
