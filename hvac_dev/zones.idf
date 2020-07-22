@@ -87,7 +87,10 @@ ZONE,
     Yes;                      !- Part of Total Floor Area
 
 ZONE,
+<<<<<<< HEAD
     Block Office_south_zone Storey 1,    !- Name
+=======
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -102,7 +105,26 @@ ZONE,
     Yes;                      !- Part of Total Floor Area
 
 ZONE,
+    Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Name
+>>>>>>> master
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    1,                        !- Type
+    1,                        !- Multiplier
+    autocalculate,            !- Ceiling Height
+    autocalculate,            !- Volume
+    autocalculate,            !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+ZONE,
+<<<<<<< HEAD
     Block Office_south_zone Storey 2,    !- Name
+=======
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -117,7 +139,27 @@ ZONE,
     Yes;                      !- Part of Total Floor Area
 
 ZONE,
+    Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Name
+>>>>>>> master
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    1,                        !- Type
+    1,                        !- Multiplier
+    autocalculate,            !- Ceiling Height
+    autocalculate,            !- Volume
+    autocalculate,            !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+ZONE,
+<<<<<<< HEAD
     Block Office_south_zone Storey 3,    !- Name
+=======
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Name
+>>>>>>> master
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -132,6 +174,7 @@ ZONE,
     Yes;                      !- Part of Total Floor Area
 
 ZONE,
+<<<<<<< HEAD
     Block Office_south_zone Storey 4,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
@@ -2308,6 +2351,24 @@ ZONE,
 
 ZONE,
     Block Office_core_zone Storey 29,    !- Name
+=======
+    Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Name
+>>>>>>> master
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    1,                        !- Type
+    1,                        !- Multiplier
+    autocalculate,            !- Ceiling Height
+    autocalculate,            !- Volume
+    autocalculate,            !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+ZONE,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin

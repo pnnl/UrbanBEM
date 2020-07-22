@@ -308,7 +308,7 @@ def populate_std_ground_temp_jan2dec(case: Dict) -> List:
         List of ground temperature profile, from January to December, len=12
 
     """
-    sample_return = [  # TODO: implement profile extraction logic. @Jeremy / @Jerry
+    sample_return = [
         20.9,
         15.4,
         11.9,
@@ -322,7 +322,18 @@ def populate_std_ground_temp_jan2dec(case: Dict) -> List:
         29.8,
         27.8,
     ]
-    return sample_return
+
+    weather_key = case["epw_file"].split(".epw")[0].strip()
+    temperatures_json = read_json("../resources/monthlydrybulbtemp_dailyavg.json")
+    if weather_key in temperatures_json:
+        drybulb_temps = temperatures_json[weather_key]
+    else:
+        print("Does not find dry bulb temperature key, will use default. Please Fix!")
+        return sample_return
+
+    ground_temps = drybulb_temps[-3:] + drybulb_temps[:9]
+
+    return ground_temps
 
 
 def populate_std_hvac_for_osstd(case: Dict) -> Dict:

@@ -95,18 +95,18 @@ RunPeriod,
     Yes;                      !- Use Weather File Snow Indicators
 
 SITE:GROUNDTEMPERATURE:FCFACTORMETHOD,
-    20.9,                     !- January Ground Temperature
-    15.4,                     !- February Ground Temperature
-    11.9,                     !- March Ground Temperature
-    14.8,                     !- April Ground Temperature
-    12.7,                     !- May Ground Temperature
-    15.4,                     !- June Ground Temperature
-    23.3,                     !- July Ground Temperature
-    26.3,                     !- August Ground Temperature
-    31.2,                     !- September Ground Temperature
-    30.4,                     !- October Ground Temperature
-    29.8,                     !- November Ground Temperature
-    27.8;                     !- December Ground Temperature
+    9.7,                      !- January Ground Temperature
+    6,                        !- February Ground Temperature
+    -2.2,                     !- March Ground Temperature
+    -3.4,                     !- April Ground Temperature
+    -4.2,                     !- May Ground Temperature
+    2.7,                      !- June Ground Temperature
+    7.5,                      !- July Ground Temperature
+    13.7,                     !- August Ground Temperature
+    18.6,                     !- September Ground Temperature
+    22,                       !- October Ground Temperature
+    20.7,                     !- November Ground Temperature
+    16.5;                     !- December Ground Temperature
 
 ScheduleTypeLimits,
     Any Number,               !- Name
@@ -520,26 +520,26 @@ CONSTRUCTION,
 CONSTRUCTION:FFACTORGROUNDFLOOR,
     Dining: Cafeteria/fast food_south_zone_perimeter_bottom_floor_ffactor,    !- Name
     1.3,                      !- FFactor
-    71.1465133801917,         !- Area
-    18.875956638221016;       !- PerimeterExposed
+    71.14651337431904,        !- Area
+    18.8759566346;            !- PerimeterExposed
 
 CONSTRUCTION:FFACTORGROUNDFLOOR,
     Dining: Cafeteria/fast food_west_zone_perimeter_bottom_floor_ffactor,    !- Name
     1.3,                      !- FFactor
-    47.304862619808304,       !- Area
-    12.550503083923546;       !- PerimeterExposed
+    47.304862625680975,       !- Area
+    12.55050308411;           !- PerimeterExposed
 
 CONSTRUCTION:FFACTORGROUNDFLOOR,
     Dining: Cafeteria/fast food_north_zone_perimeter_bottom_floor_ffactor,    !- Name
     1.3,                      !- FFactor
-    71.1465133801917,         !- Area
-    18.875956638221016;       !- PerimeterExposed
+    71.14651337431904,        !- Area
+    18.8759566346;            !- PerimeterExposed
 
 CONSTRUCTION:FFACTORGROUNDFLOOR,
     Dining: Cafeteria/fast food_east_zone_perimeter_bottom_floor_ffactor,    !- Name
     1.3,                      !- FFactor
-    47.304862619808304,       !- Area
-    12.550503083923546;       !- PerimeterExposed
+    47.304862625680975,       !- Area
+    12.55050308411;           !- PerimeterExposed
 
 GlobalGeometryRules,
     UpperLeftCorner,          !- Starting Vertex Position
@@ -548,6 +548,21 @@ GlobalGeometryRules,
 
 ZONE,
     Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    1,                        !- Type
+    1,                        !- Multiplier
+    autocalculate,            !- Ceiling Height
+    autocalculate,            !- Volume
+    autocalculate,            !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+ZONE,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -577,7 +592,37 @@ ZONE,
     Yes;                      !- Part of Total Floor Area
 
 ZONE,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    1,                        !- Type
+    1,                        !- Multiplier
+    autocalculate,            !- Ceiling Height
+    autocalculate,            !- Volume
+    autocalculate,            !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+ZONE,
     Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    1,                        !- Type
+    1,                        !- Multiplier
+    autocalculate,            !- Ceiling Height
+    autocalculate,            !- Volume
+    autocalculate,            !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+ZONE,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -606,12 +651,31 @@ ZONE,
     ,                         !- Zone Outside Convection Algorithm
     Yes;                      !- Part of Total Floor Area
 
+ZONE,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    1,                        !- Type
+    1,                        !- Multiplier
+    autocalculate,            !- Ceiling Height
+    autocalculate,            !- Volume
+    autocalculate,            !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
 ZONELIST,
     zone_list_Dining: Cafeteria/fast food,    !- Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone 1 Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone 2 Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone 3 Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0;    !- Zone 4 Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone 2 Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone 3 Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone 4 Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone 5 Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone 6 Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Zone 7 Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1;    !- Zone 8 Name
 
 BUILDINGSURFACE:DETAILED,
     Block Dining: Cafeteria/fast food_south_zone Storey 0 Wall 0001,    !- Name
@@ -624,17 +688,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
+    23.96583120441154,        !- Vertex 1 Xcoordinate
     0,                        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
     0,                        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    23.965831207760488,       !- Vertex 3 Xcoordinate
-    3.7691606705712895,       !- Vertex 3 Ycoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
+    3.769160670983217,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    23.965831207760488,       !- Vertex 4 Xcoordinate
-    3.7691606705712895,       !- Vertex 4 Ycoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
+    3.769160670983217,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -648,17 +712,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
-    3.7691606705712895,       !- Vertex 1 Ycoordinate
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    3.769160670983217,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
-    3.7691606705712895,       !- Vertex 2 Ycoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    3.769160670983217,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
-    3.7691606705712895,       !- Vertex 3 Ycoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    3.769160670983217,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
-    3.7691606705712895,       !- Vertex 4 Ycoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    3.769160670983217,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -672,16 +736,16 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    5.08987456953947,         !- Vertex 1 Xcoordinate
-    3.7691606705712895,       !- Vertex 1 Ycoordinate
+    5.089874569811538,        !- Vertex 1 Xcoordinate
+    3.769160670983217,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    5.08987456953947,         !- Vertex 2 Xcoordinate
-    3.7691606705712895,       !- Vertex 2 Ycoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
+    3.769160670983217,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
     0,                        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
     0,                        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
@@ -696,16 +760,16 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    5.08987456953947,         !- Vertex 1 Xcoordinate
+    5.089874569811538,        !- Vertex 1 Xcoordinate
     0,                        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    5.08987456953947,         !- Vertex 2 Xcoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
     0,                        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    23.965831207760488,       !- Vertex 3 Xcoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
     0,                        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    23.965831207760488,       !- Vertex 4 Xcoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
     0,                        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
@@ -720,23 +784,143 @@ BUILDINGSURFACE:DETAILED,
     NoWind,                   !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
-    3.7691606705712895,       !- Vertex 1 Ycoordinate
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    3.769160670983217,        !- Vertex 1 Ycoordinate
     0,                        !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
     0,                        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
     0,                        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
-    3.7691606705712895,       !- Vertex 4 Ycoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    3.769160670983217,        !- Vertex 4 Ycoordinate
     0;                        !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Roof 0001,    !- Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Wall 0001,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    0,                        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    0,                        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
+    3.769160670983217,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
+    3.769160670983217,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Wall 0002,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    3.769160670983217,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    3.769160670983217,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    3.769160670983217,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    3.769160670983217,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Wall 0003,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    5.089874569811538,        !- Vertex 1 Xcoordinate
+    3.769160670983217,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
+    3.769160670983217,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    0,                        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    0,                        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Wall 0004,    !- Name
+    wall,                     !- Surface Type
+    ext_wall_wood_framed,     !- Construction Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    5.089874569811538,        !- Vertex 1 Xcoordinate
+    0,                        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
+    0,                        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
+    0,                        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
+    0,                        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Roof 0001,    !- Name
     roof,                     !- Surface Type
     roof_attic_and_other,     !- Construction Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    0,                        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    3.769160670983217,        !- Vertex 2 Ycoordinate
+    7.315200000000001,        !- Vertex 2 Zcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    3.769160670983217,        !- Vertex 3 Ycoordinate
+    7.315200000000001,        !- Vertex 3 Zcoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    0,                        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_south_zone Storey 0 Ceiling 0001_1,    !- Name
+    ceiling,                  !- Surface Type
+    int_ceiling_default,      !- Construction Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone Name
     outdoors,                 !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
@@ -744,17 +928,41 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
+    23.96583120431751,        !- Vertex 1 Xcoordinate
     0,                        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
-    3.7691606705712895,       !- Vertex 2 Ycoordinate
+    23.96583120431751,        !- Vertex 2 Xcoordinate
+    3.7691606706939638,       !- Vertex 2 Ycoordinate
     3.6576000000000004,       !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
-    3.7691606705712895,       !- Vertex 3 Ycoordinate
+    5.0898745697923005,       !- Vertex 3 Xcoordinate
+    3.7691606706939638,       !- Vertex 3 Ycoordinate
     3.6576000000000004,       !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
+    5.0898745697923005,       !- Vertex 4 Xcoordinate
     0,                        !- Vertex 4 Ycoordinate
+    3.6576000000000004;       !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Floor 0001_1,    !- Name
+    floor,                    !- Surface Type
+    int_floor_default,        !- Construction Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    NoSun,                    !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120431751,        !- Vertex 1 Xcoordinate
+    3.7691606706939638,       !- Vertex 1 Ycoordinate
+    3.6576000000000004,       !- Vertex 1 Zcoordinate
+    23.96583120431751,        !- Vertex 2 Xcoordinate
+    0,                        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    5.0898745697923005,       !- Vertex 3 Xcoordinate
+    0,                        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    5.0898745697923005,       !- Vertex 4 Xcoordinate
+    3.7691606706939638,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -768,17 +976,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    3.769160670571289,        !- Vertex 1 Xcoordinate
-    4.773601891824597,        !- Vertex 1 Ycoordinate
+    3.7691606709832164,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    3.769160670571289,        !- Vertex 2 Xcoordinate
-    4.773601891824597,        !- Vertex 2 Ycoordinate
+    3.7691606709832164,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    3.769160670571289,        !- Vertex 3 Xcoordinate
-    17.324104975748142,       !- Vertex 3 Ycoordinate
+    3.7691606709832164,       !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    3.769160670571289,        !- Vertex 4 Xcoordinate
-    17.324104975748142,       !- Vertex 4 Ycoordinate
+    3.7691606709832164,       !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -792,17 +1000,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    3.769160670571289,        !- Vertex 1 Xcoordinate
-    17.324104975748142,       !- Vertex 1 Ycoordinate
+    3.7691606709832164,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    3.769160670571289,        !- Vertex 2 Xcoordinate
-    17.324104975748142,       !- Vertex 2 Ycoordinate
+    3.7691606709832164,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
     0,                        !- Vertex 3 Xcoordinate
-    17.324104975748142,       !- Vertex 3 Ycoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
     0,                        !- Vertex 4 Xcoordinate
-    17.324104975748142,       !- Vertex 4 Ycoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -817,16 +1025,16 @@ BUILDINGSURFACE:DETAILED,
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     0,                        !- Vertex 1 Xcoordinate
-    17.324104975748142,       !- Vertex 1 Ycoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
     0,                        !- Vertex 2 Xcoordinate
-    17.324104975748142,       !- Vertex 2 Ycoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
     0,                        !- Vertex 3 Xcoordinate
-    4.773601891824597,        !- Vertex 3 Ycoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
     0,                        !- Vertex 4 Xcoordinate
-    4.773601891824597,        !- Vertex 4 Ycoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -841,16 +1049,16 @@ BUILDINGSURFACE:DETAILED,
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     0,                        !- Vertex 1 Xcoordinate
-    4.773601891824597,        !- Vertex 1 Ycoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
     0,                        !- Vertex 2 Xcoordinate
-    4.773601891824597,        !- Vertex 2 Ycoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    3.769160670571289,        !- Vertex 3 Xcoordinate
-    4.773601891824597,        !- Vertex 3 Ycoordinate
+    3.7691606709832164,       !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    3.769160670571289,        !- Vertex 4 Xcoordinate
-    4.773601891824597,        !- Vertex 4 Ycoordinate
+    3.7691606709832164,       !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -864,23 +1072,143 @@ BUILDINGSURFACE:DETAILED,
     NoWind,                   !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    3.769160670571289,        !- Vertex 1 Xcoordinate
-    17.324104975748142,       !- Vertex 1 Ycoordinate
+    3.7691606709832164,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
     0,                        !- Vertex 1 Zcoordinate
-    3.769160670571289,        !- Vertex 2 Xcoordinate
-    4.773601891824597,        !- Vertex 2 Ycoordinate
+    3.7691606709832164,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
     0,                        !- Vertex 3 Xcoordinate
-    4.773601891824597,        !- Vertex 3 Ycoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
     0,                        !- Vertex 4 Xcoordinate
-    17.324104975748142,       !- Vertex 4 Ycoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
     0;                        !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Roof 0001,    !- Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Wall 0001,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    3.7691606709832164,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    3.7691606709832164,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    3.7691606709832164,       !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    3.7691606709832164,       !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Wall 0002,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    3.7691606709832164,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    3.7691606709832164,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Wall 0003,    !- Name
+    wall,                     !- Surface Type
+    ext_wall_wood_framed,     !- Construction Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    0,                        !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    0,                        !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Wall 0004,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    0,                        !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    0,                        !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    3.7691606709832164,       !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    3.7691606709832164,       !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Roof 0001,    !- Name
     roof,                     !- Surface Type
     roof_attic_and_other,     !- Construction Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    3.7691606709832164,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    3.7691606709832164,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
+    7.315200000000001,        !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
+    7.315200000000001,        !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_west_zone Storey 0 Ceiling 0001_1,    !- Name
+    ceiling,                  !- Surface Type
+    int_ceiling_default,      !- Construction Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone Name
     outdoors,                 !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
@@ -888,17 +1216,41 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    3.769160670571289,        !- Vertex 1 Xcoordinate
-    4.773601891824597,        !- Vertex 1 Ycoordinate
+    3.7691606706939638,       !- Vertex 1 Xcoordinate
+    4.773601891938597,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    3.769160670571289,        !- Vertex 2 Xcoordinate
-    17.324104975748142,       !- Vertex 2 Ycoordinate
+    3.7691606706939638,       !- Vertex 2 Xcoordinate
+    17.324104976374656,       !- Vertex 2 Ycoordinate
     3.6576000000000004,       !- Vertex 2 Zcoordinate
     0,                        !- Vertex 3 Xcoordinate
-    17.324104975748142,       !- Vertex 3 Ycoordinate
+    17.324104976374656,       !- Vertex 3 Ycoordinate
     3.6576000000000004,       !- Vertex 3 Zcoordinate
     0,                        !- Vertex 4 Xcoordinate
-    4.773601891824597,        !- Vertex 4 Ycoordinate
+    4.773601891938597,        !- Vertex 4 Ycoordinate
+    3.6576000000000004;       !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Floor 0001_1,    !- Name
+    floor,                    !- Surface Type
+    int_floor_default,        !- Construction Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    NoSun,                    !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    3.7691606706939638,       !- Vertex 1 Xcoordinate
+    17.324104976374656,       !- Vertex 1 Ycoordinate
+    3.6576000000000004,       !- Vertex 1 Zcoordinate
+    3.7691606706939638,       !- Vertex 2 Xcoordinate
+    4.773601891938597,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    4.773601891938597,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    17.324104976374656,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -912,17 +1264,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
-    18.32854619700145,        !- Vertex 1 Ycoordinate
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    18.328546197700867,       !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
-    18.32854619700145,        !- Vertex 2 Ycoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    18.328546197700867,       !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    23.965831207760488,       !- Vertex 3 Xcoordinate
-    22.09770686757274,        !- Vertex 3 Ycoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
+    22.097706868684085,       !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    23.965831207760488,       !- Vertex 4 Xcoordinate
-    22.09770686757274,        !- Vertex 4 Ycoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
+    22.097706868684085,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -936,17 +1288,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
-    22.09770686757274,        !- Vertex 1 Ycoordinate
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    22.097706868684085,       !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
-    22.09770686757274,        !- Vertex 2 Ycoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    22.097706868684085,       !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
-    22.09770686757274,        !- Vertex 3 Ycoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    22.097706868684085,       !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
-    22.09770686757274,        !- Vertex 4 Ycoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    22.097706868684085,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -960,17 +1312,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    5.08987456953947,         !- Vertex 1 Xcoordinate
-    22.09770686757274,        !- Vertex 1 Ycoordinate
+    5.089874569811538,        !- Vertex 1 Xcoordinate
+    22.097706868684085,       !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    5.08987456953947,         !- Vertex 2 Xcoordinate
-    22.09770686757274,        !- Vertex 2 Ycoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
+    22.097706868684085,       !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
-    18.32854619700145,        !- Vertex 3 Ycoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    18.328546197700867,       !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
-    18.32854619700145,        !- Vertex 4 Ycoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    18.328546197700867,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -984,17 +1336,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    5.08987456953947,         !- Vertex 1 Xcoordinate
-    18.32854619700145,        !- Vertex 1 Ycoordinate
+    5.089874569811538,        !- Vertex 1 Xcoordinate
+    18.328546197700867,       !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    5.08987456953947,         !- Vertex 2 Xcoordinate
-    18.32854619700145,        !- Vertex 2 Ycoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
+    18.328546197700867,       !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    23.965831207760488,       !- Vertex 3 Xcoordinate
-    18.32854619700145,        !- Vertex 3 Ycoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
+    18.328546197700867,       !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    23.965831207760488,       !- Vertex 4 Xcoordinate
-    18.32854619700145,        !- Vertex 4 Ycoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
+    18.328546197700867,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1008,23 +1360,143 @@ BUILDINGSURFACE:DETAILED,
     NoWind,                   !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
-    22.09770686757274,        !- Vertex 1 Ycoordinate
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    22.097706868684085,       !- Vertex 1 Ycoordinate
     0,                        !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
-    18.32854619700145,        !- Vertex 2 Ycoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    18.328546197700867,       !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
-    18.32854619700145,        !- Vertex 3 Ycoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    18.328546197700867,       !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
-    22.09770686757274,        !- Vertex 4 Ycoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    22.097706868684085,       !- Vertex 4 Ycoordinate
     0;                        !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Roof 0001,    !- Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Wall 0001,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    18.328546197700867,       !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    18.328546197700867,       !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
+    22.097706868684085,       !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
+    22.097706868684085,       !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Wall 0002,    !- Name
+    wall,                     !- Surface Type
+    ext_wall_wood_framed,     !- Construction Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    22.097706868684085,       !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    22.097706868684085,       !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    22.097706868684085,       !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    22.097706868684085,       !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Wall 0003,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    5.089874569811538,        !- Vertex 1 Xcoordinate
+    22.097706868684085,       !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
+    22.097706868684085,       !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    18.328546197700867,       !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    18.328546197700867,       !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Wall 0004,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    5.089874569811538,        !- Vertex 1 Xcoordinate
+    18.328546197700867,       !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    5.089874569811538,        !- Vertex 2 Xcoordinate
+    18.328546197700867,       !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    23.96583120441154,        !- Vertex 3 Xcoordinate
+    18.328546197700867,       !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    23.96583120441154,        !- Vertex 4 Xcoordinate
+    18.328546197700867,       !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Roof 0001,    !- Name
     roof,                     !- Surface Type
     roof_attic_and_other,     !- Construction Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120441154,        !- Vertex 1 Xcoordinate
+    18.328546197700867,       !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    23.96583120441154,        !- Vertex 2 Xcoordinate
+    22.097706868684085,       !- Vertex 2 Ycoordinate
+    7.315200000000001,        !- Vertex 2 Zcoordinate
+    5.089874569811538,        !- Vertex 3 Xcoordinate
+    22.097706868684085,       !- Vertex 3 Ycoordinate
+    7.315200000000001,        !- Vertex 3 Zcoordinate
+    5.089874569811538,        !- Vertex 4 Xcoordinate
+    18.328546197700867,       !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_north_zone Storey 0 Ceiling 0001_1,    !- Name
+    ceiling,                  !- Surface Type
+    int_ceiling_default,      !- Construction Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone Name
     outdoors,                 !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
@@ -1032,17 +1504,41 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    23.965831207760488,       !- Vertex 1 Xcoordinate
-    18.32854619700145,        !- Vertex 1 Ycoordinate
+    23.96583120431751,        !- Vertex 1 Xcoordinate
+    18.32854619761929,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    23.965831207760488,       !- Vertex 2 Xcoordinate
-    22.09770686757274,        !- Vertex 2 Ycoordinate
+    23.96583120431751,        !- Vertex 2 Xcoordinate
+    22.097706868313253,       !- Vertex 2 Ycoordinate
     3.6576000000000004,       !- Vertex 2 Zcoordinate
-    5.08987456953947,         !- Vertex 3 Xcoordinate
-    22.09770686757274,        !- Vertex 3 Ycoordinate
+    5.0898745697923005,       !- Vertex 3 Xcoordinate
+    22.097706868313253,       !- Vertex 3 Ycoordinate
     3.6576000000000004,       !- Vertex 3 Zcoordinate
-    5.08987456953947,         !- Vertex 4 Xcoordinate
-    18.32854619700145,        !- Vertex 4 Ycoordinate
+    5.0898745697923005,       !- Vertex 4 Xcoordinate
+    18.32854619761929,        !- Vertex 4 Ycoordinate
+    3.6576000000000004;       !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Floor 0001_1,    !- Name
+    floor,                    !- Surface Type
+    int_floor_default,        !- Construction Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    NoSun,                    !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    23.96583120431751,        !- Vertex 1 Xcoordinate
+    22.097706868313253,       !- Vertex 1 Ycoordinate
+    3.6576000000000004,       !- Vertex 1 Zcoordinate
+    23.96583120431751,        !- Vertex 2 Xcoordinate
+    18.32854619761929,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    5.0898745697923005,       !- Vertex 3 Xcoordinate
+    18.32854619761929,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    5.0898745697923005,       !- Vertex 4 Xcoordinate
+    22.097706868313253,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1056,17 +1552,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    29.055705777299956,       !- Vertex 1 Xcoordinate
-    4.773601891824597,        !- Vertex 1 Ycoordinate
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    29.055705777299956,       !- Vertex 2 Xcoordinate
-    4.773601891824597,        !- Vertex 2 Ycoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    29.055705777299956,       !- Vertex 3 Xcoordinate
-    17.324104975748142,       !- Vertex 3 Ycoordinate
+    29.055705774223078,       !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    29.055705777299956,       !- Vertex 4 Xcoordinate
-    17.324104975748142,       !- Vertex 4 Ycoordinate
+    29.055705774223078,       !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1080,17 +1576,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    29.055705777299956,       !- Vertex 1 Xcoordinate
-    17.324104975748142,       !- Vertex 1 Ycoordinate
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    29.055705777299956,       !- Vertex 2 Xcoordinate
-    17.324104975748142,       !- Vertex 2 Ycoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    25.286545106728667,       !- Vertex 3 Xcoordinate
-    17.324104975748142,       !- Vertex 3 Ycoordinate
+    25.286545103239863,       !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    25.286545106728667,       !- Vertex 4 Xcoordinate
-    17.324104975748142,       !- Vertex 4 Ycoordinate
+    25.286545103239863,       !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1104,17 +1600,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    25.286545106728667,       !- Vertex 1 Xcoordinate
-    17.324104975748142,       !- Vertex 1 Ycoordinate
+    25.286545103239863,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    25.286545106728667,       !- Vertex 2 Xcoordinate
-    17.324104975748142,       !- Vertex 2 Ycoordinate
+    25.286545103239863,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    25.286545106728667,       !- Vertex 3 Xcoordinate
-    4.773601891824597,        !- Vertex 3 Ycoordinate
+    25.286545103239863,       !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    25.286545106728667,       !- Vertex 4 Xcoordinate
-    4.773601891824597,        !- Vertex 4 Ycoordinate
+    25.286545103239863,       !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1128,17 +1624,17 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    25.286545106728667,       !- Vertex 1 Xcoordinate
-    4.773601891824597,        !- Vertex 1 Ycoordinate
+    25.286545103239863,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    25.286545106728667,       !- Vertex 2 Xcoordinate
-    4.773601891824597,        !- Vertex 2 Ycoordinate
+    25.286545103239863,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    29.055705777299956,       !- Vertex 3 Xcoordinate
-    4.773601891824597,        !- Vertex 3 Ycoordinate
+    29.055705774223078,       !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    29.055705777299956,       !- Vertex 4 Xcoordinate
-    4.773601891824597,        !- Vertex 4 Ycoordinate
+    29.055705774223078,       !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
@@ -1152,23 +1648,143 @@ BUILDINGSURFACE:DETAILED,
     NoWind,                   !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    29.055705777299956,       !- Vertex 1 Xcoordinate
-    17.324104975748142,       !- Vertex 1 Ycoordinate
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
     0,                        !- Vertex 1 Zcoordinate
-    29.055705777299956,       !- Vertex 2 Xcoordinate
-    4.773601891824597,        !- Vertex 2 Ycoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
     0,                        !- Vertex 2 Zcoordinate
-    25.286545106728667,       !- Vertex 3 Xcoordinate
-    4.773601891824597,        !- Vertex 3 Ycoordinate
+    25.286545103239863,       !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
     0,                        !- Vertex 3 Zcoordinate
-    25.286545106728667,       !- Vertex 4 Xcoordinate
-    17.324104975748142,       !- Vertex 4 Ycoordinate
+    25.286545103239863,       !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
     0;                        !- Vertex 4 Zcoordinate
 
 BUILDINGSURFACE:DETAILED,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Roof 0001,    !- Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Wall 0001,    !- Name
+    wall,                     !- Surface Type
+    ext_wall_wood_framed,     !- Construction Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    29.055705774223078,       !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    29.055705774223078,       !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Wall 0002,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    25.286545103239863,       !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    25.286545103239863,       !- Vertex 4 Xcoordinate
+    17.32410497639704,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Wall 0003,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    25.286545103239863,       !- Vertex 1 Xcoordinate
+    17.32410497639704,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    25.286545103239863,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    25.286545103239863,       !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    25.286545103239863,       !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Wall 0004,    !- Name
+    wall,                     !- Surface Type
+    int_wall_default,         !- Construction Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    25.286545103239863,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    25.286545103239863,       !- Vertex 2 Xcoordinate
+    4.773601892287041,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    29.055705774223078,       !- Vertex 3 Xcoordinate
+    4.773601892287041,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    29.055705774223078,       !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Roof 0001,    !- Name
     roof,                     !- Surface Type
     roof_attic_and_other,     !- Construction Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    SunExposed,               !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    4.773601892287041,        !- Vertex 1 Ycoordinate
+    7.315200000000001,        !- Vertex 1 Zcoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    17.32410497639704,        !- Vertex 2 Ycoordinate
+    7.315200000000001,        !- Vertex 2 Zcoordinate
+    25.286545103239863,       !- Vertex 3 Xcoordinate
+    17.32410497639704,        !- Vertex 3 Ycoordinate
+    7.315200000000001,        !- Vertex 3 Zcoordinate
+    25.286545103239863,       !- Vertex 4 Xcoordinate
+    4.773601892287041,        !- Vertex 4 Ycoordinate
+    7.315200000000001;        !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_east_zone Storey 0 Ceiling 0001_1,    !- Name
+    ceiling,                  !- Surface Type
+    int_ceiling_default,      !- Construction Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Zone Name
     outdoors,                 !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
@@ -1176,17 +1792,41 @@ BUILDINGSURFACE:DETAILED,
     WindExposed,              !- Wind Exposure
     autocalculate,            !- View Factor to Ground
     autocalculate,            !- Number of Vertices
-    29.055705777299956,       !- Vertex 1 Xcoordinate
-    4.773601891824597,        !- Vertex 1 Ycoordinate
+    29.05570577410981,        !- Vertex 1 Xcoordinate
+    4.773601891938597,        !- Vertex 1 Ycoordinate
     3.6576000000000004,       !- Vertex 1 Zcoordinate
-    29.055705777299956,       !- Vertex 2 Xcoordinate
-    17.324104975748142,       !- Vertex 2 Ycoordinate
+    29.05570577410981,        !- Vertex 2 Xcoordinate
+    17.324104976374656,       !- Vertex 2 Ycoordinate
     3.6576000000000004,       !- Vertex 2 Zcoordinate
-    25.286545106728667,       !- Vertex 3 Xcoordinate
-    17.324104975748142,       !- Vertex 3 Ycoordinate
+    25.286545102950186,       !- Vertex 3 Xcoordinate
+    17.324104976374656,       !- Vertex 3 Ycoordinate
     3.6576000000000004,       !- Vertex 3 Zcoordinate
-    25.286545106728667,       !- Vertex 4 Xcoordinate
-    4.773601891824597,        !- Vertex 4 Ycoordinate
+    25.286545102950186,       !- Vertex 4 Xcoordinate
+    4.773601891938597,        !- Vertex 4 Ycoordinate
+    3.6576000000000004;       !- Vertex 4 Zcoordinate
+
+BUILDINGSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Floor 0001_1,    !- Name
+    floor,                    !- Surface Type
+    int_floor_default,        !- Construction Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
+    outdoors,                 !- Outside Boundary Condition
+    ,                         !- Outside Boundary Condition Object
+    NoSun,                    !- Sun Exposure
+    WindExposed,              !- Wind Exposure
+    autocalculate,            !- View Factor to Ground
+    autocalculate,            !- Number of Vertices
+    29.05570577410981,        !- Vertex 1 Xcoordinate
+    17.324104976374656,       !- Vertex 1 Ycoordinate
+    3.6576000000000004,       !- Vertex 1 Zcoordinate
+    29.05570577410981,        !- Vertex 2 Xcoordinate
+    4.773601891938597,        !- Vertex 2 Ycoordinate
+    3.6576000000000004,       !- Vertex 2 Zcoordinate
+    25.286545102950186,       !- Vertex 3 Xcoordinate
+    4.773601891938597,        !- Vertex 3 Ycoordinate
+    3.6576000000000004,       !- Vertex 3 Zcoordinate
+    25.286545102950186,       !- Vertex 4 Xcoordinate
+    17.324104976374656,       !- Vertex 4 Ycoordinate
     3.6576000000000004;       !- Vertex 4 Zcoordinate
 
 FENESTRATIONSURFACE:DETAILED,
@@ -1199,18 +1839,41 @@ FENESTRATIONSURFACE:DETAILED,
     ,                         !- Frame and Divider Name
     1.0,                      !- Multiplier
     autocalculate,            !- Number of Vertices
-    5.099312547858581,        !- Vertex 1 Xcoordinate
+    5.099312548128838,        !- Vertex 1 Xcoordinate
     0,                        !- Vertex 1 Ycoordinate
-    2.523744,                 !- Vertex 1 Zcoordinate
-    5.099312547858581,        !- Vertex 2 Xcoordinate
+    2.523744000073827,        !- Vertex 1 Zcoordinate
+    5.099312548128838,        !- Vertex 2 Xcoordinate
     0,                        !- Vertex 2 Ycoordinate
-    1.1338560000000002,       !- Vertex 2 Zcoordinate
-    23.956393229441375,       !- Vertex 3 Xcoordinate
+    1.1338559999261735,       !- Vertex 2 Zcoordinate
+    23.956393226094242,       !- Vertex 3 Xcoordinate
     0,                        !- Vertex 3 Ycoordinate
-    1.1338560000000002,       !- Vertex 3 Zcoordinate
-    23.956393229441375,       !- Vertex 4 Xcoordinate
+    1.1338559999261735,       !- Vertex 3 Zcoordinate
+    23.956393226094242,       !- Vertex 4 Xcoordinate
     0,                        !- Vertex 4 Ycoordinate
-    2.523744;                 !- Vertex 4 Zcoordinate
+    2.523744000073827;        !- Vertex 4 Zcoordinate
+
+FENESTRATIONSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Wall 0004 window,    !- Name
+    Window,                   !- Surface Type
+    window_u_3.5205_shgc_0.4100,    !- Construction Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Wall 0004,    !- Building Surface Name
+    ,                         !- Outside Boundary Condition Object
+    autocalculate,            !- View Factor to Ground
+    ,                         !- Frame and Divider Name
+    1.0,                      !- Multiplier
+    autocalculate,            !- Number of Vertices
+    5.099312548128838,        !- Vertex 1 Xcoordinate
+    0,                        !- Vertex 1 Ycoordinate
+    6.181344000073827,        !- Vertex 1 Zcoordinate
+    5.099312548128838,        !- Vertex 2 Xcoordinate
+    0,                        !- Vertex 2 Ycoordinate
+    4.791455999926174,        !- Vertex 2 Zcoordinate
+    23.956393226094242,       !- Vertex 3 Xcoordinate
+    0,                        !- Vertex 3 Ycoordinate
+    4.791455999926174,        !- Vertex 3 Zcoordinate
+    23.956393226094242,       !- Vertex 4 Xcoordinate
+    0,                        !- Vertex 4 Ycoordinate
+    6.181344000073827;        !- Vertex 4 Zcoordinate
 
 FENESTRATIONSURFACE:DETAILED,
     Block Dining: Cafeteria/fast food_west_zone Storey 0 Wall 0003 window,    !- Name
@@ -1223,17 +1886,40 @@ FENESTRATIONSURFACE:DETAILED,
     1.0,                      !- Multiplier
     autocalculate,            !- Number of Vertices
     0,                        !- Vertex 1 Xcoordinate
-    17.31782972420618,        !- Vertex 1 Ycoordinate
-    2.523744,                 !- Vertex 1 Zcoordinate
+    17.317829724854988,       !- Vertex 1 Ycoordinate
+    2.5237439999370803,       !- Vertex 1 Zcoordinate
     0,                        !- Vertex 2 Xcoordinate
-    17.31782972420618,        !- Vertex 2 Ycoordinate
-    1.1338560000000002,       !- Vertex 2 Zcoordinate
+    17.317829724854988,       !- Vertex 2 Ycoordinate
+    1.13385600006292,         !- Vertex 2 Zcoordinate
     0,                        !- Vertex 3 Xcoordinate
-    4.779877143366559,        !- Vertex 3 Ycoordinate
-    1.1338560000000002,       !- Vertex 3 Zcoordinate
+    4.779877143829096,        !- Vertex 3 Ycoordinate
+    1.13385600006292,         !- Vertex 3 Zcoordinate
     0,                        !- Vertex 4 Xcoordinate
-    4.779877143366559,        !- Vertex 4 Ycoordinate
-    2.523744;                 !- Vertex 4 Zcoordinate
+    4.779877143829096,        !- Vertex 4 Ycoordinate
+    2.5237439999370803;       !- Vertex 4 Zcoordinate
+
+FENESTRATIONSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Wall 0003 window,    !- Name
+    Window,                   !- Surface Type
+    window_u_3.5205_shgc_0.4100,    !- Construction Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Wall 0003,    !- Building Surface Name
+    ,                         !- Outside Boundary Condition Object
+    autocalculate,            !- View Factor to Ground
+    ,                         !- Frame and Divider Name
+    1.0,                      !- Multiplier
+    autocalculate,            !- Number of Vertices
+    0,                        !- Vertex 1 Xcoordinate
+    17.317829724854988,       !- Vertex 1 Ycoordinate
+    6.181343999937081,        !- Vertex 1 Zcoordinate
+    0,                        !- Vertex 2 Xcoordinate
+    17.317829724854988,       !- Vertex 2 Ycoordinate
+    4.7914560000629205,       !- Vertex 2 Zcoordinate
+    0,                        !- Vertex 3 Xcoordinate
+    4.779877143829096,        !- Vertex 3 Ycoordinate
+    4.7914560000629205,       !- Vertex 3 Zcoordinate
+    0,                        !- Vertex 4 Xcoordinate
+    4.779877143829096,        !- Vertex 4 Ycoordinate
+    6.181343999937081;        !- Vertex 4 Zcoordinate
 
 FENESTRATIONSURFACE:DETAILED,
     Block Dining: Cafeteria/fast food_north_zone Storey 0 Wall 0002 window,    !- Name
@@ -1245,18 +1931,41 @@ FENESTRATIONSURFACE:DETAILED,
     ,                         !- Frame and Divider Name
     1.0,                      !- Multiplier
     autocalculate,            !- Number of Vertices
-    23.956393229441375,       !- Vertex 1 Xcoordinate
-    22.09770686757274,        !- Vertex 1 Ycoordinate
-    2.523744,                 !- Vertex 1 Zcoordinate
-    23.956393229441375,       !- Vertex 2 Xcoordinate
-    22.09770686757274,        !- Vertex 2 Ycoordinate
-    1.1338560000000002,       !- Vertex 2 Zcoordinate
-    5.099312547858581,        !- Vertex 3 Xcoordinate
-    22.09770686757274,        !- Vertex 3 Ycoordinate
-    1.1338560000000002,       !- Vertex 3 Zcoordinate
-    5.099312547858581,        !- Vertex 4 Xcoordinate
-    22.09770686757274,        !- Vertex 4 Ycoordinate
-    2.523744;                 !- Vertex 4 Zcoordinate
+    23.956393226094242,       !- Vertex 1 Xcoordinate
+    22.097706868684085,       !- Vertex 1 Ycoordinate
+    2.523744000073827,        !- Vertex 1 Zcoordinate
+    23.956393226094242,       !- Vertex 2 Xcoordinate
+    22.097706868684085,       !- Vertex 2 Ycoordinate
+    1.1338559999261735,       !- Vertex 2 Zcoordinate
+    5.099312548128838,        !- Vertex 3 Xcoordinate
+    22.097706868684085,       !- Vertex 3 Ycoordinate
+    1.1338559999261735,       !- Vertex 3 Zcoordinate
+    5.099312548128838,        !- Vertex 4 Xcoordinate
+    22.097706868684085,       !- Vertex 4 Ycoordinate
+    2.523744000073827;        !- Vertex 4 Zcoordinate
+
+FENESTRATIONSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Wall 0002 window,    !- Name
+    Window,                   !- Surface Type
+    window_u_3.5205_shgc_0.4100,    !- Construction Name
+    Block Dining: Cafeteria/fast food_north_zone Storey 1 Wall 0002,    !- Building Surface Name
+    ,                         !- Outside Boundary Condition Object
+    autocalculate,            !- View Factor to Ground
+    ,                         !- Frame and Divider Name
+    1.0,                      !- Multiplier
+    autocalculate,            !- Number of Vertices
+    23.956393226094242,       !- Vertex 1 Xcoordinate
+    22.097706868684085,       !- Vertex 1 Ycoordinate
+    6.181344000073827,        !- Vertex 1 Zcoordinate
+    23.956393226094242,       !- Vertex 2 Xcoordinate
+    22.097706868684085,       !- Vertex 2 Ycoordinate
+    4.791455999926174,        !- Vertex 2 Zcoordinate
+    5.099312548128838,        !- Vertex 3 Xcoordinate
+    22.097706868684085,       !- Vertex 3 Ycoordinate
+    4.791455999926174,        !- Vertex 3 Zcoordinate
+    5.099312548128838,        !- Vertex 4 Xcoordinate
+    22.097706868684085,       !- Vertex 4 Ycoordinate
+    6.181344000073827;        !- Vertex 4 Zcoordinate
 
 FENESTRATIONSURFACE:DETAILED,
     Block Dining: Cafeteria/fast food_east_zone Storey 0 Wall 0001 window,    !- Name
@@ -1268,18 +1977,41 @@ FENESTRATIONSURFACE:DETAILED,
     ,                         !- Frame and Divider Name
     1.0,                      !- Multiplier
     autocalculate,            !- Number of Vertices
-    29.055705777299956,       !- Vertex 1 Xcoordinate
-    4.779877143366559,        !- Vertex 1 Ycoordinate
-    2.523744,                 !- Vertex 1 Zcoordinate
-    29.055705777299956,       !- Vertex 2 Xcoordinate
-    4.779877143366559,        !- Vertex 2 Ycoordinate
-    1.1338560000000002,       !- Vertex 2 Zcoordinate
-    29.055705777299956,       !- Vertex 3 Xcoordinate
-    17.31782972420618,        !- Vertex 3 Ycoordinate
-    1.1338560000000002,       !- Vertex 3 Zcoordinate
-    29.055705777299956,       !- Vertex 4 Xcoordinate
-    17.31782972420618,        !- Vertex 4 Ycoordinate
-    2.523744;                 !- Vertex 4 Zcoordinate
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    4.779877143829096,        !- Vertex 1 Ycoordinate
+    2.5237439999370803,       !- Vertex 1 Zcoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    4.779877143829096,        !- Vertex 2 Ycoordinate
+    1.13385600006292,         !- Vertex 2 Zcoordinate
+    29.055705774223078,       !- Vertex 3 Xcoordinate
+    17.317829724854988,       !- Vertex 3 Ycoordinate
+    1.13385600006292,         !- Vertex 3 Zcoordinate
+    29.055705774223078,       !- Vertex 4 Xcoordinate
+    17.317829724854988,       !- Vertex 4 Ycoordinate
+    2.5237439999370803;       !- Vertex 4 Zcoordinate
+
+FENESTRATIONSURFACE:DETAILED,
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Wall 0001 window,    !- Name
+    Window,                   !- Surface Type
+    window_u_3.5205_shgc_0.4100,    !- Construction Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 1 Wall 0001,    !- Building Surface Name
+    ,                         !- Outside Boundary Condition Object
+    autocalculate,            !- View Factor to Ground
+    ,                         !- Frame and Divider Name
+    1.0,                      !- Multiplier
+    autocalculate,            !- Number of Vertices
+    29.055705774223078,       !- Vertex 1 Xcoordinate
+    4.779877143829096,        !- Vertex 1 Ycoordinate
+    6.181343999937081,        !- Vertex 1 Zcoordinate
+    29.055705774223078,       !- Vertex 2 Xcoordinate
+    4.779877143829096,        !- Vertex 2 Ycoordinate
+    4.7914560000629205,       !- Vertex 2 Zcoordinate
+    29.055705774223078,       !- Vertex 3 Xcoordinate
+    17.317829724854988,       !- Vertex 3 Ycoordinate
+    4.7914560000629205,       !- Vertex 3 Zcoordinate
+    29.055705774223078,       !- Vertex 4 Xcoordinate
+    17.317829724854988,       !- Vertex 4 Ycoordinate
+    6.181343999937081;        !- Vertex 4 Zcoordinate
 
 Output:VariableDictionary,
     Regular;                  !- Key Field
