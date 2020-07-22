@@ -28,7 +28,11 @@
     "weekly_occupied_hours": 40,
     "number_days_open_workday": 5,
     "number_days_open_weekend": 0,
+<<<<<<< HEAD
+    "hvac_system_type": NaN,
+=======
     "hvac_system_type": "VAV_HotWater_ChilledWater",
+>>>>>>> master
     "heating_system_type": "None",
     "cooling_system_type": "None",
     "ventilation_rate_per_person": 0.0035396058294948273,

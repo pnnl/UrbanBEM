@@ -1,0 +1,74 @@
+# This image is built on top of another image hosted on Sylabs Cloud (the default library)
+Bootstrap: library
+
+# openstudio2.7.0:latest is a copy of NREL's 2.7.0 container found at https://openstudio-builds.s3.amazonaws.com/2.7.0/OpenStudio-2.7.0.544f363db5-Singularity.simg
+# Since you can't bootstrap directly to an https address (as far as I could tell), I just pulled it down from the web, built an identical container, signed it, and pushed it to Sylabs
+# Comes with OpenStudio 2.7.0 and Ruby 2.2.4, built on an Ubuntu 14.04 OS
+From: etb28/default/openstudio2.7.0:latest
+
+# Runs inside the container when it is built
+%post
+	
+	# During a build, the user can't respond to interactive prompts. In a previous version of this definition file, this enviroment variable was required to eliminate some unnecessary prompting
+	# It may be unnecessary at this point, but it doesn't hurt, especially in the interest of further development
+	export DEBIAN_FRONTEND=noninteractive
+	
+	# Configure environment for installation of openstudio-standards, a Ruby gem
+	# See Linux development environment setup page on OpenStudio Standards Confluence for explaination of this section
+	
+	mkdir -p /usr/local/lib/ruby/site_ruby
+	echo "require \"usr/local/openstudio-2.7.0/Ruby/openstudio.rb\"" > /usr/local/lib/ruby/site_ruby/openstudio.rb
+	gem install bundler -v 1.9
+	gem install json
+	git clone -b master https://github.com/NREL/openstudio-standards.git openstudio_standards
+	cd openstudio_standards
+	bundle install
+	cd ..
+	
+	# Install openstudio-standards
+	# --no-document just tells gem not to install documentation, which takes forever
+	gem install --no-document openstudio-standards
+	
+	# Remainder of postscript installs Python and its necessary packages
+	
+	# Update apt package repository
+	apt update
+	
+	# Install wget, a web retrieval tool
+	# -y is a precaution against simple y/n prompts, which cause build to fail if unaccounted for. It may be unnecessary for wget.
+	apt -y install wget
+	
+	# Download Miniconda installation script
+	# Miniconda is a minimal version of Anaconda, a popular Python/R distribution for scientific computing
+	# Miniconda only includes conda (Anaconda's package manager), Python 3.7.7 (as of now), and a few other packages including pip (Python's de facto package manager)
+	# Why not just use the default Ubuntu 14.04 Python 3.5?
+		# UrbanBEM scripts require at least Python 3.7
+	# Ok, but why install miniconda and all of its baggage? Why not just upgrade Python?
+		# Good question! Ubuntu 14.04's updated apt package list doesn't actually include Python 3.7, so you have to first add the deadsnakes PPA repository
+		# Unfortunately, after we install Python 3.7, we need to install pip as well, and since they come from different repositories, they don't work together. There were some fixes online but none worked for me.
+		# Compared to all this mess, Miniconda - which comes with Python 3.7 and pip - is much nicer
+	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+	
+	# Run Miniconda installation script
+	# The piped string responds to the installation prompts:
+		# Two enters to read through a license agreement
+		# "yes" to agree to the terms
+		# /miniconda3 to specify the installation environment. If left as default, remote builder will install in /root/anaconda, making Python functionality inaccessable to non-sudoers
+		# one more "yes" to initialize Miniconda
+	echo -e "\n\nyes\n/miniconda3\nyes" | bash Miniconda3-latest-Linux-x86_64.sh
+	
+	# After Miniconda is installed, the shell needs to be restarted for changes to take effect. Unfortunately, since we are running this in a Singularity postscript, we can't open a new shell!
+	# Therefore, we just set the path to all the Miniconda goodies - Python, pip, etc - manually
+	# Keep in mind this enviornment variable is not permanent, and will only apply for the remainer of the postscript! This is why we need the environment section
+	export PATH=/miniconda3/bin
+	
+	# Install geomeppy and pandas, the Python packages we need for UrbanBEM work
+	pip install geomeppy
+	pip install pandas
+
+# Sets environment variables in the container at runtime. This does NOT set environment variables on the host machine - if you want to do that, you need a setup section
+%environment
+	
+	# Recall that Miniconda requires a shell restart to apply changes after installation. Since we can't do this, just like in the postscript, we export the path manually
+	# Without this section, the container won't recognize the 'python' command, even though Python is installed
+	export PATH="$PATH:/miniconda3/bin"

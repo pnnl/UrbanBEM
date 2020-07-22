@@ -1,7 +1,8 @@
 require "openstudio"
 require "openstudio-standards"
 standard = Standard.build("90.1-2013")
-idf = OpenStudio::Workspace.load("../hvac_dev/zones.idf").get
+casename = ARGV[0]
+idf = OpenStudio::Workspace.load("../hvac_dev/zones_#{casename}.idf").get
 trans = OpenStudio::EnergyPlus::ReverseTranslator.new
 osm = trans.translateWorkspace(idf)
 # model_add_hvac_system(model,
@@ -18,7 +19,7 @@ osm = trans.translateWorkspace(idf)
 #     zone_equipment_ventilation: true,
 #     fan_coil_capacity_control_method: 'CyclingFan')
 
-hvac_system_type = ARGV[0]
+hvac_system_type = ARGV[1]
 
 case hvac_system_type
 when "PSZ_Gas_SingleSpeedDX"
@@ -46,4 +47,4 @@ end
 
 trans = OpenStudio::EnergyPlus::ForwardTranslator.new
 idf = trans.translateModel(osm)
-idf.save("../hvac_dev/zones_hvacadded.idf", true)
+idf.save("../hvac_dev/zones_hvacadded_#{casename}.idf", true)
