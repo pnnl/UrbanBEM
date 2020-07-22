@@ -1689,9 +1689,9 @@ AirLoopHVAC:SupplyPath,
 AirLoopHVAC:ZoneSplitter,
   Air Loop HVAC Zone Splitter 1,          !- Name
   4 Zone VAV Demand Inlet Node,           !- Inlet Node Name
-  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone VAV Terminal Inlet Air Node, !- Outlet Node Name 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone VAV Terminal Inlet Air Node, !- Outlet Node Name 1
   Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone VAV Terminal Inlet Air Node, !- Outlet Node Name 2
-  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone VAV Terminal Inlet Air Node, !- Outlet Node Name 3
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone VAV Terminal Inlet Air Node, !- Outlet Node Name 3
   Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone VAV Terminal Inlet Air Node; !- Outlet Node Name 4
 
 AirLoopHVAC:ReturnPath,
@@ -1703,9 +1703,9 @@ AirLoopHVAC:ReturnPath,
 AirLoopHVAC:ZoneMixer,
   Air Loop HVAC Zone Mixer 1,             !- Name
   4 Zone VAV Demand Outlet Node,          !- Outlet Node Name
-  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Return Air Node, !- Inlet Node Name 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Return Air Node, !- Inlet Node Name 1
   Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone Return Air Node, !- Inlet Node Name 2
-  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Return Air Node, !- Inlet Node Name 3
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Return Air Node, !- Inlet Node Name 3
   Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone Return Air Node; !- Inlet Node Name 4
 
 AirLoopHVAC,
@@ -2079,9 +2079,9 @@ AirLoopHVAC:SupplyPath,
 AirLoopHVAC:ZoneSplitter,
   Air Loop HVAC Zone Splitter 2,          !- Name
   4 Zone VAV 1 Demand Inlet Node,         !- Inlet Node Name
-  Block Dining: Cafeteria/fast food_east_zone Storey 1 Thermal Zone VAV Terminal Inlet Air Node, !- Outlet Node Name 1
-  Block Dining: Cafeteria/fast food_west_zone Storey 1 Thermal Zone VAV Terminal Inlet Air Node, !- Outlet Node Name 2
-  Block Dining: Cafeteria/fast food_north_zone Storey 1 Thermal Zone VAV Terminal Inlet Air Node, !- Outlet Node Name 3
+  Block Dining: Cafeteria/fast food_north_zone Storey 1 Thermal Zone VAV Terminal Inlet Air Node, !- Outlet Node Name 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 1 Thermal Zone VAV Terminal Inlet Air Node, !- Outlet Node Name 2
+  Block Dining: Cafeteria/fast food_west_zone Storey 1 Thermal Zone VAV Terminal Inlet Air Node, !- Outlet Node Name 3
   Block Dining: Cafeteria/fast food_south_zone Storey 1 Thermal Zone VAV Terminal Inlet Air Node; !- Outlet Node Name 4
 
 AirLoopHVAC:ReturnPath,
@@ -2093,9 +2093,9 @@ AirLoopHVAC:ReturnPath,
 AirLoopHVAC:ZoneMixer,
   Air Loop HVAC Zone Mixer 2,             !- Name
   4 Zone VAV 1 Demand Outlet Node,        !- Outlet Node Name
-  Block Dining: Cafeteria/fast food_east_zone Storey 1 Thermal Zone Return Air Node, !- Inlet Node Name 1
-  Block Dining: Cafeteria/fast food_west_zone Storey 1 Thermal Zone Return Air Node, !- Inlet Node Name 2
-  Block Dining: Cafeteria/fast food_north_zone Storey 1 Thermal Zone Return Air Node, !- Inlet Node Name 3
+  Block Dining: Cafeteria/fast food_north_zone Storey 1 Thermal Zone Return Air Node, !- Inlet Node Name 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 1 Thermal Zone Return Air Node, !- Inlet Node Name 2
+  Block Dining: Cafeteria/fast food_west_zone Storey 1 Thermal Zone Return Air Node, !- Inlet Node Name 3
   Block Dining: Cafeteria/fast food_south_zone Storey 1 Thermal Zone Return Air Node; !- Inlet Node Name 4
 
 PlantLoop,
@@ -2349,9 +2349,9 @@ Branch,
   Hot Water Loop Demand Branch 3,         !- Name
   ,                                       !- Pressure Drop Curve Name
   Coil:Heating:Water,                     !- Component Object Type 1
-  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Reheat Coil, !- Component Name 1
-  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Reheat Coil Inlet Water Node, !- Component Inlet Node Name 1
-  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Reheat Coil Outlet Water Node; !- Component Outlet Node Name 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Reheat Coil, !- Component Name 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Reheat Coil Inlet Water Node, !- Component Inlet Node Name 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Reheat Coil Outlet Water Node; !- Component Outlet Node Name 1
 
 Branch,
   Hot Water Loop Demand Branch 4,         !- Name
@@ -2365,9 +2365,9 @@ Branch,
   Hot Water Loop Demand Branch 5,         !- Name
   ,                                       !- Pressure Drop Curve Name
   Coil:Heating:Water,                     !- Component Object Type 1
-  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Reheat Coil, !- Component Name 1
-  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Reheat Coil Inlet Water Node, !- Component Inlet Node Name 1
-  Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone Reheat Coil Outlet Water Node; !- Component Outlet Node Name 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Reheat Coil, !- Component Name 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Reheat Coil Inlet Water Node, !- Component Inlet Node Name 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone Reheat Coil Outlet Water Node; !- Component Outlet Node Name 1
 
 Branch,
   Hot Water Loop Demand Branch 6,         !- Name
@@ -2389,25 +2389,25 @@ Branch,
   Hot Water Loop Demand Branch 8,         !- Name
   ,                                       !- Pressure Drop Curve Name
   Coil:Heating:Water,                     !- Component Object Type 1
-  Block Dining: Cafeteria/fast food_east_zone Storey 1 Thermal Zone Reheat Coil, !- Component Name 1
-  Block Dining: Cafeteria/fast food_east_zone Storey 1 Thermal Zone Reheat Coil Inlet Water Node, !- Component Inlet Node Name 1
-  Block Dining: Cafeteria/fast food_east_zone Storey 1 Thermal Zone Reheat Coil Outlet Water Node; !- Component Outlet Node Name 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 1 Thermal Zone Reheat Coil, !- Component Name 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 1 Thermal Zone Reheat Coil Inlet Water Node, !- Component Inlet Node Name 1
+  Block Dining: Cafeteria/fast food_north_zone Storey 1 Thermal Zone Reheat Coil Outlet Water Node; !- Component Outlet Node Name 1
 
 Branch,
   Hot Water Loop Demand Branch 9,         !- Name
   ,                                       !- Pressure Drop Curve Name
   Coil:Heating:Water,                     !- Component Object Type 1
-  Block Dining: Cafeteria/fast food_west_zone Storey 1 Thermal Zone Reheat Coil, !- Component Name 1
-  Block Dining: Cafeteria/fast food_west_zone Storey 1 Thermal Zone Reheat Coil Inlet Water Node, !- Component Inlet Node Name 1
-  Block Dining: Cafeteria/fast food_west_zone Storey 1 Thermal Zone Reheat Coil Outlet Water Node; !- Component Outlet Node Name 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 1 Thermal Zone Reheat Coil, !- Component Name 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 1 Thermal Zone Reheat Coil Inlet Water Node, !- Component Inlet Node Name 1
+  Block Dining: Cafeteria/fast food_east_zone Storey 1 Thermal Zone Reheat Coil Outlet Water Node; !- Component Outlet Node Name 1
 
 Branch,
   Hot Water Loop Demand Branch 10,        !- Name
   ,                                       !- Pressure Drop Curve Name
   Coil:Heating:Water,                     !- Component Object Type 1
-  Block Dining: Cafeteria/fast food_north_zone Storey 1 Thermal Zone Reheat Coil, !- Component Name 1
-  Block Dining: Cafeteria/fast food_north_zone Storey 1 Thermal Zone Reheat Coil Inlet Water Node, !- Component Inlet Node Name 1
-  Block Dining: Cafeteria/fast food_north_zone Storey 1 Thermal Zone Reheat Coil Outlet Water Node; !- Component Outlet Node Name 1
+  Block Dining: Cafeteria/fast food_west_zone Storey 1 Thermal Zone Reheat Coil, !- Component Name 1
+  Block Dining: Cafeteria/fast food_west_zone Storey 1 Thermal Zone Reheat Coil Inlet Water Node, !- Component Inlet Node Name 1
+  Block Dining: Cafeteria/fast food_west_zone Storey 1 Thermal Zone Reheat Coil Outlet Water Node; !- Component Outlet Node Name 1
 
 Branch,
   Hot Water Loop Demand Branch 11,        !- Name

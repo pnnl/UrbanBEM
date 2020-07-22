@@ -214,7 +214,7 @@
             "Class": "Fan:VariableVolume",
             "Field": "Availability Schedule Name",
             "Obj_name": "*",
-            "Sch_name": "always_on"
+            "Sch_name": "bldg_hvac_operation_sch"
         },
         {
             "Class": "Coil:Cooling:DX:TwoSpeed",
