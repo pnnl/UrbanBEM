@@ -33,7 +33,7 @@ try:
 	with open(case_path) as f:
 	    case = json.load(f)
 
-	if case['hvac_system_type'] == 'PSZ, Gas, SingleSpeedDX':
+	if case['hvac_system_type'] in ['PSZ, Gas, SingleSpeedDX', 'PSZ, Electric, SingleSpeedDX', 'VAV, HotWater, ChilledWater']:
 
 		case_conv, case_conv_clean = recipes.convert_dict_unit(case)
 

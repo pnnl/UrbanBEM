@@ -22,7 +22,7 @@ try:
 	                               '-v', '9.0',
 	                               '-x', 'eso,mtd,mtr,mdd,bnd,svg,zsz,ssz',
 	                               '-w', '../resources/weather',
-	                               '-o', f'{casename}',
+	                               '-o', str(casename),
 	                               '-p', '../ep_output/output',
 	                               f'../ep_input/input/{casename}.idf', epw],
 	                               stdout = outFile,
