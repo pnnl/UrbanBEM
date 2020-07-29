@@ -117,7 +117,7 @@ GlobalGeometryRules,
     Relative;                 !- Rectangular Surface Coordinate System
 
 Zone,
-    Block Office_core_zone Storey 0 Thermal Zone,    !- Name
+    Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
