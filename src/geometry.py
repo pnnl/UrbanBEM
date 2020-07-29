@@ -28,12 +28,40 @@ class Geometry:
                 self.create_perimeter_zone(dfrow)
             if dfrow["type"] == "core":
                 self.create_core_zone(dfrow)
+        self.set_int_wall_conditions()
         self.create_zone_list()
+
+    def set_int_wall_conditions(self):
+        windows = self.idf.idfobjects["FENESTRATIONSURFACE:DETAILED"]
+        window_walls = [
+            win["Building_Surface_Name"].strip().lower()
+            for win in windows
+            if str(win["Surface_Type"]).strip().lower() == "window"
+        ]
+        unique_window_walls = list(set(window_walls))
+
+        surfaces = self.idf.idfobjects["BUILDINGSURFACE:DETAILED"]
+        int_walls = []
+        for surface in surfaces:
+            if (
+                str(surface["Surface_Type"]).strip().lower() != "wall"
+            ):  # skip if it is not a wall
+                continue
+            if (
+                str(surface["Name"]).strip().lower() in unique_window_walls
+            ):  # skip if it is a window wall
+                continue
+
+            # set int_wall conditions
+            surface["Outside_Boundary_Condition"] = "Adiabatic"
+            surface["Sun_Exposure"] = "NoSun"
+            surface["Wind_Exposure"] = "NoWind"
+            surface["View_Factor_to_Ground"] = 0
 
     def set_geo_origins(self, df: pd.DataFrame) -> pd.DataFrame:
         df.index = df["side"]
 
-        has_core = 'core' in df.index
+        has_core = "core" in df.index
 
         if has_core:
             core_length = df.loc["core", "length"]
@@ -47,11 +75,7 @@ class Geometry:
         x_center = (
             0.5
             * (
-                max(
-                    df.loc["south", "length"],
-                    core_length,
-                    df.loc["north", "length"],
-                )
+                max(df.loc["south", "length"], core_length, df.loc["north", "length"])
                 + df.loc["west", "depth"]
                 + df.loc["east", "depth"]
             )
@@ -59,11 +83,7 @@ class Geometry:
         y_center = (
             0.5
             * (
-                max(
-                    df.loc["west", "length"],
-                    core_length,
-                    df.loc["east", "length"],
-                )
+                max(df.loc["west", "length"], core_length, df.loc["east", "length"])
                 + df.loc["south", "depth"]
                 + df.loc["north", "depth"]
             )

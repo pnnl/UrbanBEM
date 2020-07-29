@@ -813,11 +813,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     23.96583120441154,        !- Vertex 1 Xcoordinate
     0,                        !- Vertex 1 Ycoordinate
@@ -837,11 +837,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     23.96583120441154,        !- Vertex 1 Xcoordinate
     3.769160670983217,        !- Vertex 1 Ycoordinate
@@ -861,11 +861,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     5.089874569811538,        !- Vertex 1 Xcoordinate
     3.769160670983217,        !- Vertex 1 Ycoordinate
@@ -933,11 +933,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     23.96583120441154,        !- Vertex 1 Xcoordinate
     0,                        !- Vertex 1 Ycoordinate
@@ -957,11 +957,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     23.96583120441154,        !- Vertex 1 Xcoordinate
     3.769160670983217,        !- Vertex 1 Ycoordinate
@@ -981,11 +981,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     5.089874569811538,        !- Vertex 1 Xcoordinate
     3.769160670983217,        !- Vertex 1 Ycoordinate
@@ -1101,11 +1101,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     3.7691606709832164,       !- Vertex 1 Xcoordinate
     4.773601892287041,        !- Vertex 1 Ycoordinate
@@ -1125,11 +1125,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     3.7691606709832164,       !- Vertex 1 Xcoordinate
     17.32410497639704,        !- Vertex 1 Ycoordinate
@@ -1173,11 +1173,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     0,                        !- Vertex 1 Xcoordinate
     4.773601892287041,        !- Vertex 1 Ycoordinate
@@ -1221,11 +1221,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     3.7691606709832164,       !- Vertex 1 Xcoordinate
     4.773601892287041,        !- Vertex 1 Ycoordinate
@@ -1245,11 +1245,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     3.7691606709832164,       !- Vertex 1 Xcoordinate
     17.32410497639704,        !- Vertex 1 Ycoordinate
@@ -1293,11 +1293,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     0,                        !- Vertex 1 Xcoordinate
     4.773601892287041,        !- Vertex 1 Ycoordinate
@@ -1389,11 +1389,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     23.96583120441154,        !- Vertex 1 Xcoordinate
     18.328546197700867,       !- Vertex 1 Ycoordinate
@@ -1437,11 +1437,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     5.089874569811538,        !- Vertex 1 Xcoordinate
     22.097706868684085,       !- Vertex 1 Ycoordinate
@@ -1461,11 +1461,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     5.089874569811538,        !- Vertex 1 Xcoordinate
     18.328546197700867,       !- Vertex 1 Ycoordinate
@@ -1509,11 +1509,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     23.96583120441154,        !- Vertex 1 Xcoordinate
     18.328546197700867,       !- Vertex 1 Ycoordinate
@@ -1557,11 +1557,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     5.089874569811538,        !- Vertex 1 Xcoordinate
     22.097706868684085,       !- Vertex 1 Ycoordinate
@@ -1581,11 +1581,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     5.089874569811538,        !- Vertex 1 Xcoordinate
     18.328546197700867,       !- Vertex 1 Ycoordinate
@@ -1701,11 +1701,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     29.055705774223078,       !- Vertex 1 Xcoordinate
     17.32410497639704,        !- Vertex 1 Ycoordinate
@@ -1725,11 +1725,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     25.286545103239863,       !- Vertex 1 Xcoordinate
     17.32410497639704,        !- Vertex 1 Ycoordinate
@@ -1749,11 +1749,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     25.286545103239863,       !- Vertex 1 Xcoordinate
     4.773601892287041,        !- Vertex 1 Ycoordinate
@@ -1821,11 +1821,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     29.055705774223078,       !- Vertex 1 Xcoordinate
     17.32410497639704,        !- Vertex 1 Ycoordinate
@@ -1845,11 +1845,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     25.286545103239863,       !- Vertex 1 Xcoordinate
     17.32410497639704,        !- Vertex 1 Ycoordinate
@@ -1869,11 +1869,11 @@ BUILDINGSURFACE:DETAILED,
     wall,                     !- Surface Type
     int_wall_default,         !- Construction Name
     Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
-    outdoors,                 !- Outside Boundary Condition
+    Adiabatic,                !- Outside Boundary Condition
     ,                         !- Outside Boundary Condition Object
-    SunExposed,               !- Sun Exposure
-    WindExposed,              !- Wind Exposure
-    autocalculate,            !- View Factor to Ground
+    NoSun,                    !- Sun Exposure
+    NoWind,                   !- Wind Exposure
+    0,                        !- View Factor to Ground
     autocalculate,            !- Number of Vertices
     25.286545103239863,       !- Vertex 1 Xcoordinate
     4.773601892287041,        !- Vertex 1 Ycoordinate
@@ -3417,8 +3417,8 @@ AirLoopHVAC:ZoneSplitter,
     4 Zone VAV 1 Demand Inlet Node,    !- Inlet Node Name
     Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 1 Node Name
     Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 2 Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 3 Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Inlet Air Node;    !- Outlet 4 Node Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 3 Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Inlet Air Node;    !- Outlet 4 Node Name
 
 AirLoopHVAC:SupplyPath,
     4 Zone VAV 4 Zone VAV Demand Inlet Node Supply Path,    !- Name
@@ -3445,8 +3445,8 @@ AirLoopHVAC:ZoneMixer,
     4 Zone VAV 1 Demand Outlet Node,    !- Outlet Node Name
     Block Dining: Cafeteria/fast food_east_zone Storey 1 Return Air Node,    !- Inlet 1 Node Name
     Block Dining: Cafeteria/fast food_north_zone Storey 1 Return Air Node,    !- Inlet 2 Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Return Air Node,    !- Inlet 3 Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Return Air Node;    !- Inlet 4 Node Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Return Air Node,    !- Inlet 3 Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Return Air Node;    !- Inlet 4 Node Name
 
 AirLoopHVAC:ReturnPath,
     4 Zone VAV Return Path,    !- Name
@@ -3616,17 +3616,17 @@ Branch,
     Hot Water Loop Demand Branch 10,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil,    !- Component 1 Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
     Hot Water Loop Demand Branch 11,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil,    !- Component 1 Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
     Hot Water Loop Demand Bypass Branch,    !- Name
