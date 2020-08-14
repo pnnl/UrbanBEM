@@ -1,0 +1,41 @@
+Parameter,Report,For,Table,Column,Row
+Total floor area (m2),Annual Building Utility Performance Summary,Entire Facility,Building Area,Area [m2],Total Building Area
+Window-to-wall ratio,Input Verification and Results Summary,Entire Facility,Window-Wall Ratio,Total,Gross Window-Wall Ratio [%]
+LPD (W/m2),Input Verification and Results Summary,Entire Facility,Zone Summary,Lighting [W/m2],Total
+People density (m2/person),Input Verification and Results Summary,Entire Facility,Zone Summary,People [m2 per person],Total
+Plug load density (W/m2),Input Verification and Results Summary,Entire Facility,Zone Summary,Plug and Process [W/m2],Total
+Site EUI (MJ/m2),Annual Building Utility Performance Summary,Entire Facility,Site and Source Energy,Energy Per Total Building Area [MJ/m2],Total Site Energy
+Source EUI (MJ/m2),Annual Building Utility Performance Summary,Entire Facility,Site and Source Energy,Energy Per Total Building Area [MJ/m2],Total Source Energy
+Electricity use (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Total End Uses
+Electricity heating (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Heating
+Electricity cooling (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Cooling
+Electricity interior lighting (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Interior Lighting
+Electricity exterior lighting (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Exterior Lighting
+Electricity interior equipment (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Interior Equipment
+Electricity exterior equipment (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Exterior Equipment
+Electricity fan (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Fans
+Electricity pump (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Pumps
+Electricity heat rejection (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Heat Rejection
+Electricity humidification (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Humidification
+Electricity heat recovery (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Heat Recovery
+Electricity water system (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Water Systems
+Electricity refrigeration (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Refrigeration
+Electricity generator (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Electricity [GJ],Generators
+Natural gas use (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Total End Uses
+Natural gas heating (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Heating
+Natural gas cooling (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Cooling
+Natural gas interior lighting (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Interior Lighting
+Natural gas exterior lighting (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Exterior Lighting
+Natural gas interior equipment (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Interior Equipment
+Natural gas exterior equipment (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Exterior Equipment
+Natural gas fan (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Fans
+Natural gas pump (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Pumps
+Natural gas heat rejection (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Heat Rejection
+Natural gas humidification (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Humidification
+Natural gas heat recovery (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Heat Recovery
+Natural gas water system (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Water Systems
+Natural gas refrigeration (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Refrigeration
+Natural gas generator (GJ),Annual Building Utility Performance Summary,Entire Facility,End Uses,Natural Gas [GJ],Generators
+Unmet hours (heating),Annual Building Utility Performance Summary,Entire Facility,Comfort and Setpoint Not Met Summary,Facility [Hours],Time Setpoint Not Met During Occupied Heating
+Unmet hours (cooling),Annual Building Utility Performance Summary,Entire Facility,Comfort and Setpoint Not Met Summary,Facility [Hours],Time Setpoint Not Met During Occupied Cooling
+Unmet hours (ASHRAE 55),Annual Building Utility Performance Summary,Entire Facility,Comfort and Setpoint Not Met Summary,Facility [Hours],Time Not Comfortable Based on Simple ASHRAE 55-2004
