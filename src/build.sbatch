@@ -11,4 +11,4 @@
 
 module load singularity/3.2.0
 
-singularity build --remote openstudio_python.sif Singularity.recipe
+singularity build --remote ../../../_singularity_img/openstudio_python.sif Singularity.recipe
