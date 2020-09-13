@@ -296,9 +296,9 @@ def bldg_infiltration_sch(case: Dict) -> Dict:
         hourly_sch = []
         for i in range(24):
             if bldg_hvac_operation_sch_dict[key][i] == 1:
-                hourly_sch.append(1)
-            else:
                 hourly_sch.append(0.25)
+            else:
+                hourly_sch.append(1)
         bldg_infiltration_sch_dict[key] = hourly_sch
 
     return bldg_infiltration_sch_dict
