@@ -6,7 +6,7 @@ from geometry import Geometry
 from constructions import Constructions
 from loads import Loads
 from preprocessor import Preprocessor
-from schedule import Schedule
+from schedule_new import Schedule
 from hvac import HVAC
 from outputs import Outputs
 import recipes
@@ -43,7 +43,7 @@ try:
 		    f.write(json.dumps(case_conv_clean, indent=4))
 
 		#%% preprocessors
-		proc_case = Preprocessor(case_conv_clean).case_proc
+		proc_case = Preprocessor(case_conv_clean, randomize = True).case_proc
 		with open(f"../input/processed_inputs/{casename}_processed.json", "w") as f:
 		    f.write(json.dumps(proc_case, indent=4))
 
@@ -52,9 +52,9 @@ try:
 
 		#%% construction processor
 		constructionadded_obj = Constructions(proc_case, geometryadded_obj.idf)
-
+		
 		# %% schedule processor
-		scheduleadded_obj = Schedule(proc_case, constructionadded_obj.idf)
+		scheduleadded_obj = Schedule(proc_case, constructionadded_obj.idf, randomize = True)
 
 		# %% load processor
 		loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)
