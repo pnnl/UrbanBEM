@@ -1,5 +1,4 @@
 import os
-
 from geomeppy import IDF
 import json
 from geometry import Geometry

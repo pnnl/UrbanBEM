@@ -60,9 +60,10 @@ class Schedule:
         # Rename the index
         scheduleDF.index.name = 'timestamp'
 
-	# Create schedules directory, if it doesn't exist
-	if not os.path.exists('../input/schedules'): os.makedirs('../input/schedules')
-        
+        # Create schedules directory, if it doesn't exist
+        if not os.path.exists('../input/schedules'):
+            os.makedirs('../input/schedules')
+
         # Save the dataframe to a CSV
         scheduleDF.to_csv(f'../input/schedules/{self.building_name}_schedules.csv')
 
@@ -79,7 +80,7 @@ class Schedule:
                 'key': 'SCHEDULE:FILE',
                 'Schedule_Type_Limits_Name': '',
                 'Name': scheduleName, 
-                'File_Name': getcwd().replace('/src', filename.strip('.')),
+                'File_Name': os.getcwd().replace('/src', filename.strip('.')),
                 'Column_Number': scheduleDF.columns.get_loc(scheduleName) + 2,
                 'Rows_to_Skip_at_Top': 1,
                 'Number_of_Hours_of_Data': 8760,
