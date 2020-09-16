@@ -49,7 +49,7 @@ class Schedule:
 
                         # Randomize the day vector, unless it is boolean, and add it to the randomized output vector
                         randomized = ['bldg_occ_sch', 'bldg_electric_equipment_sch', 'bldg_light_sch']
-                        outputVector += dayVector if schedule['name'] in randomized and randomize else randomizeDayVector(dayVector, limit_step = False, squeeze = False)
+                        outputVector += dayVector if schedule['name'] not in randomized or not randomize else randomizeDayVector(dayVector, limit_step = False, squeeze = False)
 
                         # Increment the current day by 1
                         currentDate += datetime.timedelta(days = 1)
