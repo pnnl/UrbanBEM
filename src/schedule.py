@@ -19,6 +19,7 @@ class Schedule:
         self.idf = idf
         self.scheduels_dict = case["schedules"]
         self.set_schedules()
+        self.replace_setp()
 
     def set_schedules(self):
         for key, val in self.scheduels_dict.items():
@@ -69,6 +70,12 @@ class Schedule:
         change_tuple_list.append((f"Until: {int(24)}:00", hourlyList[23]))
 
         return change_tuple_list
+
+    # Replaces OSSTD thermostat schedules with our compact heating/cooling setpoint schedules
+    def replace_setp(self):
+        for obj in self.idf.idfobjects['THERMOSTATSETPOINT:DUALSETPOINT']:
+            obj.Heating_Setpoint_Temperature_Schedule_Name = 'bldg_htg_setp_sch'
+            obj.Cooling_Setpoint_Temperature_Schedule_Name = 'bldg_clg_setp_sch'
 
     def save_idf(self, path):
         self.idf.saveas(path, lineendings="unix")
