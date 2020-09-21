@@ -4,6 +4,7 @@ from eppy import modeleditor
 from eppy.modeleditor import IDF
 from recipes import copy_idf_objects, read_json
 
+
 IDF.setiddname("../resources/Energy+V9_0_1.idd")
 
 
@@ -17,12 +18,11 @@ class Schedule:
 
     def __init__(self, case: Dict, idf: IDF):
         self.idf = idf
-        self.scheduels_dict = case["schedules"]
+        self.schedules_dict = case["schedules"]
         self.set_schedules()
-        self.replace_setp()
 
     def set_schedules(self):
-        for key, val in self.scheduels_dict.items():
+        for key, val in self.schedules_dict.items():
             self.idf = copy_idf_objects(self.idf, self.sch_dict2idf(val))
 
     def sch_dict2idf(self, schedule_dict: Dict) -> IDF:
@@ -70,12 +70,6 @@ class Schedule:
         change_tuple_list.append((f"Until: {int(24)}:00", hourlyList[23]))
 
         return change_tuple_list
-
-    # Replaces OSSTD thermostat schedules with our compact heating/cooling setpoint schedules
-    def replace_setp(self):
-        for obj in self.idf.idfobjects['THERMOSTATSETPOINT:DUALSETPOINT']:
-            obj.Heating_Setpoint_Temperature_Schedule_Name = 'bldg_htg_setp_sch'
-            obj.Cooling_Setpoint_Temperature_Schedule_Name = 'bldg_clg_setp_sch'
 
     def save_idf(self, path):
         self.idf.saveas(path, lineendings="unix")
