@@ -42,7 +42,7 @@ try:
 		    f.write(json.dumps(case_conv_clean, indent=4))
 
 		#%% preprocessors
-		proc_case = Preprocessor(case_conv_clean, randomize = True).case_proc
+		proc_case = Preprocessor(case_conv_clean).case_proc
 		with open(f"../input/processed_inputs/{casename}_processed.json", "w") as f:
 		    f.write(json.dumps(proc_case, indent=4))
 
