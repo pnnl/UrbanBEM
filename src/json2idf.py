@@ -53,7 +53,7 @@ try:
 		constructionadded_obj = Constructions(proc_case, geometryadded_obj.idf)
 		
 		# %% schedule processor
-		scheduleadded_obj = Schedule(proc_case, constructionadded_obj.idf, randomize = True)
+		scheduleadded_obj = Schedule(proc_case, constructionadded_obj.idf, randomizeHours = True, randomizeValues = True)
 
 		# %% load processor
 		loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)

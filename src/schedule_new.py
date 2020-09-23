@@ -13,7 +13,7 @@ IDF.setiddname("../resources/Energy+V9_0_1.idd")
 class Schedule:
     """Convert standard schedule info from json to IDF object and inject"""
 
-    def __init__(self, case: Dict, idf: IDF, randomize: bool):
+    def __init__(self, case: Dict, idf: IDF, randomizeHours: bool, randomizeValues: bool):
         self.idf = idf
         self.schedules_dict = case["schedules"]
         self.building_name = case["building_name"]
@@ -21,41 +21,50 @@ class Schedule:
         self.set_schedules()
 
     # Randomizes certain schedules and saves the hour-by-hour values for the year in a csv
-    def generate_schedules(self, randomize):
-        
-        # Create a dataframe to hold unrandomized and randomized hour-by-hour schedule values, for all schedules, over a year
-        scheduleDF = pd.DataFrame()
+    def generate_schedules(self, case, randomizeHours, randomizeValues):
 
-        with open('../input/processed_inputs/cbecs1_processed.json', 'r') as file:
+        scheduleDF = pd.DataFrame(
+            columns = [
+                'bldg_occ_sch', 
+                'bldg_light_sch',
+                'bldg_hvac_operation_sch',
+                'bldg_electric_equipment_sch',
+                'bldg_clg_setp_sch',
+                'bldg_htg_setp_sch',
+                'bldg_infiltration_sch',
+                'activity_sch',
+                'always_on'
+            ]
+        )
 
-            # Convert each schedule into a (sometimes) randomized vector giving the value of the schedule for each hour over a year
-            for schedule in self.schedules_dict.values():
+        currentDate = datetime.date(year = 2019, month = 1, day = 1)
 
-                # Initialize the output vector and a date object used to iterate through the year
-                outputVector = []
-                currentDate = datetime.date(year = 2019, month = 1, day = 1)
+        while currentDate <= datetime.date(year = 2019, month = 12, day = 31):
 
-                # Build up the vector period-by-period (e.g. 'through: 12/31' would result in one loop)
-                for period in schedule['periods'].values():
+            weekdayKey = 'Sat' if currentDate.weekday() == 5 else 'Sun' if currentDate.weekday() == 6 else 'WD'
 
-                    # Get end date of period
-                    endMonth, endDay = [int(n) for n in period['through'].split('/')]
+            bldg_business_hour_dict, consider_lunch_time = sp.bldg_business_hour(case, randomizeHours)
 
-                    # Build up the vector day-by-day until the end of the period
-                    while currentDate <= datetime.date(year = 2019, month = endMonth, day = endDay):
+            daySchedules = {}
+            daySchedules['bldg_occ_sch'] = sp.bldg_occ_sch(bldg_business_hour_dict, consider_lunch_time)[weekdayKey]
+            daySchedules['bldg_light_sch'] = sp.bldg_light_sch(bldg_business_hour_dict, consider_lunch_time)[weekdayKey]
+            daySchedules['bldg_hvac_operation_sch'] = sp.bldg_hvac_operation_sch(bldg_business_hour_dict, consider_lunch_time)[weekdayKey]
+            daySchedules['bldg_electric_equipment_sch'] = sp.bldg_electric_equipment_sch(bldg_business_hour_dict)[weekdayKey]
+            daySchedules['bldg_clg_setp_sch'] = sp.bldg_clg_setp_sch(daySchedules['bldg_hvac_operation_sch'])[weekdayKey]
+            daySchedules['bldg_htg_setp_sch'] = sp.bldg_htg_setp_sch(daySchedules['bldg_hvac_operation_sch'])[weekdayKey]
+            daySchedules['bldg_infiltration_sch'] = sp.bldg_infiltration_sch(daySchedules['bldg_hvac_operation_sch'])[weekdayKey]
+            daySchedules['activity_sch'] = sp.activity_sch()[weekdayKey]
+            daySchedules['always_on'] = sp.always_on()[weekdayKey]
 
-                        # Choose the appropriate 24-hour vector based on the day of the week (Saturday, Sunday, or Weekday)
-                        dayVector = period['day_of_week']['Sat'] if currentDate.weekday() == 5 else period['day_of_week']['Sun'] if currentDate.weekday() == 6 else period['day_of_week']['WD']
+            if randomizeValues:
+                daySchedules['bldg_occ_sch'] = randomizeDayVector('bldg_occ_sch')
+                daySchedules['bldg_light_sch'] = randomizeDayVector('bldg_light_sch')
+                daySchedules['bldg_electric_equipment_sch'] = randomizeDayVector('bldg_electric_equipment_sch')
 
-                        # Randomize the day vector, unless it is boolean, and add it to the randomized output vector
-                        randomized = ['bldg_occ_sch', 'bldg_electric_equipment_sch', 'bldg_light_sch']
-                        outputVector += dayVector if schedule['name'] not in randomized or not randomize else randomizeDayVector(dayVector, limit_step = False, squeeze = False)
+            scheduleDF.append(pd.DataFrame(daySchedules), ignore_index = True)
 
-                        # Increment the current day by 1
-                        currentDate += datetime.timedelta(days = 1)
+            currentDate += datetime.timedelta(days = 1)
 
-                    # Add the vector to the dataframe
-                    scheduleDF[schedule['name']] = outputVector
 
         # Rename the index
         scheduleDF.index.name = 'timestamp'
