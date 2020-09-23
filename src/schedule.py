@@ -4,6 +4,7 @@ from eppy import modeleditor
 from eppy.modeleditor import IDF
 from recipes import copy_idf_objects, read_json
 
+
 IDF.setiddname("../resources/Energy+V9_0_1.idd")
 
 
@@ -17,11 +18,11 @@ class Schedule:
 
     def __init__(self, case: Dict, idf: IDF):
         self.idf = idf
-        self.scheduels_dict = case["schedules"]
+        self.schedules_dict = case["schedules"]
         self.set_schedules()
 
     def set_schedules(self):
-        for key, val in self.scheduels_dict.items():
+        for key, val in self.schedules_dict.items():
             self.idf = copy_idf_objects(self.idf, self.sch_dict2idf(val))
 
     def sch_dict2idf(self, schedule_dict: Dict) -> IDF:
