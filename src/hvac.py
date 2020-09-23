@@ -107,8 +107,8 @@ class HVAC:
         thermostatsetpoint_dualsetpoint_dict = {
             "key": "ThermostatSetpoint:DualSetpoint".upper(),
             "Name": f"{zonelist_name} Thermostat DualSP",
-            "Heating_Setpoint_Temperature_Schedule_Name": f"{zonelist_name} Htg Thermostat Schedule",
-            "Cooling_Setpoint_Temperature_Schedule_Name": f"{zonelist_name} Clg Thermostat Schedule",
+            "Heating_Setpoint_Temperature_Schedule_Name": "bldg_htg_setp_sch",
+            "Cooling_Setpoint_Temperature_Schedule_Name": "bldg_clg_setp_sch",
         }
         self.idf.newidfobject(**thermostatsetpoint_dualsetpoint_dict)
 
