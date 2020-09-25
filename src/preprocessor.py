@@ -38,6 +38,9 @@ class Preprocessor:
 
     def schedule_procedures(self):
         self.populate_hourly_schedules()
+        self.case_proc["weekly_occupied_hours"] = self.case["weekly_occupied_hours"]
+        self.case_proc["number_days_open_workday"] = self.case["number_days_open_workday"]
+        self.case_proc["number_days_open_weekend"] = self.case["number_days_open_weekend"]
 
     def loads_procedures(self):
         self.populate_loads()

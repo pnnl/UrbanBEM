@@ -1,6 +1,6 @@
 import numpy as np
 
-def randomizeDayVector(mean_func, limit_step=True, squeeze=True):
+def randomizeDayVector(mean_func, limit_step=False, squeeze=True):
     
     LENSCALE = 1
     KERNALSHRINK = 100

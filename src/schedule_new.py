@@ -4,7 +4,7 @@ from eppy.modeleditor import IDF
 from recipes import copy_idf_objects
 import datetime
 import pandas as pd
-from itertools import chain
+import schedule_preparation as sp
 from randomizeDayVector import randomizeDayVector
 import os
 
@@ -17,7 +17,7 @@ class Schedule:
         self.idf = idf
         self.schedules_dict = case["schedules"]
         self.building_name = case["building_name"]
-        self.generate_schedules(randomize)
+        self.generate_schedules(case, randomizeHours, randomizeValues)
         self.set_schedules()
 
     # Randomizes certain schedules and saves the hour-by-hour values for the year in a csv
@@ -44,24 +44,26 @@ class Schedule:
             weekdayKey = 'Sat' if currentDate.weekday() == 5 else 'Sun' if currentDate.weekday() == 6 else 'WD'
 
             bldg_business_hour_dict, consider_lunch_time = sp.bldg_business_hour(case, randomizeHours)
+            bldg_occ_sch_dict = sp.bldg_occ_sch(bldg_business_hour_dict, consider_lunch_time)
+            bldg_hvac_operation_sch = sp.bldg_hvac_operation_sch(bldg_business_hour_dict, consider_lunch_time)
 
             daySchedules = {}
-            daySchedules['bldg_occ_sch'] = sp.bldg_occ_sch(bldg_business_hour_dict, consider_lunch_time)[weekdayKey]
+            daySchedules['bldg_occ_sch'] = bldg_occ_sch_dict[weekdayKey]
             daySchedules['bldg_light_sch'] = sp.bldg_light_sch(bldg_business_hour_dict, consider_lunch_time)[weekdayKey]
-            daySchedules['bldg_hvac_operation_sch'] = sp.bldg_hvac_operation_sch(bldg_business_hour_dict, consider_lunch_time)[weekdayKey]
-            daySchedules['bldg_electric_equipment_sch'] = sp.bldg_electric_equipment_sch(bldg_business_hour_dict)[weekdayKey]
-            daySchedules['bldg_clg_setp_sch'] = sp.bldg_clg_setp_sch(daySchedules['bldg_hvac_operation_sch'])[weekdayKey]
-            daySchedules['bldg_htg_setp_sch'] = sp.bldg_htg_setp_sch(daySchedules['bldg_hvac_operation_sch'])[weekdayKey]
-            daySchedules['bldg_infiltration_sch'] = sp.bldg_infiltration_sch(daySchedules['bldg_hvac_operation_sch'])[weekdayKey]
+            daySchedules['bldg_hvac_operation_sch'] = bldg_hvac_operation_sch[weekdayKey]
+            daySchedules['bldg_electric_equipment_sch'] = sp.bldg_electric_equipment_sch(bldg_occ_sch_dict)[weekdayKey]
+            daySchedules['bldg_clg_setp_sch'] = sp.bldg_clg_setp_sch(bldg_hvac_operation_sch)[weekdayKey]
+            daySchedules['bldg_htg_setp_sch'] = sp.bldg_htg_setp_sch(bldg_hvac_operation_sch)[weekdayKey]
+            daySchedules['bldg_infiltration_sch'] = sp.bldg_infiltration_sch(bldg_hvac_operation_sch)[weekdayKey]
             daySchedules['activity_sch'] = sp.activity_sch()[weekdayKey]
             daySchedules['always_on'] = sp.always_on()[weekdayKey]
 
             if randomizeValues:
-                daySchedules['bldg_occ_sch'] = randomizeDayVector('bldg_occ_sch')
-                daySchedules['bldg_light_sch'] = randomizeDayVector('bldg_light_sch')
-                daySchedules['bldg_electric_equipment_sch'] = randomizeDayVector('bldg_electric_equipment_sch')
+                daySchedules['bldg_occ_sch'] = randomizeDayVector(daySchedules['bldg_occ_sch'])
+                daySchedules['bldg_light_sch'] = randomizeDayVector(daySchedules['bldg_light_sch'])
+                daySchedules['bldg_electric_equipment_sch'] = randomizeDayVector(daySchedules['bldg_electric_equipment_sch'])
 
-            scheduleDF.append(pd.DataFrame(daySchedules), ignore_index = True)
+            scheduleDF = scheduleDF.append(pd.DataFrame(daySchedules), ignore_index = True)
 
             currentDate += datetime.timedelta(days = 1)
 

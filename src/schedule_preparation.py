@@ -3,7 +3,7 @@ import json
 import numpy as np
 
 # bldg_business_hour
-def bldg_business_hour(case: Dict, randomize: bool) -> Dict:
+def bldg_business_hour(case: Dict, randomizeHours: bool) -> Dict:
 	f = open("./schedule_database.json")
 	schedule_database = json.load(f)
 
@@ -24,7 +24,7 @@ def bldg_business_hour(case: Dict, randomize: bool) -> Dict:
 	number_days_open_workday = case["number_days_open_workday"]
 	number_days_open_weekend = case["number_days_open_weekend"]
 
-	if randomize:
+	if randomizeHours:
 
 		center_operation_hour_wd = round(np.random.normal(center_operation_hour_wd, 1))
 		center_operation_hour_wd = 1 if center_operation_hour_wd < 1 else 24 if center_operation_hour_wd > 24 else center_operation_hour_wd
@@ -32,17 +32,17 @@ def bldg_business_hour(case: Dict, randomize: bool) -> Dict:
 		center_operation_hour_others = round(np.random.normal(center_operation_hour_others, 1))
 		center_operation_hour_others = 1 if center_operation_hour_others < 1 else 24 if center_operation_hour_others > 24 else center_operation_hour_others
 
-		ratio_wd_all = np.random.normal(ratio_wd_all, 0.02)
-		ratio_wd_all = 0 if ratio_wd_all < 0 else 1 if ratio_wd_all > 1 else ratio_wd_all
+		# ratio_wd_all = np.random.normal(ratio_wd_all, 0.02)
+		# ratio_wd_all = 0 if ratio_wd_all < 0 else 1 if ratio_wd_all > 1 else ratio_wd_all
 
 		weekly_occupied_hours = round(np.random.normal(weekly_occupied_hours, 0.05*weekly_occupied_hours))
 		weekly_occupied_hours = 0 if weekly_occupied_hours < 0 else 168 if weekly_occupied_hours > 168 else weekly_occupied_hours
 
-		number_days_open_workday = round(np.random.normal(number_days_open_workday, 0.5))
-		number_days_open_workday = 0 if number_days_open_workday < 0 else 5 if number_days_open_workday > 5 else number_days_open_workday
+		# number_days_open_workday = round(np.random.normal(number_days_open_workday, 0.5))
+		# number_days_open_workday = 0 if number_days_open_workday < 0 else 5 if number_days_open_workday > 5 else number_days_open_workday
 
-		number_days_open_weekend = round(np.random.normal(number_days_open_weekend, 0.5))
-		number_days_open_weekend = 0 if number_days_open_weekend < 0 else 2 if number_days_open_weekend > 2 else number_days_open_weekend
+		# number_days_open_weekend = round(np.random.normal(number_days_open_weekend, 0.5))
+		# number_days_open_weekend = 0 if number_days_open_weekend < 0 else 2 if number_days_open_weekend > 2 else number_days_open_weekend
 
 	if number_days_open_weekend == 0:
 		WD_hour = round(weekly_occupied_hours / number_days_open_workday)
