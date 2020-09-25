@@ -24,11 +24,11 @@ def randomizeDayVector(mean_func, limit_step=False, squeeze=True):
         return int(x*step_factor + 0.5 ) / step_factor
     def zoom(x):
         return (x - 0.5) * ZOOM + 0.5
-
-    # Bring all values less than 0 up to 0
-    samples = [0 if x < 0 else x for x in samples]
     
     if squeeze: samples = [zoom(x) for x in samples]
     if limit_step: samples = [zeroone(x) for x in samples]
+
+    # Bring all values less than 0 up to 0
+    samples = [0 if x < 0 else x for x in samples]
         
     return samples
