@@ -89,7 +89,7 @@ class Schedule:
 
             sch_kwargs = {
                 'key': 'SCHEDULE:FILE',
-                'Schedule_Type_Limits_Name': '',
+                'Schedule_Type_Limits_Name': 'Any Number',
                 'Name': scheduleName, 
                 'File_Name': os.getcwd().replace('/src', filename.strip('.')),
                 'Column_Number': scheduleDF.columns.get_loc(scheduleName) + 2,

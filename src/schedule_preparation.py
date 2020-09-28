@@ -280,9 +280,9 @@ def bldg_clg_setp_sch(bldg_hvac_operation_sch_dict: Dict) -> Dict:
 		hourly_sch = []
 		for i in range(24):
 			if bldg_hvac_operation_sch_dict[key][i] == 1:
-				hourly_sch.append(21.00)
+				hourly_sch.append(24.00)
 			else:
-				hourly_sch.append(15.60)
+				hourly_sch.append(26.70)
 		bldg_clg_setp_sch_dict[key] = hourly_sch
 
 	return bldg_clg_setp_sch_dict
@@ -295,9 +295,9 @@ def bldg_htg_setp_sch(bldg_hvac_operation_sch_dict: Dict) -> Dict:
 		hourly_sch = []
 		for i in range(24):
 			if bldg_hvac_operation_sch_dict[key][i] == 1:
-				hourly_sch.append(24.00)
+				hourly_sch.append(21.00)
 			else:
-				hourly_sch.append(26.70)
+				hourly_sch.append(15.60)
 		bldg_htg_setp_sch_dict[key] = hourly_sch
 
 	return bldg_htg_setp_sch_dict
