@@ -134,13 +134,14 @@ def populate_std_schedules(case: Dict) -> Dict:
         hourly schedules dictionary
 
     """
-    bldg_occ_sch_dict = sp.bldg_occ_sch(case)
-    bldg_electric_equipment_sch_dict = sp.bldg_electric_equipment_sch(case)
-    bldg_light_sch_dict = sp.bldg_light_sch(case)
-    bldg_hvac_operation_sch_dict = sp.bldg_hvac_operation_sch(case)
-    bldg_clg_setp_sch_dict = sp.bldg_clg_setp_sch(case)
-    bldg_htg_setp_sch_dict = sp.bldg_htg_setp_sch(case)
-    bldg_infiltration_sch_dict = sp.bldg_infiltration_sch(case)
+    bldg_business_hour, consider_lunch_time = sp.bldg_business_hour(case, randomizeHours = False)
+    bldg_occ_sch_dict = sp.bldg_occ_sch(bldg_business_hour, consider_lunch_time)
+    bldg_electric_equipment_sch_dict = sp.bldg_electric_equipment_sch(bldg_occ_sch_dict)
+    bldg_light_sch_dict = sp.bldg_light_sch(bldg_business_hour, consider_lunch_time)
+    bldg_hvac_operation_sch_dict = sp.bldg_hvac_operation_sch(bldg_business_hour, consider_lunch_time)
+    bldg_clg_setp_sch_dict = sp.bldg_clg_setp_sch(bldg_hvac_operation_sch_dict)
+    bldg_htg_setp_sch_dict = sp.bldg_htg_setp_sch(bldg_hvac_operation_sch_dict)
+    bldg_infiltration_sch_dict = sp.bldg_infiltration_sch(bldg_hvac_operation_sch_dict)
     activity_sch_dict = sp.activity_sch()
     always_on_dict = sp.always_on()
 

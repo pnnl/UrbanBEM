@@ -1,12 +1,11 @@
 import os
-
 from geomeppy import IDF
 import json
 from geometry import Geometry
 from constructions import Constructions
 from loads import Loads
 from preprocessor import Preprocessor
-from schedule import Schedule
+from schedule_new import Schedule
 from hvac import HVAC
 from outputs import Outputs
 import recipes
@@ -52,9 +51,9 @@ try:
 
 		#%% construction processor
 		constructionadded_obj = Constructions(proc_case, geometryadded_obj.idf)
-
+		
 		# %% schedule processor
-		scheduleadded_obj = Schedule(proc_case, constructionadded_obj.idf)
+		scheduleadded_obj = Schedule(proc_case, constructionadded_obj.idf, randomizeHours = True, randomizeValues = True)
 
 		# %% load processor
 		loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)
