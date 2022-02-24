@@ -20,7 +20,7 @@ from hvac import HVAC
 from outputs import Outputs
 import recipes
 
-IDF.setiddname("../resources/Energy+V9_0_1.idd")
+IDF.setiddname("../resources/Energy+V9_5_0.idd")
 
 #%% case name
 casename = "cbecs3"

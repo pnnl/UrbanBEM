@@ -1,17 +1,19 @@
 !- Linux Line endings 
 
 Version,
-    9.0;                      !- Version Identifier
+    9.5;                      !- Version Identifier
 
 SimulationControl,
     Yes,                      !- Do Zone Sizing Calculation
     Yes,                      !- Do System Sizing Calculation
     Yes,                      !- Do Plant Sizing Calculation
     Yes,                      !- Run Simulation for Sizing Periods
-    Yes;                      !- Run Simulation for Weather File Run Periods
+    Yes,                      !- Run Simulation for Weather File Run Periods
+    ,                         !- Do HVAC Sizing Simulation for Sizing Periods
+    ;                         !- Maximum Number of HVAC Sizing Simulation Passes
 
 Building,
-    test_building,            !- Name
+    None,                     !- Name
     0,                        !- North Axis
     ,                         !- Terrain
     0.04,                     !- Loads Convergence Tolerance Value
@@ -117,7 +119,7 @@ GlobalGeometryRules,
     Relative;                 !- Rectangular Surface Coordinate System
 
 Zone,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Thermal Zone,    !- Name
+    Block School/university_core_zone Storey 0 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -132,7 +134,7 @@ Zone,
     Yes;                      !- Part of Total Floor Area
 
 Zone,
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Thermal Zone,    !- Name
+    Block School/university_core_zone Storey 1 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -147,7 +149,7 @@ Zone,
     Yes;                      !- Part of Total Floor Area
 
 Zone,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Thermal Zone,    !- Name
+    Block School/university_east_zone Storey 0 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -162,7 +164,7 @@ Zone,
     Yes;                      !- Part of Total Floor Area
 
 Zone,
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Thermal Zone,    !- Name
+    Block School/university_east_zone Storey 1 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -177,7 +179,7 @@ Zone,
     Yes;                      !- Part of Total Floor Area
 
 Zone,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Thermal Zone,    !- Name
+    Block School/university_north_zone Storey 0 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -192,7 +194,7 @@ Zone,
     Yes;                      !- Part of Total Floor Area
 
 Zone,
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Thermal Zone,    !- Name
+    Block School/university_north_zone Storey 1 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -207,7 +209,7 @@ Zone,
     Yes;                      !- Part of Total Floor Area
 
 Zone,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Thermal Zone,    !- Name
+    Block School/university_south_zone Storey 0 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -222,7 +224,37 @@ Zone,
     Yes;                      !- Part of Total Floor Area
 
 Zone,
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Thermal Zone,    !- Name
+    Block School/university_south_zone Storey 1 Thermal Zone,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    ,                         !- Type
+    1,                        !- Multiplier
+    ,                         !- Ceiling Height
+    ,                         !- Volume
+    ,                         !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+Zone,
+    Block School/university_west_zone Storey 0 Thermal Zone,    !- Name
+    0,                        !- Direction of Relative North
+    0,                        !- X Origin
+    0,                        !- Y Origin
+    0,                        !- Z Origin
+    ,                         !- Type
+    1,                        !- Multiplier
+    ,                         !- Ceiling Height
+    ,                         !- Volume
+    ,                         !- Floor Area
+    ,                         !- Zone Inside Convection Algorithm
+    ,                         !- Zone Outside Convection Algorithm
+    Yes;                      !- Part of Total Floor Area
+
+Zone,
+    Block School/university_west_zone Storey 1 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -299,7 +331,7 @@ LifeCycleCost:UsePriceEscalation,
 
 LifeCycleCost:UsePriceEscalation,
     U.S. Avg  Commercial-Distillate Oil,    !- LCC Price Escalation Name
-    FuelOil#1,                !- Resource
+    FuelOilNo1,               !- Resource
     2011,                     !- Escalation Start Year
     January,                  !- Escalation Start Month
     0.9714,                   !- Year 1 Escalation
@@ -335,7 +367,7 @@ LifeCycleCost:UsePriceEscalation,
 
 LifeCycleCost:UsePriceEscalation,
     U.S. Avg  Commercial-Residual Oil,    !- LCC Price Escalation Name
-    FuelOil#2,                !- Resource
+    FuelOilNo2,               !- Resource
     2011,                     !- Escalation Start Year
     January,                  !- Escalation Start Month
     0.8469,                   !- Year 1 Escalation

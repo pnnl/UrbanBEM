@@ -8,7 +8,7 @@ import schedule_preparation as sp
 from randomizeDayVector import randomizeDayVector
 import os
 
-IDF.setiddname("../resources/Energy+V9_0_1.idd")
+IDF.setiddname("../resources/Energy+V9_5_0.idd")
 
 class Schedule:
     """Convert standard schedule info from json to IDF object and inject"""

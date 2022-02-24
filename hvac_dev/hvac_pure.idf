@@ -9,8 +9,8 @@ ScheduleTypeLimits,
 
 ScheduleTypeLimits,
     Temperature,              !- Name
-    0,                        !- Lower Limit Value
-    100,                      !- Upper Limit Value
+    ,                         !- Lower Limit Value
+    ,                         !- Upper Limit Value
     Continuous,               !- Numeric Type
     temperature;              !- Unit Type
 
@@ -108,47 +108,87 @@ Schedule:Year,
     31;                       !- End Day 1
 
 DesignSpecification:ZoneAirDistribution,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Design Spec Zone Air Dist,    !- Name
-    1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
-    1;                        !- Zone Air Distribution Effectiveness in Heating Mode
+    Block School/university_core_zone Storey 0 Design Spec Zone Air Dist,    !- Name
+    ,                         !- Zone Air Distribution Effectiveness in Cooling Mode
+    ,                         !- Zone Air Distribution Effectiveness in Heating Mode
+    ,                         !- Zone Air Distribution Effectiveness Schedule Name
+    ,                         !- Zone Secondary Recirculation Fraction
+    0.6;                      !- Minimum Zone Ventilation Efficiency
 
 DesignSpecification:ZoneAirDistribution,
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Design Spec Zone Air Dist,    !- Name
-    1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
-    1;                        !- Zone Air Distribution Effectiveness in Heating Mode
+    Block School/university_core_zone Storey 1 Design Spec Zone Air Dist,    !- Name
+    ,                         !- Zone Air Distribution Effectiveness in Cooling Mode
+    ,                         !- Zone Air Distribution Effectiveness in Heating Mode
+    ,                         !- Zone Air Distribution Effectiveness Schedule Name
+    ,                         !- Zone Secondary Recirculation Fraction
+    0.6;                      !- Minimum Zone Ventilation Efficiency
 
 DesignSpecification:ZoneAirDistribution,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Design Spec Zone Air Dist,    !- Name
-    1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
-    1;                        !- Zone Air Distribution Effectiveness in Heating Mode
+    Block School/university_east_zone Storey 0 Design Spec Zone Air Dist,    !- Name
+    ,                         !- Zone Air Distribution Effectiveness in Cooling Mode
+    ,                         !- Zone Air Distribution Effectiveness in Heating Mode
+    ,                         !- Zone Air Distribution Effectiveness Schedule Name
+    ,                         !- Zone Secondary Recirculation Fraction
+    0.6;                      !- Minimum Zone Ventilation Efficiency
 
 DesignSpecification:ZoneAirDistribution,
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Design Spec Zone Air Dist,    !- Name
-    1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
-    1;                        !- Zone Air Distribution Effectiveness in Heating Mode
+    Block School/university_east_zone Storey 1 Design Spec Zone Air Dist,    !- Name
+    ,                         !- Zone Air Distribution Effectiveness in Cooling Mode
+    ,                         !- Zone Air Distribution Effectiveness in Heating Mode
+    ,                         !- Zone Air Distribution Effectiveness Schedule Name
+    ,                         !- Zone Secondary Recirculation Fraction
+    0.6;                      !- Minimum Zone Ventilation Efficiency
 
 DesignSpecification:ZoneAirDistribution,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Design Spec Zone Air Dist,    !- Name
-    1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
-    1;                        !- Zone Air Distribution Effectiveness in Heating Mode
+    Block School/university_north_zone Storey 0 Design Spec Zone Air Dist,    !- Name
+    ,                         !- Zone Air Distribution Effectiveness in Cooling Mode
+    ,                         !- Zone Air Distribution Effectiveness in Heating Mode
+    ,                         !- Zone Air Distribution Effectiveness Schedule Name
+    ,                         !- Zone Secondary Recirculation Fraction
+    0.6;                      !- Minimum Zone Ventilation Efficiency
 
 DesignSpecification:ZoneAirDistribution,
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Design Spec Zone Air Dist,    !- Name
-    1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
-    1;                        !- Zone Air Distribution Effectiveness in Heating Mode
+    Block School/university_north_zone Storey 1 Design Spec Zone Air Dist,    !- Name
+    ,                         !- Zone Air Distribution Effectiveness in Cooling Mode
+    ,                         !- Zone Air Distribution Effectiveness in Heating Mode
+    ,                         !- Zone Air Distribution Effectiveness Schedule Name
+    ,                         !- Zone Secondary Recirculation Fraction
+    0.6;                      !- Minimum Zone Ventilation Efficiency
 
 DesignSpecification:ZoneAirDistribution,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Design Spec Zone Air Dist,    !- Name
-    1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
-    1;                        !- Zone Air Distribution Effectiveness in Heating Mode
+    Block School/university_south_zone Storey 0 Design Spec Zone Air Dist,    !- Name
+    ,                         !- Zone Air Distribution Effectiveness in Cooling Mode
+    ,                         !- Zone Air Distribution Effectiveness in Heating Mode
+    ,                         !- Zone Air Distribution Effectiveness Schedule Name
+    ,                         !- Zone Secondary Recirculation Fraction
+    0.6;                      !- Minimum Zone Ventilation Efficiency
 
 DesignSpecification:ZoneAirDistribution,
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Design Spec Zone Air Dist,    !- Name
-    1,                        !- Zone Air Distribution Effectiveness in Cooling Mode
-    1;                        !- Zone Air Distribution Effectiveness in Heating Mode
+    Block School/university_south_zone Storey 1 Design Spec Zone Air Dist,    !- Name
+    ,                         !- Zone Air Distribution Effectiveness in Cooling Mode
+    ,                         !- Zone Air Distribution Effectiveness in Heating Mode
+    ,                         !- Zone Air Distribution Effectiveness Schedule Name
+    ,                         !- Zone Secondary Recirculation Fraction
+    0.6;                      !- Minimum Zone Ventilation Efficiency
+
+DesignSpecification:ZoneAirDistribution,
+    Block School/university_west_zone Storey 0 Design Spec Zone Air Dist,    !- Name
+    ,                         !- Zone Air Distribution Effectiveness in Cooling Mode
+    ,                         !- Zone Air Distribution Effectiveness in Heating Mode
+    ,                         !- Zone Air Distribution Effectiveness Schedule Name
+    ,                         !- Zone Secondary Recirculation Fraction
+    0.6;                      !- Minimum Zone Ventilation Efficiency
+
+DesignSpecification:ZoneAirDistribution,
+    Block School/university_west_zone Storey 1 Design Spec Zone Air Dist,    !- Name
+    ,                         !- Zone Air Distribution Effectiveness in Cooling Mode
+    ,                         !- Zone Air Distribution Effectiveness in Heating Mode
+    ,                         !- Zone Air Distribution Effectiveness Schedule Name
+    ,                         !- Zone Secondary Recirculation Fraction
+    0.6;                      !- Minimum Zone Ventilation Efficiency
 
 Sizing:Zone,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Zone or ZoneList Name
+    Block School/university_core_zone Storey 0,    !- Zone or ZoneList Name
     SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
     12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
     11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
@@ -170,11 +210,11 @@ Sizing:Zone,
     0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
     0.1415762,                !- Heating Maximum Air Flow
     0.3,                      !- Heating Maximum Air Flow Fraction
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    Block School/university_core_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:Zone,
-    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone or ZoneList Name
+    Block School/university_core_zone Storey 1,    !- Zone or ZoneList Name
     SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
     12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
     11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
@@ -196,11 +236,11 @@ Sizing:Zone,
     0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
     0.1415762,                !- Heating Maximum Air Flow
     0.3,                      !- Heating Maximum Air Flow Fraction
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    Block School/university_core_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:Zone,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone or ZoneList Name
+    Block School/university_east_zone Storey 0,    !- Zone or ZoneList Name
     SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
     12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
     11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
@@ -222,11 +262,11 @@ Sizing:Zone,
     0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
     0.1415762,                !- Heating Maximum Air Flow
     0.3,                      !- Heating Maximum Air Flow Fraction
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    Block School/university_east_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:Zone,
-    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone or ZoneList Name
+    Block School/university_east_zone Storey 1,    !- Zone or ZoneList Name
     SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
     12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
     11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
@@ -248,11 +288,11 @@ Sizing:Zone,
     0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
     0.1415762,                !- Heating Maximum Air Flow
     0.3,                      !- Heating Maximum Air Flow Fraction
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    Block School/university_east_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:Zone,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone or ZoneList Name
+    Block School/university_north_zone Storey 0,    !- Zone or ZoneList Name
     SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
     12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
     11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
@@ -274,11 +314,11 @@ Sizing:Zone,
     0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
     0.1415762,                !- Heating Maximum Air Flow
     0.3,                      !- Heating Maximum Air Flow Fraction
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    Block School/university_north_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:Zone,
-    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone or ZoneList Name
+    Block School/university_north_zone Storey 1,    !- Zone or ZoneList Name
     SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
     12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
     11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
@@ -300,11 +340,11 @@ Sizing:Zone,
     0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
     0.1415762,                !- Heating Maximum Air Flow
     0.3,                      !- Heating Maximum Air Flow Fraction
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    Block School/university_north_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:Zone,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone or ZoneList Name
+    Block School/university_south_zone Storey 0,    !- Zone or ZoneList Name
     SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
     12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
     11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
@@ -326,11 +366,11 @@ Sizing:Zone,
     0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
     0.1415762,                !- Heating Maximum Air Flow
     0.3,                      !- Heating Maximum Air Flow Fraction
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    Block School/university_south_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:Zone,
-    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone or ZoneList Name
+    Block School/university_south_zone Storey 1,    !- Zone or ZoneList Name
     SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
     12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
     11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
@@ -352,11 +392,63 @@ Sizing:Zone,
     0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
     0.1415762,                !- Heating Maximum Air Flow
     0.3,                      !- Heating Maximum Air Flow Fraction
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    Block School/university_south_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    No;                       !- Account for Dedicated Outdoor Air System
+
+Sizing:Zone,
+    Block School/university_west_zone Storey 0,    !- Zone or ZoneList Name
+    SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
+    12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
+    11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
+    SupplyAirTemperature,     !- Zone Heating Design Supply Air Temperature Input Method
+    40.0000000000001,         !- Zone Heating Design Supply Air Temperature
+    11.11,                    !- Zone Heating Design Supply Air Temperature Difference
+    0.0085,                   !- Zone Cooling Design Supply Air Humidity Ratio
+    0.008,                    !- Zone Heating Design Supply Air Humidity Ratio
+    ,                         !- Design Specification Outdoor Air Object Name
+    ,                         !- Zone Heating Sizing Factor
+    ,                         !- Zone Cooling Sizing Factor
+    DesignDayWithLimit,       !- Cooling Design Air Flow Method
+    0,                        !- Cooling Design Air Flow Rate
+    0.000762,                 !- Cooling Minimum Air Flow per Zone Floor Area
+    0,                        !- Cooling Minimum Air Flow
+    0,                        !- Cooling Minimum Air Flow Fraction
+    DesignDay,                !- Heating Design Air Flow Method
+    0,                        !- Heating Design Air Flow Rate
+    0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
+    0.1415762,                !- Heating Maximum Air Flow
+    0.3,                      !- Heating Maximum Air Flow Fraction
+    Block School/university_west_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
+    No;                       !- Account for Dedicated Outdoor Air System
+
+Sizing:Zone,
+    Block School/university_west_zone Storey 1,    !- Zone or ZoneList Name
+    SupplyAirTemperature,     !- Zone Cooling Design Supply Air Temperature Input Method
+    12.7777777777778,         !- Zone Cooling Design Supply Air Temperature
+    11.11,                    !- Zone Cooling Design Supply Air Temperature Difference
+    SupplyAirTemperature,     !- Zone Heating Design Supply Air Temperature Input Method
+    40.0000000000001,         !- Zone Heating Design Supply Air Temperature
+    11.11,                    !- Zone Heating Design Supply Air Temperature Difference
+    0.0085,                   !- Zone Cooling Design Supply Air Humidity Ratio
+    0.008,                    !- Zone Heating Design Supply Air Humidity Ratio
+    ,                         !- Design Specification Outdoor Air Object Name
+    ,                         !- Zone Heating Sizing Factor
+    ,                         !- Zone Cooling Sizing Factor
+    DesignDayWithLimit,       !- Cooling Design Air Flow Method
+    0,                        !- Cooling Design Air Flow Rate
+    0.000762,                 !- Cooling Minimum Air Flow per Zone Floor Area
+    0,                        !- Cooling Minimum Air Flow
+    0,                        !- Cooling Minimum Air Flow Fraction
+    DesignDay,                !- Heating Design Air Flow Method
+    0,                        !- Heating Design Air Flow Rate
+    0.002032,                 !- Heating Maximum Air Flow per Zone Floor Area
+    0.1415762,                !- Heating Maximum Air Flow
+    0.3,                      !- Heating Maximum Air Flow Fraction
+    Block School/university_west_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name
     No;                       !- Account for Dedicated Outdoor Air System
 
 Sizing:System,
-    4 Zone VAV,               !- AirLoop Name
+    5 Zone VAV,               !- AirLoop Name
     Sensible,                 !- Type of Load to Size On
     Autosize,                 !- Design Outdoor Air Flow Rate
     0.3,                      !- Central Heating Maximum System Air Flow Ratio
@@ -382,7 +474,7 @@ Sizing:System,
     1,                        !- Heating Fraction of Autosized Heating Supply Air Flow Rate
     1,                        !- Heating Fraction of Autosized Cooling Supply Air Flow Rate
     3.1588213e-05,            !- Heating Supply Air Flow Rate Per Unit Heating Capacity
-    ZoneSum,                  !- System Outdoor Air Method
+    VentilationRateProcedure,    !- System Outdoor Air Method
     1,                        !- Zone Maximum Outdoor Air Fraction
     CoolingDesignCapacity,    !- Cooling Design Capacity Method
     Autosize,                 !- Cooling Design Capacity
@@ -395,7 +487,7 @@ Sizing:System,
     OnOff;                    !- Central Cooling Capacity Control Method
 
 Sizing:System,
-    4 Zone VAV 1,             !- AirLoop Name
+    5 Zone VAV 1,             !- AirLoop Name
     Sensible,                 !- Type of Load to Size On
     Autosize,                 !- Design Outdoor Air Flow Rate
     0.3,                      !- Central Heating Maximum System Air Flow Ratio
@@ -421,7 +513,7 @@ Sizing:System,
     1,                        !- Heating Fraction of Autosized Heating Supply Air Flow Rate
     1,                        !- Heating Fraction of Autosized Cooling Supply Air Flow Rate
     3.1588213e-05,            !- Heating Supply Air Flow Rate Per Unit Heating Capacity
-    ZoneSum,                  !- System Outdoor Air Method
+    VentilationRateProcedure,    !- System Outdoor Air Method
     1,                        !- Zone Maximum Outdoor Air Fraction
     CoolingDesignCapacity,    !- Cooling Design Capacity Method
     Autosize,                 !- Cooling Design Capacity
@@ -443,20 +535,20 @@ Sizing:Plant,
     None;                     !- Coincident Sizing Factor Mode
 
 AirTerminal:SingleDuct:VAV:Reheat,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal,    !- Name
+    Block School/university_core_zone Storey 0 VAV Terminal,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
+    Block School/university_core_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
+    Block School/university_core_zone Storey 0 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
     Constant,                 !- Zone Minimum Air Flow Input Method
     0.2,                      !- Constant Minimum Air Flow Fraction
     0,                        !- Fixed Minimum Air Flow Rate
     ,                         !- Minimum Air Flow Fraction Schedule Name
     Coil:Heating:Water,       !- Reheat Coil Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil,    !- Reheat Coil Name
+    Block School/university_core_zone Storey 0 Reheat Coil,    !- Reheat Coil Name
     Autosize,                 !- Maximum Hot Water or Steam Flow Rate
     0,                        !- Minimum Hot Water or Steam Flow Rate
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_core_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     0.001,                    !- Convergence Tolerance
     ReverseWithLimits,        !- Damper Heating Action
     Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
@@ -464,20 +556,20 @@ AirTerminal:SingleDuct:VAV:Reheat,
     40.0000000000001;         !- Maximum Reheat Air Temperature
 
 AirTerminal:SingleDuct:VAV:Reheat,
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal,    !- Name
+    Block School/university_core_zone Storey 1 VAV Terminal,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
+    Block School/university_core_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
+    Block School/university_core_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
     Constant,                 !- Zone Minimum Air Flow Input Method
     0.2,                      !- Constant Minimum Air Flow Fraction
     0,                        !- Fixed Minimum Air Flow Rate
     ,                         !- Minimum Air Flow Fraction Schedule Name
     Coil:Heating:Water,       !- Reheat Coil Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil,    !- Reheat Coil Name
+    Block School/university_core_zone Storey 1 Reheat Coil,    !- Reheat Coil Name
     Autosize,                 !- Maximum Hot Water or Steam Flow Rate
     0,                        !- Minimum Hot Water or Steam Flow Rate
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_core_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     0.001,                    !- Convergence Tolerance
     ReverseWithLimits,        !- Damper Heating Action
     Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
@@ -485,20 +577,20 @@ AirTerminal:SingleDuct:VAV:Reheat,
     40.0000000000001;         !- Maximum Reheat Air Temperature
 
 AirTerminal:SingleDuct:VAV:Reheat,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal,    !- Name
+    Block School/university_east_zone Storey 0 VAV Terminal,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
+    Block School/university_east_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
+    Block School/university_east_zone Storey 0 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
     Constant,                 !- Zone Minimum Air Flow Input Method
     0.2,                      !- Constant Minimum Air Flow Fraction
     0,                        !- Fixed Minimum Air Flow Rate
     ,                         !- Minimum Air Flow Fraction Schedule Name
     Coil:Heating:Water,       !- Reheat Coil Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil,    !- Reheat Coil Name
+    Block School/university_east_zone Storey 0 Reheat Coil,    !- Reheat Coil Name
     Autosize,                 !- Maximum Hot Water or Steam Flow Rate
     0,                        !- Minimum Hot Water or Steam Flow Rate
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_east_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     0.001,                    !- Convergence Tolerance
     ReverseWithLimits,        !- Damper Heating Action
     Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
@@ -506,20 +598,20 @@ AirTerminal:SingleDuct:VAV:Reheat,
     40.0000000000001;         !- Maximum Reheat Air Temperature
 
 AirTerminal:SingleDuct:VAV:Reheat,
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal,    !- Name
+    Block School/university_east_zone Storey 1 VAV Terminal,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
+    Block School/university_east_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
+    Block School/university_east_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
     Constant,                 !- Zone Minimum Air Flow Input Method
     0.2,                      !- Constant Minimum Air Flow Fraction
     0,                        !- Fixed Minimum Air Flow Rate
     ,                         !- Minimum Air Flow Fraction Schedule Name
     Coil:Heating:Water,       !- Reheat Coil Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil,    !- Reheat Coil Name
+    Block School/university_east_zone Storey 1 Reheat Coil,    !- Reheat Coil Name
     Autosize,                 !- Maximum Hot Water or Steam Flow Rate
     0,                        !- Minimum Hot Water or Steam Flow Rate
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_east_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     0.001,                    !- Convergence Tolerance
     ReverseWithLimits,        !- Damper Heating Action
     Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
@@ -527,20 +619,20 @@ AirTerminal:SingleDuct:VAV:Reheat,
     40.0000000000001;         !- Maximum Reheat Air Temperature
 
 AirTerminal:SingleDuct:VAV:Reheat,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal,    !- Name
+    Block School/university_north_zone Storey 0 VAV Terminal,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
+    Block School/university_north_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
+    Block School/university_north_zone Storey 0 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
     Constant,                 !- Zone Minimum Air Flow Input Method
     0.2,                      !- Constant Minimum Air Flow Fraction
     0,                        !- Fixed Minimum Air Flow Rate
     ,                         !- Minimum Air Flow Fraction Schedule Name
     Coil:Heating:Water,       !- Reheat Coil Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Reheat Coil,    !- Reheat Coil Name
+    Block School/university_north_zone Storey 0 Reheat Coil,    !- Reheat Coil Name
     Autosize,                 !- Maximum Hot Water or Steam Flow Rate
     0,                        !- Minimum Hot Water or Steam Flow Rate
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_north_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     0.001,                    !- Convergence Tolerance
     ReverseWithLimits,        !- Damper Heating Action
     Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
@@ -548,20 +640,20 @@ AirTerminal:SingleDuct:VAV:Reheat,
     40.0000000000001;         !- Maximum Reheat Air Temperature
 
 AirTerminal:SingleDuct:VAV:Reheat,
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal,    !- Name
+    Block School/university_north_zone Storey 1 VAV Terminal,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
+    Block School/university_north_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
+    Block School/university_north_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
     Constant,                 !- Zone Minimum Air Flow Input Method
     0.2,                      !- Constant Minimum Air Flow Fraction
     0,                        !- Fixed Minimum Air Flow Rate
     ,                         !- Minimum Air Flow Fraction Schedule Name
     Coil:Heating:Water,       !- Reheat Coil Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil,    !- Reheat Coil Name
+    Block School/university_north_zone Storey 1 Reheat Coil,    !- Reheat Coil Name
     Autosize,                 !- Maximum Hot Water or Steam Flow Rate
     0,                        !- Minimum Hot Water or Steam Flow Rate
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_north_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     0.001,                    !- Convergence Tolerance
     ReverseWithLimits,        !- Damper Heating Action
     Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
@@ -569,20 +661,20 @@ AirTerminal:SingleDuct:VAV:Reheat,
     40.0000000000001;         !- Maximum Reheat Air Temperature
 
 AirTerminal:SingleDuct:VAV:Reheat,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal,    !- Name
+    Block School/university_south_zone Storey 0 VAV Terminal,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
+    Block School/university_south_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
+    Block School/university_south_zone Storey 0 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
     Constant,                 !- Zone Minimum Air Flow Input Method
     0.2,                      !- Constant Minimum Air Flow Fraction
     0,                        !- Fixed Minimum Air Flow Rate
     ,                         !- Minimum Air Flow Fraction Schedule Name
     Coil:Heating:Water,       !- Reheat Coil Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil,    !- Reheat Coil Name
+    Block School/university_south_zone Storey 0 Reheat Coil,    !- Reheat Coil Name
     Autosize,                 !- Maximum Hot Water or Steam Flow Rate
     0,                        !- Minimum Hot Water or Steam Flow Rate
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_south_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     0.001,                    !- Convergence Tolerance
     ReverseWithLimits,        !- Damper Heating Action
     Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
@@ -590,20 +682,62 @@ AirTerminal:SingleDuct:VAV:Reheat,
     40.0000000000001;         !- Maximum Reheat Air Temperature
 
 AirTerminal:SingleDuct:VAV:Reheat,
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal,    !- Name
+    Block School/university_south_zone Storey 1 VAV Terminal,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
+    Block School/university_south_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
+    Block School/university_south_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
     Autosize,                 !- Maximum Air Flow Rate
     Constant,                 !- Zone Minimum Air Flow Input Method
     0.2,                      !- Constant Minimum Air Flow Fraction
     0,                        !- Fixed Minimum Air Flow Rate
     ,                         !- Minimum Air Flow Fraction Schedule Name
     Coil:Heating:Water,       !- Reheat Coil Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil,    !- Reheat Coil Name
+    Block School/university_south_zone Storey 1 Reheat Coil,    !- Reheat Coil Name
     Autosize,                 !- Maximum Hot Water or Steam Flow Rate
     0,                        !- Minimum Hot Water or Steam Flow Rate
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_south_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    0.001,                    !- Convergence Tolerance
+    ReverseWithLimits,        !- Damper Heating Action
+    Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
+    0.5,                      !- Maximum Flow Fraction During Reheat
+    40.0000000000001;         !- Maximum Reheat Air Temperature
+
+AirTerminal:SingleDuct:VAV:Reheat,
+    Block School/university_west_zone Storey 0 VAV Terminal,    !- Name
+    Always On Discrete,       !- Availability Schedule Name
+    Block School/university_west_zone Storey 0 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
+    Block School/university_west_zone Storey 0 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
+    Autosize,                 !- Maximum Air Flow Rate
+    Constant,                 !- Zone Minimum Air Flow Input Method
+    0.2,                      !- Constant Minimum Air Flow Fraction
+    0,                        !- Fixed Minimum Air Flow Rate
+    ,                         !- Minimum Air Flow Fraction Schedule Name
+    Coil:Heating:Water,       !- Reheat Coil Object Type
+    Block School/university_west_zone Storey 0 Reheat Coil,    !- Reheat Coil Name
+    Autosize,                 !- Maximum Hot Water or Steam Flow Rate
+    0,                        !- Minimum Hot Water or Steam Flow Rate
+    Block School/university_west_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    0.001,                    !- Convergence Tolerance
+    ReverseWithLimits,        !- Damper Heating Action
+    Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
+    0.5,                      !- Maximum Flow Fraction During Reheat
+    40.0000000000001;         !- Maximum Reheat Air Temperature
+
+AirTerminal:SingleDuct:VAV:Reheat,
+    Block School/university_west_zone Storey 1 VAV Terminal,    !- Name
+    Always On Discrete,       !- Availability Schedule Name
+    Block School/university_west_zone Storey 1 VAV Terminal Damper Outlet,    !- Damper Air Outlet Node Name
+    Block School/university_west_zone Storey 1 VAV Terminal Inlet Air Node,    !- Air Inlet Node Name
+    Autosize,                 !- Maximum Air Flow Rate
+    Constant,                 !- Zone Minimum Air Flow Input Method
+    0.2,                      !- Constant Minimum Air Flow Fraction
+    0,                        !- Fixed Minimum Air Flow Rate
+    ,                         !- Minimum Air Flow Fraction Schedule Name
+    Coil:Heating:Water,       !- Reheat Coil Object Type
+    Block School/university_west_zone Storey 1 Reheat Coil,    !- Reheat Coil Name
+    Autosize,                 !- Maximum Hot Water or Steam Flow Rate
+    0,                        !- Minimum Hot Water or Steam Flow Rate
+    Block School/university_west_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     0.001,                    !- Convergence Tolerance
     ReverseWithLimits,        !- Damper Heating Action
     Autocalculate,            !- Maximum Flow per Zone Floor Area During Reheat
@@ -611,183 +745,247 @@ AirTerminal:SingleDuct:VAV:Reheat,
     40.0000000000001;         !- Maximum Reheat Air Temperature
 
 ZoneHVAC:AirDistributionUnit,
-    ADU Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    ADU Block School/university_core_zone Storey 0 VAV Terminal,    !- Name
+    Block School/university_core_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
     AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal;    !- Air Terminal Name
+    Block School/university_core_zone Storey 0 VAV Terminal;    !- Air Terminal Name
 
 ZoneHVAC:AirDistributionUnit,
-    ADU Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    ADU Block School/university_core_zone Storey 1 VAV Terminal,    !- Name
+    Block School/university_core_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
     AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal;    !- Air Terminal Name
+    Block School/university_core_zone Storey 1 VAV Terminal;    !- Air Terminal Name
 
 ZoneHVAC:AirDistributionUnit,
-    ADU Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    ADU Block School/university_east_zone Storey 0 VAV Terminal,    !- Name
+    Block School/university_east_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
     AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal;    !- Air Terminal Name
+    Block School/university_east_zone Storey 0 VAV Terminal;    !- Air Terminal Name
 
 ZoneHVAC:AirDistributionUnit,
-    ADU Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    ADU Block School/university_east_zone Storey 1 VAV Terminal,    !- Name
+    Block School/university_east_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
     AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal;    !- Air Terminal Name
+    Block School/university_east_zone Storey 1 VAV Terminal;    !- Air Terminal Name
 
 ZoneHVAC:AirDistributionUnit,
-    ADU Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    ADU Block School/university_north_zone Storey 0 VAV Terminal,    !- Name
+    Block School/university_north_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
     AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal;    !- Air Terminal Name
+    Block School/university_north_zone Storey 0 VAV Terminal;    !- Air Terminal Name
 
 ZoneHVAC:AirDistributionUnit,
-    ADU Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    ADU Block School/university_north_zone Storey 1 VAV Terminal,    !- Name
+    Block School/university_north_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
     AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal;    !- Air Terminal Name
+    Block School/university_north_zone Storey 1 VAV Terminal;    !- Air Terminal Name
 
 ZoneHVAC:AirDistributionUnit,
-    ADU Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    ADU Block School/university_south_zone Storey 0 VAV Terminal,    !- Name
+    Block School/university_south_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
     AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal;    !- Air Terminal Name
+    Block School/university_south_zone Storey 0 VAV Terminal;    !- Air Terminal Name
 
 ZoneHVAC:AirDistributionUnit,
-    ADU Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    ADU Block School/university_south_zone Storey 1 VAV Terminal,    !- Name
+    Block School/university_south_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
     AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal;    !- Air Terminal Name
+    Block School/university_south_zone Storey 1 VAV Terminal;    !- Air Terminal Name
+
+ZoneHVAC:AirDistributionUnit,
+    ADU Block School/university_west_zone Storey 0 VAV Terminal,    !- Name
+    Block School/university_west_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
+    Block School/university_west_zone Storey 0 VAV Terminal;    !- Air Terminal Name
+
+ZoneHVAC:AirDistributionUnit,
+    ADU Block School/university_west_zone Storey 1 VAV Terminal,    !- Name
+    Block School/university_west_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Distribution Unit Outlet Node Name
+    AirTerminal:SingleDuct:VAV:Reheat,    !- Air Terminal Object Type
+    Block School/university_west_zone Storey 1 VAV Terminal;    !- Air Terminal Name
 
 ZoneHVAC:EquipmentList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Equipment List,    !- Name
+    Block School/university_core_zone Storey 0 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
-    ADU Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal,    !- Zone Equipment 1 Name
+    ADU Block School/university_core_zone Storey 0 VAV Terminal,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
-    1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    1,                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    ,                         !- Zone Equipment 1 Sequential Cooling Fraction Schedule Name
+    ;                         !- Zone Equipment 1 Sequential Heating Fraction Schedule Name
 
 ZoneHVAC:EquipmentList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Equipment List,    !- Name
+    Block School/university_core_zone Storey 1 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
-    ADU Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal,    !- Zone Equipment 1 Name
+    ADU Block School/university_core_zone Storey 1 VAV Terminal,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
-    1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    1,                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    ,                         !- Zone Equipment 1 Sequential Cooling Fraction Schedule Name
+    ;                         !- Zone Equipment 1 Sequential Heating Fraction Schedule Name
 
 ZoneHVAC:EquipmentList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Equipment List,    !- Name
+    Block School/university_east_zone Storey 0 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
-    ADU Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal,    !- Zone Equipment 1 Name
+    ADU Block School/university_east_zone Storey 0 VAV Terminal,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
-    1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    1,                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    ,                         !- Zone Equipment 1 Sequential Cooling Fraction Schedule Name
+    ;                         !- Zone Equipment 1 Sequential Heating Fraction Schedule Name
 
 ZoneHVAC:EquipmentList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Equipment List,    !- Name
+    Block School/university_east_zone Storey 1 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
-    ADU Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal,    !- Zone Equipment 1 Name
+    ADU Block School/university_east_zone Storey 1 VAV Terminal,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
-    1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    1,                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    ,                         !- Zone Equipment 1 Sequential Cooling Fraction Schedule Name
+    ;                         !- Zone Equipment 1 Sequential Heating Fraction Schedule Name
 
 ZoneHVAC:EquipmentList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Equipment List,    !- Name
+    Block School/university_north_zone Storey 0 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
-    ADU Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal,    !- Zone Equipment 1 Name
+    ADU Block School/university_north_zone Storey 0 VAV Terminal,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
-    1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    1,                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    ,                         !- Zone Equipment 1 Sequential Cooling Fraction Schedule Name
+    ;                         !- Zone Equipment 1 Sequential Heating Fraction Schedule Name
 
 ZoneHVAC:EquipmentList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Equipment List,    !- Name
+    Block School/university_north_zone Storey 1 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
-    ADU Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal,    !- Zone Equipment 1 Name
+    ADU Block School/university_north_zone Storey 1 VAV Terminal,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
-    1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    1,                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    ,                         !- Zone Equipment 1 Sequential Cooling Fraction Schedule Name
+    ;                         !- Zone Equipment 1 Sequential Heating Fraction Schedule Name
 
 ZoneHVAC:EquipmentList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Equipment List,    !- Name
+    Block School/university_south_zone Storey 0 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
-    ADU Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal,    !- Zone Equipment 1 Name
+    ADU Block School/university_south_zone Storey 0 VAV Terminal,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
-    1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    1,                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    ,                         !- Zone Equipment 1 Sequential Cooling Fraction Schedule Name
+    ;                         !- Zone Equipment 1 Sequential Heating Fraction Schedule Name
 
 ZoneHVAC:EquipmentList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Equipment List,    !- Name
+    Block School/university_south_zone Storey 1 Equipment List,    !- Name
     SequentialLoad,           !- Load Distribution Scheme
     ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
-    ADU Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal,    !- Zone Equipment 1 Name
+    ADU Block School/university_south_zone Storey 1 VAV Terminal,    !- Zone Equipment 1 Name
     1,                        !- Zone Equipment 1 Cooling Sequence
-    1;                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    1,                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    ,                         !- Zone Equipment 1 Sequential Cooling Fraction Schedule Name
+    ;                         !- Zone Equipment 1 Sequential Heating Fraction Schedule Name
+
+ZoneHVAC:EquipmentList,
+    Block School/university_west_zone Storey 0 Equipment List,    !- Name
+    SequentialLoad,           !- Load Distribution Scheme
+    ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
+    ADU Block School/university_west_zone Storey 0 VAV Terminal,    !- Zone Equipment 1 Name
+    1,                        !- Zone Equipment 1 Cooling Sequence
+    1,                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    ,                         !- Zone Equipment 1 Sequential Cooling Fraction Schedule Name
+    ;                         !- Zone Equipment 1 Sequential Heating Fraction Schedule Name
+
+ZoneHVAC:EquipmentList,
+    Block School/university_west_zone Storey 1 Equipment List,    !- Name
+    SequentialLoad,           !- Load Distribution Scheme
+    ZoneHVAC:AirDistributionUnit,    !- Zone Equipment 1 Object Type
+    ADU Block School/university_west_zone Storey 1 VAV Terminal,    !- Zone Equipment 1 Name
+    1,                        !- Zone Equipment 1 Cooling Sequence
+    1,                        !- Zone Equipment 1 Heating or NoLoad Sequence
+    ,                         !- Zone Equipment 1 Sequential Cooling Fraction Schedule Name
+    ;                         !- Zone Equipment 1 Sequential Heating Fraction Schedule Name
 
 ZoneHVAC:EquipmentConnections,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Zone Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    Block School/university_core_zone Storey 0,    !- Zone Name
+    Block School/university_core_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block School/university_core_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
     ,                         !- Zone Air Exhaust Node or NodeList Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
+    Block School/university_core_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
+    Block School/university_core_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 ZoneHVAC:EquipmentConnections,
-    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Equipment List,    !- Zone Conditioning Equipment List Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    Block School/university_core_zone Storey 1,    !- Zone Name
+    Block School/university_core_zone Storey 1 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block School/university_core_zone Storey 1 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
     ,                         !- Zone Air Exhaust Node or NodeList Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Zone Air Node,    !- Zone Air Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Return Node List;    !- Zone Return Air Node or NodeList Name
+    Block School/university_core_zone Storey 1 Zone Air Node,    !- Zone Air Node Name
+    Block School/university_core_zone Storey 1 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 ZoneHVAC:EquipmentConnections,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    Block School/university_east_zone Storey 0,    !- Zone Name
+    Block School/university_east_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block School/university_east_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
     ,                         !- Zone Air Exhaust Node or NodeList Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
+    Block School/university_east_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
+    Block School/university_east_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 ZoneHVAC:EquipmentConnections,
-    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Equipment List,    !- Zone Conditioning Equipment List Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    Block School/university_east_zone Storey 1,    !- Zone Name
+    Block School/university_east_zone Storey 1 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block School/university_east_zone Storey 1 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
     ,                         !- Zone Air Exhaust Node or NodeList Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Zone Air Node,    !- Zone Air Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Return Node List;    !- Zone Return Air Node or NodeList Name
+    Block School/university_east_zone Storey 1 Zone Air Node,    !- Zone Air Node Name
+    Block School/university_east_zone Storey 1 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 ZoneHVAC:EquipmentConnections,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    Block School/university_north_zone Storey 0,    !- Zone Name
+    Block School/university_north_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block School/university_north_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
     ,                         !- Zone Air Exhaust Node or NodeList Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
+    Block School/university_north_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
+    Block School/university_north_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 ZoneHVAC:EquipmentConnections,
-    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Equipment List,    !- Zone Conditioning Equipment List Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    Block School/university_north_zone Storey 1,    !- Zone Name
+    Block School/university_north_zone Storey 1 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block School/university_north_zone Storey 1 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
     ,                         !- Zone Air Exhaust Node or NodeList Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Zone Air Node,    !- Zone Air Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Return Node List;    !- Zone Return Air Node or NodeList Name
+    Block School/university_north_zone Storey 1 Zone Air Node,    !- Zone Air Node Name
+    Block School/university_north_zone Storey 1 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 ZoneHVAC:EquipmentConnections,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    Block School/university_south_zone Storey 0,    !- Zone Name
+    Block School/university_south_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block School/university_south_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
     ,                         !- Zone Air Exhaust Node or NodeList Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
+    Block School/university_south_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
+    Block School/university_south_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 ZoneHVAC:EquipmentConnections,
-    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Equipment List,    !- Zone Conditioning Equipment List Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    Block School/university_south_zone Storey 1,    !- Zone Name
+    Block School/university_south_zone Storey 1 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block School/university_south_zone Storey 1 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
     ,                         !- Zone Air Exhaust Node or NodeList Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Zone Air Node,    !- Zone Air Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Return Node List;    !- Zone Return Air Node or NodeList Name
+    Block School/university_south_zone Storey 1 Zone Air Node,    !- Zone Air Node Name
+    Block School/university_south_zone Storey 1 Return Node List;    !- Zone Return Air Node or NodeList Name
+
+ZoneHVAC:EquipmentConnections,
+    Block School/university_west_zone Storey 0,    !- Zone Name
+    Block School/university_west_zone Storey 0 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block School/university_west_zone Storey 0 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    ,                         !- Zone Air Exhaust Node or NodeList Name
+    Block School/university_west_zone Storey 0 Zone Air Node,    !- Zone Air Node Name
+    Block School/university_west_zone Storey 0 Return Node List;    !- Zone Return Air Node or NodeList Name
+
+ZoneHVAC:EquipmentConnections,
+    Block School/university_west_zone Storey 1,    !- Zone Name
+    Block School/university_west_zone Storey 1 Equipment List,    !- Zone Conditioning Equipment List Name
+    Block School/university_west_zone Storey 1 Inlet Node List,    !- Zone Air Inlet Node or NodeList Name
+    ,                         !- Zone Air Exhaust Node or NodeList Name
+    Block School/university_west_zone Storey 1 Zone Air Node,    !- Zone Air Node Name
+    Block School/university_west_zone Storey 1 Return Node List;    !- Zone Return Air Node or NodeList Name
 
 Fan:VariableVolume,
-    4 Zone VAV Fan,           !- Name
+    5 Zone VAV Fan,           !- Name
     Always On Discrete,       !- Availability Schedule Name
     0.62,                     !- Fan Total Efficiency
     996.35564,                !- Pressure Rise
@@ -802,11 +1000,12 @@ Fan:VariableVolume,
     -0.07292612,              !- Fan Power Coefficient 3
     0.943739823,              !- Fan Power Coefficient 4
     0,                        !- Fan Power Coefficient 5
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Air Inlet Node Name
-    4 Zone VAV Supply Outlet Node;    !- Air Outlet Node Name
+    5 Zone VAV Main Htg Coil Outlet Air Node,    !- Air Inlet Node Name
+    5 Zone VAV Supply Outlet Node,    !- Air Outlet Node Name
+    VAV System Fans;          !- EndUse Subcategory
 
 Fan:VariableVolume,
-    4 Zone VAV 1 Fan,         !- Name
+    5 Zone VAV 1 Fan,         !- Name
     Always On Discrete,       !- Availability Schedule Name
     0.62,                     !- Fan Total Efficiency
     996.35564,                !- Pressure Rise
@@ -821,19 +1020,20 @@ Fan:VariableVolume,
     -0.07292612,              !- Fan Power Coefficient 3
     0.943739823,              !- Fan Power Coefficient 4
     0,                        !- Fan Power Coefficient 5
-    4 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Air Inlet Node Name
-    4 Zone VAV 1 Supply Outlet Node;    !- Air Outlet Node Name
+    5 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Air Inlet Node Name
+    5 Zone VAV 1 Supply Outlet Node,    !- Air Outlet Node Name
+    VAV System Fans;          !- EndUse Subcategory
 
 Coil:Cooling:DX:TwoSpeed,
-    4 Zone VAV 2spd DX Clg Coil,    !- Name
+    5 Zone VAV 2spd DX Clg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- High Speed Gross Rated Total Cooling Capacity
     Autosize,                 !- High Speed Rated Sensible Heat Ratio
     3,                        !- High Speed Gross Rated Cooling COP
     Autosize,                 !- High Speed Rated Air Flow Rate
-    ,                         !- Unit Internal Static Air Pressure
-    4 Zone VAV Mixed Air Node,    !- Air Inlet Node Name
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Air Outlet Node Name
+    773.3,                    !- Unit Internal Static Air Pressure
+    5 Zone VAV Mixed Air Node,    !- Air Inlet Node Name
+    5 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Air Outlet Node Name
     Curve Biquadratic 1,      !- Total Cooling Capacity Function of Temperature Curve Name
     Curve Quadratic 1,        !- Total Cooling Capacity Function of Flow Fraction Curve Name
     Curve Biquadratic 2,      !- Energy Input Ratio Function of Temperature Curve Name
@@ -847,7 +1047,7 @@ Coil:Cooling:DX:TwoSpeed,
     Curve Biquadratic 4,      !- Low Speed Energy Input Ratio Function of Temperature Curve Name
     ,                         !- Condenser Air Inlet Node Name
     AirCooled,                !- Condenser Type
-    ,                         !- Minimum Outdoor DryBulb Temperature for Compressor Operation
+    -25,                      !- Minimum Outdoor DryBulb Temperature for Compressor Operation
     0,                        !- High Speed Evaporative Condenser Effectiveness
     Autosize,                 !- High Speed Evaporative Condenser Air Flow Rate
     Autosize,                 !- High Speed Evaporative Condenser Pump Rated Power Consumption
@@ -860,15 +1060,15 @@ Coil:Cooling:DX:TwoSpeed,
     2;                        !- Basin Heater Setpoint Temperature
 
 Coil:Cooling:DX:TwoSpeed,
-    4 Zone VAV 1 2spd DX Clg Coil,    !- Name
+    5 Zone VAV 1 2spd DX Clg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- High Speed Gross Rated Total Cooling Capacity
     Autosize,                 !- High Speed Rated Sensible Heat Ratio
     3,                        !- High Speed Gross Rated Cooling COP
     Autosize,                 !- High Speed Rated Air Flow Rate
-    ,                         !- Unit Internal Static Air Pressure
-    4 Zone VAV 1 Mixed Air Node,    !- Air Inlet Node Name
-    4 Zone VAV 1 2spd DX Clg Coil Outlet Air Node,    !- Air Outlet Node Name
+    773.3,                    !- Unit Internal Static Air Pressure
+    5 Zone VAV 1 Mixed Air Node,    !- Air Inlet Node Name
+    5 Zone VAV 1 2spd DX Clg Coil Outlet Air Node,    !- Air Outlet Node Name
     Curve Biquadratic 5,      !- Total Cooling Capacity Function of Temperature Curve Name
     Curve Quadratic 4,        !- Total Cooling Capacity Function of Flow Fraction Curve Name
     Curve Biquadratic 6,      !- Energy Input Ratio Function of Temperature Curve Name
@@ -882,7 +1082,7 @@ Coil:Cooling:DX:TwoSpeed,
     Curve Biquadratic 8,      !- Low Speed Energy Input Ratio Function of Temperature Curve Name
     ,                         !- Condenser Air Inlet Node Name
     AirCooled,                !- Condenser Type
-    ,                         !- Minimum Outdoor DryBulb Temperature for Compressor Operation
+    -25,                      !- Minimum Outdoor DryBulb Temperature for Compressor Operation
     0,                        !- High Speed Evaporative Condenser Effectiveness
     Autosize,                 !- High Speed Evaporative Condenser Air Flow Rate
     Autosize,                 !- High Speed Evaporative Condenser Pump Rated Power Consumption
@@ -895,14 +1095,14 @@ Coil:Cooling:DX:TwoSpeed,
     2;                        !- Basin Heater Setpoint Temperature
 
 Coil:Heating:Water,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil,    !- Name
+    Block School/university_core_zone Storey 0 Reheat Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_core_zone Storey 0 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
+    Block School/university_core_zone Storey 0 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
+    Block School/university_core_zone Storey 0 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
+    Block School/university_core_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
     Autosize,                 !- Rated Capacity
     82.2222222222223,         !- Rated Inlet Water Temperature
@@ -912,14 +1112,14 @@ Coil:Heating:Water,
     0.5;                      !- Rated Ratio for Air and Water Convection
 
 Coil:Heating:Water,
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil,    !- Name
+    Block School/university_core_zone Storey 1 Reheat Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_core_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
+    Block School/university_core_zone Storey 1 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
+    Block School/university_core_zone Storey 1 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
+    Block School/university_core_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
     Autosize,                 !- Rated Capacity
     82.2222222222223,         !- Rated Inlet Water Temperature
@@ -929,14 +1129,14 @@ Coil:Heating:Water,
     0.5;                      !- Rated Ratio for Air and Water Convection
 
 Coil:Heating:Water,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil,    !- Name
+    Block School/university_east_zone Storey 0 Reheat Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_east_zone Storey 0 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
+    Block School/university_east_zone Storey 0 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
+    Block School/university_east_zone Storey 0 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
+    Block School/university_east_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
     Autosize,                 !- Rated Capacity
     82.2222222222223,         !- Rated Inlet Water Temperature
@@ -946,14 +1146,14 @@ Coil:Heating:Water,
     0.5;                      !- Rated Ratio for Air and Water Convection
 
 Coil:Heating:Water,
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil,    !- Name
+    Block School/university_east_zone Storey 1 Reheat Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_east_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
+    Block School/university_east_zone Storey 1 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
+    Block School/university_east_zone Storey 1 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
+    Block School/university_east_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
     Autosize,                 !- Rated Capacity
     82.2222222222223,         !- Rated Inlet Water Temperature
@@ -963,14 +1163,14 @@ Coil:Heating:Water,
     0.5;                      !- Rated Ratio for Air and Water Convection
 
 Coil:Heating:Water,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Reheat Coil,    !- Name
+    Block School/university_north_zone Storey 0 Reheat Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_north_zone Storey 0 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
+    Block School/university_north_zone Storey 0 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
+    Block School/university_north_zone Storey 0 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
+    Block School/university_north_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
     Autosize,                 !- Rated Capacity
     82.2222222222223,         !- Rated Inlet Water Temperature
@@ -980,14 +1180,14 @@ Coil:Heating:Water,
     0.5;                      !- Rated Ratio for Air and Water Convection
 
 Coil:Heating:Water,
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil,    !- Name
+    Block School/university_north_zone Storey 1 Reheat Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_north_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
+    Block School/university_north_zone Storey 1 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
+    Block School/university_north_zone Storey 1 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
+    Block School/university_north_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
     Autosize,                 !- Rated Capacity
     82.2222222222223,         !- Rated Inlet Water Temperature
@@ -997,14 +1197,14 @@ Coil:Heating:Water,
     0.5;                      !- Rated Ratio for Air and Water Convection
 
 Coil:Heating:Water,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil,    !- Name
+    Block School/university_south_zone Storey 0 Reheat Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_south_zone Storey 0 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
+    Block School/university_south_zone Storey 0 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
+    Block School/university_south_zone Storey 0 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
+    Block School/university_south_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
     Autosize,                 !- Rated Capacity
     82.2222222222223,         !- Rated Inlet Water Temperature
@@ -1014,14 +1214,14 @@ Coil:Heating:Water,
     0.5;                      !- Rated Ratio for Air and Water Convection
 
 Coil:Heating:Water,
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil,    !- Name
+    Block School/university_south_zone Storey 1 Reheat Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_south_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
+    Block School/university_south_zone Storey 1 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
+    Block School/university_south_zone Storey 1 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
+    Block School/university_south_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
     UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
     Autosize,                 !- Rated Capacity
     82.2222222222223,         !- Rated Inlet Water Temperature
@@ -1031,14 +1231,48 @@ Coil:Heating:Water,
     0.5;                      !- Rated Ratio for Air and Water Convection
 
 Coil:Heating:Water,
-    4 Zone VAV Main Htg Coil,    !- Name
+    Block School/university_west_zone Storey 0 Reheat Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
-    4 Zone VAV Main Htg Coil Inlet Water Node,    !- Water Inlet Node Name
-    4 Zone VAV Main Htg Coil Outlet Water Node,    !- Water Outlet Node Name
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Air Inlet Node Name
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Air Outlet Node Name
+    Block School/university_west_zone Storey 0 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
+    Block School/university_west_zone Storey 0 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
+    Block School/university_west_zone Storey 0 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
+    Block School/university_west_zone Storey 0 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
+    Autosize,                 !- Rated Capacity
+    82.2222222222223,         !- Rated Inlet Water Temperature
+    12.7777777777778,         !- Rated Inlet Air Temperature
+    71.1111111111112,         !- Rated Outlet Water Temperature
+    40.0000000000001,         !- Rated Outlet Air Temperature
+    0.5;                      !- Rated Ratio for Air and Water Convection
+
+Coil:Heating:Water,
+    Block School/university_west_zone Storey 1 Reheat Coil,    !- Name
+    Always On Discrete,       !- Availability Schedule Name
+    Autosize,                 !- UFactor Times Area Value
+    Autosize,                 !- Maximum Water Flow Rate
+    Block School/university_west_zone Storey 1 Reheat Coil Inlet Water Node,    !- Water Inlet Node Name
+    Block School/university_west_zone Storey 1 Reheat Coil Outlet Water Node,    !- Water Outlet Node Name
+    Block School/university_west_zone Storey 1 VAV Terminal Damper Outlet,    !- Air Inlet Node Name
+    Block School/university_west_zone Storey 1 VAV Terminal Outlet Air Node,    !- Air Outlet Node Name
+    UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
+    Autosize,                 !- Rated Capacity
+    82.2222222222223,         !- Rated Inlet Water Temperature
+    12.7777777777778,         !- Rated Inlet Air Temperature
+    71.1111111111112,         !- Rated Outlet Water Temperature
+    40.0000000000001,         !- Rated Outlet Air Temperature
+    0.5;                      !- Rated Ratio for Air and Water Convection
+
+Coil:Heating:Water,
+    5 Zone VAV Main Htg Coil,    !- Name
+    Always On Discrete,       !- Availability Schedule Name
+    Autosize,                 !- UFactor Times Area Value
+    Autosize,                 !- Maximum Water Flow Rate
+    5 Zone VAV Main Htg Coil Inlet Water Node,    !- Water Inlet Node Name
+    5 Zone VAV Main Htg Coil Outlet Water Node,    !- Water Outlet Node Name
+    5 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Air Inlet Node Name
+    5 Zone VAV Main Htg Coil Outlet Air Node,    !- Air Outlet Node Name
     UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
     Autosize,                 !- Rated Capacity
     82.2222222222223,         !- Rated Inlet Water Temperature
@@ -1048,14 +1282,14 @@ Coil:Heating:Water,
     0.5;                      !- Rated Ratio for Air and Water Convection
 
 Coil:Heating:Water,
-    4 Zone VAV 1 Main Htg Coil,    !- Name
+    5 Zone VAV 1 Main Htg Coil,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     Autosize,                 !- UFactor Times Area Value
     Autosize,                 !- Maximum Water Flow Rate
-    4 Zone VAV 1 Main Htg Coil Inlet Water Node,    !- Water Inlet Node Name
-    4 Zone VAV 1 Main Htg Coil Outlet Water Node,    !- Water Outlet Node Name
-    4 Zone VAV 1 2spd DX Clg Coil Outlet Air Node,    !- Air Inlet Node Name
-    4 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Air Outlet Node Name
+    5 Zone VAV 1 Main Htg Coil Inlet Water Node,    !- Water Inlet Node Name
+    5 Zone VAV 1 Main Htg Coil Outlet Water Node,    !- Water Outlet Node Name
+    5 Zone VAV 1 2spd DX Clg Coil Outlet Air Node,    !- Air Inlet Node Name
+    5 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Air Outlet Node Name
     UFactorTimesAreaAndDesignWaterFlowRate,    !- Performance Input Method
     Autosize,                 !- Rated Capacity
     82.2222222222223,         !- Rated Inlet Water Temperature
@@ -1065,51 +1299,51 @@ Coil:Heating:Water,
     0.5;                      !- Rated Ratio for Air and Water Convection
 
 CoilSystem:Cooling:DX,
-    4 Zone VAV 2spd DX Clg Coil CoilSystem,    !- Name
+    5 Zone VAV 2spd DX Clg Coil CoilSystem,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    4 Zone VAV Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
+    5 Zone VAV Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
+    5 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
+    5 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
     Coil:Cooling:DX:TwoSpeed,    !- Cooling Coil Object Type
-    4 Zone VAV 2spd DX Clg Coil;    !- Cooling Coil Name
+    5 Zone VAV 2spd DX Clg Coil;    !- Cooling Coil Name
 
 CoilSystem:Cooling:DX,
-    4 Zone VAV 1 2spd DX Clg Coil CoilSystem,    !- Name
+    5 Zone VAV 1 2spd DX Clg Coil CoilSystem,    !- Name
     Always On Discrete,       !- Availability Schedule Name
-    4 Zone VAV 1 Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
-    4 Zone VAV 1 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
-    4 Zone VAV 1 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
+    5 Zone VAV 1 Mixed Air Node,    !- DX Cooling Coil System Inlet Node Name
+    5 Zone VAV 1 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Outlet Node Name
+    5 Zone VAV 1 2spd DX Clg Coil Outlet Air Node,    !- DX Cooling Coil System Sensor Node Name
     Coil:Cooling:DX:TwoSpeed,    !- Cooling Coil Object Type
-    4 Zone VAV 1 2spd DX Clg Coil;    !- Cooling Coil Name
+    5 Zone VAV 1 2spd DX Clg Coil;    !- Cooling Coil Name
 
 Controller:WaterCoil,
-    4 Zone VAV Main Htg Coil Controller,    !- Name
+    5 Zone VAV Main Htg Coil Controller,    !- Name
     Temperature,              !- Control Variable
     Normal,                   !- Action
     Flow,                     !- Actuator Variable
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Sensor Node Name
-    4 Zone VAV Main Htg Coil Inlet Water Node,    !- Actuator Node Name
+    5 Zone VAV Main Htg Coil Outlet Air Node,    !- Sensor Node Name
+    5 Zone VAV Main Htg Coil Inlet Water Node,    !- Actuator Node Name
     0.1,                      !- Controller Convergence Tolerance
     Autosize,                 !- Maximum Actuated Flow
     0;                        !- Minimum Actuated Flow
 
 Controller:WaterCoil,
-    4 Zone VAV 1 Main Htg Coil Controller,    !- Name
+    5 Zone VAV 1 Main Htg Coil Controller,    !- Name
     Temperature,              !- Control Variable
     Normal,                   !- Action
     Flow,                     !- Actuator Variable
-    4 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Sensor Node Name
-    4 Zone VAV 1 Main Htg Coil Inlet Water Node,    !- Actuator Node Name
+    5 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Sensor Node Name
+    5 Zone VAV 1 Main Htg Coil Inlet Water Node,    !- Actuator Node Name
     0.1,                      !- Controller Convergence Tolerance
     Autosize,                 !- Maximum Actuated Flow
     0;                        !- Minimum Actuated Flow
 
 Controller:OutdoorAir,
-    4 Zone VAV OA Controller,    !- Name
-    4 Zone VAV Relief Air Node,    !- Relief Air Outlet Node Name
-    4 Zone VAV Supply Inlet Node,    !- Return Air Node Name
-    4 Zone VAV Mixed Air Node,    !- Mixed Air Node Name
-    4 Zone VAV Outdoor Air Node,    !- Actuator Node Name
+    5 Zone VAV OA Controller,    !- Name
+    5 Zone VAV Relief Air Node,    !- Relief Air Outlet Node Name
+    5 Zone VAV Supply Inlet Node,    !- Return Air Node Name
+    5 Zone VAV Mixed Air Node,    !- Mixed Air Node Name
+    5 Zone VAV Outdoor Air Node,    !- Actuator Node Name
     Autosize,                 !- Minimum Outdoor Air Flow Rate
     Autosize,                 !- Maximum Outdoor Air Flow Rate
     NoEconomizer,             !- Economizer Control Type
@@ -1124,7 +1358,7 @@ Controller:OutdoorAir,
     ,                         !- Minimum Outdoor Air Schedule Name
     ,                         !- Minimum Fraction of Outdoor Air Schedule Name
     ,                         !- Maximum Fraction of Outdoor Air Schedule Name
-    4 Zone VAV Vent Controller,    !- Mechanical Ventilation Controller Name
+    5 Zone VAV Vent Controller,    !- Mechanical Ventilation Controller Name
     ,                         !- Time of Day Economizer Control Schedule Name
     No,                       !- High Humidity Control
     ,                         !- Humidistat Control Zone Name
@@ -1133,11 +1367,11 @@ Controller:OutdoorAir,
     BypassWhenWithinEconomizerLimits;    !- Heat Recovery Bypass Control Type
 
 Controller:OutdoorAir,
-    4 Zone VAV 1 OA Controller,    !- Name
-    4 Zone VAV 1 Relief Air Node,    !- Relief Air Outlet Node Name
-    4 Zone VAV 1 Supply Inlet Node,    !- Return Air Node Name
-    4 Zone VAV 1 Mixed Air Node,    !- Mixed Air Node Name
-    4 Zone VAV 1 Outdoor Air Node,    !- Actuator Node Name
+    5 Zone VAV 1 OA Controller,    !- Name
+    5 Zone VAV 1 Relief Air Node,    !- Relief Air Outlet Node Name
+    5 Zone VAV 1 Supply Inlet Node,    !- Return Air Node Name
+    5 Zone VAV 1 Mixed Air Node,    !- Mixed Air Node Name
+    5 Zone VAV 1 Outdoor Air Node,    !- Actuator Node Name
     Autosize,                 !- Minimum Outdoor Air Flow Rate
     Autosize,                 !- Maximum Outdoor Air Flow Rate
     NoEconomizer,             !- Economizer Control Type
@@ -1152,7 +1386,7 @@ Controller:OutdoorAir,
     ,                         !- Minimum Outdoor Air Schedule Name
     ,                         !- Minimum Fraction of Outdoor Air Schedule Name
     ,                         !- Maximum Fraction of Outdoor Air Schedule Name
-    4 Zone VAV 1 Vent Controller,    !- Mechanical Ventilation Controller Name
+    5 Zone VAV 1 Vent Controller,    !- Mechanical Ventilation Controller Name
     ,                         !- Time of Day Economizer Control Schedule Name
     No,                       !- High Humidity Control
     ,                         !- Humidistat Control Zone Name
@@ -1161,218 +1395,230 @@ Controller:OutdoorAir,
     BypassWhenWithinEconomizerLimits;    !- Heat Recovery Bypass Control Type
 
 Controller:MechanicalVentilation,
-    4 Zone VAV Vent Controller,    !- Name
+    5 Zone VAV Vent Controller,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     No,                       !- Demand Controlled Ventilation
-    VentilationRateProcedure,    !- System Outdoor Air Method
+    ZoneSum,                  !- System Outdoor Air Method
     ,                         !- Zone Maximum Outdoor Air Fraction
-    Block Dining: Cafeteria/fast food_east_zone Storey 0,    !- Zone 1 Name
+    Block School/university_core_zone Storey 0,    !- Zone or ZoneList 1 Name
     ,                         !- Design Specification Outdoor Air Object Name 1
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 1
-    Block Dining: Cafeteria/fast food_north_zone Storey 0,    !- Zone 2 Name
+    Block School/university_core_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 1
+    Block School/university_east_zone Storey 0,    !- Zone or ZoneList 2 Name
     ,                         !- Design Specification Outdoor Air Object Name 2
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 2
-    Block Dining: Cafeteria/fast food_south_zone Storey 0,    !- Zone 3 Name
+    Block School/university_east_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 2
+    Block School/university_north_zone Storey 0,    !- Zone or ZoneList 3 Name
     ,                         !- Design Specification Outdoor Air Object Name 3
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 3
-    Block Dining: Cafeteria/fast food_west_zone Storey 0,    !- Zone 4 Name
+    Block School/university_north_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 3
+    Block School/university_south_zone Storey 0,    !- Zone or ZoneList 4 Name
     ,                         !- Design Specification Outdoor Air Object Name 4
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 4
+    Block School/university_south_zone Storey 0 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 4
+    Block School/university_west_zone Storey 0,    !- Zone or ZoneList 5 Name
+    ,                         !- Design Specification Outdoor Air Object Name 5
+    Block School/university_west_zone Storey 0 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 5
 
 Controller:MechanicalVentilation,
-    4 Zone VAV 1 Vent Controller,    !- Name
+    5 Zone VAV 1 Vent Controller,    !- Name
     Always On Discrete,       !- Availability Schedule Name
     No,                       !- Demand Controlled Ventilation
-    VentilationRateProcedure,    !- System Outdoor Air Method
+    ZoneSum,                  !- System Outdoor Air Method
     ,                         !- Zone Maximum Outdoor Air Fraction
-    Block Dining: Cafeteria/fast food_east_zone Storey 1,    !- Zone 1 Name
+    Block School/university_core_zone Storey 1,    !- Zone or ZoneList 1 Name
     ,                         !- Design Specification Outdoor Air Object Name 1
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 1
-    Block Dining: Cafeteria/fast food_north_zone Storey 1,    !- Zone 2 Name
+    Block School/university_core_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 1
+    Block School/university_east_zone Storey 1,    !- Zone or ZoneList 2 Name
     ,                         !- Design Specification Outdoor Air Object Name 2
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 2
-    Block Dining: Cafeteria/fast food_south_zone Storey 1,    !- Zone 3 Name
+    Block School/university_east_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 2
+    Block School/university_north_zone Storey 1,    !- Zone or ZoneList 3 Name
     ,                         !- Design Specification Outdoor Air Object Name 3
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 3
-    Block Dining: Cafeteria/fast food_west_zone Storey 1,    !- Zone 4 Name
+    Block School/university_north_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 3
+    Block School/university_south_zone Storey 1,    !- Zone or ZoneList 4 Name
     ,                         !- Design Specification Outdoor Air Object Name 4
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 4
+    Block School/university_south_zone Storey 1 Design Spec Zone Air Dist,    !- Design Specification Zone Air Distribution Object Name 4
+    Block School/university_west_zone Storey 1,    !- Zone or ZoneList 5 Name
+    ,                         !- Design Specification Outdoor Air Object Name 5
+    Block School/university_west_zone Storey 1 Design Spec Zone Air Dist;    !- Design Specification Zone Air Distribution Object Name 5
 
 AirLoopHVAC:ControllerList,
-    4 Zone VAV Controllers,    !- Name
+    5 Zone VAV Controllers,    !- Name
     Controller:WaterCoil,     !- Controller 1 Object Type
-    4 Zone VAV Main Htg Coil Controller;    !- Controller 1 Name
+    5 Zone VAV Main Htg Coil Controller;    !- Controller 1 Name
 
 AirLoopHVAC:ControllerList,
-    4 Zone VAV OA System Controller List,    !- Name
+    5 Zone VAV OA System Controller List,    !- Name
     Controller:OutdoorAir,    !- Controller 1 Object Type
-    4 Zone VAV OA Controller;    !- Controller 1 Name
+    5 Zone VAV OA Controller;    !- Controller 1 Name
 
 AirLoopHVAC:ControllerList,
-    4 Zone VAV 1 Controllers,    !- Name
+    5 Zone VAV 1 Controllers,    !- Name
     Controller:WaterCoil,     !- Controller 1 Object Type
-    4 Zone VAV 1 Main Htg Coil Controller;    !- Controller 1 Name
+    5 Zone VAV 1 Main Htg Coil Controller;    !- Controller 1 Name
 
 AirLoopHVAC:ControllerList,
-    4 Zone VAV 1 OA System Controller List,    !- Name
+    5 Zone VAV 1 OA System Controller List,    !- Name
     Controller:OutdoorAir,    !- Controller 1 Object Type
-    4 Zone VAV 1 OA Controller;    !- Controller 1 Name
+    5 Zone VAV 1 OA Controller;    !- Controller 1 Name
 
 AirLoopHVAC,
-    4 Zone VAV,               !- Name
-    4 Zone VAV Controllers,    !- Controller List Name
+    5 Zone VAV,               !- Name
+    5 Zone VAV Controllers,    !- Controller List Name
     Air Loop HVAC 1 AvailabilityManagerAssignmentList,    !- Availability Manager List Name
     AutoSize,                 !- Design Supply Air Flow Rate
-    4 Zone VAV Supply Branches,    !- Branch List Name
+    5 Zone VAV Supply Branches,    !- Branch List Name
     ,                         !- Connector List Name
-    4 Zone VAV Supply Inlet Node,    !- Supply Side Inlet Node Name
-    4 Zone VAV Demand Outlet Node,    !- Demand Side Outlet Node Name
-    4 Zone VAV Demand Inlet Nodes,    !- Demand Side Inlet Node Names
-    4 Zone VAV Supply Outlet Nodes;    !- Supply Side Outlet Node Names
+    5 Zone VAV Supply Inlet Node,    !- Supply Side Inlet Node Name
+    5 Zone VAV Demand Outlet Node,    !- Demand Side Outlet Node Name
+    5 Zone VAV Demand Inlet Nodes,    !- Demand Side Inlet Node Names
+    5 Zone VAV Supply Outlet Nodes,    !- Supply Side Outlet Node Names
+    1;                        !- Design Return Air Flow Fraction of Supply Air Flow
 
 AirLoopHVAC,
-    4 Zone VAV 1,             !- Name
-    4 Zone VAV 1 Controllers,    !- Controller List Name
+    5 Zone VAV 1,             !- Name
+    5 Zone VAV 1 Controllers,    !- Controller List Name
     Air Loop HVAC 1 AvailabilityManagerAssignmentList 1,    !- Availability Manager List Name
     AutoSize,                 !- Design Supply Air Flow Rate
-    4 Zone VAV 1 Supply Branches,    !- Branch List Name
+    5 Zone VAV 1 Supply Branches,    !- Branch List Name
     ,                         !- Connector List Name
-    4 Zone VAV 1 Supply Inlet Node,    !- Supply Side Inlet Node Name
-    4 Zone VAV 1 Demand Outlet Node,    !- Demand Side Outlet Node Name
-    4 Zone VAV 1 Demand Inlet Nodes,    !- Demand Side Inlet Node Names
-    4 Zone VAV 1 Supply Outlet Nodes;    !- Supply Side Outlet Node Names
+    5 Zone VAV 1 Supply Inlet Node,    !- Supply Side Inlet Node Name
+    5 Zone VAV 1 Demand Outlet Node,    !- Demand Side Outlet Node Name
+    5 Zone VAV 1 Demand Inlet Nodes,    !- Demand Side Inlet Node Names
+    5 Zone VAV 1 Supply Outlet Nodes,    !- Supply Side Outlet Node Names
+    1;                        !- Design Return Air Flow Fraction of Supply Air Flow
 
 AirLoopHVAC:OutdoorAirSystem:EquipmentList,
-    4 Zone VAV OA System Equipment List,    !- Name
+    5 Zone VAV OA System Equipment List,    !- Name
     OutdoorAir:Mixer,         !- Component 1 Object Type
-    4 Zone VAV OA System Outdoor Air Mixer;    !- Component 1 Name
+    5 Zone VAV OA System Outdoor Air Mixer;    !- Component 1 Name
 
 AirLoopHVAC:OutdoorAirSystem:EquipmentList,
-    4 Zone VAV 1 OA System Equipment List,    !- Name
+    5 Zone VAV 1 OA System Equipment List,    !- Name
     OutdoorAir:Mixer,         !- Component 1 Object Type
-    4 Zone VAV 1 OA System Outdoor Air Mixer;    !- Component 1 Name
+    5 Zone VAV 1 OA System Outdoor Air Mixer;    !- Component 1 Name
 
 AirLoopHVAC:OutdoorAirSystem,
-    4 Zone VAV OA System,     !- Name
-    4 Zone VAV OA System Controller List,    !- Controller List Name
-    4 Zone VAV OA System Equipment List,    !- Outdoor Air Equipment List Name
-    4 Zone VAV OA System Availability Manager List;    !- Availability Manager List Name
+    5 Zone VAV OA System,     !- Name
+    5 Zone VAV OA System Controller List,    !- Controller List Name
+    5 Zone VAV OA System Equipment List,    !- Outdoor Air Equipment List Name
+    5 Zone VAV OA System Availability Manager List;    !- Availability Manager List Name
 
 AirLoopHVAC:OutdoorAirSystem,
-    4 Zone VAV 1 OA System,    !- Name
-    4 Zone VAV 1 OA System Controller List,    !- Controller List Name
-    4 Zone VAV 1 OA System Equipment List,    !- Outdoor Air Equipment List Name
-    4 Zone VAV 1 OA System Availability Manager List;    !- Availability Manager List Name
+    5 Zone VAV 1 OA System,    !- Name
+    5 Zone VAV 1 OA System Controller List,    !- Controller List Name
+    5 Zone VAV 1 OA System Equipment List,    !- Outdoor Air Equipment List Name
+    5 Zone VAV 1 OA System Availability Manager List;    !- Availability Manager List Name
 
 OutdoorAir:Mixer,
-    4 Zone VAV OA System Outdoor Air Mixer,    !- Name
-    4 Zone VAV Mixed Air Node,    !- Mixed Air Node Name
-    4 Zone VAV Outdoor Air Node,    !- Outdoor Air Stream Node Name
-    4 Zone VAV Relief Air Node,    !- Relief Air Stream Node Name
-    4 Zone VAV Supply Inlet Node;    !- Return Air Stream Node Name
+    5 Zone VAV OA System Outdoor Air Mixer,    !- Name
+    5 Zone VAV Mixed Air Node,    !- Mixed Air Node Name
+    5 Zone VAV Outdoor Air Node,    !- Outdoor Air Stream Node Name
+    5 Zone VAV Relief Air Node,    !- Relief Air Stream Node Name
+    5 Zone VAV Supply Inlet Node;    !- Return Air Stream Node Name
 
 OutdoorAir:Mixer,
-    4 Zone VAV 1 OA System Outdoor Air Mixer,    !- Name
-    4 Zone VAV 1 Mixed Air Node,    !- Mixed Air Node Name
-    4 Zone VAV 1 Outdoor Air Node,    !- Outdoor Air Stream Node Name
-    4 Zone VAV 1 Relief Air Node,    !- Relief Air Stream Node Name
-    4 Zone VAV 1 Supply Inlet Node;    !- Return Air Stream Node Name
+    5 Zone VAV 1 OA System Outdoor Air Mixer,    !- Name
+    5 Zone VAV 1 Mixed Air Node,    !- Mixed Air Node Name
+    5 Zone VAV 1 Outdoor Air Node,    !- Outdoor Air Stream Node Name
+    5 Zone VAV 1 Relief Air Node,    !- Relief Air Stream Node Name
+    5 Zone VAV 1 Supply Inlet Node;    !- Return Air Stream Node Name
 
 AirLoopHVAC:ZoneSplitter,
     Air Loop HVAC Zone Splitter 1,    !- Name
-    4 Zone VAV Demand Inlet Node,    !- Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 1 Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 2 Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 3 Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal Inlet Air Node;    !- Outlet 4 Node Name
+    5 Zone VAV Demand Inlet Node,    !- Inlet Node Name
+    Block School/university_east_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 1 Node Name
+    Block School/university_west_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 2 Node Name
+    Block School/university_core_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 3 Node Name
+    Block School/university_north_zone Storey 0 VAV Terminal Inlet Air Node,    !- Outlet 4 Node Name
+    Block School/university_south_zone Storey 0 VAV Terminal Inlet Air Node;    !- Outlet 5 Node Name
 
 AirLoopHVAC:ZoneSplitter,
     Air Loop HVAC Zone Splitter 2,    !- Name
-    4 Zone VAV 1 Demand Inlet Node,    !- Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 1 Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 2 Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 3 Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Inlet Air Node;    !- Outlet 4 Node Name
+    5 Zone VAV 1 Demand Inlet Node,    !- Inlet Node Name
+    Block School/university_core_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 1 Node Name
+    Block School/university_north_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 2 Node Name
+    Block School/university_west_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 3 Node Name
+    Block School/university_east_zone Storey 1 VAV Terminal Inlet Air Node,    !- Outlet 4 Node Name
+    Block School/university_south_zone Storey 1 VAV Terminal Inlet Air Node;    !- Outlet 5 Node Name
 
 AirLoopHVAC:SupplyPath,
-    4 Zone VAV 4 Zone VAV Demand Inlet Node Supply Path,    !- Name
-    4 Zone VAV Demand Inlet Node,    !- Supply Air Path Inlet Node Name
+    5 Zone VAV 5 Zone VAV Demand Inlet Node Supply Path,    !- Name
+    5 Zone VAV Demand Inlet Node,    !- Supply Air Path Inlet Node Name
     AirLoopHVAC:ZoneSplitter,    !- Component 1 Object Type
     Air Loop HVAC Zone Splitter 1;    !- Component 1 Name
 
 AirLoopHVAC:SupplyPath,
-    4 Zone VAV 1 4 Zone VAV 1 Demand Inlet Node Supply Path,    !- Name
-    4 Zone VAV 1 Demand Inlet Node,    !- Supply Air Path Inlet Node Name
+    5 Zone VAV 1 5 Zone VAV 1 Demand Inlet Node Supply Path,    !- Name
+    5 Zone VAV 1 Demand Inlet Node,    !- Supply Air Path Inlet Node Name
     AirLoopHVAC:ZoneSplitter,    !- Component 1 Object Type
     Air Loop HVAC Zone Splitter 2;    !- Component 1 Name
 
 AirLoopHVAC:ZoneMixer,
     Air Loop HVAC Zone Mixer 1,    !- Name
-    4 Zone VAV Demand Outlet Node,    !- Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Return Air Node,    !- Inlet 1 Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Air Node,    !- Inlet 2 Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Return Air Node,    !- Inlet 3 Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Return Air Node;    !- Inlet 4 Node Name
+    5 Zone VAV Demand Outlet Node,    !- Outlet Node Name
+    Block School/university_east_zone Storey 0 Return Air Node,    !- Inlet 1 Node Name
+    Block School/university_west_zone Storey 0 Return Air Node,    !- Inlet 2 Node Name
+    Block School/university_core_zone Storey 0 Return Air Node,    !- Inlet 3 Node Name
+    Block School/university_north_zone Storey 0 Return Air Node,    !- Inlet 4 Node Name
+    Block School/university_south_zone Storey 0 Return Air Node;    !- Inlet 5 Node Name
 
 AirLoopHVAC:ZoneMixer,
     Air Loop HVAC Zone Mixer 2,    !- Name
-    4 Zone VAV 1 Demand Outlet Node,    !- Outlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Return Air Node,    !- Inlet 1 Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Return Air Node,    !- Inlet 2 Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Return Air Node,    !- Inlet 3 Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Return Air Node;    !- Inlet 4 Node Name
+    5 Zone VAV 1 Demand Outlet Node,    !- Outlet Node Name
+    Block School/university_core_zone Storey 1 Return Air Node,    !- Inlet 1 Node Name
+    Block School/university_north_zone Storey 1 Return Air Node,    !- Inlet 2 Node Name
+    Block School/university_west_zone Storey 1 Return Air Node,    !- Inlet 3 Node Name
+    Block School/university_east_zone Storey 1 Return Air Node,    !- Inlet 4 Node Name
+    Block School/university_south_zone Storey 1 Return Air Node;    !- Inlet 5 Node Name
 
 AirLoopHVAC:ReturnPath,
-    4 Zone VAV Return Path,    !- Name
-    4 Zone VAV Demand Outlet Node,    !- Return Air Path Outlet Node Name
+    5 Zone VAV Return Path,    !- Name
+    5 Zone VAV Demand Outlet Node,    !- Return Air Path Outlet Node Name
     AirLoopHVAC:ZoneMixer,    !- Component 1 Object Type
     Air Loop HVAC Zone Mixer 1;    !- Component 1 Name
 
 AirLoopHVAC:ReturnPath,
-    4 Zone VAV 1 Return Path,    !- Name
-    4 Zone VAV 1 Demand Outlet Node,    !- Return Air Path Outlet Node Name
+    5 Zone VAV 1 Return Path,    !- Name
+    5 Zone VAV 1 Demand Outlet Node,    !- Return Air Path Outlet Node Name
     AirLoopHVAC:ZoneMixer,    !- Component 1 Object Type
     Air Loop HVAC Zone Mixer 2;    !- Component 1 Name
 
 Branch,
-    4 Zone VAV Main Branch,    !- Name
+    5 Zone VAV Main Branch,    !- Name
     ,                         !- Pressure Drop Curve Name
     AirLoopHVAC:OutdoorAirSystem,    !- Component 1 Object Type
-    4 Zone VAV OA System,     !- Component 1 Name
-    4 Zone VAV Supply Inlet Node,    !- Component 1 Inlet Node Name
-    4 Zone VAV Mixed Air Node,    !- Component 1 Outlet Node Name
+    5 Zone VAV OA System,     !- Component 1 Name
+    5 Zone VAV Supply Inlet Node,    !- Component 1 Inlet Node Name
+    5 Zone VAV Mixed Air Node,    !- Component 1 Outlet Node Name
     CoilSystem:Cooling:DX,    !- Component 2 Object Type
-    4 Zone VAV 2spd DX Clg Coil CoilSystem,    !- Component 2 Name
-    4 Zone VAV Mixed Air Node,    !- Component 2 Inlet Node Name
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Component 2 Outlet Node Name
+    5 Zone VAV 2spd DX Clg Coil CoilSystem,    !- Component 2 Name
+    5 Zone VAV Mixed Air Node,    !- Component 2 Inlet Node Name
+    5 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Component 2 Outlet Node Name
     Coil:Heating:Water,       !- Component 3 Object Type
-    4 Zone VAV Main Htg Coil,    !- Component 3 Name
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Component 3 Inlet Node Name
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Component 3 Outlet Node Name
+    5 Zone VAV Main Htg Coil,    !- Component 3 Name
+    5 Zone VAV 2spd DX Clg Coil Outlet Air Node,    !- Component 3 Inlet Node Name
+    5 Zone VAV Main Htg Coil Outlet Air Node,    !- Component 3 Outlet Node Name
     Fan:VariableVolume,       !- Component 4 Object Type
-    4 Zone VAV Fan,           !- Component 4 Name
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Component 4 Inlet Node Name
-    4 Zone VAV Supply Outlet Node;    !- Component 4 Outlet Node Name
+    5 Zone VAV Fan,           !- Component 4 Name
+    5 Zone VAV Main Htg Coil Outlet Air Node,    !- Component 4 Inlet Node Name
+    5 Zone VAV Supply Outlet Node;    !- Component 4 Outlet Node Name
 
 Branch,
-    4 Zone VAV 1 Main Branch,    !- Name
+    5 Zone VAV 1 Main Branch,    !- Name
     ,                         !- Pressure Drop Curve Name
     AirLoopHVAC:OutdoorAirSystem,    !- Component 1 Object Type
-    4 Zone VAV 1 OA System,    !- Component 1 Name
-    4 Zone VAV 1 Supply Inlet Node,    !- Component 1 Inlet Node Name
-    4 Zone VAV 1 Mixed Air Node,    !- Component 1 Outlet Node Name
+    5 Zone VAV 1 OA System,    !- Component 1 Name
+    5 Zone VAV 1 Supply Inlet Node,    !- Component 1 Inlet Node Name
+    5 Zone VAV 1 Mixed Air Node,    !- Component 1 Outlet Node Name
     CoilSystem:Cooling:DX,    !- Component 2 Object Type
-    4 Zone VAV 1 2spd DX Clg Coil CoilSystem,    !- Component 2 Name
-    4 Zone VAV 1 Mixed Air Node,    !- Component 2 Inlet Node Name
-    4 Zone VAV 1 2spd DX Clg Coil Outlet Air Node,    !- Component 2 Outlet Node Name
+    5 Zone VAV 1 2spd DX Clg Coil CoilSystem,    !- Component 2 Name
+    5 Zone VAV 1 Mixed Air Node,    !- Component 2 Inlet Node Name
+    5 Zone VAV 1 2spd DX Clg Coil Outlet Air Node,    !- Component 2 Outlet Node Name
     Coil:Heating:Water,       !- Component 3 Object Type
-    4 Zone VAV 1 Main Htg Coil,    !- Component 3 Name
-    4 Zone VAV 1 2spd DX Clg Coil Outlet Air Node,    !- Component 3 Inlet Node Name
-    4 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Component 3 Outlet Node Name
+    5 Zone VAV 1 Main Htg Coil,    !- Component 3 Name
+    5 Zone VAV 1 2spd DX Clg Coil Outlet Air Node,    !- Component 3 Inlet Node Name
+    5 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Component 3 Outlet Node Name
     Fan:VariableVolume,       !- Component 4 Object Type
-    4 Zone VAV 1 Fan,         !- Component 4 Name
-    4 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Component 4 Inlet Node Name
-    4 Zone VAV 1 Supply Outlet Node;    !- Component 4 Outlet Node Name
+    5 Zone VAV 1 Fan,         !- Component 4 Name
+    5 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Component 4 Inlet Node Name
+    5 Zone VAV 1 Supply Outlet Node;    !- Component 4 Outlet Node Name
 
 Branch,
     Hot Water Loop Supply Inlet Branch,    !- Name
@@ -1426,81 +1672,97 @@ Branch,
     Hot Water Loop Demand Branch 2,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
-    4 Zone VAV Main Htg Coil,    !- Component 1 Name
-    4 Zone VAV Main Htg Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    4 Zone VAV Main Htg Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+    5 Zone VAV Main Htg Coil,    !- Component 1 Name
+    5 Zone VAV Main Htg Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    5 Zone VAV Main Htg Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
     Hot Water Loop Demand Branch 3,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+    Block School/university_east_zone Storey 0 Reheat Coil,    !- Component 1 Name
+    Block School/university_east_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block School/university_east_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
     Hot Water Loop Demand Branch 4,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+    Block School/university_west_zone Storey 0 Reheat Coil,    !- Component 1 Name
+    Block School/university_west_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block School/university_west_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
     Hot Water Loop Demand Branch 5,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+    Block School/university_core_zone Storey 0 Reheat Coil,    !- Component 1 Name
+    Block School/university_core_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block School/university_core_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
     Hot Water Loop Demand Branch 6,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Reheat Coil,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+    Block School/university_north_zone Storey 0 Reheat Coil,    !- Component 1 Name
+    Block School/university_north_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block School/university_north_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
     Hot Water Loop Demand Branch 7,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
-    4 Zone VAV 1 Main Htg Coil,    !- Component 1 Name
-    4 Zone VAV 1 Main Htg Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    4 Zone VAV 1 Main Htg Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+    Block School/university_south_zone Storey 0 Reheat Coil,    !- Component 1 Name
+    Block School/university_south_zone Storey 0 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block School/university_south_zone Storey 0 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
     Hot Water Loop Demand Branch 8,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+    5 Zone VAV 1 Main Htg Coil,    !- Component 1 Name
+    5 Zone VAV 1 Main Htg Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    5 Zone VAV 1 Main Htg Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
     Hot Water Loop Demand Branch 9,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+    Block School/university_core_zone Storey 1 Reheat Coil,    !- Component 1 Name
+    Block School/university_core_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block School/university_core_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
     Hot Water Loop Demand Branch 10,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+    Block School/university_north_zone Storey 1 Reheat Coil,    !- Component 1 Name
+    Block School/university_north_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block School/university_north_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
     Hot Water Loop Demand Branch 11,    !- Name
     ,                         !- Pressure Drop Curve Name
     Coil:Heating:Water,       !- Component 1 Object Type
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil,    !- Component 1 Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+    Block School/university_west_zone Storey 1 Reheat Coil,    !- Component 1 Name
+    Block School/university_west_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block School/university_west_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+
+Branch,
+    Hot Water Loop Demand Branch 12,    !- Name
+    ,                         !- Pressure Drop Curve Name
+    Coil:Heating:Water,       !- Component 1 Object Type
+    Block School/university_east_zone Storey 1 Reheat Coil,    !- Component 1 Name
+    Block School/university_east_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block School/university_east_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
+
+Branch,
+    Hot Water Loop Demand Branch 13,    !- Name
+    ,                         !- Pressure Drop Curve Name
+    Coil:Heating:Water,       !- Component 1 Object Type
+    Block School/university_south_zone Storey 1 Reheat Coil,    !- Component 1 Name
+    Block School/university_south_zone Storey 1 Reheat Coil Inlet Water Node,    !- Component 1 Inlet Node Name
+    Block School/university_south_zone Storey 1 Reheat Coil Outlet Water Node;    !- Component 1 Outlet Node Name
 
 Branch,
     Hot Water Loop Demand Bypass Branch,    !- Name
@@ -1519,12 +1781,12 @@ Branch,
     Hot Water Loop Demand Outlet Node;    !- Component 1 Outlet Node Name
 
 BranchList,
-    4 Zone VAV Supply Branches,    !- Name
-    4 Zone VAV Main Branch;    !- Branch 1 Name
+    5 Zone VAV Supply Branches,    !- Name
+    5 Zone VAV Main Branch;    !- Branch 1 Name
 
 BranchList,
-    4 Zone VAV 1 Supply Branches,    !- Name
-    4 Zone VAV 1 Main Branch;    !- Branch 1 Name
+    5 Zone VAV 1 Supply Branches,    !- Name
+    5 Zone VAV 1 Main Branch;    !- Branch 1 Name
 
 BranchList,
     Hot Water Loop Supply Branches,    !- Name
@@ -1547,8 +1809,10 @@ BranchList,
     Hot Water Loop Demand Branch 9,    !- Branch 10 Name
     Hot Water Loop Demand Branch 10,    !- Branch 11 Name
     Hot Water Loop Demand Branch 11,    !- Branch 12 Name
-    Hot Water Loop Demand Bypass Branch,    !- Branch 13 Name
-    Hot Water Loop Demand Outlet Branch;    !- Branch 14 Name
+    Hot Water Loop Demand Branch 12,    !- Branch 13 Name
+    Hot Water Loop Demand Branch 13,    !- Branch 14 Name
+    Hot Water Loop Demand Bypass Branch,    !- Branch 15 Name
+    Hot Water Loop Demand Outlet Branch;    !- Branch 16 Name
 
 Connector:Splitter,
     Hot Water Loop Supply Splitter,    !- Name
@@ -1570,7 +1834,9 @@ Connector:Splitter,
     Hot Water Loop Demand Branch 9,    !- Outlet Branch 9 Name
     Hot Water Loop Demand Branch 10,    !- Outlet Branch 10 Name
     Hot Water Loop Demand Branch 11,    !- Outlet Branch 11 Name
-    Hot Water Loop Demand Bypass Branch;    !- Outlet Branch 12 Name
+    Hot Water Loop Demand Branch 12,    !- Outlet Branch 12 Name
+    Hot Water Loop Demand Branch 13,    !- Outlet Branch 13 Name
+    Hot Water Loop Demand Bypass Branch;    !- Outlet Branch 14 Name
 
 Connector:Mixer,
     Hot Water Loop Supply Mixer,    !- Name
@@ -1592,7 +1858,9 @@ Connector:Mixer,
     Hot Water Loop Demand Branch 9,    !- Inlet Branch 9 Name
     Hot Water Loop Demand Branch 10,    !- Inlet Branch 10 Name
     Hot Water Loop Demand Branch 11,    !- Inlet Branch 11 Name
-    Hot Water Loop Demand Bypass Branch;    !- Inlet Branch 12 Name
+    Hot Water Loop Demand Branch 12,    !- Inlet Branch 12 Name
+    Hot Water Loop Demand Branch 13,    !- Inlet Branch 13 Name
+    Hot Water Loop Demand Bypass Branch;    !- Inlet Branch 14 Name
 
 ConnectorList,
     Hot Water Loop Supply Connector List,    !- Name
@@ -1609,93 +1877,109 @@ ConnectorList,
     Hot Water Loop Demand Mixer;    !- Connector 2 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Inlet Node List,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 VAV Terminal Outlet Air Node;    !- Node 1 Name
+    Block School/university_core_zone Storey 0 Inlet Node List,    !- Name
+    Block School/university_core_zone Storey 0 VAV Terminal Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Return Node List,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 0 Return Air Node;    !- Node 1 Name
+    Block School/university_core_zone Storey 0 Return Node List,    !- Name
+    Block School/university_core_zone Storey 0 Return Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Inlet Node List,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 VAV Terminal Outlet Air Node;    !- Node 1 Name
+    Block School/university_core_zone Storey 1 Inlet Node List,    !- Name
+    Block School/university_core_zone Storey 1 VAV Terminal Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Return Node List,    !- Name
-    Block Dining: Cafeteria/fast food_east_zone Storey 1 Return Air Node;    !- Node 1 Name
+    Block School/university_core_zone Storey 1 Return Node List,    !- Name
+    Block School/university_core_zone Storey 1 Return Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Inlet Node List,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 VAV Terminal Outlet Air Node;    !- Node 1 Name
+    Block School/university_east_zone Storey 0 Inlet Node List,    !- Name
+    Block School/university_east_zone Storey 0 VAV Terminal Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Node List,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 0 Return Air Node;    !- Node 1 Name
+    Block School/university_east_zone Storey 0 Return Node List,    !- Name
+    Block School/university_east_zone Storey 0 Return Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Inlet Node List,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 VAV Terminal Outlet Air Node;    !- Node 1 Name
+    Block School/university_east_zone Storey 1 Inlet Node List,    !- Name
+    Block School/university_east_zone Storey 1 VAV Terminal Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Return Node List,    !- Name
-    Block Dining: Cafeteria/fast food_north_zone Storey 1 Return Air Node;    !- Node 1 Name
+    Block School/university_east_zone Storey 1 Return Node List,    !- Name
+    Block School/university_east_zone Storey 1 Return Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Inlet Node List,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 VAV Terminal Outlet Air Node;    !- Node 1 Name
+    Block School/university_north_zone Storey 0 Inlet Node List,    !- Name
+    Block School/university_north_zone Storey 0 VAV Terminal Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Return Node List,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 0 Return Air Node;    !- Node 1 Name
+    Block School/university_north_zone Storey 0 Return Node List,    !- Name
+    Block School/university_north_zone Storey 0 Return Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Inlet Node List,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 VAV Terminal Outlet Air Node;    !- Node 1 Name
+    Block School/university_north_zone Storey 1 Inlet Node List,    !- Name
+    Block School/university_north_zone Storey 1 VAV Terminal Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Return Node List,    !- Name
-    Block Dining: Cafeteria/fast food_south_zone Storey 1 Return Air Node;    !- Node 1 Name
+    Block School/university_north_zone Storey 1 Return Node List,    !- Name
+    Block School/university_north_zone Storey 1 Return Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Inlet Node List,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 VAV Terminal Outlet Air Node;    !- Node 1 Name
+    Block School/university_south_zone Storey 0 Inlet Node List,    !- Name
+    Block School/university_south_zone Storey 0 VAV Terminal Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Return Node List,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 0 Return Air Node;    !- Node 1 Name
+    Block School/university_south_zone Storey 0 Return Node List,    !- Name
+    Block School/university_south_zone Storey 0 Return Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Inlet Node List,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 VAV Terminal Outlet Air Node;    !- Node 1 Name
+    Block School/university_south_zone Storey 1 Inlet Node List,    !- Name
+    Block School/university_south_zone Storey 1 VAV Terminal Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Return Node List,    !- Name
-    Block Dining: Cafeteria/fast food_west_zone Storey 1 Return Air Node;    !- Node 1 Name
+    Block School/university_south_zone Storey 1 Return Node List,    !- Name
+    Block School/university_south_zone Storey 1 Return Air Node;    !- Node 1 Name
 
 NodeList,
-    4 Zone VAV Supply Outlet Nodes,    !- Name
-    4 Zone VAV Supply Outlet Node;    !- Node 1 Name
+    Block School/university_west_zone Storey 0 Inlet Node List,    !- Name
+    Block School/university_west_zone Storey 0 VAV Terminal Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    4 Zone VAV Demand Inlet Nodes,    !- Name
-    4 Zone VAV Demand Inlet Node;    !- Node 1 Name
+    Block School/university_west_zone Storey 0 Return Node List,    !- Name
+    Block School/university_west_zone Storey 0 Return Air Node;    !- Node 1 Name
 
 NodeList,
-    4 Zone VAV 1 Supply Outlet Nodes,    !- Name
-    4 Zone VAV 1 Supply Outlet Node;    !- Node 1 Name
+    Block School/university_west_zone Storey 1 Inlet Node List,    !- Name
+    Block School/university_west_zone Storey 1 VAV Terminal Outlet Air Node;    !- Node 1 Name
 
 NodeList,
-    4 Zone VAV 1 Demand Inlet Nodes,    !- Name
-    4 Zone VAV 1 Demand Inlet Node;    !- Node 1 Name
+    Block School/university_west_zone Storey 1 Return Node List,    !- Name
+    Block School/university_west_zone Storey 1 Return Air Node;    !- Node 1 Name
+
+NodeList,
+    5 Zone VAV Supply Outlet Nodes,    !- Name
+    5 Zone VAV Supply Outlet Node;    !- Node 1 Name
+
+NodeList,
+    5 Zone VAV Demand Inlet Nodes,    !- Name
+    5 Zone VAV Demand Inlet Node;    !- Node 1 Name
+
+NodeList,
+    5 Zone VAV 1 Supply Outlet Nodes,    !- Name
+    5 Zone VAV 1 Supply Outlet Node;    !- Node 1 Name
+
+NodeList,
+    5 Zone VAV 1 Demand Inlet Nodes,    !- Name
+    5 Zone VAV 1 Demand Inlet Node;    !- Node 1 Name
 
 OutdoorAir:Node,
     Model Outdoor Air Node;    !- Name
 
 OutdoorAir:NodeList,
-    4 Zone VAV Outdoor Air Node;    !- Node or NodeList Name 1
+    5 Zone VAV Outdoor Air Node;    !- Node or NodeList Name 1
 
 OutdoorAir:NodeList,
-    4 Zone VAV 1 Outdoor Air Node;    !- Node or NodeList Name 1
+    5 Zone VAV 1 Outdoor Air Node;    !- Node or NodeList Name 1
 
 Pipe:Adiabatic,
     Hot Water Loop Supply Equipment Bypass,    !- Name
@@ -1746,7 +2030,7 @@ Pump:VariableSpeed,
     ,                         !- Pump Curve Name
     ,                         !- Impeller Diameter
     ,                         !- VFD Control Type
-    ,                         !- Pump rpm Schedule Name
+    ,                         !- Pump RPM Schedule Name
     ,                         !- Minimum Pressure Schedule
     ,                         !- Maximum Pressure Schedule
     ,                         !- Minimum RPM Schedule
@@ -1756,7 +2040,8 @@ Pump:VariableSpeed,
     PowerPerFlowPerPressure,    !- Design Power Sizing Method
     348701.1,                 !- Design Electric Power per Unit Flow Rate
     1.282051282,              !- Design Shaft Power per Unit Flow Rate per Unit Head
-    0;                        !- Design Minimum Flow Rate Fraction
+    0,                        !- Design Minimum Flow Rate Fraction
+    General;                  !- EndUse Subcategory
 
 Boiler:HotWater,
     Boiler,                   !- Name
@@ -1819,11 +2104,11 @@ PlantEquipmentOperationSchemes,
     Always On Discrete;       !- Control Scheme 1 Schedule Name
 
 AvailabilityManager:Scheduled,
-    4 Zone VAV OA System Availability Manager,    !- Name
+    5 Zone VAV OA System Availability Manager,    !- Name
     Always On Discrete;       !- Schedule Name
 
 AvailabilityManager:Scheduled,
-    4 Zone VAV 1 OA System Availability Manager,    !- Name
+    5 Zone VAV 1 OA System Availability Manager,    !- Name
     Always On Discrete;       !- Schedule Name
 
 AvailabilityManager:NightCycle,
@@ -1850,9 +2135,9 @@ AvailabilityManagerAssignmentList,
     Availability Manager Night Cycle 1;    !- Availability Manager 1 Name
 
 AvailabilityManagerAssignmentList,
-    4 Zone VAV OA System Availability Manager List,    !- Name
+    5 Zone VAV OA System Availability Manager List,    !- Name
     AvailabilityManager:Scheduled,    !- Availability Manager 1 Object Type
-    4 Zone VAV OA System Availability Manager;    !- Availability Manager 1 Name
+    5 Zone VAV OA System Availability Manager;    !- Availability Manager 1 Name
 
 AvailabilityManagerAssignmentList,
     Air Loop HVAC 1 AvailabilityManagerAssignmentList 1,    !- Name
@@ -1860,21 +2145,21 @@ AvailabilityManagerAssignmentList,
     Availability Manager Night Cycle 2;    !- Availability Manager 1 Name
 
 AvailabilityManagerAssignmentList,
-    4 Zone VAV 1 OA System Availability Manager List,    !- Name
+    5 Zone VAV 1 OA System Availability Manager List,    !- Name
     AvailabilityManager:Scheduled,    !- Availability Manager 1 Object Type
-    4 Zone VAV 1 OA System Availability Manager;    !- Availability Manager 1 Name
+    5 Zone VAV 1 OA System Availability Manager;    !- Availability Manager 1 Name
 
 SetpointManager:Scheduled,
-    4 Zone VAV Supply Air Setpoint Manager,    !- Name
+    5 Zone VAV Supply Air Setpoint Manager,    !- Name
     Temperature,              !- Control Variable
     Supply Air Temp - 55.0F,    !- Schedule Name
-    4 Zone VAV Supply Outlet Node;    !- Setpoint Node or NodeList Name
+    5 Zone VAV Supply Outlet Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:Scheduled,
-    4 Zone VAV 1 Supply Air Setpoint Manager,    !- Name
+    5 Zone VAV 1 Supply Air Setpoint Manager,    !- Name
     Temperature,              !- Control Variable
     Supply Air Temp - 55.0F 1,    !- Schedule Name
-    4 Zone VAV 1 Supply Outlet Node;    !- Setpoint Node or NodeList Name
+    5 Zone VAV 1 Supply Outlet Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:Scheduled,
     Hot Water Loop Setpoint Manager,    !- Name
@@ -1883,52 +2168,52 @@ SetpointManager:Scheduled,
     Hot Water Loop Supply Outlet Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    4 Zone VAV Mixed Air Node OS Default SPM,    !- Name
+    5 Zone VAV Mixed Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    4 Zone VAV Supply Outlet Node,    !- Reference Setpoint Node Name
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    4 Zone VAV Supply Outlet Node,    !- Fan Outlet Node Name
-    4 Zone VAV Mixed Air Node;    !- Setpoint Node or NodeList Name
+    5 Zone VAV Supply Outlet Node,    !- Reference Setpoint Node Name
+    5 Zone VAV Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    5 Zone VAV Supply Outlet Node,    !- Fan Outlet Node Name
+    5 Zone VAV Mixed Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node OS Default SPM,    !- Name
+    5 Zone VAV 2spd DX Clg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    4 Zone VAV Supply Outlet Node,    !- Reference Setpoint Node Name
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    4 Zone VAV Supply Outlet Node,    !- Fan Outlet Node Name
-    4 Zone VAV 2spd DX Clg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    5 Zone VAV Supply Outlet Node,    !- Reference Setpoint Node Name
+    5 Zone VAV Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    5 Zone VAV Supply Outlet Node,    !- Fan Outlet Node Name
+    5 Zone VAV 2spd DX Clg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    4 Zone VAV Main Htg Coil Outlet Air Node OS Default SPM,    !- Name
+    5 Zone VAV Main Htg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    4 Zone VAV Supply Outlet Node,    !- Reference Setpoint Node Name
-    4 Zone VAV Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    4 Zone VAV Supply Outlet Node,    !- Fan Outlet Node Name
-    4 Zone VAV Main Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    5 Zone VAV Supply Outlet Node,    !- Reference Setpoint Node Name
+    5 Zone VAV Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    5 Zone VAV Supply Outlet Node,    !- Fan Outlet Node Name
+    5 Zone VAV Main Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    4 Zone VAV 1 Mixed Air Node OS Default SPM,    !- Name
+    5 Zone VAV 1 Mixed Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    4 Zone VAV 1 Supply Outlet Node,    !- Reference Setpoint Node Name
-    4 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    4 Zone VAV 1 Supply Outlet Node,    !- Fan Outlet Node Name
-    4 Zone VAV 1 Mixed Air Node;    !- Setpoint Node or NodeList Name
+    5 Zone VAV 1 Supply Outlet Node,    !- Reference Setpoint Node Name
+    5 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    5 Zone VAV 1 Supply Outlet Node,    !- Fan Outlet Node Name
+    5 Zone VAV 1 Mixed Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    4 Zone VAV 1 2spd DX Clg Coil Outlet Air Node OS Default SPM,    !- Name
+    5 Zone VAV 1 2spd DX Clg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    4 Zone VAV 1 Supply Outlet Node,    !- Reference Setpoint Node Name
-    4 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    4 Zone VAV 1 Supply Outlet Node,    !- Fan Outlet Node Name
-    4 Zone VAV 1 2spd DX Clg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    5 Zone VAV 1 Supply Outlet Node,    !- Reference Setpoint Node Name
+    5 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    5 Zone VAV 1 Supply Outlet Node,    !- Fan Outlet Node Name
+    5 Zone VAV 1 2spd DX Clg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 SetpointManager:MixedAir,
-    4 Zone VAV 1 Main Htg Coil Outlet Air Node OS Default SPM,    !- Name
+    5 Zone VAV 1 Main Htg Coil Outlet Air Node OS Default SPM,    !- Name
     Temperature,              !- Control Variable
-    4 Zone VAV 1 Supply Outlet Node,    !- Reference Setpoint Node Name
-    4 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
-    4 Zone VAV 1 Supply Outlet Node,    !- Fan Outlet Node Name
-    4 Zone VAV 1 Main Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
+    5 Zone VAV 1 Supply Outlet Node,    !- Reference Setpoint Node Name
+    5 Zone VAV 1 Main Htg Coil Outlet Air Node,    !- Fan Inlet Node Name
+    5 Zone VAV 1 Supply Outlet Node,    !- Fan Outlet Node Name
+    5 Zone VAV 1 Main Htg Coil Outlet Air Node;    !- Setpoint Node or NodeList Name
 
 Curve:Quadratic,
     Curve Quadratic 1,        !- Name

@@ -12,7 +12,7 @@ os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")  # for linux
 from geomeppy import IDF
 import json
 
-IDF.setiddname("../resources/Energy+V9_0_1.idd")
+IDF.setiddname("../resources/Energy+V9_5_0.idd")
 
 #%% helper
 def get_containing_object_types(idf: IDF) -> List:

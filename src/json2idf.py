@@ -13,7 +13,7 @@ import sys
 from traceback import print_exc
 
 #Get the parameter, representing the CBECS case, passed to the command line
-casename = sys.argv.pop()
+casename = "cbecs15"# sys.argv.pop()
 
 #Redirect the standard output and standard error to files so they aren't printed on top of messages from other cases running in parallel
 sys.stdout = open(f'../ep_input/stdout/{casename}_out.txt', 'w')
@@ -22,7 +22,7 @@ sys.stderr = open(f'../ep_input/stderr/{casename}_err.txt', 'w')
 try:
 
 	#Set IDD
-	IDF.setiddname("../resources/Energy+V9_0_1.idd")
+	IDF.setiddname("../resources/Energy+V9_5_0.idd")
 
 	#%% load minimal idf
 	idf = IDF("../resources/idfs/Minimal.idf")

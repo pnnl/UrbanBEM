@@ -1,8 +1,9 @@
-import json
+import json, os
 import math
 import numbers
 from typing import Dict
 
+print(os.getcwd())
 
 def read_json(jsonpath: str) -> Dict:
     with open(jsonpath) as json_file:

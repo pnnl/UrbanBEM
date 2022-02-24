@@ -1,6 +1,6 @@
 
 input/~$cbecs-standardized.xlsx
-
+*.vscode
 src/.vscode
 src/__pycache__
 
