@@ -18,7 +18,7 @@ with open(f'../input/std_json_raw/{casename}.json') as file:
 try:
 
 	# Run the simulation
-	completedSim = subprocess.run(['/projects/BECP/bin/runeplus',
+	completedSim = subprocess.run(['/qfs/projects/BECP/bin/runeplus',
 	                               '-v', '9.5.0',
 	                               '-x', 'eso,mtd,mtr,mdd,bnd,svg,zsz,ssz',
 	                               '-w', '../resources/weather',

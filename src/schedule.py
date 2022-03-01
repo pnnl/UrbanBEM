@@ -5,7 +5,7 @@ from eppy.modeleditor import IDF
 from recipes import copy_idf_objects, read_json
 
 
-IDF.setiddname("../resources/Energy+V9_0_1.idd")
+IDF.setiddname("../resources/V9-5-0-Energy+.idd")
 
 
 class Schedule:

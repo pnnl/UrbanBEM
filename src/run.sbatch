@@ -10,8 +10,8 @@
 #SBATCH --job-name scratch
 
 module unload python
-module load python/3.7.0
-source /share/apps/python/anaconda3.2019.3/etc/profile.d/conda.sh
+module load python/miniconda3.9
+source /share/apps/python/miniconda3.9/etc/profile.d/conda.sh
 
 python standard_excel_processor.py
 
