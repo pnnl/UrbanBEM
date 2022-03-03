@@ -81,6 +81,24 @@
             "Sch_name": "bldg_hvac_operation_sch"
         },
         {
+            "Class": "Fan:OnOff",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "bldg_hvac_operation_sch"
+        },
+        {
+            "Class": "AirLoopHVAC:UnitarySystem",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AirLoopHVAC:UnitarySystem",
+            "Field": "Supply Air Fan Operating Mode Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
             "Class": "Coil:Cooling:DX:SingleSpeed",
             "Field": "Availability Schedule Name",
             "Obj_name": "*",
@@ -147,6 +165,24 @@
             "Field": "Availability Schedule Name",
             "Obj_name": "*",
             "Sch_name": "bldg_hvac_operation_sch"
+        },
+        {
+            "Class": "Fan:OnOff",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "bldg_hvac_operation_sch"
+        },
+        {
+            "Class": "AirLoopHVAC:UnitarySystem",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AirLoopHVAC:UnitarySystem",
+            "Field": "Supply Air Fan Operating Mode Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
         },
         {
             "Class": "Coil:Cooling:DX:SingleSpeed",

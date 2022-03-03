@@ -178,6 +178,9 @@ class HVAC:
             field_name = ref['Field'].replace(" ", "_").strip()
             field_value = ref['Sch_name']
             self.batch_modify_idf_objs(objs, {field_name: field_value})
+            self.idf.saveas(
+                f"../{self.hvac_dev_folder_name}/hvac_final_{self.case['building_name']}.idf"
+            )
 
     def batch_modify_idf_objs(self, objs, property_dict: Dict):
         for property, value in property_dict.items():
