@@ -65,6 +65,7 @@ class HVAC:
         print("\nSTDERR")
         print(run_proc.stderr.decode("utf-8"))
         osstd_hvacadded = IDF(f"../{self.hvac_dev_folder_name}/zones_hvacadded_{self.case['building_name']}.idf")
+        print("HVAC excluded object types:")
         print(self.exc_obj_types)
         self.pure_hvac_objs = self.get_object_not_in_types(
             osstd_hvacadded, self.exc_obj_types
@@ -188,16 +189,17 @@ class HVAC:
                 obj[property] = value            
 
 
-    def get_containing_object_types(self, idf: IDF) -> List:
+    def get_containing_object_types(self, idf: IDF,print_out=False) -> List:
         results = []
         totalnum = 0
         for key, val in idf.idfobjects.items():
             if len(val) > 0:
                 results.append(key)
-                print(f"{key}: {len(val)}")
+                if print_out: print(f"{key}: {len(val)}")
                 totalnum += len(val)
-        print(f"Total number of objects: {totalnum}")
-        print("\n **** \n")
+        if print_out:
+            print(f"Total number of objects: {totalnum}")
+            print("\n **** \n")
         return results
 
     def get_object_by_types(self, idf: IDF, types: List, ignore_error=True) -> List:

@@ -216,7 +216,7 @@ Sizing:System,
     1,                        !- Heating Fraction of Autosized Heating Supply Air Flow Rate
     1,                        !- Heating Fraction of Autosized Cooling Supply Air Flow Rate
     3.1588213e-05,            !- Heating Supply Air Flow Rate Per Unit Heating Capacity
-    VentilationRateProcedure,    !- System Outdoor Air Method
+    ZoneSum,                  !- System Outdoor Air Method
     1,                        !- Zone Maximum Outdoor Air Fraction
     CoolingDesignCapacity,    !- Cooling Design Capacity Method
     Autosize,                 !- Cooling Design Capacity
@@ -255,7 +255,7 @@ Sizing:System,
     1,                        !- Heating Fraction of Autosized Heating Supply Air Flow Rate
     1,                        !- Heating Fraction of Autosized Cooling Supply Air Flow Rate
     3.1588213e-05,            !- Heating Supply Air Flow Rate Per Unit Heating Capacity
-    VentilationRateProcedure,    !- System Outdoor Air Method
+    ZoneSum,                  !- System Outdoor Air Method
     1,                        !- Zone Maximum Outdoor Air Fraction
     CoolingDesignCapacity,    !- Cooling Design Capacity Method
     Autosize,                 !- Cooling Design Capacity

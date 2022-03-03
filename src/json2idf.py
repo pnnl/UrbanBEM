@@ -13,7 +13,7 @@ import sys
 from traceback import print_exc
 
 #Get the parameter, representing the CBECS case, passed to the command line
-casename = "cbecs15"# sys.argv.pop()
+sys.argv.pop()
 
 #Redirect the standard output and standard error to files so they aren't printed on top of messages from other cases running in parallel
 sys.stdout = open(f'../ep_input/stdout/{casename}_out.txt', 'w')
