@@ -304,7 +304,9 @@ def json_by_city_state_list(tuples):
     for dual in tuples:
         ids = bldg_ids_by_city_state(dual[0], dual[1])
         city_size = len(ids)
-        print(f"Getting {dual[0]}_{dual[1]}: {city_size} bldgs found in the database...")
+        print(
+            f"Getting {dual[0]}_{dual[1]}: {city_size} bldgs found in the database..."
+        )
 
         i = 0
         for id in ids:

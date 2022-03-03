@@ -122,7 +122,7 @@ def get_core_row_dict(
 
 
 def populate_std_schedules(case: Dict) -> Dict:
-    """ populate hourly schedules based on standard input information
+    """populate hourly schedules based on standard input information
 
     Args:
         case: case dictionary. Properties used in this function are:
@@ -134,11 +134,15 @@ def populate_std_schedules(case: Dict) -> Dict:
         hourly schedules dictionary
 
     """
-    bldg_business_hour, consider_lunch_time = sp.bldg_business_hour(case, randomizeHours = False)
+    bldg_business_hour, consider_lunch_time = sp.bldg_business_hour(
+        case, randomizeHours=False
+    )
     bldg_occ_sch_dict = sp.bldg_occ_sch(bldg_business_hour, consider_lunch_time)
     bldg_electric_equipment_sch_dict = sp.bldg_electric_equipment_sch(bldg_occ_sch_dict)
     bldg_light_sch_dict = sp.bldg_light_sch(bldg_business_hour, consider_lunch_time)
-    bldg_hvac_operation_sch_dict = sp.bldg_hvac_operation_sch(bldg_business_hour, consider_lunch_time)
+    bldg_hvac_operation_sch_dict = sp.bldg_hvac_operation_sch(
+        bldg_business_hour, consider_lunch_time
+    )
     bldg_clg_setp_sch_dict = sp.bldg_clg_setp_sch(bldg_hvac_operation_sch_dict)
     bldg_htg_setp_sch_dict = sp.bldg_htg_setp_sch(bldg_hvac_operation_sch_dict)
     bldg_infiltration_sch_dict = sp.bldg_infiltration_sch(bldg_hvac_operation_sch_dict)
@@ -183,14 +187,14 @@ def populate_std_schedules(case: Dict) -> Dict:
 
 
 def get_loads_fractions(fraction, load, bldg_a_t, loads_settings) -> Dict:
-    """ lookup load fraction associated with building area type
-    
+    """lookup load fraction associated with building area type
+
     Args:
         fraction: list of fraction to retrieve
         load: load type
         bldg_a_t: building area type
         load_settings: dictionary containg the load fraction lookup values
-    
+
     Returns:
         Dictionary of load fractions
     """
@@ -206,7 +210,7 @@ def get_loads_fractions(fraction, load, bldg_a_t, loads_settings) -> Dict:
 
 
 def populate_std_loads(case: Dict) -> Dict:
-    """ populate detailed internal load profiles for use in the processor
+    """populate detailed internal load profiles for use in the processor
 
     Args:
         case: case dictionary. Properties used in this function are:
@@ -267,7 +271,7 @@ def populate_std_loads(case: Dict) -> Dict:
 
 
 def populate_std_constructions(case: Dict) -> Dict:
-    """ populate detailed construction profiles for user in the processor
+    """populate detailed construction profiles for user in the processor
     Args:
         case: case dictionary. Properties used in this function are:
             - "wall_type"
@@ -338,7 +342,7 @@ def populate_std_ground_temp_jan2dec(case: Dict) -> List:
 
 
 def populate_std_hvac_for_osstd(case: Dict) -> Dict:
-    """ populate detailed dictionary for openstudio standard function call (bare minimum is the *s below)
+    """populate detailed dictionary for openstudio standard function call (bare minimum is the *s below)
         def model_add_hvac_system(model,
         *                    system_type,
         *                    main_heat_fuel,

@@ -10,8 +10,7 @@ IDF.setiddname("../resources/V9-5-0-Energy+.idd")
 
 
 class Outputs:
-    """Process Output related objects in IDF
-    """
+    """Process Output related objects in IDF"""
 
     output_settings = read_json("output_settings.json")
     delete_variables = output_settings["delete_all_variables"]

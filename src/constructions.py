@@ -127,7 +127,7 @@ class Constructions:
 
     def set_a_typical_construction(self, surface, type, u_factor=None):
         """set construction for one of the following
-            "int_wall", "int_floor", "int_ceiling", "ext_wall", "roof"
+        "int_wall", "int_floor", "int_ceiling", "ext_wall", "roof"
         """
 
         # inject construction and materials to dict
@@ -313,9 +313,7 @@ class Constructions:
             mat_list.pop(ins_mat_i)
         else:
             ins_r = 1 / user_u_value - nonins_sum_r
-            new_ins_mat_name = (
-                f"{ins_mat_name}_R_{ins_r:.4f}"
-            )  # build R rounding directly into material name f string
+            new_ins_mat_name = f"{ins_mat_name}_R_{ins_r:.4f}"  # build R rounding directly into material name f string
             mat_list[ins_mat_i] = new_ins_mat_name
 
         return mat_list

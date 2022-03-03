@@ -7,20 +7,22 @@ class Preprocessor:
     def __init__(self, case: Dict):
         self.case = case  # input case dict after unit version
         self.case_proc = {}  # output case dict placeholder
-        self.keepkeys = [  # gradually reduce this list when building up the preprocessors
-            "building_name",
-            "building_area_type",
-            "year_built",
-            "ashrae_climate_zone",
-            "epw_file",
-            "gross_conditioned_area",
-            "heating_system_type",
-            "cooling_system_type",
-            "ventilation_rate_per_person",
-            "ventilation_rate_per_area",
-            "economizer_used",
-            "heat_recovery_used",
-        ]
+        self.keepkeys = (
+            [  # gradually reduce this list when building up the preprocessors
+                "building_name",
+                "building_area_type",
+                "year_built",
+                "ashrae_climate_zone",
+                "epw_file",
+                "gross_conditioned_area",
+                "heating_system_type",
+                "cooling_system_type",
+                "ventilation_rate_per_person",
+                "ventilation_rate_per_area",
+                "economizer_used",
+                "heat_recovery_used",
+            ]
+        )
         self.keep_is()
 
         self.geometry_procedures()
@@ -39,8 +41,12 @@ class Preprocessor:
     def schedule_procedures(self):
         self.populate_hourly_schedules()
         self.case_proc["weekly_occupied_hours"] = self.case["weekly_occupied_hours"]
-        self.case_proc["number_days_open_workday"] = self.case["number_days_open_workday"]
-        self.case_proc["number_days_open_weekend"] = self.case["number_days_open_weekend"]
+        self.case_proc["number_days_open_workday"] = self.case[
+            "number_days_open_workday"
+        ]
+        self.case_proc["number_days_open_weekend"] = self.case[
+            "number_days_open_weekend"
+        ]
 
     def loads_procedures(self):
         self.populate_loads()

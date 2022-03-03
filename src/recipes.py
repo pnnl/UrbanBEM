@@ -5,6 +5,7 @@ from typing import Dict
 
 print(os.getcwd())
 
+
 def read_json(jsonpath: str) -> Dict:
     with open(jsonpath) as json_file:
         json_dict = json.load(json_file)

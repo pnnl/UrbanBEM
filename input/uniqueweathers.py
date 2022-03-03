@@ -8,6 +8,7 @@ data = pd.read_excel("cbecs-standardized-200604.xlsx")
 
 #%%
 import numpy as np
-np.sort(data['epw_file'].unique())
+
+np.sort(data["epw_file"].unique())
 
 # %%
