@@ -6,7 +6,7 @@ Version,
 SimulationControl,
     Yes,                      !- Do Zone Sizing Calculation
     Yes,                      !- Do System Sizing Calculation
-    Yes,                      !- Do Plant Sizing Calculation
+    No,                       !- Do Plant Sizing Calculation
     Yes,                      !- Run Simulation for Sizing Periods
     Yes,                      !- Run Simulation for Weather File Run Periods
     ,                         !- Do HVAC Sizing Simulation for Sizing Periods
@@ -119,7 +119,7 @@ GlobalGeometryRules,
     Relative;                 !- Rectangular Surface Coordinate System
 
 Zone,
-    Block School/university_core_zone Storey 0 Thermal Zone,    !- Name
+    Block Museum_east_zone Storey 0 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -134,7 +134,7 @@ Zone,
     Yes;                      !- Part of Total Floor Area
 
 Zone,
-    Block School/university_core_zone Storey 1 Thermal Zone,    !- Name
+    Block Museum_north_zone Storey 0 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -149,7 +149,7 @@ Zone,
     Yes;                      !- Part of Total Floor Area
 
 Zone,
-    Block School/university_east_zone Storey 0 Thermal Zone,    !- Name
+    Block Museum_south_zone Storey 0 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin
@@ -164,97 +164,7 @@ Zone,
     Yes;                      !- Part of Total Floor Area
 
 Zone,
-    Block School/university_east_zone Storey 1 Thermal Zone,    !- Name
-    0,                        !- Direction of Relative North
-    0,                        !- X Origin
-    0,                        !- Y Origin
-    0,                        !- Z Origin
-    ,                         !- Type
-    1,                        !- Multiplier
-    ,                         !- Ceiling Height
-    ,                         !- Volume
-    ,                         !- Floor Area
-    ,                         !- Zone Inside Convection Algorithm
-    ,                         !- Zone Outside Convection Algorithm
-    Yes;                      !- Part of Total Floor Area
-
-Zone,
-    Block School/university_north_zone Storey 0 Thermal Zone,    !- Name
-    0,                        !- Direction of Relative North
-    0,                        !- X Origin
-    0,                        !- Y Origin
-    0,                        !- Z Origin
-    ,                         !- Type
-    1,                        !- Multiplier
-    ,                         !- Ceiling Height
-    ,                         !- Volume
-    ,                         !- Floor Area
-    ,                         !- Zone Inside Convection Algorithm
-    ,                         !- Zone Outside Convection Algorithm
-    Yes;                      !- Part of Total Floor Area
-
-Zone,
-    Block School/university_north_zone Storey 1 Thermal Zone,    !- Name
-    0,                        !- Direction of Relative North
-    0,                        !- X Origin
-    0,                        !- Y Origin
-    0,                        !- Z Origin
-    ,                         !- Type
-    1,                        !- Multiplier
-    ,                         !- Ceiling Height
-    ,                         !- Volume
-    ,                         !- Floor Area
-    ,                         !- Zone Inside Convection Algorithm
-    ,                         !- Zone Outside Convection Algorithm
-    Yes;                      !- Part of Total Floor Area
-
-Zone,
-    Block School/university_south_zone Storey 0 Thermal Zone,    !- Name
-    0,                        !- Direction of Relative North
-    0,                        !- X Origin
-    0,                        !- Y Origin
-    0,                        !- Z Origin
-    ,                         !- Type
-    1,                        !- Multiplier
-    ,                         !- Ceiling Height
-    ,                         !- Volume
-    ,                         !- Floor Area
-    ,                         !- Zone Inside Convection Algorithm
-    ,                         !- Zone Outside Convection Algorithm
-    Yes;                      !- Part of Total Floor Area
-
-Zone,
-    Block School/university_south_zone Storey 1 Thermal Zone,    !- Name
-    0,                        !- Direction of Relative North
-    0,                        !- X Origin
-    0,                        !- Y Origin
-    0,                        !- Z Origin
-    ,                         !- Type
-    1,                        !- Multiplier
-    ,                         !- Ceiling Height
-    ,                         !- Volume
-    ,                         !- Floor Area
-    ,                         !- Zone Inside Convection Algorithm
-    ,                         !- Zone Outside Convection Algorithm
-    Yes;                      !- Part of Total Floor Area
-
-Zone,
-    Block School/university_west_zone Storey 0 Thermal Zone,    !- Name
-    0,                        !- Direction of Relative North
-    0,                        !- X Origin
-    0,                        !- Y Origin
-    0,                        !- Z Origin
-    ,                         !- Type
-    1,                        !- Multiplier
-    ,                         !- Ceiling Height
-    ,                         !- Volume
-    ,                         !- Floor Area
-    ,                         !- Zone Inside Convection Algorithm
-    ,                         !- Zone Outside Convection Algorithm
-    Yes;                      !- Part of Total Floor Area
-
-Zone,
-    Block School/university_west_zone Storey 1 Thermal Zone,    !- Name
+    Block Museum_west_zone Storey 0 Thermal Zone,    !- Name
     0,                        !- Direction of Relative North
     0,                        !- X Origin
     0,                        !- Y Origin

@@ -22,7 +22,7 @@ sys.stderr = open(f'../ep_input/stderr/{casename}_err.txt', 'w')
 try:
 
 	#Set IDD
-	IDF.setiddname("../resources/Energy+V9_5_0.idd")
+	IDF.setiddname("../resources/V9-5-0-Energy+.idd")
 
 	#%% load minimal idf
 	idf = IDF("../resources/idfs/Minimal.idf")

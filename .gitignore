@@ -11,6 +11,7 @@ input/std_json_raw/*.json
 input/std_json_conv/*.json
 input/std_json_conv_clean/*.json
 input/processed_inputs/*.json
+input/schedules/*.csv
 hvac_dev/*cbecs*.idf
 ep_input
 ep_output

@@ -32,6 +32,13 @@ WIP
 | standard_excel_processor.py    | generate raw input json files from excel spreadsheet                              |
 | workflow.py                    | python cells to execute the whole workflow                                        |
 
+## Parallel simulation workflow
+- Insure you are using constance7a since normal constance doesn't have singularity.
+- Currently, the source data comes from input/cbecs-standardized-200715.xlsx. Make any edits to input data here.
+- cd into src/ subdirectory
+- Run "sbatch run.sbatch"
+- Track any output/error messages in the run.out and run.err text files
+
 ## Usage
 
 (Airflow adoption on the new implementation is on hold.)

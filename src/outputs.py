@@ -6,7 +6,7 @@ from geomeppy import IDF
 
 from recipes import read_json, copy_idf_objects
 
-IDF.setiddname("../resources/Energy+V9_5_0.idd")
+IDF.setiddname("../resources/V9-5-0-Energy+.idd")
 
 
 class Outputs:

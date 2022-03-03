@@ -38,7 +38,7 @@ meters = '''Output:Meter,Electricity:Facility,Hourly;
 '''
 
 # Set the IDD
-IDF.setiddname('../resources/Energy+V9_5_0.idd')
+IDF.setiddname('../resources/V9-5-0-Energy+.idd')
 
 for filename in os.listdir('../ep_input/input'):
 

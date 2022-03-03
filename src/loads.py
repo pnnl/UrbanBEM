@@ -4,7 +4,7 @@ from eppy import modeleditor
 from eppy.modeleditor import IDF
 from recipes import copy_idf_objects
 
-IDF.setiddname("../resources/Energy+V9_5_0.idd")
+IDF.setiddname("../resources/V9-5-0-Energy+.idd")
 
 
 class Loads:

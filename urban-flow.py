@@ -26,7 +26,7 @@ import geomeppy.extractor
 # --------------------------------------------------------------------------------
 cwd = "/mnt/c/FirstClass/airflow/dags/urban-sim-flow"
 bcCSV = pd.read_csv(cwd + "/input/fake-bldg-characters.csv")
-IDF.setiddname(cwd + "/resources/Energy+V9_5_0.idd")
+IDF.setiddname(cwd + "/resources/V9-5-0-Energy+.idd")
 
 # --------------------------------------------------------------------------------
 # task scripts
@@ -138,7 +138,7 @@ def runModel(dfRow, genModelTaskId, **kwargs):
         "--output-directory",
         cwd + "/output/",
         "--idd",
-        cwd + "/resources/Energy+V9_5_0.idd",
+        cwd + "/resources/V9-5-0-Energy+.idd",
         "--expandobjects",
         "--output-prefix",
         dfRow["id"] + "_",
