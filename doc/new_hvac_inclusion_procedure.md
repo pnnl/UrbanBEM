@@ -9,3 +9,5 @@ Things to modify/add (ordered by execution sequence):
 6. After testing. Summarize info in doc `Object_deltas_for_osstd_hvac_call.md`
 
 NOTE: polymorphism will be needed if too many different things need to be done for different HVAC types in steps 3 and 4.
+
+- Add system type name in `"hvac_seetings.json -> considered_hvac_types"

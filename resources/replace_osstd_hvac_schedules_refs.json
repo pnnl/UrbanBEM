@@ -306,5 +306,457 @@
             "Obj_name": "*",
             "Sch_name": "always_on"
         }
+    ],
+    "Gas_Heating_Ventilation": [
+        {
+            "Class": "ZoneHVAC:UnitHeater",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Fan:ConstantVolume",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "bldg_hvac_operation_sch"
+        },
+        {
+            "Class": "Coil:Heating:Fuel",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        }
+    ],
+    "PTHP": [
+        {
+            "Class": "Fan:OnOff",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "bldg_hvac_operation_sch"
+        },
+        {
+            "Class": "Coil:Heating:DX:SingleSpeed",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Cooling:DX:SingleSpeed",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Heating:Electric",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "ZoneHVAC:PackagedTerminalHeatPump",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        }
+    ],
+    "PTAC_Electric": [
+        {
+            "Class": "ZoneHVAC:PackagedTerminalAirConditioner",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Fan:OnOff",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "bldg_hvac_operation_sch"
+        },
+        {
+            "Class": "Coil:Heating:Electric",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Cooling:DX:SingleSpeed",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        }
+    ],
+    "PTAC_Gas": [
+        {
+            "Class": "ZoneHVAC:PackagedTerminalAirConditioner",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Fan:OnOff",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "bldg_hvac_operation_sch"
+        },
+        {
+            "Class": "Coil:Heating:Water",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Cooling:DX:SingleSpeed",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "PlantEquipmentOperationSchemes",
+            "Field": "Control Scheme 1 Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        }
+    ],
+    "Electric_Heating_Ventilation": [
+        {
+            "Class": "ZoneHVAC:UnitHeater",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Fan:ConstantVolume",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "bldg_hvac_operation_sch"
+        },
+        {
+            "Class": "Coil:Heating:Electric",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        }
+    ],
+    "PSZ_HP": [
+        {
+            "Class": "AirTerminal:SingleDuct:ConstantVolume:NoReheat",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Controller:MechanicalVentilation",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:NightCycle",
+            "Field": "Applicability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:NightCycle",
+            "Field": "Fan Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Controller:OutdoorAir",
+            "Field": "Minimum Outdoor Air Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:Scheduled",
+            "Field": "Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AirLoopHVAC:UnitarySystem",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AirLoopHVAC:UnitarySystem",
+            "Field": "Supply Air Fan Operating Mode Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Fan:OnOff",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "bldg_hvac_operation_sch"
+        },
+        {
+            "Class": "Coil:Heating:DX:SingleSpeed",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Cooling:DX:SingleSpeed",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Heating:Electric",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        }
+    ],
+    "PVAV_Gas_ElectricReheat": [
+        {
+            "Class": "AirTerminal:SingleDuct:VAV:Reheat",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Heating:Electric",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Controller:MechanicalVentilation",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:NightCycle",
+            "Field": "Applicability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:NightCycle",
+            "Field": "Fan Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Controller:OutdoorAir",
+            "Field": "Minimum Outdoor Air Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:Scheduled",
+            "Field": "Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "CoilSystem:Cooling:DX",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Cooling:DX:TwoSpeed",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Heating:Water",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Fan:VariableVolume",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "bldg_hvac_operation_sch"
+        },
+        {
+            "Class": "PlantEquipmentOperationSchemes",
+            "Field": "Control Scheme 1 Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        }
+    ],
+    "Fan_Coil": [
+        {
+            "Class": "Fan:OnOff",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "bldg_hvac_operation_sch"
+        },
+        {
+            "Class": "Coil:Cooling:Water",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Heating:Water",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "ZoneHVAC:FourPipeFanCoil",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "PlantEquipmentOperationSchemes",
+            "Field": "Control Scheme Schedule Name 1",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        }
+    ],
+    "VAV_PFP": [
+        {
+            "Class": "AirTerminal:SingleDuct:ParallelPIU:Reheat",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Heating:Electric",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Fan:ConstantVolume",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "bldg_hvac_operation_sch"
+        },
+        {
+            "Class": "Controller:MechanicalVentilation",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:NightCycle",
+            "Field": "Applicability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:NightCycle",
+            "Field": "Fan Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Controller:OutdoorAir",
+            "Field": "Minimum Outdoor Air Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:Scheduled",
+            "Field": "Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "CoilSystem:Cooling:DX",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Cooling:DX:TwoSpeed",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Fan:VariableVolume",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "bldg_hvac_operation_sch"
+        }
+    ],
+    "PVAV_Gas_GasReheat": [
+        {
+            "Class": "AirTerminal:SingleDuct:VAV:Reheat",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Heating:Water",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Controller:MechanicalVentilation",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:NightCycle",
+            "Field": "Applicability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:NightCycle",
+            "Field": "Fan Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Controller:OutdoorAir",
+            "Field": "Minimum Outdoor Air Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "AvailabilityManager:Scheduled",
+            "Field": "Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "CoilSystem:Cooling:DX",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Cooling:DX:TwoSpeed",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Coil:Heating:Water",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "Fan:VariableVolume",
+            "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "bldg_hvac_operation_sch"
+        },
+        {
+            "Class": "PlantEquipmentOperationSchemes",
+            "Field": "Control Scheme 1 Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        }
     ]
 }

@@ -15,6 +15,9 @@ std_cols = data.columns.values.tolist()
 # %%
 i = 0
 for index, row in tqdm(data.iterrows(), total=data.shape[0]):
+    if i != 22:
+        i += 1
+        continue
     case = {}
     for col in std_cols:
         case[col] = row[col]
@@ -22,6 +25,4 @@ for index, row in tqdm(data.iterrows(), total=data.shape[0]):
     with open(fname, "w") as f:
         f.write(json.dumps(case, indent=4))
         print(f"{fname} saved")
-    # if i > 3:
-    #     break  # TODO: delete this after dev
-    i += 1
+    break  # TODO: delete this after dev

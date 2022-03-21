@@ -13,11 +13,11 @@ import sys
 from traceback import print_exc
 
 # Get the parameter, representing the CBECS case, passed to the command line
-sys.argv.pop()
+casename = "cbecs23"
 
 # Redirect the standard output and standard error to files so they aren't printed on top of messages from other cases running in parallel
-sys.stdout = open(f"../ep_input/stdout/{casename}_out.txt", "w")
-sys.stderr = open(f"../ep_input/stderr/{casename}_err.txt", "w")
+# sys.stdout = open(f"../ep_input/stdout/{casename}_out.txt", "w")
+# sys.stderr = open(f"../ep_input/stderr/{casename}_err.txt", "w")
 
 try:
 
@@ -67,6 +67,8 @@ try:
         # %% load processor
         loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)
 
+        loadadded_obj.save_idf(f"../hvac_dev/{casename}_hvacprocessorinput.idf")
+
         # %% hvac processor
         hvacadded_obj = HVAC(proc_case, loadadded_obj.idf)
 
@@ -85,5 +87,5 @@ except:
 
     print_exc()
 
-sys.stdout.close()
-sys.stderr.close()
+# sys.stdout.close()
+# sys.stderr.close()

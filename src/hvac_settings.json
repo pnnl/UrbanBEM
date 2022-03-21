@@ -11,6 +11,16 @@
     "considered_hvac_types": [
         "PSZ_Gas_SingleSpeedDX",
         "PSZ_Electric_SingleSpeedDX",
-        "VAV_HotWater_ChilledWater"
+        "VAV_HotWater_ChilledWater",
+        "Gas_Heating_Ventilation",
+        "PTHP",
+        "PTAC_Electric",
+        "PTAC_Gas",
+        "Electric_Heating_Ventilation",
+        "PSZ_HP",
+        "PVAV_Gas_ElectricReheat",
+        "Fan_Coil",
+        "VAV_PFP",
+        "PVAV_Gas_GasReheat"
     ]
 }
