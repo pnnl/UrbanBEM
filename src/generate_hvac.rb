@@ -48,23 +48,11 @@ when "Gas_Heating_Ventilation" # CBSA HVAC type 9. Heating and ventilation
   puts "Adding #{hvac_system_type} for all zones"
   standard.model_add_hvac_system(osm, "Unit Heaters", "NaturalGas", nil, nil, osm.getThermalZones)#, hot_water_loop_type: nil, chilled_water_loop_cooling_type: nil, heat_pump_loop_cooling_type: nil, air_loop_heating_type:nil, air_loop_cooling_type: nil, zone_equipment_ventilation: nil, fan_coil_capacity_control_method: nil)
 when "PTHP" # CBSA HVAC type 2. PTHP
-  uniquefloors.sort.each do |floor|
-    floorzones = all_zones.select {|z| z.name.to_s.include? floor}
-    puts "Adding #{hvac_system_type} for #{floor}"
-    standard.model_add_hvac_system(osm,"PTHP", nil, nil, nil, floorzones)
-  end
+  standard.model_add_hvac_system(osm,"PTHP", nil, nil, nil, osm.getThermalZones)
 when "PTAC_Electric" # CBSA HVAC type 1.1 PTAC with electric heating
-  uniquefloors.sort.each do |floor|
-    floorzones = all_zones.select {|z| z.name.to_s.include? floor}
-    puts "Adding #{hvac_system_type} for #{floor}"
-    standard.model_add_hvac_system(osm,"PTAC", "Electricity", nil, nil, floorzones)
-  end
+  standard.model_add_hvac_system(osm,"PTAC", "Electricity", nil, nil, osm.getThermalZones)
 when "PTAC_Gas" # CBSA HVAC type 1. PTAC
-  uniquefloors.sort.each do |floor|
-    floorzones = all_zones.select {|z| z.name.to_s.include? floor}
-    puts "Adding #{hvac_system_type} for #{floor}"
-    standard.model_add_hvac_system(osm,"PTAC", "NaturalGas", nil, nil, floorzones)
-  end
+  standard.model_add_hvac_system(osm,"PTAC", "NaturalGas", nil, nil, osm.getThermalZones)
 when "Electric_Heating_Ventilation" # CBSA HVAC 10. Heating and ventilation
   puts "Adding #{hvac_system_type} for all zones"
   standard.model_add_hvac_system(osm, "Unit Heaters", "Electricity", nil, nil, osm.getThermalZones)

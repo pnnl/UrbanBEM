@@ -1,5 +1,52 @@
 # Object type deltas for OSSTD hvac call
 
+- [Object type deltas for OSSTD hvac call](#object-type-deltas-for-osstd-hvac-call)
+  - [Original objects counts](#original-objects-counts)
+    - [OSSTD input](#osstd-input)
+    - [OSSTD direct translate](#osstd-direct-translate)
+  - [PSZ, Gas, SingleSpeedDX](#psz-gas-singlespeeddx)
+    - [Ruby call](#ruby-call)
+    - [Objects after the call](#objects-after-the-call)
+  - [PSZ, Electric, SingleSpeedDX](#psz-electric-singlespeeddx)
+    - [Ruby call](#ruby-call-1)
+    - [Objects after the call](#objects-after-the-call-1)
+  - [VAV, HotWater, ChilledWater](#vav-hotwater-chilledwater)
+    - [Ruby call](#ruby-call-2)
+    - [Objects after the call](#objects-after-the-call-2)
+  - [Heating and Ventilation, Gas](#heating-and-ventilation-gas)
+    - [Ruby call](#ruby-call-3)
+    - [Objects after the call](#objects-after-the-call-3)
+  - [PTHP](#pthp)
+    - [Ruby call](#ruby-call-4)
+    - [Objects after the call](#objects-after-the-call-4)
+  - [PTAC, Electric](#ptac-electric)
+    - [Ruby call](#ruby-call-5)
+    - [Objects after the call](#objects-after-the-call-5)
+  - [PTAC, Gas](#ptac-gas)
+    - [Ruby call](#ruby-call-6)
+    - [Objects after the call](#objects-after-the-call-6)
+  - [Heating and Ventilation, Electric](#heating-and-ventilation-electric)
+    - [Ruby call](#ruby-call-7)
+    - [Objects after the call](#objects-after-the-call-7)
+  - [PSZ-HP](#psz-hp)
+    - [Ruby call](#ruby-call-8)
+    - [Objects after the call](#objects-after-the-call-8)
+  - [Packaged VAV, Gas Heating, Electric Reheat](#packaged-vav-gas-heating-electric-reheat)
+    - [Ruby call](#ruby-call-9)
+    - [Objects after the call](#objects-after-the-call-9)
+  - [WSHP (ignored)](#wshp-ignored)
+    - [Ruby call](#ruby-call-10)
+    - [Objects after the call](#objects-after-the-call-10)
+  - [Four-Pipe Fan-Coil](#four-pipe-fan-coil)
+    - [Ruby call](#ruby-call-11)
+    - [Objects after the call](#objects-after-the-call-11)
+  - [VAV with PFP boxes](#vav-with-pfp-boxes)
+    - [Ruby call](#ruby-call-12)
+    - [Objects after the call](#objects-after-the-call-12)
+  - [Packaged VAV with Reheat](#packaged-vav-with-reheat)
+    - [Ruby call](#ruby-call-13)
+    - [Objects after the call](#objects-after-the-call-13)
+
 ## Original objects counts
 
 ### OSSTD input
@@ -304,15 +351,9 @@ Total number of objects: 61
 ### Ruby call
 
 ```ruby
-uniquefloors.sort.each do |floor|
-  floorzones = all_zones.select {|z| z.name.to_s.include? floor}
-  puts "Adding PTHP for #{floor}"
-  standard.model_add_hvac_system(osm,"PTHP", nil, nil, nil, floorzones)
-end
+standard.model_add_hvac_system(osm,"PTHP", nil, nil, nil, osm.getThermalZones)
 ```
 ### Objects after the call
-
-**SEEMS TO BE ADDING PTHP FOR EACH ZONE**
 
 ```
 COIL:COOLING:DX:SINGLESPEED: 4
@@ -356,15 +397,9 @@ Total number of objects: 170
 ### Ruby call
 
 ```ruby
-uniquefloors.sort.each do |floor|
-  floorzones = all_zones.select {|z| z.name.to_s.include? floor}
-  puts "Adding PTAC_Electric for #{floor}"
-  standard.model_add_hvac_system(osm,"PTAC", "Electricity", nil, nil, floorzones)
-end
+standard.model_add_hvac_system(osm,"PTAC", "Electricity", nil, nil, osm.getThermalZones)
 ```
 ### Objects after the call
-
-**SEEMS TO BE ADDING PTHP FOR EACH ZONE**
 
 ```
 BUILDING: 1
@@ -408,15 +443,9 @@ Total number of objects: 122
 ### Ruby call
 
 ```ruby
-uniquefloors.sort.each do |floor|
-  floorzones = all_zones.select {|z| z.name.to_s.include? floor}
-  puts "Adding PTAC_Gas for #{floor}"
-  standard.model_add_hvac_system(osm,"PTAC", "NaturalGas", nil, nil, floorzones)
-end
+standard.model_add_hvac_system(osm,"PTAC", "NaturalGas", nil, nil, osm.getThermalZones)
 ```
 ### Objects after the call
-
-**SEEMS TO BE ADDING PTHP FOR EACH ZONE**
 
 ```
 BOILER:HOTWATER: 1
