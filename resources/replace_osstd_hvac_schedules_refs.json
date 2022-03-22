@@ -357,12 +357,24 @@
             "Field": "Availability Schedule Name",
             "Obj_name": "*",
             "Sch_name": "always_on"
+        },
+        {
+            "Class": "ZoneHVAC:PackagedTerminalHeatPump",
+            "Field": "Supply Air Fan Operating Mode Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
         }
     ],
     "PTAC_Electric": [
         {
             "Class": "ZoneHVAC:PackagedTerminalAirConditioner",
             "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "ZoneHVAC:PackagedTerminalAirConditioner",
+            "Field": "Supply Air Fan Operating Mode Schedule Name",
             "Obj_name": "*",
             "Sch_name": "always_on"
         },
@@ -389,6 +401,12 @@
         {
             "Class": "ZoneHVAC:PackagedTerminalAirConditioner",
             "Field": "Availability Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "ZoneHVAC:PackagedTerminalAirConditioner",
+            "Field": "Supply Air Fan Operating Mode Schedule Name",
             "Obj_name": "*",
             "Sch_name": "always_on"
         },
@@ -612,7 +630,7 @@
         },
         {
             "Class": "PlantEquipmentOperationSchemes",
-            "Field": "Control Scheme Schedule Name 1",
+            "Field": "Control Scheme 1 Schedule Name",
             "Obj_name": "*",
             "Sch_name": "always_on"
         }

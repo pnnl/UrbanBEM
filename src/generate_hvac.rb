@@ -98,4 +98,4 @@ end
 
 trans = OpenStudio::EnergyPlus::ForwardTranslator.new
 idf = trans.translateModel(osm)
-idf.save("../hvac_dev/zones_hvacadded_#{casename}_#{hvac_system_type}.idf", true)
+idf.save("../hvac_dev/zones_hvacadded_#{casename}.idf", true)

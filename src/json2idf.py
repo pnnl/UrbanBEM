@@ -13,11 +13,11 @@ import sys
 from traceback import print_exc
 
 # Get the parameter, representing the CBECS case, passed to the command line
-casename = "cbecs23"
+casename = sys.argv.pop()
 
 # Redirect the standard output and standard error to files so they aren't printed on top of messages from other cases running in parallel
-# sys.stdout = open(f"../ep_input/stdout/{casename}_out.txt", "w")
-# sys.stderr = open(f"../ep_input/stderr/{casename}_err.txt", "w")
+sys.stdout = open(f"../ep_input/stdout/{casename}_out.txt", "w")
+sys.stderr = open(f"../ep_input/stderr/{casename}_err.txt", "w")
 
 try:
 
@@ -36,6 +36,19 @@ try:
         "PSZ, Gas, SingleSpeedDX",
         "PSZ, Electric, SingleSpeedDX",
         "VAV, HotWater, ChilledWater",
+        "PSZ_Gas_SingleSpeedDX",
+        "PSZ_Electric_SingleSpeedDX",
+        "VAV_HotWater_ChilledWater",
+        "Gas_Heating_Ventilation",
+        "PTHP",
+        "PTAC_Electric",
+        "PTAC_Gas",
+        "Electric_Heating_Ventilation",
+        "PSZ_HP",
+        "PVAV_Gas_ElectricReheat",
+        "Fan_Coil",
+        "VAV_PFP",
+        "PVAV_Gas_GasReheat",
     ]:
 
         case_conv, case_conv_clean = recipes.convert_dict_unit(case)
@@ -67,8 +80,6 @@ try:
         # %% load processor
         loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)
 
-        loadadded_obj.save_idf(f"../hvac_dev/{casename}_hvacprocessorinput.idf")
-
         # %% hvac processor
         hvacadded_obj = HVAC(proc_case, loadadded_obj.idf)
 
@@ -76,7 +87,9 @@ try:
         outputsadded_obj = Outputs(proc_case, hvacadded_obj.idf)
 
         # Save idf
-        outputsadded_obj.save_idf(f"../ep_input/input/{casename}.idf")
+        outputsadded_obj.save_idf(
+            f"../ep_input/input/{casename}_{proc_case['hvac']['hvac_type']}.idf"
+        )
 
     else:
 
@@ -87,5 +100,5 @@ except:
 
     print_exc()
 
-# sys.stdout.close()
-# sys.stderr.close()
+sys.stdout.close()
+sys.stderr.close()
