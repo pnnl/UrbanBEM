@@ -7,22 +7,20 @@ class Preprocessor:
     def __init__(self, case: Dict):
         self.case = case  # input case dict after unit version
         self.case_proc = {}  # output case dict placeholder
-        self.keepkeys = (
-            [  # gradually reduce this list when building up the preprocessors
-                "building_name",
-                "building_area_type",
-                "year_built",
-                "ashrae_climate_zone",
-                "epw_file",
-                "gross_conditioned_area",
-                "heating_system_type",
-                "cooling_system_type",
-                "ventilation_rate_per_person",
-                "ventilation_rate_per_area",
-                "economizer_used",
-                "heat_recovery_used",
-            ]
-        )
+        self.keepkeys = [  # gradually reduce this list when building up the preprocessors
+            "building_name",
+            "building_area_type",
+            "year_built",
+            "ashrae_climate_zone",
+            "epw_file",
+            "gross_conditioned_area",
+            # "heating_system_type",
+            # "cooling_system_type",
+            # "ventilation_rate_per_person",
+            # "ventilation_rate_per_area",
+            # "economizer_used",
+            # "heat_recovery_used",
+        ]
         self.keep_is()
 
         self.geometry_procedures()
@@ -56,6 +54,9 @@ class Preprocessor:
 
     def keep_is(self):  # case properties to be moved to final case directly
         for key in self.keepkeys:
+            if key == "building_name":
+                self.case_proc[key] = str(self.case[key])
+                continue
             self.case_proc[key] = self.case[key]
 
     def populate_zone_geometry(self):

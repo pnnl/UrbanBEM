@@ -38,7 +38,7 @@ when "PSZ_Gas_SingleSpeedDX" # CBSA HVAC type 3. PSZ-AC
 when "PSZ_Electric_SingleSpeedDX"
   puts "Adding #{hvac_system_type} for all zones"
   standard.model_add_hvac_system(osm, "PSZ-AC", "Electricity", "Electricity", nil, osm.getThermalZones, hot_water_loop_type: nil, chilled_water_loop_cooling_type: nil, heat_pump_loop_cooling_type: nil, air_loop_heating_type: nil, air_loop_cooling_type: nil)
-when "VAV_HotWater_ChilledWater"
+when "VAV_HotWater_ChilledWater" # CBSA HVAC type 7. VAV with reheat
   uniquefloors.sort.each do |floor|
     floorzones = all_zones.select {|z| z.name.to_s.include? floor}
     puts "Adding #{hvac_system_type} for #{floor}"
@@ -74,7 +74,7 @@ when "VAV_PFP" # CBSA HVAC type 8. VAV with PFP boxes
     puts "Adding #{hvac_system_type} for #{floor}"
     standard.model_add_hvac_system(osm, "VAV PFP Boxes", nil, nil, nil, floorzones, hot_water_loop_type: nil, chilled_water_loop_cooling_type: "AirCooled")
   end
-when "PVAV_Gas_GasReheat"
+when "PVAV_Gas_GasReheat" # CBSA HVAC type 5. Packaged VAV with reheat
   uniquefloors.sort.each do |floor|
     floorzones = all_zones.select {|z| z.name.to_s.include? floor}
     puts "Adding #{hvac_system_type} for #{floor}"
