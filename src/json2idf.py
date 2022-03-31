@@ -87,9 +87,7 @@ try:
         outputsadded_obj = Outputs(proc_case, hvacadded_obj.idf)
 
         # Save idf
-        outputsadded_obj.save_idf(
-            f"../ep_input/input/{casename}_{proc_case['hvac']['hvac_type']}.idf"
-        )
+        outputsadded_obj.save_idf(f"../ep_input/input/{casename}.idf")
 
     else:
 
