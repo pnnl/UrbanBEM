@@ -105,6 +105,7 @@ def convert_dict_unit(imp: Dict) -> (Dict, Dict):
                     ).strip()
                     si_clean_key = key.replace(f"({unit_key})", "").strip()
                     break
+        si_clean_key = si_clean_key.split("(")[0].strip()
         si[si_key] = si_val
         si_clean[si_clean_key] = si_val
     return si, si_clean

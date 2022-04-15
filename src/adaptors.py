@@ -139,6 +139,9 @@ def populate_std_schedules(case: Dict) -> Dict:
     )
     bldg_occ_sch_dict = sp.bldg_occ_sch(bldg_business_hour, consider_lunch_time)
     bldg_electric_equipment_sch_dict = sp.bldg_electric_equipment_sch(bldg_occ_sch_dict)
+    bldg_gas_equipment_sch_dict = (
+        bldg_electric_equipment_sch_dict  # TODO: this needs to be replaced.
+    )
     bldg_light_sch_dict = sp.bldg_light_sch(bldg_business_hour, consider_lunch_time)
     bldg_hvac_operation_sch_dict = sp.bldg_hvac_operation_sch(
         bldg_business_hour, consider_lunch_time
@@ -152,6 +155,7 @@ def populate_std_schedules(case: Dict) -> Dict:
     sch_list = [
         bldg_occ_sch_dict,
         bldg_electric_equipment_sch_dict,
+        bldg_gas_equipment_sch_dict,
         bldg_light_sch_dict,
         bldg_hvac_operation_sch_dict,
         bldg_clg_setp_sch_dict,
@@ -166,6 +170,7 @@ def populate_std_schedules(case: Dict) -> Dict:
         [
             "bldg_occ_sch",
             "bldg_electric_equipment_sch",
+            "bldg_gas_equipment_sch",
             "bldg_light_sch",
             "bldg_hvac_operation_sch",
             "bldg_clg_setp_sch",
@@ -239,6 +244,21 @@ def populate_std_loads(case: Dict) -> Dict:
             "frac_radiant": fractions["frac_radiant"],
             "frac_lost": fractions["frac_lost"],
         }
+    if "gas_equipment_load" in case.keys():
+        fractions = get_loads_fractions(
+            ["frac_latent", "frac_radiant", "frac_lost"],
+            "gas_equipment",
+            case["building_area_type"],
+            loads_settings,
+        )
+        loads_dict["gas_equipment"] = {
+            "watts": case["gas_equipment_load"],
+            "schedule": "bldg_gas_equipment_sch",
+            "frac_latent": fractions["frac_latent"],
+            "frac_radiant": fractions["frac_radiant"],
+            "frac_lost": fractions["frac_lost"],
+        }
+
     if "lpd" in case.keys():
         fractions = get_loads_fractions(
             ["frac_radiant", "frac_visible"],

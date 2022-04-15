@@ -32,6 +32,7 @@ class Schedule:
                 "bldg_light_sch",
                 "bldg_hvac_operation_sch",
                 "bldg_electric_equipment_sch",
+                "bldg_gas_equipment_sch",
                 "bldg_clg_setp_sch",
                 "bldg_htg_setp_sch",
                 "bldg_infiltration_sch",
@@ -73,6 +74,11 @@ class Schedule:
             daySchedules[
                 "bldg_electric_equipment_sch"
             ] = sp.bldg_electric_equipment_sch(bldg_occ_sch_dict)[weekdayKey]
+            daySchedules["bldg_gas_equipment_sch"] = sp.bldg_electric_equipment_sch(
+                bldg_occ_sch_dict
+            )[
+                weekdayKey
+            ]  # TODO: to be replaced with gas specific method
             daySchedules["bldg_clg_setp_sch"] = sp.bldg_clg_setp_sch(
                 bldg_hvac_operation_sch
             )[weekdayKey]
@@ -94,6 +100,9 @@ class Schedule:
                 )
                 daySchedules["bldg_electric_equipment_sch"] = randomizeDayVector(
                     daySchedules["bldg_electric_equipment_sch"]
+                )
+                daySchedules["bldg_gas_equipment_sch"] = randomizeDayVector(
+                    daySchedules["bldg_gas_equipment_sch"]
                 )
 
             scheduleDF = scheduleDF.append(
@@ -124,7 +133,7 @@ class Schedule:
                 "key": "SCHEDULE:FILE",
                 "Schedule_Type_Limits_Name": "Any Number",
                 "Name": scheduleName,
-                "File_Name": os.getcwd().replace("/src", filename.strip(".")),
+                "File_Name": f"C:\\GitRepos\\urban-bem\\input\\schedules\\{self.building_name}_schedules.csv",
                 "Column_Number": scheduleDF.columns.get_loc(scheduleName) + 2,
                 "Rows_to_Skip_at_Top": 1,
                 "Number_of_Hours_of_Data": 8760,

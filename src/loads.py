@@ -18,6 +18,9 @@ class Loads:
         if "electric_equipment" in case["internal_loads"].keys():
             self.electric_equipment = case["internal_loads"]["electric_equipment"]
             eflag = True
+        if "gas_equipment" in case["internal_loads"].keys():
+            self.gas_equipment = case["internal_loads"]["gas_equipment"]
+            gflag = True
         if "lighting" in case["internal_loads"].keys():
             self.lighting = case["internal_loads"]["lighting"]
             lflag = True
@@ -28,7 +31,11 @@ class Loads:
             self.people = case["internal_loads"]["people"]
             pflag = True
         self.set_loads(
-            equipment=eflag, lighting=lflag, infiltration=iflag, people=pflag
+            elec_equipment=eflag,
+            gas_equipment=gflag,
+            lighting=lflag,
+            infiltration=iflag,
+            people=pflag,
         )
 
     def set_electric_equipment(self) -> IDF:
@@ -47,6 +54,23 @@ class Loads:
         eqp.Fraction_Latent = self.electric_equipment["frac_latent"]
         eqp.Fraction_Radiant = self.electric_equipment["frac_radiant"]
         eqp.Fraction_Lost = self.electric_equipment["frac_lost"]
+        return local_idf
+
+    def set_gas_equipment(self) -> IDF:
+        """Set gas equipment loads"""
+        local_idf = IDF(StringIO(""))
+        gas_equipment_obj_dict = {
+            "key": "GASEQUIPMENT",
+            "Name": f"{self.building_area_type}_gas_equipment",
+            "Zone_or_ZoneList_Name": f"Block {self.building_area_type}_north_zone Storey 0",
+            "Schedule_Name": self.gas_equipment["schedule"],
+            "Design_Level_Calculation_Method": "Watts/Area",
+            "Design_Level": self.gas_equipment["watts"],
+            "Fraction_Latent": self.gas_equipment["frac_latent"],
+            "Fraction_Radiant": self.gas_equipment["frac_radiant"],
+            "Fraction_Lost": self.gas_equipment["frac_lost"],
+        }
+        local_idf.newidfobject(**gas_equipment_obj_dict)
         return local_idf
 
     def set_lighting(self) -> IDF:
@@ -104,13 +128,20 @@ class Loads:
         return local_idf
 
     def set_loads(
-        self, equipment=True, lighting=True, infiltration=True, people=True
+        self,
+        elec_equipment=True,
+        gas_equipment=True,
+        lighting=True,
+        infiltration=True,
+        people=True,
     ) -> IDF:
         """
         Set all requested loads
         """
-        if equipment:
+        if elec_equipment:
             self.idf = copy_idf_objects(self.idf, self.set_electric_equipment())
+        if gas_equipment:
+            self.idf = copy_idf_objects(self.idf, self.set_gas_equipment())
         if lighting:
             self.idf = copy_idf_objects(self.idf, self.set_lighting())
         if infiltration:

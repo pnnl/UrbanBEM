@@ -8,9 +8,10 @@
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "program": "${workspaceFolder}/src/json2idf.py",
             "console": "integratedTerminal",
-            "cwd": "${fileDirname}"
+            "cwd": "${workspaceFolder}/src",
+            "file": ""
         }
     ]
 }
