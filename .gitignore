@@ -7,7 +7,7 @@ src/.idea
 
 hvac_dev_comparison/
 
-input/std_json_raw/*.json
+# input/std_json_raw/*.json
 # !input/std_json_raw/cbecs[1-9].json
 input/std_json_conv/*.json
 input/std_json_conv_clean/*.json

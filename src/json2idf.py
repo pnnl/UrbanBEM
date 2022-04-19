@@ -19,6 +19,14 @@ casename = "3306"
 # sys.stdout = open(f"../ep_input/stdout/{casename}_out.txt", "w")
 # sys.stderr = open(f"../ep_input/stderr/{casename}_err.txt", "w")
 
+# TODO: 0419
+# 1. hvac and swh efficiency post processing
+# 2. hvac template code version added to ruby call
+# 3. htg/clg setpoint std inputs to module
+# 4. number of door to door infiltration rate in preprocess
+# 5. add guard to input lower case and keys check
+# 6. allow unused keys in std input
+
 try:
 
     # Set IDD
