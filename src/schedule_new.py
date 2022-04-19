@@ -57,6 +57,11 @@ class Schedule:
             daySchedules["bldg_light_sch"] = sp.bldg_light_sch(
                 bldg_business_hour_dict, consider_lunch_time
             )[weekdayKey]
+            daySchedules["bldg_ext_light_sch"] = sp.bldg_light_sch(
+                bldg_business_hour_dict, consider_lunch_time
+            )[
+                weekdayKey
+            ]  # TODO: to be replaced with ext light specific method
             daySchedules["bldg_hvac_operation_sch"] = bldg_hvac_operation_sch[
                 weekdayKey
             ]
@@ -79,7 +84,9 @@ class Schedule:
             )[weekdayKey]
             daySchedules["bldg_door_infiltration_sch"] = sp.bldg_infiltration_sch(
                 bldg_hvac_operation_sch
-            )[weekdayKey] # TODO: to be replaced with door infiltration specific method
+            )[
+                weekdayKey
+            ]  # TODO: to be replaced with door infiltration specific method
             daySchedules["activity_sch"] = sp.activity_sch()[weekdayKey]
             daySchedules["always_on"] = sp.always_on()[weekdayKey]
 

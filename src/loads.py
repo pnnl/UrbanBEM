@@ -11,10 +11,6 @@ class Loads:
     def __init__(self, case: Dict, idf: IDF):
         self.idf = idf
         self.building_area_type = case["building_area_type"]
-        # self.electric_equipment = None
-        # self.lighting = None
-        # self.infiltration = None
-        # self.people = None
         if "electric_equipment" in case["internal_loads"].keys():
             self.electric_equipment = case["internal_loads"]["electric_equipment"]
             eflag = True
@@ -24,6 +20,9 @@ class Loads:
         if "lighting" in case["internal_loads"].keys():
             self.lighting = case["internal_loads"]["lighting"]
             lflag = True
+        if "ext_lighting" in case["internal_loads"].keys():
+            self.ext_lighting = case["internal_loads"]["ext_lighting"]
+            elflag = True
         if "infiltration" in case["internal_loads"].keys():
             self.infiltration = case["internal_loads"]["infiltration"]
             iflag = True
@@ -37,6 +36,7 @@ class Loads:
             elec_equipment=eflag,
             gas_equipment=gflag,
             lighting=lflag,
+            ext_lighting=elflag,
             infiltration=iflag,
             door_infiltration=diflag,
             people=pflag,
@@ -92,6 +92,21 @@ class Loads:
         lgt.Watts_per_Zone_Floor_Area = self.lighting["lpd"]
         lgt.Fraction_Radiant = self.lighting["frac_radiant"]
         lgt.Fraction_Visible = self.lighting["frac_visible"]
+        return local_idf
+
+    def set_ext_lighting(self) -> IDF:
+        """
+        Set exterior lighting loads
+        """
+        local_idf = IDF(StringIO(""))
+        ext_lighting_obj_dict = {
+            "key": "EXTERIOR:LIGHTS",
+            "Name": f"{self.building_area_type}_ext_lgt",
+            "Schedule_Name": self.ext_lighting["schedule"],
+            "Design_Level": self.ext_lighting["design_level"],
+            "Control_Option": "AstronomicalClock",
+        }
+        local_idf.newidfobject(**ext_lighting_obj_dict)
         return local_idf
 
     def set_infiltration(self) -> IDF:
@@ -157,6 +172,7 @@ class Loads:
         elec_equipment=True,
         gas_equipment=True,
         lighting=True,
+        ext_lighting=True,
         infiltration=True,
         door_infiltration=True,
         people=True,
@@ -170,6 +186,8 @@ class Loads:
             self.idf = copy_idf_objects(self.idf, self.set_gas_equipment())
         if lighting:
             self.idf = copy_idf_objects(self.idf, self.set_lighting())
+        if ext_lighting:
+            self.idf = copy_idf_objects(self.idf, self.set_ext_lighting())
         if infiltration:
             self.idf = copy_idf_objects(self.idf, self.set_infiltration())
         if door_infiltration:
