@@ -27,18 +27,7 @@ class Schedule:
     def generate_schedules(self, case, randomizeHours, randomizeValues):
 
         scheduleDF = pd.DataFrame(
-            columns=[
-                "bldg_occ_sch",
-                "bldg_light_sch",
-                "bldg_hvac_operation_sch",
-                "bldg_electric_equipment_sch",
-                "bldg_gas_equipment_sch",
-                "bldg_clg_setp_sch",
-                "bldg_htg_setp_sch",
-                "bldg_infiltration_sch",
-                "activity_sch",
-                "always_on",
-            ]
+            columns=[x[1]["name"] for x in self.schedules_dict.items()]
         )
 
         currentDate = datetime.date(year=2019, month=1, day=1)
@@ -88,6 +77,9 @@ class Schedule:
             daySchedules["bldg_infiltration_sch"] = sp.bldg_infiltration_sch(
                 bldg_hvac_operation_sch
             )[weekdayKey]
+            daySchedules["bldg_door_infiltration_sch"] = sp.bldg_infiltration_sch(
+                bldg_hvac_operation_sch
+            )[weekdayKey] # TODO: to be replaced with door infiltration specific method
             daySchedules["activity_sch"] = sp.activity_sch()[weekdayKey]
             daySchedules["always_on"] = sp.always_on()[weekdayKey]
 

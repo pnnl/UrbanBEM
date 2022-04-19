@@ -149,44 +149,37 @@ def populate_std_schedules(case: Dict) -> Dict:
     bldg_clg_setp_sch_dict = sp.bldg_clg_setp_sch(bldg_hvac_operation_sch_dict)
     bldg_htg_setp_sch_dict = sp.bldg_htg_setp_sch(bldg_hvac_operation_sch_dict)
     bldg_infiltration_sch_dict = sp.bldg_infiltration_sch(bldg_hvac_operation_sch_dict)
+    bldg_door_infiltration_sch_dict = (
+        bldg_infiltration_sch_dict  # TODO: this needs to be replaced.
+    )
     activity_sch_dict = sp.activity_sch()
     always_on_dict = sp.always_on()
 
-    sch_list = [
-        bldg_occ_sch_dict,
-        bldg_electric_equipment_sch_dict,
-        bldg_gas_equipment_sch_dict,
-        bldg_light_sch_dict,
-        bldg_hvac_operation_sch_dict,
-        bldg_clg_setp_sch_dict,
-        bldg_htg_setp_sch_dict,
-        bldg_infiltration_sch_dict,
-        activity_sch_dict,
-        always_on_dict,
-    ]
+    sch_dict = {
+        "bldg_occ_sch": bldg_occ_sch_dict,
+        "bldg_electric_equipment_sch": bldg_electric_equipment_sch_dict,
+        "bldg_gas_equipment_sch": bldg_gas_equipment_sch_dict,
+        "bldg_light_sch": bldg_light_sch_dict,
+        "bldg_hvac_operation_sch": bldg_hvac_operation_sch_dict,
+        "bldg_clg_setp_sch": bldg_clg_setp_sch_dict,
+        "bldg_htg_setp_sch": bldg_htg_setp_sch_dict,
+        "bldg_infiltration_sch": bldg_infiltration_sch_dict,
+        "bldg_door_infiltration_sch": bldg_door_infiltration_sch_dict,
+        "activity_sch": activity_sch_dict,
+        "always_on": always_on_dict,
+    }
 
     bldg_sch_dict = {}
-    for ind, x in enumerate(
-        [
-            "bldg_occ_sch",
-            "bldg_electric_equipment_sch",
-            "bldg_gas_equipment_sch",
-            "bldg_light_sch",
-            "bldg_hvac_operation_sch",
-            "bldg_clg_setp_sch",
-            "bldg_htg_setp_sch",
-            "bldg_infiltration_sch",
-            "activity_sch",
-            "always_on",
-        ]
-    ):
+    ind = 0
+    for k, v in sch_dict.items():
         bldg_sch_dict[str(ind)] = {}
-        bldg_sch_dict[str(ind)]["name"] = x
+        bldg_sch_dict[str(ind)]["name"] = k
         bldg_sch_dict[str(ind)]["type"] = "Any Number"
         bldg_sch_dict[str(ind)]["periods"] = {}
         bldg_sch_dict[str(ind)]["periods"]["0"] = {}
         bldg_sch_dict[str(ind)]["periods"]["0"]["through"] = "12/31"
-        bldg_sch_dict[str(ind)]["periods"]["0"]["day_of_week"] = sch_list[ind]
+        bldg_sch_dict[str(ind)]["periods"]["0"]["day_of_week"] = v
+        ind += 1
 
     return bldg_sch_dict
 
@@ -272,11 +265,17 @@ def populate_std_loads(case: Dict) -> Dict:
             "frac_radiant": fractions["frac_radiant"],
             "frac_visible": fractions["frac_visible"],
         }
-    if "Infiltration_rate" in case.keys():
+    if "infiltration_rate" in case.keys():
         loads_dict["infiltration"] = {
-            "inf": case["Infiltration_rate"],
+            "inf": case["infiltration_rate"],
             "schedule": "bldg_infiltration_sch",
         }
+    if "door_infiltration_rate" in case.keys():
+        loads_dict["door_infiltration"] = {
+            "inf": case["door_infiltration_rate"],
+            "schedule": "bldg_door_infiltration_sch",
+        }
+
     if "people_density" in case.keys():
         fractions = get_loads_fractions(
             ["frac_radiant"], "people", case["building_area_type"], loads_settings

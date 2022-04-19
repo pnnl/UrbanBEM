@@ -11,10 +11,10 @@ class Loads:
     def __init__(self, case: Dict, idf: IDF):
         self.idf = idf
         self.building_area_type = case["building_area_type"]
-        self.electric_equipment = None
-        self.lighting = None
-        self.infiltration = None
-        self.people = None
+        # self.electric_equipment = None
+        # self.lighting = None
+        # self.infiltration = None
+        # self.people = None
         if "electric_equipment" in case["internal_loads"].keys():
             self.electric_equipment = case["internal_loads"]["electric_equipment"]
             eflag = True
@@ -27,6 +27,9 @@ class Loads:
         if "infiltration" in case["internal_loads"].keys():
             self.infiltration = case["internal_loads"]["infiltration"]
             iflag = True
+        if "door_infiltration" in case["internal_loads"].keys():
+            self.door_infiltration = case["internal_loads"]["door_infiltration"]
+            diflag = True
         if "people" in case["internal_loads"].keys():
             self.people = case["internal_loads"]["people"]
             pflag = True
@@ -35,6 +38,7 @@ class Loads:
             gas_equipment=gflag,
             lighting=lflag,
             infiltration=iflag,
+            door_infiltration=diflag,
             people=pflag,
         )
 
@@ -110,6 +114,27 @@ class Loads:
         inf.Velocity_Squared_Term_Coefficient = 0
         return local_idf
 
+    def set_door_infiltration(self) -> IDF:
+        """
+        Set door infiltration for first floor south zone
+        """
+
+        local_idf = IDF(StringIO(""))
+        door_infiltration_obj_dict = {
+            "key": "ZONEINFILTRATION:DESIGNFLOWRATE",
+            "Name": f"{self.building_area_type}_door_infiltration",
+            "Zone_or_ZoneList_Name": f"Block {self.building_area_type}_south_zone Storey 0",
+            "Schedule_Name": self.door_infiltration["schedule"],
+            "Design_Flow_Rate_Calculation_Method": "Flow/ExteriorArea",
+            "Flow_per_Exterior_Surface_Area": self.door_infiltration["inf"],
+            "Constant_Term_Coefficient": 0,
+            "Temperature_Term_Coefficient": 0,
+            "Velocity_Term_Coefficient": 0.224,
+            "Velocity_Squared_Term_Coefficient": 0,
+        }
+        local_idf.newidfobject(**door_infiltration_obj_dict)
+        return local_idf
+
     def set_people(self) -> IDF:
         """
         Set occupants
@@ -133,6 +158,7 @@ class Loads:
         gas_equipment=True,
         lighting=True,
         infiltration=True,
+        door_infiltration=True,
         people=True,
     ) -> IDF:
         """
@@ -146,6 +172,8 @@ class Loads:
             self.idf = copy_idf_objects(self.idf, self.set_lighting())
         if infiltration:
             self.idf = copy_idf_objects(self.idf, self.set_infiltration())
+        if door_infiltration:
+            self.idf = copy_idf_objects(self.idf, self.set_door_infiltration())
         if people:
             self.idf = copy_idf_objects(self.idf, self.set_people())
 
