@@ -26,6 +26,8 @@ casename = "3306"
 # 4. number of door to door infiltration rate in preprocess
 # 5. add guard to input lower case and keys check
 # 6. allow unused keys in std input
+# 7. ext lighting schedule to be always on and controlled by astronomical 
+# 8. swh flow schedule to be based on occ schedule = occ * 0.6 ( to be added to schedule preparation code)
 
 try:
 
