@@ -1,0 +1,20 @@
+{
+    "idf_obj_types_for_osstd_use": [
+        "Zone",
+        "SizingPeriod:DesignDay",
+        "Building",
+        "GlobalGeometryRules"
+    ],
+    "excluded_osstd_swh_obj_types_file_path": "../resources/exc_osstd_swh_objtypes_meta.json",
+    "replace_osstd_swh_schedules_refs_file_path": "../resources/replace_osstd_swh_schedules_refs.json",
+    "swh_intermediate_folder_name": "swh_dev",
+    "default_value_for_autosize": 1988,
+    "main_water_heater_capacity_btu_hr": "autosize",
+    "main_water_heater_volume_gal": "autosize",
+    "main_service_water_temperature_F": 140,
+    "main_water_use_temperature_F": 140,
+    "main_service_water_pump_head": 0.01,
+    "main_service_water_pump_motor_efficiency": 1,
+    "main_service_water_parasitic_fuel_consumption_rate_btu_hr": 6400,
+    "main_service_water_peak_flowrate_gal_min": 1
+}
