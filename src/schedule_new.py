@@ -48,12 +48,16 @@ class Schedule:
             bldg_occ_sch_dict = sp.bldg_occ_sch(
                 bldg_business_hour_dict, consider_lunch_time
             )
+            bldg_swh_use_sch_dict = sp.schdule_dict_multiplier(
+                sp.bldg_occ_sch(bldg_business_hour_dict, False), multiplier=0.1
+            )
             bldg_hvac_operation_sch = sp.bldg_hvac_operation_sch(
                 bldg_business_hour_dict, consider_lunch_time
             )
 
             daySchedules = {}
             daySchedules["bldg_occ_sch"] = bldg_occ_sch_dict[weekdayKey]
+            daySchedules["bldg_swh_use_sch"] = bldg_swh_use_sch_dict[weekdayKey]
             daySchedules["bldg_light_sch"] = sp.bldg_light_sch(
                 bldg_business_hour_dict, consider_lunch_time
             )[weekdayKey]
@@ -93,6 +97,9 @@ class Schedule:
             if randomizeValues:
                 daySchedules["bldg_occ_sch"] = randomizeDayVector(
                     daySchedules["bldg_occ_sch"]
+                )
+                daySchedules["bldg_swh_use_sch"] = randomizeDayVector(
+                    daySchedules["bldg_swh_use_sch"]
                 )
                 daySchedules["bldg_light_sch"] = randomizeDayVector(
                     daySchedules["bldg_light_sch"]

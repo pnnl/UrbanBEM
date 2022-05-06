@@ -10,7 +10,7 @@
             "Class": "WaterUse:Equipment",
             "Field": "Flow Rate Fraction Schedule Name",
             "Obj_name": "*",
-            "Sch_name": "always_on"
+            "Sch_name": "bldg_swh_use_sch"
         }
     ],
     "NaturalGas": [
@@ -24,7 +24,7 @@
             "Class": "WaterUse:Equipment",
             "Field": "Flow Rate Fraction Schedule Name",
             "Obj_name": "*",
-            "Sch_name": "always_on"
+            "Sch_name": "bldg_swh_use_sch"
         }
     ]
 }

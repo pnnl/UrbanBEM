@@ -358,3 +358,11 @@ def always_on():
         always_on_dict[x] = [1] * 24
 
     return always_on_dict
+
+
+# schedule multiplier
+def schdule_dict_multiplier(sch_dict, multiplier):
+    new_sch_dict = {}
+    for k, v in sch_dict.items():
+        new_sch_dict[k] = [elem * multiplier for elem in v]
+    return new_sch_dict

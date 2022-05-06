@@ -42,7 +42,7 @@ standard.model_add_swh_end_uses(model = osm,
                                 use_name = 'Main',
                                 swh_loop = main_swh_loop,
                                 peak_flowrate = main_service_water_peak_flowrate_m3_s.to_f,
-                                flowrate_schedule = 'default', # TODO: create new one from occ schedule logic, occ x 0.5 without lunch time
+                                flowrate_schedule = 'bldg_swh_use_sch',
                                 water_use_temperature = OpenStudio.convert(swh_settings['main_water_use_temperature_F'], 'F', 'C').get,
                                 space_name = nil)
 

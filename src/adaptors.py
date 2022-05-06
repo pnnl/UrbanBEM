@@ -138,6 +138,9 @@ def populate_std_schedules(case: Dict) -> Dict:
         case, randomizeHours=False
     )
     bldg_occ_sch_dict = sp.bldg_occ_sch(bldg_business_hour, consider_lunch_time)
+    bldg_swh_use_sch_dict = sp.schdule_dict_multiplier(
+        sp.bldg_occ_sch(bldg_business_hour, False), multiplier=0.1
+    )  # swh use schedule is 0.1 x occ without lunch break
     bldg_electric_equipment_sch_dict = sp.bldg_electric_equipment_sch(bldg_occ_sch_dict)
     bldg_gas_equipment_sch_dict = (
         bldg_electric_equipment_sch_dict  # TODO: this needs to be replaced.
@@ -158,6 +161,7 @@ def populate_std_schedules(case: Dict) -> Dict:
 
     sch_dict = {
         "bldg_occ_sch": bldg_occ_sch_dict,
+        "bldg_swh_use_sch": bldg_swh_use_sch_dict,
         "bldg_electric_equipment_sch": bldg_electric_equipment_sch_dict,
         "bldg_gas_equipment_sch": bldg_gas_equipment_sch_dict,
         "bldg_light_sch": bldg_light_sch_dict,
