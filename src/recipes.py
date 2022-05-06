@@ -32,6 +32,15 @@ def copy_idf_objects(to_idf, from_idf):
     for objType in from_idf.idfobjects:
         if len(from_idf.idfobjects[objType]) > 0:
             for each in from_idf.idfobjects[objType]:
+                # check if to_idf already has object with same name
+                # (occationally it has no name but a zone list name for instance, so I use index [1] instead of .Name)
+                # and object type, if so, skip
+                existing_names = [
+                    idfobj.obj[1].strip().lower()
+                    for idfobj in to_idf.idfobjects[each.key.upper()]
+                ]
+                if each.obj[1].strip().lower() in existing_names:
+                    continue
                 to_idf.copyidfobject(each)
     return to_idf
 
@@ -110,10 +119,12 @@ def convert_dict_unit(imp: Dict) -> (Dict, Dict):
         si_clean[si_clean_key] = si_val
     return si, si_clean
 
+
 def batch_modify_idf_objs(objs, property_dict: Dict):
     for property, value in property_dict.items():
         for obj in objs:
             obj[property] = value
+
 
 def get_containing_object_types(idf: IDF, print_out=False) -> List:
     results = []
@@ -129,6 +140,7 @@ def get_containing_object_types(idf: IDF, print_out=False) -> List:
         print("\n **** \n")
     return results
 
+
 def get_object_by_types(idf: IDF, types: List, ignore_error=True) -> List:
     types = [type.upper().strip() for type in types]
     all_objs = []
@@ -139,6 +151,7 @@ def get_object_by_types(idf: IDF, types: List, ignore_error=True) -> List:
             continue
         all_objs.extend(list(objs))
     return all_objs
+
 
 def get_object_not_in_types(idf: IDF, types: List) -> List:
     types = [type.upper().strip() for type in types]

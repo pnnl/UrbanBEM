@@ -70,6 +70,7 @@ class HVAC:
             "generate_hvac.rb",
             self.case["building_name"],
             self.hvac_type,
+            "false",
         ]
         run_proc = subprocess.run(ruby_run, capture_output=True)
         print("\nSTDOUT:")

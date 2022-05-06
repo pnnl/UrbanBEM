@@ -1,13 +1,13 @@
 require "openstudio"
 require "openstudio-standards"
 standard = Standard.build("90.1-2013")
-casename = '3306'#ARGV[0]
+casename = ARGV[0]
 idf = OpenStudio::Workspace.load("../hvac_dev/zones_#{casename}.idf").get
 trans = OpenStudio::EnergyPlus::ReverseTranslator.new
 osm = trans.translateWorkspace(idf)
 
-hvac_system_type = 'VAV_HotWater_ChilledWater'#ARGV[1]
-erv_flag = 'false'#ARGV[2]
+hvac_system_type = ARGV[1]
+erv_flag = ARGV[2]
 
 # model_add_hvac_system(model,
 #     system_type,
