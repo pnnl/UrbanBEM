@@ -15,7 +15,7 @@
     "gross_conditioned_area(ft2)": 3840,
     "heating_system_type": "Fossil fuel furnace",
     "hvac_system_type": "PSZ_Gas_SingleSpeedDX",
-    "service_water_heater_fuel": "Electricity",
+    "service_water_heater_fuel": "NaturalGas",
     "service_water_peak_flowrate(gal/min)": 6,
     "lpd(W/ft2)": 0.484375,
     "north_gross_wall_area(ft2)": 1762.531377,
