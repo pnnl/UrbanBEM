@@ -8,6 +8,11 @@
     "excluded_osstd_swh_obj_types_file_path": "../resources/exc_osstd_swh_objtypes_meta.json",
     "replace_osstd_swh_schedules_refs_file_path": "../resources/replace_osstd_swh_schedules_refs.json",
     "swh_intermediate_folder_name": "swh_dev",
+    "considered_swh_fuel_types": [
+        "Electricity",
+        "NaturalGas",
+        "HeatPump"
+    ],
     "placeholder_value_for_autosize": 2022,
     "main_water_heater_fuel": "Electricity",
     "main_water_heater_capacity_btu_hr": "autosize",

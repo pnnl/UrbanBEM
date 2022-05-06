@@ -14,6 +14,7 @@ input/std_json_conv_clean/*.json
 input/processed_inputs/*.json
 input/schedules/*.csv
 hvac_dev
+swh_dev
 ep_input
 ep_output
 src/run.out

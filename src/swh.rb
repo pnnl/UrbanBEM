@@ -2,10 +2,11 @@ require 'openstudio'
 require 'openstudio-standards'
 require 'json'
 
-casename = '3306' # ARGV[0]
-code_version = '90.1-2013' # ARGV[1]
+casename = ARGV[0] # '3306'
+swh_fuel = ARGV[1] # 'Electricity'
+code_version = ARGV[2] # '90.1-2013' # 
 
-idf = OpenStudio::Workspace.load("../hvac_dev/zones_#{casename}.idf").get
+idf = OpenStudio::Workspace.load("../#{swh_dev['swh_intermediate_folder_name']}/zones_#{casename}.idf").get
 trans = OpenStudio::EnergyPlus::ReverseTranslator.new
 osm = trans.translateWorkspace(idf)
 standard = Standard.build(code_version)
@@ -35,7 +36,7 @@ main_swh_loop = standard.model_add_swh_loop(model = osm,
                                             service_water_pump_motor_efficiency = swh_settings['main_service_water_pump_motor_efficiency'],
                                             water_heater_capacity = swh_settings['main_water_heater_capacity_btu_hr'],
                                             water_heater_volume = swh_settings['main_water_heater_volume_gal'],
-                                            water_heater_fuel = swh_settings['main_water_heater_fuel'],
+                                            water_heater_fuel = swh_fuel,
                                             parasitic_fuel_consumption_rate = OpenStudio.convert(swh_settings['main_service_water_parasitic_fuel_consumption_rate_btu_hr'], 'Btu/hr', 'W').get)
 
 puts 'Adding service hot water end uses'

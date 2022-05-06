@@ -1,7 +1,7 @@
 import json, os
-import math
 import numbers
-from typing import Dict
+from typing import Dict, List
+from eppy.modeleditor import IDF
 
 print(os.getcwd())
 
@@ -109,3 +109,46 @@ def convert_dict_unit(imp: Dict) -> (Dict, Dict):
         si[si_key] = si_val
         si_clean[si_clean_key] = si_val
     return si, si_clean
+
+def batch_modify_idf_objs(objs, property_dict: Dict):
+    for property, value in property_dict.items():
+        for obj in objs:
+            obj[property] = value
+
+def get_containing_object_types(idf: IDF, print_out=False) -> List:
+    results = []
+    totalnum = 0
+    for key, val in idf.idfobjects.items():
+        if len(val) > 0:
+            results.append(key)
+            if print_out:
+                print(f"{key}: {len(val)}")
+            totalnum += len(val)
+    if print_out:
+        print(f"Total number of objects: {totalnum}")
+        print("\n **** \n")
+    return results
+
+def get_object_by_types(idf: IDF, types: List, ignore_error=True) -> List:
+    types = [type.upper().strip() for type in types]
+    all_objs = []
+    for type in types:
+        objs = idf.idfobjects[type.upper().strip()]
+        if len(objs) == 0 and (not ignore_error):
+            print(f"ERROR: {type} does not exist in the idf")
+            continue
+        all_objs.extend(list(objs))
+    return all_objs
+
+def get_object_not_in_types(idf: IDF, types: List) -> List:
+    types = [type.upper().strip() for type in types]
+    exc_objs = []
+    all_types = get_containing_object_types(idf)
+    for type in all_types:
+        if type not in types:
+            objs = idf.idfobjects[type.upper().strip()]
+            if len(objs) == 0:
+                print("Somthing is wrong!")
+                continue
+            exc_objs.extend(list(objs))
+    return exc_objs
