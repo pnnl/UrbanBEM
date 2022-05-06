@@ -1,0 +1,16 @@
+{
+    "Electricity": [
+        {
+            "Class": "PlantEquipmentOperationSchemes",
+            "Field": "Control Scheme 1 Schedule Name",
+            "Obj_name": "Main Service Water Loop Operation Schemes",
+            "Sch_name": "always_on"
+        },
+        {
+            "Class": "WaterUse:Equipment",
+            "Field": "Flow Rate Fraction Schedule Name",
+            "Obj_name": "*",
+            "Sch_name": "always_on"
+        }
+    ]
+}

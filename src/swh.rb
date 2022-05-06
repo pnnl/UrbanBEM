@@ -6,16 +6,13 @@ casename = ARGV[0] # '3306'
 swh_fuel = ARGV[1] # 'Electricity'
 code_version = ARGV[2] # '90.1-2013' # 
 
-idf = OpenStudio::Workspace.load("../#{swh_dev['swh_intermediate_folder_name']}/zones_#{casename}.idf").get
+swh_setting_path = './swh_settings.json'
+swh_settings = JSON.parse(File.read(swh_setting_path))
+
+idf = OpenStudio::Workspace.load("../#{swh_settings['swh_intermediate_folder_name']}/zones_#{casename}.idf").get
 trans = OpenStudio::EnergyPlus::ReverseTranslator.new
 osm = trans.translateWorkspace(idf)
 standard = Standard.build(code_version)
-swh_setting_path = './swh_settings.json'
-
-swh_settings = JSON.parse(File.read(swh_setting_path))
-# read settings directly from configuration file
-
-puts swh_settings
 
 # process settings
 puts 'Reading service water heating setting'
@@ -84,4 +81,4 @@ end
 
 trans = OpenStudio::EnergyPlus::ForwardTranslator.new
 idf = trans.translateModel(osm)
-idf.save("../hvac_dev/zones_swhadded_#{casename}.idf", true)
+idf.save("../swh_dev/zones_swhadded_#{casename}.idf", true)

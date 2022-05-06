@@ -88,7 +88,7 @@ class SWH:
         print("\nSTDERR")
         print(run_proc.stderr.decode("utf-8"))
         osstd_swhadded = IDF(
-            f"../{self.swh_dev_folder_name}/zones_swhadded_#{self.case['building_name']}.idf"
+            f"../{self.swh_dev_folder_name}/zones_swhadded_{self.case['building_name']}.idf"
         )
         print("SWH excluded object types:")
         print(self.exc_obj_types)
@@ -96,7 +96,7 @@ class SWH:
         self.exc_objs = get_object_by_types(osstd_swhadded, self.exc_obj_types)
 
     def clean_up_save_add_osstd_output(self):
-        for obj in self.pure_hvac_objs:
+        for obj in self.pure_swh_objs:
             for field in obj.__dict__["objls"]:
                 if " Thermal Zone" in str(obj[field]):
                     obj[field] = obj[field].replace(
