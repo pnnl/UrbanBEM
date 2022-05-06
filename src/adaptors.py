@@ -414,6 +414,9 @@ def populate_std_swh_for_osstd(case: Dict) -> Dict:
 
     """
 
-    swh = {"main_water_heater_fuel": case["service_water_heater_fuel"].strip()}
+    swh = {
+        "main_water_heater_fuel": case["service_water_heater_fuel"].strip(),
+        "main_service_water_peak_flowrate": case["service_water_peak_flowrate"],
+    }
 
     return swh

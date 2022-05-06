@@ -29,6 +29,9 @@ class SWH:
         self.idf = idf
         self.case = case
         self.swh_fuel = self.case["swh"]["main_water_heater_fuel"]
+        self.main_service_water_peak_flowrate = self.case["swh"][
+            "main_service_water_peak_flowrate"
+        ]
         self.code_version = self.case["code_version"]
         self.pure_swh_objs = None
         self.exc_objs = None
@@ -79,6 +82,7 @@ class SWH:
             "swh.rb",
             self.case["building_name"],
             self.swh_fuel,
+            str(self.main_service_water_peak_flowrate),
             self.code_version,
         ]
 
@@ -151,7 +155,10 @@ def main():
     test_proc_case = {
         "building_name": "swhtest3306",
         "code_version": "90.1-2013",
-        "swh": {"main_water_heater_fuel": "Electricity"},
+        "swh": {
+            "main_water_heater_fuel": "Electricity",
+            "main_service_water_peak_flowrate": 6.30902e-5,  # m^3/s for 1 gal/min
+        },
     }
 
     swh_obj = SWH(test_proc_case, testidf)

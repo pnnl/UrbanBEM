@@ -4,7 +4,8 @@ require 'json'
 
 casename = ARGV[0] # '3306'
 swh_fuel = ARGV[1] # 'Electricity'
-code_version = ARGV[2] # '90.1-2013' # 
+main_service_water_peak_flowrate_m3_s = ARGV[2]
+code_version = ARGV[3] # '90.1-2013' #
 
 swh_setting_path = './swh_settings.json'
 swh_settings = JSON.parse(File.read(swh_setting_path))
@@ -40,44 +41,17 @@ puts 'Adding service hot water end uses'
 standard.model_add_swh_end_uses(model = osm,
                                 use_name = 'Main',
                                 swh_loop = main_swh_loop,
-                                peak_flowrate = OpenStudio.convert(swh_settings['main_service_water_peak_flowrate_gal_min'], 'gal/min', 'm^3/s').get,
-                                flowrate_schedule = 'default',
+                                peak_flowrate = main_service_water_peak_flowrate_m3_s.to_f,
+                                flowrate_schedule = 'default', # TODO: create new one from occ schedule logic, occ x 0.5 without lunch time
                                 water_use_temperature = OpenStudio.convert(swh_settings['main_water_use_temperature_F'], 'F', 'C').get,
                                 space_name = nil)
 
 osm.getWaterHeaterMixeds.each do |waterheater|
   waterheater.setName('Service Water Heater')
+  waterheater.autosize
+  waterheater_sizing = waterheater.waterHeaterSizing
+  waterheater_sizing.setTimeforTankRecovery(1.5)
 end
-
-# "default_value_for_autosize_gal": 1988,
-#   "main_water_heater_capacity_btu_hr": "autosize",
-#   "main_water_heater_volume": "autosize",
-#   "main_service_water_temperature_F": 140,
-#   "main_water_use_temperature_F": 140,
-#   "main_service_water_pump_head": 0.01,
-#   "main_service_water_pump_motor_efficiency": 1,
-#   "main_service_water_parasitic_fuel_consumption_rate_btu_hr": 6400,
-#   "main_service_water_peak_flowrate_gal_min": 1
-# }
-
-# # below is from midrise apartment
-# prototype_input_hash = {
-#     "main_water_heater_volume" => 1150, # autosize
-#     "main_water_heater_space_name" => nil,
-#     "main_water_heater_fuel" => "Electricity", # std_input
-#     "main_service_water_temperature" => 140, # assumption
-#     "main_service_water_pump_head" => 0.01, # assumption
-#     "main_service_water_pump_motor_efficiency" => 1.0, # assumption
-#     "main_water_heater_capacity" => 1150000, # autosize
-#     "main_service_water_parasitic_fuel_consumption_rate" => 6445.536238, # assumption to be determined
-#     "main_service_water_peak_flowrate" => 1, # assumption tbd
-#     "main_service_water_flowrate_schedule" => "default", # based on zone occ schedule
-#     "main_water_use_temperature" => 140,
-#     "booster_water_heater_volume" => nil, # leave as is
-#     "laundry_water_heater_volume" => nil # leave as is
-#  }
-
-# standard.model_add_swh(osm, nil, prototype_input_hash)
 
 trans = OpenStudio::EnergyPlus::ForwardTranslator.new
 idf = trans.translateModel(osm)
