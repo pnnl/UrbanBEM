@@ -7,6 +7,7 @@ from loads import Loads
 from preprocessor import Preprocessor
 from schedule_new import Schedule
 from hvac import HVAC
+from swh import SWH
 from outputs import Outputs
 import recipes
 import sys
@@ -93,8 +94,11 @@ try:
         # %% hvac processor
         hvacadded_obj = HVAC(proc_case, loadadded_obj.idf)
 
+        # %% service water heating processor
+        swhadded_obj = SWH(proc_case, hvacadded_obj.idf)
+
         # %% outputs processor
-        outputsadded_obj = Outputs(proc_case, hvacadded_obj.idf)
+        outputsadded_obj = Outputs(proc_case, swhadded_obj.idf)
 
         # Save idf
         outputsadded_obj.save_idf(f"../ep_input/input/{casename}.idf")

@@ -11,6 +11,13 @@ class Loads:
     def __init__(self, case: Dict, idf: IDF):
         self.idf = idf
         self.building_area_type = case["building_area_type"]
+        eflag = False
+        gflag = False
+        lflag = False
+        elflag = False
+        iflag = False
+        diflag = False
+        pflag = False
         if "electric_equipment" in case["internal_loads"].keys():
             self.electric_equipment = case["internal_loads"]["electric_equipment"]
             eflag = True

@@ -9,6 +9,7 @@ class Preprocessor:
         self.case_proc = {}  # output case dict placeholder
         self.keepkeys = [  # gradually reduce this list when building up the preprocessors
             "building_name",
+            "code_version",
             "building_area_type",
             "year_built",
             "ashrae_climate_zone",
@@ -28,6 +29,7 @@ class Preprocessor:
         self.schedule_procedures()
         self.loads_procedures()
         self.hvac_procedures()
+        self.swh_procedures()
 
     def geometry_procedures(self):  # general preprocess organizer
         self.populate_zone_geometry()
@@ -51,6 +53,9 @@ class Preprocessor:
 
     def hvac_procedures(self):
         self.populate_hvac()
+
+    def swh_procedures(self):
+        self.populate_swh()
 
     def keep_is(self):  # case properties to be moved to final case directly
         for key in self.keepkeys:
@@ -78,3 +83,6 @@ class Preprocessor:
 
     def populate_hvac(self):
         self.case_proc["hvac"] = adaptors.populate_std_hvac_for_osstd(self.case)
+
+    def populate_swh(self):
+        self.case_proc["swh"] = adaptors.populate_std_swh_for_osstd(self.case)

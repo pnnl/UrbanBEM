@@ -401,3 +401,19 @@ def populate_std_hvac_for_osstd(case: Dict) -> Dict:
     }
 
     return hvac
+
+
+def populate_std_swh_for_osstd(case: Dict) -> Dict:
+    """populate service water heating related info
+
+    Args:
+        case: case dictionary. Properties used in this function are:
+            - "hvac_system_type": e.g. "PSZ, Gas, SingleSpeedDX"
+
+    Returns:
+
+    """
+
+    swh = {"main_water_heater_fuel": case["service_water_heater_fuel"].strip()}
+
+    return swh
