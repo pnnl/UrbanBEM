@@ -86,7 +86,7 @@ class SWH:
             self.code_version,
         ]
 
-        run_proc = subprocess.run(ruby_run, capture_output=True)
+        run_proc = subprocess.run(ruby_run, capture_output=True, shell=True)
         print("\nSTDOUT:")
         print(run_proc.stdout.decode("utf-8"))
         print("\nSTDERR")
