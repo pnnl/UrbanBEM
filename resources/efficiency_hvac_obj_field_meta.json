@@ -1,0 +1,13 @@
+{
+    "FAN:CONSTANTVOLUME": ["Fan_Total_Efficiency", "Motor_Efficiency"],
+    "FAN:VARIABLEVOLUME": ["Fan_Total_Efficiency", "Motor_Efficiency"],
+    "FAN:ONOFF": ["Fan_Total_Efficiency", "Motor_Efficiency"],
+    "PUMP:VARIABLESPEED": "Motor_Efficiency",
+    "COIL:COOLING:DX:SINGLESPEED": "Gross_Rated_Cooling_COP",
+    "COIL:COOLING:DX:TWOSPEED": ["High_Speed_Gross_Rated_Cooling_COP","Low_Speed_Gross_Rated_Cooling_COP"],
+    "COIL:HEATING:DX:SINGLESPEED": "Gross_Rated_Heating_COP",
+    "COIL:HEATING:FUEL": "Burner_Efficiency",
+    "COIL:HEATING:ELECTRIC": "Efficiency",
+    "BOILER:HOTWATER": "Nominal_Thermal_Efficiency",
+    "CHILLER:ELECTRIC:EIR": "Reference_COP"
+}

@@ -35,6 +35,7 @@ class HVAC:
         self.clean_up_save_add_osstd_output()
         self.add_misc_hvac_objs()
         self.modify_schedule_refs()
+        self.modify_efficiency()
 
     def generate_osstd_input_idf(self):
         exc_hvac_meta = read_json(
@@ -243,6 +244,9 @@ class HVAC:
 
     def save_idf(self, path):
         self.idf.saveas(path, lineendings="unix")
+
+    def modify_efficiency(self):
+        pass
 
 
 def main():
