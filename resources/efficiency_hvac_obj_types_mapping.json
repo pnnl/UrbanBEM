@@ -1,87 +1,77 @@
 {
-    "PSZ_Gas_SingleSpeedDX": {
-        "Fan": "FAN:CONSTANTVOLUME",
-        "DXCoolingCoil": "COIL:COOLING:DX:SINGLESPEED",
-        "GasHeatingCoil": "COIL:HEATING:FUEL",
-        "ElectricHeatingCoil": "COIL:HEATING:ELECTRIC"
-    },
-    "PSZ_Electric_SingleSpeedDX": {
-        "Fan": "FAN:CONSTANTVOLUME",
-        "DXCoolingCoil": "COIL:COOLING:DX:SINGLESPEED",
-        "ElectricHeatingCoil": "COIL:HEATING:ELECTRIC"
-    },
-    "VAV_HotWater_ChilledWater": {
-        "Fan": "FAN:VARIABLEVOLUME",
-        "Pump": "PUMP:VARIABLESPEED",
-        "DXCoolingCoil": "COIL:COOLING:DX:TWOSPEED",
-        "Boiler": "BOILER:HOTWATER"
-    },
-    "Gas_Heating_Ventilation": {
-        "Fan": "FAN:CONSTANTVOLUME",
-        "GasHeatingCoil": "COIL:HEATING:FUEL"
-    },
-    "PTHP": {
-        "Fan": "FAN:ONOFF",
-        "DXHeatingCoil": "COIL:HEATING:DX:SINGLESPEED",
-        "DXCoolingCoil": "COIL:COOLING:DX:SINGLESPEED",
-        "ElectricHeatingCoil": "COIL:HEATING:ELECTRIC"
-    },
-    "PTAC_Electric": {
-        "Fan": "FAN:ONOFF",
-        "DXCoolingCoil": "COIL:COOLING:DX:SINGLESPEED",
-        "ElectricHeatingCoil": "COIL:HEATING:ELECTRIC"
-    },
-    "PTAC_Gas": {
-        "Fan": "FAN:ONOFF",
-        "Pump": "PUMP:VARIABLESPEED",
-        "DXCoolingCoil": "COIL:COOLING:DX:SINGLESPEED",
-        "Boiler": "BOILER:HOTWATER"
-    },
-    "Electric_Heating_Ventilation": {
-        "Fan": "FAN:CONSTANTVOLUME",
-        "ElectricHeatingCoil": "COIL:HEATING:ELECTRIC"
-    },
-    "PSZ_HP": {
-        "Fan": "FAN:ONOFF",
-        "DXHeatingCoil": "COIL:HEATING:DX:SINGLESPEED",
-        "DXCoolingCoil": "COIL:COOLING:DX:SINGLESPEED",
-        "ElectricHeatingCoil": "COIL:HEATING:ELECTRIC"
-    },
-    "PVAV_Gas_ElectricReheat": {
-        "Fan": "FAN:VARIABLEVOLUME",
-        "Pump": "PUMP:VARIABLESPEED",
-        "DXCoolingCoil": "COIL:COOLING:DX:TWOSPEED",
-        "Boiler": "BOILER:HOTWATER",
-        "ElectricHeatingCoil": "COIL:HEATING:ELECTRIC"
-    },
-    "Fan_Coil": {
-        "Fan": "FAN:ONOFF",
-        "Pump": "PUMP:VARIABLESPEED",
-        "Chiller": "CHILLER:ELECTRIC:EIR",
-        "Boiler": "BOILER:HOTWATER"
-    },
-    "VAV_PFP": {
-        "Fan": [
-            "FAN:CONSTANTVOLUME",
-            "FAN:VARIABLEVOLUME"
-        ],
-        "DXCoolingCoil": "COIL:COOLING:DX:TWOSPEED",
-        "ElectricHeatingCoil": "COIL:HEATING:ELECTRIC"
-    },
-    "PVAV_Gas_GasReheat": {
-        "Fan": "FAN:VARIABLEVOLUME",
-        "Pump": "PUMP:VARIABLESPEED",
-        "DXCoolingCoil": "COIL:COOLING:DX:TWOSPEED",
-        "Boiler": "BOILER:HOTWATER"
-    },
-    "Default Keys": {
-        "Fan": "",
-        "Pump": "",
-        "DXHeatingCoil": "",
-        "DXCoolingCoil": "",
-        "Chiller": "",
-        "Boiler": "",
-        "GasHeatingCoil": "",
-        "ElectricHeatingCoil": "COIL:HEATING:ELECTRIC"
-    }
+    "PSZ_Gas_SingleSpeedDX": [
+        "FAN:ONOFF",
+        "COIL:COOLING:DX:SINGLESPEED",
+        "COIL:HEATING:FUEL",
+        "COIL:HEATING:ELECTRIC"
+    ],
+    "PSZ_Electric_SingleSpeedDX": [
+        "FAN:ONOFF",
+        "COIL:COOLING:DX:SINGLESPEED",
+        "COIL:HEATING:ELECTRIC"
+    ],
+    "VAV_HotWater_ChilledWater": [
+        "FAN:VARIABLEVOLUME",
+        "PUMP:VARIABLESPEED",
+        "COIL:COOLING:DX:TWOSPEED",
+        "BOILER:HOTWATER"
+    ],
+    "Gas_Heating_Ventilation": [
+        "FAN:CONSTANTVOLUME",
+        "COIL:HEATING:FUEL"
+    ],
+    "PTHP": [
+        "FAN:ONOFF",
+        "COIL:HEATING:DX:SINGLESPEED",
+        "COIL:COOLING:DX:SINGLESPEED",
+        "COIL:HEATING:ELECTRIC"
+    ],
+    "PTAC_Electric": [
+        "FAN:ONOFF",
+        "COIL:COOLING:DX:SINGLESPEED",
+        "COIL:HEATING:ELECTRIC"
+    ],
+    "PTAC_Gas": [
+        "FAN:ONOFF",
+        "PUMP:VARIABLESPEED",
+        "COIL:COOLING:DX:SINGLESPEED",
+        "BOILER:HOTWATER"
+    ],
+    "Electric_Heating_Ventilation": [
+        "FAN:CONSTANTVOLUME",
+        "COIL:HEATING:ELECTRIC"
+    ],
+    "PSZ_HP": [
+        "FAN:ONOFF",
+        "COIL:HEATING:DX:SINGLESPEED",
+        "COIL:COOLING:DX:SINGLESPEED",
+        "COIL:HEATING:ELECTRIC"
+    ],
+    "PVAV_Gas_ElectricReheat": [
+        "FAN:VARIABLEVOLUME",
+        "PUMP:VARIABLESPEED",
+        "COIL:COOLING:DX:TWOSPEED",
+        "BOILER:HOTWATER",
+        "COIL:HEATING:ELECTRIC"
+    ],
+    "Fan_Coil": [
+        "FAN:ONOFF",
+        "PUMP:VARIABLESPEED",
+        "CHILLER:ELECTRIC:EIR",
+        "BOILER:HOTWATER"
+    ],
+    "VAV_PFP": [
+        "FAN:CONSTANTVOLUME",
+        "FAN:VARIABLEVOLUME",
+        "COIL:COOLING:DX:TWOSPEED",
+        "COIL:HEATING:ELECTRIC"
+    ],
+    "PVAV_Gas_GasReheat": [
+        "FAN:VARIABLEVOLUME",
+        "PUMP:VARIABLESPEED",
+        "COIL:COOLING:DX:TWOSPEED",
+        "BOILER:HOTWATER"
+    ],
+    "Default Keys": [
+    ]
 }
