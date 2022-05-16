@@ -7,7 +7,7 @@ import os
 # os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")
 
 #%%
-data = pd.read_excel("../input/cbsa_data_newhvactypes_220324.xlsx")
+data = pd.read_excel("../input/standardized_model_inputs_cbsa_04.22.2022.xlsx")
 
 data = data.reindex(sorted(data.columns), axis=1)
 
@@ -17,7 +17,7 @@ std_cols = data.columns.values.tolist()
 # %%
 i = 0
 for index, row in tqdm(data.iterrows(), total=data.shape[0]):
-    if i == 21:
+    if i == 1:
         case = {}
         for col in std_cols:
             case[col] = row[col]

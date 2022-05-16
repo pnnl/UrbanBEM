@@ -82,7 +82,7 @@ class HVAC:
         # except:
         #     print("cannot find ruby, trying adding ruby path to PATH")
         #     os.environ['PATH'] = f"{os.environ['PATH']}:/home/leix162/.rvm/bin"
-        run_proc = subprocess.run(ruby_run, capture_output=True, shell=True)
+        run_proc = subprocess.run(ruby_run, capture_output=True)
         print("\nSTDOUT:")
         print(run_proc.stdout.decode("utf-8"))
         print("\nSTDERR")

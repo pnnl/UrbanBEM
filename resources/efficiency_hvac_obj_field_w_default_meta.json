@@ -1,0 +1,45 @@
+{
+    "Default efficiency components": {
+        "FAN:CONSTANTVOLUME": {
+            "Fan_Total_Efficiency": 0.9,
+            "Motor_Efficiency": 1
+        },
+        "FAN:VARIABLEVOLUME": {
+            "Fan_Total_Efficiency": 0.9,
+            "Motor_Efficiency": 1
+        },
+        "FAN:ONOFF": {
+            "Fan_Total_Efficiency": 0.9,
+            "Motor_Efficiency": 1
+        },
+        "PUMP:VARIABLESPEED": {
+            "Motor_Efficiency": 1
+        },
+        "BOILER:HOTWATER": {
+            "Nominal_Thermal_Efficiency": 0.8
+        },
+        "CHILLER:ELECTRIC:EIR": {
+            "Reference_COP": 0.718
+        },
+        "COIL:HEATING:ELECTRIC": {
+            "Efficiency": 1
+        }
+    },
+    "Input efficiency cooling components": {
+        "COIL:COOLING:DX:SINGLESPEED": {
+            "Gross_Rated_Cooling_COP": 3.2
+        },
+        "COIL:COOLING:DX:TWOSPEED": {
+            "High_Speed_Gross_Rated_Cooling_COP": 3.2,
+            "Low_Speed_Gross_Rated_Cooling_COP": 3.2
+        }
+    },
+    "Input efficiency heating components": {
+        "COIL:HEATING:DX:SINGLESPEED": {
+            "Gross_Rated_Heating_COP": 3.4
+        },
+        "COIL:HEATING:FUEL": {
+            "Burner_Efficiency": 0.8
+        }
+    }
+}
