@@ -167,8 +167,8 @@
         "Ratio of WD/All": "0.95",
         "consider_lunch_time": "Yes"
     },
-    "Religious building": {
-        "building_type": "Religious building",
+    "Religious facility": {
+        "building_type": "Religious facility",
         "Center Operation Hour (WD)": "15",
         "Center Operation Hour (Others)": "17",
         "Ratio of WD/All": "0.71",

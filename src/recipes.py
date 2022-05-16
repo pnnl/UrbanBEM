@@ -167,3 +167,28 @@ def get_object_not_in_types(idf: IDF, types: List) -> List:
                 continue
             exc_objs.extend(list(objs))
     return exc_objs
+
+
+def to_cbsa_hvac_type(case):
+    """
+    Inputs:
+    -case: case json file for a building (either before or after cleaning)
+
+    Outputs:
+    -case_hvac_converted: case json file for a building with updated HVAC type name, if CBSA or RBSA, then it's converted to CBECS HVAC naming, otherwise no change
+    """
+    # Open the mapping JSON file
+    f_hvac_type = open("hvac_type_name_mapping.json", encoding="utf-8")
+
+    # Returns JSON object as a dictionary
+    data_hvac_type = json.load(f_hvac_type)
+
+    # Get converted type
+    key = case["hvac_system_type"]
+    hvac_type = data_hvac_type[key]
+
+    case_hvac_converted = case
+    case_hvac_converted["hvac_system_type"] = hvac_type
+    f_hvac_type.close()
+
+    return case_hvac_converted

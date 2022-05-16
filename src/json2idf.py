@@ -27,7 +27,7 @@ casename = "3306"
 # 4. number of door to door infiltration rate in preprocess
 # 5. add guard to input lower case and keys check
 # 6. allow unused keys in std input
-# 7. ext lighting schedule to be always on and controlled by astronomical 
+# 7. ext lighting schedule to be always on and controlled by astronomical
 # 8. swh flow schedule to be based on occ schedule = occ * 0.6 ( to be added to schedule preparation code)
 
 try:
@@ -60,7 +60,21 @@ try:
         "Fan_Coil",
         "VAV_PFP",
         "PVAV_Gas_GasReheat",
+        "3. PSZ-AC",
+        "7. VAV with reheat",
+        "9. Heating and ventilation",
+        "2. PTHP",
+        "1.1 PTAC with electric heating",
+        "1. PTAC",
+        "10. Heating and ventilation",
+        "4. PSZ-HP",
+        "5.1 Packaged VAV with gas central heating and electric reheat",
+        "16. Four-pipe fan-coil",
+        "8. VAV with PFP boxes",
+        "5. Packaged VAV with reheat",
     ]:
+
+        case = recipes.to_cbsa_hvac_type(case)
 
         case_conv, case_conv_clean = recipes.convert_dict_unit(case)
 
