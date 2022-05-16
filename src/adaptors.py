@@ -399,25 +399,41 @@ def populate_std_hvac_for_osstd(case: Dict) -> Dict:
 
     hvac_type = case["hvac_system_type"].strip().replace(",", "_").replace(" ", "")
 
-    heating_efficiency_input = case['heating_efficiency']
-    cooling_efficiency_input = case['cooling_efficiency']
+    heating_efficiency_input = case["heating_efficiency"]
+    cooling_efficiency_input = case["cooling_efficiency"]
     # note: missing values are checked in `hvac_fill_eff_values` called later
 
     efficiency_dict = {}
-    hvac_components_mapping = read_json("../resources/efficiency_hvac_obj_types_mapping.json")
+    hvac_components_mapping = read_json(
+        "../resources/efficiency_hvac_obj_types_mapping.json"
+    )
     hvac_components = hvac_components_mapping[hvac_type]
-    efficiency_meta = read_json("../resources/efficiency_hvac_obj_field_w_default_meta.json")
+    efficiency_meta = read_json(
+        "../resources/efficiency_hvac_obj_field_w_default_meta.json"
+    )
 
     # fill in default efficiency components
-    for comp, eff_dict in efficiency_meta['Default efficiency components'].items():
+    for comp, eff_dict in efficiency_meta["Default efficiency components"].items():
         if comp in hvac_components:
             efficiency_dict[comp] = eff_dict
 
     # fill in input efficiency cooling components
-    efficiency_dict.update(hvac_fill_eff_values(efficiency_meta['Input efficiency cooling components'], cooling_efficiency_input, hvac_components))
+    efficiency_dict.update(
+        hvac_fill_eff_values(
+            efficiency_meta["Input efficiency cooling components"],
+            cooling_efficiency_input,
+            hvac_components,
+        )
+    )
 
     # fill in input efficiency heating components
-    efficiency_dict.update(hvac_fill_eff_values(efficiency_meta['Input efficiency heating components'], heating_efficiency_input, hvac_components))
+    efficiency_dict.update(
+        hvac_fill_eff_values(
+            efficiency_meta["Input efficiency heating components"],
+            heating_efficiency_input,
+            hvac_components,
+        )
+    )
 
     hvac = {
         "hvac_type": hvac_type,
@@ -426,6 +442,7 @@ def populate_std_hvac_for_osstd(case: Dict) -> Dict:
 
     return hvac
 
+
 def hvac_fill_eff_values(default_meta_dict, input_eff_value, hvac_components) -> Dict:
     """helper used by `populate_std_hvac_for_osstd`"""
     return_dict = {}
@@ -433,12 +450,17 @@ def hvac_fill_eff_values(default_meta_dict, input_eff_value, hvac_components) ->
         if comp in hvac_components:
             return_dict[comp] = {}
             for field, eff_value in eff_dict.items():
-                if math.isnan(input_eff_value) or (eff_value > 1 and input_eff_value <= 1) or (eff_value <= 1 and input_eff_value > 1):
+                if (
+                    math.isnan(input_eff_value)
+                    or (eff_value > 1 and input_eff_value <= 1)
+                    or (eff_value <= 1 and input_eff_value > 1)
+                ):
                     # incompatible efficiency, use default
                     return_dict[comp][field] = eff_value
                 else:
                     return_dict[comp][field] = input_eff_value
     return return_dict
+
 
 def populate_std_swh_for_osstd(case: Dict) -> Dict:
     """populate service water heating related info
@@ -454,6 +476,7 @@ def populate_std_swh_for_osstd(case: Dict) -> Dict:
     swh = {
         "main_water_heater_fuel": case["service_water_heater_fuel"].strip(),
         "main_service_water_peak_flowrate": case["service_water_peak_flowrate"],
+        "main_water_heater_thermal_efficiency": case["service_water_heater_efficiency"],
     }
 
     return swh

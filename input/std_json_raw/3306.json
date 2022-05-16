@@ -18,6 +18,7 @@
     "cooling_efficiency": 3.4,
     "service_water_heater_fuel": "NaturalGas",
     "service_water_peak_flowrate(gal/min)": 6,
+    "service_water_heater_efficiency": NaN,
     "lpd(W/ft2)": 0.484375,
     "north_gross_wall_area(ft2)": 1762.531377,
     "north_window_area(ft2)": 35.25062753,

@@ -1,4 +1,4 @@
-import os, subprocess, sys
+import os, subprocess, sys, math
 from io import StringIO
 from typing import Dict, List
 from eppy import modeleditor
@@ -33,6 +33,15 @@ class SWH:
             "main_service_water_peak_flowrate"
         ]
         self.code_version = self.case["code_version"]
+        self.swh_efficiency = self.case["swh"]["main_water_heater_thermal_efficiency"]
+        if (
+            math.isnan(self.swh_efficiency)
+            or (self.swh_efficiency < 0)
+            or (self.swh_efficiency > 1)
+        ):
+            self.swh_efficiency = self.swh_settings[
+                "main_water_heater_default_thermal_efficiency"
+            ]
         self.pure_swh_objs = None
         self.exc_objs = None
         self.exc_obj_types = None
@@ -83,6 +92,7 @@ class SWH:
             self.case["building_name"],
             self.swh_fuel,
             str(self.main_service_water_peak_flowrate),
+            str(self.swh_efficiency),
             self.code_version,
         ]
 

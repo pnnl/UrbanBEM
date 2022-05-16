@@ -5,7 +5,8 @@ require 'json'
 casename = ARGV[0] # '3306'
 swh_fuel = ARGV[1] # 'Electricity'
 main_service_water_peak_flowrate_m3_s = ARGV[2]
-code_version = ARGV[3] # '90.1-2013' #
+swh_efficiency = ARGV[3]
+code_version = ARGV[4] # '90.1-2013'
 
 swh_setting_path = './swh_settings.json'
 swh_settings = JSON.parse(File.read(swh_setting_path))
@@ -48,6 +49,7 @@ standard.model_add_swh_end_uses(model = osm,
 
 osm.getWaterHeaterMixeds.each do |waterheater|
   waterheater.setName('Service Water Heater')
+  waterheater.setHeaterThermalEfficiency(swh_efficiency.to_f)
   waterheater.autosize
   waterheater_sizing = waterheater.waterHeaterSizing
   waterheater_sizing.setTimeforTankRecovery(1.5)
