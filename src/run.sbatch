@@ -9,9 +9,9 @@
 #SBATCH -e run.err
 #SBATCH --job-name scratch
 
-module unload python
-module load python/miniconda3.9
-source /share/apps/python/miniconda3.9/etc/profile.d/conda.sh
+#module unload python
+#module load python/miniconda3.9
+#source /share/apps/python/miniconda3.9/etc/profile.d/conda.sh
 
 python standard_excel_processor.py
 
