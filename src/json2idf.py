@@ -7,74 +7,124 @@ from loads import Loads
 from preprocessor import Preprocessor
 from schedule_new import Schedule
 from hvac import HVAC
+from swh import SWH
 from outputs import Outputs
 import recipes
 import sys
 from traceback import print_exc
 
-#Get the parameter, representing the CBECS case, passed to the command line
+# Get the parameter, representing the CBECS case, passed to the command line
 casename = sys.argv.pop()
 
-#Redirect the standard output and standard error to files so they aren't printed on top of messages from other cases running in parallel
-sys.stdout = open(f'../ep_input/stdout/{casename}_out.txt', 'w')
-sys.stderr = open(f'../ep_input/stderr/{casename}_err.txt', 'w')
+# Redirect the standard output and standard error to files so they aren't printed on top of messages from other cases running in parallel
+sys.stdout = open(f"../ep_input/stdout/{casename}_out.txt", "w")
+sys.stderr = open(f"../ep_input/stderr/{casename}_err.txt", "w")
+
+# TODO: 0419
+# 1. hvac and swh efficiency post processing
+# 2. hvac template code version added to ruby call
+# 3. htg/clg setpoint std inputs to module
+# 4. number of door to door infiltration rate in preprocess
+# 5. add guard to input lower case and keys check
+# 6. allow unused keys in std input
+# 7. ext lighting schedule to be always on and controlled by astronomical
+# 8. swh flow schedule to be based on occ schedule = occ * 0.6 ( to be added to schedule preparation code)
 
 try:
 
-	#Set IDD
-	IDF.setiddname("../resources/Energy+V9_0_1.idd")
+    # Set IDD
+    IDF.setiddname("../resources/V9-5-0-Energy+.idd")
 
-	#%% load minimal idf
-	idf = IDF("../resources/idfs/Minimal.idf")
-	case_path = f"../input/std_json_raw/{casename}.json"
+    #%% load minimal idf
+    idf = IDF("../resources/idfs/Minimal.idf")
+    case_path = f"../input/std_json_raw/{casename}.json"
 
-	#%% convert units
-	with open(case_path) as f:
-	    case = json.load(f)
+    #%% convert units
+    with open(case_path) as f:
+        case = json.load(f)
 
-	if case['hvac_system_type'] in ['PSZ, Gas, SingleSpeedDX', 'PSZ, Electric, SingleSpeedDX', 'VAV, HotWater, ChilledWater']:
+    if case["hvac_system_type"] in [
+        "PSZ, Gas, SingleSpeedDX",
+        "PSZ, Electric, SingleSpeedDX",
+        "VAV, HotWater, ChilledWater",
+        "PSZ_Gas_SingleSpeedDX",
+        "PSZ_Electric_SingleSpeedDX",
+        "VAV_HotWater_ChilledWater",
+        "Gas_Heating_Ventilation",
+        "PTHP",
+        "PTAC_Electric",
+        "PTAC_Gas",
+        "Electric_Heating_Ventilation",
+        "PSZ_HP",
+        "PVAV_Gas_ElectricReheat",
+        "Fan_Coil",
+        "VAV_PFP",
+        "PVAV_Gas_GasReheat",
+        "3. PSZ-AC",
+        "7. VAV with reheat",
+        "9. Heating and ventilation",
+        "2. PTHP",
+        "1.1 PTAC with electric heating",
+        "1. PTAC",
+        "10. Heating and ventilation",
+        "4. PSZ-HP",
+        "5.1 Packaged VAV with gas central heating and electric reheat",
+        "16. Four-pipe fan-coil",
+        "8. VAV with PFP boxes",
+        "5. Packaged VAV with reheat",
+    ]:
 
-		case_conv, case_conv_clean = recipes.convert_dict_unit(case)
+        case = recipes.to_cbsa_hvac_type(case)
 
-		with open(f"../input/std_json_conv/{casename}_conv.json", "w") as f:
-		    f.write(json.dumps(case_conv, indent=4))
-		with open(f"../input/std_json_conv_clean/{casename}_conv.json", "w") as f:
-		    f.write(json.dumps(case_conv_clean, indent=4))
+        case_conv, case_conv_clean = recipes.convert_dict_unit(case)
 
-		#%% preprocessors
-		proc_case = Preprocessor(case_conv_clean).case_proc
-		with open(f"../input/processed_inputs/{casename}_processed.json", "w") as f:
-		    f.write(json.dumps(proc_case, indent=4))
+        with open(f"../input/std_json_conv/{casename}_conv.json", "w") as f:
+            f.write(json.dumps(case_conv, indent=4))
+        with open(f"../input/std_json_conv_clean/{casename}_conv.json", "w") as f:
+            f.write(json.dumps(case_conv_clean, indent=4))
 
-		#%% geometry processor
-		geometryadded_obj = Geometry(proc_case, idf)
+        #%% preprocessors
+        proc_case = Preprocessor(case_conv_clean).case_proc
+        with open(f"../input/processed_inputs/{casename}_processed.json", "w") as f:
+            f.write(json.dumps(proc_case, indent=4))
 
-		#%% construction processor
-		constructionadded_obj = Constructions(proc_case, geometryadded_obj.idf)
-		
-		# %% schedule processor
-		scheduleadded_obj = Schedule(proc_case, constructionadded_obj.idf, randomizeHours = True, randomizeValues = True)
+        #%% geometry processor
+        geometryadded_obj = Geometry(proc_case, idf)
 
-		# %% load processor
-		loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)
+        #%% construction processor
+        constructionadded_obj = Constructions(proc_case, geometryadded_obj.idf)
 
-		# %% hvac processor
-		hvacadded_obj = HVAC(proc_case, loadadded_obj.idf)
+        # %% schedule processor
+        scheduleadded_obj = Schedule(
+            proc_case,
+            constructionadded_obj.idf,
+            randomizeHours=False,
+            randomizeValues=False,
+        )
 
-		# %% outputs processor
-		outputsadded_obj = Outputs(proc_case, hvacadded_obj.idf)
+        # %% load processor
+        loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)
 
-		# Save idf
-		outputsadded_obj.save_idf(f"../ep_input/input/{casename}.idf")
+        # %% hvac processor
+        hvacadded_obj = HVAC(proc_case, loadadded_obj.idf)
 
-	else:
+        # %% service water heating processor
+        swhadded_obj = SWH(proc_case, hvacadded_obj.idf)
 
-		print("HVAC system type not currenlty supported")
+        # %% outputs processor
+        outputsadded_obj = Outputs(proc_case, swhadded_obj.idf)
 
-#If execution throws an exception, print message to error file but do not stop execution
+        # Save idf
+        outputsadded_obj.save_idf(f"../ep_input/input/{casename}.idf")
+
+    else:
+
+        print("HVAC system type not currenlty supported")
+
+# If execution throws an exception, print message to error file but do not stop execution
 except:
 
-	print_exc()
+    print_exc()
 
 sys.stdout.close()
 sys.stderr.close()

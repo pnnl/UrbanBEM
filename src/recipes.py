@@ -1,7 +1,9 @@
-import json
-import math
+import json, os
 import numbers
-from typing import Dict
+from typing import Dict, List
+from eppy.modeleditor import IDF
+
+print(os.getcwd())
 
 
 def read_json(jsonpath: str) -> Dict:
@@ -30,6 +32,15 @@ def copy_idf_objects(to_idf, from_idf):
     for objType in from_idf.idfobjects:
         if len(from_idf.idfobjects[objType]) > 0:
             for each in from_idf.idfobjects[objType]:
+                # check if to_idf already has object with same name
+                # (occationally it has no name but a zone list name for instance, so I use index [1] instead of .Name)
+                # and object type, if so, skip
+                existing_names = [
+                    idfobj.obj[1].strip().lower()
+                    for idfobj in to_idf.idfobjects[each.key.upper()]
+                ]
+                if each.obj[1].strip().lower() in existing_names:
+                    continue
                 to_idf.copyidfobject(each)
     return to_idf
 
@@ -49,6 +60,7 @@ def convert_dict_unit(imp: Dict) -> (Dict, Dict):
         "cfm/ft2": 5.08e-3,
         "hr/wk": 1,
         "cfm/person": 1.0 / 2118.88,
+        "gal/min": 6.309e-5,
         # "delta_f": 5.0 / 9.0,
         # "cfm": 1.0 / 2118.88,
         # "gal": 1.0 / 264.1721,
@@ -73,6 +85,7 @@ def convert_dict_unit(imp: Dict) -> (Dict, Dict):
         "cfm/ft2": "m3/s-m2",
         "hr/wk": "hr/wk",
         "cfm/person": "m3/s-person",
+        "gal/min": "m3/s"
         # "delta_f": "delta_c",
         # "cfm": "m3/s",
         # "gal": "",
@@ -103,6 +116,79 @@ def convert_dict_unit(imp: Dict) -> (Dict, Dict):
                     ).strip()
                     si_clean_key = key.replace(f"({unit_key})", "").strip()
                     break
+        si_clean_key = si_clean_key.split("(")[0].strip()
         si[si_key] = si_val
         si_clean[si_clean_key] = si_val
     return si, si_clean
+
+
+def batch_modify_idf_objs(objs, property_dict: Dict):
+    for property, value in property_dict.items():
+        for obj in objs:
+            obj[property] = value
+
+
+def get_containing_object_types(idf: IDF, print_out=False) -> List:
+    results = []
+    totalnum = 0
+    for key, val in idf.idfobjects.items():
+        if len(val) > 0:
+            results.append(key)
+            if print_out:
+                print(f"{key}: {len(val)}")
+            totalnum += len(val)
+    if print_out:
+        print(f"Total number of objects: {totalnum}")
+        print("\n **** \n")
+    return results
+
+
+def get_object_by_types(idf: IDF, types: List, ignore_error=True) -> List:
+    types = [type.upper().strip() for type in types]
+    all_objs = []
+    for type in types:
+        objs = idf.idfobjects[type.upper().strip()]
+        if len(objs) == 0 and (not ignore_error):
+            print(f"ERROR: {type} does not exist in the idf")
+            continue
+        all_objs.extend(list(objs))
+    return all_objs
+
+
+def get_object_not_in_types(idf: IDF, types: List) -> List:
+    types = [type.upper().strip() for type in types]
+    exc_objs = []
+    all_types = get_containing_object_types(idf)
+    for type in all_types:
+        if type not in types:
+            objs = idf.idfobjects[type.upper().strip()]
+            if len(objs) == 0:
+                print("Somthing is wrong!")
+                continue
+            exc_objs.extend(list(objs))
+    return exc_objs
+
+
+def to_cbsa_hvac_type(case):
+    """
+    Inputs:
+    -case: case json file for a building (either before or after cleaning)
+
+    Outputs:
+    -case_hvac_converted: case json file for a building with updated HVAC type name, if CBSA or RBSA, then it's converted to CBECS HVAC naming, otherwise no change
+    """
+    # Open the mapping JSON file
+    f_hvac_type = open("hvac_type_name_mapping.json", encoding="utf-8")
+
+    # Returns JSON object as a dictionary
+    data_hvac_type = json.load(f_hvac_type)
+
+    # Get converted type
+    key = case["hvac_system_type"]
+    hvac_type = data_hvac_type[key]
+
+    case_hvac_converted = case
+    case_hvac_converted["hvac_system_type"] = hvac_type
+    f_hvac_type.close()
+
+    return case_hvac_converted

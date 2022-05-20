@@ -33,6 +33,8 @@ simulate:
 	mkdir -p ../ep_output/output && \
 	mkdir -p ../ep_output/stdout && \
 	mkdir -p ../ep_output/stderr && \
+	mkdir -p ../hvac_dev && \
+	mkdir -p ../swh_dev && \
 	$(MAKE) -k -j 288 output
 
 # clean IDF targets - to be done after scripts are edited

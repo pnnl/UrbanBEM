@@ -1,10 +1,10 @@
 # This image is built on top of another image hosted on Sylabs Cloud (the default library)
-Bootstrap: library
+Bootstrap: docker
 
 # openstudio2.7.0:latest is a copy of NREL's 2.7.0 container found at https://openstudio-builds.s3.amazonaws.com/2.7.0/OpenStudio-2.7.0.544f363db5-Singularity.simg
 # Since you can't bootstrap directly to an https address (as far as I could tell), I just pulled it down from the web, built an identical container, signed it, and pushed it to Sylabs
 # Comes with OpenStudio 2.7.0 and Ruby 2.2.4, built on an Ubuntu 14.04 OS
-From: etb28/default/openstudio2.7.0:latest
+From: nrel/openstudio:3.2.1
 
 # Runs inside the container when it is built
 %post
@@ -17,7 +17,7 @@ From: etb28/default/openstudio2.7.0:latest
 	# See Linux development environment setup page on OpenStudio Standards Confluence for explaination of this section
 	
 	mkdir -p /usr/local/lib/ruby/site_ruby
-	echo "require \"usr/local/openstudio-2.7.0/Ruby/openstudio.rb\"" > /usr/local/lib/ruby/site_ruby/openstudio.rb
+	echo "require \"usr/local/openstudio-3.2.1/Ruby/openstudio.rb\"" > /usr/local/lib/ruby/site_ruby/openstudio.rb
 	gem install bundler -v 1.9
 	gem install json
 	git clone -b master https://github.com/NREL/openstudio-standards.git openstudio_standards

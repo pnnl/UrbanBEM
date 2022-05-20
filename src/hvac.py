@@ -5,12 +5,12 @@ from eppy import modeleditor
 from eppy.modeleditor import IDF
 from recipes import copy_idf_objects, read_json
 
-IDF.setiddname("../resources/Energy+V9_0_1.idd")
+IDF.setiddname("../resources/V9-5-0-Energy+.idd")
 
 
 class HVAC:
-    """ v1: Add HVAC unitary system to zones
-        v2: Use OpenStudio ruby call to add package single zone air conditioner (more system types to come)
+    """v1: Add HVAC unitary system to zones
+    v2: Use OpenStudio ruby call to add package single zone air conditioner (more system types to come)
     """
 
     hvac_settings = read_json("hvac_settings.json")
@@ -21,7 +21,9 @@ class HVAC:
         self.idf = idf
         self.case = case
         self.hvac_type = self.case["hvac"]["hvac_type"]
+        self.efficiency_lookup = self.case["hvac"]["efficiency"]
         self.pure_hvac_objs = None
+        self.hvac_pure = None
         self.exc_obj_types = None
         self.replacing_schedules_refs = None
 
@@ -32,7 +34,9 @@ class HVAC:
         # run modeling strategy
         self.generate_osstd_input_idf()
         self.run_osstd_rubycall()
-        self.clean_up_save_add_osstd_output()
+        self.clean_up_naming()
+        self.modify_efficiency_in_hvac_pure()
+        self.save_add_osstd_output()
         self.add_misc_hvac_objs()
         self.modify_schedule_refs()
 
@@ -40,10 +44,15 @@ class HVAC:
         exc_hvac_meta = read_json(
             self.hvac_settings["excluded_osstd_hvac_obj_types_file_path"]
         )
-        self.exc_obj_types = [ot.upper().strip() for ot in exc_hvac_meta[self.hvac_type]]
+        self.exc_obj_types = [
+            ot.upper().strip() for ot in exc_hvac_meta[self.hvac_type]
+        ]
 
         zones_idf = IDF(StringIO(""))
-        zones_idf_obj_types = [ot.upper().strip() for ot in self.hvac_settings["idf_obj_types_for_osstd_use"]]
+        zones_idf_obj_types = [
+            ot.upper().strip()
+            for ot in self.hvac_settings["idf_obj_types_for_osstd_use"]
+        ]
 
         objs = []
         for obj_type in zones_idf_obj_types:
@@ -55,23 +64,40 @@ class HVAC:
 
         for obj in objs:
             zones_idf.copyidfobject(obj)
-        zones_idf.saveas(f"../{self.hvac_dev_folder_name}/zones_{self.case['building_name']}.idf")
+        zones_idf.saveas(
+            f"../{self.hvac_dev_folder_name}/zones_{self.case['building_name']}.idf"
+        )
 
     def run_osstd_rubycall(self):
-        ruby_run = ["ruby", "generate_hvac.rb", self.case['building_name'], self.hvac_type]
+        ruby_run = [
+            "ruby",
+            "generate_hvac.rb",
+            self.case["building_name"],
+            self.hvac_type,
+            "false",
+        ]
+        # TODO: Pycharm run issue here, need troubleshooting (shell=True halts terminal run)
+        # try:
+        #     subprocess.check_call(ruby_run)
+        # except:
+        #     print("cannot find ruby, trying adding ruby path to PATH")
+        #     os.environ['PATH'] = f"{os.environ['PATH']}:/home/leix162/.rvm/bin"
         run_proc = subprocess.run(ruby_run, capture_output=True)
         print("\nSTDOUT:")
         print(run_proc.stdout.decode("utf-8"))
         print("\nSTDERR")
         print(run_proc.stderr.decode("utf-8"))
-        osstd_hvacadded = IDF(f"../{self.hvac_dev_folder_name}/zones_hvacadded_{self.case['building_name']}.idf")
+        osstd_hvacadded = IDF(
+            f"../{self.hvac_dev_folder_name}/zones_hvacadded_{self.case['building_name']}.idf"
+        )
+        print("HVAC excluded object types:")
         print(self.exc_obj_types)
         self.pure_hvac_objs = self.get_object_not_in_types(
             osstd_hvacadded, self.exc_obj_types
         )
         self.exc_objs = self.get_object_by_types(osstd_hvacadded, self.exc_obj_types)
 
-    def clean_up_save_add_osstd_output(self):
+    def clean_up_naming(self):
         for obj in self.pure_hvac_objs:
             for field in obj.__dict__["objls"]:
                 if " Thermal Zone" in str(obj[field]):
@@ -79,17 +105,31 @@ class HVAC:
                         " Thermal Zone", ""
                     )  # take out 'thermal zone' in names/refs
 
-        hvac_pure = IDF(StringIO(""))
+        self.hvac_pure = IDF(StringIO(""))
         for obj in self.pure_hvac_objs:
-            hvac_pure.copyidfobject(obj)
-        hvac_pure.saveas(f"../{self.hvac_dev_folder_name}/hvac_pure.idf")
+            self.hvac_pure.copyidfobject(obj)
 
+    def modify_efficiency_in_hvac_pure(self):
+        for component, field_dict in self.efficiency_lookup.items():
+            components_objs = self.hvac_pure.idfobjects[component.strip().upper()]
+
+            # JXL: below block here for debugging, take out when it is stable
+            if len(components_objs) == 0:
+                print(f"ERROR, no object {component} find for efficiency modification")
+                return
+
+            for component_obj in components_objs:
+                for field, val in field_dict.items():
+                    component_obj[field] = val
+
+    def save_add_osstd_output(self):
+        self.hvac_pure.saveas(f"../{self.hvac_dev_folder_name}/hvac_pure.idf")
         exc_objs_idf = IDF(StringIO(""))
         for obj in self.exc_objs:
             exc_objs_idf.copyidfobject(obj)
         exc_objs_idf.saveas(f"../{self.hvac_dev_folder_name}/exc_objs.idf")
 
-        self.idf = copy_idf_objects(self.idf, hvac_pure)
+        self.idf = copy_idf_objects(self.idf, self.hvac_pure)
 
     def add_misc_hvac_objs(self):
         # add thermostat
@@ -164,37 +204,41 @@ class HVAC:
         )
         self.replacing_schedules_refs = replace_osstd_schedules[self.hvac_type]
         for ref in self.replacing_schedules_refs:
-            if ref['Obj_name'].strip() == "*":
-                objs = self.idf.idfobjects[ref['Class'].upper().strip()]
+            if ref["Obj_name"].strip() == "*":
+                objs = self.idf.idfobjects[ref["Class"].upper().strip()]
             else:
                 objs = []
-                objs_pre = self.idf.idfobjects[ref['Class'].upper().strip()]
+                objs_pre = self.idf.idfobjects[ref["Class"].upper().strip()]
                 for obj in objs_pre:
-                    if obj['Name'].lower().strip() == ref['Obj_name'].lower().strip():
+                    if obj["Name"].lower().strip() == ref["Obj_name"].lower().strip():
                         objs.append(obj)
                 if len(objs) != 1:
                     print(f"ERROR: schedule ref for {ref} is not unique, please Check!")
-                    
-            field_name = ref['Field'].replace(" ", "_").strip()
-            field_value = ref['Sch_name']
+
+            field_name = ref["Field"].replace(" ", "_").strip()
+            field_value = ref["Sch_name"]
             self.batch_modify_idf_objs(objs, {field_name: field_value})
+            self.idf.saveas(
+                f"../{self.hvac_dev_folder_name}/hvac_final_{self.case['building_name']}.idf"
+            )
 
     def batch_modify_idf_objs(self, objs, property_dict: Dict):
         for property, value in property_dict.items():
             for obj in objs:
-                obj[property] = value            
+                obj[property] = value
 
-
-    def get_containing_object_types(self, idf: IDF) -> List:
+    def get_containing_object_types(self, idf: IDF, print_out=False) -> List:
         results = []
         totalnum = 0
         for key, val in idf.idfobjects.items():
             if len(val) > 0:
                 results.append(key)
-                print(f"{key}: {len(val)}")
+                if print_out:
+                    print(f"{key}: {len(val)}")
                 totalnum += len(val)
-        print(f"Total number of objects: {totalnum}")
-        print("\n **** \n")
+        if print_out:
+            print(f"Total number of objects: {totalnum}")
+            print("\n **** \n")
         return results
 
     def get_object_by_types(self, idf: IDF, types: List, ignore_error=True) -> List:
@@ -227,11 +271,26 @@ class HVAC:
 
 def main():
 
-    testidf = IDF("../hvac_dev/loads_added.idf")
-    test_proc_case = {"hvac": {"hvac_type": "PSZ_Gas_SingleSpeedDX"}}
+    testidf = IDF("../hvac_dev/3306hvacprocinput.idf")
+    test_proc_case = {
+        "building_name": "3306",
+        "hvac": {
+            "hvac_type": "PSZ_Gas_SingleSpeedDX",
+            "efficiency": {
+                "FAN:ONOFF": {
+                    "Fan_Total_Efficiency": 0.8,
+                    "Motor_Efficiency": 0.95,
+                },
+                "COIL:COOLING:DX:SINGLESPEED": {"Gross_Rated_Cooling_COP": 3},
+                "COIL:HEATING:FUEL": {"Burner_Efficiency": 0.9},
+                "COIL:HEATING:ELECTRIC": {"Efficiency": 0.85},
+            },
+        },
+    }
 
     hvacadded_obj = HVAC(test_proc_case, testidf)
     hvacadded_obj.save_idf("../hvac_dev/hvacadded.idf")
+
 
 if __name__ == "__main__":
     main()

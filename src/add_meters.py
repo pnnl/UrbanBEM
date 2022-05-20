@@ -2,7 +2,7 @@ from eppy.modeleditor import IDF
 import os
 
 # To be appended to the IDF
-meters = '''Output:Meter,Electricity:Facility,Hourly;
+meters = """Output:Meter,Electricity:Facility,Hourly;
             Output:Meter,Gas:Facility,Hourly;
             Output:Meter,InteriorLights:Electricity,Hourly;
             Output:Meter,ExteriorLights:Electricity,Hourly;
@@ -35,29 +35,29 @@ meters = '''Output:Meter,Electricity:Facility,Hourly;
             Output:Meter,Cogeneration:Gas,Hourly;
             Output:Meter,Refrigeration:Gas,Hourly;
             Output:Meter,WaterSystems:Gas,Hourly;
-'''
+"""
 
 # Set the IDD
-IDF.setiddname('../resources/Energy+V9_0_1.idd')
+IDF.setiddname("../resources/V9-5-0-Energy+.idd")
 
-for filename in os.listdir('../ep_input/input'):
+for filename in os.listdir("../ep_input/input"):
 
-      # The path to the IDF
-      idfPath = f'../ep_input/input/{filename}'
+    # The path to the IDF
+    idfPath = f"../ep_input/input/{filename}"
 
-      # Read the IDF
-      idf = IDF(idfPath)
+    # Read the IDF
+    idf = IDF(idfPath)
 
-      # Append Output:Meter objects to the IDF if they are not already included
-      with open(idfPath, 'a') as file:
-            if 'OUTPUT:METER' not in idf.idfobjects:
-                  file.write(meters)
+    # Append Output:Meter objects to the IDF if they are not already included
+    with open(idfPath, "a") as file:
+        if "OUTPUT:METER" not in idf.idfobjects:
+            file.write(meters)
 
-      # Read the IDF
-      idf = IDF(idfPath)
+    # Read the IDF
+    idf = IDF(idfPath)
 
-      # Remove Output:Variable objects
-      idf.idfobjects['OUTPUT:VARIABLE'].clear()
+    # Remove Output:Variable objects
+    idf.idfobjects["OUTPUT:VARIABLE"].clear()
 
-      # Save the IDF
-      idf.save()
+    # Save the IDF
+    idf.save()

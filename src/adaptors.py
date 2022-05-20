@@ -122,7 +122,7 @@ def get_core_row_dict(
 
 
 def populate_std_schedules(case: Dict) -> Dict:
-    """ populate hourly schedules based on standard input information
+    """populate hourly schedules based on standard input information
 
     Args:
         case: case dictionary. Properties used in this function are:
@@ -134,63 +134,71 @@ def populate_std_schedules(case: Dict) -> Dict:
         hourly schedules dictionary
 
     """
-    bldg_business_hour, consider_lunch_time = sp.bldg_business_hour(case, randomizeHours = False)
+    bldg_business_hour, consider_lunch_time = sp.bldg_business_hour(
+        case, randomizeHours=False
+    )
     bldg_occ_sch_dict = sp.bldg_occ_sch(bldg_business_hour, consider_lunch_time)
+    bldg_swh_use_sch_dict = sp.schdule_dict_multiplier(
+        sp.bldg_occ_sch(bldg_business_hour, False), multiplier=0.1
+    )  # swh use schedule is 0.1 x occ without lunch break
     bldg_electric_equipment_sch_dict = sp.bldg_electric_equipment_sch(bldg_occ_sch_dict)
+    bldg_gas_equipment_sch_dict = (
+        bldg_electric_equipment_sch_dict  # TODO: this needs to be replaced.
+    )
     bldg_light_sch_dict = sp.bldg_light_sch(bldg_business_hour, consider_lunch_time)
-    bldg_hvac_operation_sch_dict = sp.bldg_hvac_operation_sch(bldg_business_hour, consider_lunch_time)
+    bldg_ext_light_sch_dict = bldg_light_sch_dict  # TODO: this needs to be replaced.
+    bldg_hvac_operation_sch_dict = sp.bldg_hvac_operation_sch(
+        bldg_business_hour, consider_lunch_time
+    )
     bldg_clg_setp_sch_dict = sp.bldg_clg_setp_sch(bldg_hvac_operation_sch_dict)
     bldg_htg_setp_sch_dict = sp.bldg_htg_setp_sch(bldg_hvac_operation_sch_dict)
     bldg_infiltration_sch_dict = sp.bldg_infiltration_sch(bldg_hvac_operation_sch_dict)
+    bldg_door_infiltration_sch_dict = (
+        bldg_infiltration_sch_dict  # TODO: this needs to be replaced.
+    )
     activity_sch_dict = sp.activity_sch()
     always_on_dict = sp.always_on()
 
-    sch_list = [
-        bldg_occ_sch_dict,
-        bldg_electric_equipment_sch_dict,
-        bldg_light_sch_dict,
-        bldg_hvac_operation_sch_dict,
-        bldg_clg_setp_sch_dict,
-        bldg_htg_setp_sch_dict,
-        bldg_infiltration_sch_dict,
-        activity_sch_dict,
-        always_on_dict,
-    ]
+    sch_dict = {
+        "bldg_occ_sch": bldg_occ_sch_dict,
+        "bldg_swh_use_sch": bldg_swh_use_sch_dict,
+        "bldg_electric_equipment_sch": bldg_electric_equipment_sch_dict,
+        "bldg_gas_equipment_sch": bldg_gas_equipment_sch_dict,
+        "bldg_light_sch": bldg_light_sch_dict,
+        "bldg_ext_light_sch": bldg_ext_light_sch_dict,
+        "bldg_hvac_operation_sch": bldg_hvac_operation_sch_dict,
+        "bldg_clg_setp_sch": bldg_clg_setp_sch_dict,
+        "bldg_htg_setp_sch": bldg_htg_setp_sch_dict,
+        "bldg_infiltration_sch": bldg_infiltration_sch_dict,
+        "bldg_door_infiltration_sch": bldg_door_infiltration_sch_dict,
+        "activity_sch": activity_sch_dict,
+        "always_on": always_on_dict,
+    }
 
     bldg_sch_dict = {}
-    for ind, x in enumerate(
-        [
-            "bldg_occ_sch",
-            "bldg_electric_equipment_sch",
-            "bldg_light_sch",
-            "bldg_hvac_operation_sch",
-            "bldg_clg_setp_sch",
-            "bldg_htg_setp_sch",
-            "bldg_infiltration_sch",
-            "activity_sch",
-            "always_on",
-        ]
-    ):
+    ind = 0
+    for k, v in sch_dict.items():
         bldg_sch_dict[str(ind)] = {}
-        bldg_sch_dict[str(ind)]["name"] = x
+        bldg_sch_dict[str(ind)]["name"] = k
         bldg_sch_dict[str(ind)]["type"] = "Any Number"
         bldg_sch_dict[str(ind)]["periods"] = {}
         bldg_sch_dict[str(ind)]["periods"]["0"] = {}
         bldg_sch_dict[str(ind)]["periods"]["0"]["through"] = "12/31"
-        bldg_sch_dict[str(ind)]["periods"]["0"]["day_of_week"] = sch_list[ind]
+        bldg_sch_dict[str(ind)]["periods"]["0"]["day_of_week"] = v
+        ind += 1
 
     return bldg_sch_dict
 
 
 def get_loads_fractions(fraction, load, bldg_a_t, loads_settings) -> Dict:
-    """ lookup load fraction associated with building area type
-    
+    """lookup load fraction associated with building area type
+
     Args:
         fraction: list of fraction to retrieve
         load: load type
         bldg_a_t: building area type
         load_settings: dictionary containg the load fraction lookup values
-    
+
     Returns:
         Dictionary of load fractions
     """
@@ -206,7 +214,7 @@ def get_loads_fractions(fraction, load, bldg_a_t, loads_settings) -> Dict:
 
 
 def populate_std_loads(case: Dict) -> Dict:
-    """ populate detailed internal load profiles for use in the processor
+    """populate detailed internal load profiles for use in the processor
 
     Args:
         case: case dictionary. Properties used in this function are:
@@ -235,6 +243,21 @@ def populate_std_loads(case: Dict) -> Dict:
             "frac_radiant": fractions["frac_radiant"],
             "frac_lost": fractions["frac_lost"],
         }
+    if "gas_equipment_load" in case.keys():
+        fractions = get_loads_fractions(
+            ["frac_latent", "frac_radiant", "frac_lost"],
+            "gas_equipment",
+            case["building_area_type"],
+            loads_settings,
+        )
+        loads_dict["gas_equipment"] = {
+            "watts": case["gas_equipment_load"],
+            "schedule": "bldg_gas_equipment_sch",
+            "frac_latent": fractions["frac_latent"],
+            "frac_radiant": fractions["frac_radiant"],
+            "frac_lost": fractions["frac_lost"],
+        }
+
     if "lpd" in case.keys():
         fractions = get_loads_fractions(
             ["frac_radiant", "frac_visible"],
@@ -248,11 +271,24 @@ def populate_std_loads(case: Dict) -> Dict:
             "frac_radiant": fractions["frac_radiant"],
             "frac_visible": fractions["frac_visible"],
         }
-    if "Infiltration_rate" in case.keys():
+
+    if "ext_light_level" in case.keys():
+        loads_dict["ext_lighting"] = {
+            "design_level": case["ext_light_level"],
+            "schedule": "bldg_ext_light_sch",
+        }
+
+    if "infiltration_rate" in case.keys():
         loads_dict["infiltration"] = {
-            "inf": case["Infiltration_rate"],
+            "inf": case["infiltration_rate"],
             "schedule": "bldg_infiltration_sch",
         }
+    if "door_infiltration_rate" in case.keys():
+        loads_dict["door_infiltration"] = {
+            "inf": case["door_infiltration_rate"],
+            "schedule": "bldg_door_infiltration_sch",
+        }
+
     if "people_density" in case.keys():
         fractions = get_loads_fractions(
             ["frac_radiant"], "people", case["building_area_type"], loads_settings
@@ -267,7 +303,7 @@ def populate_std_loads(case: Dict) -> Dict:
 
 
 def populate_std_constructions(case: Dict) -> Dict:
-    """ populate detailed construction profiles for user in the processor
+    """populate detailed construction profiles for user in the processor
     Args:
         case: case dictionary. Properties used in this function are:
             - "wall_type"
@@ -338,7 +374,7 @@ def populate_std_ground_temp_jan2dec(case: Dict) -> List:
 
 
 def populate_std_hvac_for_osstd(case: Dict) -> Dict:
-    """ populate detailed dictionary for openstudio standard function call (bare minimum is the *s below)
+    """populate detailed dictionary for openstudio standard function call (bare minimum is the *s below)
         def model_add_hvac_system(model,
         *                    system_type,
         *                    main_heat_fuel,
@@ -361,11 +397,86 @@ def populate_std_hvac_for_osstd(case: Dict) -> Dict:
 
     """
 
+    hvac_type = case["hvac_system_type"].strip().replace(",", "_").replace(" ", "")
+
+    heating_efficiency_input = case["heating_efficiency"]
+    cooling_efficiency_input = case["cooling_efficiency"]
+    # note: missing values are checked in `hvac_fill_eff_values` called later
+
+    efficiency_dict = {}
+    hvac_components_mapping = read_json(
+        "../resources/efficiency_hvac_obj_types_mapping.json"
+    )
+    hvac_components = hvac_components_mapping[hvac_type]
+    efficiency_meta = read_json(
+        "../resources/efficiency_hvac_obj_field_w_default_meta.json"
+    )
+
+    # fill in default efficiency components
+    for comp, eff_dict in efficiency_meta["Default efficiency components"].items():
+        if comp in hvac_components:
+            efficiency_dict[comp] = eff_dict
+
+    # fill in input efficiency cooling components
+    efficiency_dict.update(
+        hvac_fill_eff_values(
+            efficiency_meta["Input efficiency cooling components"],
+            cooling_efficiency_input,
+            hvac_components,
+        )
+    )
+
+    # fill in input efficiency heating components
+    efficiency_dict.update(
+        hvac_fill_eff_values(
+            efficiency_meta["Input efficiency heating components"],
+            heating_efficiency_input,
+            hvac_components,
+        )
+    )
+
     hvac = {
-        "hvac_type": case["hvac_system_type"]
-        .strip()
-        .replace(",", "_")
-        .replace(" ", ""),
+        "hvac_type": hvac_type,
+        "efficiency": efficiency_dict,
     }
 
     return hvac
+
+
+def hvac_fill_eff_values(default_meta_dict, input_eff_value, hvac_components) -> Dict:
+    """helper used by `populate_std_hvac_for_osstd`"""
+    return_dict = {}
+    for comp, eff_dict in default_meta_dict.items():
+        if comp in hvac_components:
+            return_dict[comp] = {}
+            for field, eff_value in eff_dict.items():
+                if (
+                    math.isnan(input_eff_value)
+                    or (eff_value > 1 and input_eff_value <= 1)
+                    or (eff_value <= 1 and input_eff_value > 1)
+                ):
+                    # incompatible efficiency, use default
+                    return_dict[comp][field] = eff_value
+                else:
+                    return_dict[comp][field] = input_eff_value
+    return return_dict
+
+
+def populate_std_swh_for_osstd(case: Dict) -> Dict:
+    """populate service water heating related info
+
+    Args:
+        case: case dictionary. Properties used in this function are:
+            - "hvac_system_type": e.g. "PSZ, Gas, SingleSpeedDX"
+
+    Returns:
+
+    """
+
+    swh = {
+        "main_water_heater_fuel": case["service_water_heater_fuel"].strip(),
+        "main_service_water_peak_flowrate": case["service_water_peak_flowrate"],
+        "main_water_heater_thermal_efficiency": case["service_water_heater_efficiency"],
+    }
+
+    return swh

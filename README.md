@@ -32,6 +32,13 @@ WIP
 | standard_excel_processor.py    | generate raw input json files from excel spreadsheet                              |
 | workflow.py                    | python cells to execute the whole workflow                                        |
 
+## Parallel simulation workflow
+- Insure you are using constance7a since normal constance doesn't have singularity.
+- Currently, the source data comes from input/cbecs-standardized-200715.xlsx. Make any edits to input data here.
+- cd into src/ subdirectory
+- Run "sbatch run.sbatch"
+- Track any output/error messages in the run.out and run.err text files
+
 ## Usage
 
 (Airflow adoption on the new implementation is on hold.)
@@ -45,7 +52,7 @@ WIP
 - Follow the [quick start guide](https://airflow.apache.org/docs/stable/start.html) to start the airflow service. Make sure to have environment variable `AIRFLOW_HOME` set up before running the the airflow db (`airflow scheduler`) and webserver(`airflow webserver -p 8080`). The database only needs to be initialized (`airflow initdb`) once, unless there are running errors. Before initializing the database, also make sure that `AIRFLOW_HOME` is set properly.
 - If `AIRFLOW_HOME` is empty, then the airflow running folder is default to `~/airflow`.
 
-## To-do list (short term)
+<!-- ## To-do list (short term)
 
 - [ ] Redo HVAC processor with OpenStandard calls.
 - [ ] confirm the appropriateness of the u values in CBECS and the construciton layer rules, most values lead to no insulation constructions
@@ -55,7 +62,23 @@ WIP
 - [x] Accomodate standard data schema
 - [x] Add construction mapping in geometry processor
 - [x] Specify schedule interface
-- [x] Add multi-storey functionality
+- [x] Add multi-storey functionality -->
+
+## TO-DOs
+
+- [ ] schedule change to non stochastic
+- [ ] occupancy control: add occ based lighting control through schedule factor
+- [ ] (code change) exterior fixtures: add one object (exterior lighting), with two inputs, schedule and design level.
+- [ ] control electrical equipment schedule: similar to occupancy based lighting control
+- [ ] (code change) improve electrical/gas equipment efficiency: add obe object for gas equipment
+- [ ] (code change)shading overhang: add one object. one std input (overhang depth)
+- [ ] (potential code change) vestibule / improve door: don't add door, but change infiltration rate and schedule. add std input: nodoor / door w/wo vestibule
+- [ ] advanced control operation: change operation schedule
+- [ ] HVAC setpoints
+- [ ] (osstd code review before code change) economizer: check if economizer operation can be switched.
+- [ ] (osstd code review before code change) DCV
+- [ ] (osstd code review before code change) heat recovery: check ERV code in OSSTD
+- [ ] (osstd code review before code change) SWH: check OSSTD. std input: swh efficiency, water temp setpoint.
 
 ## Updates
 

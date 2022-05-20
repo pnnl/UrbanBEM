@@ -5,7 +5,7 @@ from eppy.modeleditor import IDF
 from recipes import copy_idf_objects, read_json
 
 
-IDF.setiddname("../resources/Energy+V9_0_1.idd")
+IDF.setiddname("../resources/V9-5-0-Energy+.idd")
 
 
 class Schedule:
@@ -54,7 +54,7 @@ class Schedule:
     def get_schedule_val_changes(self, hourlyList: List[float]) -> List[tuple]:
         """check a 24 hour schedule value and return list of tuple (changing hour, changed value)
 
-            e.g. ("Until: 19:00", "23.9")
+        e.g. ("Until: 19:00", "23.9")
         """
 
         # data validation

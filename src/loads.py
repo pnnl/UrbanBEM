@@ -4,31 +4,49 @@ from eppy import modeleditor
 from eppy.modeleditor import IDF
 from recipes import copy_idf_objects
 
-IDF.setiddname("../resources/Energy+V9_0_1.idd")
+IDF.setiddname("../resources/V9-5-0-Energy+.idd")
 
 
 class Loads:
     def __init__(self, case: Dict, idf: IDF):
         self.idf = idf
         self.building_area_type = case["building_area_type"]
-        self.electric_equipment = None
-        self.lighting = None
-        self.infiltration = None
-        self.people = None
+        eflag = False
+        gflag = False
+        lflag = False
+        elflag = False
+        iflag = False
+        diflag = False
+        pflag = False
         if "electric_equipment" in case["internal_loads"].keys():
             self.electric_equipment = case["internal_loads"]["electric_equipment"]
             eflag = True
+        if "gas_equipment" in case["internal_loads"].keys():
+            self.gas_equipment = case["internal_loads"]["gas_equipment"]
+            gflag = True
         if "lighting" in case["internal_loads"].keys():
             self.lighting = case["internal_loads"]["lighting"]
             lflag = True
+        if "ext_lighting" in case["internal_loads"].keys():
+            self.ext_lighting = case["internal_loads"]["ext_lighting"]
+            elflag = True
         if "infiltration" in case["internal_loads"].keys():
             self.infiltration = case["internal_loads"]["infiltration"]
             iflag = True
+        if "door_infiltration" in case["internal_loads"].keys():
+            self.door_infiltration = case["internal_loads"]["door_infiltration"]
+            diflag = True
         if "people" in case["internal_loads"].keys():
             self.people = case["internal_loads"]["people"]
             pflag = True
         self.set_loads(
-            equipment=eflag, lighting=lflag, infiltration=iflag, people=pflag
+            elec_equipment=eflag,
+            gas_equipment=gflag,
+            lighting=lflag,
+            ext_lighting=elflag,
+            infiltration=iflag,
+            door_infiltration=diflag,
+            people=pflag,
         )
 
     def set_electric_equipment(self) -> IDF:
@@ -49,6 +67,23 @@ class Loads:
         eqp.Fraction_Lost = self.electric_equipment["frac_lost"]
         return local_idf
 
+    def set_gas_equipment(self) -> IDF:
+        """Set gas equipment loads"""
+        local_idf = IDF(StringIO(""))
+        gas_equipment_obj_dict = {
+            "key": "GASEQUIPMENT",
+            "Name": f"{self.building_area_type}_gas_equipment",
+            "Zone_or_ZoneList_Name": f"Block {self.building_area_type}_north_zone Storey 0",
+            "Schedule_Name": self.gas_equipment["schedule"],
+            "Design_Level_Calculation_Method": "Watts/Area",
+            "Design_Level": self.gas_equipment["watts"],
+            "Fraction_Latent": self.gas_equipment["frac_latent"],
+            "Fraction_Radiant": self.gas_equipment["frac_radiant"],
+            "Fraction_Lost": self.gas_equipment["frac_lost"],
+        }
+        local_idf.newidfobject(**gas_equipment_obj_dict)
+        return local_idf
+
     def set_lighting(self) -> IDF:
         """
         Set lighting loads
@@ -64,6 +99,21 @@ class Loads:
         lgt.Watts_per_Zone_Floor_Area = self.lighting["lpd"]
         lgt.Fraction_Radiant = self.lighting["frac_radiant"]
         lgt.Fraction_Visible = self.lighting["frac_visible"]
+        return local_idf
+
+    def set_ext_lighting(self) -> IDF:
+        """
+        Set exterior lighting loads
+        """
+        local_idf = IDF(StringIO(""))
+        ext_lighting_obj_dict = {
+            "key": "EXTERIOR:LIGHTS",
+            "Name": f"{self.building_area_type}_ext_lgt",
+            "Schedule_Name": self.ext_lighting["schedule"],
+            "Design_Level": self.ext_lighting["design_level"],
+            "Control_Option": "AstronomicalClock",
+        }
+        local_idf.newidfobject(**ext_lighting_obj_dict)
         return local_idf
 
     def set_infiltration(self) -> IDF:
@@ -86,6 +136,27 @@ class Loads:
         inf.Velocity_Squared_Term_Coefficient = 0
         return local_idf
 
+    def set_door_infiltration(self) -> IDF:
+        """
+        Set door infiltration for first floor south zone
+        """
+
+        local_idf = IDF(StringIO(""))
+        door_infiltration_obj_dict = {
+            "key": "ZONEINFILTRATION:DESIGNFLOWRATE",
+            "Name": f"{self.building_area_type}_door_infiltration",
+            "Zone_or_ZoneList_Name": f"Block {self.building_area_type}_south_zone Storey 0",
+            "Schedule_Name": self.door_infiltration["schedule"],
+            "Design_Flow_Rate_Calculation_Method": "Flow/ExteriorArea",
+            "Flow_per_Exterior_Surface_Area": self.door_infiltration["inf"],
+            "Constant_Term_Coefficient": 0,
+            "Temperature_Term_Coefficient": 0,
+            "Velocity_Term_Coefficient": 0.224,
+            "Velocity_Squared_Term_Coefficient": 0,
+        }
+        local_idf.newidfobject(**door_infiltration_obj_dict)
+        return local_idf
+
     def set_people(self) -> IDF:
         """
         Set occupants
@@ -104,17 +175,30 @@ class Loads:
         return local_idf
 
     def set_loads(
-        self, equipment=True, lighting=True, infiltration=True, people=True
+        self,
+        elec_equipment=True,
+        gas_equipment=True,
+        lighting=True,
+        ext_lighting=True,
+        infiltration=True,
+        door_infiltration=True,
+        people=True,
     ) -> IDF:
         """
         Set all requested loads
         """
-        if equipment:
+        if elec_equipment:
             self.idf = copy_idf_objects(self.idf, self.set_electric_equipment())
+        if gas_equipment:
+            self.idf = copy_idf_objects(self.idf, self.set_gas_equipment())
         if lighting:
             self.idf = copy_idf_objects(self.idf, self.set_lighting())
+        if ext_lighting:
+            self.idf = copy_idf_objects(self.idf, self.set_ext_lighting())
         if infiltration:
             self.idf = copy_idf_objects(self.idf, self.set_infiltration())
+        if door_infiltration:
+            self.idf = copy_idf_objects(self.idf, self.set_door_infiltration())
         if people:
             self.idf = copy_idf_objects(self.idf, self.set_people())
 

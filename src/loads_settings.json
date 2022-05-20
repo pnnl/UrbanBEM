@@ -10,6 +10,17 @@
             "Any": 0.0
         }
     },
+    "gas_equipment": {
+        "frac_latent": {
+            "Any": 0.1
+        },
+        "frac_radiant": {
+            "Any": 0.2
+        },
+        "frac_lost": {
+            "Any": 0.7
+        }
+    },
     "lighting": {
         "frac_radiant": {
             "Any": 0.7,

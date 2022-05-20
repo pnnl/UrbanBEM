@@ -4,10 +4,12 @@ from tqdm import tqdm
 import json
 import os
 
-#os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")
+# os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")
 
 #%%
-data = pd.read_excel("../input/cbecs-standardized-200715.xlsx")
+data = pd.read_excel("../input/standardized_model_inputs_cbsa_05.16.2022.xlsx")
+
+data = data.reindex(sorted(data.columns), axis=1)
 
 #%%
 std_cols = data.columns.values.tolist()
@@ -22,6 +24,5 @@ for index, row in tqdm(data.iterrows(), total=data.shape[0]):
     with open(fname, "w") as f:
         f.write(json.dumps(case, indent=4))
         print(f"{fname} saved")
-    # if i > 3:
-    #     break  # TODO: delete this after dev
     i += 1
+print(f"{i} cases generated.")

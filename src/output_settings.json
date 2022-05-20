@@ -6,7 +6,7 @@
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "Gas:Facility",
+            "Key_Name": "NaturalGas:Facility",
             "Reporting_Frequency": "Hourly"
         },
         {
@@ -70,63 +70,63 @@
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "InteriorLights:Gas",
+            "Key_Name": "InteriorLights:NaturalGas",
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "ExteriorLights:Gas",
+            "Key_Name": "ExteriorLights:NaturalGas",
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "InteriorEquipment:Gas",
+            "Key_Name": "InteriorEquipment:NaturalGas",
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "ExteriorEquipment:Gas",
+            "Key_Name": "ExteriorEquipment:NaturalGas",
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "Fans:Gas",
+            "Key_Name": "Fans:NaturalGas",
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "Pumps:Gas",
+            "Key_Name": "Pumps:NaturalGas",
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "Heating:Gas",
+            "Key_Name": "Heating:NaturalGas",
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "Cooling:Gas",
+            "Key_Name": "Cooling:NaturalGas",
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "HeatRejection:Gas",
+            "Key_Name": "HeatRejection:NaturalGas",
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "Humidifier:Gas",
+            "Key_Name": "Humidifier:NaturalGas",
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "HeatRecovery:Gas",
+            "Key_Name": "HeatRecovery:NaturalGas",
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "DHW:Gas",
+            "Key_Name": "DHW:NaturalGas",
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "Cogeneration:Gas",
+            "Key_Name": "Cogeneration:NaturalGas",
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "Refrigeration:Gas",
+            "Key_Name": "Refrigeration:NaturalGas",
             "Reporting_Frequency": "Hourly"
         },
         {
-            "Key_Name": "WaterSystems:Gas",
+            "Key_Name": "WaterSystems:NaturalGas",
             "Reporting_Frequency": "Hourly"
         }
     ]
