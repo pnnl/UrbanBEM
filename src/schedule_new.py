@@ -139,7 +139,7 @@ class Schedule:
                 "key": "SCHEDULE:FILE",
                 "Schedule_Type_Limits_Name": "Any Number",
                 "Name": scheduleName,
-                "File_Name": os.getcwd().replace('/src', filename.strip('.')),
+                "File_Name": os.getcwd().replace("/src", filename.strip(".")),
                 "Column_Number": scheduleDF.columns.get_loc(scheduleName) + 2,
                 "Rows_to_Skip_at_Top": 1,
                 "Number_of_Hours_of_Data": 8760,
