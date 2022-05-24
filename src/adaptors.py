@@ -321,7 +321,7 @@ def populate_std_constructions(case: Dict) -> Dict:
             - "wall_u_factor"
             - "roof_type"
             - "roof_u_factor"
-            - "window_U_factor"
+            - "window_u_factor"
             - "window_shgc"
     Returns:
         ready to use construction profile for processor
@@ -339,7 +339,7 @@ def populate_std_constructions(case: Dict) -> Dict:
             "type": case["roof_type"].strip().replace(" ", "_").replace("-", "_"),
             "u_factor": case["roof_u_factor"],
         },
-        "window": {"u_factor": case["window_U_factor"], "shgc": case["window_shgc"]},
+        "window": {"u_factor": case["window_u_factor"], "shgc": case["window_shgc"]},
     }
 
     return constructions
