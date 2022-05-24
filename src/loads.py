@@ -75,7 +75,7 @@ class Loads:
             "Name": f"{self.building_area_type}_gas_equipment",
             "Zone_or_ZoneList_Name": f"Block {self.building_area_type}_north_zone Storey 0",
             "Schedule_Name": self.gas_equipment["schedule"],
-            "Design_Level_Calculation_Method": "Watts/Area",
+            "Design_Level_Calculation_Method": "EquipmentLevel",
             "Design_Level": self.gas_equipment["watts"],
             "Fraction_Latent": self.gas_equipment["frac_latent"],
             "Fraction_Radiant": self.gas_equipment["frac_radiant"],
