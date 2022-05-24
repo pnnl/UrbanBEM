@@ -283,9 +283,20 @@ def populate_std_loads(case: Dict) -> Dict:
             "inf": case["infiltration_rate"],
             "schedule": "bldg_infiltration_sch",
         }
-    if "door_infiltration_rate" in case.keys():
+
+    if ("num_doors_without_vestibule" in case.keys()) and (
+        "num_doors_with_vestibule" in case.keys()
+    ):
+        door_infiltration_rate = (
+            (
+                case["num_doors_without_vestibule"]
+                + case["num_doors_with_vestibule"] * 0.65
+            )
+            * 21.5278
+            / 2118.88  # convert formula unit from cfm to m3/s
+        )
         loads_dict["door_infiltration"] = {
-            "inf": case["door_infiltration_rate"],
+            "inf": door_infiltration_rate,
             "schedule": "bldg_door_infiltration_sch",
         }
 
