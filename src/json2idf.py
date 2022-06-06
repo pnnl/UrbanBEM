@@ -72,6 +72,7 @@ try:
         "16. Four-pipe fan-coil",
         "8. VAV with PFP boxes",
         "5. Packaged VAV with reheat",
+        "NA" # this will allow model creation without HVAC system
     ]:
 
         case = recipes.to_cbsa_hvac_type(case)

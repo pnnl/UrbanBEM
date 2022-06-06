@@ -23,5 +23,6 @@
     "5.1 Packaged VAV with gas central heating and electric reheat": "PVAV_Gas_ElectricReheat",
     "16. Four-pipe fan-coil": "Fan_Coil",
     "8. VAV with PFP boxes": "VAV_PFP",
-    "5. Packaged VAV with reheat": "PVAV_Gas_GasReheat"
+    "5. Packaged VAV with reheat": "PVAV_Gas_GasReheat",
+    "NA": "NA"
 }

@@ -410,6 +410,9 @@ def populate_std_hvac_for_osstd(case: Dict) -> Dict:
 
     hvac_type = case["hvac_system_type"].strip().replace(",", "_").replace(" ", "")
 
+    if hvac_type == "NA":
+        return {"hvac_type": hvac_type, "efficiency": {}}
+
     heating_efficiency_input = case["heating_efficiency"]
     cooling_efficiency_input = case["cooling_efficiency"]
     # note: missing values are checked in `hvac_fill_eff_values` called later
