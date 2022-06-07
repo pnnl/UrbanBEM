@@ -43,84 +43,48 @@ try:
     with open(case_path) as f:
         case = json.load(f)
 
-    if case["hvac_system_type"] in [
-        "PSZ, Gas, SingleSpeedDX",
-        "PSZ, Electric, SingleSpeedDX",
-        "VAV, HotWater, ChilledWater",
-        "PSZ_Gas_SingleSpeedDX",
-        "PSZ_Electric_SingleSpeedDX",
-        "VAV_HotWater_ChilledWater",
-        "Gas_Heating_Ventilation",
-        "PTHP",
-        "PTAC_Electric",
-        "PTAC_Gas",
-        "Electric_Heating_Ventilation",
-        "PSZ_HP",
-        "PVAV_Gas_ElectricReheat",
-        "Fan_Coil",
-        "VAV_PFP",
-        "PVAV_Gas_GasReheat",
-        "3. PSZ-AC",
-        "7. VAV with reheat",
-        "9. Heating and ventilation",
-        "2. PTHP",
-        "1.1 PTAC with electric heating",
-        "1. PTAC",
-        "10. Heating and ventilation",
-        "4. PSZ-HP",
-        "5.1 Packaged VAV with gas central heating and electric reheat",
-        "16. Four-pipe fan-coil",
-        "8. VAV with PFP boxes",
-        "5. Packaged VAV with reheat",
-        "NA" # this will allow model creation without HVAC system
-    ]:
+    case = recipes.to_cbsa_hvac_type(case)
 
-        case = recipes.to_cbsa_hvac_type(case)
+    case_conv, case_conv_clean = recipes.convert_dict_unit(case)
 
-        case_conv, case_conv_clean = recipes.convert_dict_unit(case)
+    with open(f"../input/std_json_conv/{casename}_conv.json", "w") as f:
+        f.write(json.dumps(case_conv, indent=4))
+    with open(f"../input/std_json_conv_clean/{casename}_conv.json", "w") as f:
+        f.write(json.dumps(case_conv_clean, indent=4))
 
-        with open(f"../input/std_json_conv/{casename}_conv.json", "w") as f:
-            f.write(json.dumps(case_conv, indent=4))
-        with open(f"../input/std_json_conv_clean/{casename}_conv.json", "w") as f:
-            f.write(json.dumps(case_conv_clean, indent=4))
+    #%% preprocessors
+    proc_case = Preprocessor(case_conv_clean).case_proc
+    with open(f"../input/processed_inputs/{casename}_processed.json", "w") as f:
+        f.write(json.dumps(proc_case, indent=4))
 
-        #%% preprocessors
-        proc_case = Preprocessor(case_conv_clean).case_proc
-        with open(f"../input/processed_inputs/{casename}_processed.json", "w") as f:
-            f.write(json.dumps(proc_case, indent=4))
+    #%% geometry processor
+    geometryadded_obj = Geometry(proc_case, idf)
 
-        #%% geometry processor
-        geometryadded_obj = Geometry(proc_case, idf)
+    #%% construction processor
+    constructionadded_obj = Constructions(proc_case, geometryadded_obj.idf)
 
-        #%% construction processor
-        constructionadded_obj = Constructions(proc_case, geometryadded_obj.idf)
+    # %% schedule processor
+    scheduleadded_obj = Schedule(
+        proc_case,
+        constructionadded_obj.idf,
+        randomizeHours=False,
+        randomizeValues=False,
+    )
 
-        # %% schedule processor
-        scheduleadded_obj = Schedule(
-            proc_case,
-            constructionadded_obj.idf,
-            randomizeHours=False,
-            randomizeValues=False,
-        )
+    # %% load processor
+    loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)
 
-        # %% load processor
-        loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)
+    # %% hvac processor
+    hvacadded_obj = HVAC(proc_case, loadadded_obj.idf)
 
-        # %% hvac processor
-        hvacadded_obj = HVAC(proc_case, loadadded_obj.idf)
+    # %% service water heating processor
+    swhadded_obj = SWH(proc_case, hvacadded_obj.idf)
 
-        # %% service water heating processor
-        swhadded_obj = SWH(proc_case, hvacadded_obj.idf)
+    # %% outputs processor
+    outputsadded_obj = Outputs(proc_case, swhadded_obj.idf)
 
-        # %% outputs processor
-        outputsadded_obj = Outputs(proc_case, swhadded_obj.idf)
-
-        # Save idf
-        outputsadded_obj.save_idf(f"../ep_input/input/{casename}.idf")
-
-    else:
-
-        print("HVAC system type not currenlty supported")
+    # Save idf
+    outputsadded_obj.save_idf(f"../ep_input/input/{casename}.idf")
 
 # If execution throws an exception, print message to error file but do not stop execution
 except:

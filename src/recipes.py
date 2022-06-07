@@ -184,6 +184,10 @@ def to_cbsa_hvac_type(case):
     Outputs:
     -case_hvac_converted: case json file for a building with updated HVAC type name, if CBSA or RBSA, then it's converted to CBECS HVAC naming, otherwise no change
     """
+
+    if not isinstance(case["hvac_system_type"], str):
+        return case
+
     # Open the mapping JSON file
     f_hvac_type = open("hvac_type_name_mapping.json", encoding="utf-8")
 
@@ -191,7 +195,7 @@ def to_cbsa_hvac_type(case):
     data_hvac_type = json.load(f_hvac_type)
 
     # Get converted type
-    key = case["hvac_system_type"]
+    key = case["hvac_system_type"].strip()
     hvac_type = data_hvac_type[key]
 
     case_hvac_converted = case
