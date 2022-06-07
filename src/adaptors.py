@@ -487,8 +487,17 @@ def populate_std_swh_for_osstd(case: Dict) -> Dict:
 
     """
 
+    if not isinstance(case["service_water_heater_fuel"], str):
+        return {
+            "main_water_heater_fuel": "NA",
+            "main_service_water_peak_flowrate": 0,
+            "main_water_heater_thermal_efficiency": 0,
+        }
+
     swh = {
-        "main_water_heater_fuel": case["service_water_heater_fuel"].strip(),
+        "main_water_heater_fuel": case["service_water_heater_fuel"]
+        .strip()
+        .replace(" ", ""),
         "main_service_water_peak_flowrate": case["service_water_peak_flowrate"],
         "main_water_heater_thermal_efficiency": case["service_water_heater_efficiency"],
     }
