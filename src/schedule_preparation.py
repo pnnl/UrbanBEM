@@ -1,3 +1,4 @@
+import math
 from typing import Dict
 import json
 import numpy as np
@@ -298,30 +299,46 @@ def bldg_hvac_operation_sch(
 
 
 # bldg_clg_setp_sch
-def bldg_clg_setp_sch(bldg_hvac_operation_sch_dict: Dict) -> Dict:
+def bldg_clg_setp_sch(bldg_hvac_operation_sch_dict: Dict, case: Dict) -> Dict:
+    occ_sp = 24
+    unocc_sp = 26.7
+    if "temp_setpoint_cool" in case.keys():
+        if not math.isnan(case["temp_setpoint_cool"]):
+            occ_sp = case["temp_setpoint_cool"]
+    if "temp_setpoint_cool_unoccupied" in case.keys():
+        if not math.isnan(case["temp_setpoint_cool_unoccupied"]):
+            unocc_sp = case["temp_setpoint_cool_unoccupied"]
     bldg_clg_setp_sch_dict = {}
     for key in bldg_hvac_operation_sch_dict:
         hourly_sch = []
         for i in range(24):
             if bldg_hvac_operation_sch_dict[key][i] == 1:
-                hourly_sch.append(24.00)
+                hourly_sch.append(occ_sp)
             else:
-                hourly_sch.append(26.70)
+                hourly_sch.append(unocc_sp)
         bldg_clg_setp_sch_dict[key] = hourly_sch
 
     return bldg_clg_setp_sch_dict
 
 
 # bldg_htg_setp_sch
-def bldg_htg_setp_sch(bldg_hvac_operation_sch_dict: Dict) -> Dict:
+def bldg_htg_setp_sch(bldg_hvac_operation_sch_dict: Dict, case: Dict) -> Dict:
+    occ_sp = 21
+    unocc_sp = 15.6
+    if "temp_setpoint_heat" in case.keys():
+        if not math.isnan(case["temp_setpoint_heat"]):
+            occ_sp = case["temp_setpoint_heat"]
+    if "temp_setpoint_heat_unoccupied" in case.keys():
+        if not math.isnan(case["temp_setpoint_heat_unoccupied"]):
+            unocc_sp = case["temp_setpoint_heat_unoccupied"]
     bldg_htg_setp_sch_dict = {}
     for key in bldg_hvac_operation_sch_dict:
         hourly_sch = []
         for i in range(24):
             if bldg_hvac_operation_sch_dict[key][i] == 1:
-                hourly_sch.append(21.00)
+                hourly_sch.append(occ_sp)
             else:
-                hourly_sch.append(15.60)
+                hourly_sch.append(unocc_sp)
         bldg_htg_setp_sch_dict[key] = hourly_sch
 
     return bldg_htg_setp_sch_dict

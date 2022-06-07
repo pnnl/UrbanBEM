@@ -1,6 +1,7 @@
 import json, os
 import numbers
 from typing import Dict, List
+from types import LambdaType
 from eppy.modeleditor import IDF
 
 print(os.getcwd())
@@ -49,6 +50,7 @@ def convert_dict_unit(imp: Dict) -> (Dict, Dict):
     si = {}
     si_clean = {}
 
+    # conversion is either defined as a simple scaling factor or a lambda (e.g. F to C conversion)
     unit_conv_dict = {  # modified from modelkit, units not used are commented out.
         "in": 0.0254,
         "ft": 0.3048,
@@ -61,6 +63,7 @@ def convert_dict_unit(imp: Dict) -> (Dict, Dict):
         "hr/wk": 1,
         "cfm/person": 1.0 / 2118.88,
         "gal/min": 6.309e-5,
+        "F": (lambda x: (x - 32) * 5 / 9)
         # "delta_f": 5.0 / 9.0,
         # "cfm": 1.0 / 2118.88,
         # "gal": 1.0 / 264.1721,
@@ -85,7 +88,8 @@ def convert_dict_unit(imp: Dict) -> (Dict, Dict):
         "cfm/ft2": "m3/s-m2",
         "hr/wk": "hr/wk",
         "cfm/person": "m3/s-person",
-        "gal/min": "m3/s"
+        "gal/min": "m3/s",
+        "F": "C",
         # "delta_f": "delta_c",
         # "cfm": "m3/s",
         # "gal": "",
@@ -109,7 +113,10 @@ def convert_dict_unit(imp: Dict) -> (Dict, Dict):
         if isinstance(value, numbers.Number):
             for unit_key, unit_factor in unit_conv_dict.items():
                 if f"({unit_key})" in key:
-                    si_val = value * unit_factor
+                    if isinstance(unit_factor, LambdaType):
+                        si_val = unit_factor(value)
+                    else:
+                        si_val = value * unit_factor
                     # si_key = key.replace(unit_key, unit_name_map[unit_key])
                     si_key = key.replace(
                         f"({unit_key})", f"({unit_name_map[unit_key]})"
@@ -192,3 +199,23 @@ def to_cbsa_hvac_type(case):
     f_hvac_type.close()
 
     return case_hvac_converted
+
+
+def get_schedule_by_name(schedules, name):
+    """this method takes a dictionary of schedules with names NOT as dict key, searches and return a schedule dict by
+        schedule name. Because the actual schedule vectors are hard coded into schedule["periods"]["0"]["day_of_week"],
+        we are going to return this for now and this shall be revised in the future
+
+    Args:
+        schedules: e.g. proc_case["schedules"]
+
+    Returns:
+        dict represent ONE schedule
+    """
+
+    for k, v in schedules.items():
+        if v["name"].strip().lower() == name.strip().lower():
+            # no guard put below because we make strong assumption about the schedule structure.
+            # if the assumption is violated, we should let it break and fix it.
+            return v["periods"]["0"]["day_of_week"]
+    return None

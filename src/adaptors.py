@@ -150,8 +150,8 @@ def populate_std_schedules(case: Dict) -> Dict:
     bldg_hvac_operation_sch_dict = sp.bldg_hvac_operation_sch(
         bldg_business_hour, consider_lunch_time
     )
-    bldg_clg_setp_sch_dict = sp.bldg_clg_setp_sch(bldg_hvac_operation_sch_dict)
-    bldg_htg_setp_sch_dict = sp.bldg_htg_setp_sch(bldg_hvac_operation_sch_dict)
+    bldg_clg_setp_sch_dict = sp.bldg_clg_setp_sch(bldg_hvac_operation_sch_dict, case)
+    bldg_htg_setp_sch_dict = sp.bldg_htg_setp_sch(bldg_hvac_operation_sch_dict, case)
     bldg_infiltration_sch_dict = sp.bldg_infiltration_sch(bldg_hvac_operation_sch_dict)
     bldg_door_infiltration_sch_dict = (
         bldg_infiltration_sch_dict  # TODO: this needs to be replaced.
