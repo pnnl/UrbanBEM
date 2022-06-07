@@ -325,10 +325,10 @@ def bldg_clg_setp_sch(bldg_hvac_operation_sch_dict: Dict, case: Dict) -> Dict:
 def bldg_htg_setp_sch(bldg_hvac_operation_sch_dict: Dict, case: Dict) -> Dict:
     occ_sp = 21
     unocc_sp = 15.6
-    if "temp_setpoint_cool" in case.keys():
+    if "temp_setpoint_heat" in case.keys():
         if not math.isnan(case["temp_setpoint_heat"]):
             occ_sp = case["temp_setpoint_heat"]
-    if "temp_setpoint_cool_unoccupied" in case.keys():
+    if "temp_setpoint_heat_unoccupied" in case.keys():
         if not math.isnan(case["temp_setpoint_heat_unoccupied"]):
             unocc_sp = case["temp_setpoint_heat_unoccupied"]
     bldg_htg_setp_sch_dict = {}
