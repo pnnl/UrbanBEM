@@ -1,7 +1,7 @@
 from typing import Dict, List
 from eppy import modeleditor
 from eppy.modeleditor import IDF
-from recipes import copy_idf_objects
+from recipes import copy_idf_objects, get_schedule_by_name
 import datetime
 import pandas as pd
 import schedule_preparation as sp
@@ -55,6 +55,8 @@ class Schedule:
                 bldg_business_hour_dict, consider_lunch_time
             )
 
+            # TODO: JXL method calls below need to be replaced because processed inputs have been added to case dict
+
             daySchedules = {}
             daySchedules["bldg_occ_sch"] = bldg_occ_sch_dict[weekdayKey]
             daySchedules["bldg_swh_use_sch"] = bldg_swh_use_sch_dict[weekdayKey]
@@ -77,12 +79,8 @@ class Schedule:
             )[
                 weekdayKey
             ]  # TODO: to be replaced with gas specific method
-            daySchedules["bldg_clg_setp_sch"] = sp.bldg_clg_setp_sch(
-                bldg_hvac_operation_sch
-            )[weekdayKey]
-            daySchedules["bldg_htg_setp_sch"] = sp.bldg_htg_setp_sch(
-                bldg_hvac_operation_sch
-            )[weekdayKey]
+            daySchedules["bldg_clg_setp_sch"] = get_schedule_by_name(case['schedules'], 'bldg_clg_setp_sch')[weekdayKey]
+            daySchedules["bldg_htg_setp_sch"] = get_schedule_by_name(case['schedules'], "bldg_htg_setp_sch")[weekdayKey]
             daySchedules["bldg_infiltration_sch"] = sp.bldg_infiltration_sch(
                 bldg_hvac_operation_sch
             )[weekdayKey]
