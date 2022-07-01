@@ -50,11 +50,14 @@ when "Gas_Heating_Ventilation" # CBSA HVAC type 9. Heating and ventilation
   puts "Adding #{hvac_system_type} for all zones"
   standard.model_add_hvac_system(osm, "Unit Heaters", "NaturalGas", nil, nil, osm.getThermalZones) #, hot_water_loop_type: nil, chilled_water_loop_cooling_type: nil, heat_pump_loop_cooling_type: nil, air_loop_heating_type:nil, air_loop_cooling_type: nil, zone_equipment_ventilation: nil, fan_coil_capacity_control_method: nil)
 when "PTHP" # CBSA HVAC type 2. PTHP
-  standard.model_add_hvac_system(osm, "PTHP", nil, nil, nil, osm.getThermalZones)
+  puts "Adding #{hvac_system_type} for all zones"
+  standard.model_add_hvac_system(osm, "PTHP", nil, nil, nil, osm.getThermalZones, zone_equipment_ventilation: false)
 when "PTAC_Electric" # CBSA HVAC type 1.1 PTAC with electric heating
-  standard.model_add_hvac_system(osm, "PTAC", "Electricity", nil, nil, osm.getThermalZones)
+  puts "Adding #{hvac_system_type} for all zones"
+  standard.model_add_hvac_system(osm, "PTAC", "Electricity", nil, nil, osm.getThermalZones, zone_equipment_ventilation: false)
 when "PTAC_Gas" # CBSA HVAC type 1. PTAC
-  standard.model_add_hvac_system(osm, "PTAC", "NaturalGas", nil, nil, osm.getThermalZones)
+  puts "Adding #{hvac_system_type} for all zones"
+  standard.model_add_hvac_system(osm, "PTAC", "NaturalGas", nil, nil, osm.getThermalZones, zone_equipment_ventilation: false)
 when "Electric_Heating_Ventilation" # CBSA HVAC 10. Heating and ventilation
   puts "Adding #{hvac_system_type} for all zones"
   standard.model_add_hvac_system(osm, "Unit Heaters", "Electricity", nil, nil, osm.getThermalZones)
