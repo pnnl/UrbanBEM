@@ -145,8 +145,10 @@ def populate_std_schedules(case: Dict) -> Dict:
     bldg_gas_equipment_sch_dict = (
         bldg_electric_equipment_sch_dict  # TODO: this needs to be replaced.
     )
-    bldg_light_sch_dict = sp.bldg_light_sch(bldg_business_hour, consider_lunch_time)
-    bldg_ext_light_sch_dict = bldg_light_sch_dict  # TODO: this needs to be replaced.
+    bldg_light_sch_dict = sp.bldg_light_sch(bldg_business_hour, overall_sch_factor=0.1)
+    bldg_ext_light_sch_dict = sp.bldg_light_sch(
+        bldg_business_hour, overall_sch_factor=1
+    )  # TODO: this needs to be replaced.
     bldg_hvac_operation_sch_dict = sp.bldg_hvac_operation_sch(
         bldg_business_hour, consider_lunch_time
     )
