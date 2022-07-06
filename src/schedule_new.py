@@ -61,10 +61,10 @@ class Schedule:
             daySchedules["bldg_occ_sch"] = bldg_occ_sch_dict[weekdayKey]
             daySchedules["bldg_swh_use_sch"] = bldg_swh_use_sch_dict[weekdayKey]
             daySchedules["bldg_light_sch"] = sp.bldg_light_sch(
-                bldg_business_hour_dict, consider_lunch_time
+                bldg_business_hour_dict, overall_sch_factor=0.1
             )[weekdayKey]
             daySchedules["bldg_ext_light_sch"] = sp.bldg_light_sch(
-                bldg_business_hour_dict, consider_lunch_time
+                bldg_business_hour_dict, overall_sch_factor=1
             )[
                 weekdayKey
             ]  # TODO: to be replaced with ext light specific method
@@ -79,8 +79,12 @@ class Schedule:
             )[
                 weekdayKey
             ]  # TODO: to be replaced with gas specific method
-            daySchedules["bldg_clg_setp_sch"] = get_schedule_by_name(case['schedules'], 'bldg_clg_setp_sch')[weekdayKey]
-            daySchedules["bldg_htg_setp_sch"] = get_schedule_by_name(case['schedules'], "bldg_htg_setp_sch")[weekdayKey]
+            daySchedules["bldg_clg_setp_sch"] = get_schedule_by_name(
+                case["schedules"], "bldg_clg_setp_sch"
+            )[weekdayKey]
+            daySchedules["bldg_htg_setp_sch"] = get_schedule_by_name(
+                case["schedules"], "bldg_htg_setp_sch"
+            )[weekdayKey]
             daySchedules["bldg_infiltration_sch"] = sp.bldg_infiltration_sch(
                 bldg_hvac_operation_sch
             )[weekdayKey]

@@ -145,8 +145,10 @@ def populate_std_schedules(case: Dict) -> Dict:
     bldg_gas_equipment_sch_dict = (
         bldg_electric_equipment_sch_dict  # TODO: this needs to be replaced.
     )
-    bldg_light_sch_dict = sp.bldg_light_sch(bldg_business_hour, consider_lunch_time)
-    bldg_ext_light_sch_dict = bldg_light_sch_dict  # TODO: this needs to be replaced.
+    bldg_light_sch_dict = sp.bldg_light_sch(bldg_business_hour, overall_sch_factor=0.1)
+    bldg_ext_light_sch_dict = sp.bldg_light_sch(
+        bldg_business_hour, overall_sch_factor=1
+    )  # TODO: this needs to be replaced.
     bldg_hvac_operation_sch_dict = sp.bldg_hvac_operation_sch(
         bldg_business_hour, consider_lunch_time
     )
@@ -408,10 +410,10 @@ def populate_std_hvac_for_osstd(case: Dict) -> Dict:
 
     """
 
-    hvac_type = case["hvac_system_type"].strip().replace(",", "_").replace(" ", "")
+    if not isinstance(case["hvac_system_type"], str):
+        return {"hvac_type": "NA", "efficiency": {}}
 
-    if hvac_type == "NA":
-        return {"hvac_type": hvac_type, "efficiency": {}}
+    hvac_type = case["hvac_system_type"].strip().replace(",", "_").replace(" ", "")
 
     heating_efficiency_input = case["heating_efficiency"]
     cooling_efficiency_input = case["cooling_efficiency"]
@@ -487,8 +489,17 @@ def populate_std_swh_for_osstd(case: Dict) -> Dict:
 
     """
 
+    if not isinstance(case["service_water_heater_fuel"], str):
+        return {
+            "main_water_heater_fuel": "NA",
+            "main_service_water_peak_flowrate": 0,
+            "main_water_heater_thermal_efficiency": 0,
+        }
+
     swh = {
-        "main_water_heater_fuel": case["service_water_heater_fuel"].strip(),
+        "main_water_heater_fuel": case["service_water_heater_fuel"]
+        .strip()
+        .replace(" ", ""),
         "main_service_water_peak_flowrate": case["service_water_peak_flowrate"],
         "main_water_heater_thermal_efficiency": case["service_water_heater_efficiency"],
     }

@@ -195,25 +195,31 @@ def bldg_occ_sch(bldg_business_hour_dict: Dict, consider_lunch_time: str) -> Dic
 
 
 # bldg_electric_equipment_sch
-def bldg_electric_equipment_sch(bldg_occ_sch_dict: Dict) -> Dict:
+def bldg_electric_equipment_sch(
+    bldg_occ_sch_dict: Dict, overall_sch_factor=0.66
+) -> Dict:
     bldg_electric_equipment_sch_dict = {}
     bldg_electric_equipment_sch_dict["WinDD"] = [0] * 24
-    bldg_electric_equipment_sch_dict["SumDD"] = [1] * 24
+    bldg_electric_equipment_sch_dict["SumDD"] = [0.66] * 24
     for key in bldg_occ_sch_dict:
         if key != "WinDD" and key != "SumDD":
             hourly_sch = []
             for i in range(24):
                 hourly_sch.append(0.1 + bldg_occ_sch_dict[key][i] * 0.9)
-            bldg_electric_equipment_sch_dict[key] = hourly_sch
+            bldg_electric_equipment_sch_dict[key] = [
+                x * overall_sch_factor for x in hourly_sch
+            ]
 
     return bldg_electric_equipment_sch_dict
 
 
 # bldg_light_sch
-def bldg_light_sch(bldg_business_hour_dict: Dict, consider_lunch_time: str) -> Dict:
+def bldg_light_sch(
+    bldg_business_hour_dict: Dict, overall_sch_factor: float = 1
+) -> Dict:
     bldg_light_sch_dict = {}
     bldg_light_sch_dict["WinDD"] = [0] * 24
-    bldg_light_sch_dict["SumDD"] = [1] * 24
+    bldg_light_sch_dict["SumDD"] = [0.1] * 24
     for key in bldg_business_hour_dict:
         hourly_sch = []
         for i in range(24):
@@ -243,7 +249,7 @@ def bldg_light_sch(bldg_business_hour_dict: Dict, consider_lunch_time: str) -> D
                 hourly_sch.append(0.3)
             else:
                 hourly_sch.append(0.05)
-        bldg_light_sch_dict[key] = hourly_sch
+        bldg_light_sch_dict[key] = [x * overall_sch_factor for x in hourly_sch]
 
     return bldg_light_sch_dict
 

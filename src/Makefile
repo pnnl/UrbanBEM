@@ -35,6 +35,11 @@ simulate:
 	mkdir -p ../ep_output/stderr && \
 	mkdir -p ../hvac_dev && \
 	mkdir -p ../swh_dev && \
+	mkdir -p ../input/std_json_raw && \
+	mkdir -p ../input/std_json_conv && \
+	mkdir -p ../input/std_json_conv_clean && \
+	mkdir -p ../input/processed_inputs && \
+	mkdir -p ../input/schedules && \
 	$(MAKE) -k -j 288 output
 
 # clean IDF targets - to be done after scripts are edited
@@ -47,4 +52,9 @@ cleanIDF:
 
 # clean IDF targets - to be done after scripts are edited
 cleanOutput:
+	rm -rf ../ep_output
+
+clean:
+	rm ../input/std_json_raw/* && \
+	rm -rf ../ep_input && \
 	rm -rf ../ep_output

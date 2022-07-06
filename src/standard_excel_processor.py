@@ -7,7 +7,7 @@ import os
 # os.chdir("/mnt/c/FirstClass/airflow/dags/urban-sim-flow/src")
 
 #%%
-data = pd.read_excel("../input/standardized_model_inputs_cbsa_05.16.2022.xlsx")
+data = pd.read_excel("../input/standardized_model_inputs_cbsa_06.06.2022.xlsx")
 
 data = data.reindex(sorted(data.columns), axis=1)
 
