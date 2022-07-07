@@ -505,3 +505,30 @@ def populate_std_swh_for_osstd(case: Dict) -> Dict:
     }
 
     return swh
+
+
+def get_pv_info(case: Dict) -> Dict:
+    """populate PV related info
+
+    Args:
+        case: case dictionary. Properties used in this function are:
+            - "rooftop_pv": 'Yes' or 'No'
+
+    Returns:
+
+    """
+    if not isinstance(case["rooftop_pv"], str):
+        pv = {
+            "has_rooftop_pv": "no",
+        }
+    elif case["rooftop_pv"].lower() == "yes":
+        pv = {
+            "has_rooftop_pv": "yes",
+            "rooftop_pv_area": case["gross_conditioned_area"]
+        }
+    else:
+        pv = {
+            "has_rooftop_pv": "no",
+        }
+
+    return pv
