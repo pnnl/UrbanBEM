@@ -521,7 +521,7 @@ def get_pv_info(case: Dict) -> Dict:
         pv = {
             "has_rooftop_pv": "no",
         }
-    elif case["rooftop_pv"].lower() == "yes":
+    elif case["rooftop_pv"].lower().strip() == "yes":
         pv = {
             "has_rooftop_pv": "yes",
             "rooftop_pv_area": case["gross_conditioned_area"],
