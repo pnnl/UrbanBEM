@@ -30,6 +30,7 @@ class Preprocessor:
         self.loads_procedures()
         self.hvac_procedures()
         self.swh_procedures()
+        self.pv_procedures()
 
     def geometry_procedures(self):  # general preprocess organizer
         self.populate_zone_geometry()
@@ -56,6 +57,9 @@ class Preprocessor:
 
     def swh_procedures(self):
         self.populate_swh()
+
+    def pv_procedures(self):
+        self.populate_pv()
 
     def keep_is(self):  # case properties to be moved to final case directly
         for key in self.keepkeys:
@@ -86,3 +90,6 @@ class Preprocessor:
 
     def populate_swh(self):
         self.case_proc["swh"] = adaptors.populate_std_swh_for_osstd(self.case)
+
+    def populate_pv(self):
+        self.case_proc["pv"] = adaptors.get_pv_info(self.case)
