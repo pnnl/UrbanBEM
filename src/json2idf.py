@@ -15,7 +15,7 @@ import sys
 from traceback import print_exc
 
 # Get the parameter, representing the CBECS case, passed to the command line
-casename = 3306 #sys.argv.pop()
+casename = 3306  # sys.argv.pop()
 
 # Redirect the standard output and standard error to files so they aren't printed on top of messages from other cases running in parallel
 sys.stdout = open(f"../ep_input/stdout/{casename}_out.txt", "w")
@@ -80,7 +80,7 @@ try:
 
     # %% service water heating processor
     swhadded_obj = SWH(proc_case, hvacadded_obj.idf)
-    
+
     # %% pv processor
     pvadded_obj = Photovoltaic(proc_case, swhadded_obj.idf)
 

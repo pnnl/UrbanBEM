@@ -9,18 +9,16 @@ IDF.setiddname("../resources/V9-5-0-Energy+.idd")
 
 class Photovoltaic:
     def __init__(self, case: Dict, idf: IDF):
-        
+
         self.idf = idf
-        pv_power_density = 0.25*10.7639 # Assuming 0.25 W/ft2 of total floor area
+        pv_power_density = 0.25 * 10.7639  # Assuming 0.25 W/ft2 of total floor area
         pvflag = False
-        
+
         if case["pv"]["has_rooftop_pv"].lower() == "yes":
             pvflag = True
-            self.pv_capacity = case["pv"]["rooftop_pv_area"]*pv_power_density
-        
-        self.add_pv(
-            has_pv = pvflag
-        )
+            self.pv_capacity = case["pv"]["rooftop_pv_area"] * pv_power_density
+
+        self.add_pv(has_pv=pvflag)
 
     def set_pv_objects(self) -> IDF:
         """Set pv related objects"""
@@ -30,16 +28,16 @@ class Photovoltaic:
             "Name": "PV_module",
             "PVWatts_Version": "",
             "DC_System_Capacity": self.pv_capacity,
-            "Module_Type": "Standard",  
+            "Module_Type": "Standard",
             "Array_Type": "FixedRoofMounted",
             "System_Losses": 0.113,
-            "Array_Geometry_Type": "TiltAzimuth", 
+            "Array_Geometry_Type": "TiltAzimuth",
             "Tilt_Angle": 45.0,
             "Azimuth_Angle": 180.0,
             "Surface_Name": "",
-            "Ground_Coverage_Ratio":"",
+            "Ground_Coverage_Ratio": "",
         }
-        
+
         generator_obj_dict = {
             "key": "ELECTRICLOADCENTER:GENERATORS",
             "Name": "PV_Generator",
@@ -76,7 +74,7 @@ class Photovoltaic:
 
         return local_idf
 
-    def add_pv(self, has_pv = False) -> IDF:
+    def add_pv(self, has_pv=False) -> IDF:
         """
         Set all pv ojectcs
         """
@@ -84,7 +82,6 @@ class Photovoltaic:
             self.idf = copy_idf_objects(self.idf, self.set_pv_objects())
 
         return self.idf
-    
-    
+
     def save_idf(self, path):
         self.idf.saveas(path, lineendings="unix")
