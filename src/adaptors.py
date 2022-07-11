@@ -505,3 +505,26 @@ def populate_std_swh_for_osstd(case: Dict) -> Dict:
     }
 
     return swh
+
+def get_overhang_info(case: Dict) -> Dict:
+    """populate overhang info
+
+    Args:
+        case: case dictionary. Properties used in this function are:
+            - "overhang": "Yes" or "No"
+
+    Returns:
+
+    """
+    if not isinstance(case["overhang"], str):
+        return {
+            "has_overhang": "no",
+        }
+    elif case["overhang"].lower() != "yes":
+        return {
+            "has_overhang": "no",
+        }
+    else:
+        return {
+            "has_overhang": "yes",
+        }

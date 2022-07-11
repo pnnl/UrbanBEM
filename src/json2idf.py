@@ -8,13 +8,14 @@ from preprocessor import Preprocessor
 from schedule_new import Schedule
 from hvac import HVAC
 from swh import SWH
+from overhang import Overhang
 from outputs import Outputs
 import recipes
 import sys
 from traceback import print_exc
 
 # Get the parameter, representing the CBECS case, passed to the command line
-casename = sys.argv.pop()
+casename = 3306 #sys.argv.pop()
 
 # Redirect the standard output and standard error to files so they aren't printed on top of messages from other cases running in parallel
 sys.stdout = open(f"../ep_input/stdout/{casename}_out.txt", "w")
@@ -71,6 +72,8 @@ try:
         randomizeValues=False,
     )
 
+    print(proc_case["zone_geometry"])
+
     # %% load processor
     loadadded_obj = Loads(proc_case, scheduleadded_obj.idf)
 
@@ -80,8 +83,11 @@ try:
     # %% service water heating processor
     swhadded_obj = SWH(proc_case, hvacadded_obj.idf)
 
+    # %% overhang processor
+    overhangadded_obj = Overhang(proc_case, swhadded_obj.idf)
+
     # %% outputs processor
-    outputsadded_obj = Outputs(proc_case, swhadded_obj.idf)
+    outputsadded_obj = Outputs(proc_case, overhangadded_obj.idf)
 
     # Save idf
     outputsadded_obj.save_idf(f"../ep_input/input/{casename}.idf")

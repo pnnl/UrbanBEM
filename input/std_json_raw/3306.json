@@ -30,7 +30,7 @@
     "number_days_open_weekend": 2,
     "number_days_open_workday": 5,
     "number_of_floor": 1,
-    "overhang": "No",
+    "overhang": "Yes",
     "people_density(people/1000ft2)": 7.0,
     "plug_load_density(W/ft2)": 0.6085666462,
     "roof_type": "IEAD",
