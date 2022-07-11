@@ -31,6 +31,8 @@ class Preprocessor:
         self.hvac_procedures()
         self.swh_procedures()
         self.overhang_procedures()
+        self.pv_procedures()
+
 
     def geometry_procedures(self):  # general preprocess organizer
         self.populate_zone_geometry()
@@ -60,6 +62,9 @@ class Preprocessor:
 
     def overhang_procedures(self):
         self.populate_overhang()
+
+    def pv_procedures(self):
+        self.populate_pv()
 
     def keep_is(self):  # case properties to be moved to final case directly
         for key in self.keepkeys:
@@ -93,3 +98,7 @@ class Preprocessor:
 
     def populate_overhang(self):
         self.case_proc["overhang"] = adaptors.get_overhang_info(self.case)
+
+    def populate_pv(self):
+        self.case_proc["pv"] = adaptors.get_pv_info(self.case)
+

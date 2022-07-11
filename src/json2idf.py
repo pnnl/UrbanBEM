@@ -9,13 +9,14 @@ from schedule_new import Schedule
 from hvac import HVAC
 from swh import SWH
 from overhang import Overhang
+from photovoltaic import Photovoltaic
 from outputs import Outputs
 import recipes
 import sys
 from traceback import print_exc
 
 # Get the parameter, representing the CBECS case, passed to the command line
-casename = 3306 #sys.argv.pop()
+casename = sys.argv.pop()
 
 # Redirect the standard output and standard error to files so they aren't printed on top of messages from other cases running in parallel
 sys.stdout = open(f"../ep_input/stdout/{casename}_out.txt", "w")
@@ -86,8 +87,11 @@ try:
     # %% overhang processor
     overhangadded_obj = Overhang(proc_case, swhadded_obj.idf)
 
+    # %% pv processor
+    pvadded_obj = Photovoltaic(proc_case, overhangadded_obj.idf)
+
     # %% outputs processor
-    outputsadded_obj = Outputs(proc_case, overhangadded_obj.idf)
+    outputsadded_obj = Outputs(proc_case, pvadded_obj.idf)
 
     # Save idf
     outputsadded_obj.save_idf(f"../ep_input/input/{casename}.idf")

@@ -512,9 +512,6 @@ def get_overhang_info(case: Dict) -> Dict:
     Args:
         case: case dictionary. Properties used in this function are:
             - "overhang": "Yes" or "No"
-
-    Returns:
-
     """
     if not isinstance(case["overhang"], str):
         return {
@@ -528,3 +525,32 @@ def get_overhang_info(case: Dict) -> Dict:
         return {
             "has_overhang": "yes",
         }
+
+
+
+def get_pv_info(case: Dict) -> Dict:
+    """populate PV related info
+
+    Args:
+        case: case dictionary. Properties used in this function are:
+            - "rooftop_pv": 'Yes' or 'No'
+
+    Returns:
+
+    """
+    if not isinstance(case["rooftop_pv"], str):
+        pv = {
+            "has_rooftop_pv": "no",
+        }
+    elif case["rooftop_pv"].lower().strip() == "yes":
+        pv = {
+            "has_rooftop_pv": "yes",
+            "rooftop_pv_area": case["gross_conditioned_area"],
+        }
+    else:
+        pv = {
+            "has_rooftop_pv": "no",
+        }
+
+    return pv
+

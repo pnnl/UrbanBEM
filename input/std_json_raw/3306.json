@@ -35,7 +35,7 @@
     "plug_load_density(W/ft2)": 0.6085666462,
     "roof_type": "IEAD",
     "roof_u_factor(Btu/h-ft2-F)": 0.074,
-    "rooftop_pv": "No",
+    "rooftop_pv": "Yes",
     "service_water_heater_efficiency": 1.0,
     "service_water_heater_fuel": "Electricity",
     "service_water_peak_flowrate(gal/min)": 6,
