@@ -507,6 +507,27 @@ def populate_std_swh_for_osstd(case: Dict) -> Dict:
     return swh
 
 
+def get_overhang_info(case: Dict) -> Dict:
+    """populate overhang info
+
+    Args:
+        case: case dictionary. Properties used in this function are:
+            - "overhang": "Yes" or "No"
+    """
+    if not isinstance(case["overhang"], str):
+        return {
+            "has_overhang": "no",
+        }
+    elif case["overhang"].lower() != "yes":
+        return {
+            "has_overhang": "no",
+        }
+    else:
+        return {
+            "has_overhang": "yes",
+        }
+
+
 def get_pv_info(case: Dict) -> Dict:
     """populate PV related info
 
@@ -532,3 +553,27 @@ def get_pv_info(case: Dict) -> Dict:
         }
 
     return pv
+
+
+def get_ev_charger_info(case: Dict) -> Dict:
+    """populate EV charger related info
+
+    Args:
+        case: case dictionary. Properties used in this function are:
+            - "num_ev_charger": int, number of ev chargers
+
+    Returns:
+
+    """
+
+    if int(case["num_ev_charger"]) > 0:
+        ev_charger = {
+            "has_ev_charger": "yes",
+            "num_ev_charger": int(case["num_ev_charger"]),
+        }
+    else:
+        ev_charger = {
+            "has_ev_charger": "no",
+        }
+
+    return ev_charger
