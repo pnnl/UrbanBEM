@@ -34,7 +34,6 @@ class Preprocessor:
         self.pv_procedures()
         self.ev_charger_procedures()
 
-
     def geometry_procedures(self):  # general preprocess organizer
         self.populate_zone_geometry()
 
@@ -108,4 +107,3 @@ class Preprocessor:
 
     def populate_ev_charger(self):
         self.case_proc["ev_charger"] = adaptors.get_ev_charger_info(self.case)
-

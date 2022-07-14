@@ -9,23 +9,21 @@ IDF.setiddname("../resources/V9-5-0-Energy+.idd")
 
 class Overhang:
     def __init__(self, case: Dict, idf: IDF):
-        
+
         self.idf = idf
         overhangflag = False
-        
+
         if case["overhang"]["has_overhang"].lower() == "yes":
             overhangflag = True
-        
-        self.add_overhang(
-            has_overhang = overhangflag
-        )
+
+        self.add_overhang(has_overhang=overhangflag)
 
     def set_overhang_objects(self) -> IDF:
         """Set overhang objects"""
-        
+
         local_idf = IDF(StringIO(""))
         windows = self.idf.idfobjects["FENESTRATIONSURFACE:DETAILED"]
-        
+
         for window in windows:
 
             print(window.Name)
@@ -44,7 +42,7 @@ class Overhang:
 
         return local_idf
 
-    def add_overhang(self, has_overhang = False) -> IDF:
+    def add_overhang(self, has_overhang=False) -> IDF:
         """
         Set all overhang ojectcs
         """
@@ -52,7 +50,6 @@ class Overhang:
             self.idf = copy_idf_objects(self.idf, self.set_overhang_objects())
 
         return self.idf
-    
-    
+
     def save_idf(self, path):
         self.idf.saveas(path, lineendings="unix")

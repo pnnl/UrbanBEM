@@ -506,6 +506,7 @@ def populate_std_swh_for_osstd(case: Dict) -> Dict:
 
     return swh
 
+
 def get_overhang_info(case: Dict) -> Dict:
     """populate overhang info
 
@@ -525,7 +526,6 @@ def get_overhang_info(case: Dict) -> Dict:
         return {
             "has_overhang": "yes",
         }
-
 
 
 def get_pv_info(case: Dict) -> Dict:
