@@ -554,3 +554,26 @@ def get_pv_info(case: Dict) -> Dict:
 
     return pv
 
+
+def get_ev_charger_info(case: Dict) -> Dict:
+    """populate EV charger related info
+
+    Args:
+        case: case dictionary. Properties used in this function are:
+            - "num_ev_charger": int, number of ev chargers
+
+    Returns:
+
+    """
+
+    if int(case["num_ev_charger"]) > 0:
+        ev_charger = {
+            "has_ev_charger": "yes",
+            "num_ev_charger": int(case["num_ev_charger"]),
+        }
+    else:
+        ev_charger = {
+            "has_ev_charger": "no",
+        }
+
+    return ev_charger

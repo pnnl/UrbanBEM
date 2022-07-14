@@ -32,6 +32,7 @@ class Preprocessor:
         self.swh_procedures()
         self.overhang_procedures()
         self.pv_procedures()
+        self.ev_charger_procedures()
 
 
     def geometry_procedures(self):  # general preprocess organizer
@@ -65,6 +66,9 @@ class Preprocessor:
 
     def pv_procedures(self):
         self.populate_pv()
+
+    def ev_charger_procedures(self):
+        self.populate_ev_charger()
 
     def keep_is(self):  # case properties to be moved to final case directly
         for key in self.keepkeys:
@@ -101,4 +105,7 @@ class Preprocessor:
 
     def populate_pv(self):
         self.case_proc["pv"] = adaptors.get_pv_info(self.case)
+
+    def populate_ev_charger(self):
+        self.case_proc["ev_charger"] = adaptors.get_ev_charger_info(self.case)
 

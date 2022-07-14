@@ -10,6 +10,7 @@ from hvac import HVAC
 from swh import SWH
 from overhang import Overhang
 from photovoltaic import Photovoltaic
+from evcharger import EVCharger
 from outputs import Outputs
 import recipes
 import sys
@@ -90,8 +91,11 @@ try:
     # %% pv processor
     pvadded_obj = Photovoltaic(proc_case, overhangadded_obj.idf)
 
+    # %% EV charger processor
+    evchargeradded_obj = EVCharger(proc_case, pvadded_obj.idf)
+
     # %% outputs processor
-    outputsadded_obj = Outputs(proc_case, pvadded_obj.idf)
+    outputsadded_obj = Outputs(proc_case, evchargeradded_obj.idf)
 
     # Save idf
     outputsadded_obj.save_idf(f"../ep_input/input/{casename}.idf")

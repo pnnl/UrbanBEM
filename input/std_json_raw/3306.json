@@ -10,7 +10,7 @@
     "east_window_area(ft2)": 3.13730585056669,
     "economizer": "No",
     "epw_file": "USA_CO_Denver-Aurora-Buckley.AFB.724695_TMY3.epw",
-    "ev_charger": "No",
+    "num_ev_charger": 0,
     "ext_light_level(W)": 2176.0,
     "floor_to_ceil_height(ft)": 12.0,
     "gas_equipment_load(W)": 0,
