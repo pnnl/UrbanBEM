@@ -134,6 +134,10 @@ def populate_std_schedules(case: Dict) -> Dict:
         hourly schedules dictionary
 
     """
+    ns_upperbound = 0.1
+    if case['building_area_type'].strip().lower() in ['health-care clinic', 'hospital']:
+        ns_upperbound = 0.2
+
     bldg_business_hour, consider_lunch_time = sp.bldg_business_hour(
         case, randomizeHours=False
     )
@@ -142,10 +146,13 @@ def populate_std_schedules(case: Dict) -> Dict:
         sp.bldg_occ_sch(bldg_business_hour, False), multiplier=0.1
     )  # swh use schedule is 0.1 x occ without lunch break
     bldg_electric_equipment_sch_dict = sp.bldg_electric_equipment_sch(bldg_occ_sch_dict)
+    bldg_electric_equipment_sch_dict = sp.sch_night_squeeze(bldg_electric_equipment_sch_dict, upperbound=ns_upperbound)
     bldg_gas_equipment_sch_dict = (
         bldg_electric_equipment_sch_dict  # TODO: this needs to be replaced.
     )
+    bldg_gas_equipment_sch_dict = sp.sch_night_squeeze(bldg_gas_equipment_sch_dict, upperbound=ns_upperbound)
     bldg_light_sch_dict = sp.bldg_light_sch(bldg_business_hour, overall_sch_factor=0.1)
+    bldg_light_sch_dict = sp.sch_night_squeeze(bldg_light_sch_dict, upperbound=ns_upperbound)
     bldg_ext_light_sch_dict = sp.bldg_light_sch(
         bldg_business_hour, overall_sch_factor=1
     )  # TODO: this needs to be replaced.

@@ -17,11 +17,11 @@ import sys
 from traceback import print_exc
 
 # Get the parameter, representing the CBECS case, passed to the command line
-casename = sys.argv.pop()
+casename = "3306"#sys.argv.pop()
 
 # Redirect the standard output and standard error to files so they aren't printed on top of messages from other cases running in parallel
-sys.stdout = open(f"../ep_input/stdout/{casename}_out.txt", "w")
-sys.stderr = open(f"../ep_input/stderr/{casename}_err.txt", "w")
+# sys.stdout = open(f"../ep_input/stdout/{casename}_out.txt", "w")
+# sys.stderr = open(f"../ep_input/stderr/{casename}_err.txt", "w")
 
 # TODO: 0419
 # 1. hvac and swh efficiency post processing
@@ -105,5 +105,5 @@ except:
 
     print_exc()
 
-sys.stdout.close()
-sys.stderr.close()
+# sys.stdout.close()
+# sys.stderr.close()

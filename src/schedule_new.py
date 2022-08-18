@@ -30,6 +30,10 @@ class Schedule:
             columns=[x[1]["name"] for x in self.schedules_dict.items()]
         )
 
+        ns_upperbound = 0.1
+        if case['building_area_type'].strip().lower() in ['health-care clinic', 'hospital']:
+            ns_upperbound = 0.2
+
         currentDate = datetime.date(year=2019, month=1, day=1)
 
         while currentDate <= datetime.date(year=2019, month=12, day=31):
@@ -60,8 +64,9 @@ class Schedule:
             daySchedules = {}
             daySchedules["bldg_occ_sch"] = bldg_occ_sch_dict[weekdayKey]
             daySchedules["bldg_swh_use_sch"] = bldg_swh_use_sch_dict[weekdayKey]
-            daySchedules["bldg_light_sch"] = sp.bldg_light_sch(
-                bldg_business_hour_dict, overall_sch_factor=0.1
+            daySchedules["bldg_light_sch"] = sp.sch_night_squeeze(
+                sp.bldg_light_sch(bldg_business_hour_dict, overall_sch_factor=0.1),
+                upperbound=ns_upperbound,
             )[weekdayKey]
             daySchedules["bldg_ext_light_sch"] = sp.bldg_light_sch(
                 bldg_business_hour_dict, overall_sch_factor=1
@@ -71,11 +76,11 @@ class Schedule:
             daySchedules["bldg_hvac_operation_sch"] = bldg_hvac_operation_sch[
                 weekdayKey
             ]
-            daySchedules[
-                "bldg_electric_equipment_sch"
-            ] = sp.bldg_electric_equipment_sch(bldg_occ_sch_dict)[weekdayKey]
-            daySchedules["bldg_gas_equipment_sch"] = sp.bldg_electric_equipment_sch(
-                bldg_occ_sch_dict
+            daySchedules["bldg_electric_equipment_sch"] = sp.sch_night_squeeze(
+                sp.bldg_electric_equipment_sch(bldg_occ_sch_dict), upperbound=ns_upperbound
+            )[weekdayKey]
+            daySchedules["bldg_gas_equipment_sch"] = sp.sch_night_squeeze(
+                sp.bldg_electric_equipment_sch(bldg_occ_sch_dict), upperbound=ns_upperbound
             )[
                 weekdayKey
             ]  # TODO: to be replaced with gas specific method

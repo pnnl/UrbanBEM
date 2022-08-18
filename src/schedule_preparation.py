@@ -389,3 +389,17 @@ def schdule_dict_multiplier(sch_dict, multiplier):
     for k, v in sch_dict.items():
         new_sch_dict[k] = [elem * multiplier for elem in v]
     return new_sch_dict
+
+
+# scheduel night squeeze with upper bound
+def sch_night_squeeze(sch_dict, upperbound=0.1):
+    new_sch_dict = {}
+    for k, v in sch_dict.items():
+        new_v = []
+        for i in range(len(v)):
+            if (i < 6) and (v[i] > upperbound):
+                new_v.append(upperbound)
+            else:
+                new_v.append(v[i])
+        new_sch_dict[k] = new_v
+    return new_sch_dict
