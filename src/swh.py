@@ -112,10 +112,18 @@ class SWH:
     def clean_up_save_add_osstd_output(self):
         for obj in self.pure_swh_objs:
             for field in obj.__dict__["objls"]:
+                if field == "key":
+                    continue
+
                 if " Thermal Zone" in str(obj[field]):
                     obj[field] = obj[field].replace(
                         " Thermal Zone", ""
                     )  # take out 'thermal zone' in names/refs
+
+                if "Node" in str(obj[field]):
+                    obj[field] = obj[field].replace(
+                        "Node", "UrbanBEM SWH Node"
+                    )  # Append Node and Node List name to avoid conflicts with other modules
 
         swh_pure = IDF(StringIO(""))
         for obj in self.pure_swh_objs:

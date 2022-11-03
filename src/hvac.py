@@ -100,10 +100,18 @@ class HVAC:
     def clean_up_naming(self):
         for obj in self.pure_hvac_objs:
             for field in obj.__dict__["objls"]:
+                if field == "key":
+                    continue
+
                 if " Thermal Zone" in str(obj[field]):
                     obj[field] = obj[field].replace(
                         " Thermal Zone", ""
                     )  # take out 'thermal zone' in names/refs
+
+                if "Node" in str(obj[field]):
+                    obj[field] = obj[field].replace(
+                        "Node", "UrbanBEM HVAC Node"
+                    )  # Append Node and Node List name to avoid conflicts with other modules
 
         self.hvac_pure = IDF(StringIO(""))
         for obj in self.pure_hvac_objs:
